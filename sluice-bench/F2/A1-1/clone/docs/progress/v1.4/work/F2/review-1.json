@@ -1,0 +1,20 @@
+{
+  "item": "F2",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "summary": "Acceptance met: gallery jump-in cell full+reduced with no errors, summonPass unit test (no hold through the spot, blip at the act's instant), 15 §7 row 1915 with docTables green, director.json the only golden moved and named, ledger F2/F2+ rows for 7 pods. Three Minors: the solar-dense 'parked while named' guard can no longer fail, the CREW_OPEN_MIN_MS row no longer matches summons, and the pass mover nearly stops on collinear geometries.",
+  "findings": { "blocker": 0, "major": 0, "minor": 3, "nit": 1 },
+  "checks": [
+    { "cmd": "npm run -s typecheck && npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test", "pass": true, "detail": "110 files, 1726 tests" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar-dense", "pass": false, "detail": "gallery-assets 5/5 incl. new jump-in test; solar-dense 'History and the scene ... at most four labels' failed once (6 > 4); two re-runs of solar-dense: 21 passed each" },
+    { "cmd": "playwright solar-dense --grep 'History and the scene' --repeat-each=15 (F2 tree vs start commit worktree)", "pass": false, "detail": "F2 2/15 fail, base 61e4958 3/15 fail: pre-existing flake, not F2" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "npm run pacing -- --candidates", "pass": true, "detail": "no further change; pacing-built.json adds F2/F2+ only; candidates unchanged" },
+    { "cmd": "probe/collinear.probe.test.ts", "pass": false, "detail": "collinear goal: backs up 19 px then 2.6 px/s near-stop; goal behind start in line: 3.2 px/s near-stop; usual out-and-back fine" },
+    { "cmd": "probe/near.probe.test.ts", "pass": true, "detail": "summons with a near same-captain next turn: Pulsar 1/9, Meteor 34/37, all chains of facility.enter (F3 scope)" }
+  ]
+}

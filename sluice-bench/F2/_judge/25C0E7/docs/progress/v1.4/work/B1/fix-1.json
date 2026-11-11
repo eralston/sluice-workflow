@@ -1,0 +1,13 @@
+{ "item": "B1", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Tier now re-decided after the rows decision (expand/collapse) in the same frame; two docs corrected; stills retaken.",
+  "findings": [
+    {"n": 1, "severity": "Major", "action": "fixed", "detail": "labels.ts position(): the tier computation is now a local settle() run at the top of the loop (so hidden plates still rest) and again right after expand()/collapse(), so is-expanded and the raised tier change in the same frame. Spec not loosened."},
+    {"n": 2, "severity": "Minor", "action": "fixed", "detail": "docs/05-playback.md A-1 and docs/12-glossary.md Holo label now say every plate rests at T4 Sky and rises to its own tier when raised (13 R1, 15 s6)."},
+    {"n": 3, "severity": "Nit", "action": "stills updated", "detail": "stills.ts now clears the selection by clicking empty sky (not Esc, which goes back a level) and plays from 30% waiting for a raised plate. See limitations for the still's state."}
+  ],
+  "checks": [],
+  "files": ["src/renderer/src/chart/labels.ts", "docs/05-playback.md", "docs/12-glossary.md", "docs/progress/v1.4/work/B1/stills.ts"],
+  "deviations": [],
+  "limitations": []
+}

@@ -1,0 +1,11 @@
+{ "item": "D3", "role": "reviewer", "round": 1, "model_tier": "medium", "verdict": "pass",
+  "summary": "Both acceptance lines are met and nothing is broken. The unit sweep shows every member clear of every strand across Pulsar, Quasar and Harbor, with 0 fallbacks, and the gallery stills are in the work folder. The fade is untested by eye.",
+  "checks": [
+    {"cmd": "npx vitest run formationCorridor docTables formationBounds commands", "pass": true, "detail": "4 files, 80 tests passed"},
+    {"cmd": "npm run typecheck; npm run lint; npm test", "pass": true, "detail": "clean; 101 files, 1491 passed; goldens unmoved"}
+  ],
+  "findings": [
+    {"severity": "Minor", "title": "The fade (strokeVeiled, veil) is never run", "evidence": "No fixture merge ends blocked (0 of 441, 532 and 49 checks), so the veil path has no unit test and was not seen by eye (build-1.json limitations). I read the cap polygon and the span merging, and they look right. A mistake would show only on a real blocked merge."},
+    {"severity": "Nit", "title": "echo reads spots.get(m), not spotsOf", "evidence": "powerLink.ts echo: if a seek reaches the echo without gather or act having run, the veil is silently skipped. The planned places are unaffected."}
+  ],
+  "limitations": ["I did not re-run the e2e specs or the keystone; I relied on the builder's reported passes (64 and 43)."] }

@@ -1,0 +1,31 @@
+{ "item": "D1", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "A formation (a crew of two or more sharing an eventKey) now places its acting plates beside each ship away from the axis (vertical) or above/below (horizontal), and a member's plate never falls back over another member's ship; pure rule formationSides in labelTiers.ts, wired in labels.ts position().",
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/labelTiers.test.ts", "pass": true, "detail": "16 passed, incl. the 5 new formationSides cases"},
+    {"cmd": "npm run e2e:spec -- solar-dense -g 'formation plates' (labels.ts reverted via git stash)", "pass": true, "detail": "BITES: Quasar failed on '(b) Kes Jankowski's plate covers Elio Whitlock's ship at +1300 ms'; Pulsar failed on (c): 174 of 346 plates on the asked side (<90%). Both against the unchanged code, as the packet required."},
+    {"cmd": "npm run e2e:spec -- solar-dense -g 'formation plates' (with the change)", "pass": true, "detail": "Quasar and Pulsar pass: no plate overlap, none over another member's ship, >=90% on the side the axis asks"},
+    {"cmd": "npm run e2e:spec -- solar solar-dense demo slice1 density gallery-v1", "pass": true, "detail": "83 passed (6.2 m), incl. the captain's-turn case (plates hold sides) guarding the label.k reset"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed alone; in the first chained run one case (slice3a lead-in, 30 s waitForFunction timeout) failed under load, not reproduced on the rerun"},
+    {"cmd": "npm run typecheck / lint / npm test", "pass": true, "detail": "clean; 99 files, 1467 tests passed"}
+  ],
+  "files": [
+    "src/renderer/src/chart/labelTiers.ts (formationSides, FormationSide)",
+    "src/renderer/src/chart/labels.ts (Label.formed; formations/crewBodies built before the loop; formation candidates, k reset on mode change, fallback also clears other members' ships)",
+    "tests/unit/labelTiers.test.ts",
+    "tests/e2e/solar-dense.spec.ts (new describe 'formation plates (27 D1)')",
+    "docs/13-game-design.md (Power link row: one sentence)",
+    "docs/progress/v1.4/work/D1/stills.ts, still-quasar-vertical.png, still-pulsar-vertical.png, still-pulsar-horizontal.png"
+  ],
+  "deviations": [
+    "The formation candidates apply only to captains whose plate is 'vertical' layout (all captains today), as the packet's step 4 sits in the vertical branch; `formed` is only set when actingNow.",
+    "The new e2e describe uses beforeEach/afterEach (a fresh app per pod), not one app: Pulsar's renderer crashed ('Target crashed' in the beat scan) when it ran after Quasar in the same window, as the packet warned. Cost: ~2 min for the pair.",
+    "The file-level beforeAll of solar-dense.spec.ts still launches the Meridian app for the new describe's tests too (unused there); Playwright hooks at file level apply to every describe. Harmless, a little slower.",
+    "The (c) side check counts all acting plates in a sample by that sample's ship extents; the 90% threshold was kept as written."
+  ],
+  "limitations": [
+    "Trade-off (packet step 6): a member with no place clear of the other members' ships now stays a picture (label.blocked) instead of covering a ship; rare.",
+    "Gallery's Power link demo (attachment.merge) is a bare GraphScene with no label layer, so it cannot show plates; no gallery still was taken. Stills are from the real app (drive, solar paradigm): still-quasar-vertical.png (3 acting plates, a vertical formation), still-pulsar-vertical.png and still-pulsar-horizontal.png (2 plates each, caught partly unfurled; in the horizontal one 'Approved' is mid-unfurl). Quasar horizontal showed only 1 acting plate at its peak (no formation to shoot), so there is no Quasar horizontal still. Stills drive runs: one pod per run (DRIVE_NAME is not honoured; the output folder is test-results/drive/stills).",
+    "In the Quasar vertical still the left member's plate sits over its own halo of the avatar chip and the plate is partly faded (unfurling); the human gate should judge the look.",
+    "The test run does a merge scan (~45 s per pod) in the hidden window; Pulsar is soft under C3's profile, no perf comparison run (new work is O(crew))."
+  ] }

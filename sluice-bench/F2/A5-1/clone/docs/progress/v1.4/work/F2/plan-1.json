@@ -1,0 +1,30 @@
+{
+  "item": "F2",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "The summon no longer stops. facility.enter drops its tell (gather 715, act 1200, land 600: 2515 ms) and gains a new PaceRule.passes flag. The sequencer gives a passing rule no held turn: durMs is max(span, claim + NOTE_MIN_MS) where it was leaveMs 4835, so each summon saves 2320 ms. The ship is released at the claim, and the flag is carried on a new PlannedManeuver.passes. The renderer's Sortie gains a pass mode: an out leg that passes the spot at speed, a bounded coast while P4's next sortie waits, then a G1 onward leg to its rest. Its plate rides for NOTE_MIN_MS. stationJumpIn's single blip ring and the station's arrival ring share one callRing shape and HERO_GLOW, issued on the same act tick, at the ship's live point, so reduced motion plays them at its place. The ledger gains F2 and F2+ rows over seven pods (Meteor included). Every earlier Built row and C2's candidates run with F2 undone (beforeF2), so they don't move. 03 (PaceRule, PlannedManeuver, PursueArgs, crewTimes), 05 (M-13, P-7, P-16), 13 §6 and 15 §7/§8 are amended.",
+  "score": {
+    "blast": 1,
+    "verify": 1,
+    "design": 1,
+    "acceptance": 1,
+    "track": 1,
+    "sum": 5
+  },
+  "needs": null,
+  "notes": [
+    "Interpretation: 'the flight plus the arrival' = gather + act + land; the tell goes (it was a second call before the flight; the scope asks for one blip). 15 §7's row becomes 2515.",
+    "Interpretation: 'its plate rides with the ship for NOTE_MIN_MS' = the plate is out (unfurl to folded) over [blip, blip + NOTE_MIN_MS], so it sits inside the attention window heldMs already reserves. No new constant. A reviewer may read it as fully open for 1800 ms. That would need durMs = claim + NOTE_MIN_MS + CREW_FOLD_MS (3035) and a smaller saving.",
+    "Interpretation: 'the schedule goldens' are those the maneuver schedule feeds: director.json, pacing-ledger.{md,json}, pacing-built.json (added rows only), and MONTAGE_BEATS if a montage moves. The v0 schedule/seek/highlights goldens and the Solar plan/scenes goldens must not move.",
+    "Choice: the flag rides on the plan (PlannedManeuver.passes), not a PACE_RULES lookup as flyingPlay does. Otherwise releaseOfPlay in the ledger's bindingOf would read today's flag during 'F2 undone' runs and move C2's committed P-rows.",
+    "Choice: the guest summoner (no ship on the board) still jumps in at the spot. It jumps out as the arrival ends (durS = span), because it has no rest to carry on to.",
+    "Choice: ledger rows F2 (directed, short and montage only, as E6) and F2+ (every lever, as E6+), so adaptive speed can't hide the saving on Pulsar and Quasar. F2+'s before and now must equal the ledger's main wallMs before and after: an exact self-check.",
+    "No split: about 7 source files, 3 scripts, 5 tests and 4 docs, one cohesive change. A split into engine and renderer would leave the choreography's tell phase without a rule phase (commands.test fails) and the ship holding past its scheduled turn between commits.",
+    "Known risks for the builder: the Comet pin in sweep.test moves (one summon, about 2.3 s, under 5% of 60.8 s). The director may re-pick forms or montages on Quasar, which moves director.json and possibly MONTAGE_BEATS. The 'E1 to E5' filter in pacingBuilt.test needs F rows excluded.",
+    "Score: blast 1 (shared schedule behaviour in every pod with a summon, plus one shared mover; nothing persisted, no shared-resource lifecycle). Verify 1 (unit tests decide the schedule, the release and the blip timing; how smooth the pass looks needs the gallery and drive stills). Design 1 (every structural choice is settled; the curve's easing constants may need small tuning within the stated bounds). Acceptance 1 (the gallery cell and 'the ledger shows' need a look; 'schedule goldens' needed interpreting). Track 1 (block E: 13 of 16 first pass at this tier; F1 passed). Sum 5, so medium."
+  ],
+  "tier": "medium"
+}

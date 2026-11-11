@@ -1,0 +1,33 @@
+{
+  "item": "E5c", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium", "verdict": "done",
+  "summary": "Major fixed: a cast plate that names its event's cause (a montage's one plate) now always places, at the spot covering the least of other labels and the least off-view or under the side panel; the beat-15 plate draws (note 200x26 px at x 868, was 0x0). Minors fixed: light and fewer-heroes are listed in levers only when they changed a form, with synthetic tests for fewer-heroes and the ahead exception. Quasar now lists short, montage, speed, light; its 301.8 s is unchanged.",
+  "findings": [
+    {"n": 1, "severity": "major", "action": "fixed", "detail": "Cause confirmed by a temporary probe: all 14 candidates of the Bug's plate (220 px wide, object at x 829, side panel from x 1060) ended past the usable width, so none was in view and the plate found no place (`noat`). Fix in src/renderer/src/chart/labels.ts: a cast-only plate with a note (`motion.notes`) that finds no clear place takes the candidate with the least overlap of other labels plus the least off-view or under-panel overhang (weighted heavier). Guard: tests/e2e/montage-names.spec.ts steps five Quasar montage beats (22:17 14 Sep, 18:59 15 Sep, 22:27 16 Sep, 20:25 22 Sep, 19:58 24 Sep) and requires each note's plate to measure above 0 px; it fails without the fix and passes with it. Stills re-shot: work/E5/e5c-montage-plate.png (beat 142, PR #20375, 22 Sep 20:25, drawn) and work/E5/e5c-montage-plate-crowded.png (beat 15, PR #20313, the regression case, drawn with its plate just touching the side panel). The drive step shoots both."},
+    {"n": 2, "severity": "minor", "action": "fixed", "detail": "tests/unit/maneuvers.test.ts gains two synthetic-board cases: momentsOf marks an opening `ahead` only when its merge plays in the same beat (true with it, false alone); directorOf with levers ['fewer-heroes'] sends a non-climax hero shot back to 'progress' and lists the lever, and lists nothing when the hero shot is the day's climax. The light test's title claim about ahead is now backed by the maneuvers test (no pod has an ahead opening left unlit in the fixtures, so only the synthetic case can reach it)."},
+    {"n": 3, "severity": "minor", "action": "fixed", "detail": "director.ts pushes `light` only if it lit something new and `fewer-heroes` only if a hero shot changed form, re-estimating only then. Quasar's levers are now short, montage, speed, light (estimate and forms unchanged). director.test.ts: the 'each only while over' check no longer waits for fewer-heroes, but allows an over-target estimate only when light was pulled; the Harbor unreachable-target test expects four levers. Golden director.json: Quasar's levers lose fewer-heroes only (rest unchanged from the E5c build); pacing ledger and pacing-built regenerated (`npm run pacing -- --candidates`), Quasar row now lists four levers. 05 P-23 states the listing rule."},
+    {"n": 4, "severity": "nit", "action": "fixed", "detail": "Covered by the same change: `light` is listed only when it lit something."}
+  ],
+  "checks": [
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test --silent", "pass": true, "detail": "105 files, 1588 tests"},
+    {"cmd": "npm run e2e:spec -- montage-names", "pass": true, "detail": "1 passed; fails without the labels.ts fix"},
+    {"cmd": "npm run drive -- tests/drive/steps/e5-director.ts --paradigm solar", "pass": true, "detail": "both montage stills show the note"},
+    {"cmd": "npm run e2e:spec -- solar-dense solar-play montage-names; npm run e2e:keystone", "pass": true, "detail": "27 passed (solar-dense, solar-play, montage-names); keystone 43 passed"}
+  ],
+  "files": [
+    "src/renderer/src/chart/labels.ts", "src/shared/engine/director.ts", "tests/e2e/montage-names.spec.ts",
+    "tests/unit/maneuvers.test.ts", "tests/unit/director.test.ts", "tests/golden/__golden__/director.json",
+    "tests/drive/steps/e5-director.ts", "docs/05-playback.md",
+    "docs/progress/v1.4/pacing-ledger.md", "docs/progress/v1.4/pacing-ledger.json", "docs/progress/v1.4/pacing-built.json",
+    "docs/progress/v1.4/work/E5/e5c-montage-plate.png", "docs/progress/v1.4/work/E5/e5c-montage-plate-crowded.png"
+  ],
+  "deviations": [
+    "The fix lives in labels.ts (renderer), outside the E5c diff, as the scope doc's last Decisions row directs.",
+    "The guard is an e2e spec over five hard-coded Quasar montage beats, not all fifteen, to stay near 10 s; 16:37 on 15 Sep from the reviewer's list is not a beat in the e2e app, so 18:59 stands in."
+  ],
+  "limitations": [
+    "The fallback plate can cover another label briefly, or sit partly under the side panel (beat 15's plate touches the panel edge); that is the last resort, only when no clear place exists.",
+    "Quasar still ends 1.8 s over the soft 300 s cap (k at 2)."
+  ]
+}

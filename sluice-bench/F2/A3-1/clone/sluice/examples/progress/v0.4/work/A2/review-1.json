@@ -1,0 +1,1 @@
+{ "item": "A2", "role": "reviewer", "round": 1, "model_tier": "large", "effort": "high", "verdict": "pass", "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 0 }, "summary": "Table matches the code paths." }

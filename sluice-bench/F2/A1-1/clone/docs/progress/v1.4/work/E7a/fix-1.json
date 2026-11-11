@@ -1,0 +1,23 @@
+{
+  "item": "E7a",
+  "role": "fixer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "low",
+  "verdict": "done",
+  "summary": "Fixed review-1's two Minors and its Nit. Added an e2e test that checks the note the star shows (interpreter noteSweep's recount), and the missing gallery still. Keyed the one-piece allowance to 20141.",
+  "findings": [
+    { "n": 1, "severity": "minor", "action": "fixed", "detail": "New test in tests/e2e/solar-play.spec.ts ('the sector sweep's note counts the pieces drawn, 16 on Harbor, not the plan's 17'): steps Harbor's first accented beat, reads the star's note from annotations(), asserts it is exactly '11 User Stories · 5 Bugs created in Sprint 13', that the numbers sum to 16, and that the beat draws at least that many pieces. A fall-back to the plan's counts (12 + 5 = 17) now fails it. The plan-level counts including 20141 (finding 1's related point) is upstream in pace facts and was left alone, as the review said." },
+    { "n": 2, "severity": "minor", "action": "fixed", "detail": "docs/progress/v1.4/work/E7/e7-gallery-sweep-cell.png: the Sector sweep cell from the gallery at mid-loop (the ring out over Harbor's star, the crew and the cell's caption). Taken with a throwaway spec (removed)." },
+    { "n": 3, "severity": "nit", "action": "fixed", "detail": "tests/unit/sweep.test.ts Check 4: added an assertion that every key missing from the board is 20141; the count cap stays." }
+  ],
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npx vitest run tests/unit/sweep.test.ts", "pass": true, "detail": "17 passed" },
+    { "cmd": "npm run e2e:spec -- solar-play", "pass": true, "detail": "7 passed, including the new test" }
+  ],
+  "files": ["tests/e2e/solar-play.spec.ts", "tests/unit/sweep.test.ts", "docs/progress/v1.4/work/E7/e7-gallery-sweep-cell.png"],
+  "deviations": [],
+  "limitations": ["The new e2e assertion pins the Harbor note text '11 User Stories · 5 Bugs'; it moves if the fixture's board changes.", "gallery-assets and solar-dense were not re-run: no code or spec they cover changed this round."]
+}

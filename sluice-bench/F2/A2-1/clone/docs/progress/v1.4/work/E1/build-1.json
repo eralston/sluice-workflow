@@ -1,0 +1,23 @@
+{
+ "item":"E1","role":"builder","round":1,"model_tier":"medium","effort":"medium","verdict":"done",
+ "summary":"Commands mute by value per cost (reproducing P-9 exactly); 7 repeats marked; beacon rings, bearing spark, seat rings and author tractor cut; 15 §8 gains Value/Meaning columns and an effect-audit table; Built ledger shows saving equals C2 estimate in all six pods.",
+ "checks":[
+  {"cmd":"vitest: commands, docTables, maneuvers, pacingCandidates, pacing, stationArrival, pacingBuilt","pass":true,"detail":"7 files / 154 tests"},
+  {"cmd":"npm run typecheck","pass":true,"detail":"clean"},
+  {"cmd":"npm run lint","pass":true,"detail":"clean"},
+  {"cmd":"npm test","pass":true,"detail":"102 files / 1499 tests"},
+  {"cmd":"npm run e2e:spec -- gallery-assets solar solar-play solar-dense","pass":true,"detail":"exit 0; gallery maneuver demos run in full and reduced motion with no console errors"},
+  {"cmd":"npm run e2e:keystone","pass":true,"detail":"42 passed, 1 failed (devlog 'no tenant data' @keystone); devlog spec re-run alone passed 2/2, so treated as flaky and unrelated to E1"}
+ ],
+ "built_table_s_before_now_saved":{"Comet":"67.3/66.7/0.6","Nova":"239.5/239.0/0.6","Quasar":"1080.5/1075.8/4.7","Pulsar":"702.0/696.8/5.3","Convoy Planning":"202.2/200.5/1.8","Harbor":"214.1/212.3/1.8","vs_C2_estimate":"difference 0.0 in every pod"},
+ "repeat_sites":["sensorContact act: second sweep ring (+350)","stationJumpIn gather: fold ring (gather-600)","stationJumpIn land: station ring","powerLink land: surge-ring loop","seatComplete land: second ring (+350)","landing echo: ring beside grand flare","strikeRun echo: ring beside grand flare"],
+ "files":["docs/03-contracts.md","docs/05-playback.md","docs/13-game-design.md","docs/15-reference.md","docs/progress/v1.4/pacing-ledger.md","docs/progress/v1.4/pacing-ledger.json","docs/progress/v1.4/pacing-candidates.json","docs/progress/v1.4/pacing-built.json","scripts/pacing-built.ts","scripts/pacing.ts","scripts/pacing-candidates.ts","src/renderer/src/chart/fx/types.ts","src/renderer/src/chart/fx/timing.ts","src/renderer/src/chart/fx/commands.ts","src/renderer/src/chart/fx/v1/interpreter.ts","src/renderer/src/theme/starChart/commands.ts","src/renderer/src/theme/starChart/entrance.ts","src/renderer/src/theme/starChart/finales.ts","src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts","src/renderer/src/theme/starChart/maneuvers/shuttleTender.ts","src/renderer/src/theme/starChart/maneuvers/sensorContact.ts","src/renderer/src/theme/starChart/maneuvers/powerLink.ts","src/renderer/src/theme/starChart/maneuvers/seatComplete.ts","src/renderer/src/theme/starChart/maneuvers/landing.ts","src/renderer/src/theme/starChart/maneuvers/strikeRun.ts","src/shared/engine/pace.ts","tests/unit/commands.test.ts","tests/unit/docTables.test.ts","tests/unit/pacingBuilt.test.ts"],
+ "deviations":["03 AMENDMENT (normative): CommandDef gains required `value: number`; CommandCall cmd variant gains optional `value?: number`. Updated in docs/03-contracts.md in the same change."],
+ "limitations":[
+  "Candidate duplicates noticed (marked candidate: in the audit table, verdict keep): Landing act tractor vs sortie; Warp out disperse ring vs act ring; Station jump-in act ring vs flare; Satellite cycle author tractor vs cast label; Satellite cycle echo ring vs land ring; Homeworld complete gather spark vs act rings.",
+  "Human gates: gallery Station jump-in and Shuttle tender cells need eyes; a Pulsar merge needs a look.",
+  "docs/13-game-design.md lines ~605 and ~632 still say captains beam the station itself, never a tender; still true, not reworded.",
+  "No goldens changed. ledger.jsonl and docs/27-v1.4.md were already modified by the orchestrator before this build.",
+  "Keystone devlog 'no tenant data' failed once, passed on isolated re-run; possible flake."
+ ]
+}

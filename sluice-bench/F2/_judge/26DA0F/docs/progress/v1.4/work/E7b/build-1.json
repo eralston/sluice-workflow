@@ -1,0 +1,38 @@
+{
+  "item": "E7b",
+  "role": "builder",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "low",
+  "verdict": "done",
+  "summary": "The round's first creation beats fuse into one beat (27 E7b, 05 §8 B-22). openingSweep(h, beats, f, rules, prio, tz) in engine/maneuvers.ts finds the run: it starts at the first raw beat that drafts anything, then takes the consecutive beats whose every draft is a creation (or a sweep), each on lo's local day, with none drafting nothing. It returns [lo, hi] when hi > lo and the run holds CROWD_MIN creations, and null when the rules have no sweep. pacing().limelight (directing only) sorts that range in with volleysOf's fuse. directorOf now carries fuse, and drafts with a base Direction, when the fuse is non-empty even with no volley. When the only fuse comes from volleys, nothing changes.",
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean (after fixing one test type error: Move has no key on bind/unbind)" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test", "pass": true, "detail": "107 files, 1666 tests. sweep.test.ts has 9 new tests (26 in all). The golden director test passes with no -u, so director.json is unchanged by E7b" },
+    { "cmd": "npm run pacing -- --candidates", "pass": true, "detail": "regenerated: no diff in pacing-ledger/built/candidates (E7b moves no fixture)" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar solar-play solar-dense", "pass": true, "detail": "47 passed (8.7 m)" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (53 s)" }
+  ],
+  "tests_added": [
+    "Hand-built openingSweep cases: three consecutive creation beats -> [0, 2]; a leading beat that drafts nothing is skipped -> [1, 2]; a reseat beat cuts the run ([0, 1], or null when the cut leaves one beat; a reseat first -> null); a day turn cuts it (UTC, and Pacific/Auckland reading the zone); fewer than 4 -> null; one beat alone -> null; no sweep rule -> null; a beat that already sweeps counts its members",
+    "All six pods: openingSweep over the raw beats (captured through the schedule's own limelight hook) is null, and that schedule equals the ledger's",
+    "DSL mini sprint (Brinewick Heron Pod; invented names): five creations over three raw beats on one morning fuse to one beat. Direction.fuse equals [op]. One region.sweep of all five (counts objective 4, threat 1; phases sweepPhases(5)) in the first played beat, with no arrival drafts left. Without the rule the beats stay apart with no fuse. The seek check as Check 4: the fused beat's start and end-1 equal graphAt(sourceUtc) and hold every swept piece; start-1 holds none"
+  ],
+  "files": [
+    "src/shared/engine/maneuvers.ts",
+    "src/shared/engine/director.ts",
+    "tests/unit/sweep.test.ts",
+    "docs/05-playback.md",
+    "docs/03-contracts.md"
+  ],
+  "deviations": [
+    "03 amended (normative): a new openingSweep signature line and a line on pacing().limelight composing Direction.fuse. Direction.fuse now notes that it also carries the opening sweep's range, and the directorOf line notes that it carries fuse alone with no volley. 05: a new B-22 row after B-21, and one sentence in M-32 pointing to B-22.",
+    "Interpretation: 'none is empty' means a raw beat after lo that drafts nothing (or has no events) ends the run. Beats before lo that draft nothing are skipped. A creation is counted per draft, as sweepCreations counts it (a sweep draft counts sweep.members.length)."
+  ],
+  "limitations": [
+    "No fixture has an opening run, so E7b moves no ledger or golden number. It is checked only by synthetic tests, as the packet says.",
+    "Volley x stays measured on the raw beats, slightly off after an opening run. This is accepted and noted in 05 B-22.",
+    "Creations later in the round don't fuse (out of scope)."
+  ]
+}

@@ -1,0 +1,18 @@
+{ "item": "block-AB", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Fixed the Major as decided (scene entry's selection keeps the star selected but doesn't open the Features list), both Minors, and Nits 4, 5, 6.",
+  "findings": [
+    { "n": 1, "severity": "Major", "action": "fixed", "detail": "ChartApp.select(key, byEntry) tells labels (setSelectedByEntry); labels.ts no longer sets featWantedAt from a selection made by entry. nav.ts applyEntry passes true; any later select (a click) or pointing opens the list. New demo.spec test enters Quasar Pod with no select(null), asserts the star is selected with one Features line, opens on hover, closes on leaving. Docs 02 and 06 say so." },
+    { "n": 2, "severity": "Minor", "action": "fixed", "detail": "03 PieceState block gains vacant and awaiting; stageCode.ts grammar header gains [|vc=1][|aw=1]; 14 §2.4 as-built note names both." },
+    { "n": 3, "severity": "Minor", "action": "fixed", "detail": "09 §7: C3 had only appended the aura-bake text; I replaced the fixed '8.3 ms vsync' sentence with 'refresh varies per run', replaced 'known red' with the per-refresh outcomes (rest passes at 60 Hz, 1x/4x miss; all miss at 8.3 ms), and named C3's relative same-run gain as what the final check judges Pulsar by. C3's text untouched." },
+    { "n": 4, "severity": "Nit", "action": "fixed", "detail": "15 §6 T1-T3 -line rows now say 'when raised'." },
+    { "n": 5, "severity": "Nit", "action": "fixed", "detail": "holo.css .holo__feat-scroll gains overflow-x: hidden." },
+    { "n": 6, "severity": "Nit", "action": "fixed", "detail": "06 §9 '(A4)' -> '(27 A4)'; 27 B2 State line now cites the featureLines comment in 03. The other citation variants left as is." }
+  ],
+  "checks": [
+    { "cmd": "npm run -s typecheck && npm run -s lint && npm test --silent", "pass": true, "detail": "99 files, 1462 tests" },
+    { "cmd": "npm run e2e:spec -- demo (under with-lock)", "pass": true, "detail": "14 passed, includes the new entry test" }
+  ],
+  "files": ["src/renderer/src/chart/labels.ts", "src/renderer/src/chart/ChartApp.ts", "src/renderer/src/nav.ts", "src/renderer/src/chart/holo/holo.css", "src/shared/engine/stageCode.ts", "tests/e2e/demo.spec.ts", "docs/02-domain-rules.md", "docs/03-contracts.md", "docs/06-visual-brief.md", "docs/09-signal-ladder.md", "docs/14-architecture.md", "docs/15-reference.md", "docs/27-v1.4.md"],
+  "deviations": [],
+  "limitations": ["Did not run e2e:keystone or the full e2e; only the demo spec. tests/drive/steps/feature-row.ts still calls select(null) (harmless; its note about entry is now stale)."] }

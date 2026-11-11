@@ -1,0 +1,14 @@
+{
+  "item": "F2", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "Nothing built: the tree equals HEAD and there is no packet.md or plan-1.json, so no F2 acceptance line is met. Needs a re-plan (run the planner for F2), then a build. probe-engine.diff applies cleanly, defines heldSummon itself, and covers only the engine and ledger.",
+  "findings": { "blocker": 2, "major": 0, "minor": 1, "nit": 0 },
+  "checks": [
+    {"cmd": "git diff HEAD --name-only; git ls-files --others --exclude-standard", "pass": false, "detail": "0 tracked changes; untracked only build-1.json and probe-engine.diff"},
+    {"cmd": "ls docs/progress/v1.4/work/F2/packet.md", "pass": false, "detail": "No such file or directory"},
+    {"cmd": "grep crewHoldMs/backS stationJumpIn.ts; grep facility.enter phases pace.ts", "pass": false, "detail": "hold and 0.8 s fly-back still at stationJumpIn.ts:26,35; phases unchanged at pace.ts:514"},
+    {"cmd": "git apply --check probe-engine.diff", "pass": true, "detail": "applies cleanly; 6 files, engine/ledger only, defines heldSummon in pacing-ledger.ts"},
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean (baseline HEAD)"},
+    {"cmd": "npm test", "pass": true, "detail": "first run 1 failed / 1718 passed in 272 s under load; rerun 109 files, 1719 passed in 89 s (baseline HEAD)"}
+  ]
+}

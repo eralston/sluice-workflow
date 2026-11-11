@@ -1,0 +1,17 @@
+{
+  "item": "E1",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Cut U4's beams (jump-in beacon and bearing, gather 1300->715; jump-in planet rings; tender's author tractor); every command gets a value, and make() mutes by value per cost (floors 4 and 8, reproducing P-9 exactly for default values); 7 duplicate calls marked repeats() mute first from the calm mark; an effect-audit table and Value/Meaning columns in 15 §8; a generated Built section in the ledger against C2's estimate.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 0, "sum": 4 },
+  "needs": null,
+  "notes": [
+    "No duplicate beyond U4's beams was confirmed at HG-C (27 Decisions 2026-11-01 picks E1 whole, names none), so the other duplicates mute first under load rather than being cut; the 7 sites and the Comet effect (repeats mute whenever v >= CALM, the only floor active at Maximum) are for the final check.",
+    "About 20 files, but most are one-line edits (a value field per command, a repeats() wrap, doc rows). The substantive changes are interpreter.ts, timing.ts, commands.ts, stationJumpIn.ts, shuttleTender.ts, pace.ts, scripts/pacing-built.ts and the docTables check, so I'm proposing no split. If one were needed: E1a (the value and mute rule, repeats, audit table) and E1b (the cuts, the rule retime, the Built section).",
+    "The packet amends 03 (CommandDef.value, CommandCall.value?), which is normative; the builder must call it out."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "findings": [
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The Decided paragraph says the riding plate lasts NOTE_MIN_MS, but the change uses VOLLEY_TURN_MS (2540 ms) from the act. That holds the jump-in's attention place, and so its beat, 740 ms past its phases, and adds a note-hold cost that was zero before and isn't reported as part of F2's saving.",
+      "evidence": "src/shared/engine/maneuvers.ts:630 `heldMs = ... Math.max(d.durMs, NOTE_MIN_MS, d.rule.onTheFly ? flyCrewTimes(d.phases).goneMs : 0)`; flyCrewTimes goneMs = claim 1015 + 2540 = 3555 > spanMs 2815 (NOTE_MIN_MS from the act would be 1015 + 1800 = 2815, exactly the phases). docs/progress/v1.4/pacing-ledger.md 'Beats: note hold': Quasar 0.0 -> 4.4 s (line 116), Pulsar 0.0 -> 5.2 s (line 156), Meteor 0.0 -> 0.8 s (line 289), all 0.0 at 61e4958. The departure is recorded in 13 §6 (docs/13-game-design.md:685, 'this is longer than NOTE_MIN_MS'), where it is justified by CREW_OPEN_MIN_MS."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "When a next sortie is waiting (E4's P4), the fly-by doesn't carry on to it: it coasts 35% of the way home and parks for waitS (at least 1.2 s). That brings back a stop-and-go. The acceptance unit test's play() calls the choreography directly, never through the interpreter's waitS path, so its 'no hold' claim covers only the no-next-sortie case.",
+      "evidence": "src/renderer/src/chart/fx/movers.ts:292-298 (the `waitS > 0` branch: arc to `stop` at WAIT_COAST 0.35, then `p = stop` until outS+onS+waitS); src/renderer/src/chart/fx/v1/interpreter.ts:705 adds (releaseOfPlay - gatherAt)/1000 - durS - backS = (2815-300)/1000 - 0.715 - 0.8 = 1.0 s on top of `w/1000 + 0.2`; tests/unit/summonOnTheFlyFix.test.ts 'stops on its way, and stays out of its rest through the wait' asserts that it parks; tests/unit/summonOnTheFly.test.ts play() never supplies waitS."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "A guest summoner (no ship in the region) gives no call blip, and it still sits at the spot through the gather, the act and another 600 ms. The cause-and-effect pairing that the item decides on (R8, R10) is missing in that case.",
+      "evidence": "src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts:44 `themeCmd.guest({... at: spot, durS: (gather + phaseMs(m, 'act') + 600) / 1000 })` in the `else` of `present(c, 'agent')[0]`; the act's blip at :56 is gated on the same `present(c, 'agent')[0]`, so a guest gets no blip."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "05 §8 P-7 and 15's CREW_HOLD_MS row still say that every maneuver a captain flies lasts until the crew leaves, held at least CREW_HOLD_MS, and that the planner counts it in durMs. Neither names the new on-the-fly exception, which ends at the work's end and keeps the crew busy only that long.",
+      "evidence": "docs/05-playback.md:763 'A maneuver a captain flies (it has a gather) lasts until they leave: parked at the act's start, whole at least CREW_HOLD_MS past the work'; docs/15-reference.md:1257 'Their sortie holds that long, and the planner counts it (durMs)'. Against these, src/shared/engine/maneuvers.ts:389 `durMs = flying && !plate && !rule.onTheFly ? ... : spanMs(phases)` and :319 releaseOf returns workEndOf for onTheFly."
+    },
+    {
+      "severity": "Nit",
+      "rules": true,
+      "summary": "The 15 §-effect audit's retired planet-ring row still names the `ring` fold as what already says it, but this change removes that fold ring (its own row was replaced).",
+      "evidence": "docs/15-reference.md:963 '| Station jump-in | land | `ring` on each planet it serves | ... | `ring` fold and the cast labels | 0 | cut |'; the diff removes `repeats(cmd.ring(... gather - 600))` from stationJumpIn.ts and replaces the '`ring` fold' row with the call-blip row."
+    }
+  ],
+  "acceptance": {
+    "1": "met as written: tests/e2e/summon-on-the-fly.spec.ts checks the jump-in cell in full and reduced motion and collects console and page errors. Not run here (e2e is out of bounds), and maneuverDemos.ts drops the crew turn from the cell's length.",
+    "2": "met: summonOnTheFly.test.ts passes (no hold or wait on the pursue, no still frames, jump within 50 ms of the blip, reduced motion at the ship's place). The 50 ms check is near-tautological (both are issued in the act at delay 0), and the waiting next-sortie path isn't exercised.",
+    "3": "met: the 15 §7 row and the effect-audit rows are updated and docTables.test.ts passes. director.json is the only golden that moved, plausibly (no other golden contains facility.enter). The packet that names each change wasn't available to check.",
+    "4": "met: the Built section has F2 (short and montage) and F2+ (every lever) rows on all seven pods, Meteor included, with savings from 0 to 25.6 s, and pacingBuilt.test.ts passes. The ledger also shows a new note-hold cost that the item doesn't call out."
+  },
+  "summary": "A careful, well-tested change: the summoner now flies through the spot with a new Flyby mover, gives one HERO_GLOW call blip at the instant of the jump, carries on, keeps its plate riding with the ship, and the planner, docs, ledger and goldens follow. Typecheck, the unit tests, docTables and the goldens all pass. The gaps are at the edges: the plate window departs from the decided NOTE_MIN_MS and costs note-hold time, the next-sortie case still parks, guest summons get no blip, and 05 P-7 and 15's crew-hold row weren't updated for the exception."
+}

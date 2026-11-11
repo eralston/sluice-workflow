@@ -1,0 +1,47 @@
+{
+  "findings": [
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "Decided says the summoner carries on to 'its next sortie if one is waiting (E4's P4), else its rest', but the pass-through always flies all the way home first: its out leg ends exactly at the release, a waiting next sortie can't set off before the release, and the P4 wait is dropped for a pass. So a captain with a next turn waiting still stops and goes, only now at home, not at the spot. The docs' 'a sortie close behind flies out from wherever the ship is drawn' describes a case that never happens.",
+      "kept": true,
+      "why": "stationJumpIn.ts ride ends at releaseOfPlay and the out leg arcs to goalOf (movers.ts), nearStartMs (maneuvers.ts:133) puts a next gather at or after release, and interpreter.ts:700 skips the waitS stay for a pass; claim holds. [Was Major. 2026-11-10, the user: one behaviour, one severity. The pass glides to its rest even when a next sortie waits; the real F2 shipped it, signed off with no escape (its packet left the hand-off at speed to F3). Scored a Minor in every run.]",
+      "class": "next-sortie"
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "03 is normative and lists every PlannedManeuver field, PursueArgs.waitS and PaceRule.turn, but the change adds ManeuverRule.passes, PlannedManeuver.passes, PursueArgs.pass and crewTimes(phases, passes?) without updating 03.",
+      "kept": true,
+      "why": "docs/03-contracts.md lists PursueArgs.waitS (:1490) and PlannedManeuver fields (:1449+) and is unmodified in git status, while maneuver.ts adds passes to ManeuverRule and PlannedManeuver."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "Other 05 rows still state the held-turn rules that F2 breaks for the summoner (parked at the act's start, whole CREW_HOLD_MS past the work, the plate opens only once parked, the station jumps in 'where its summoner waits'), and R8 ('movement and interaction never blur') has no note of the exception. Only M-13 and 13 \u00a76 were updated.",
+      "kept": true,
+      "why": "05-playback.md:763, :812 and :833 still state the parked/held rules and 'where its summoner waits'; only M-13 and 13 section 6 were edited."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The 'pass-through' is an out-and-back hairpin with a speed jump: the spot lies on the summoner's own side toward its start, and the ship goes back to its rest (\u2248 start). The in leg ends at 2\u00b7L/0.715 s (PASS_IN\u2032(1)=2), the out leg starts at 2\u00b7L/2.84 s (PASS_OUT\u2032(0)=2), a ~4\u00d7 drop in speed at the spot, and the facing flips in a single frame. It reads as a bounce more than a fly-through.",
+      "kept": true,
+      "why": "movers.ts PASS_IN u*u and PASS_OUT 1-(1-u)^2 with an out leg arc(slot, home) show the speed discontinuity and bounce; spot lies toward the ship's own start."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "No test exercises the Sortie pass branch, so 'no hold between its flight and its next place' is checked only as command args (holdS 0, pass true). The 50 ms check compares durS\u00b71000 with the act's atMs and ignores where the gather starts, so it holds only because the gather is the first phase.",
+      "kept": true,
+      "why": "Only tests/drive/steps/v12-D.ts mentions Sortie and no test references PASS_IN/PASS_OUT; commands.test.ts:501 compares durS*1000 with the act atMs only."
+    },
+    {
+      "severity": "Nit",
+      "rules": false,
+      "summary": "The guest branch's facing uses `pointOf(f.at)![0]` with a non-null assertion, dropping the `f.node.world` fallback that spotOf (and the old code) keep.",
+      "kept": true,
+      "why": "stationJumpIn.ts guest branch uses pointOf(f.at)![0] without the f.node.world fallback that spotOf keeps."
+    }
+  ]
+}

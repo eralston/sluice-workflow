@@ -1,0 +1,22 @@
+{
+  "item": "E6a",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "high",
+  "verdict": "pass",
+  "summary": "E6a meets acceptance lines 1 and 3. Grouping is deterministic and B-15-guarded, no group crosses a day, the union formation is complete, and row E6 shows the saving. Fused beats keep seeks and play in agreement in the real app (Pulsar and Quasar). perf.spec's seek red reproduces at 3d4e402 in the same session (base 311.5/277.7 ms vs now 279.3/285.1 ms), so E6a doesn't cause it. Two Minors: (1) with every lever, Quasar is 1.9 s longer (now 3.6 s over the cap) because carriers win P-22 climaxes and climax beats play at 1x; nothing in the docs records it. (2) The 15 §7 short-form stretch is wrong (disperse at 3780, +2020 ms; the doc says 3600 and +2200).",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 2 },
+  "checks": [
+    { "cmd": "npm run -s typecheck; npm run -s lint; npm test", "pass": true, "detail": "clean; 106 files, 1637 tests" },
+    { "cmd": "npx vitest run (packet's mapped units + tests/golden)", "pass": true, "detail": "22 files, 439 tests" },
+    { "cmd": "pacing-built.json E1-E5 rows vs git show 3d4e402", "pass": true, "detail": "48 rows identical" },
+    { "cmd": "npm run e2e:spec -- solar solar-play solar-dense montage-names gallery-assets", "pass": true, "detail": "46 passed (8.0 m)" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (38.7 s)" },
+    { "cmd": "perf.spec, base (git archive 3d4e402 in scratchpad) and working tree alternated: base, now, now, base", "pass": false, "detail": "seek max 311.5 / 279.3 / 285.1 / 277.7 ms: red on both builds, about the same. play 1x/4x p95 25.0/25.1-25.3 ms on both; cuts on 9.5-10.3 ms on both" },
+    { "cmd": "warm schedule build probe (rv-perf-*.ts), base vs now, same session x2", "pass": true, "detail": "Quasar 131.6 -> 146 ms (x1.11); Pulsar 95 -> 107.5 ms (x1.13)" },
+    { "cmd": "rv-quasar.ts: x at 1x vs sped, volleys:false vs default", "pass": true, "detail": "Quasar total x 511740 -> 499780, climax-beat x 82080 -> 97800, k 2 -> 2, wall 301760 -> 303640; 4 of 6 volleys are climaxes" },
+    { "cmd": "rv-fused.ts: volleyPhases on the short Power link, a pair", "pass": true, "detail": "echo 1800 -> 3820, disperse 3780 -> 5800 (15 §7 says 3600 and +2200)" },
+    { "cmd": "npm run drive -- rv-drive-fused.ts (RV_POD Pulsar, Quasar): step each fused volley beat, then drift; seek to the same x, then drift", "pass": true, "detail": "Pulsar 4 and Quasar 6 fused beats: no drift after play or after the seek" }
+  ]
+}

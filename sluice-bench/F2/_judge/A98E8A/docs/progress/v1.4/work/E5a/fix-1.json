@@ -1,0 +1,22 @@
+{
+  "item": "E5a", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Fixed the Blocker (close test now compares the undirected closes with the directed plan), the monotony test, the drive step and stills, the three E5b doc promises and the two stale comments. Finding 6 acknowledged.",
+  "findings": [
+    {"n": 1, "severity": "Blocker", "action": "fixed", "detail": "tests/unit/director.test.ts: for each pod, the closes (objective/threat.accomplish) of the undirected plan (direct:false) must each appear in the directed plan under the same eventKey|id, never as agent.progress, with a variant of none, beamed, arc or *short. Asserts the undirected set is non-empty."},
+    {"n": 2, "severity": "Minor", "action": "fixed", "detail": "tests/drive/steps/e5-director.ts rewritten: header says run with --paradigm solar; each accented beat is stepped into (seek to just before it, then stepBeat); beats found in the app (the first '— Merged' note for the progress beam, the beat at 14 Sep 22:17 for the short link, the scene's longest beat for the climax). Re-shot; stills copied to work/E5/e5a-progress-act.png (15 Sep 16:03, half-weight beam at Ulla Prime), e5a-short-link-echo.png, e5a-climax-merge.png (beat 186, 24 Sep 16:57, the longest beat, 13.0 s, a full merge with its note)."},
+    {"n": 3, "severity": "Minor", "action": "fixed", "detail": "05 line 715, 13 line 692 and 15 line 825 now say a Task update does not trigger the progress beam; the E5b promise is dropped."},
+    {"n": 4, "severity": "Minor", "action": "fixed", "detail": "The monotony test's moment list now includes progress beams (they count as a played moment between two others), so full merge, progress, full merge no longer fails; it stays in beat (episode) order."},
+    {"n": 5, "severity": "Nit", "action": "fixed", "detail": "pace.ts and progressBeam.ts comments now say the director (27 E5a) plays it for a merge that doesn't close its work."},
+    {"n": 6, "severity": "Nit", "action": "acknowledged", "detail": "M-30 is taken by Sortie parking, so the agent.progress note in 05 §8.4(b) stays prose, not an M-30 row. Deviation from the packet, not in the builder's record."}
+  ],
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/director.test.ts tests/unit/docTables.test.ts", "pass": true, "detail": "70 passed"},
+    {"cmd": "npm run typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npx eslint tests/unit/director.test.ts tests/drive/steps/e5-director.ts", "pass": true, "detail": "clean"},
+    {"cmd": "npm run drive -- tests/drive/steps/e5-director.ts --paradigm solar", "pass": true, "detail": "3 stills shot, beams visible"}
+  ],
+  "files": ["tests/unit/director.test.ts", "tests/drive/steps/e5-director.ts", "src/shared/engine/pace.ts", "src/renderer/src/theme/starChart/maneuvers/progressBeam.ts", "docs/05-playback.md", "docs/13-game-design.md", "docs/15-reference.md", "docs/progress/v1.4/work/E5/e5a-*.png"],
+  "deviations": [],
+  "limitations": ["The app exposes no rule ids, so the step identifies the short link by its fixture time and the climax as the scene's longest beat (a heuristic), not by the director's climax set.", "The ledger's Quasar schedule differs from the solar app's (reviewer's observation), left for the block audit."]
+}

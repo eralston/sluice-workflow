@@ -1,0 +1,35 @@
+{
+  "item": "F2", "role": "builder", "round": 1, "model_tier": "large", "effort": "low",
+  "verdict": "done",
+  "summary": "Summons on the fly: facility.enter is a pass (PaceRule.pass; gather 715 + act 1200 = 1915 ms). The summoner flies through its spot with no hold or fly-back (a Pass mover, velocity handed on to a sortie that takes it over). One call blip at the act's start shares its ring with the station's arrival (jumpRing). Its plate rides with the ship, whole NOTE_MIN_MS. Built inline in one conversation, with no planner, reviewer or fixer agents (the run's instruction), so there is no review round.",
+  "checks": [
+    {"cmd": "npm run -s typecheck; npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npx vitest run", "pass": true, "detail": "109 files, 1723 tests; new: commands 'summon on the fly (27 F2)' (pursue is a pass with no hold, wait or back leg; the blip, the art's jump and the station ring all at the act's start, 0 ms from the flight's end; the same ring shape), maneuvers 'a summon on the fly' x2, pacingBuilt F2/F2+"},
+    {"cmd": "npm run pacing -- --candidates", "pass": true, "detail": "pacing-candidates.json unchanged; pacing-built.json gains 14 rows, none changed; F2 undirected saves Comet 0.9, Nova 2.9, Quasar 21.3, Pulsar 24.3, Convoy 8.8, Harbor 5.1, Meteor 13.9 s"},
+    {"cmd": "npx vitest run tests/golden -u", "pass": true, "detail": "only director.json moved (see packet: estimates, Quasar/Pulsar tempo, Pulsar drops the light lever)"},
+    {"cmd": "npm run e2e:spec -- gallery-assets solar solar-play montage-names", "pass": true, "detail": "52 passed; the jump-in demo cell loops and clears in full and reduced motion with no console errors (gallery-assets); solar.spec Meteor 1024x640 is the expected test.fail (F5)"},
+    {"cmd": "npm run e2e:spec -- solar-dense", "pass": true, "detail": "21 passed, after the turn spec learned passes (first run: a pass's plate was whole about 0.65 s, which led to the 'whole NOTE_MIN_MS' reading; then the 1.7 s bound was 2 ms short under sampling, set to 1.65 s)"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"}
+  ],
+  "files": [
+    "src/shared/engine/pace.ts", "src/shared/engine/maneuvers.ts",
+    "src/renderer/src/chart/fx/movers.ts", "src/renderer/src/chart/fx/commands.ts", "src/renderer/src/chart/fx/v1/interpreter.ts",
+    "src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts", "src/renderer/src/testHooks.ts",
+    "scripts/pacing-ledger.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts",
+    "docs/03-contracts.md", "docs/05-playback.md", "docs/13-game-design.md", "docs/15-reference.md", "docs/27-v1.4.md", "tests/README.md",
+    "docs/progress/v1.4/pacing-ledger.md", "docs/progress/v1.4/pacing-ledger.json", "docs/progress/v1.4/pacing-built.json",
+    "tests/golden/__golden__/director.json", "tests/unit/commands.test.ts", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts", "tests/unit/sweep.test.ts", "tests/e2e/solar-dense.spec.ts"
+  ],
+  "deviations": [
+    "03 (normative) amended: PaceRule.pass, crewTimes(phases, pass), PursueArgs.pass/noteS.",
+    "The plate is whole NOTE_MIN_MS after its unfurl (shown 2.84 s in all), not 1.8 s in all: 22 B9's 'animations count toward no minimum'. Decided here (packet, Decisions).",
+    "New test hook summons() (unpackaged test mode only, like volleys()) for solar-dense's turn spec.",
+    "No block-F note exists yet; F2's departure from 03 is recorded here and in the packet, for the block note when block F's audit writes it."
+  ],
+  "limitations": [
+    "No independent review ran (no subagents). The block F audit should review F2 as its first look.",
+    "Between two summons by one captain in a beat, the tender's attachment.open keeps the captain busy, so the ship flies home and back; F3's chain fixes that run. The velocity hand-off is exercised only when a flying sortie is the next move.",
+    "F2+ (with every lever) shows Meteor 8.2 s longer: the director uses the saving to pull fewer levers under the 300 s target. The undirected F2 row is the schedule's own saving.",
+    "Full npm run e2e not run (the mapped specs plus keystone were, per tests/README)."
+  ]
+}

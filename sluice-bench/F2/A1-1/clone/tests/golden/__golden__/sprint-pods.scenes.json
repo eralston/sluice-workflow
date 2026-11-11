@@ -1,0 +1,202 @@
+[
+ {
+  "scope": {
+   "project": "Halcyon Reach",
+   "area": "Halcyon Reach\\Comet Pod"
+  },
+  "sole": null,
+  "beats": [],
+  "scenes": [
+   {
+    "scene": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8001",
+    "inView": [
+     "area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8001"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8001",
+      "atUtc": 1789369199999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8001",
+      "atUtc": 1790578799999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   }
+  ],
+  "follow": []
+ },
+ {
+  "scope": {
+   "project": "Halcyon Reach",
+   "area": "Halcyon Reach\\Nova Pod"
+  },
+  "sole": null,
+  "beats": [],
+  "scenes": [
+   {
+    "scene": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8002",
+    "inView": [
+     "area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8002"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8002",
+      "atUtc": 1789369199999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8002",
+      "atUtc": 1790578799999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   }
+  ],
+  "follow": []
+ },
+ {
+  "scope": {
+   "project": "Halcyon Reach",
+   "area": "Halcyon Reach\\Quasar Pod"
+  },
+  "sole": null,
+  "beats": [],
+  "scenes": [
+   {
+    "scene": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8003",
+    "inView": [
+     "area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8003"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8003",
+      "atUtc": 1789369199999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8003",
+      "atUtc": 1790578799999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   }
+  ],
+  "follow": []
+ },
+ {
+  "scope": {
+   "project": "Halcyon Reach",
+   "area": "Halcyon Reach\\Pulsar Pod"
+  },
+  "sole": null,
+  "beats": [],
+  "scenes": [
+   {
+    "scene": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8004",
+    "inView": [
+     "area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8004"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8004",
+      "atUtc": 1789369199999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8004",
+      "atUtc": 1790578799999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   }
+  ],
+  "follow": []
+ },
+ {
+  "scope": {
+   "project": "Halcyon Reach",
+   "area": "Halcyon Reach\\Meteor Pod"
+  },
+  "sole": null,
+  "beats": [],
+  "scenes": [
+   {
+    "scene": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8005",
+    "inView": [
+     "area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8005"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8005",
+      "atUtc": 1789369199999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8005",
+      "atUtc": 1790578799999,
+      "nodes": [],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   }
+  ],
+  "follow": []
+ }
+]

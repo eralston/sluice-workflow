@@ -1,0 +1,13 @@
+{
+  "item": "F2", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "Meets all four acceptance lines and breaks nothing. The solar-dense adaptation keeps the check's meaning for today's scenes, but it sorts episodes by the property it tests: Minor, tighten riding < 1400. The orchestrator's 27 Decisions row overstates Comet's saving (43.8 vs 45.5 s measured): Minor.",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 1 },
+  "checks": [
+    { "cmd": "npm run -s typecheck && npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test --silent", "pass": true, "detail": "109 files, 1730 tests" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar-dense", "pass": true, "detail": "25 passed, including the maneuver-demo cell (full and reduced motion, console errors checked) and the adapted captain's turn" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "first run: 42 passed, 1 failed (not identified; output not kept); re-run: 43 passed" },
+    { "cmd": "git diff 61e4958 --numstat -- docs/progress/v1.4/pacing-built.json docs/progress/v1.4/pacing-candidates.json", "pass": true, "detail": "built: +63/-0; candidates: no diff" }
+  ]
+}

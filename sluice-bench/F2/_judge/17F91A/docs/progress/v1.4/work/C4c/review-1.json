@@ -1,0 +1,17 @@
+{
+  "item": "C4c",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 1 },
+  "checks": [
+    { "cmd": "npm run -s typecheck && npm run -s lint && npm test --silent", "pass": true, "detail": "99 files, 1462 tests; docTables and goldens pass" },
+    { "cmd": "with-lock npm run e2e:spec -- profile settings gallery-v1", "pass": true, "detail": "16 passed (includes captain-settings via name match)" },
+    { "cmd": "with-lock npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "with-lock npm run e2e:spec -- perf", "pass": true, "detail": "dense-scene test passes; Pulsar p95 at 1x and 4x red (soft, known until C3); budget 18.6 ms read from the profile" },
+    { "cmd": "grep BUDGET_MS|HIGHLIGHT_BUDGET_MS|MAX_ACTIVE_FX|VSYNC_TOLERANCE_MS in src scripts tests config", "pass": true, "detail": "only 'was X' comments in contracts/profile.ts" }
+  ],
+  "summary": "C4c meets its part of the packet: switches, cap and frame budget read from the profile at the moment of use, desktop is unchanged, phone e2e passes; one minor (stale constant names in docs 03/05/09)."
+}

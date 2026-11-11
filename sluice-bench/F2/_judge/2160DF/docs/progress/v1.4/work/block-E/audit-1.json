@@ -1,0 +1,28 @@
+{ "item": "block-E", "role": "auditor", "round": 1, "model_tier": "large", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "One Major: the pacing ledger, the director tests and golden, and MONTAGE_BEATS read the recorded bundle while the app plays Solar in story time (storyTime via v1/story.ts presented). Comet plays 45.8 s in the app, not the ~60.8 s yardstick; Quasar has 187 beats, not 348. This answers E10-Q1: 19:25Z is moved by story time. Pulsar's 4 guarded montage beats aren't montages in the app, and 2 of Quasar's app montages are unguarded. The targets still hold in the app (Pulsar 288.6 s, Quasar 289.6 s), as do 79 of 83 director cases in story time. Three Minors: E9-Q1 (the hold isn't stuck; the drive played inside its 1.5 s, and a directed beat's one attempt is used up under the documented hold, so no code fix, but the State line and the montage still need correcting); the volley e2e's loose names check (carried, open); the noted-plate fallback against 06 §9 and P-24 (carried, open). One Nit: tests/README omits rising.test. Flakes: solar-dense:295 4/4 and devlog pass; perf's seek check is red (328 ms) and predates block E.",
+  "findings": { "blocker": 0, "major": 1, "minor": 3, "nit": 1 },
+  "checks": [
+    { "cmd": "git log/diff 552d631..2125401; read the E1-E10 packets' records and final reviews", "pass": true, "detail": "the block's 19 item commits; findings checked against the source at HEAD" },
+    { "cmd": "vite-node probe-quasar.ts, probe-ledger-history.ts", "pass": true, "detail": "the ledger's Quasar has 348 beats; 19:25Z is a played beat (d 3600) from wi 10422's state change" },
+    { "cmd": "npm run drive -- block-E/probe-app.ts, probe-history.ts, probe-pods.ts --paradigm solar", "pass": false, "detail": "the app's Quasar has 187 beats, x 462540, no 19:25Z beat; its bundle has 10402 at 20:12:33.603Z (story time). App x: Comet 45.8 s, Nova 171.0 s, Pulsar 308.2 s" },
+    { "cmd": "vite-node probe-storytime.ts", "pass": false, "detail": "story time reproduces the app exactly; recorded to story wall: Comet 60.8→45.8, Nova 209.3→171.0, Quasar 299.1→289.6, Pulsar 288.8→288.6, Convoy 183.1→179.0, Harbor 178.3→179.8 s" },
+    { "cmd": "vite-node probe-montage-story.ts", "pass": false, "detail": "Pulsar: 0 app montages vs 4 listed; Quasar: 11 app vs 13 listed, 2 app-only (09-16T21:01, 09-24T20:19), 4 listed not montage in the app" },
+    { "cmd": "npx vitest run -c block-E/probe.vitest.config.ts (director.test in story time)", "pass": false, "detail": "79/83 pass; the 4 failures are the montage list (Quasar, Pulsar), the determinism artefact, and Pulsar folding none under 1e9" },
+    { "cmd": "story-time lengths at 552d631 (throwaway worktree, removed)", "pass": true, "detail": "Comet 67.3 recorded vs 50.3 story; the gap predates block E" },
+    { "cmd": "npm run drive -- block-E/probe-e9path.ts --paradigm solar (e9-camera with cameraHeld notes)", "pass": true, "detail": "the hold is false at mid-montage (t=13013), yet shot null: the montage beat started inside the 1.5 s hold and directBeat had used its once-per-beat attempt; not stuck" },
+    { "cmd": "npm run e2e:spec -- devlog perf", "pass": false, "detail": "devlog 2/2 pass; perf: the cuts pass, the seek soft check is red (max 328.4 ms < 250), as at E2/E6a base" },
+    { "cmd": "npx playwright test solar-dense.spec.ts -g 'History and the scene explain' --repeat-each=4", "pass": true, "detail": "4/4 passed with four workers at once" },
+    { "cmd": "npx vitest run docTables pacingBuilt director rulebook", "pass": true, "detail": "5 files, 140 passed" },
+    { "cmd": "npm run -s lint; npm run -s typecheck", "pass": true, "detail": "clean with the probe files in the work folder" },
+    { "cmd": "grep 06 §9/§flashes, 05 P-24, labels.ts:975-987; solar-dense.spec.ts:948; tests/README.md:59", "pass": false, "detail": "the carried E5c docs and E6b guard are unchanged; README omits rising" }
+  ],
+  "answers": {
+    "E10-Q1": "The app presents Solar bundles in story time (src/renderer/src/v1/story.ts presented → storyTime). The ledger and scheduleOf({}) read the recorded bundle. Story time moves 10422's 19:25Z event, so the app has no such beat. Same root as the carried ledger-vs-app Quasar mismatch (finding 1).",
+    "E9-Q1": "Not stuck. The hold releases 1.5 s after the pointerup. The drive pressed play inside that window, and directBeat/fireShot use up their once-per-beat attempt while held (05 §6 item 1, documented). A real click within 1.5 s before a directed beat drops that shot, by design. Fix the drive step and the State line, not cameraHeld (finding 2)."
+  },
+  "limitations": [
+    "No full e2e suite, gallery or build run. Finding 1's app numbers come from drive probes on this machine (America/Los_Angeles); in another zone the app's days differ again.",
+    "I didn't drive the two app-only Quasar montage beats to see that they draw their notes; E5c's round-2 per-beat sweep found every noted Quasar beat drawn at that time.",
+    "Comet's E5 '5% of measured' claim wasn't re-measured in story time against an E4d-state baseline; from the start commit to HEAD, Comet falls by a similar share either way (−9.7% recorded, −9.0% story)."
+  ] }

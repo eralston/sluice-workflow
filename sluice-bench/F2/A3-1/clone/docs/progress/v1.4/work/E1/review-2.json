@@ -1,0 +1,16 @@
+{
+  "item": "E1",
+  "role": "reviewer",
+  "round": 2,
+  "model_tier": "medium",
+  "effort": "low",
+  "verdict": "pass",
+  "summary": "Fix-1 resolves all three round-1 findings: 15 §8 Meaning cells hold meanings in all 22 rows, docTables flags an empty Meaning, and 05 M-14 and the 13 captains-beam list no longer mention the retired tender tractor. Acceptance 1-3 met.",
+  "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 0 },
+  "checks": [
+    { "cmd": "npx vitest run commands docTables maneuvers pacingCandidates pacing stationArrival pacingBuilt", "pass": true, "detail": "7 files / 154 tests" },
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "grep non-archive docs for beacon / author tractor / tractors it", "pass": true, "detail": "no live jump-in or tender description left; remaining hits are v0 assignment beacons and hull art" }
+  ]
+}

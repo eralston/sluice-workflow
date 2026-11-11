@@ -1,0 +1,3 @@
+Build item F2 of docs/27-v1.4.md (`### F2 Summon on the fly`) in this conversation, without subagents. Read CLAUDE.md and the docs it names. Meet every acceptance line, run typecheck, lint, the unit tests and the mapped e2e specs (tests/README.md), and commit when done.
+
+Nobody is watching this run, so no one can answer a question. If you need a decision, take it from docs/27-v1.4.md's Decisions where they cover it; otherwise use your judgment and record the decision where the item's record goes. Fixture data only (INV-18); never a real PAT; the app never writes to ADO. Never push.

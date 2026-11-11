@@ -1,0 +1,29 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "When the same captain's next sortie takes the ship over from a pass (which the planner now schedules at the pass instant via passStartMs), the summoner's plate is cut: a following pass ignores `carry` and shows nothing in flight, and a following parked sortie snaps it to 0 at its park. So in a run of summons (Meteor Pod, F1) every summon but the chain's last is never named, which breaks Decided's 'its plate rides with the ship for NOTE_MIN_MS' and R14.",
+      "evidence": "src/renderer/src/chart/fx/movers.ts:393 `if (this.passS > 0) return ride(h, this.passS);` (h<0 in flight gives 0, carry unused); :394-396, the carry ride holds only while h<0, then `Math.min(1, h / foldS, ...)` is 0 at h=0; src/shared/engine/maneuvers.ts:341 passStartMs starts the next gather at the pass; castLabels.crew picks the latest window, and interpreter.crew() reads the new Sortie's crewOpen. A read-only scan of the app's story-time plans (vite-node over scripts/pacing-ledger planOf, every pod): `{ passes: 62, cut: 34 }`, all Meteor Pod, e.g. `facility.enter@0/1915 | facility.enter@715/1915 | facility.enter@1430/1915 ...`, all by one agent: 34 summons are taken over within CREW_FOLD_MS of their pass, before their plate has unfurled. In the unit test's own case (tests/unit/maneuvers.test.ts:1012), objective.underway's gather is 500 ms (pace.ts:443), shorter than the 520 ms unfurl, so the summon's plate is never whole."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The tests stop at the pursue's arguments and the phase arithmetic. Nothing exercises the Sortie's pass path (no stop at the spot), the `carry` hand-off to a following sortie, or the plate's ride in `crewOpen`, so the takeover defect above passes every unit test.",
+      "evidence": "`grep -rn \"passS\\|handoff\\|carry\\|Sortie(\" tests/unit/*.ts` matches only the pursue-args test in tests/unit/commands.test.ts:242-254 (holdS 0, waitS undefined, passS > 0). The '50 ms' check, commands.test.ts:897-902, compares gatherAt + durS*1000 with phaseAtMs(act), both taken from the same phase spans."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The new pacingBuilt test's comment says Meteor's summons 'still wait for each tender's launch', but the plan chains them 715 ms apart, each setting off at the previous one's pass.",
+      "evidence": "tests/unit/pacingBuilt.test.ts:162; the Meteor Pod plan's first summon beat: `facility.enter@0/1915 54fde7 | facility.enter@715/1915 54fde7 | facility.enter@1430/1915 54fde7 | ...` with no attachment.open between them"
+    }
+  ],
+  "acceptance": {
+    "1": "met as far as can be checked: the gallery builds a jump-in cell from PACE_RULES (maneuverDemos.ts), and gallery-assets.spec covers full and reduced motion with no console errors; I couldn't run it here (no e2e).",
+    "2": "met in letter: commands.test.ts checks holdS 0 / no waitS, and that the blip and the station's act land within 50 ms (also on the interpreter and under reduced motion); the mover's no-stop path itself isn't tested.",
+    "3": "met: the 15 §7 row (1915) and the effect-audit rows match the code, and docTables, the goldens and sweep pass. The only schedule golden is director.json; it moved (Pulsar dropping the light lever, tempo 1.1→2), which is plausible from the saving, but the packet isn't available to check that it names each change.",
+    "4": "met: pacing-built.json and the ledger's Built section have F2 and F2+ rows for all seven pods (e.g. Pulsar 20.2 s, Meteor 13.9 s undirected)."
+  },
+  "summary": "The engine side is clean and consistent: rule phases, the pass in the planner (no turn, passStartMs, no nearWaits), docs 05/13/15 and the ledger all agree, and typecheck plus the unit and golden suites pass. The renderer's hand-off loses the summoner's plate whenever the next sortie takes over at the pass, which is the common case in F1's bulk-summon pod, so 'named from the blip for NOTE_MIN_MS' doesn't hold there, and no test covers the mover."
+}

@@ -1,0 +1,40 @@
+{
+  "findings": [
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "A summoner whose ship is new this beat (the K-13 jump, `flash`) still comes to a stop at the spot and then lurches on: `jumpIn` eases out to rest at outS, and the coast then starts at once at `v0 = turnR / JUMP_IN_S`. That is the stop-and-go F2 was meant to remove, plus a jump in speed.",
+      "kept": true,
+      "why": "movers.ts:276 cubic ease-out gives zero speed at u=1, and :316 sets v0=turnR/JUMP_IN_S so the coast (:340-343) begins at nonzero speed."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "Test (c), 'the blip and the station's act start within 50 ms', can't fail in any meaningful way. The blip ring and `cmd.act(f.key,'jump')` come back from the same `act()` call, so they're simultaneous by construction, and the stub scene never moves the ship (`placeAt` is a no-op). The test finds the blip by its unmoved 0,0 point and never checks that the summoner is at the spot when the blip fires, which is the correlation the Asked is about.",
+      "kept": true,
+      "why": "commands.test.ts:180 has placeAt as a no-op and :612 finds the blip by ' 0,0'; the assertion only compares two same-call timestamps."
+    },
+    {
+      "severity": "Nit",
+      "rules": false,
+      "summary": "The F2+ test comment names the start commit as 2b33931, but no such object exists. The start commit is 61e4958.",
+      "kept": true,
+      "why": "pacingBuilt.test.ts:163 cites 2b33931; git cat-file reports it is not a valid object."
+    },
+    {
+      "severity": "Nit",
+      "rules": false,
+      "summary": "In test (b), the `openBefore` accumulator `Math.min(openBefore, 0) + crewOpen(...)` only keeps the last sample before 0.7 s, so it doesn't show the plate stayed shut for the whole flight.",
+      "kept": true,
+      "why": "commands.test.ts:562 resets to min(openBefore,0)+sample each frame, so a nonzero early sample is overwritten by later zeros."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "kept": true,
+      "class": "next-sortie",
+      "summary": "The pass glides to the ship's rest even when its next sortie is waiting (Decided: 'its next sortie if one is waiting, else its rest').",
+      "why": "movers.ts aims the pass at goalOf (the rest). Added: the judge didn't raise it. 2026-11-10, the user: one behaviour, one severity. The pass glides to its rest even when a next sortie waits; the real F2 shipped it, signed off with no escape (its packet left the hand-off at speed to F3). Scored a Minor in every run."
+    }
+  ]
+}

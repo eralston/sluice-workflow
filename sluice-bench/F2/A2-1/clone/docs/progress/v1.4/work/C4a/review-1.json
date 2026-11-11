@@ -1,0 +1,15 @@
+{
+  "item": "C4a",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 1 },
+  "checks": [
+    { "cmd": "npm run -s typecheck && npm run -s lint && npm test --silent", "pass": true, "detail": "99 files, 1458 tests" },
+    { "cmd": "with-lock npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "real-launch probe of env.profile (scratchpad)", "pass": true, "detail": "default, pinned phone, unknown pin, bad JSON, tablet override all resolve as specified" }
+  ],
+  "summary": "C4a meets its part of the packet with no behaviour change; one nit (the merged fault is unreachable and untested)."
+}

@@ -1,0 +1,18 @@
+{
+  "item": "C3", "role": "fixer", "round": 2, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "The cuts test now runs first in the Pulsar describe, so a red soft absolute test can no longer skip it; the report merges cuts in whichever order.",
+  "findings": [
+    {"n": 1, "severity": "Major", "action": "fixed: moved the cuts test before the absolute test in tests/e2e/perf.spec.ts; it restores auraBake off (desktop default) at its end; the absolute test now merges any prior `cuts` key when writing perf-pulsar-report.json", "result": "e2e:spec perf profile: cuts test ran and passed with the absolute test red; report keys: vsyncMs, budgetMs, rest, play 1x, play 4x, seek, cuts"},
+    {"n": 2, "severity": "Nit", "action": "fixed: removed 'Options 1 to 4 above'; labelled the 1x as-is row as a separate run from the cuts table", "result": "done"},
+    {"n": 3, "severity": "Nit", "action": "fixed: STAR_CHART_TEST_DPR documented in tests/README.md", "result": "done"},
+    {"n": 4, "severity": "Nit", "action": "fixed: build() now destroys the live group's AlphaFilter when leaving the live path", "result": "typecheck/lint clean; profile spec (incl. Pulsar flip) passed"}
+  ],
+  "checks": [
+    {"cmd": "npm run typecheck; npm run lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm run e2e:spec -- perf profile", "pass": false, "detail": "6 passed, 1 failed: the soft absolute-budget test (known red, 09 §7); the cuts test ran and passed"}
+  ],
+  "files": ["tests/e2e/perf.spec.ts", "tests/README.md", "src/renderer/src/chart/art/aura.ts", "docs/progress/v1.4/work/C3/profile-note.md"],
+  "deviations": [],
+  "limitations": ["Unit tests not re-run by me; the change touches only e2e, docs and a filter destroy.", "If the cuts test itself fails, serial mode skips the absolute test and auraBake may stay on; that is a hard failure anyway."]
+}

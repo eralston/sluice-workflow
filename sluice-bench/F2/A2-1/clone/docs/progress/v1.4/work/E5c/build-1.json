@@ -1,0 +1,41 @@
+{
+  "item": "E5c", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium", "verdict": "done",
+  "summary": "Light work for more rules (P-26) and fewer hero shots (P-27) added after speed, k recomputed after each; Pulsar 321.6 -> 295.7 s (inside 300 s); Quasar 448.2 -> 301.8 s (1.8 s over the soft cap, all five levers pulled, k at 2).",
+  "perPod": {
+    "Comet": {"beforeMs": 61845, "afterMs": 61845, "levers": []},
+    "Nova": {"beforeMs": 224595, "afterMs": 224595, "levers": []},
+    "Quasar": {"beforeMs": 448150, "afterMs": 301760, "levers": ["short","montage","speed","light","fewer-heroes"]},
+    "Pulsar": {"beforeMs": 321638, "afterMs": 295714, "levers": ["short","montage","speed","light"]},
+    "Convoy": {"beforeMs": 188985, "afterMs": 188985, "levers": []},
+    "Harbor": {"beforeMs": 196515, "afterMs": 196515, "levers": []}
+  },
+  "checks": [
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test --silent", "pass": true, "detail": "105 files, 1586 tests"},
+    {"cmd": "npx vitest run <mapped units + tempo + replay + tests/golden>", "pass": true, "detail": "25 files, 423 tests; only __golden__/director.json moved"},
+    {"cmd": "npm run e2e:spec -- solar solar-play solar-dense gallery-assets", "pass": true, "detail": "45 passed; History-agreement case (solar-dense.spec.ts:295) passed, 25.4 s"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "warm schedule build, same run, 5 runs median", "pass": true, "detail": "Quasar 137 ms (all levers) vs 143 ms (E5b levers): x0.96; Pulsar 98 vs 103 ms: x0.95"}
+  ],
+  "files": [
+    "src/shared/engine/director.ts", "src/shared/engine/maneuvers.ts", "src/shared/contracts/playback.ts",
+    "scripts/pacing-built.ts", "tests/unit/director.test.ts", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts",
+    "tests/golden/director.test.ts", "tests/golden/__golden__/director.json", "tests/drive/steps/e5-director.ts",
+    "docs/05-playback.md", "docs/15-reference.md", "docs/03-contracts.md",
+    "docs/progress/v1.4/pacing-ledger.md", "docs/progress/v1.4/pacing-ledger.json", "docs/progress/v1.4/pacing-built.json",
+    "docs/progress/v1.4/work/E5/e5c-montage-plate.png"
+  ],
+  "deviations": [
+    "Light work eligibility excludes an `attachment.open` 'placed ahead of a moment' via a new BaseMoment.ahead (the sequencer's own introduces-ahead test), exported from momentsOf.",
+    "The 'levers' option default now lists all five levers; the E5c ledger row's 'before' is levers short, montage, speed.",
+    "Golden director.json gained a per-pod `tempo` (max k, null if none) as the E5b review nit asked; Quasar and Pulsar moved (levers, estimate, forms), others only gained `tempo: null`. No other golden moved.",
+    "Folded E5b items done: pacingBuilt Pulsar <= 300 000 ms assertion; 05 §1 and B-19 and 03 clock text (pace(), remainingMs); director test checks tempo in its determinism serialisation; montage still."
+  ],
+  "limitations": [
+    "Quasar ends 1.8 s over the 300 s target (301 760 ms) with every lever pulled and k at the 2 ceiling; the cap is soft, report at the final check.",
+    "The montage still (work/E5/e5c-montage-plate.png, beat 15 of Quasar at +1000 ms, 2x tempo) shows the ships acting but the plate is not visibly drawn in the frame, although the note is in annotations() at that time; earlier offsets (+300, +700) show no note. Timing of the screenshot against 2x play is loose.",
+    "The 'ahead' exception and light-work events falling to `lights` are covered by the director test (light drafts absent from the plan) and a maneuvers test, not by an e2e case; at Calm a light move shows no sortie (out of scope per the packet).",
+    "pacing-candidates.ts E5 assumption text not changed (it has no light/fewer-heroes row)."
+  ]
+}

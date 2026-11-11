@@ -1,0 +1,16 @@
+{
+  "item": "F2", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "The build meets acceptance and the effect is visible in the gallery and at 1024x640. One Major: the new pacingBuilt F2 test runs `git show 2b33931`, which fails in CI's depth-1 checkout. Minors: the 22 B9 e2e exemption is too broad, and the gallery stills miss the act.",
+  "findings": { "blocker": 0, "major": 1, "minor": 2, "nit": 4 },
+  "lenses": [ { "finding": 5, "severity": "nit", "lens": "The effect where it's meant" } ],
+  "checks": [
+    { "cmd": "npm run -s typecheck && npm run -s lint && npm test --silent", "pass": true, "detail": "109 files, 1725 tests" },
+    { "cmd": "npm run pacing -- --candidates", "pass": true, "detail": "ledger md/json byte-identical to the working tree; no other file moved" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar solar-play solar-dense montage-names", "pass": true, "detail": "53 passed (Meteor 1024x640 is F1's expected test.fail)" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "STAR_CHART_WINDOW_SIZE=1024x640 npm run drive -- tests/drive/steps/solar-station.ts --paradigm solar", "pass": true, "detail": "blip and arrival seen; stills review-1-drive-*-1024.png" },
+    { "cmd": "throwaway gallery probe (facility.enter cell, fresh play, full and reduced)", "pass": true, "detail": "blip visible in both; errors []; stuck 0; stills review-1-gallery-*-act.png" },
+    { "cmd": "grep fetch-depth .github/workflows/ci.yml", "pass": false, "detail": "checks job (l.27) has a default depth-1 checkout; pacingBuilt.test.ts:165 needs commit 2b33931" }
+  ]
+}

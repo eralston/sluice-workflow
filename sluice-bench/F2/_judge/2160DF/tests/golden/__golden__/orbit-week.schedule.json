@@ -1,0 +1,173 @@
+{
+  "totalMs": 45000,
+  "beats": [
+    {
+      "index": 0,
+      "sourceUtc": "2026-09-14T16:10:00.000Z",
+      "firstUtc": "2026-09-14T16:10:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:201:r6",
+        "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:201:r7"
+      ],
+      "priority": "high",
+      "presentationStartMs": 1785,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 1,
+      "sourceUtc": "2026-09-14T17:00:00.000Z",
+      "firstUtc": "2026-09-14T17:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:401:r3",
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:402:r3"
+      ],
+      "priority": "mediumGroup",
+      "presentationStartMs": 4274,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 2,
+      "sourceUtc": "2026-09-14T22:00:00.000Z",
+      "firstUtc": "2026-09-14T22:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:102:r5",
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:211:r3",
+        "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:211:r4"
+      ],
+      "priority": "high",
+      "presentationStartMs": 4806,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 3,
+      "sourceUtc": "2026-09-15T17:30:00.000Z",
+      "firstUtc": "2026-09-15T17:30:00.000Z",
+      "eventKeys": [
+        "link_pr_added:wi:00000000-0000-4000-8000-000000000001:401:u4:pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+        "pr_opened:pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 8049,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 4,
+      "sourceUtc": "2026-09-15T18:00:00.000Z",
+      "firstUtc": "2026-09-15T18:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:301:r4"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 11175,
+      "durationMs": 2300,
+      "accented": true
+    },
+    {
+      "index": 5,
+      "sourceUtc": "2026-09-15T19:00:00.000Z",
+      "firstUtc": "2026-09-15T19:00:00.000Z",
+      "eventKeys": [
+        "link_pr_added:wi:00000000-0000-4000-8000-000000000001:301:u5:pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003",
+        "pr_opened:pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 14018,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 6,
+      "sourceUtc": "2026-09-16T16:20:00.000Z",
+      "firstUtc": "2026-09-16T16:20:00.000Z",
+      "eventKeys": [
+        "link_pr_added:wi:00000000-0000-4000-8000-000000000001:201:u8:pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002",
+        "pr_opened:pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 17272,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 7,
+      "sourceUtc": "2026-09-16T18:00:00.000Z",
+      "firstUtc": "2026-09-16T18:00:00.000Z",
+      "eventKeys": [
+        "link_parent_removed:wi:00000000-0000-4000-8000-000000000001:408:u3:wi:00000000-0000-4000-8000-000000000001:202",
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:403:r3"
+      ],
+      "priority": "mediumGroup",
+      "presentationStartMs": 20090,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 8,
+      "sourceUtc": "2026-09-16T21:00:00.000Z",
+      "firstUtc": "2026-09-16T21:00:00.000Z",
+      "eventKeys": [
+        "pr_opened:pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 20482,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 9,
+      "sourceUtc": "2026-09-17T15:00:00.000Z",
+      "firstUtc": "2026-09-17T15:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:204:r3",
+        "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:408:r4"
+      ],
+      "priority": "high",
+      "presentationStartMs": 23714,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 10,
+      "sourceUtc": "2026-09-17T17:00:00.000Z",
+      "firstUtc": "2026-09-17T17:00:00.000Z",
+      "eventKeys": [
+        "link_pr_added:wi:00000000-0000-4000-8000-000000000001:405:u3:pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9005",
+        "pr_opened:pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9005:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 26683,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 11,
+      "sourceUtc": "2026-09-17T20:30:00.000Z",
+      "firstUtc": "2026-09-17T20:30:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:201:r9",
+        "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:202:r8"
+      ],
+      "priority": "high",
+      "presentationStartMs": 29878,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 12,
+      "sourceUtc": "2026-09-18T17:45:00.000Z",
+      "firstUtc": "2026-09-18T17:45:00.000Z",
+      "eventKeys": [
+        "pr_completed:pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001:pr",
+        "pr_completed:pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 32931,
+      "durationMs": 10200,
+      "accented": true
+    }
+  ]
+}

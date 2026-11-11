@@ -1,0 +1,123 @@
+[
+  {
+    "pod": "Comet Pod",
+    "levers": [],
+    "estimateMs": 50145,
+    "tempo": null,
+    "forms": {},
+    "climaxes": [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:8f1c7adc-901c-4c6f-811c-7e02921c7f95:20001:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:8f1c7adc-901c-4c6f-811c-7e02921c7f95:20002:pr|attachment.merge"
+    ]
+  },
+  {
+    "pod": "Nova Pod",
+    "levers": [],
+    "estimateMs": 185455,
+    "tempo": null,
+    "forms": {
+      "short": 3,
+      "progress": 1,
+      "joined": 2
+    },
+    "climaxes": [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:9eb44536-9fb4-46c9-8cb4-42109db443a3:20104:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:9eb44536-9fb4-46c9-8cb4-42109db443a3:20106:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:9eb44536-9fb4-46c9-8cb4-42109db443a3:20108:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:9eb44536-9fb4-46c9-8cb4-42109db443a3:20111:pr|attachment.merge",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:10103:r10|objective.accomplish",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:10104:r12|threat.accomplish",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:10108:r10|threat.accomplish",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:10109:r9|objective.accomplish"
+    ]
+  },
+  {
+    "pod": "Quasar Pod",
+    "levers": [
+      "short",
+      "montage",
+      "speed",
+      "light"
+    ],
+    "estimateMs": 296041,
+    "tempo": 1.85,
+    "forms": {
+      "montage": 13,
+      "progress": 26,
+      "short": 30,
+      "light": 116,
+      "joined": 5
+    },
+    "climaxes": [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:03c888d1-02c8-473e-81c8-85ab00c88418:20303:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:11b46194-12b4-4327-83b4-64ba14b4664d:20311:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:11b46194-12b4-4327-83b4-64ba14b4664d:20342:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:9a06d012-9b06-41a5-8806-ccec9906ce7f:20301:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:aaebeec8-abeb-405b-8ceb-f1eeadebf381:20348:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:aaebeec8-abeb-405b-8ceb-f1eeadebf381:20349:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:add382bf-acd3-412c-8fd3-85e5aed38452:20319:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:faa3e07d-f9a3-4eea-88a3-dd57f7a3dbc4:20347:pr|attachment.merge",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:10421:r16|objective.accomplish",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:10431:r13|threat.accomplish"
+    ]
+  },
+  {
+    "pod": "Pulsar Pod",
+    "levers": [
+      "short",
+      "montage",
+      "speed"
+    ],
+    "estimateMs": 298298,
+    "tempo": 2,
+    "forms": {
+      "short": 26,
+      "progress": 7,
+      "joined": 4
+    },
+    "climaxes": [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:2beb7b8a-2ceb-4d1d-89eb-78642aeb79f7:20737:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:304c423d-2f4c-40aa-8e4c-3f172d4c3d84:20751:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:3b9f8744-3c9f-48d7-8d9f-8a6a3e9f8bfd:20708:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:3b9f8744-3c9f-48d7-8d9f-8a6a3e9f8bfd:20718:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:3b9f8744-3c9f-48d7-8d9f-8a6a3e9f8bfd:20724:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:5f7fd260-607f-43f3-817f-d586627fd719:20760:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:a8a1f3d4-a9a1-4567-8aa1-f6faaba1f88d:20719:pr|attachment.merge",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:11040:r12|objective.accomplish"
+    ]
+  },
+  {
+    "pod": "Convoy Planning Pod",
+    "levers": [],
+    "estimateMs": 178505,
+    "tempo": null,
+    "forms": {
+      "montage": 4
+    },
+    "climaxes": [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:77e576f2-78e5-4885-85e5-73cc76e5755f:56000:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:77e576f2-78e5-4885-85e5-73cc76e5755f:56004:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:853e3c83-843e-4af0-873e-3fa9863e3e16:56001:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:853e3c83-843e-4af0-873e-3fa9863e3e16:56002:pr|attachment.merge",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:55102:r5|objective.accomplish"
+    ]
+  },
+  {
+    "pod": "Harbor Pod",
+    "levers": [],
+    "estimateMs": 190805,
+    "tempo": null,
+    "forms": {
+      "montage": 1,
+      "joined": 1
+    },
+    "climaxes": [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:631cd0c5-621c-4f32-811c-cd9f601ccc0c:21007:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21000:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21001:pr|attachment.merge",
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21005:pr|attachment.merge",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:20101:r7|objective.accomplish",
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:20231:r5|threat.accomplish"
+    ]
+  }
+]

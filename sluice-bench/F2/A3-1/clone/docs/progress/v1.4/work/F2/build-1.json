@@ -1,0 +1,12 @@
+{
+  "item": "F2", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "blocked",
+  "summary": "No packet. docs/progress/v1.4/work/F2/packet.md and plan-1.json do not exist; the folder holds only probe-engine.diff (an unexplained planner probe patching scripts/pacing-built.ts with F2 entries that call a heldSummon helper in scripts/pacing-ledger.ts, which is not in the tree). The task says the packet's Approach is decided and I must not redesign; without it I would be inventing the design for a medium-risk schedule change (stationJumpIn maneuver, pace.ts phases, pursue pass-through, schedule goldens, ledger). No code or docs were changed.",
+  "checks": [],
+  "files": [],
+  "deviations": [],
+  "limitations": [
+    "Needs the planner to run first and write packet.md (Approach, Files, Checks, which schedule goldens move) for F2, then re-launch the builder.",
+    "probe-engine.diff suggests the planner's ledger plan: F2 and F2+ Built entries with passes/all flags and a heldSummon rule-set helper; it is not a substitute for the packet."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "$comment": "The Todo demo pack's mapping (docs/14-architecture.md §1.3; 17 W3-T2): a household's todos, read in engine terms. Fixture-only: no real source behind it. Same shape as config/state-mapping.json. Each state reuses a v0 stage key, so v0 views draw it unchanged, and its rung and flags equal that stage's on the signal ladder (tests/unit/packs.test.ts). Raw state names stay within 16 characters. 'entities.attachment' reads the notes and files filed against a shared context (a repo, such as Home), by their PR status.",
+  "version": 1,
+  "unknownStage": "unknown",
+  "types": {
+    "Todo": {
+      "kind": "story",
+      "role": "objective",
+      "states": {
+        "New":         { "category": "Proposed",   "stage": "story.uncharted",    "rung": "ready", "sketch": true },
+        "Planned":     { "category": "Proposed",   "stage": "story.surveyed",     "rung": "ready" },
+        "Someday":     { "category": "Proposed",   "stage": "story.dormant",      "rung": "ready", "deferred": true },
+        "Doing":       { "category": "InProgress", "stage": "story.terraforming", "rung": "underway" },
+        "Almost Done": { "category": "Resolved",   "stage": "story.developed",    "rung": "nearing", "step": 0.3 },
+        "Done":        { "category": "Completed",  "stage": "story.lush",         "rung": "accomplished" },
+        "Dropped":     { "category": "Removed",    "stage": "story.ghost",        "rung": "off", "ghost": true }
+      }
+    },
+    "Problem": {
+      "kind": "bug",
+      "role": "threat",
+      "states": {
+        "Spotted":       { "category": "Proposed",   "stage": "bug.detected",    "rung": "ready", "sketch": true },
+        "Confirmed":     { "category": "Proposed",   "stage": "bug.stable",      "rung": "ready" },
+        "Fixing":        { "category": "InProgress", "stage": "bug.disturbance", "rung": "underway" },
+        "Checking":      { "category": "Resolved",   "stage": "bug.contracted",  "rung": "nearing", "step": 0.3 },
+        "Fixed":         { "category": "Completed",  "stage": "bug.remnant",     "rung": "accomplished" },
+        "Dropped":       { "category": "Removed",    "stage": "bug.ghost",       "rung": "off", "ghost": true },
+        "Not a Problem": { "category": "Removed",    "stage": "bug.rejected",    "rung": "off", "ghost": true, "strike": true }
+      }
+    },
+    "Checklist Item": {
+      "kind": "task",
+      "role": "step",
+      "states": {
+        "Open":    { "category": "Proposed",   "stage": "task.unstarted", "rung": "ready", "sketch": true },
+        "Started": { "category": "InProgress", "stage": "task.lit",       "rung": "underway" },
+        "Checked": { "category": "Completed",  "stage": "task.settled",   "rung": "accomplished" },
+        "Skipped": { "category": "Removed",    "stage": "task.faint",     "rung": "off", "ghost": true }
+      }
+    }
+  },
+  "entities": {
+    "attachment": {
+      "states": {
+        "active":    { "category": "InProgress", "stage": "flight.active",    "rung": "underway" },
+        "completed": { "category": "Completed",  "stage": "flight.completed", "rung": "accomplished" },
+        "abandoned": { "category": "Removed",    "stage": "flight.abandoned", "rung": "off", "ghost": true }
+      }
+    }
+  }
+}

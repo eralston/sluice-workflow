@@ -1,0 +1,41 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "When the same captain has another turn waiting, the pass doesn't carry on to it. It always flies home to its rest, and the next sortie then flies out from there. Decided asks for 'its next sortie if one is waiting (E4's P4)', and P4 exists so that a captain never flies home between turns. The docs were rewritten to describe the departure ('ignores the wait') instead of the code implementing what Decided asks.",
+      "evidence": "src/renderer/src/chart/fx/movers.ts:258 `if (pass) { this.holdS = 0; this.waitS = 0; }` throws away the P4 wait that interpreter.ts:699-700 injects from nearWaits. movers.ts:324 `const home = this.scene.goalOf(this.pk) ?? this.start` is the pass's only destination, reached over backS 0.8 s, which is 1.515 s into the maneuver. crewBusy → nearStartMs(start, workEndOf=1915, release=715, …) (maneuvers.ts:131, 322) means the same captain's next gather can't start before 1915 ms, so the ship is already parked at home when it sets off again. 05 P-7 and 15 §10 Stay near now say 'A pass … ignores the wait, and the next sortie sets off from the ship's place'."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "When the summoner has no ship in the region and flies as a guest, the call blip is drawn at the station's centre instead of at the summoner. It lands inside the station's own bloom ring, so the guest's summon loses the summoner→station cause and effect that Decided (R8, R10) asks for.",
+      "evidence": "src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts:34-35 places the guest at `spot` (1.9 R out). stationJumpIn.ts:46-48: `const blip = a ? cmd.ring({ at: a.at, … }) : cmd.ring({ at: f.at, r: r * 0.35, r1: r * 0.8, … })`. `a = present(c, 'agent')[0]` doesn't include the away guest, so the fallback draws the ring at f.at, next to the station ring at f.at (r 0.7R–1.6R). No test covers a guest blip."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "On the directed measure the ledger shows Meteor, the 36-summon pod this item is aimed at, getting longer: F2's row reads −7.8 s and the pod table's App s rises 275.9 → 296.1 s. A hand-written note explains the gap with undirected savings (13.9, 21.3, 24.3 s), but only Meteor's '> 10 s' is checked; the Quasar and Pulsar figures are prose that no test verifies.",
+      "evidence": "docs/progress/v1.4/pacing-ledger.md: `| F2 Summon on the fly | Meteor Pod | 284.7 | 292.5 | -7.8 | 0.0 | -7.8 |` and `| Meteor Pod | 296.1 | 292.5 | …` (was `275.9 | 284.7`). scripts/pacing-built.ts:199 note string. tests/unit/pacingBuilt.test.ts:1079 only asserts `saved.get('Meteor Pod') > 10_000`."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The docs say the pass's plate stays whole for NOTE_MIN_MS 'on a moving ship'. In the code the ship stops at its rest 0.8 s after the blip, but the plate is only whole from 0.52 s to 2.32 s after the blip, so it rides a moving ship for about 0.28 s of its 1.8 s.",
+      "evidence": "docs/15-reference.md NOTE_MIN_MS row: 'A pass's plate (27 F2) is whole this long on a moving ship'. docs/05-playback.md K-4: 'A pass's plate (27 F2) rides a moving ship: it unfurls at the blip, stays whole for NOTE_MIN_MS'. stationJumpIn.ts:32 sets backS 0.8 and nameS (2·520+1800)/1000. movers.ts:362 opens the plate over [0, nameS] with a 0.52 s unfurl."
+    },
+    {
+      "severity": "Nit",
+      "rules": true,
+      "summary": "13 §6 calls the call blip 'an at-rest-blue ring at twice the ship's radius', but the code draws a ring that grows from 1.4× to 3.2× the ship's radius. That is the station ring's 0.7–1.6 shape doubled, not a ring at 2×. Test (c) also checks the shape with toBeCloseTo(…, 0), which tolerates ±0.5 on a ratio of 2.29.",
+      "evidence": "docs/13-game-design.md:685 '(an at-rest-blue ring at twice the ship's radius)'. stationJumpIn.ts:47 `r: drawnR(a) * 1.4, r1: drawnR(a) * 3.2`. tests/unit/commands.test.ts (diff line 933) `toBeCloseTo(1.6 / 0.7, 0)`."
+    }
+  ],
+  "acceptance": {
+    "1": "partial: the existing gallery-assets e2e ('every maneuver demo runs and clears, in full and reduced motion, with no console errors') covers the jump-in cell, but it wasn't run here and the change has no evidence of a run",
+    "2": "met: commands.test (d) shows the pass mover never stops between the spot and its place and ignores holdS/waitS; (e) shows the blip ring and the station jump fall within 50 ms, in full and reduced motion (vitest: 286 passed)",
+    "3": "met: the 15 §7 row is 1915 and docTables passes; director.json is the only golden that names facility.enter's effects and it moved. Can't confirm the packet names each change, since the process records were removed",
+    "4": "partial: the Built section has an F2 row for each of the 7 pods, but Meteor, the target pod, reads −7.8 s directed, and only a hand-written note gives the undirected saving"
+  },
+  "summary": "The change makes the summon a pass: phases gather 715 + act 1200, with a call blip that fires in the same tick as the station's jump; a Hermite pass mover with its plate riding the ship; and crewTimes/heldMs taught about passes. Docs 03, 05, 13 and 15 are kept in step, and typecheck plus the unit, golden and ledger tests pass. The main gap is that a pass ignores a waiting next turn and always flies home first, so the 'next sortie if one is waiting' part of Decided isn't built. The guest blip and the ledger's Meteor regression are smaller loose ends."
+}

@@ -1,0 +1,22 @@
+{ "item": "A2", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Removed PieceState.outcomes and the o= stage field; seat looks keep world.<pct>.m0r0; docs 03/05/14 amended.",
+  "checks": [
+    {"cmd": "npm run typecheck / lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test", "pass": true, "detail": "96 files, 1414 tests, incl. stageCode, assetStage, docTables"},
+    {"cmd": "grep -rn outcomes src/shared", "pass": true, "detail": "empty"},
+    {"cmd": "e2e:spec -- gallery-v1 gallery-assets", "pass": true, "detail": "8 passed (after the label fix in deviations)"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"}
+  ],
+  "files": ["src/shared/contracts/view.ts", "src/shared/scene/project/solar.ts", "src/shared/engine/stageCode.ts",
+    "src/renderer/src/theme/starChart/stageCodec.ts", "src/renderer/src/theme/starChart/assets/seat.ts",
+    "src/renderer/src/chart/art/worlds.ts", "tests/unit/stageCode.test.ts", "tests/unit/assetStage.test.ts",
+    "docs/03-contracts.md", "docs/05-playback.md", "docs/14-architecture.md"],
+  "deviations": [
+    "seat.ts sample step label is `own share <n> · nothing counted on the surface`, not the bare `own share <n>`: the shorter label made the caption wrap one line less and the v1-worlds alignment check failed at 16 px (confirmed by reverting my files: 5 passed; with the short label: failed; with the longer label: 8 passed). The packet did not name the exact label text.",
+    "03 gets a doc amendment (PieceState block, stage grammar, seat row, seatLook line); call it out in the handoff. 03 line 866-868 grammar and 14's other mentions updated too."
+  ],
+  "limitations": [
+    "Did not eyeball the gallery *-outcomes cell stills; they bypass the removed field and gallery-v1 (which screenshots every cell and checks alignment) passes. No golden moved.",
+    "Other items' edits (holo, stations, 06) were present in the working tree during e2e; not mine."
+  ] }

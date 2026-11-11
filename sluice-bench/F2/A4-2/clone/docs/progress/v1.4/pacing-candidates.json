@@ -1,0 +1,1031 @@
+{
+  "pods": [
+    {
+      "label": "Comet Pod",
+      "baselineMs": 61845,
+      "rows": [
+        {
+          "id": "E1",
+          "name": "Fewer signals",
+          "method": "R",
+          "assumption": "facility.enter gather 1300 -> 715 ms (the summoner's flight, 55%, stays; the three beacon pulses and bearing go). Other cut effects cost no schedule time: a floor, E1's value is attention. Built (E1): today's rules already have it, so this row reads 0; see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 1,
+          "detail": "1 facility entrances, gather 1300 -> 715"
+        },
+        {
+          "id": "E2",
+          "name": "Labels on arrival",
+          "method": "P",
+          "assumption": "Built (E2): today's rules already have it, so this row reads about 0; see the build record. A P-6 wait starts tell + gather of its own earlier (it travels while waiting, claims its labels at its act). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 0,
+          "detail": "0 waits start earlier"
+        },
+        {
+          "id": "E3",
+          "name": "Progress beam (enabler)",
+          "method": "-",
+          "assumption": "Enabler: used by E5, which carries the saving; alone it costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "E4a",
+          "name": "Transform from gather (U1)",
+          "method": "R",
+          "assumption": "Built (E4a): today's rules already have it, so this row reads about 0; see *Built*. A first merge's 4.4 s transform starts at its gather and the station fires as it ends: tell 300, gather 900, act 2300, land 500, echo 3000, disperse 900, holds the facility (3.2 s saved per first merge; C2 modelled act 3500, 2.0 s).",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 1,
+          "detail": "1 first merge, 3.2 s each"
+        },
+        {
+          "id": "E4b",
+          "name": "Overlap neighbours (P3)",
+          "method": "P",
+          "assumption": "Built (E4b): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on attention places, or on a shared actor). P-4 and P-6 waits start min(predecessor echo + disperse, own tell + gather) earlier (P-3 and P-5 share an actor, which P3 forbids). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 0,
+          "detail": "0 waits start earlier"
+        },
+        {
+          "id": "E4c",
+          "name": "Captain waits near (P4)",
+          "method": "P",
+          "assumption": "Built (E4c): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on a protected pair, or on the attention budget). A P-5 wait starts (predecessor end - its crew close) earlier, floored at 0: the captain waits near instead of leaving. No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 3360,
+          "savingPct": 5.4,
+          "estTotalMs": 58485,
+          "touched": 3,
+          "detail": "3 waits start earlier"
+        },
+        {
+          "id": "E4d",
+          "name": "Short forms (P7)",
+          "method": "R",
+          "assumption": "Built (E4d): the short forms exist, unused until E5; see *Built* for the real ceiling. A ceiling (the director picks which): every protected rule and its variants has each phase x 0.6, except a close's land; the captain's plate minimums still floor it.",
+          "savingMs": 11190,
+          "savingPct": 18.1,
+          "estTotalMs": 50655,
+          "touched": 6,
+          "detail": "6 protected moments, phases x 0.6 (a close's land stays 1200 ms)"
+        },
+        {
+          "id": "E5",
+          "name": "The director",
+          "method": "R",
+          "assumption": "Built (E5a): the pass picks each moment's form; see *Built*. Modelled here: merges with no arc close, minus each author's first merge and each day's climax, become a 1.5 s progress beam. Trade-down and the target are not modelled: E5 + E4d is its ceiling.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 0,
+          "detail": "0 of 2 merges replaced by a 1.5 s beam; every merge is exempt (each author's first merge or a day's climax), so E5 is not exercised in this pod"
+        },
+        {
+          "id": "E6",
+          "name": "Multi-fire volleys",
+          "method": "R",
+          "assumption": "Built (E6): merges into one facility within 20 s of x on one day play as one volley, under the B-15 guard; see *Built*. Modelled here: per facility, merges within 10 s of a group's first (same day) play only their split beam (echo 1500 ms, no gather, no held turn). The union formation's labels are not modelled.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 0,
+          "detail": "0 merges join 2 volleys (2 merges)"
+        },
+        {
+          "id": "E7",
+          "name": "Sector sweep",
+          "method": "R",
+          "assumption": "A lower bound (within a beat only): the first of n >= 2 creations sweeps (tell 300, act 900 + 250 x (n-1), echo 400) and the others are dropped. Built (E7): a beat with 4 or more creations plays one Sector sweep (tell 300, act min(2000, 110 x n) + 1000, echo 400); see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 0,
+          "detail": "0 creations fold into 0 sweeps"
+        },
+        {
+          "id": "E8",
+          "name": "Tighter frame",
+          "method": "F",
+          "assumption": "Day turns keep 0.6 of themselves, last-day gaps and the tail gap 0.7, floored at 500 ms. Expected 0 s: every pod is over budget and already squeezed to 500 ms. Widening early days is ignored.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 8,
+          "detail": "6 day turns, 2 last-day gaps"
+        },
+        {
+          "id": "E8-250",
+          "name": "Tighter frame (floor 250 ms)",
+          "method": "F",
+          "assumption": "As E8 with a 250 ms floor: a sensitivity row (gaps squeezed further than the engine's minimum).",
+          "savingMs": 1500,
+          "savingPct": 2.4,
+          "estTotalMs": 60345,
+          "touched": 8,
+          "detail": "6 day turns, 2 last-day gaps"
+        },
+        {
+          "id": "E9",
+          "name": "Camera",
+          "method": "-",
+          "assumption": "Renderer-only: the camera costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 61845,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "Stack",
+          "name": "Stack",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows.",
+          "savingMs": 3360,
+          "savingPct": 5.4,
+          "estTotalMs": 58485,
+          "touched": 5,
+          "detail": "E1: 1 facility entrances, gather 1300 -> 715; E4a: 1 first merge, 3.2 s each; E5: 0 of 2 merges replaced by a 1.5 s beam; every merge is exempt (each author's first merge or a day's climax), so E5 is not exercised in this pod; E6: 0 merges join 2 volleys (2 merges); E7: 0 creations fold into 0 sweeps; P: 3 waits advanced (3.4 s); F: 0.0 s"
+        },
+        {
+          "id": "Stack+short",
+          "name": "Stack + short forms",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows. Plus E4d (short forms), last, a ceiling.",
+          "savingMs": 13390,
+          "savingPct": 21.7,
+          "estTotalMs": 48455,
+          "touched": 11,
+          "detail": "E1: 1 facility entrances, gather 1300 -> 715; E4a: 1 first merge, 3.2 s each; E5: 0 of 2 merges replaced by a 1.5 s beam; every merge is exempt (each author's first merge or a day's climax), so E5 is not exercised in this pod; E6: 0 merges join 2 volleys (2 merges); E7: 0 creations fold into 0 sweeps; E4d: 6 protected moments, phases x 0.6 (a close's land stays 1200 ms); P: 3 waits advanced (2.2 s); F: 0.0 s"
+        }
+      ]
+    },
+    {
+      "label": "Nova Pod",
+      "baselineMs": 233735,
+      "rows": [
+        {
+          "id": "E1",
+          "name": "Fewer signals",
+          "method": "R",
+          "assumption": "facility.enter gather 1300 -> 715 ms (the summoner's flight, 55%, stays; the three beacon pulses and bearing go). Other cut effects cost no schedule time: a floor, E1's value is attention. Built (E1): today's rules already have it, so this row reads 0; see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 233735,
+          "touched": 1,
+          "detail": "1 facility entrances, gather 1300 -> 715"
+        },
+        {
+          "id": "E2",
+          "name": "Labels on arrival",
+          "method": "P",
+          "assumption": "Built (E2): today's rules already have it, so this row reads about 0; see the build record. A P-6 wait starts tell + gather of its own earlier (it travels while waiting, claims its labels at its act). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 233735,
+          "touched": 0,
+          "detail": "0 waits start earlier"
+        },
+        {
+          "id": "E3",
+          "name": "Progress beam (enabler)",
+          "method": "-",
+          "assumption": "Enabler: used by E5, which carries the saving; alone it costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 233735,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "E4a",
+          "name": "Transform from gather (U1)",
+          "method": "R",
+          "assumption": "Built (E4a): today's rules already have it, so this row reads about 0; see *Built*. A first merge's 4.4 s transform starts at its gather and the station fires as it ends: tell 300, gather 900, act 2300, land 500, echo 3000, disperse 900, holds the facility (3.2 s saved per first merge; C2 modelled act 3500, 2.0 s).",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 233735,
+          "touched": 1,
+          "detail": "1 first merge, 3.2 s each"
+        },
+        {
+          "id": "E4b",
+          "name": "Overlap neighbours (P3)",
+          "method": "P",
+          "assumption": "Built (E4b): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on attention places, or on a shared actor). P-4 and P-6 waits start min(predecessor echo + disperse, own tell + gather) earlier (P-3 and P-5 share an actor, which P3 forbids). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 233735,
+          "touched": 0,
+          "detail": "0 waits start earlier"
+        },
+        {
+          "id": "E4c",
+          "name": "Captain waits near (P4)",
+          "method": "P",
+          "assumption": "Built (E4c): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on a protected pair, or on the attention budget). A P-5 wait starts (predecessor end - its crew close) earlier, floored at 0: the captain waits near instead of leaving. No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 2460,
+          "savingPct": 1.1,
+          "estTotalMs": 231275,
+          "touched": 3,
+          "detail": "3 waits start earlier"
+        },
+        {
+          "id": "E4d",
+          "name": "Short forms (P7)",
+          "method": "R",
+          "assumption": "Built (E4d): the short forms exist, unused until E5; see *Built* for the real ceiling. A ceiling (the director picks which): every protected rule and its variants has each phase x 0.6, except a close's land; the captain's plate minimums still floor it.",
+          "savingMs": 46960,
+          "savingPct": 20.1,
+          "estTotalMs": 186775,
+          "touched": 21,
+          "detail": "21 protected moments, phases x 0.6 (a close's land stays 1200 ms)"
+        },
+        {
+          "id": "E5",
+          "name": "The director",
+          "method": "R",
+          "assumption": "Built (E5a): the pass picks each moment's form; see *Built*. Modelled here: merges with no arc close, minus each author's first merge and each day's climax, become a 1.5 s progress beam. Trade-down and the target are not modelled: E5 + E4d is its ceiling.",
+          "savingMs": 11100,
+          "savingPct": 4.7,
+          "estTotalMs": 222635,
+          "touched": 2,
+          "detail": "2 of 10 merges replaced by a 1.5 s beam"
+        },
+        {
+          "id": "E6",
+          "name": "Multi-fire volleys",
+          "method": "R",
+          "assumption": "Built (E6): merges into one facility within 20 s of x on one day play as one volley, under the B-15 guard; see *Built*. Modelled here: per facility, merges within 10 s of a group's first (same day) play only their split beam (echo 1500 ms, no gather, no held turn). The union formation's labels are not modelled.",
+          "savingMs": 5400,
+          "savingPct": 2.3,
+          "estTotalMs": 228335,
+          "touched": 1,
+          "detail": "1 merge joins 9 volleys (10 merges)"
+        },
+        {
+          "id": "E7",
+          "name": "Sector sweep",
+          "method": "R",
+          "assumption": "A lower bound (within a beat only): the first of n >= 2 creations sweeps (tell 300, act 900 + 250 x (n-1), echo 400) and the others are dropped. Built (E7): a beat with 4 or more creations plays one Sector sweep (tell 300, act min(2000, 110 x n) + 1000, echo 400); see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 233735,
+          "touched": 0,
+          "detail": "0 creations fold into 0 sweeps"
+        },
+        {
+          "id": "E8",
+          "name": "Tighter frame",
+          "method": "F",
+          "assumption": "Day turns keep 0.6 of themselves, last-day gaps and the tail gap 0.7, floored at 500 ms. Expected 0 s: every pod is over budget and already squeezed to 500 ms. Widening early days is ignored.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 233735,
+          "touched": 11,
+          "detail": "8 day turns, 3 last-day gaps"
+        },
+        {
+          "id": "E8-250",
+          "name": "Tighter frame (floor 250 ms)",
+          "method": "F",
+          "assumption": "As E8 with a 250 ms floor: a sensitivity row (gaps squeezed further than the engine's minimum).",
+          "savingMs": 2050,
+          "savingPct": 0.9,
+          "estTotalMs": 231685,
+          "touched": 11,
+          "detail": "8 day turns, 3 last-day gaps"
+        },
+        {
+          "id": "E9",
+          "name": "Camera",
+          "method": "-",
+          "assumption": "Renderer-only: the camera costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 233735,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "Stack",
+          "name": "Stack",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows.",
+          "savingMs": 13560,
+          "savingPct": 5.8,
+          "estTotalMs": 220175,
+          "touched": 8,
+          "detail": "E1: 1 facility entrances, gather 1300 -> 715; E4a: 1 first merge, 3.2 s each; E5: 2 of 10 merges replaced by a 1.5 s beam; E6: 1 merge joins 9 volleys (10 merges); E7: 0 creations fold into 0 sweeps; P: 3 waits advanced (2.5 s); F: 0.0 s"
+        },
+        {
+          "id": "Stack+short",
+          "name": "Stack + short forms",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows. Plus E4d (short forms), last, a ceiling.",
+          "savingMs": 52560,
+          "savingPct": 22.5,
+          "estTotalMs": 181175,
+          "touched": 29,
+          "detail": "E1: 1 facility entrances, gather 1300 -> 715; E4a: 1 first merge, 3.2 s each; E5: 2 of 10 merges replaced by a 1.5 s beam; E6: 1 merge joins 9 volleys (10 merges); E7: 0 creations fold into 0 sweeps; E4d: 21 protected moments, phases x 0.6 (a close's land stays 1200 ms); P: 3 waits advanced (1.9 s); F: 0.0 s"
+        }
+      ]
+    },
+    {
+      "label": "Quasar Pod",
+      "baselineMs": 1036040,
+      "rows": [
+        {
+          "id": "E1",
+          "name": "Fewer signals",
+          "method": "R",
+          "assumption": "facility.enter gather 1300 -> 715 ms (the summoner's flight, 55%, stays; the three beacon pulses and bearing go). Other cut effects cost no schedule time: a floor, E1's value is attention. Built (E1): today's rules already have it, so this row reads 0; see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 1036040,
+          "touched": 8,
+          "detail": "8 facility entrances, gather 1300 -> 715"
+        },
+        {
+          "id": "E2",
+          "name": "Labels on arrival",
+          "method": "P",
+          "assumption": "Built (E2): today's rules already have it, so this row reads about 0; see the build record. A P-6 wait starts tell + gather of its own earlier (it travels while waiting, claims its labels at its act). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 1036040,
+          "touched": 0,
+          "detail": "0 waits start earlier"
+        },
+        {
+          "id": "E3",
+          "name": "Progress beam (enabler)",
+          "method": "-",
+          "assumption": "Enabler: used by E5, which carries the saving; alone it costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 1036040,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "E4a",
+          "name": "Transform from gather (U1)",
+          "method": "R",
+          "assumption": "Built (E4a): today's rules already have it, so this row reads about 0; see *Built*. A first merge's 4.4 s transform starts at its gather and the station fires as it ends: tell 300, gather 900, act 2300, land 500, echo 3000, disperse 900, holds the facility (3.2 s saved per first merge; C2 modelled act 3500, 2.0 s).",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 1036040,
+          "touched": 8,
+          "detail": "8 first merges, 3.2 s each"
+        },
+        {
+          "id": "E4b",
+          "name": "Overlap neighbours (P3)",
+          "method": "P",
+          "assumption": "Built (E4b): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on attention places, or on a shared actor). P-4 and P-6 waits start min(predecessor echo + disperse, own tell + gather) earlier (P-3 and P-5 share an actor, which P3 forbids). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 1036040,
+          "touched": 0,
+          "detail": "0 waits start earlier"
+        },
+        {
+          "id": "E4c",
+          "name": "Captain waits near (P4)",
+          "method": "P",
+          "assumption": "Built (E4c): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on a protected pair, or on the attention budget). A P-5 wait starts (predecessor end - its crew close) earlier, floored at 0: the captain waits near instead of leaving. No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 19760,
+          "savingPct": 1.9,
+          "estTotalMs": 1016280,
+          "touched": 19,
+          "detail": "19 waits start earlier"
+        },
+        {
+          "id": "E4d",
+          "name": "Short forms (P7)",
+          "method": "R",
+          "assumption": "Built (E4d): the short forms exist, unused until E5; see *Built* for the real ceiling. A ceiling (the director picks which): every protected rule and its variants has each phase x 0.6, except a close's land; the captain's plate minimums still floor it.",
+          "savingMs": 240500,
+          "savingPct": 23.2,
+          "estTotalMs": 795540,
+          "touched": 97,
+          "detail": "97 protected moments, phases x 0.6 (a close's land stays 1200 ms)"
+        },
+        {
+          "id": "E5",
+          "name": "The director",
+          "method": "R",
+          "assumption": "Built (E5a): the pass picks each moment's form; see *Built*. Modelled here: merges with no arc close, minus each author's first merge and each day's climax, become a 1.5 s progress beam. Trade-down and the target are not modelled: E5 + E4d is its ceiling.",
+          "savingMs": 308880,
+          "savingPct": 29.8,
+          "estTotalMs": 727160,
+          "touched": 53,
+          "detail": "53 of 66 merges replaced by a 1.5 s beam"
+        },
+        {
+          "id": "E6",
+          "name": "Multi-fire volleys",
+          "method": "R",
+          "assumption": "Built (E6): merges into one facility within 20 s of x on one day play as one volley, under the B-15 guard; see *Built*. Modelled here: per facility, merges within 10 s of a group's first (same day) play only their split beam (echo 1500 ms, no gather, no held turn). The union formation's labels are not modelled.",
+          "savingMs": 11100,
+          "savingPct": 1.1,
+          "estTotalMs": 1024940,
+          "touched": 2,
+          "detail": "2 merges join 64 volleys (66 merges)"
+        },
+        {
+          "id": "E7",
+          "name": "Sector sweep",
+          "method": "R",
+          "assumption": "A lower bound (within a beat only): the first of n >= 2 creations sweeps (tell 300, act 900 + 250 x (n-1), echo 400) and the others are dropped. Built (E7): a beat with 4 or more creations plays one Sector sweep (tell 300, act min(2000, 110 x n) + 1000, echo 400); see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 1036040,
+          "touched": 0,
+          "detail": "0 creations fold into 0 sweeps"
+        },
+        {
+          "id": "E8",
+          "name": "Tighter frame",
+          "method": "F",
+          "assumption": "Day turns keep 0.6 of themselves, last-day gaps and the tail gap 0.7, floored at 500 ms. Expected 0 s: every pod is over budget and already squeezed to 500 ms. Widening early days is ignored.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 1036040,
+          "touched": 10,
+          "detail": "9 day turns, 1 last-day gaps"
+        },
+        {
+          "id": "E8-250",
+          "name": "Tighter frame (floor 250 ms)",
+          "method": "F",
+          "assumption": "As E8 with a 250 ms floor: a sensitivity row (gaps squeezed further than the engine's minimum).",
+          "savingMs": 1950,
+          "savingPct": 0.2,
+          "estTotalMs": 1034090,
+          "touched": 10,
+          "detail": "9 day turns, 1 last-day gaps"
+        },
+        {
+          "id": "E9",
+          "name": "Camera",
+          "method": "-",
+          "assumption": "Renderer-only: the camera costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 1036040,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "Stack",
+          "name": "Stack",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows.",
+          "savingMs": 313420,
+          "savingPct": 30.3,
+          "estTotalMs": 722620,
+          "touched": 78,
+          "detail": "E1: 8 facility entrances, gather 1300 -> 715; E4a: 8 first merges, 3.2 s each; E5: 53 of 66 merges replaced by a 1.5 s beam; E6: 2 merges join 64 volleys (66 merges); E7: 0 creations fold into 0 sweeps; P: 7 waits advanced (4.5 s); F: 0.0 s"
+        },
+        {
+          "id": "Stack+short",
+          "name": "Stack + short forms",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows. Plus E4d (short forms), last, a ceiling.",
+          "savingMs": 388260,
+          "savingPct": 37.5,
+          "estTotalMs": 647780,
+          "touched": 175,
+          "detail": "E1: 8 facility entrances, gather 1300 -> 715; E4a: 8 first merges, 3.2 s each; E5: 53 of 66 merges replaced by a 1.5 s beam; E6: 2 merges join 64 volleys (66 merges); E7: 0 creations fold into 0 sweeps; E4d: 97 protected moments, phases x 0.6 (a close's land stays 1200 ms); P: 7 waits advanced (4.0 s); F: 0.0 s"
+        }
+      ]
+    },
+    {
+      "label": "Pulsar Pod",
+      "baselineMs": 654195,
+      "rows": [
+        {
+          "id": "E1",
+          "name": "Fewer signals",
+          "method": "R",
+          "assumption": "facility.enter gather 1300 -> 715 ms (the summoner's flight, 55%, stays; the three beacon pulses and bearing go). Other cut effects cost no schedule time: a floor, E1's value is attention. Built (E1): today's rules already have it, so this row reads 0; see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 654195,
+          "touched": 9,
+          "detail": "9 facility entrances, gather 1300 -> 715"
+        },
+        {
+          "id": "E2",
+          "name": "Labels on arrival",
+          "method": "P",
+          "assumption": "Built (E2): today's rules already have it, so this row reads about 0; see the build record. A P-6 wait starts tell + gather of its own earlier (it travels while waiting, claims its labels at its act). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 654195,
+          "touched": 0,
+          "detail": "0 waits start earlier"
+        },
+        {
+          "id": "E3",
+          "name": "Progress beam (enabler)",
+          "method": "-",
+          "assumption": "Enabler: used by E5, which carries the saving; alone it costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 654195,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "E4a",
+          "name": "Transform from gather (U1)",
+          "method": "R",
+          "assumption": "Built (E4a): today's rules already have it, so this row reads about 0; see *Built*. A first merge's 4.4 s transform starts at its gather and the station fires as it ends: tell 300, gather 900, act 2300, land 500, echo 3000, disperse 900, holds the facility (3.2 s saved per first merge; C2 modelled act 3500, 2.0 s).",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 654195,
+          "touched": 8,
+          "detail": "8 first merges, 3.2 s each"
+        },
+        {
+          "id": "E4b",
+          "name": "Overlap neighbours (P3)",
+          "method": "P",
+          "assumption": "Built (E4b): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on attention places, or on a shared actor). P-4 and P-6 waits start min(predecessor echo + disperse, own tell + gather) earlier (P-3 and P-5 share an actor, which P3 forbids). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 654195,
+          "touched": 0,
+          "detail": "0 waits start earlier"
+        },
+        {
+          "id": "E4c",
+          "name": "Captain waits near (P4)",
+          "method": "P",
+          "assumption": "Built (E4c): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on a protected pair, or on the attention budget). A P-5 wait starts (predecessor end - its crew close) earlier, floored at 0: the captain waits near instead of leaving. No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 11920,
+          "savingPct": 1.8,
+          "estTotalMs": 642275,
+          "touched": 16,
+          "detail": "16 waits start earlier"
+        },
+        {
+          "id": "E4d",
+          "name": "Short forms (P7)",
+          "method": "R",
+          "assumption": "Built (E4d): the short forms exist, unused until E5; see *Built* for the real ceiling. A ceiling (the director picks which): every protected rule and its variants has each phase x 0.6, except a close's land; the captain's plate minimums still floor it.",
+          "savingMs": 134340,
+          "savingPct": 20.5,
+          "estTotalMs": 519855,
+          "touched": 63,
+          "detail": "63 protected moments, phases x 0.6 (a close's land stays 1200 ms)"
+        },
+        {
+          "id": "E5",
+          "name": "The director",
+          "method": "R",
+          "assumption": "Built (E5a): the pass picks each moment's form; see *Built*. Modelled here: merges with no arc close, minus each author's first merge and each day's climax, become a 1.5 s progress beam. Trade-down and the target are not modelled: E5 + E4d is its ceiling.",
+          "savingMs": 80220,
+          "savingPct": 12.3,
+          "estTotalMs": 573975,
+          "touched": 14,
+          "detail": "14 of 30 merges replaced by a 1.5 s beam"
+        },
+        {
+          "id": "E6",
+          "name": "Multi-fire volleys",
+          "method": "R",
+          "assumption": "Built (E6): merges into one facility within 20 s of x on one day play as one volley, under the B-15 guard; see *Built*. Modelled here: per facility, merges within 10 s of a group's first (same day) play only their split beam (echo 1500 ms, no gather, no held turn). The union formation's labels are not modelled.",
+          "savingMs": 10800,
+          "savingPct": 1.7,
+          "estTotalMs": 643395,
+          "touched": 2,
+          "detail": "2 merges join 28 volleys (30 merges)"
+        },
+        {
+          "id": "E7",
+          "name": "Sector sweep",
+          "method": "R",
+          "assumption": "A lower bound (within a beat only): the first of n >= 2 creations sweeps (tell 300, act 900 + 250 x (n-1), echo 400) and the others are dropped. Built (E7): a beat with 4 or more creations plays one Sector sweep (tell 300, act min(2000, 110 x n) + 1000, echo 400); see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 654195,
+          "touched": 0,
+          "detail": "0 creations fold into 0 sweeps"
+        },
+        {
+          "id": "E8",
+          "name": "Tighter frame",
+          "method": "F",
+          "assumption": "Day turns keep 0.6 of themselves, last-day gaps and the tail gap 0.7, floored at 500 ms. Expected 0 s: every pod is over budget and already squeezed to 500 ms. Widening early days is ignored.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 654195,
+          "touched": 17,
+          "detail": "8 day turns, 9 last-day gaps"
+        },
+        {
+          "id": "E8-250",
+          "name": "Tighter frame (floor 250 ms)",
+          "method": "F",
+          "assumption": "As E8 with a 250 ms floor: a sensitivity row (gaps squeezed further than the engine's minimum).",
+          "savingMs": 2950,
+          "savingPct": 0.5,
+          "estTotalMs": 651245,
+          "touched": 17,
+          "detail": "8 day turns, 9 last-day gaps"
+        },
+        {
+          "id": "E9",
+          "name": "Camera",
+          "method": "-",
+          "assumption": "Renderer-only: the camera costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 654195,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "Stack",
+          "name": "Stack",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows.",
+          "savingMs": 92140,
+          "savingPct": 14.1,
+          "estTotalMs": 562055,
+          "touched": 49,
+          "detail": "E1: 9 facility entrances, gather 1300 -> 715; E4a: 8 first merges, 3.2 s each; E5: 14 of 30 merges replaced by a 1.5 s beam; E6: 2 merges join 28 volleys (30 merges); E7: 0 creations fold into 0 sweeps; P: 16 waits advanced (11.9 s); F: 0.0 s"
+        },
+        {
+          "id": "Stack+short",
+          "name": "Stack + short forms",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows. Plus E4d (short forms), last, a ceiling.",
+          "savingMs": 179760,
+          "savingPct": 27.5,
+          "estTotalMs": 474435,
+          "touched": 112,
+          "detail": "E1: 9 facility entrances, gather 1300 -> 715; E4a: 8 first merges, 3.2 s each; E5: 14 of 30 merges replaced by a 1.5 s beam; E6: 2 merges join 28 volleys (30 merges); E7: 0 creations fold into 0 sweeps; E4d: 63 protected moments, phases x 0.6 (a close's land stays 1200 ms); P: 16 waits advanced (9.6 s); F: 0.0 s"
+        }
+      ]
+    },
+    {
+      "label": "Convoy Planning Pod",
+      "baselineMs": 183525,
+      "rows": [
+        {
+          "id": "E1",
+          "name": "Fewer signals",
+          "method": "R",
+          "assumption": "facility.enter gather 1300 -> 715 ms (the summoner's flight, 55%, stays; the three beacon pulses and bearing go). Other cut effects cost no schedule time: a floor, E1's value is attention. Built (E1): today's rules already have it, so this row reads 0; see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 3,
+          "detail": "3 facility entrances, gather 1300 -> 715"
+        },
+        {
+          "id": "E2",
+          "name": "Labels on arrival",
+          "method": "P",
+          "assumption": "Built (E2): today's rules already have it, so this row reads about 0; see the build record. A P-6 wait starts tell + gather of its own earlier (it travels while waiting, claims its labels at its act). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 9,
+          "detail": "9 waits start earlier"
+        },
+        {
+          "id": "E3",
+          "name": "Progress beam (enabler)",
+          "method": "-",
+          "assumption": "Enabler: used by E5, which carries the saving; alone it costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "E4a",
+          "name": "Transform from gather (U1)",
+          "method": "R",
+          "assumption": "Built (E4a): today's rules already have it, so this row reads about 0; see *Built*. A first merge's 4.4 s transform starts at its gather and the station fires as it ends: tell 300, gather 900, act 2300, land 500, echo 3000, disperse 900, holds the facility (3.2 s saved per first merge; C2 modelled act 3500, 2.0 s).",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 2,
+          "detail": "2 first merges, 3.2 s each"
+        },
+        {
+          "id": "E4b",
+          "name": "Overlap neighbours (P3)",
+          "method": "P",
+          "assumption": "Built (E4b): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on attention places, or on a shared actor). P-4 and P-6 waits start min(predecessor echo + disperse, own tell + gather) earlier (P-3 and P-5 share an actor, which P3 forbids). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 9,
+          "detail": "9 waits start earlier"
+        },
+        {
+          "id": "E4c",
+          "name": "Captain waits near (P4)",
+          "method": "P",
+          "assumption": "Built (E4c): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on a protected pair, or on the attention budget). A P-5 wait starts (predecessor end - its crew close) earlier, floored at 0: the captain waits near instead of leaving. No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 2840,
+          "savingPct": 1.5,
+          "estTotalMs": 180685,
+          "touched": 2,
+          "detail": "2 waits start earlier"
+        },
+        {
+          "id": "E4d",
+          "name": "Short forms (P7)",
+          "method": "R",
+          "assumption": "Built (E4d): the short forms exist, unused until E5; see *Built* for the real ceiling. A ceiling (the director picks which): every protected rule and its variants has each phase x 0.6, except a close's land; the captain's plate minimums still floor it.",
+          "savingMs": 14460,
+          "savingPct": 7.9,
+          "estTotalMs": 169065,
+          "touched": 16,
+          "detail": "16 protected moments, phases x 0.6 (a close's land stays 1200 ms)"
+        },
+        {
+          "id": "E5",
+          "name": "The director",
+          "method": "R",
+          "assumption": "Built (E5a): the pass picks each moment's form; see *Built*. Modelled here: merges with no arc close, minus each author's first merge and each day's climax, become a 1.5 s progress beam. Trade-down and the target are not modelled: E5 + E4d is its ceiling.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 0,
+          "detail": "0 of 4 merges replaced by a 1.5 s beam; every merge is exempt (each author's first merge or a day's climax), so E5 is not exercised in this pod"
+        },
+        {
+          "id": "E6",
+          "name": "Multi-fire volleys",
+          "method": "R",
+          "assumption": "Built (E6): merges into one facility within 20 s of x on one day play as one volley, under the B-15 guard; see *Built*. Modelled here: per facility, merges within 10 s of a group's first (same day) play only their split beam (echo 1500 ms, no gather, no held turn). The union formation's labels are not modelled.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 0,
+          "detail": "0 merges join 4 volleys (4 merges)"
+        },
+        {
+          "id": "E7",
+          "name": "Sector sweep",
+          "method": "R",
+          "assumption": "A lower bound (within a beat only): the first of n >= 2 creations sweeps (tell 300, act 900 + 250 x (n-1), echo 400) and the others are dropped. Built (E7): a beat with 4 or more creations plays one Sector sweep (tell 300, act min(2000, 110 x n) + 1000, echo 400); see *Built*.",
+          "savingMs": -2420,
+          "savingPct": -1.3,
+          "estTotalMs": 185945,
+          "touched": 22,
+          "detail": "22 creations fold into 1 sweeps",
+          "flag": "longer than the baseline"
+        },
+        {
+          "id": "E8",
+          "name": "Tighter frame",
+          "method": "F",
+          "assumption": "Day turns keep 0.6 of themselves, last-day gaps and the tail gap 0.7, floored at 500 ms. Expected 0 s: every pod is over budget and already squeezed to 500 ms. Widening early days is ignored.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 13,
+          "detail": "9 day turns, 4 last-day gaps"
+        },
+        {
+          "id": "E8-250",
+          "name": "Tighter frame (floor 250 ms)",
+          "method": "F",
+          "assumption": "As E8 with a 250 ms floor: a sensitivity row (gaps squeezed further than the engine's minimum).",
+          "savingMs": 2400,
+          "savingPct": 1.3,
+          "estTotalMs": 181125,
+          "touched": 13,
+          "detail": "9 day turns, 4 last-day gaps"
+        },
+        {
+          "id": "E9",
+          "name": "Camera",
+          "method": "-",
+          "assumption": "Renderer-only: the camera costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 183525,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "Stack",
+          "name": "Stack",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows.",
+          "savingMs": 420,
+          "savingPct": 0.2,
+          "estTotalMs": 183105,
+          "touched": 29,
+          "detail": "E1: 3 facility entrances, gather 1300 -> 715; E4a: 2 first merges, 3.2 s each; E5: 0 of 4 merges replaced by a 1.5 s beam; every merge is exempt (each author's first merge or a day's climax), so E5 is not exercised in this pod; E6: 0 merges join 4 volleys (4 merges); E7: 22 creations fold into 1 sweeps; P: 2 waits advanced (2.8 s); F: 0.0 s"
+        },
+        {
+          "id": "Stack+short",
+          "name": "Stack + short forms",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows. Plus E4d (short forms), last, a ceiling.",
+          "savingMs": 12880,
+          "savingPct": 7,
+          "estTotalMs": 170645,
+          "touched": 44,
+          "detail": "E1: 3 facility entrances, gather 1300 -> 715; E4a: 2 first merges, 3.2 s each; E5: 0 of 4 merges replaced by a 1.5 s beam; every merge is exempt (each author's first merge or a day's climax), so E5 is not exercised in this pod; E6: 0 merges join 4 volleys (4 merges); E7: 22 creations fold into 1 sweeps; E4d: 16 protected moments, phases x 0.6 (a close's land stays 1200 ms); P: 1 waits advanced (0.8 s); F: 0.0 s"
+        }
+      ]
+    },
+    {
+      "label": "Harbor Pod",
+      "baselineMs": 199015,
+      "rows": [
+        {
+          "id": "E1",
+          "name": "Fewer signals",
+          "method": "R",
+          "assumption": "facility.enter gather 1300 -> 715 ms (the summoner's flight, 55%, stays; the three beacon pulses and bearing go). Other cut effects cost no schedule time: a floor, E1's value is attention. Built (E1): today's rules already have it, so this row reads 0; see *Built*.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 199015,
+          "touched": 3,
+          "detail": "3 facility entrances, gather 1300 -> 715"
+        },
+        {
+          "id": "E2",
+          "name": "Labels on arrival",
+          "method": "P",
+          "assumption": "Built (E2): today's rules already have it, so this row reads about 0; see the build record. A P-6 wait starts tell + gather of its own earlier (it travels while waiting, claims its labels at its act). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 300,
+          "savingPct": 0.2,
+          "estTotalMs": 198715,
+          "touched": 5,
+          "detail": "5 waits start earlier"
+        },
+        {
+          "id": "E3",
+          "name": "Progress beam (enabler)",
+          "method": "-",
+          "assumption": "Enabler: used by E5, which carries the saving; alone it costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 199015,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "E4a",
+          "name": "Transform from gather (U1)",
+          "method": "R",
+          "assumption": "Built (E4a): today's rules already have it, so this row reads about 0; see *Built*. A first merge's 4.4 s transform starts at its gather and the station fires as it ends: tell 300, gather 900, act 2300, land 500, echo 3000, disperse 900, holds the facility (3.2 s saved per first merge; C2 modelled act 3500, 2.0 s).",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 199015,
+          "touched": 3,
+          "detail": "3 first merges, 3.2 s each"
+        },
+        {
+          "id": "E4b",
+          "name": "Overlap neighbours (P3)",
+          "method": "P",
+          "assumption": "Built (E4b): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on attention places, or on a shared actor). P-4 and P-6 waits start min(predecessor echo + disperse, own tell + gather) earlier (P-3 and P-5 share an actor, which P3 forbids). No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 300,
+          "savingPct": 0.2,
+          "estTotalMs": 198715,
+          "touched": 5,
+          "detail": "5 waits start earlier"
+        },
+        {
+          "id": "E4c",
+          "name": "Captain waits near (P4)",
+          "method": "P",
+          "assumption": "Built (E4c): today's rules already have it, so this row reads about 0; see *Built*. Any residual is a wait the part does not cover (a wait on a protected pair, or on the attention budget). A P-5 wait starts (predecessor end - its crew close) earlier, floored at 0: the captain waits near instead of leaving. No budget re-fit. An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.",
+          "savingMs": 5300,
+          "savingPct": 2.7,
+          "estTotalMs": 193715,
+          "touched": 6,
+          "detail": "6 waits start earlier"
+        },
+        {
+          "id": "E4d",
+          "name": "Short forms (P7)",
+          "method": "R",
+          "assumption": "Built (E4d): the short forms exist, unused until E5; see *Built* for the real ceiling. A ceiling (the director picks which): every protected rule and its variants has each phase x 0.6, except a close's land; the captain's plate minimums still floor it.",
+          "savingMs": 25590,
+          "savingPct": 12.9,
+          "estTotalMs": 173425,
+          "touched": 20,
+          "detail": "20 protected moments, phases x 0.6 (a close's land stays 1200 ms)"
+        },
+        {
+          "id": "E5",
+          "name": "The director",
+          "method": "R",
+          "assumption": "Built (E5a): the pass picks each moment's form; see *Built*. Modelled here: merges with no arc close, minus each author's first merge and each day's climax, become a 1.5 s progress beam. Trade-down and the target are not modelled: E5 + E4d is its ceiling.",
+          "savingMs": 5400,
+          "savingPct": 2.7,
+          "estTotalMs": 193615,
+          "touched": 1,
+          "detail": "1 of 7 merges replaced by a 1.5 s beam"
+        },
+        {
+          "id": "E6",
+          "name": "Multi-fire volleys",
+          "method": "R",
+          "assumption": "Built (E6): merges into one facility within 20 s of x on one day play as one volley, under the B-15 guard; see *Built*. Modelled here: per facility, merges within 10 s of a group's first (same day) play only their split beam (echo 1500 ms, no gather, no held turn). The union formation's labels are not modelled.",
+          "savingMs": 4000,
+          "savingPct": 2,
+          "estTotalMs": 195015,
+          "touched": 1,
+          "detail": "1 merge joins 6 volleys (7 merges)"
+        },
+        {
+          "id": "E7",
+          "name": "Sector sweep",
+          "method": "R",
+          "assumption": "A lower bound (within a beat only): the first of n >= 2 creations sweeps (tell 300, act 900 + 250 x (n-1), echo 400) and the others are dropped. Built (E7): a beat with 4 or more creations plays one Sector sweep (tell 300, act min(2000, 110 x n) + 1000, echo 400); see *Built*.",
+          "savingMs": 7100,
+          "savingPct": 3.6,
+          "estTotalMs": 191915,
+          "touched": 16,
+          "detail": "16 creations fold into 1 sweeps"
+        },
+        {
+          "id": "E8",
+          "name": "Tighter frame",
+          "method": "F",
+          "assumption": "Day turns keep 0.6 of themselves, last-day gaps and the tail gap 0.7, floored at 500 ms. Expected 0 s: every pod is over budget and already squeezed to 500 ms. Widening early days is ignored.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 199015,
+          "touched": 14,
+          "detail": "9 day turns, 5 last-day gaps"
+        },
+        {
+          "id": "E8-250",
+          "name": "Tighter frame (floor 250 ms)",
+          "method": "F",
+          "assumption": "As E8 with a 250 ms floor: a sensitivity row (gaps squeezed further than the engine's minimum).",
+          "savingMs": 2550,
+          "savingPct": 1.3,
+          "estTotalMs": 196465,
+          "touched": 14,
+          "detail": "9 day turns, 5 last-day gaps"
+        },
+        {
+          "id": "E9",
+          "name": "Camera",
+          "method": "-",
+          "assumption": "Renderer-only: the camera costs no schedule time.",
+          "savingMs": 0,
+          "savingPct": 0,
+          "estTotalMs": 199015,
+          "touched": 0,
+          "detail": "not scheduled"
+        },
+        {
+          "id": "Stack",
+          "name": "Stack",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows.",
+          "savingMs": 20380,
+          "savingPct": 10.2,
+          "estTotalMs": 178635,
+          "touched": 29,
+          "detail": "E1: 3 facility entrances, gather 1300 -> 715; E4a: 3 first merges, 3.2 s each; E5: 1 of 7 merges replaced by a 1.5 s beam; E6: 1 merge joins 6 volleys (7 merges); E7: 16 creations fold into 1 sweeps; P: 5 waits advanced (3.9 s); F: 0.0 s"
+        },
+        {
+          "id": "Stack+short",
+          "name": "Stack + short forms",
+          "method": "R+P+F",
+          "assumption": "E1, E2, E4a, E4b, E4c, E5, E6, E7, E8 together: rule edits composed in that order (wrappers chain `when` with && and variants first-hit; sets from the baseline plans), then P on the edited plans (an upper bound, as for E2, E4b, E4c), then F. Interactions are real: not a sum of the rows. Plus E4d (short forms), last, a ceiling.",
+          "savingMs": 39070,
+          "savingPct": 19.6,
+          "estTotalMs": 159945,
+          "touched": 48,
+          "detail": "E1: 3 facility entrances, gather 1300 -> 715; E4a: 3 first merges, 3.2 s each; E5: 1 of 7 merges replaced by a 1.5 s beam; E6: 1 merge joins 6 volleys (7 merges); E7: 16 creations fold into 1 sweeps; E4d: 20 protected moments, phases x 0.6 (a close's land stays 1200 ms); P: 4 waits advanced (1.9 s); F: 0.0 s"
+        }
+      ]
+    }
+  ]
+}

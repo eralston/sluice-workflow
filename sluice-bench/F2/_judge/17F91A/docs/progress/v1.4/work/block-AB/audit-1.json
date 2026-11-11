@@ -1,0 +1,12 @@
+{ "item": "block-AB", "role": "auditor", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "One Major from an interaction: B2 opens the star's Features list on selection, and entering a pod selects the star, so every pod's first view shows the open list (covering Quasar's two station plates again) until another object is selected. Two Minors (03's PieceState block missing awaiting/vacant; 09 §7's vsync budget flips with the window's refresh and contradicts itself) and three Nits.",
+  "findings": { "blocker": 0, "major": 1, "minor": 2, "nit": 3 },
+  "checks": [
+    { "cmd": "git show / git log d39649b..09f4e78 (A and B commits only)", "pass": true, "detail": "read every src and doc diff of 8c95ec2, 36bd0a2, b5d041f, 6055a5e, fa8ec69, 75fb4a7, c212105" },
+    { "cmd": "grep -rn \"select(null)\" src/renderer/src; nav.ts:617,748,981; labels.ts:779; labelTiers.ts:39-45", "pass": false, "detail": "scene entry selects the star; only Remove from View deselects; paused+selected is not compact, so B2's list is open in the first view" },
+    { "cmd": "Read work/B1/pulsar-rest.png, work/B2/01-pulsar-star-features-rest.png", "pass": true, "detail": "B1's post-entry still shows the star selected; B2's re-shot still is at rest only after select(null)" },
+    { "cmd": "grep PieceState / vc= / aw= in docs/03, docs/14, stageCode.ts", "pass": false, "detail": "03:782-784 lacks vacant and awaiting; stageCode.ts:6 grammar lacks [|vc=1][|aw=1]" },
+    { "cmd": "grep vsync docs/09-signal-ladder.md", "pass": false, "detail": ":185 says 8.3 ms (120 Hz) since 10-29; :193 measures 16.7 ms on 10-31 and calls rest (34.2 <= 35.4) known red" },
+    { "cmd": "no e2e, drive, gallery, build or unit run", "pass": true, "detail": "per launch constraint (C3 perf build measuring); findings rest on code and committed stills" }
+  ] }

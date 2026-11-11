@@ -1,0 +1,160 @@
+{
+  "source": "/Users/amorgan/.claude/projects/-Users-amorgan-sluice-bench-F2-A3-2-clone",
+  "run": "A3-2",
+  "at": "2026-11-10T08:53:18.288Z",
+  "usd": 8.2462,
+  "windows": 0.305,
+  "calls": 209,
+  "firstPrompt": "2026-11-10T07:17:57.459Z",
+  "lastEntry": "2026-11-10T08:51:39.230Z",
+  "wallMin": 93.7,
+  "toCommitMin": 93.4,
+  "agentSecs": 4835,
+  "sessionSecs": 5622,
+  "ctx": {
+    "mean": 105572,
+    "p95": 215604,
+    "peak": 240556
+  },
+  "roles": {
+    "session": {
+      "usd": 1.0172,
+      "calls": 13,
+      "secs": 5622,
+      "agents": 1,
+      "out": 6047,
+      "ctx": {
+        "mean": 49235,
+        "p95": 60094,
+        "peak": 60094
+      }
+    },
+    "builder": {
+      "usd": 1.9246,
+      "calls": 70,
+      "secs": 2031,
+      "agents": 1,
+      "out": 1380,
+      "ctx": {
+        "mean": 111583,
+        "p95": 172048,
+        "peak": 177457
+      }
+    },
+    "fixer": {
+      "usd": 0.209,
+      "calls": 18,
+      "secs": 525,
+      "agents": 1,
+      "out": 780,
+      "ctx": {
+        "mean": 41219,
+        "p95": 52912,
+        "peak": 52912
+      }
+    },
+    "planner": {
+      "usd": 3.1816,
+      "calls": 62,
+      "secs": 889,
+      "agents": 1,
+      "out": 10048,
+      "ctx": {
+        "mean": 147216,
+        "p95": 231311,
+        "peak": 240556
+      }
+    },
+    "reviewer": {
+      "usd": 1.9138,
+      "calls": 46,
+      "secs": 1390,
+      "agents": 1,
+      "out": 5903,
+      "ctx": {
+        "mean": 81401,
+        "p95": 115630,
+        "peak": 120011
+      }
+    }
+  },
+  "models": {
+    "claude-opus-5-5": {
+      "usd": 6.1126,
+      "calls": 121,
+      "out": 21998
+    },
+    "claude-sonnet-5-5": {
+      "usd": 2.1336,
+      "calls": 88,
+      "out": 2160
+    }
+  },
+  "agents": [
+    {
+      "role": "session",
+      "kind": "main",
+      "workflow": null,
+      "file": "17cc8a8e-fb07-4edb-8ab6-9d49246f57d3.jsonl",
+      "calls": 13,
+      "secs": 5622,
+      "usd": 1.0172,
+      "out": 6047,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "builder",
+      "kind": "workflow",
+      "workflow": "wf_92447529-7fa",
+      "file": "17cc8a8e-fb07-4edb-8ab6-9d49246f57d3/subagents/workflows/wf_92447529-7fa/agent-a3dd850519cd40838.jsonl",
+      "calls": 70,
+      "secs": 2031,
+      "usd": 1.9246,
+      "out": 1380,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "role": "fixer",
+      "kind": "workflow",
+      "workflow": "wf_92447529-7fa",
+      "file": "17cc8a8e-fb07-4edb-8ab6-9d49246f57d3/subagents/workflows/wf_92447529-7fa/agent-a7fb33d13dff224ef.jsonl",
+      "calls": 18,
+      "secs": 525,
+      "usd": 0.209,
+      "out": 780,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "role": "planner",
+      "kind": "workflow",
+      "workflow": "wf_92447529-7fa",
+      "file": "17cc8a8e-fb07-4edb-8ab6-9d49246f57d3/subagents/workflows/wf_92447529-7fa/agent-ab0c57f9a3e66e271.jsonl",
+      "calls": 62,
+      "secs": 889,
+      "usd": 3.1816,
+      "out": 10048,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "reviewer",
+      "kind": "workflow",
+      "workflow": "wf_92447529-7fa",
+      "file": "17cc8a8e-fb07-4edb-8ab6-9d49246f57d3/subagents/workflows/wf_92447529-7fa/agent-adef4ba9c8470124e.jsonl",
+      "calls": 46,
+      "secs": 1390,
+      "usd": 1.9138,
+      "out": 5903,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    }
+  ]
+}

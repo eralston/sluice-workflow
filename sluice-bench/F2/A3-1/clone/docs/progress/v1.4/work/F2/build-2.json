@@ -1,0 +1,35 @@
+{
+  "item": "F2", "role": "builder", "round": 2, "model_tier": "medium", "effort": "medium",
+  "verdict": "built",
+  "summary": "Summon on the fly: facility.enter is gather 715 + act 1200 (1915 ms, was 2815) with a passes flag; the summoner's pursue passes through the spot (Sortie pass: no hold, no fly-back, on to its rest over the plate's 2.84 s ride); one call blip in the act with the arrival (same HERO_GLOW, ring shape, delay 0, anchored to the ship so reduced motion plays at its place); plate from the blip for NOTE_MIN_MS. Ledger F2 (undirected) and F2+ (directed) on seven pods: saved ms per pod undirected Comet 900, Nova 1280, Quasar 11500, Pulsar 11140, Convoy 3840, Harbor 1840, Meteor 12256; directed 900, 1280, 4740, 274, 3840, 1840, 18088.",
+  "checks": [
+    {"name": "typecheck", "result": "pass"},
+    {"name": "lint", "result": "pass"},
+    {"name": "npm test", "result": "pass, 1721/1721 (director golden updated first)"},
+    {"name": "e2e gallery-assets", "result": "pass 4/4 (jump-in demo, full and reduced motion, no console errors)"},
+    {"name": "e2e solar, solar-play, solar-dense", "result": "all pass except Meteor VC-3 at 1024x640 (known F1/F5 test.fail hit-floor case, untouched) and the captain's-turn parked check, which F2 broke by design; fixed with a ruleIdsOf hook exemption and re-run to pass"},
+    {"name": "e2e:keystone", "result": "pass 43/43 (run before the solar-dense/testHooks edit; that edit is additive and its spec passes)"}
+  ],
+  "files": [
+    "src/shared/engine/pace.ts", "src/shared/engine/maneuvers.ts", "src/shared/contracts/maneuver.ts",
+    "src/renderer/src/chart/fx/commands.ts", "src/renderer/src/chart/fx/movers.ts", "src/renderer/src/chart/fx/v1/interpreter.ts",
+    "src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts", "src/renderer/src/testHooks.ts",
+    "scripts/pacing-ledger.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts",
+    "tests/unit/commands.test.ts", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts", "tests/unit/sweep.test.ts", "tests/e2e/solar-dense.spec.ts",
+    "tests/golden/__golden__/director.json", "docs/progress/v1.4/pacing-ledger.md", "docs/progress/v1.4/pacing-ledger.json", "docs/progress/v1.4/pacing-built.json",
+    "docs/13-game-design.md", "docs/05-playback.md", "docs/15-reference.md", "docs/27-v1.4.md",
+    "docs/progress/v1.4/work/F2/packet.md", "docs/progress/v1.4/work/F2/plan-2.json"
+  ],
+  "deviations": [
+    "Dropped the probe's crewBusy, heldMs and durMs engine edits (kept durMs = max(span, release)); the saving is smaller than the probe's but the same captain's next work still waits for the plate to fold.",
+    "The ship flies on toward its rest, not toward its next sortie: P4's waitS is not applied to a pass, and a sortie close behind flies from where the ship is drawn.",
+    "Added a test hook ruleIdsOf(eventKey) and changed solar-dense's parked check to exempt a jump-in's event; an event that is also a first-station merge shares the exemption.",
+    "docTables: 15 §8 tell/fold/land rows for Station jump-in marked cut (they are retired); no docTables.test.ts edit was needed."
+  ],
+  "limitations": [
+    "Directed (F2+) saving is traded against the 45 s target: Pulsar gains only 274 ms; the director golden's tempo falls instead (Quasar 1.9 to 1.85, Pulsar 1.1 to 1.05).",
+    "Meteor VC-3 at 1024x640 still fails as test.fail (F5).",
+    "Reduced-motion blip sits at the ship's place; checked by the gallery reduced loop (clears, no errors), not by a pixel check.",
+    "F3's chaining of summons is untouched."
+  ]
+}

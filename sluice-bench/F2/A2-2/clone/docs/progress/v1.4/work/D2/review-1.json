@@ -1,0 +1,11 @@
+{ "item": "D2", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass", "summary": "formationSpots keeps the Power link crew inside the plan's frontier rectangle (toward, far end, other axis, clamp; board beats plates); no-board output equals the old rule; unit and both e2e sizes pass.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 0 },
+  "checks": [
+    {"cmd": "npm run typecheck; npm run lint", "pass": true, "detail": "clean"},
+    {"cmd": "npx vitest run formationBounds commands docTables solarLayout", "pass": true, "detail": "95 passed"},
+    {"cmd": "npm run e2e:spec -- solar-dense -g '27 D2'", "pass": true, "detail": "1440x900 and 1024x640 pass (1.9 m)"}
+  ],
+  "findings_detail": [
+    {"grade": "minor", "what": "The e2e never bit on unchanged code (Pulsar's old rule never leaves the board: 0 of 1323; only Harbor, n=6, does: 24 of 196, in the unit test) and was not run against the old code. The Pulsar acceptance is therefore a guard, not a reproduced bug. The build record says so honestly."}
+  ] }

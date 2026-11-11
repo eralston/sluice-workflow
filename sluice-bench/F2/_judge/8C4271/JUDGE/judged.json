@@ -1,0 +1,39 @@
+{
+ "findings": [
+  {
+   "severity": "Major",
+   "rules": false,
+   "summary": "When a next sortie is waiting (the P4 hand-off this item enables), the summoner is never named for the summon: the sortie retires the Pass at the blip, and the summon's crew window then reads the new Sortie's crewOpen, which is 0 for its whole out leg. The Decided's 'plate rides with the ship for NOTE_MIN_MS' (R14) fails, and the engine still reserves attention budget for a plate that never shows.",
+   "kept": true,
+   "why": "movers.ts:132-136 retires the Pass when a move takes over, and interpreter.ts:283-284 then reads the new Sortie whose crewOpen (movers.ts:352-354) is 0 while h<0 on its out leg; the plate is lost as claimed."
+  },
+  {
+   "severity": "Minor",
+   "rules": true,
+   "summary": "Normative 03 gives a pass's crewTimes closeMs as claim + NOTE_MIN_MS \u2212 CREW_FOLD_MS, but the code returns claim + CREW_FOLD_MS + NOTE_MIN_MS. That is 1040 ms apart (1280 vs 2320 ms past the claim).",
+   "kept": true,
+   "why": "docs/03-contracts.md:1501 says claim + NOTE_MIN_MS - CREW_FOLD_MS while maneuvers.ts:85 returns openMs + CREW_FOLD_MS + NOTE_MIN_MS; the mismatch is real."
+  },
+  {
+   "severity": "Minor",
+   "rules": false,
+   "summary": "The solar-dense 'captain's turn' e2e now marks any captain episode whose plate carries a summoning event's key as a pass. That exempts it from the parked, CREW_OPEN_MIN_MS and not-over-its-work checks, so a first merge's or link's whole formation (same event key as its facility.enter) is no longer checked for parking.",
+   "kept": true,
+   "why": "solar-dense.spec.ts:438-463 sets pass = summons.has(a.key), skipping the over-work check and excluding it from 'whole'; a merge or link sharing the event key is exempted."
+  },
+  {
+   "severity": "Minor",
+   "rules": false,
+   "summary": "F2's small saving pushes Pulsar's directed run over a lever cliff: it no longer pulls 'light' and plays its non-climax beats at TEMPO_MAX 2\u00d7 instead of 1.1\u00d7. Meteor's directed run gets 8.2 s longer. The ledger's F2+ Pulsar row reports this as a 1.7 s saving, which hides how much faster the episode plays.",
+   "kept": true,
+   "why": "director.json diff shows a pod's levers losing light, tempo 1.1 to 2 and estimate 294434 to 298298; ledger lines 584 and 587 show the 1.7 and -8.2 rows as cited."
+  },
+  {
+   "severity": "Minor",
+   "rules": false,
+   "summary": "The new Pass mover (two Hermite legs, carried velocity into a Sortie, plate ownership past the second leg) has no unit test. The acceptance's 'no hold between its flight and its next place' is checked only on the pursue command's arguments (pass: true, holdS absent), not on the path the ship actually flies.",
+   "kept": true,
+   "why": "grep finds the Pass class, PASS_ON_MIN_S and takeCarried only in commands.ts and movers.ts, with no test referencing them."
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "The Decided paragraph says the ship carries on to its next sortie if one is waiting (E4's P4), but the pass always flies to the ship's rest (`goalOf`) and ignores the P4 `waitS`, so a captain with back-to-back summons flies home, sits idle about 1.1 s, then flies out again: the stop-and-go the item set out to remove. This also contradicts 05 P-5 ('a captain never flies home between').",
+      "evidence": "movers.ts updatePass: `const p2 = this.scene.goalOf(this.pk) ?? p0;` and the PursueArgs doc says `holdS` and `waitS` are ignored; interpreter.ts:694-697 still injects waitS from nearWaits, which the pass drops. A schedule probe (vite-node over resolvePods/planOf) on Meteor beat 6 shows one agent (…e854ff7a) summoning 18 stations in a row: `facility.enter@0+1915, facility.enter@3035+1149, facility.enter@4184+1149, facility.enter@5333+1915, …`. Each next summon starts at release 3035 (nearStartMs = max(workEnd 1915, release 3035 − gatherAt 0)), after the first ship reached its rest at 1915. No test covers a next sortie waiting."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The acceptance check 'the station's act starts within 50 ms of the blip' can't fail: it compares two delayMs values from the same act-phase array, and the `actAt` term cancels out. It never ties the blip to when the ship actually reaches the spot.",
+      "evidence": "tests/unit/summonPass.test.ts (c): `expect(Math.abs(actAt + (blip.delayMs ?? 0) - (actAt + (station.delayMs ?? 0)))).toBeLessThanOrEqual(50);` Both delays are 0 by construction. The comment 'No summoner (reduced motion and away guest)' is also wrong: under reduced motion the summoner is present and the blip uses its point."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The solar-dense change sorts captains' turns by whether they moved (12 px or more), so 'parked while named' is now true by definition: a regular sortie that drifts while named gets reclassified as a 'ride' and passes the looser check.",
+      "evidence": "tests/e2e/solar-dense.spec.ts:458-466: `const rides = seen.filter((e) => e.moved >= 12); const whole = seen.filter((e) => e.moved < 12); … expect(Math.max(...whole.map((e) => e.moved))).toBeLessThan(12); … if (rides.length) expect(Math.min(...rides.map(...))).toBeGreaterThan(1000);` The rides aren't checked to be facility.enter."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "A summon's plate is now whole for only about 1280 ms (NOTE_MIN_MS less the unfurl), below CREW_OPEN_MIN_MS. The 15 §11 CREW_OPEN_MIN_MS row ('However short the work, the plate is whole at least this long') and crewTimes' JSDoc weren't amended; only the CREW_HOLD_MS row was.",
+      "evidence": "maneuvers.ts crewTimes passes branch: `closeMs = openMs + NOTE_MIN_MS` (no CREW_OPEN_MIN_MS floor); docs/15-reference.md CREW_OPEN_MIN_MS row is unchanged; tests/e2e/solar-dense.spec.ts:624 itself expects summon plates at >1000 ms, not >1400."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The call blip, the summons, is drawn in At-rest blue (HERO_GLOW) as Decided requires, but 15 §2 still lists summons under Hero blue and 13 §6.5 still says 'the summons is in hero blue'. Those palette rows are now out of step.",
+      "evidence": "stationJumpIn.ts act: `cmd.ring({ at, r: s * 0.7, r1: s * 1.6, color: HERO_GLOW, … })`; docs/15-reference.md:120 `| Hero blue | … HERO | #3D84FF | Solar | Hero energy: weapons, summons, phasers |`; docs/13-game-design.md:738 `- **Station jump-in:** the summons is in hero blue.`"
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "F2 tips Pulsar over a cliff in the director's levers. With every lever, Pulsar now drops 'light' and plays its non-climax beats at TEMPO_MAX 2× instead of 1.1×, and it runs longer. The golden and a carve-out in the test accept this rather than flag it.",
+      "evidence": "tests/golden/__golden__/director.json Pulsar: levers lose `light`, `tempo: 1.1` → `2`, `estimateMs: 294434` → `298298`, `light: 72` form removed; pacing-ledger.md F2+ Pulsar row `288.8 | 294.2 | -5.4`; pacingBuilt.test.ts excludes Pulsar from the 'never costs time' check."
+    }
+  ],
+  "acceptance": {
+    "1": "met as written, not run here (no e2e allowed): gallery-assets.spec.ts adds a facility.enter cell test for full and reduced motion that asserts no console errors and stuck 0",
+    "2": "partial: summonPass.test.ts checks no hold, waitS ignored, continuous motion and the plate timing, but the 50 ms check can't fail and the 'next place' case with a waiting sortie isn't tested (or built)",
+    "3": "met: 15 §7 row is 1915 and docTables passes; director.json updated (other schedule goldens hold no facility.enter); the packet isn't available to confirm it names each change",
+    "4": "met: pacing-ledger.md's Built section has F2 and F2+ rows for all seven pods (e.g. Quasar 19.3 s, Pulsar 24.3 s saved before speed); earlier items' rows unchanged"
+  },
+  "summary": "The pass is carefully built: Hermite legs through the spot, a blip matching the station ring's hue and shape at the act's start, the phases trimmed to 1915 ms, docs and ledger in step. The 1726 unit tests pass and typecheck is clean. But the ship always flies to its rest, so a captain with a waiting next sortie (back-to-back summons in Meteor) still goes home and stops between turns, against the Decided paragraph. Several tests and doc rows are weaker or staler than they look."
+}

@@ -1,0 +1,33 @@
+3158 station-form 88cc51cefd cut never-armed slide  
+3460 station-form ad780129ac cut never-armed dock  
+3595 station-form a883cb28df cut never-armed slide  
+3729 station-form 88cc51cefd cut back-to-first slide  
+4468 station-form 88cc51cefd played  slide  
+7636 station-look 88cc51cefd protected  attachment.merge first 3500
+8069 station-form 88cc51cefd finished  slide  
+13926 station-form 88cc51cefd cut back-to-first slide  
+14622 station-form 88cc51cefd played  slide  
+15851 station-form 88cc51cefd interrupted scrubbed-back slide  
+22541 station-form 88cc51cefd played  slide  
+26159 station-form 88cc51cefd finished  slide  
+31995 station-look 88cc51cefd protected  attachment.merge first 3500
+38237 station-form ad780129ac played  dock  
+41432 station-look ad780129ac protected  attachment.merge first 3500
+42662 station-form ad780129ac finished  dock  
+44433 station-look a883cb28df protected  threat.accomplish arc 6500
+47723 station-form ad780129ac cut back-to-first dock  
+48435 station-form ad780129ac played  dock  
+49656 station-form ad780129ac interrupted scrubbed-back dock  
+56321 station-form ad780129ac played  dock  
+60739 station-form ad780129ac finished  dock  
+65808 station-look ad780129ac protected  attachment.merge first 3500
+68809 station-look a883cb28df protected  threat.accomplish arc 6500
+72061 station-form a883cb28df played  slide  
+75245 station-look a883cb28df protected  attachment.merge first 3500
+75678 station-form a883cb28df finished  slide  
+81538 station-form a883cb28df cut back-to-first slide  
+82248 station-form a883cb28df played  slide  
+83472 station-form a883cb28df interrupted scrubbed-back slide  
+90116 station-form a883cb28df played  slide  
+93735 station-form a883cb28df finished  slide  
+99571 station-look a883cb28df protected  attachment.merge first 3500

@@ -1,0 +1,22 @@
+{
+  "item": "C3", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Found two causes of the dim baked rim and fixed both (contrast gap down from 1.4-1.9 lower to 0.1-0.7 higher); c3-aura-diff still fails, so auraBake ships on for phone and tablet only, per HG-C.",
+  "findings": [
+    {"n": 1, "severity": "Blocker", "action": "replaced by the HG-C decision (2026-11-01): the look-changing probes are not pursued; investigated the dim rim instead", "result": "causes found in profile-note.md; gates still fail; fallback applied"},
+    {"n": 2, "severity": "Minor", "action": "fixed: 15 §11 Aura bake row now states the measured numbers (Harbor p99 91-97, Pulsar 249 against 12; contrast within 0.7) and the profile split; deltas row is off/on/on", "result": "docTables green"},
+    {"n": 3, "severity": "Minor", "action": "fixed: 15 §10 Cut gain floor cites `../../../tests/e2e/perf.spec.ts` CUT_GAIN_MIN", "result": "docTables green"},
+    {"n": 4, "severity": "Minor", "action": "ran c3-aura-diff on Pulsar (p99 249, max 252) and at DPR 2 (new STAR_CHART_TEST_DPR launch option; p99 187, max 220; live contrast changes with the ratio, baked does not); both in the note", "result": "done"},
+    {"n": 5, "severity": "Nit", "action": "left", "result": "n/a"}
+  ],
+  "checks": [
+    {"cmd": "npm run typecheck; npm run lint; npm test", "pass": true, "detail": "99 files, 1462 tests"},
+    {"cmd": "e2e:spec perf profile", "pass": true, "detail": "7 passed; cuts test off 33.4 against on 17.5 ms (47% gain, hard 20% floor)"},
+    {"cmd": "e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "drive c3-aura-diff --paradigm solar (Harbor, Pulsar, DPR 2)", "pass": false, "detail": "worst p99 97 / 249 / 187 against 12; max 251 / 252 / 220 against 64: edge antialiasing of a 2 px ring differs from the live filter's"},
+    {"cmd": "drive c1-contrast C1_AURABAKE=off vs on", "pass": false, "detail": "night sky rim vs backdrop live then baked: red 5.31/5.39, blue 5.33/6.05, gold 4.84/5.50 (limit 0.1); baked no longer dim, now brighter"}
+  ],
+  "files": ["src/renderer/src/chart/art/aura.ts", "config/profiles/phone.json", "config/profiles/tablet.json", "tests/unit/profile.test.ts", "docs/15-reference.md", "docs/09-signal-ladder.md", "tests/e2e/launch.ts", "docs/progress/v1.4/work/C3/profile-note.md"],
+  "deviations": ["The gates did not pass, so the HG-C fallback (phone and tablet only) applies; desktop default stays off."],
+  "limitations": ["The live glow is clipped to 4 px (a likely unintended look); left alone, flagged in the note.", "Baked rim is brighter than live on blue and gold (0.7), and resolution-independent where live is not."]
+}

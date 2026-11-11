@@ -1,0 +1,555 @@
+{
+  "scenario": "pod-sprint",
+  "sprint": "Tidewater Array\\Sprint 13",
+  "tz": "America/Los_Angeles",
+  "regions": [
+    {
+      "region": "Harbor Pod",
+      "viewers": [
+        {
+          "viewer": "Juno Achterberg",
+          "awards": [
+            {
+              "id": "steady-hands",
+              "at": "2026-10-06T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20231",
+                "20121"
+              ],
+              "reason": "Never more than 2 of your objectives and threats Underway at once, and at least one reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Kit Marchetti",
+          "awards": [
+            {
+              "id": "steady-hands",
+              "at": "2026-10-08T17:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20221"
+              ],
+              "reason": "Never more than 2 of your objectives and threats Underway at once, and at least one reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Ossian Vale",
+          "awards": [
+            {
+              "id": "clean-landing",
+              "at": "2026-10-07T17:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20111",
+                "20311",
+                "20312"
+              ],
+              "reason": "One of your objectives reached Accomplished with all its steps already Accomplished"
+            },
+            {
+              "id": "hat-trick-defences",
+              "at": "2026-10-09T21:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20211",
+                "20214",
+                "20213"
+              ],
+              "reason": "Three threats on your seat reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Pell Ibarra",
+          "awards": [
+            {
+              "id": "wingman",
+              "at": "2026-10-01T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20302"
+              ],
+              "reason": "You helped another seat's objective reach Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Sable Nakamura",
+          "awards": [
+            {
+              "id": "wingman",
+              "at": "2026-10-06T17:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20102",
+                "21002"
+              ],
+              "reason": "You helped another seat's objective reach Accomplished"
+            },
+            {
+              "id": "hat-trick-reviews",
+              "at": "2026-10-09T17:00:00.000Z",
+              "event": "pr_completed",
+              "pieces": [
+                "21002",
+                "21000",
+                "21008"
+              ],
+              "reason": "You approved three attachments that reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Tamsin Oduya",
+          "awards": [
+            {
+              "id": "wingman",
+              "at": "2026-10-08T17:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20221",
+                "21007"
+              ],
+              "reason": "You helped another seat's threat reach Accomplished"
+            },
+            {
+              "id": "hat-trick-reviews",
+              "at": "2026-10-09T16:00:00.000Z",
+              "event": "pr_completed",
+              "pieces": [
+                "21003",
+                "21007",
+                "21005"
+              ],
+              "reason": "You approved three attachments that reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Wren Calloway",
+          "awards": [
+            {
+              "id": "swift-passage",
+              "at": "2026-10-01T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101"
+              ],
+              "reason": "One of your objectives went from Underway to Accomplished within 3 working days"
+            },
+            {
+              "id": "clean-landing",
+              "at": "2026-10-01T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20301",
+                "20302"
+              ],
+              "reason": "One of your objectives reached Accomplished with all its steps already Accomplished"
+            },
+            {
+              "id": "wingman",
+              "at": "2026-10-06T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20121",
+                "21001"
+              ],
+              "reason": "You helped another seat's objective reach Accomplished"
+            },
+            {
+              "id": "hat-trick-reviews",
+              "at": "2026-10-08T17:00:00.000Z",
+              "event": "pr_completed",
+              "pieces": [
+                "21001",
+                "21000",
+                "21007"
+              ],
+              "reason": "You approved three attachments that reached Accomplished"
+            },
+            {
+              "id": "clear-skies",
+              "at": "2026-10-09T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20102",
+                "20103"
+              ],
+              "reason": "Every objective and threat on your seat reached Accomplished"
+            },
+            {
+              "id": "hat-trick-landings",
+              "at": "2026-10-09T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20102",
+                "20103"
+              ],
+              "reason": "Three of your objectives reached Accomplished"
+            },
+            {
+              "id": "steady-hands",
+              "at": "2026-10-09T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20102",
+                "20103"
+              ],
+              "reason": "Never more than 2 of your objectives and threats Underway at once, and at least one reached Accomplished"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Lantern Pod",
+      "viewers": [
+        {
+          "viewer": "Juno Achterberg",
+          "awards": [
+            {
+              "id": "clear-skies",
+              "at": "2026-10-02T21:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20151"
+              ],
+              "reason": "Every objective and threat on your seat reached Accomplished"
+            },
+            {
+              "id": "steady-hands",
+              "at": "2026-10-02T21:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20151"
+              ],
+              "reason": "Never more than 2 of your objectives and threats Underway at once, and at least one reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Kit Marchetti",
+          "awards": []
+        },
+        {
+          "viewer": "Ossian Vale",
+          "awards": []
+        },
+        {
+          "viewer": "Pell Ibarra",
+          "awards": []
+        },
+        {
+          "viewer": "Sable Nakamura",
+          "awards": []
+        },
+        {
+          "viewer": "Tamsin Oduya",
+          "awards": []
+        },
+        {
+          "viewer": "Wren Calloway",
+          "awards": []
+        }
+      ]
+    },
+    {
+      "region": "Sprint 13 (the round)",
+      "viewers": [
+        {
+          "viewer": "Juno Achterberg",
+          "awards": []
+        },
+        {
+          "viewer": "Kit Marchetti",
+          "awards": [
+            {
+              "id": "steady-hands",
+              "at": "2026-10-08T17:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20221"
+              ],
+              "reason": "Never more than 2 of your objectives and threats Underway at once, and at least one reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Ossian Vale",
+          "awards": [
+            {
+              "id": "clean-landing",
+              "at": "2026-10-07T17:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20111",
+                "20311",
+                "20312"
+              ],
+              "reason": "One of your objectives reached Accomplished with all its steps already Accomplished"
+            },
+            {
+              "id": "hat-trick-defences",
+              "at": "2026-10-09T21:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20211",
+                "20214",
+                "20213"
+              ],
+              "reason": "Three threats on your seat reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Pell Ibarra",
+          "awards": [
+            {
+              "id": "wingman",
+              "at": "2026-10-01T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20302"
+              ],
+              "reason": "You helped another seat's objective reach Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Sable Nakamura",
+          "awards": [
+            {
+              "id": "wingman",
+              "at": "2026-10-06T17:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20102",
+                "21002"
+              ],
+              "reason": "You helped another seat's objective reach Accomplished"
+            },
+            {
+              "id": "hat-trick-reviews",
+              "at": "2026-10-09T17:00:00.000Z",
+              "event": "pr_completed",
+              "pieces": [
+                "21002",
+                "21000",
+                "21008"
+              ],
+              "reason": "You approved three attachments that reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Tamsin Oduya",
+          "awards": [
+            {
+              "id": "wingman",
+              "at": "2026-10-08T17:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20221",
+                "21007"
+              ],
+              "reason": "You helped another seat's threat reach Accomplished"
+            },
+            {
+              "id": "hat-trick-reviews",
+              "at": "2026-10-09T16:00:00.000Z",
+              "event": "pr_completed",
+              "pieces": [
+                "21003",
+                "21007",
+                "21005"
+              ],
+              "reason": "You approved three attachments that reached Accomplished"
+            }
+          ]
+        },
+        {
+          "viewer": "Wren Calloway",
+          "awards": [
+            {
+              "id": "swift-passage",
+              "at": "2026-10-01T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101"
+              ],
+              "reason": "One of your objectives went from Underway to Accomplished within 3 working days"
+            },
+            {
+              "id": "clean-landing",
+              "at": "2026-10-01T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20301",
+                "20302"
+              ],
+              "reason": "One of your objectives reached Accomplished with all its steps already Accomplished"
+            },
+            {
+              "id": "wingman",
+              "at": "2026-10-06T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20121",
+                "21001"
+              ],
+              "reason": "You helped another seat's objective reach Accomplished"
+            },
+            {
+              "id": "hat-trick-reviews",
+              "at": "2026-10-08T17:00:00.000Z",
+              "event": "pr_completed",
+              "pieces": [
+                "21001",
+                "21000",
+                "21007"
+              ],
+              "reason": "You approved three attachments that reached Accomplished"
+            },
+            {
+              "id": "clear-skies",
+              "at": "2026-10-09T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20102",
+                "20103"
+              ],
+              "reason": "Every objective and threat on your seat reached Accomplished"
+            },
+            {
+              "id": "hat-trick-landings",
+              "at": "2026-10-09T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20102",
+                "20103"
+              ],
+              "reason": "Three of your objectives reached Accomplished"
+            },
+            {
+              "id": "steady-hands",
+              "at": "2026-10-09T16:00:00.000Z",
+              "event": "wi_state_changed",
+              "pieces": [
+                "20101",
+                "20102",
+                "20103"
+              ],
+              "reason": "Never more than 2 of your objectives and threats Underway at once, and at least one reached Accomplished"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "clear-skies",
+      "edge": "one Story only Resolved at the end",
+      "earn": [
+        "swift-passage",
+        "clear-skies"
+      ],
+      "near": [
+        "swift-passage"
+      ]
+    },
+    {
+      "id": "hat-trick-landings",
+      "edge": "the third Story only reaches Resolved",
+      "earn": [
+        "swift-passage",
+        "clear-skies",
+        "hat-trick-landings",
+        "steady-hands"
+      ],
+      "near": [
+        "swift-passage",
+        "steady-hands"
+      ]
+    },
+    {
+      "id": "hat-trick-defences",
+      "edge": "the third Bug is Rejected, not defeated",
+      "earn": [
+        "clear-skies",
+        "hat-trick-defences"
+      ],
+      "near": [
+        "clear-skies"
+      ]
+    },
+    {
+      "id": "hat-trick-reviews",
+      "edge": "the third merge was approved by someone else",
+      "earn": [
+        "hat-trick-reviews"
+      ],
+      "near": []
+    },
+    {
+      "id": "swift-passage",
+      "edge": "Active Monday to Closed Friday: past 3 working days",
+      "earn": [
+        "clear-skies",
+        "swift-passage",
+        "steady-hands"
+      ],
+      "near": [
+        "clear-skies",
+        "steady-hands"
+      ]
+    },
+    {
+      "id": "steady-hands",
+      "edge": "three Stories Active at once",
+      "earn": [
+        "swift-passage",
+        "steady-hands"
+      ],
+      "near": [
+        "swift-passage"
+      ]
+    },
+    {
+      "id": "clean-landing",
+      "edge": "one Task still Active when the Story closes",
+      "earn": [
+        "clear-skies",
+        "swift-passage",
+        "steady-hands",
+        "clean-landing"
+      ],
+      "near": [
+        "clear-skies",
+        "swift-passage",
+        "steady-hands"
+      ]
+    },
+    {
+      "id": "wingman",
+      "edge": "the helped Story is still Active at the end",
+      "earn": [
+        "wingman"
+      ],
+      "near": []
+    }
+  ]
+}

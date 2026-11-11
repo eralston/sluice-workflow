@@ -1,0 +1,15 @@
+{
+  "item": "F2", "role": "reviewer", "round": 2, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "Review 1's Major (git show in CI) and Minor 2 (the B9 exemption) are settled; Nits 5 and 6 are fixed. Minor 3 remains: the gallery spec's stills still miss the act (the reduced one is taken in 'after'). Review 1's act stills stand in for the gate. Acceptance is met.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 0 },
+  "lenses": [],
+  "checks": [
+    { "cmd": "npm run -s typecheck && npm run -s lint && npm test --silent", "pass": true, "detail": "109 files, 1725 tests" },
+    { "cmd": "git show 2b33931:docs/progress/v1.4/pacing-ledger.json (wallMs per pod)", "pass": true, "detail": "matches START_WALL_MS in pacingBuilt.test.ts" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar-dense", "pass": true, "detail": "26 passed" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "STAR_CHART_WINDOW_SIZE=1024x640 npm run drive -- tests/drive/steps/solar-station.ts --paradigm solar", "pass": true, "detail": "blip and arrival seen, ship moves on; stills review-2-drive-*-1024.png" },
+    { "cmd": "look at test-results/gallery/f2-jump-in-{full,reduced}.png", "pass": false, "detail": "neither shows the act; reduced is in 'after' (review-2-gallery-spec-*.png)" }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "item": "E5b",
+  "round": 1,
+  "verdict": "built-gate-lint-blocked-outside-item",
+  "summary": "Montage (P-24) and adaptive speed (P-25) added as director levers after short; E5a review-2 climax test fold-in done.",
+  "perPod": {
+    "Comet": {
+      "beforeMs": 61845,
+      "afterMs": 61845
+    },
+    "Nova": {
+      "beforeMs": 224595,
+      "afterMs": 224595
+    },
+    "Quasar": {
+      "beforeMs": 807460,
+      "afterMs": 448150,
+      "levers": [
+        "short",
+        "montage",
+        "speed"
+      ],
+      "estimateMs": 451750
+    },
+    "Pulsar": {
+      "beforeMs": 562395,
+      "afterMs": 321638,
+      "levers": [
+        "short",
+        "montage",
+        "speed"
+      ],
+      "estimateMs": 324018
+    },
+    "Convoy": {
+      "beforeMs": 188985,
+      "afterMs": 188985
+    },
+    "Harbor": {
+      "beforeMs": 196515,
+      "afterMs": 196515
+    }
+  },
+  "checks": {
+    "typecheck": "pass",
+    "npm test": "105 files, 1578 tests pass",
+    "lint": "2 errors, both in E5a reviewer probe files (docs/progress/v1.4/work/E5a/review-2-probe*.ts), none in E5b code",
+    "e2e solar solar-play solar-dense gallery-assets": "45 passed",
+    "e2e:keystone": "43 passed"
+  },
+  "deviations": [
+    "No montage still added to tests/drive/steps/e5-director.ts (app exposes no rule ids to find a montage beat)."
+  ],
+  "limitations": [
+    "Quasar (448 s) and Pulsar (322 s) remain over the 300 s target until E5c.",
+    "The estimate is an upper bound on wallMs (451.7 vs 448.2 s).",
+    "Gate lint fails on two E5a reviewer probe files (docs/progress/v1.4/work/E5a/review-2-probe.ts unused import, review-2-probe2.ts explicit any). Outside E5b; not touched. Orchestrator should delete them or exempt them.",
+    "perf spec and the warm Quasar/Pulsar schedule-build ratio not run."
+  ],
+  "docs": [
+    "05 P-23..P-25",
+    "15 TEMPO_MAX row",
+    "03 contracts"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "id": "phone",
+  "title": "Phone",
+  "pacing": { "budgetMs": 30000, "highlightBudgetMs": 20000 },
+  "render": {
+    "budget": { "frameVsyncs": 3, "toleranceMs": 3 },
+    "limits": { "maxActiveFx": 12 },
+    "switches": { "paint": false, "twinkle": false, "ornament": false, "auraBake": true }
+  }
+}

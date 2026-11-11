@@ -1,0 +1,19 @@
+{ "item": "C4", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "A zod-checked DeviceProfile (pacing budgets, render budget and limits, three render switches) in four bundled JSONs under config/profiles, resolved in main (userData override, STAR_CHART_PROFILE pin, fallback with notice), passed to the renderer via a launch argument, and fed to the schedule as budgets; recommend three builds.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "split": [
+    { "id": "C4a", "title": "The profile: schema, bundles, resolver, loader, env, Settings display, docs", "depends": [] },
+    { "id": "C4b", "title": "Pacing budgets through the profile; remove BUDGET_MS and HIGHLIGHT_BUDGET_MS; scripts' EngineInputs", "depends": ["C4a"] },
+    { "id": "C4c", "title": "Render switches, effect cap, frame budget in perf.spec, test hooks, phone e2e", "depends": ["C4a"] }
+  ],
+  "notes": [
+    "About 35 files in all, so the split; each part is 10-15 files and leaves the tree green. C4b and C4c both touch testHooks.ts and 15 §10, so run them in sequence, not in parallel.",
+    "Decided: only the two code-constant budgets go in pacing; gap shape stays in constants.ts. Label caps and a holo-filter switch are left out (planner/projection feed the goldens; B1 showed filters are not Pulsar's cost). Switch set is paint, twinkle, ornament plus maxActiveFx; C3 adds keys beside them.",
+    "Profile reaches the renderer by a launch argument, not IPC, so the first schedule has the right budget; overrides apply at next launch.",
+    "Real schedules run well over budget (Comet 67 s against 45 s), so the phone e2e asserts fewer/shorter beats than desktop, not totalMs <= budget; the builder confirms which comparison holds on Pulsar.",
+    "Profile values for laptop-battery, tablet and phone are starting guesses, to be tuned on devices.",
+    "scripts/pacing-candidates.ts was written by C2 (now committed); C4b changes one line there and must keep the committed pacing-ledger.md output unchanged without --profile."
+  ] }

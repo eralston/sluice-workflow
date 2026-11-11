@@ -1,0 +1,57 @@
+{
+  "item": "E4a", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "U1 built: the first merge is 7900 ms (act 2300, land 500) and the station's transformation starts at the gather via DreadnoughtView.beginTransform (leading guard in retarget, settleForm on StationView.settle); ledger regenerated with an E4a Built row.",
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test --silent", "pass": true, "detail": "102 files, 1504 tests. First run failed literalFence (my pace.ts comments said 'station' in an engine file); reworded to 'facility', green on re-run." },
+    { "cmd": "npx vitest run <packet's mapped units>", "pass": true, "detail": "12 files, all green (maneuvers, limelight, scheduleHooks, sceneplay, solarSeek, castLabels, commands, stationStandby, docTables, pacing, pacingCandidates, pacingBuilt)" },
+    { "cmd": "npm run e2e:spec -- solar solar-play gallery-assets", "pass": true, "detail": "45 passed (8.1 m); the 'solar' filter also matches solar-dense and the rest of the solar specs" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (38.7 s)" },
+    { "cmd": "npm run drive -- tests/drive/steps/solar-merge.ts --paradigm solar", "pass": true, "detail": "Harbor Pod, first merge of tide-gateway at 87815 ms. Dev log station-form lines for the stepped station (key ...9975e9eb43): cut/back-to-first (the drive's seek back to before the merge, changedAgoMs 567), then {outcome:'played', changedAgoMs:1200} at t=4398, then {outcome:'finished'} at t=8001 (3.6 s later). No 'armed', 'interrupted' or 'cut' during the merge. Stills copied to docs/progress/v1.4/work/E4/e4a-0.8s.png, e4a-2.3s.png, e4a-3.9s.png, e4a-5.4s.png (the drive steps every ~0.77 s, so nearest to 0.5, 2, 3.5, 5 s). I did not inspect the stills visually." }
+  ],
+  "files": [
+    "src/shared/engine/pace.ts",
+    "src/renderer/src/theme/starChart/maneuvers/powerLink.ts",
+    "src/renderer/src/theme/starChart/assets/facility.ts",
+    "src/renderer/src/theme/starChart/assets/standby.ts",
+    "src/renderer/src/chart/art/dreadnoughts.ts",
+    "scripts/pacing-built.ts",
+    "scripts/pacing-candidates.ts",
+    "tests/unit/maneuvers.test.ts",
+    "tests/unit/pacingBuilt.test.ts",
+    "docs/15-reference.md (7 first row)",
+    "docs/13-game-design.md (4.4 line, 6 Power link row)",
+    "docs/05-playback.md (M-1)",
+    "docs/03-contracts.md (first variant act; station form lines)",
+    "docs/progress/v1.4/pacing-built.json, pacing-candidates.json, pacing-ledger.json, pacing-ledger.md (regenerated)",
+    "docs/progress/v1.4/work/E4/e4a-*.png (stills)"
+  ],
+  "pod_totals_ms": {
+    "note": "pacing-ledger.json totalMs, before = committed at efdd54b, after = regenerated; C2 estimate in the last column",
+    "Comet Pod": { "before": 66665, "after": 61845, "saved": 4820, "c2_estimate": 2000 },
+    "Nova Pod": { "before": 238955, "after": 235755, "saved": 3200, "c2_estimate": 2000 },
+    "Quasar Pod": { "before": 1075780, "after": 1050180, "saved": 25600, "c2_estimate": 16000 },
+    "Pulsar Pod": { "before": 695955, "after": 670355, "saved": 25600, "c2_estimate": 16000 },
+    "Convoy Planning Pod": { "before": 196385, "after": 189985, "saved": 6400, "c2_estimate": 4000 },
+    "Harbor Pod": { "before": 211435, "after": 200115, "saved": 11320, "c2_estimate": 6000 }
+  },
+  "moved_expectations": [
+    "tests/unit/maneuvers.test.ts 'a facility's first merge in the round is the long variant' (was :236 'room to transform', durationMs > later merge + 2500): now asserts gather + act + land + LINK_CHARGE_MS (700, a local const: the renderer's fx/timing.ts is not importable from the unit test's alias) >= 4400, durationMs < 11100 and === 7900. The old '> later merge + 2500' line was removed: it can't hold at 7900 (the later merge is 9700 long by this test's board)."
+  ],
+  "deviations": [
+    "03 (normative) amended in two places, per the packet: the first variant's act now covers the transformation from the gather (§ near 1052), and the station-form lines note (§ near 2072) says the transform act begins it at the gather: 'played' then 'finished', and a seek or scene entry mid-merge reads 'interrupted'/'scrubbed-back'. 13 §6's Power link row, 13 §4.4's Wars line, 05 M-1 and 15 §7 follow.",
+    "Packet step 12 also lists the 03 PaceRule.short/PlanOptions.sequence/etc. edits and 13 §4.4's echo/disperse overlap line, 05 P-3..P-19, 15 §10: those belong to E4bc and E4d and were not touched.",
+    "The 'played' note comes from beginTransform and there is no 'armed' note for a normal first merge any more (armed is now only the already-second-form case). Doc 03's outcome list is unchanged.",
+    "Wording only: the 'first' variant's comment in pace.ts avoids the word 'station' (literalFence test forbids it in engine files); the ledger's candidate text says 'station'."
+  ],
+  "limitations": [
+    "E4a's real saving exceeds the packet's per-merge 3200 on Comet (4820 vs 3200) and Harbor (11320 vs 6x3200 would be 19200, so it is less; vs C2 6000) because the shorter merge also moves the following beats and day budget fit; I didn't investigate beyond noting the E4a row is >= C2's estimate on every pod (the new pacingBuilt test).",
+    "The stills were copied but not looked at. The visual check of the transformation from the gather is the reviewer's/human's.",
+    "The dev log's 'cut'/'back-to-first' line before 'played' is the drive's own seek back before the merge, not part of the merge.",
+    "The 'solar' e2e spec filter is a substring match, so the E4a e2e run also covered solar-dense and the other solar specs (45 tests, 8 minutes).",
+    "No goldens moved (tests/golden/__golden__ untouched).",
+    "settleForm is invoked from StationView.settle; I did not add a unit test for beginTransform/settleForm (DreadnoughtView needs Pixi); covered only by the drive's station-form lines and e2e."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "item": "A1-A3",
+  "role": "fixer",
+  "round": 1,
+  "model_tier": "small",
+  "effort": "low",
+  "verdict": "done",
+  "summary": "Fixed review-1: the Major by the orchestrator's fallback (the two 115 px forms removed from -sizes and -sizes-flat; floor stated in the note only), the Minor (note formatted with toFixed(1)), and the Nit (\"a 8.3\" to \"an 8.3\" in 09 §7).",
+  "findings": [
+    {
+      "id": 1,
+      "severity": "Major",
+      "finding": "The 115 px forms in the -sizes and -sizes-flat cells overlapped the 96 px forms and clipped at the cell bottom.",
+      "action": "fixed",
+      "how": "Removed the two FLOOR_LEN tuples from FormSizes (src/renderer/src/gallery/v1/stations.ts). The cells draw 48, 96, 150 px again, as before this item. The -sizes title is restored to 'both forms at 48, 96, 150 px'. The floor size is stated in the -sizes note only, computed from FLOOR_PX.facility (orchestrator decision: packet fallback)."
+    },
+    {
+      "id": 2,
+      "severity": "Minor",
+      "finding": "The -sizes note printed float noise: '2 × FLOOR_PX.facility 57.599999999999994'.",
+      "action": "fixed",
+      "how": "The note now interpolates (FLOOR_PX.facility ?? 0).toFixed(1), so it reads '2 × FLOOR_PX.facility 57.6'. The floor line reads 'about 115 px long'."
+    },
+    {
+      "id": 3,
+      "severity": "Nit",
+      "finding": "09 §7 reads 'measured a 8.3 ms vsync'.",
+      "action": "fixed",
+      "how": "Changed to 'an 8.3 ms vsync' in docs/09-signal-ladder.md (§7 Performance). The other 8.3 ms mention in that paragraph already read 'an'. A search found no other 'a 8.3' in docs/09 or docs/15."
+    }
+  ],
+  "checks": [
+    {"cmd": "grep -n \"48 px\" src/renderer/src/gallery/v1/stations.ts", "pass": true, "detail": "no matches (exit 1)"},
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "exit 0"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "exit 0"},
+    {"cmd": "npx vitest run tests/unit/docTables.test.ts", "pass": true, "detail": "35/35 passed"},
+    {"cmd": "npm test --silent (gate unit run)", "pass": true, "detail": "96 files, 1414 tests passed. The stageCode failure the clerk saw is no longer present in the tree; I did not change those files."},
+    {"cmd": ".claude/sluice/with-lock.sh npm run e2e:spec -- gallery-v1", "pass": true, "detail": "5/5 passed (the five cycling cell sets, review copies)"}
+  ],
+  "files": [
+    "src/renderer/src/gallery/v1/stations.ts",
+    "docs/09-signal-ladder.md",
+    "docs/progress/v1.4/work/A1-A3/fix-1.json"
+  ],
+  "deviations": [
+    "The -sizes and -sizes-flat cells no longer draw the floor-length (115 px) forms. The floor is stated in the note, as the orchestrator's fallback allows. Acceptance's 'among the cell's sizes' is therefore not met in the drawn sizes; the orchestrator chose this over a layout change."
+  ],
+  "limitations": [
+    "The -sizes and -sizes-flat cells are not cycling cells, so gallery-v1 does not render them. The restored layout was not viewed in the gallery this round. It matches the pre-item layout, which the reviewer did not flag.",
+    "Not re-run this round: npm run e2e:spec -- perf and the e2e:keystone run. Neither touches the stations gallery file, and perf is the clerk's known-red Pulsar item (B1 owns it). 09 §7 is unchanged apart from the article."
+  ]
+}

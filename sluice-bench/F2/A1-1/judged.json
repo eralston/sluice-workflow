@@ -1,0 +1,47 @@
+{
+  "findings": [
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The Decided paragraph says the ship carries on to its next sortie if one is waiting (E4's P4), but the pass always flies to the ship's rest (`goalOf`) and ignores the P4 `waitS`, so a captain with back-to-back summons flies home, sits idle about 1.1 s, then flies out again: the stop-and-go the item set out to remove. This also contradicts 05 P-5 ('a captain never flies home between').",
+      "kept": true,
+      "why": "movers.ts:317 flies to goalOf (the rest), waitS ignored (movers.ts:253-254); Decided says next sortie; 05 P-5 says never flies home between. [Was Major. 2026-11-10, the user: one behaviour, one severity. The pass glides to its rest even when a next sortie waits; the real F2 shipped it, signed off with no escape (its packet left the hand-off at speed to F3). Scored a Minor in every run.]",
+      "class": "next-sortie"
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The acceptance check 'the station's act starts within 50 ms of the blip' can't fail: it compares two delayMs values from the same act-phase array, and the `actAt` term cancels out. It never ties the blip to when the ship actually reaches the spot.",
+      "kept": true,
+      "why": "summonPass.test.ts:72 compares two delayMs with actAt cancelling, so it cannot fail."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The solar-dense change sorts captains' turns by whether they moved (12 px or more), so 'parked while named' is now true by definition: a regular sortie that drifts while named gets reclassified as a 'ride' and passes the looser check.",
+      "kept": true,
+      "why": "solar-dense.spec.ts:458-466 splits by moved>=12, so 'parked while named' holds by construction; rides not checked as summons."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "A summon's plate is now whole for only about 1280 ms (NOTE_MIN_MS less the unfurl), below CREW_OPEN_MIN_MS. The 15 \u00a711 CREW_OPEN_MIN_MS row ('However short the work, the plate is whole at least this long') and crewTimes' JSDoc weren't amended; only the CREW_HOLD_MS row was.",
+      "kept": true,
+      "why": "maneuvers.ts:83 closeMs=openMs+NOTE_MIN_MS bypasses CREW_OPEN_MIN_MS; 15 row at :1259 unchanged."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The call blip, the summons, is drawn in At-rest blue (HERO_GLOW) as Decided requires, but 15 \u00a72 still lists summons under Hero blue and 13 \u00a76.5 still says 'the summons is in hero blue'. Those palette rows are now out of step.",
+      "kept": true,
+      "why": "stationJumpIn.ts:55 uses HERO_GLOW; 15:120 and 13:738 still say hero blue."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "F2 tips Pulsar over a cliff in the director's levers. With every lever, Pulsar now drops 'light' and plays its non-climax beats at TEMPO_MAX 2\u00d7 instead of 1.1\u00d7, and it runs longer. The golden and a carve-out in the test accept this rather than flag it.",
+      "kept": true,
+      "why": "director.json diff shows Pulsar levers/tempo/estimate changes; pacingBuilt.test.ts carve-out present."
+    }
+  ]
+}

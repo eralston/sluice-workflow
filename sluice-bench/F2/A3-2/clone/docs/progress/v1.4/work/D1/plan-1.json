@@ -1,0 +1,11 @@
+{ "item": "D1", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "Crew plates in a formation (two or more captains sharing a maneuver) go beside their ships when the line is closer to vertical and above or below when closer to horizontal, and never cover a member's ship; the scope's code pointer (placeFormation.ts) is wrong, the change is in labels.ts and labelTiers.ts.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "Scope 'Today'/'Touches' name placeFormation.ts (piece formations on a planet); the captain formation is Power link's (powerLink.ts) and its plates are placed in labels.ts. Packet corrects this; no scope edit made.",
+    "The gallery Power link demo is a bare GraphScene with no label layer, so its stills cannot show plates; the packet asks for those from the real app (drive) as well.",
+    "Baseline probe: no plate-on-plate overlap in 5 merges; one Quasar merge had plates over another member's ship (the acting fallback crosses bodies). The new e2e must assert the side rule too, and be run against the unchanged code first, or it passes vacuously."
+  ] }

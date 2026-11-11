@@ -1,0 +1,83 @@
+{
+  "item": "E7a",
+  "role": "builder",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "high",
+  "verdict": "done",
+  "summary": "Sector sweep within one beat (27 E7a, 05 §8.4a M-32, P-12). A new last rule `region.sweep` (RULE.regionSweep, sweepPhases(n)) takes a beat with CROWD_MIN (4) or more creations (piece.appear / threat.emerge appears) as one maneuver. The sequencer places it first and holds back any later play on a swept subject until it ends; limelight and turns skip it; BaseMoment.swept feeds volleysOf's B-15 guard. The theme's sectorSweep tells a Nav cyan ring on the star, then a `sweep` finale ring sweeps out while each piece makes a quiet entrance in distance order (sweepOrder, ties by pk). The interpreter keeps swept pieces hidden until their entrances and puts one note on the star (sweepNote: '11 User Stories · 5 Bugs created in Sprint 13'). I reviewed the interrupted attempt and kept it (pace, maneuvers, director, contracts, events, theme files). I finished the interpreter and labels note, the finales sweep command, the gallery cell, the ledger rows, tests, docs and the drive step.",
+  "openQuestions": {
+    "05 'what plays' table format": "M-32 is a row in 05 §8.4a's existing three-column table (Rule | What | Notes), after M-31, so it sits inside the §8.4–§8.5 span that rulebook.test reads. P-12 is revised in place to name the sweep for 4+ creations.",
+    "GEOMETRY.starR": "It exists (150, @shared/engine/solar/version) and is used directly for the tell ring (2.4×starR → 1.1×starR). No new constant was needed."
+  },
+  "stills": [
+    "docs/progress/v1.4/work/E7/e7-sweep-tell.png (Harbor Pod, beat 1 +150 ms: the tell ring, no note yet)",
+    "docs/progress/v1.4/work/E7/e7-sweep-mid-act.png (+1500: the ring sweeping out, pieces entering, the star's note '11 User Stories · 5 Bugs created in Sprint 13')",
+    "docs/progress/v1.4/work/E7/e7-sweep-act-end.png (+3200: every piece in, the note holding)",
+    "docs/progress/v1.4/work/E7/e7-sweep-seek-end.png (paused, seeked to the beat's end: the same board, 16 of 16 drawn)"
+  ],
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean after the last edit" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean after the last edit" },
+    { "cmd": "npm test", "pass": true, "detail": "107 files, 1657 tests (including the new tests/unit/sweep.test.ts with 17 tests, docTables, rulebook, literalFence, pacingBuilt, maneuvers and the golden)" },
+    { "cmd": "npx vitest run tests/golden -u (director.json)", "pass": true, "detail": "I checked the diff line by line. Only Convoy estimateMs 195565 → 192865 and Harbor 208015 → 198885 moved (the sweep's beats). Nothing else changed" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar solar-play solar-dense (run 1)", "pass": false, "detail": "2 failed, 31 passed, 13 did not run. (a) gallery-assets:44: 16 distinct rules, not 18. The sweep cell was missing (its cast holds 20141, which isn't on Harbor's board at that beat), and so was threat.emerge (pod-sprint's only new threats now come in the sweep). (b) solar-dense:295: the star wearing the sweep note was flagged as a 'noted piece at sky'. Fixes are in deviations" },
+    { "cmd": "npm run e2e:spec -- gallery-assets (after the gallery fix)", "pass": true, "detail": "the gallery cases pass, with 18 rules, region.sweep and threat.emerge each with a cell" },
+    { "cmd": "npm run e2e:spec -- solar-dense (after the spec fix)", "pass": true, "detail": "21 passed" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar solar-play solar-dense (run 2)", "pass": true, "detail": "46 passed (8.7 m), none failed or skipped" },
+    { "cmd": "npm run drive -- tests/drive/steps/e7-sweep.ts --paradigm solar", "pass": true, "detail": "Harbor Pod, first accented beat (1, 3500 ms, next beat 7570): 16 pieces arrive, all revealed between +572 and +2221 ms; one note on the star from mid-act; after a seek to the beat's end, 16 of 16 drawn" }
+  ],
+  "files": [
+    "src/shared/engine/pace.ts",
+    "src/shared/engine/maneuvers.ts",
+    "src/shared/engine/director.ts",
+    "src/shared/contracts/maneuver.ts",
+    "src/shared/packs/events.ts",
+    "src/renderer/src/theme/starChart/maneuvers/index.ts",
+    "src/renderer/src/theme/starChart/maneuvers/sectorSweep.ts",
+    "src/renderer/src/theme/starChart/maneuvers/sweepOrder.ts",
+    "src/renderer/src/theme/starChart/finales.ts",
+    "src/renderer/src/chart/fx/v1/interpreter.ts",
+    "src/renderer/src/chart/labels.ts",
+    "src/renderer/src/gallery/maneuverDemos.ts",
+    "scripts/pacing-built.ts",
+    "scripts/pacing-candidates.ts",
+    "docs/progress/v1.4/pacing-built.json",
+    "docs/progress/v1.4/pacing-candidates.json",
+    "docs/progress/v1.4/pacing-ledger.json",
+    "docs/progress/v1.4/pacing-ledger.md",
+    "tests/unit/sweep.test.ts",
+    "tests/unit/maneuvers.test.ts",
+    "tests/unit/pacingBuilt.test.ts",
+    "tests/golden/__golden__/director.json",
+    "tests/e2e/gallery-assets.spec.ts",
+    "tests/e2e/solar-dense.spec.ts",
+    "tests/drive/steps/e7-sweep.ts",
+    "tests/README.md",
+    "docs/03-contracts.md",
+    "docs/05-playback.md",
+    "docs/13-game-design.md",
+    "docs/15-reference.md",
+    "docs/progress/v1.4/work/E7/e7-sweep-tell.png",
+    "docs/progress/v1.4/work/E7/e7-sweep-mid-act.png",
+    "docs/progress/v1.4/work/E7/e7-sweep-act-end.png",
+    "docs/progress/v1.4/work/E7/e7-sweep-seek-end.png"
+  ],
+  "ledger": "Built E7 rows: Harbor saves 7.1 s (estimate 5.1), Convoy 1.0 s (estimate −2.4), Comet, Nova, Quasar and Pulsar 0 (Halcyon has no creation burst). Main summary: Convoy 189.0 → 188.0, Harbor 190.8 → 183.7. The C2 candidate numbers are unchanged; only its assumption text names E7.",
+  "deviations": [
+    "03 (normative) changed; call it out in the block note. RULE has 17 rule ids with `region.sweep` last in PACE_RULES. New: sweepPhases, PlannedManeuver.sweep, BaseMoment.swept, sweepNote.",
+    "The star's note counts the swept pieces drawn on the board (by kind), not m.sweep.counts, so it never names a piece the chart doesn't draw (R9). See the 20141 limitation.",
+    "The sequencer holds back later plays on the swept subjects only, not on their seats.",
+    "The sweep's phases (sweepPhases(n)) count the deduped subjects.",
+    "Gallery: castNodes frames and keeps the star for a sweep. A sweep resolves when CROWD_MIN of its subjects are on the board (sweepResolves), as the chart reveals only drawn pieces. A second pass plans without region.sweep for any rule the first pass never showed, so threat.emerge keeps its cell (pod-sprint's only new threats come in the sweep).",
+    "Tests meant to move: maneuvers.test's crowd test (now one region.sweep, plus the old CROWD_MIN quiet plays without the rule); its 'every rule fits' sum leaves out the sweep (48455 > 47250) and asserts the sweep's span < CROWD_MIN × piece.appear's span; gallery-assets counts 18 rules and requires region.sweep; solar-dense's tier check lets a noted star rest at its own tier, T4 Sky (15 §6: the star's plate is 'sky'), and still requires 'door' for a noted piece.",
+    "No gallery still of the Sector sweep cell is saved (the gallery run writes none); the cell's run and clear are checked by gallery-assets.spec."
+  ],
+  "limitations": [
+    "Upstream discrepancy, for the orchestrator: paceFacts counts pod-sprint's 20141 as Harbor's from its creation (created in Lantern, moved to Harbor on 10-02), but the knownThen board shows it elsewhere until the move. The sweep's cast and phases include it (17 subjects), and the chart reveals 16. sweep.test tolerates that one piece on Harbor and checks it is on the board by the round's end.",
+    "Halcyon (Comet, Nova, Quasar, Pulsar) has no creation burst, so the sweep saves nothing there. Check 2 runs on Halcyon only to show it's unchanged.",
+    "History marks only the carrier event's row as now; the other swept events don't get a row of their own while the sweep plays.",
+    "With no c.board (a crop without one), the sweep orders by distance from (0, 0) and scales the stops by the farthest piece."
+  ]
+}

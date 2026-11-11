@@ -1,0 +1,21 @@
+{
+  "item": "E5b",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "summary": "Montage and adaptive speed work as packeted. In the app, Quasar plays at 2.00x between climaxes, with no perf or build-time regression. Pulsar is 321.6 s at the k=2 ceiling, so acceptance line 2 rests on E5c. Two Minors: stale clock docs in 05 §1 and B-19, and no montage still.",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 3 },
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean (E5a probes deleted)" },
+    { "cmd": "npm test", "pass": true, "detail": "105 files, 1578 tests" },
+    { "cmd": "npm run e2e:spec -- solar solar-play solar-dense gallery-assets", "pass": true, "detail": "43 passed, 1 failed: solar.spec.ts:24, a click timeout (element not stable); re-run of solar.spec.ts passed 15/15. History-agreement case (solar-dense:295) passed" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "npm run e2e:spec -- perf (after) and the start commit's perf (before, separate build in scratchpad)", "pass": true, "detail": "after: 3/3 pass (rest 16.9, 1x 25, 4x 25.6, seek 175.2 ms p95); before: seek red at 276.4 (known), rest 17.3, 1x 25, 4x 25.1" },
+    { "cmd": "warm scheduleOf timing, Quasar and Pulsar, before vs after (vite-node, interleaved, median of 7)", "pass": true, "detail": "Quasar x1.01-1.02, Pulsar x1.02-1.04" },
+    { "cmd": "npm run drive -- <scratchpad>/review-e5b-drive2.ts --paradigm solar", "pass": true, "detail": "Quasar Pod: x moves 2.00x wall at beats 16, 57, 95 and 139; dx/dRemaining 2.00" },
+    { "cmd": "vite-node probes (scratchpad): tempo k, montage savings, captain naming", "pass": true, "detail": "Quasar and Pulsar k=2; montage saves 4.6 s on Quasar and 0 on Pulsar; no captain named only by montage or quiet plays" }
+  ]
+}

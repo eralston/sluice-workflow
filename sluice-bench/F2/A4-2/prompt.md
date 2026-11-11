@@ -1,0 +1,9 @@
+Orchestrate item F2 of docs/27-v1.4.md (`### F2 Summon on the fly`) as tests first, then a hill-climb, by launching three fresh agents in turn with the Agent tool (general-purpose agents; pass the model named). Don't write the code or the tests yourself.
+
+1. **Test writer** (model opus; tell it to think hard): read CLAUDE.md, the docs it names and the item; turn each acceptance line into failing tests (unit tests, plus probes against the test hooks where a line is about what the app shows); check they fail on this tree for the right reason; commit them as `bench: tests`.
+2. **Builder** (model sonnet): read CLAUDE.md, the docs it names, the item and the committed tests; implement the item until those tests and the gate (`npm run -s typecheck`, `npm run -s lint`, `npm test`) pass, plus the mapped e2e specs (tests/README.md) and `npm run e2e:keystone`. It may not weaken the tests: any change to them must be justified in its record (`docs/progress/v1.4/work/F2/build.md`). Don't commit yet.
+3. **Reviewer** (model opus; tell it to think hard): a fresh, adversarial review of the diff against the item's acceptance and the project's rules; findings with severity (Blocker, Major, Minor, Nit) and evidence, written to `docs/progress/v1.4/work/F2/review.md`.
+
+Then launch the builder once more (fresh, model sonnet) to fix the Blockers and Majors the review found, once, and commit the whole item.
+
+Nobody is watching this run, so no one can answer a question. If you need a decision, take it from docs/27-v1.4.md's Decisions where they cover it; otherwise use your judgment and record the decision where the item's record goes. Fixture data only (INV-18); never a real PAT; the app never writes to ADO. Never push.

@@ -1,0 +1,320 @@
+{
+  "item": "F2",
+  "arm": "A3",
+  "run": 2,
+  "start": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "head": "fe49e20236b2fc018472dae1efea9b9dc712b07b",
+  "at": "2026-11-10T08:52:41.158Z",
+  "gates": {
+    "typecheck": true,
+    "lint": true,
+    "unit": true,
+    "noPat": true,
+    "noAdoWrite": true,
+    "sharedPure": true,
+    "finished": true,
+    "evidence": {
+      "typecheck": "",
+      "lint": "",
+      "unit": "",
+      "pat": [],
+      "adoWrite": [],
+      "sharedImpure": []
+    },
+    "pass": true
+  },
+  "probes": {
+    "P1": {
+      "status": "met",
+      "detail": {
+        "cell": 1,
+        "loops": [
+          {
+            "still": 1127,
+            "leave": 1845,
+            "rest": 4763,
+            "path": 348
+          },
+          {
+            "still": 1316,
+            "leave": 8721,
+            "rest": 11870,
+            "path": 341
+          }
+        ],
+        "full": {
+          "id": "facility.enter",
+          "rule": "facility.enter",
+          "title": "Station jump-in",
+          "state": "after",
+          "loops": 1,
+          "reducedLoops": 0,
+          "peak": 5,
+          "active": 0,
+          "stuck": 0,
+          "started": 1,
+          "flare": 0,
+          "flarePeak": 0,
+          "reducedFlarePeak": 0
+        },
+        "reduced": {
+          "id": "facility.enter",
+          "rule": "facility.enter",
+          "title": "Station jump-in",
+          "state": "after",
+          "loops": 3,
+          "reducedLoops": 1,
+          "peak": 3,
+          "active": 0,
+          "stuck": 0,
+          "started": 4,
+          "flare": 0,
+          "flarePeak": 0,
+          "reducedFlarePeak": 0
+        },
+        "errors": [],
+        "runs": true,
+        "moves": false,
+        "probeStatus": "partial",
+        "override": "Checked by eye 2026-11-10 (p1-path.json): one continuous flight out through the spot and back to rest by about 1.9 s, then a rest and a 16 px nudge as the demo's after-layout settles. The probe's still-window ran from first move to last move, so it counted that rest as a stand. It is not a hold between the flight and its next place. P1 met."
+      }
+    },
+    "P2": {
+      "status": "met",
+      "detail": {
+        "beats": [
+          {
+            "pod": "Harbor Pod",
+            "beat": 7,
+            "startMs": 23330,
+            "frames": 496,
+            "summoner": "ship",
+            "arrivalMs": 712,
+            "flight": {
+              "still": 0,
+              "leave": 14,
+              "rest": 1505,
+              "path": 3998
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -7
+          },
+          {
+            "pod": "Harbor Pod",
+            "beat": 24,
+            "startMs": 82055,
+            "frames": 456,
+            "summoner": "ship",
+            "arrivalMs": 725,
+            "flight": {
+              "still": 0,
+              "leave": 18,
+              "rest": 3592,
+              "path": 6635
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -16
+          },
+          {
+            "pod": "Pulsar Pod",
+            "beat": 4,
+            "startMs": 12690,
+            "frames": 270,
+            "summoner": "ship",
+            "arrivalMs": 722,
+            "flight": {
+              "still": 0,
+              "leave": 22,
+              "rest": 4272,
+              "path": 25842
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -25
+          },
+          {
+            "pod": "Pulsar Pod",
+            "beat": 6,
+            "startMs": 21425,
+            "frames": 275,
+            "summoner": "ship",
+            "arrivalMs": 702,
+            "flight": {
+              "still": 0,
+              "leave": 18,
+              "rest": 1493,
+              "path": 25094
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": 0
+          }
+        ],
+        "noHold": true,
+        "blips": "4 of 4",
+        "blip": true,
+        "unitTests": [
+          "tests/unit/commands.test.ts",
+          "tests/unit/maneuvers.test.ts",
+          "tests/unit/pacingBuilt.test.ts",
+          "tests/unit/sweep.test.ts"
+        ],
+        "behaviour": "met"
+      }
+    },
+    "P3": {
+      "status": "met",
+      "detail": {
+        "docTables": true,
+        "rowChanged": true,
+        "row": "| `facility.enter` | Station jump-in | A repository's first PR in the round \u00b7 `attach` (the first into its facility) | 1915 | narrative | no | The author flies through the spot where it comes in without stopping; as it passes, one At-rest blue call blip, and the station slides in at that instant wit",
+        "goldens": [
+          "tests/golden/__golden__/director.json"
+        ],
+        "unnamed": [],
+        "goldensNamed": true
+      }
+    },
+    "P4": {
+      "status": "met",
+      "detail": {
+        "pacingRuns": true,
+        "pacingOut": "",
+        "ledgerCurrent": false,
+        "newRows": 7,
+        "newRowPods": [
+          "Comet Pod",
+          "Nova Pod",
+          "Quasar Pod",
+          "Pulsar Pod",
+          "Convoy Planning Pod",
+          "Harbor Pod",
+          "Meteor Pod"
+        ],
+        "perPodRow": true,
+        "summonMs": 1915,
+        "phases": [
+          [
+            "gather",
+            715
+          ],
+          [
+            "act",
+            1200
+          ]
+        ],
+        "summonShorter": true,
+        "appS": {
+          "Comet Pod": 45,
+          "Nova Pod": 170.1,
+          "Quasar Pod": 289.9,
+          "Pulsar Pod": 269.5,
+          "Convoy Planning Pod": 170.2,
+          "Harbor Pod": 174.7,
+          "Meteor Pod": 296.1
+        },
+        "appSStart": {
+          "Comet Pod": 45.8,
+          "Nova Pod": 171,
+          "Quasar Pod": 289.6,
+          "Pulsar Pod": 288.6,
+          "Convoy Planning Pod": 179,
+          "Harbor Pod": 179.8,
+          "Meteor Pod": 275.9
+        },
+        "shorter": [
+          "Comet Pod",
+          "Pulsar Pod",
+          "Convoy Planning Pod",
+          "Harbor Pod"
+        ],
+        "fourShorter": true
+      }
+    }
+  },
+  "acceptance": 40,
+  "regress": {
+    "ran": 238,
+    "failures": [
+      {
+        "id": "demo.spec.ts:439 no expanded station plate in Halcyon\u2019s five pods scrolls sideways, and every fact stays inside it",
+        "file": "demo.spec.ts",
+        "line": 439,
+        "error": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+      },
+      {
+        "id": "solar-dense.spec.ts:184 ships and stations point the way they travel (22: facing follows motion)",
+        "file": "solar-dense.spec.ts",
+        "line": 184,
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m0.05\u001b[39m\nReceived:   \u001b[31m0.058823529411764705\u001b[39m"
+      },
+      {
+        "id": "solar.spec.ts:645 draws all 37 stations at the end of the sprint, and keeps VC-3 at 1024\u00d7640",
+        "file": "solar.spec.ts",
+        "line": 645,
+        "error": "Error: 1024\u00d7640\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 49\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"star Meteor Pod < 12px\",\u001b[39m\n\u001b[31m+   \"seat Bea's Promise < 12px\",\u001b"
+      }
+    ],
+    "newFailures": [],
+    "persists": [],
+    "points": 20
+  },
+  "rules": {
+    "amended": {
+      "13": true,
+      "03": true,
+      "05": true
+    },
+    "lapses": [],
+    "points": 10
+  },
+  "informative": {
+    "realTests": {
+      "ok": false,
+      "failed": 6,
+      "passed": 160
+    },
+    "churn": {
+      "files": 29,
+      "lines": 1901,
+      "outsideTouches": [
+        "docs/03-contracts.md",
+        "docs/27-v1.4.md",
+        "scripts/pacing-built.ts",
+        "scripts/pacing-candidates.ts",
+        "src/renderer/src/chart/fx/movers.ts",
+        "src/renderer/src/chart/fx/types.ts",
+        "src/renderer/src/chart/fx/v1/castLabels.ts",
+        "src/renderer/src/chart/fx/v1/interpreter.ts",
+        "src/renderer/src/chart/fx/v1/switching.ts",
+        "src/renderer/src/chart/labels.ts",
+        "src/renderer/src/gallery/maneuverDemos.ts",
+        "src/shared/engine/maneuvers.ts"
+      ],
+      "goldens": [
+        "tests/golden/__golden__/director.json"
+      ]
+    },
+    "health": {
+      "over800New": [],
+      "complexity": "147 functions over 15 \u00b7 worst 275 (labels.ts position) \u00b7 41 over 80 lines"
+    },
+    "secs": {
+      "typecheck": 6,
+      "lint": 6,
+      "unit": 89,
+      "build": 5
+    }
+  },
+  "partial": {
+    "acceptance": 40,
+    "regress": 20,
+    "rules": 10
+  }
+}

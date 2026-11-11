@@ -1,0 +1,12 @@
+{
+  "item": "C3", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "The fallback (switch kept, default off, 47% same-run gain at 4x, goldens unchanged) holds, but the HG-C options lack measured savings for the look-changing cuts the packet required, and two 15 rows misstate the gate result and the constant's file.",
+  "findings": { "blocker": 1, "major": 0, "minor": 3, "nit": 1 },
+  "checks": [
+    {"cmd": "npm run -s typecheck; npm run -s lint; npm test", "pass": true, "detail": "99 files, 1462 tests"},
+    {"cmd": "with-lock npm run e2e:spec -- perf profile", "pass": true, "detail": "7 passed; cuts 4x off 33.2 on 17.6 gain 0.47; 1x off 17.6 within 1.25 vsync, skip clause applied"},
+    {"cmd": "with-lock npm run e2e:spec -- gallery-v1 slice3b", "pass": true, "detail": "20 passed"},
+    {"cmd": "with-lock npm run e2e:keystone", "pass": true, "detail": "43 passed"}
+  ]
+}

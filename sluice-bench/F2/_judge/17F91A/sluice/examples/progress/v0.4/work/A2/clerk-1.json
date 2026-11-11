@@ -1,0 +1,1 @@
+{ "item": "A2", "role": "clerk", "round": 1, "model_tier": "small", "effort": "low", "verdict": "done", "checks": [ { "cmd": "npm run test:docs", "pass": true, "detail": "doc links ok" } ], "files": ["docs/ingestion.md", "README.md"], "deviations": [], "limitations": [], "summary": "Retry table added to §6 and linked from the README." }

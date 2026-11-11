@@ -1,0 +1,55 @@
+{
+  "$comment": "The CRM demo pack's mapping (docs/14-architecture.md §1.3; 17 W3-T2): a sales team's pipeline, read in engine terms. Fixture-only: no real source behind it. Same shape as config/state-mapping.json. Each state reuses a v0 stage key, so v0 views draw it unchanged, and its rung and flags equal that stage's on the signal ladder (tests/unit/packs.test.ts). Raw state names stay within 16 characters. Accounts are the facilities (repos), so 'entities.attachment' reads quotes by their PR status: out, accepted, or lost.",
+  "version": 1,
+  "unknownStage": "unknown",
+  "types": {
+    "Deal": {
+      "kind": "story",
+      "role": "objective",
+      "states": {
+        "Lead":          { "category": "Proposed",   "stage": "story.uncharted",       "rung": "ready", "sketch": true },
+        "Qualified":     { "category": "Proposed",   "stage": "story.surveyed",        "rung": "ready" },
+        "Proposal":      { "category": "Proposed",   "stage": "story.review",          "rung": "ready" },
+        "On Hold":       { "category": "Proposed",   "stage": "story.dormant",         "rung": "ready", "deferred": true },
+        "Negotiation":   { "category": "InProgress", "stage": "story.terraforming",    "rung": "underway" },
+        "Verbal Commit": { "category": "Resolved",   "stage": "story.developed",       "rung": "nearing", "step": 0.3 },
+        "Contract Out":  { "category": "Resolved",   "stage": "story.developedAccept", "rung": "nearing", "step": 0.65 },
+        "Closed Won":    { "category": "Completed",  "stage": "story.lush",            "rung": "accomplished" },
+        "Closed Lost":   { "category": "Removed",    "stage": "story.ghost",           "rung": "off", "ghost": true }
+      }
+    },
+    "Escalation": {
+      "kind": "bug",
+      "role": "threat",
+      "states": {
+        "Reported":        { "category": "Proposed",   "stage": "bug.detected",         "rung": "ready", "sketch": true },
+        "Triaged":         { "category": "Proposed",   "stage": "bug.stable",           "rung": "ready" },
+        "Working":         { "category": "InProgress", "stage": "bug.disturbance",      "rung": "underway" },
+        "Mitigated":       { "category": "Resolved",   "stage": "bug.contracted",       "rung": "nearing", "step": 0.3 },
+        "Customer Review": { "category": "Resolved",   "stage": "bug.contractedAccept", "rung": "nearing", "step": 0.65 },
+        "Settled":         { "category": "Completed",  "stage": "bug.remnant",          "rung": "accomplished" },
+        "Duplicate":       { "category": "Removed",    "stage": "bug.ghost",            "rung": "off", "ghost": true },
+        "Withdrawn":       { "category": "Removed",    "stage": "bug.rejected",         "rung": "off", "ghost": true, "strike": true }
+      }
+    },
+    "Follow-up": {
+      "kind": "task",
+      "role": "step",
+      "states": {
+        "Scheduled":   { "category": "Proposed",   "stage": "task.unstarted", "rung": "ready", "sketch": true },
+        "In Progress": { "category": "InProgress", "stage": "task.lit",       "rung": "underway" },
+        "Done":        { "category": "Completed",  "stage": "task.settled",   "rung": "accomplished" },
+        "Cancelled":   { "category": "Removed",    "stage": "task.faint",     "rung": "off", "ghost": true }
+      }
+    }
+  },
+  "entities": {
+    "attachment": {
+      "states": {
+        "active":    { "category": "InProgress", "stage": "flight.active",    "rung": "underway" },
+        "completed": { "category": "Completed",  "stage": "flight.completed", "rung": "accomplished" },
+        "abandoned": { "category": "Removed",    "stage": "flight.abandoned", "rung": "off", "ghost": true }
+      }
+    }
+  }
+}

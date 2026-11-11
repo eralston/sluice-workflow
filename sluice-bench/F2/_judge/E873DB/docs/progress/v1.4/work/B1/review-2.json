@@ -1,0 +1,12 @@
+{ "item": "B1", "role": "reviewer", "round": 2, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "Round 1's Major is fixed: position() re-settles the tier right after expand/collapse, so is-expanded and the raised tier change in the same frame. The attention case passes 4/4 and the lag probe shows no stale frame. The 05 A-1 and 12 glossary docs are corrected. One Nit remains: the rest still has the Pulsar Pod star selected (harmless, since its own tier is sky).",
+  "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 1 },
+  "checks": [
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npx vitest run tests/unit/labelTiers.test.ts tests/unit/docTables.test.ts", "pass": true, "detail": "46 passed"},
+    {"cmd": "npm run e2e:spec -- tests/e2e/solar-dense.spec.ts --grep 'at most four labels' --repeat-each=4 --workers=1", "pass": true, "detail": "4/4 passed (was 1/3 in round 1)"},
+    {"cmd": "STAR_CHART_FIXTURE=meridian-sprint npm run drive -- docs/progress/v1.4/work/B1/review-probe-tier-lag.ts --paradigm solar --name b1-review-lag2", "pass": true, "detail": "Nova Vash place|exp -> sky|-|- in one change; no raised-without-expanded frame"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "fix-1-checks.log / fix-1-checks2.log (orchestrator)", "pass": true, "detail": "lint, unit 1417, solar 43, solar-dense+demo 28, attention 3/3"}
+  ] }

@@ -1,0 +1,19 @@
+{
+  "item": "E9",
+  "role": "fixer",
+  "round": 1,
+  "verdict": "done",
+  "summary": "Resolved build-1 needs: the two solar-dense specs now measure in world units (scaled by the camera scale read once at the start), so the directed camera's pan/zoom no longer counts as a piece moving. Thresholds unchanged (12 and 90).",
+  "findings": [
+    {"id": "needs-1", "what": "'a close glides to its platform' (22 C3) measured displayed() screen px; fails 42 vs <12 under the climax pan/zoom", "action": "fixed: reads liveNodes() world x/y times the starting camera scale s0; threshold 12 kept"},
+    {"id": "needs-2", "what": "'guests come and go' (22 C8) multiplied world by the live camera scale; fails 122 vs <90 under the zoom", "action": "fixed: multiplies by the starting scale s0 (read once, passed into sample()); threshold 90 kept"}
+  ],
+  "files": ["tests/e2e/solar-dense.spec.ts"],
+  "checks": [
+    {"name": "solar-dense -g 'glides to its platform|guests come and go'", "result": "pass (2)"},
+    {"name": "camera-directs (2 cases)", "result": "pass"},
+    {"name": "keystone", "result": "pass on rerun of failures: first run 41/43, avatars and az-signin timed out under load, both pass alone"},
+    {"name": "eslint on the spec, tsc --noEmit", "result": "pass"}
+  ],
+  "limitations": ["Unit tests and the full solar-dense file were not re-run; only the two edited cases were."]
+}

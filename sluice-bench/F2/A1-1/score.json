@@ -1,0 +1,318 @@
+{
+  "item": "F2",
+  "arm": "A1",
+  "run": 1,
+  "start": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "head": "7cbaa6d3c524ba4364b2d2bd7c680364a736c974",
+  "at": "2026-11-09T19:44:43.528Z",
+  "gates": {
+    "typecheck": true,
+    "lint": false,
+    "unit": true,
+    "noPat": true,
+    "noAdoWrite": true,
+    "sharedPure": true,
+    "finished": true,
+    "evidence": {
+      "typecheck": "",
+      "lint": "\n/Users/amorgan/sluice-bench/F2/A1-1/clone/docs/progress/v1.4/work/F2/probe/collinear.probe.test.ts\n  4:93  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n✖ 1 problem (1 error, 0 warnings)\n\n",
+      "unit": "",
+      "pat": [],
+      "adoWrite": [],
+      "sharedImpure": []
+    },
+    "pass": false
+  },
+  "probes": {
+    "P1": {
+      "status": "met",
+      "detail": {
+        "cell": 1,
+        "loops": [
+          {
+            "still": 0,
+            "leave": 2023,
+            "rest": 4091,
+            "path": 389
+          },
+          {
+            "still": 0,
+            "leave": 8092,
+            "rest": 10193,
+            "path": 365
+          }
+        ],
+        "full": {
+          "id": "facility.enter",
+          "rule": "facility.enter",
+          "title": "Station jump-in",
+          "state": "after",
+          "loops": 1,
+          "reducedLoops": 0,
+          "peak": 5,
+          "active": 0,
+          "stuck": 0,
+          "started": 1,
+          "flare": 0,
+          "flarePeak": 0,
+          "reducedFlarePeak": 0
+        },
+        "reduced": {
+          "id": "facility.enter",
+          "rule": "facility.enter",
+          "title": "Station jump-in",
+          "state": "after",
+          "loops": 3,
+          "reducedLoops": 1,
+          "peak": 3,
+          "active": 0,
+          "stuck": 0,
+          "started": 5,
+          "flare": 0,
+          "flarePeak": 0,
+          "reducedFlarePeak": 0
+        },
+        "errors": [],
+        "runs": true,
+        "moves": true
+      }
+    },
+    "P2": {
+      "status": "met",
+      "detail": {
+        "beats": [
+          {
+            "pod": "Harbor Pod",
+            "beat": 7,
+            "startMs": 23330,
+            "frames": 360,
+            "summoner": "ship",
+            "arrivalMs": 714,
+            "flight": {
+              "still": 0,
+              "leave": 16,
+              "rest": 1900,
+              "path": 4254
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -15
+          },
+          {
+            "pod": "Harbor Pod",
+            "beat": 24,
+            "startMs": 82055,
+            "frames": 360,
+            "summoner": "ship",
+            "arrivalMs": 725,
+            "flight": {
+              "still": 0,
+              "leave": 22,
+              "rest": 3607,
+              "path": 6687
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -17
+          },
+          {
+            "pod": "Pulsar Pod",
+            "beat": 4,
+            "startMs": 12690,
+            "frames": 319,
+            "summoner": "ship",
+            "arrivalMs": 704,
+            "flight": {
+              "still": 0,
+              "leave": 20,
+              "rest": 4255,
+              "path": 25943
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -17
+          },
+          {
+            "pod": "Pulsar Pod",
+            "beat": 6,
+            "startMs": 21425,
+            "frames": 320,
+            "summoner": "ship",
+            "arrivalMs": 714,
+            "flight": {
+              "still": 0,
+              "leave": 13,
+              "rest": 1897,
+              "path": 26749
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -17
+          }
+        ],
+        "noHold": true,
+        "blips": "4 of 4",
+        "blip": true,
+        "unitTests": [
+          "tests/unit/commands.test.ts",
+          "tests/unit/pacingBuilt.test.ts",
+          "tests/unit/summonPass.test.ts",
+          "tests/unit/sweep.test.ts"
+        ],
+        "behaviour": "met"
+      }
+    },
+    "P3": {
+      "status": "met",
+      "detail": {
+        "docTables": true,
+        "rowChanged": true,
+        "row": "| `facility.enter` | Station jump-in | A repository's first PR in the round · `attach` (the first into its facility) | 1915 | narrative | no | The author flies through the spot where it comes in and on to its rest; as it passes, an At-rest blue call blip, and at that instant space folds and the stat",
+        "goldens": [
+          "tests/golden/__golden__/director.json"
+        ],
+        "unnamed": [],
+        "goldensNamed": true
+      }
+    },
+    "P4": {
+      "status": "met",
+      "detail": {
+        "pacingRuns": true,
+        "pacingOut": "",
+        "ledgerCurrent": false,
+        "newRows": 14,
+        "newRowPods": [
+          "Comet Pod",
+          "Nova Pod",
+          "Quasar Pod",
+          "Pulsar Pod",
+          "Convoy Planning Pod",
+          "Harbor Pod",
+          "Meteor Pod"
+        ],
+        "perPodRow": true,
+        "summonMs": 1915,
+        "phases": [
+          [
+            "gather",
+            715
+          ],
+          [
+            "act",
+            1200
+          ]
+        ],
+        "summonShorter": true,
+        "appS": {
+          "Comet Pod": 45,
+          "Nova Pod": 170.1,
+          "Quasar Pod": 295.7,
+          "Pulsar Pod": 269.5,
+          "Convoy Planning Pod": 170.2,
+          "Harbor Pod": 174.7,
+          "Meteor Pod": 270.7
+        },
+        "appSStart": {
+          "Comet Pod": 45.8,
+          "Nova Pod": 171,
+          "Quasar Pod": 289.6,
+          "Pulsar Pod": 288.6,
+          "Convoy Planning Pod": 179,
+          "Harbor Pod": 179.8,
+          "Meteor Pod": 275.9
+        },
+        "shorter": [
+          "Comet Pod",
+          "Pulsar Pod",
+          "Convoy Planning Pod",
+          "Harbor Pod"
+        ],
+        "fourShorter": true
+      }
+    }
+  },
+  "acceptance": 40,
+  "regress": {
+    "ran": 241,
+    "failures": [
+      {
+        "id": "demo.spec.ts:439 no expanded station plate in Halcyon’s five pods scrolls sideways, and every fact stays inside it",
+        "file": "demo.spec.ts",
+        "line": 439,
+        "error": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+      },
+      {
+        "id": "solar-dense.spec.ts:295 History and the scene explain the same events: at most four labels, each note its History row’s action (22 B5–B8, C10; 27 B1)",
+        "file": "solar-dense.spec.ts",
+        "line": 295,
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m4\u001b[39m\nReceived:    \u001b[31m5\u001b[39m"
+      },
+      {
+        "id": "solar.spec.ts:645 draws all 37 stations at the end of the sprint, and keeps VC-3 at 1024×640",
+        "file": "solar.spec.ts",
+        "line": 645,
+        "error": "Error: 1024×640\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 49\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"star Meteor Pod < 12px\",\u001b[39m\n\u001b[31m+   \"seat Bea's Promise < 12px\",\u001b"
+      }
+    ],
+    "newFailures": [
+      "solar-dense.spec.ts:295 History and the scene explain the same events: at most four labels, each note its History row’s action (22 B5–B8, C10; 27 B1)"
+    ],
+    "persists": [],
+    "points": 20
+  },
+  "rules": {
+    "amended": {
+      "13": true,
+      "03": false,
+      "05": true
+    },
+    "lapses": [
+      "doc 03 not amended"
+    ],
+    "points": 8
+  },
+  "informative": {
+    "realTests": {
+      "ok": false,
+      "failed": 8,
+      "passed": 158
+    },
+    "churn": {
+      "files": 24,
+      "lines": 1404,
+      "outsideTouches": [
+        "docs/27-v1.4.md",
+        "scripts/pacing-built.ts",
+        "scripts/pacing-candidates.ts",
+        "scripts/pacing-ledger.ts",
+        "src/renderer/src/chart/fx/movers.ts",
+        "src/renderer/src/chart/fx/v1/interpreter.ts",
+        "src/shared/engine/maneuvers.ts"
+      ],
+      "goldens": [
+        "tests/golden/__golden__/director.json"
+      ]
+    },
+    "health": {
+      "over800New": [],
+      "complexity": "147 functions over 15 · worst 272 (labels.ts position) · 41 over 80 lines"
+    },
+    "secs": {
+      "typecheck": 7,
+      "lint": 6,
+      "unit": 91,
+      "build": 5
+    }
+  },
+  "partial": {
+    "acceptance": 0,
+    "regress": 0,
+    "rules": 0,
+    "gateFailed": true
+  }
+}

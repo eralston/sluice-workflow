@@ -1,0 +1,4 @@
+{ "item": "A1", "role": "reviewer", "round": 2, "model_tier": "large", "effort": "high",
+  "verdict": "pass", "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 1 },
+  "checks": [ { "cmd": "probe-reload.test (now unit)", "pass": true, "detail": "3 requests" } ],
+  "summary": "Acceptance met; nothing broken." }

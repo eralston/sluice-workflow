@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "id": "tablet",
+  "title": "Tablet",
+  "pacing": { "budgetMs": 40000, "highlightBudgetMs": 27000 },
+  "render": {
+    "budget": { "frameVsyncs": 2, "toleranceMs": 3 },
+    "limits": { "maxActiveFx": 16 },
+    "switches": { "paint": true, "twinkle": true, "ornament": false, "auraBake": true }
+  }
+}

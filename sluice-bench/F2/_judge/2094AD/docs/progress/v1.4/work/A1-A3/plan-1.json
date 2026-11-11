@@ -1,0 +1,3 @@
+{ "item": "A1-A3", "role": "planner", "round": 1, "model_tier": "medium", "effort": "low",
+  "verdict": "planned", "summary": "A1 gallery floor note from FLOOR_PX; A3 vsync-relative perf budget, docs in 09 §7 and 15 §10 (scope says §9), Pulsar re-measure.",
+  "tier": "small", "score": {"blast": 0, "verify": 1, "design": 0, "acceptance": 0, "track": 0, "sum": 1}, "needs": null }

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "id": "laptop-battery",
+  "title": "Laptop on battery",
+  "pacing": { "budgetMs": 45000, "highlightBudgetMs": 30000 },
+  "render": {
+    "budget": { "frameVsyncs": 2, "toleranceMs": 2 },
+    "limits": { "maxActiveFx": 24 },
+    "switches": { "paint": false, "twinkle": false, "ornament": true, "auraBake": false }
+  }
+}

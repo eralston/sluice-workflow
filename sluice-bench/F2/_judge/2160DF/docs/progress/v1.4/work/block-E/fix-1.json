@@ -1,0 +1,54 @@
+{
+  "item": "block-E",
+  "role": "fixer",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "high",
+  "verdict": "done",
+  "summary": "Audit-1 fixed per the 2026-11-06 decision. The ledger gains an App s (story time) column that Target reads. MONTAGE_BEATS, director.test and golden/director now read story time, and montage-names fails on an absent beat. Comet's story-time yardstick is 50.3 s, measured at 552d631. The E9 drive waits out the camera hold and the montage still was re-shot. Both Minors and the Nit are fixed, and the E9/E10 State lines are updated.",
+  "findings": [
+    {"id": "audit-1.1", "severity": "major", "what": "The ledger, the director's tests and golden, and MONTAGE_BEATS read the recorded bundle, but the app plays Solar in story time", "action": "fixed. `resolvePods({ story: true })` presents each pod as `presented` does: `storyTime(h, tz).history`, in the scenario's zone. The default stays recorded, so the frozen E1-E10 Built rows and C2's candidates are unchanged (pacing-built.json and pacing-candidates.json have no diff). PodLedger gains `story { wallMs, played, levers }`, and the Summary gains `App s`, which Target and Levers read (Comet 45.8, Nova 171.0, Quasar 289.6, Pulsar 288.6, Convoy Planning 179.0, Harbor 179.8 s). `COMET_STORY_YARDSTICK_MS` = 50 330 ms, measured in a throwaway worktree at 552d631 (274c737~1): recorded 67 250, story 50 330. The worktree was then removed. director.test.ts and golden/director use story pods. MONTAGE_BEATS was re-derived (`fix-montage-list.ts`): Quasar's 11 beats, with 09-16T17:52:00.003Z keeping story time's ms; Pulsar []; Convoy Planning and Harbor unchanged. The E10 'folds some on the busy pods' case now asserts Quasar > 0 and pins Pulsar at 0 (in story time Pulsar's tight end has no foldable repeat). montage-names.spec.ts fails on a listed beat the app doesn't play, where before it only annotated it. pacing.test.ts gains a case: App s equals buildScene over the story bundle, Quasar and Pulsar are inside 300 s, and the yardstick line is rendered. Regenerated with `npm run pacing -- --candidates`. Only pacing-ledger.md/.json moved."},
+    {"id": "audit-1.2", "severity": "minor", "what": "E9-Q1: the hold was never stuck. The drive pressed play inside the 1.5 s hold, and the montage still doesn't show the pull-back", "action": "fixed. tests/drive/steps/e9-camera.ts waits HOLD_MS 1700 after entering each pod, and notes cameraHeld (false on both pods). Before the montage it offsets the camera the way camera-directs.spec.ts does, then shoots before and mid. Drive notes: before-montage shot null, target off the fit; mid-montage shot 'board', target == fit. The stills were copied out of test-results before any e2e run: work/E9/e9-before-montage.png (new) and e9-montage-board.png (re-shot). The E9 State line now gives the cause. E9-Q1's answer in 27 was already written by the orchestrator. No change to cameraHeld."},
+    {"id": "audit-1.3", "severity": "minor", "what": "The volley e2e's 'named >= people' counts other maneuvers' crews", "action": "fixed. The `volleys()` hook also returns `names`: the labels of the drawn captains its turns name, sorted. solar-dense asserts names.length == people and that every name was seen acting (the callout's full `title` when capped, else its text). It passes on Pulsar volleys 0 and 1."},
+    {"id": "audit-1.4", "severity": "minor", "what": "The noted-plate fallback contradicts 06 §9. 05 confines it to montage, but the code covers every noted cast plate", "action": "fixed in the docs. 06 §9's sentence is amended as directed, pointing to 05 §8.9 A-4. 05 A-4 now states the fallback for any cast plate wearing its note. P-24 points to A-4 and drops the flash analogy. The labels.ts comment drops the flash analogy and cites A-4 and 06 §9. Code behaviour is unchanged."},
+    {"id": "audit-1.5", "severity": "nit", "what": "tests/README.md's src/shared/playback row omits rising.test.ts", "action": "fixed: `rising` added to that row"}
+  ],
+  "files": [
+    "scripts/pacing-ledger.ts", "scripts/pacing.ts",
+    "docs/progress/v1.4/pacing-ledger.md", "docs/progress/v1.4/pacing-ledger.json",
+    "tests/e2e/montageBeats.ts", "tests/e2e/montage-names.spec.ts", "tests/e2e/solar-dense.spec.ts",
+    "tests/unit/director.test.ts", "tests/unit/pacing.test.ts",
+    "tests/golden/director.test.ts", "tests/golden/__golden__/director.json",
+    "src/renderer/src/testHooks.ts", "src/renderer/src/chart/labels.ts",
+    "tests/drive/steps/e9-camera.ts",
+    "docs/progress/v1.4/work/E9/e9-montage-board.png", "docs/progress/v1.4/work/E9/e9-before-montage.png",
+    "docs/05-playback.md", "docs/06-visual-brief.md", "tests/README.md",
+    "docs/27-v1.4.md", "docs/progress/handoff.md",
+    "docs/progress/v1.4/work/block-E/fix-montage-list.ts"
+  ],
+  "goldens": [
+    {"file": "tests/golden/__golden__/director.json", "why": "Meant to move: the decision keys the director's test lists to story time. Every pod's estimate moves, for example Comet 67 405 -> 53 065 ms. Climaxes shift from closes to merges, as story time joins arc closes to their merge (B-12): Comet's two closes become the PR 20002 merge. Quasar keeps 13 montage forms, has fewer shorts (37 -> 30) and tempo 2 -> 1.9. Pulsar loses its 4 montage forms (it plays none, 05 §6 item 4) and goes to tempo 1.4 -> 1.1. Convoy Planning's close climax changes (55131 -> 55102). Checked line by line: no lever lists change."}
+  ],
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/director.test.ts tests/golden/director.test.ts", "pass": true, "detail": "84 passed (before the golden update: 4 failed, the audit's 3 plus the golden)"},
+    {"cmd": "npx vitest run tests/unit/pacing.test.ts tests/unit/pacingBuilt.test.ts tests/unit/pacingCandidates.test.ts", "pass": true, "detail": "27 passed; Built rows unchanged"},
+    {"cmd": "npm run drive -- tests/drive/steps/e9-camera.ts --paradigm solar", "pass": true, "detail": "mid-montage directedCamera shot 'board', target == fit; stills copied to work/E9/"},
+    {"cmd": "npm run e2e:spec -- montage-names camera-directs", "pass": true, "detail": "5 passed (Quasar, Convoy Planning and Harbor montage; both camera cases)"},
+    {"cmd": "npm run e2e:spec -- solar-dense -g 'volleys name each cause'", "pass": true, "detail": "1 passed"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test --silent", "pass": true, "detail": "109 files, 1701 tests passed"}
+  ],
+  "deviations": [
+    "The story-time column is in the ledger's Summary (App s), and Target and Levers read it. I did not add one to every Built row. Those rows are frozen history measured in recorded time, and recomputing all 72 in story time would not change them. If the orchestrator wants a per-row story column, it is one more scheduleOf per row in buildBuilt.",
+    "Comet's story-time yardstick (50.3 s at 552d631, as the decision directs) is in the ledger, the E10 State line and handoff.md's final-check bullet. The human's 2026-11-06 '~60.8 s current length' is the same moment as today's 45.8 s in story time. The app now plays Comet 9% under its pre-E1 story-time length. Nothing asserts a 5% bound on it: by the human's decision it is judged by feel at the final check.",
+    "handoff.md's final-check bullet was edited so the final check reads the story-time number. The audit asked for the yardstick to be restated for the final check."
+  ],
+  "limitations": [
+    "Time zone: the ledger and MONTAGE_BEATS read story-time days in the scenario's zone (America/Los_Angeles). The app reads them in the viewer's (STORY_TZ). montage-names.spec.ts would fail on a machine in another zone. This is noted in the spec's header and was not changed (the app's choice is outside this fix).",
+    "Other unit files that read resolvePods() (maneuvers, volleys, rising, sweep, pacingCandidates) still read the recorded bundle. The decision named only the director's test lists, so they were left alone.",
+    "I did not prove montage-names' new failure path by injecting an absent beat. It is a plain `absent` list asserted empty.",
+    "The full e2e suite and the gallery were not run (fixer scope). Run the full suite once before the block's commit."
+  ]
+}

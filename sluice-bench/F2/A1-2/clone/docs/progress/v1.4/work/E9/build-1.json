@@ -1,0 +1,37 @@
+{
+  "item": "E9",
+  "role": "builder",
+  "round": 1,
+  "verdict": "needs-decision",
+  "summary": "Directed camera built per the packet: climaxFrame, CameraController.target, ChartApp directClimax/directBoard/directSeek/directedCamera, playback.ts pending shot and directBeat, shots()/directedCamera() hooks, 15 §10 row, docs. Two existing solar-dense specs now fail because their measures are in screen px and the climax zoom/pan moves the camera; per the packet they are reported, not loosened.",
+  "files": [
+    "src/renderer/src/chart/camera.ts", "src/renderer/src/chart/framing.ts", "src/renderer/src/chart/ChartApp.ts",
+    "src/renderer/src/playback.ts", "src/renderer/src/testHooks.ts",
+    "docs/05-playback.md", "docs/15-reference.md", "docs/03-contracts.md", "tests/README.md",
+    "tests/unit/climaxFrame.test.ts", "tests/e2e/camera-directs.spec.ts", "tests/drive/steps/e9-camera.ts",
+    "docs/progress/v1.4/work/E9/e9-before-climax.png", "docs/progress/v1.4/work/E9/e9-climax-shot.png", "docs/progress/v1.4/work/E9/e9-montage-board.png"
+  ],
+  "checks": [
+    {"name": "typecheck, lint, npm test (1679 unit incl. climaxFrame, docTables)", "result": "pass"},
+    {"name": "e2e camera-directs (2 cases: Pulsar climax+seek+reduced, Quasar montage)", "result": "pass"},
+    {"name": "e2e solar-play, slice3b, slice2, montage-names (alone), keystone (43)", "result": "pass"},
+    {"name": "solar-dense: volleys (four labels), formation plates, D2 formations stay, mandala, seek-while-guest", "result": "pass"},
+    {"name": "solar-dense: 'a close glides to its platform' (22 C3)", "result": "FAIL (passes at 88ec57e): max step 42 px vs < 12; measured in screen px, so the climax pan/zoom counts"},
+    {"name": "solar-dense: 'guests come and go' (22 C8)", "result": "FAIL (passes at 88ec57e): arrival 'far' 122 vs < 90; it multiplies world by camera scale, so the zoom counts"},
+    {"name": "solar-dense: 'a planet's name sits half over...'", "result": "fails alone at 88ec57e too (order-dependent); not E9"},
+    {"name": "drive e9-camera --paradigm solar", "result": "ran; stills copied"}
+  ],
+  "deviations": [
+    "shots().gatherMs is an absolute x (startMs + afterMs + gather atMs), not an offset.",
+    "The e2e compares targets to the fit now (directedCamera().fit), not the fit recorded at entry: the board drifts a little (e.g. x 0 to 29 world units at 0.056 scale) as the day's state changes, so a fixed entry fit would fail. The seek still lands on the fit of that moment.",
+    "Quasar e2e uses STAR_CHART_PARADIGM 'solar' (as montage-names); Pulsar uses ''.",
+    "recap pull-back also checks framing on and no unsuspended follow (packet said 'conditions in 1')."
+  ],
+  "limitations": [
+    "In the Pulsar climax the cast (11 pieces) spans the whole board, so the shot mostly pans (scale stays at the fit) rather than zooms; the human should judge the feel from the stills.",
+    "After a montage pull-back the camera does not re-fit if the board drifts later in the beat (a few px); the shot then reads as not holding.",
+    "solar-dense serial mode skips the rest of the file after a failure, so those cases were run with -g.",
+    "montage-names failed once in a parallel batch and passed alone (load flake)."
+  ],
+  "needs": "Decide how to handle the two solar-dense specs (glide, guests): update them to measure relative to the camera, or turn framing off in them. I did not change them."
+}

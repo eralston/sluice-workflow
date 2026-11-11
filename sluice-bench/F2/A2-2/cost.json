@@ -1,0 +1,55 @@
+{
+  "source": "/Users/amorgan/.claude/projects/-Users-amorgan-sluice-bench-F2-A2-2-clone",
+  "run": "A2-2",
+  "at": "2026-11-10T10:12:26.418Z",
+  "usd": 10.5922,
+  "windows": 0.392,
+  "calls": 103,
+  "firstPrompt": "2026-11-10T09:07:34.038Z",
+  "lastEntry": "2026-11-10T10:11:23.112Z",
+  "wallMin": 63.8,
+  "toCommitMin": 63.5,
+  "agentSecs": 0,
+  "sessionSecs": 3829,
+  "ctx": {
+    "mean": 184280,
+    "p95": 267169,
+    "peak": 273821
+  },
+  "roles": {
+    "session": {
+      "usd": 10.5922,
+      "calls": 103,
+      "secs": 3829,
+      "agents": 1,
+      "out": 81806,
+      "ctx": {
+        "mean": 184280,
+        "p95": 267169,
+        "peak": 273821
+      }
+    }
+  },
+  "models": {
+    "claude-opus-5-5": {
+      "usd": 10.5922,
+      "calls": 103,
+      "out": 81806
+    }
+  },
+  "agents": [
+    {
+      "role": "session",
+      "kind": "main",
+      "workflow": null,
+      "file": "2290a88a-f570-4982-8bfc-fea550032112.jsonl",
+      "calls": 103,
+      "secs": 3829,
+      "usd": 10.5922,
+      "out": 81806,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    }
+  ]
+}

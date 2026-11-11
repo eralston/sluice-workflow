@@ -1,0 +1,1105 @@
+[
+ {
+  "at": "2026-09-15T17:00:00.000Z",
+  "snapshot": {
+   "atUtc": 1789491600000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:801",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Policy renewal reminders",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:802",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Claims photo upload",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:803",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Broker portal sign-on",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "feature.ready",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:811",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Reminder email cadence",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1789491600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:812",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Renewal preview page",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:801",
+     "lastEventAt": 1788890400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:813",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Photo compression on upload",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:5dde18d3-5cde-4740-8fde-1bf95ede1a66",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:814",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Sign-on landing page",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:803",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:815",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Renewal FAQ copy",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Driftwood",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:821",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Upload fails for HEIC photos",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:831",
+     "type": "Task",
+     "kind": "task",
+     "title": "Cadence settings",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "lastEventAt": 1787673600000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:679d0d0e-689d-4ea1-859d-09e8669d0b7b:9401",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:679d0d0e-689d-4ea1-859d-09e8669d0b7b",
+     "title": "Cadence scheduler",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:812",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:801",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:813",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:814",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:803",
+     "uncertain": true
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:821",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:831",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31",
+    "atUtc": 1789491600000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:801",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 784,
+      "y": 0,
+      "r": 96,
+      "label": "Policy renewal reminders",
+      "meta": "Feature · #801 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:802",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 96,
+      "label": "Claims photo upload",
+      "meta": "Feature · #802 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:803",
+      "kind": "star",
+      "stage": "feature.ready",
+      "x": -784,
+      "y": 0,
+      "r": 96,
+      "label": "Broker portal sign-on",
+      "meta": "Feature · #803 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:811",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 0,
+      "y": 156,
+      "r": 22,
+      "label": "Reminder email cadence",
+      "meta": "User Story · #811 · Active",
+      "meta2": "Juno Okafor",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:812",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 874,
+      "y": 130,
+      "r": 22,
+      "label": "Renewal preview page",
+      "meta": "User Story · #812 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:813",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Photo compression on upload",
+      "meta": "User Story · #813 · Active",
+      "meta2": "Kai Brandt",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:814",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -784,
+      "y": 130,
+      "r": 22,
+      "label": "Sign-on landing page",
+      "meta": "User Story · #814 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:821",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 90,
+      "y": 130,
+      "r": 22,
+      "label": "Upload fails for HEIC photos",
+      "meta": "Bug · #821 · Active",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:811|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:812|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:813|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:814|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:821|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:815"
+     ],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:801",
+    "atUtc": 1789491600000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:801",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Policy renewal reminders",
+      "meta": "Feature · #801 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:812",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 1241,
+      "y": 1969,
+      "r": 70,
+      "label": "Renewal preview page",
+      "meta": "User Story · #812 · Closed",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:812|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:815"
+     ],
+     "unlinked": []
+    }
+   }
+  ]
+ },
+ {
+  "at": "2026-09-16T20:00:00.000Z",
+  "snapshot": {
+   "atUtc": 1789588800000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:801",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Policy renewal reminders",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:802",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Claims photo upload",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:803",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Broker portal sign-on",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "feature.ready",
+     "reopened": false,
+     "areaPath": "Driftwood\\Reef Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1789578000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:811",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Reminder email cadence",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1789491600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:812",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Renewal preview page",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": true,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:801",
+     "lastEventAt": 1789581600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:813",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Photo compression on upload",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:5dde18d3-5cde-4740-8fde-1bf95ede1a66",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1789588800000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:814",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Sign-on landing page",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:803",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:815",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Renewal FAQ copy",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Driftwood",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:821",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Upload fails for HEIC photos",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:831",
+     "type": "Task",
+     "kind": "task",
+     "title": "Cadence settings",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "lastEventAt": 1787673600000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:679d0d0e-689d-4ea1-859d-09e8669d0b7b:9401",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:679d0d0e-689d-4ea1-859d-09e8669d0b7b",
+     "title": "Cadence scheduler",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:f1b939da-f2b9-4b6d-8fb9-36b4f0b93847:9402",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:f1b939da-f2b9-4b6d-8fb9-36b4f0b93847",
+     "title": "Compress before upload",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:5dde18d3-5cde-4740-8fde-1bf95ede1a66"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:812",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:801",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:813",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:814",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:803",
+     "uncertain": true
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:821",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:831",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:f1b939da-f2b9-4b6d-8fb9-36b4f0b93847:9402",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:813",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31",
+    "atUtc": 1789588800000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:801",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 784,
+      "y": 0,
+      "r": 96,
+      "label": "Policy renewal reminders",
+      "meta": "Feature · #801 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:802",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 96,
+      "label": "Claims photo upload",
+      "meta": "Feature · #802 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:811",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 0,
+      "y": 156,
+      "r": 22,
+      "label": "Reminder email cadence",
+      "meta": "User Story · #811 · Active",
+      "meta2": "Juno Okafor",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:812",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 874,
+      "y": 130,
+      "r": 22,
+      "label": "Renewal preview page",
+      "meta": "User Story · #812 · Active",
+      "flags": {
+       "reopened": true
+      }
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:813",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Photo compression on upload",
+      "meta": "User Story · #813 · Active",
+      "meta2": "Kai Brandt",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:821",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 90,
+      "y": 130,
+      "r": 22,
+      "label": "Upload fails for HEIC photos",
+      "meta": "Bug · #821 · Active",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:811|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:812|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:813|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:821|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:815"
+     ],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:801",
+    "atUtc": 1789588800000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:801",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Policy renewal reminders",
+      "meta": "Feature · #801 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:812",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -798,
+      "y": 2025,
+      "r": 117,
+      "label": "Renewal preview page",
+      "meta": "User Story · #812 · Active",
+      "flags": {
+       "reopened": true
+      }
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:812|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:815"
+     ],
+     "unlinked": []
+    }
+   }
+  ]
+ },
+ {
+  "at": "2026-09-17T20:00:00.000Z",
+  "snapshot": {
+   "atUtc": 1789675200000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:801",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Policy renewal reminders",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:802",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Claims photo upload",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:803",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Broker portal sign-on",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "feature.ready",
+     "reopened": false,
+     "areaPath": "Driftwood\\Reef Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1789578000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:811",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Reminder email cadence",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1789491600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:812",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Renewal preview page",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": true,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:801",
+     "lastEventAt": 1789581600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:813",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Photo compression on upload",
+     "rawState": "Blocked",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:5dde18d3-5cde-4740-8fde-1bf95ede1a66",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1789664400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:814",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Sign-on landing page",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:803",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:815",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Renewal FAQ copy",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Driftwood",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:821",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Upload fails for HEIC photos",
+     "rawState": "Rejected",
+     "category": "Removed",
+     "stage": "bug.rejected",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "lastEventAt": 1789675200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:831",
+     "type": "Task",
+     "kind": "task",
+     "title": "Cadence settings",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Driftwood\\Kelp Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "lastEventAt": 1787673600000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:679d0d0e-689d-4ea1-859d-09e8669d0b7b:9401",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:679d0d0e-689d-4ea1-859d-09e8669d0b7b",
+     "title": "Cadence scheduler",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:f1b939da-f2b9-4b6d-8fb9-36b4f0b93847:9402",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:f1b939da-f2b9-4b6d-8fb9-36b4f0b93847",
+     "title": "Compress before upload",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:5dde18d3-5cde-4740-8fde-1bf95ede1a66"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:812",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:801",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:813",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:814",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:803",
+     "uncertain": true
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:821",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:802",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:831",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:811",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:f1b939da-f2b9-4b6d-8fb9-36b4f0b93847:9402",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:813",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31",
+    "atUtc": 1789675200000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:801",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 784,
+      "y": 0,
+      "r": 96,
+      "label": "Policy renewal reminders",
+      "meta": "Feature · #801 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:802",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 96,
+      "label": "Claims photo upload",
+      "meta": "Feature · #802 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:811",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 0,
+      "y": 156,
+      "r": 22,
+      "label": "Reminder email cadence",
+      "meta": "User Story · #811 · Active",
+      "meta2": "Juno Okafor",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:812",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 874,
+      "y": 130,
+      "r": 22,
+      "label": "Renewal preview page",
+      "meta": "User Story · #812 · Active",
+      "flags": {
+       "reopened": true
+      }
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:813",
+      "kind": "planet",
+      "stage": "unknown",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Photo compression on upload",
+      "meta": "User Story · #813 · Blocked",
+      "meta2": "Kai Brandt",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:811|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:812|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:7f7ac81c-807a-49af-817a-cb42827accd5:31|wi:00000000-0000-4000-8000-000000000001:813|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:815"
+     ],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:801",
+    "atUtc": 1789675200000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:801",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Policy renewal reminders",
+      "meta": "Feature · #801 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:812",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -798,
+      "y": 2025,
+      "r": 117,
+      "label": "Renewal preview page",
+      "meta": "User Story · #812 · Active",
+      "flags": {
+       "reopened": true
+      }
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:801|wi:00000000-0000-4000-8000-000000000001:812|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:815"
+     ],
+     "unlinked": []
+    }
+   }
+  ]
+ }
+]

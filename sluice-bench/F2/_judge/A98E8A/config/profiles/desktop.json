@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "id": "desktop",
+  "title": "Desktop",
+  "pacing": { "budgetMs": 45000, "highlightBudgetMs": 30000 },
+  "render": {
+    "budget": { "frameVsyncs": 2, "toleranceMs": 2 },
+    "limits": { "maxActiveFx": 24 },
+    "switches": { "paint": true, "twinkle": true, "ornament": true, "auraBake": false }
+  }
+}

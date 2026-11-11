@@ -1,0 +1,25 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "When the same captain's next sortie takes the ship over from a pass, the summoner's plate is cut: a following pass ignores carry and a following parked sortie snaps it to 0 at its park, so most summons in a run are never named (breaks Decided / R14).",
+      "kept": true,
+      "why": "movers.ts:393 returns ride(h, passS) before carry is consulted (h<0 gives 0), and :394-396 uses carry only while h<0, then h/foldS is 0 at h=0; the code says what the finding claims. [Checked by hand 2026-11-10: a different defect. A2 hands off at the pass (passStartMs) and loses the plate; it is not the shared glide-to-rest behaviour.]"
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The tests stop at the pursue's arguments and phase arithmetic; nothing exercises the Sortie's pass path, the carry hand-off, or crewOpen's ride.",
+      "kept": true,
+      "why": "grep of tests/unit finds passS only in commands.test.ts:242-254 and no test of carry or crewOpen."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The pacingBuilt test comment says Meteor's summons still wait for each tender's launch, but the plan chains them 715 ms apart at the previous pass.",
+      "kept": true,
+      "why": "tests/unit/pacingBuilt.test.ts:162 comment says summons wait for each launch, while the passStartMs chaining (maneuvers.ts:341) starts each at the previous pass; the comment is stale."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "item": "E6",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Two sequential builds from one packet. E6a (engine): volleysOf groups merges per facility within VOLLEY_WINDOW_MS (20 s) of playback x, taken from a first director pass, on one local day and under a B-15 guard; their raw beats fuse in the schedule through Direction.fuse, so no event is re-timed and seeks snap; the carrier draft takes the union cast (the lead by E6-Q1), every tender and target, and naming turns (VolleyTurn) that stretch its echo; the director reads the fused beats; the ledger gets E6 and E6+ Built rows. E6b (renderer): every tender docks (a dock mask), causes are named turn by turn within the budget, a test hook, a solar-dense Pulsar case, a gallery cell and stills.",
+  "tier": "large",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 2, "sum": 6 },
+  "needs": null,
+  "split": [
+    { "id": "E6a", "part": "engine: grouping, B-15 guard, beat fusion, volley draft and turns, director on fused beats, ledger rows, docs", "files": ["src/shared/engine/director.ts", "src/shared/engine/maneuvers.ts", "src/shared/playback/schedule.ts", "src/shared/contracts/playback.ts", "src/shared/contracts/maneuver.ts", "scripts/pacing-ledger.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts", "tests/unit/volleys.test.ts (new)", "tests/unit/director.test.ts", "tests/unit/pacingBuilt.test.ts", "tests/golden/__golden__/director.json", "docs 05 B-20 M-31 P-20 P-24, 15 §7 §10, 03, tests/README.md"] },
+    { "id": "E6b", "part": "renderer: every tender docks, naming in turns, test hook, solar-dense case, gallery cell, stills", "files": ["src/renderer/src/theme/starChart/maneuvers/powerLink.ts", "src/renderer/src/chart/art/dreadnoughts.ts", "src/renderer/src/chart/fx/commands.ts", "src/renderer/src/chart/fx/v1/interpreter.ts", "src/renderer/src/testHooks.ts", "src/renderer/src/gallery/v1/stations.ts", "tests/e2e/solar-dense.spec.ts", "tests/unit/shuttleSlots.test.ts", "tests/drive/steps/e6-volley.ts (new)", "docs 13 §6, 15 §7, 05 M-31"] }
+  ],
+  "notes": [
+    "For the orchestrator, VOLLEY_WINDOW_MS: no window in 10/20/30/60 s groups a third of Pulsar's merges once B-15 is respected. Using merges in volleys, the playback x of today's schedule and first merges eligible, Pulsar gets 6, 8, 8 and 8 of 30, Quasar 8, 14, 14 and 16 of 66. Without the guard 60 s reaches 10 of 30, but B-15 is in the acceptance. Pulsar's same-repo merges are far apart, and every one of its volleys is a pair. The packet picks 20 s, the smallest window at Pulsar's highest count (27%). The decision row says 'about a third'; flag it at the final check.",
+    "Why fuse beats rather than re-time: story time runs before the schedule and is scene-blind, and B-14 says PR events never move. Pulling a later merge into an earlier beat without re-timing breaks INV-15, because the seek would show the tender undocked while the play had docked it. Fusing the contiguous raw beats from the first member to the last keeps seeks snapping to one state. The price is that the fused beat's other work is re-sequenced, which the B-15 guard keeps in order per piece.",
+    "The window is measured in x at 1x under a first director pass (D0), not in base (undirected) time. Base time is about 1.7x what plays on Pulsar, so '20 s' would mislead the human at the final check. A full schedule build costs about the same directed or not (Quasar 132 vs 134 ms), so the extra director pass is cheap. The builder reports the ratio.",
+    "'Every participant is named within the attention budget' is met by naming turns that the engine computes (VolleyTurn: a member's plates with its own note, then its author, approvers and holders, at most four labels a turn). The carrier's echo is stretched to fit them. A pair under the full Power link needs no stretch. The renderer only follows the turns.",
+    "'The ledger shows the saving': on Pulsar, adaptive speed re-fits to the target, so the wall time stays near 296 s whatever volleys save. The E6 row therefore compares before adaptive speed (levers short and montage), and E6+ shows the effect with every lever: real savings on Quasar (over the cap at k=2) and Nova (no levers). E5's rows run with volleys:false so their committed numbers don't move.",
+    "The Touches list names placeFormation.ts and stationFire.ts. Per 27 D1 and D3, Power link's formation is formationSpots.ts and its beam is its own echo, so neither file changes; the packet says so.",
+    "Tier large: blast 1 (schedule grouping, which every seek reads), verify 1, design 1 (settled; the turn crossfade timing is left to the builder), acceptance 1 (an e2e hook is needed), track 2 (E5a and E5c failed their first review at medium).",
+    "The packet is about 2,900 words, over the 2,000 guide, because two builds share it, as E4's and E5's did."
+  ]
+}

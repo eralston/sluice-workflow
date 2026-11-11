@@ -1,0 +1,13 @@
+{ "item": "B2", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium", "verdict": "done",
+  "summary": "Star plate shows one Feature line with +N more at rest; pointed/selected (plus grace) opens the whole list in place, holding the resting place via openK.",
+  "checks": [
+    {"cmd": "npm run typecheck / lint / npm test", "pass": true, "detail": "96 files, 1423 tests"},
+    {"cmd": "npm run e2e:spec -- demo density slice1", "pass": true, "detail": "38 passed, incl. the new Quasar, overlap and Pulsar cases"},
+    {"cmd": "npm run e2e:spec -- demo solar (matched solar-dense too)", "pass": true, "detail": "solar-dense:498 timed out once on the busy machine; re-run of solar-dense: 16 passed. solar.spec (Harbor above) passed"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "GALLERY_FAMILY=labels e2e:spec -- gallery-v1", "pass": true, "detail": "1 passed"}
+  ],
+  "files": ["src/shared/featureRow.ts","src/shared/hierarchy/solarSource.ts","src/shared/contracts/view.ts","src/renderer/src/chart/labels.ts","src/renderer/src/chart/holo/holo.css","src/renderer/src/panels/Inspector.tsx","tests/unit/featureRow.test.ts","tests/e2e/demo.spec.ts","tests/e2e/solar.spec.ts","tests/drive/steps/feature-row.ts","tests/README.md","docs/15-reference.md","docs/06-visual-brief.md","docs/02-domain-rules.md","docs/03-contracts.md"],
+  "deviations": ["Amends 02 INV-10 and 03 (featureLines, FEATURE_ROW_CAP) as the packet directs; 15 Cap row 3 to 1 changed with the constant.", "Open placement: while open, the kept place is the resting k if clear of other plates, else openK; resting k never written while open (as Approach 5)."],
+  "limitations": ["The drive walk was updated but not run, so the four stills were not copied into this folder.", "docs/27-v1.4.md shows as modified in git; not by me.", "halcyonCoverage guard text in 15 still says 'more than three Features' (still true, not touched)."]
+}

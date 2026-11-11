@@ -1,0 +1,35 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "When the summoner's next sortie is waiting, the pass doesn't carry on to it as the Decided paragraph asks. The ship always glides to its rest and stops there, then sits through the next maneuver's tell and flies out again. That is the stop-and-go the item set out to remove, and it breaks 05 P-5's 'a captain never flies home between'.",
+      "evidence": "stationJumpIn.ts gather: `cmd.pursue({ ..., backS: NOTE_MIN_MS / 1000, through: true, ... })`. movers.ts passUpdate leg 2 is `Sortie.hermite(pass, ta, home, [0, 0], u)` with `home = this.scene.goalOf(this.pk)`, so it ends at the rest with zero velocity. maneuvers.ts:324 crewBusy uses `nearStartMs(p.startMs, workEndOf(p.phases)=2515, releaseOf(p)=2515, ...)`, so the next sortie can't start before the glide ends. tests/unit/maneuvers.test.ts asserts exactly this: `expect(carve!.afterMs).toBeGreaterThanOrEqual(enter.afterMs + 2515)` (carve then has a 0.3 s tell before its gather). The new comment at maneuvers.ts:830, 'a next sortie takes it over', isn't what happens. 13 §6's new row only says 'glides on to its rest', so the next-sortie branch was dropped from the doc too."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "A passing turn's plate is whole for only about 760 ms. That's half of CREW_OPEN_MIN_MS (1500), which 15 §10 still states for every captain's turn ('However short the work'). The CREW_OPEN_MIN_MS and CREW_HOLD_MS rows weren't given the exception, and the short read time sits uneasily with R14 ('held long enough to read').",
+      "evidence": "maneuvers.ts crewTimes(passes): `closeMs: open + NOTE_MIN_MS - CREW_FOLD_MS` gives 1995, and the plate unfurls until 715+520=1235, so it is whole for 760 ms. The e2e comment in tests/e2e/solar-dense.spec.ts says 'whole about 760 ms'. In docs/15-reference.md §10, the row 'A captain's turn: whole at least ... 1500 ms ... However short the work, the plate is whole at least this long' is unchanged, and so is the CREW_HOLD_MS row's 'Their sortie holds that long'."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "`passesPlay` reads the global PACE_RULES instead of the rule set the plan was built with. Any edited rule set (the ledger's `beforeF2`, C2's candidates, which now run on `beforeF2`) still treats facility.enter as passing in releaseOfPlay and nearWaits, while draftsOf uses the plan's own rule.",
+      "evidence": "maneuvers.ts:808: `return !!(PACE_RULES as readonly PaceRule[]).find((r) => r.id === m.id)?.passes;` versus maneuvers.ts:312: `crewTimes(d.phases, !!d.rule.passes)`. scripts/pacing-ledger.ts:180 `nearAt` calls `releaseOfPlay(x)` (via passesPlay) for bindings, and pacing-candidates.ts's NO_SWEEP is now `beforeF2(...)`, so with beforeF2's restored tell the binding's 'near' anchor is computed with the passing crewTimes (leave = 1015+1800) instead of the held turn."
+    },
+    {
+      "severity": "Nit",
+      "rules": false,
+      "summary": "The '50 ms' half of the acceptance test can't fail. It compares gather start + the pursue's durS against the act's start, and durS is set from that same gather phase length.",
+      "evidence": "tests/unit/commands.test.ts: `expect(Math.abs(commands.phaseAtMs(m, 'gather') + p.durS * 1000 - act)).toBeLessThanOrEqual(50)` where stationJumpIn.ts sets `durS: gather / 1000` with `gather = phaseMs(m, 'gather')`. The real guarantee comes from the blip ring and `cmd.act(f.key, 'jump')` both being at delay 0 in the act, which the second test checks."
+    }
+  ],
+  "acceptance": {
+    "1": "partial: the jump-in cell is generated from the registry (maneuverDemos.ts) and the gallery isn't touched. Full and reduced motion with no console errors weren't checked here (e2e/gallery not run).",
+    "2": "met in letter: the pursue is `through` with holdS 0 and no waitS, the Sortie tests show no stopped frame, and the blip and the jump are both at the act's start. The 50 ms check is tautological, and the next-sortie case isn't covered.",
+    "3": "met: the 15 §7 row (2515) and the effect-audit rows are updated and docTables passes. director.json moved for cause (tempo re-fit on Quasar and Pulsar), and the golden and unit suites pass (1730/1730). The packet isn't available to check.",
+    "4": "met: the Built section has F2 rows in story time for all seven pods (Comet 0.3, Nova 0.3, Pulsar 8.4, Convoy 7.0, Harbor 3.3 s saved). Quasar (-3.7 s) and Meteor (-4.1 s) play longer because the speed lever re-fits."
+  },
+  "summary": "The change replaces the summon's hold and fly-back with a smooth Hermite pass, adds the call blip in the station's hue and ring shape at the instant of the jump, and keeps docs, goldens, ledger and tests in step. Typecheck and the full unit suite pass. Its main gap is that the ship always glides home to rest, even when its next sortie is waiting. That leaves the stop-and-go the item meant to remove in that case and contradicts 05 P-5. Separately, the passing plate's short whole time isn't reflected in 15 §10."
+}

@@ -1,0 +1,63 @@
+{
+  "item": "E8",
+  "role": "builder",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "low",
+  "verdict": "done",
+  "summary": "Rising tempo (27 E8, 05 B-23), switched on only by Solar's pacing(). layout() now runs two passes. The first sets opensDay exactly as before and counts the day turns T. The second lays out each gap, day turn and the tail gap as before, then applies risingMs(ms, p, cap): p = (day turns at or before the beat) / T, and the tail gap's p is 1. On a dense episode (the director pulled any lever) every day turn is RISING_FLOOR_MS. With T = 0, or with risingTempo unset, the old path runs unchanged. Saving on every pod, Comet 1.7%, Quasar now 299.1 s (inside 300 s).",
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test", "pass": true, "detail": "108 files, 1675 tests. New rising.test.ts has 8 tests. pacingBuilt has the new E8 case, and its E1-E5 fixed rows still match. The schedule and director goldens passed without -u, and no golden file moved (git status of tests/golden is clean). The first run failed in sweep.test.ts (it pins Comet at 61 845 ms, which E8 moves by design). The pin was moved to a risingTempo:false schedule; see deviations" },
+    { "cmd": "npm run pacing -- --candidates", "pass": true, "detail": "Regenerated. pacing-candidates.json is byte-identical (git diff --quiet). The Summary, frame rows and per-pod component tables moved. pacing-built.json only gained the 6 E8 rows (no '-' lines), so the E1-E7 rows (E6, E6+ and E7 among them) did not move" },
+    { "cmd": "npm run e2e:spec -- solar-play solar-dense profile", "pass": true, "detail": "32 passed (8.6 m); --list confirms 32 tests over the 3 files" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (54 s)" }
+  ],
+  "ledger": {
+    "_note": "E8 Built row: before = risingTempo:false, now = today's. Wall ms at 1x.",
+    "Comet Pod": { "beforeMs": 61845, "nowMs": 60795, "savedMs": 1050, "savedPct": 1.70 },
+    "Nova Pod": { "beforeMs": 212835, "nowMs": 209348, "savedMs": 3487, "savedPct": 1.64 },
+    "Quasar Pod": { "beforeMs": 303640, "nowMs": 299132, "savedMs": 4508, "savedPct": 1.48 },
+    "Pulsar Pod": { "beforeMs": 293522, "nowMs": 288808, "savedMs": 4714, "savedPct": 1.61 },
+    "Convoy Planning Pod": { "beforeMs": 188005, "nowMs": 184705, "savedMs": 3300, "savedPct": 1.76 },
+    "Harbor Pod": { "beforeMs": 183725, "nowMs": 179875, "savedMs": 3850, "savedPct": 2.10 },
+    "quasarInside300s": true,
+    "cometWithin5pct": "yes: 1.7% under 61 845 ms. The planner's probe matched to within 10 ms on every pod"
+  },
+  "tests_added": [
+    "tests/unit/rising.test.ts: risingShare's endpoints and that it never rises; risingMs between the floor and the cap over a grid, and risingMs(GAP_MIN_MS, 1, cap) === 300. The premise: with risingTempo:false every gap and turn on six pods is 500 ms, each pod with T > 0. Convoy Planning (no levers) follows the curve: turn i = risingMs(500, i/T, DAY_TURN_MS), turns never rise, each gap = risingMs(500, p, PULSE_GAP_MAX_MS), the tail gap's p is 1, and the first gap is above 500. Pulsar (levers pulled): every turn is 300. All six pods: no gap, turn or tail gap below 300. Deterministic: two builds of Comet are equal. v0: orbit-week's schedule equals one built with risingTempo:false, and one with risingTempo:true (no day turns, so T = 0)",
+    "tests/unit/pacingBuilt.test.ts: 'E8, rising tempo: rows on all six pods, each saves time; Comet within 5% of 61 845 ms'. The fixed-row test's filter now also leaves out E8"
+  ],
+  "files": [
+    "src/shared/playback/constants.ts",
+    "src/shared/playback/schedule.ts",
+    "src/shared/engine/maneuvers.ts",
+    "scripts/pacing-ledger.ts",
+    "scripts/pacing-built.ts",
+    "scripts/pacing-candidates.ts",
+    "tests/unit/rising.test.ts",
+    "tests/unit/pacingBuilt.test.ts",
+    "tests/unit/sweep.test.ts",
+    "docs/05-playback.md",
+    "docs/15-reference.md",
+    "docs/03-contracts.md",
+    "docs/progress/v1.4/pacing-ledger.md",
+    "docs/progress/v1.4/pacing-ledger.json",
+    "docs/progress/v1.4/pacing-built.json"
+  ],
+  "deviations": [
+    "03 amended (normative). The ScheduleOptions block gains `risingTempo?: boolean  // Solar: true (27 E8, 05 B-23)` beside dayTurns. New lines: `PacingOptions += { risingTempo?: false }` (the ledger's \"before\"; the app never sets it), and the pure helpers `risingShare(p)` and `risingMs(ms, p, capMs)` in schedule.ts. 27's Touches line doesn't list 03.",
+    "The montage threshold is not scaled, which departs from the item's Decided line (packet decision 6): no such number exists. P-24 folds a back-to-back repeat, and P-15 triggers on a wait for a label place. This is said in B-23's Notes. The orchestrator should raise it at the final check.",
+    "tests/unit/sweep.test.ts was edited, though the packet doesn't list it. Its Check 2 pinned Comet's wallMs at exactly 61 845 ms, which E8 moves to 60 795 ms by design. That one assertion now reads a risingTempo:false schedule, so it still checks that the sweep leaves Comet as E7 measured it. The test's other checks are unchanged.",
+    "03 also gains a line for the risingShare/risingMs helpers, beyond the two lines the packet asked for.",
+    "05 B-19's note now says 'over 300 ms apart (B-23's floor)'. B-17's Notes gain 'On a dense episode it is B-23's floor'. 15 §10 'A day turn' gains 'a dense episode's is the rising floor (B-23)'."
+  ],
+  "limitations": [
+    "The day's breather in the renderer (05 §8.5b) is unchanged. A dense episode's day turn is now 300 ms of x, so the spotlight's read time at a dawn is shorter still. This is out of scope here; playback.ts and ChartApp.ts were not touched.",
+    "The director's estimate (GAP_MIN_MS per beat) and limelight's DAY_TURN_MS fair-turn clock are unchanged, as decision 7 says. The director's estimate now runs slightly above the real schedule.",
+    "Comet shortens by 1.05 s, gaps only. E5's reading said the director must not shorten Comet further. That is about the director's forms, but flag it at the final check.",
+    "Quasar is inside the 300 s soft cap by only 0.9 s (299.1 s); a later item that adds time there would cross it again.",
+    "No stills were taken (schedule-only change). The e2e solar-play and solar-dense specs passed on the new timings."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+ "item": "F2",
+ "role": "fixer",
+ "round": 1,
+ "verdict": "done",
+ "summary": "Review verdict was pass with Minors and Nits only. Fixed the three Minors that were cheap (stills, ledger note, fragile test); left finding 4 for the gate and the two Nits.",
+ "findings": [
+  {"n": 1, "severity": "Minor", "action": "fixed", "detail": "Took f2-jumpin-full.png and f2-jumpin-reduced.png (the Station jump-in gallery cell in play) with a throwaway spec, since deleted; saved in this folder."},
+  {"n": 2, "severity": "Minor", "action": "fixed", "detail": "BuiltItem gained an optional `note`; renderBuilt prints it under the table. F2's note says Meteor's directed wall time is fitted to 300 s, so the freed room is spent, and that the undirected saving is 13.9 s (Quasar 21.3, Pulsar 24.3). pacing-ledger.md regenerated; pacing-ledger.json, pacing-built.json and pacing-candidates.json unchanged byte for byte."},
+  {"n": 3, "severity": "Minor", "action": "fixed", "detail": "The F2 test now computes each pod's undirected totalMs with and without the pass (PRE_PASS vs live PACE_RULES), so later items cannot move it; the typed TOTAL_BEFORE_F2 is removed. Isolated, Meteor's F2 saving is 13.9 s, not the largest (Quasar 21.3, Pulsar 24.3); the old 'Meteor saves most' claim came from mixing in other changes since 61e4958. The assertion is now: all seven pods save, Meteor saves more than 10 s."},
+  {"n": 4, "severity": "Minor (gate)", "action": "skipped", "detail": "Follows the director's designed lever order (HG-C); it is not an F2 bug. Left for the human gate."},
+  {"n": 5, "severity": "Nit", "action": "skipped", "detail": "Left; (b) and (d) already prove no hold."},
+  {"n": 6, "severity": "Nit", "action": "skipped", "detail": "Left."}
+ ],
+ "checks": [
+  {"cmd": "npm run -s typecheck", "pass": true},
+  {"cmd": "npm run -s lint", "pass": true},
+  {"cmd": "npm test --silent", "pass": true, "detail": "109 files, 1728 tests"},
+  {"cmd": "npm run e2e:spec -- gallery-assets", "pass": true, "detail": "4 passed"},
+  {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"}
+ ],
+ "files": ["scripts/pacing-built.ts", "tests/unit/pacingBuilt.test.ts", "docs/progress/v1.4/pacing-ledger.md", "docs/progress/v1.4/work/F2/f2-jumpin-full.png", "docs/progress/v1.4/work/F2/f2-jumpin-reduced.png"],
+ "limitations": ["Did not re-run the full solar/solar-play/solar-dense specs: this round changed no runtime code. solar-dense 'facing follows motion' is a flake the reviewer saw (passes alone)."]
+}

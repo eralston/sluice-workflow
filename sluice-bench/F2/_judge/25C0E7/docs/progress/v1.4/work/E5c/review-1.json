@@ -1,0 +1,20 @@
+{
+  "item": "E5c",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "Line 2 met (Pulsar 295.7 s, Comet 61.8 s unchanged); but the gate's montage moment (Quasar beat 15, 22:17Z) is never named on screen: its one plate stays hidden all beat (DOM note 0x0 while annotations() reports it), no crew named; 9 of 10 other montage beats draw their note. Plus untested fewer-heroes/ahead branches and a no-op fewer-heroes reported as pulled on Quasar.",
+  "findings": { "blocker": 0, "major": 1, "minor": 2, "nit": 1 },
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test --silent", "pass": true, "detail": "105 files, 1586 tests (goldens included; director.json matches)" },
+    { "cmd": "npm run e2e:spec -- solar-dense solar-play", "pass": true, "detail": "26 passed (History-agreement case solar-dense:295 among them)" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "npm run drive -- <scratchpad>/montage-probe.ts, montage-probe2.ts, montage-probe3.ts --paradigm solar", "pass": false, "detail": "Quasar beat 15 (2026-09-14T22:17Z): annotations lit 1 + note 'PR #20313 ... — Merged' from +750 ms, but .holo__note rect 0x0 at every poll for 3.4 s; zooming in made no difference; stills in test-results/drive/review-e5c-montage*/" },
+    { "cmd": "npm run drive -- <scratchpad>/montage-all.ts --paradigm solar", "pass": true, "detail": "Quasar montage beats found in app: 31, 61, 68, 70, 112, 142, 143, 154, 192 draw their note (1734-5250 px^2); only 15 hides it (5 Quasar and all 6 Pulsar montage times did not match a beat's sourceUtc)" },
+    { "cmd": "vite-node <scratchpad>/montage-list.ts, light-probe.ts, hero-probe.ts", "pass": true, "detail": "Quasar 15 / Pulsar 6 montage moments; light lits 116 / 72 drafts, all planned openings (66 / 31) lit, none kept as ahead; fewer-heroes changes 0 forms on all six pods; Quasar merge 33->33, progress 33->33 across E5c" }
+  ]
+}

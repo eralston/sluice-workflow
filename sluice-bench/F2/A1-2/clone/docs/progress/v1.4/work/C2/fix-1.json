@@ -1,0 +1,27 @@
+{
+  "item": "C2", "role": "fixer", "round": 1, "model_tier": "small", "effort": "small",
+  "verdict": "done",
+  "summary": "Applied review-1's two Minors and its Nits in scripts/pacing-candidates.ts and scripts/pacing-ledger.ts, regenerated with npm run pacing -- --candidates, and re-ran the two pacing unit tests (8 passed).",
+  "files": ["scripts/pacing-candidates.ts", "scripts/pacing-ledger.ts", "docs/progress/v1.4/pacing-candidates.json", "docs/progress/v1.4/pacing-ledger.md"],
+  "checks": [
+    {"cmd": "npm run -s pacing -- --candidates", "pass": true, "detail": "six pods written; pacing-ledger.json not modified (git status clean for it)"},
+    {"cmd": "npx vitest run tests/unit/pacingCandidates.test.ts tests/unit/pacing.test.ts", "pass": true, "detail": "2 files, 8 passed"},
+    {"cmd": "npx eslint scripts/pacing-candidates.ts scripts/pacing-ledger.ts scripts/pacing.ts", "pass": true, "detail": "no output"},
+    {"cmd": "grep 'Stack Stack' / 'Stack+short Stack' in pacing-ledger.md", "pass": true, "detail": "0 matches"}
+  ],
+  "fixes": [
+    "Minor 1: E2, E4b, E4c assumptions now say 'An upper bound: it releases only the binding predecessor, so a wait also held by another constraint would start later.' The Stack assumption and the Candidates intro say P is an upper bound too (Stack includes P; the intro describes P for every row). Flows into the md Assumptions list and per-pod tables.",
+    "Minor 2: the E5 detail gets a hint when no merge is beamed and every merge is exempt (each author's first merge or a day's climax): 'every merge is exempt ..., so E5 is not exercised in this pod'. Derived gains allExempt. Comet's E5 row now says why it is 0 s; the Stack rows repeat the hint in their detail.",
+    "Nit: the matrix and per-pod tables share one label() helper, so stack rows read 'Stack' and 'Stack + short forms' (no more 'Stack Stack' or 'Stack+short Stack + short forms').",
+    "Nit: '1 first merge' and E6 reads '1 merge joins 9 volleys' (singular and plural by count).",
+    "Nit: E3 and E9 no longer repeat their text: detail is 'not scheduled' for both; the assumption carries the explanation.",
+    "Nit: pacing-ledger.ts imports ManeuverRule and PlannedManeuver in one statement from contracts/maneuver."
+  ],
+  "deviations": [
+    "The Stack assumption and the intro wording now also call P an upper bound. The review asked for the P rows only; Stack contains P, so the same caveat applies to it."
+  ],
+  "limitations": [
+    "E7 detail still reads '1 creations fold into 1 sweeps' for a count of one. Not in the review's list, so left alone.",
+    "Numbers reflect the working tree at regeneration, which includes B4's uncommitted src/ edits, as in build-1. No engine file was changed, so the engine numbers are those at edaa526 only if B4 left the engine files untouched, as build-1 reported."
+  ]
+}

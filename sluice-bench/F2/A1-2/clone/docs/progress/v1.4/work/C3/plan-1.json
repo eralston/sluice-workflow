@@ -1,0 +1,19 @@
+{
+  "item": "C3",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Profiled Pulsar: ~400 tiny offscreen passes a frame come from the role-outline filters on ~32 pieces (aura.ts); the cut is a render.switches.auraBake that caches each outline layer, gated by a pixel diff and a same-run ABABAB perf comparison.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "split": null,
+  "notes": [
+    "Probes: docs/progress/v1.4/work/C3/probe-gpu.ts and probe-who.ts. Skipping offscreen draws drops 4x p95 33.3 to 18.6 ms (the CPU floor); paint, twinkle, canvas visibility have no effect.",
+    "Risk to watch: cacheAsTexture bounds exclude blur reach (padding rect in the packet) and filter space at devicePixelRatio 2 (fallback: manual RenderTexture). The look gate can set the default off and send options to HG-C.",
+    "The hard perf check skips when the cuts-off p95 is already within 1.25 vsyncs (at 1x on a good run it is); a spec decision for the reviewer to confirm.",
+    "Depends on C4c being committed first; the packet is written against its working tree."
+  ]
+}

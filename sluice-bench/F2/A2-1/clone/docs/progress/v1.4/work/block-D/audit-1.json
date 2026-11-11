@@ -1,0 +1,12 @@
+{ "item": "block-D", "role": "auditor", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "No Blocker or Major. Two Minors: D1's formationSides takes the side from the x/y mean, which only alternates on an axis-aligned line, but D3 now turns the line in 15° steps (an arc pick in 98/441 Pulsar, 49/532 Quasar, 21/49 Harbor checks), so neighbouring plates ask for the same side (the collision guards still hold; D1's e2e can't see it); tests/README.md maps neither the new formationBounds/formationCorridor units nor solar-dense's D1/D2 cases. Three Nits: 08's 'scale- and camera-free' (the spots follow drawnR), powerLink.ts's stale header, and doc 15 citing powerLink.ts and formationSpots.ts for one module's constants.",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 3 },
+  "checks": [
+    { "cmd": "git diff 21d3559 HEAD -- src/ docs/ tests/unit/", "pass": true, "detail": "read every hunk of D1-D3; D2 and D3 compose on the board (arc filtered by inside; the fallback is D2's pick); no-beam and no-board paths are unchanged" },
+    { "cmd": "npx vitest run formationCorridor formationBounds labelTiers docTables", "pass": true, "detail": "4 files, 76 passed" },
+    { "cmd": "node docs/progress/v1.4/work/block-D/probe-tilt-sides.mjs", "pass": false, "detail": "sides alternate at 0° and 90°; at 15° and 30°: above above below below; at 60° and 75°: neighbours share a side or 'mid'" },
+    { "cmd": "grep solar-dense / maneuvers / labels rows in tests/README.md; git diff 21d3559 HEAD -- tests/README.md", "pass": false, "detail": "README unchanged; solar-dense on no row; formationBounds and formationCorridor not mapped" },
+    { "cmd": "compare 13 §6.2 Power link row, 08 §7 D2/D3 bullets, 15 §5 formation-corridor table, scope State lines with the code", "pass": true, "detail": "match, except the 08 'scale- and camera-free' wording (Nit)" },
+    { "cmd": "no e2e, drive, gallery or build run", "pass": true, "detail": "lean audit; finding 1 rests on the formulas and D3's recorded sweep counts, not reproduced in the app" }
+  ] }

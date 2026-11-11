@@ -1,0 +1,34 @@
+{ "item": "D2", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "The Power link crew's spots now come from a pure formationSpots (new module) that keeps every spot inside the plan's frontier rectangle (candidates: toward/away on the natural axis, then the other axis, then clamp); board plumbed via GraphScene.solarBoard -> CastViews.board.",
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/formationBounds.test.ts", "pass": true, "detail": "10 passed: 6 pure cases (incl. board:null equals a verbatim copy of the old rule on 4 cases), Pulsar and Harbor sweeps (1323 and 196 station/scale/n combinations checked, board inside boundsOf, every spot on board)"},
+    {"cmd": "bite check: same sweep with board:null (today's rule)", "pass": true, "detail": "Pulsar: 0 of 1323 leave the board, so the plan-level test could NOT reproduce the report for Pulsar. Harbor: 24 of 196 leave it (station repo:...0001:d3e7ad28..., n=6, at every fixed scale 0.02-0.12). Guarantee kept either way."},
+    {"cmd": "npm run e2e:spec -- solar-dense -g '27 D2'", "pass": true, "detail": "both sizes pass (1440x900, 1024x640) with the change: every sampled member inside .chart-host, >=1 merge with 2+ members at once. NOT run against the unchanged code (the Pulsar unit sweep shows no violation there, so it would be expected to pass)."},
+    {"cmd": "npm run e2e:spec -- solar solar-dense demo gallery-v1 density slice3a", "pass": true, "detail": "83 passed (8.6 m), incl. D1's formation plates and captain's turn"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "42 passed, 1 failed (devlog.spec 'a session is recorded') under load; passes on rerun alone (2 passed)"},
+    {"cmd": "npm run typecheck / lint / npm test", "pass": true, "detail": "clean; 100 files, 1477 passed. The stop-hook gate once failed refresh.test.ts (60 s timeout) while the e2e ran concurrently; it passes alone (14 passed): load, outside this item."}
+  ],
+  "files": [
+    "src/renderer/src/theme/starChart/maneuvers/formationSpots.ts (new)",
+    "src/renderer/src/theme/starChart/maneuvers/powerLink.ts (formation() is a wrapper; APPROVER_* re-exported)",
+    "src/renderer/src/chart/fx/types.ts (CastViews.board)",
+    "src/renderer/src/chart/fx/v1/interpreter.ts (views() sets board)",
+    "src/renderer/src/chart/scenes/GraphScene.ts (solarBoard)",
+    "tests/unit/formationBounds.test.ts (new)",
+    "tests/unit/commands.test.ts (fake scene gains solarBoard: () => null)",
+    "tests/e2e/solar-dense.spec.ts (new describe 'formations stay on screen (27 D2)')",
+    "docs/13-game-design.md (Power link row), docs/08-layout-solver.md (On screen bullet)",
+    "docs/progress/v1.4/work/D2/stills.ts, still-pulsar-1024x640.png"
+  ],
+  "deviations": [
+    "commands.test.ts fake scene needed solarBoard (the interpreter now calls it); not named in the packet.",
+    "formationBounds.test.ts declares Rect/plate types locally instead of importing them from formationSpots (the node tsconfig does not list renderer files; TS6307).",
+    "The unit sweep samples two playheads per pod (middle, end) and the fixed scales plus the two fit scales (fit computed from boundsOf at the full window size, not the inset-reduced usable area).",
+    "No CastViews iteration by key exists in chart/fx or theme, so board was added without exclusions."
+  ],
+  "limitations": [
+    "Pulsar's plan-level sweep never leaves the board under the old rule; the e2e therefore did not bite there. Only Harbor (n=6, an extreme crew size) did. The e2e was not run on the unchanged code.",
+    "Still (still-pulsar-1024x640.png): a Pulsar vertical merge at 1024x640 with two crew plates and ships on screen; the horizontal merge showed only one acting plate at its peak, so no still.",
+    "When no candidate is on the board the spots are clamped, so spacing may shrink and ships may overlap; plates then fall to D1's picture fallback."
+  ] }

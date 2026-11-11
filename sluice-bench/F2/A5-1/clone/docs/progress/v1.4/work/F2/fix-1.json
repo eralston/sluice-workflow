@@ -1,0 +1,22 @@
+{ "item": "F2", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Fixed the Major (CI-safe start ledger constants) and Minors 2 and 3, plus Nits 5 and 6; left Nits 4 and 7.",
+  "checks": [
+    {"cmd":"npm run -s typecheck","pass":true,"detail":"green"},
+    {"cmd":"npm run -s lint","pass":true,"detail":"green"},
+    {"cmd":"npm test --silent","pass":true,"detail":"109 files, 1725 tests"},
+    {"cmd":"npm run e2e:spec -- solar-dense gallery-assets","pass":true,"detail":"26 passed"}
+  ],
+  "files": ["tests/unit/pacingBuilt.test.ts","tests/e2e/solar-dense.spec.ts","tests/e2e/gallery-assets.spec.ts","src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts"],
+  "findings": [
+    {"n":1,"severity":"Major","action":"fixed","detail":"Dropped git show/execSync; hard-coded the seven start-commit wallMs values as START_WALL_MS."},
+    {"n":2,"severity":"Minor","action":"fixed","detail":"22 B9 now samples facility nodes; riding episodes are capped at the number of stations that appeared during the sample, besides the 2.2 s limit."},
+    {"n":3,"severity":"Minor","action":"fixed","detail":"Gallery spec leaves play, then waits for a fresh play before each still (full and reduced). The stills were not re-shot by hand; the spec ran and passed."},
+    {"n":4,"severity":"Nit","action":"skipped","detail":"Accepted by the reviewer; design question."},
+    {"n":5,"severity":"Nit","action":"fixed","detail":"Comment naming the E6+ Quasar -1880 precedent at the -2000 bound."},
+    {"n":6,"severity":"Nit","action":"fixed","detail":"spotOf now returns its point p; the guest path uses it, so no non-null assertion."},
+    {"n":7,"severity":"Nit","action":"skipped","detail":"Left as a nit."}
+  ],
+  "deviations": [],
+  "limitations": ["The cap in the 22 B9 check counts facility nodes that were new since the first sample; a station that leaves and returns would count once."]
+}

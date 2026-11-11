@@ -1,0 +1,27 @@
+{
+  "role": "build", "item": "C2", "round": 1, "verdict": "done",
+  "files": ["scripts/pacing-ledger.ts", "scripts/pacing.ts", "scripts/pacing-candidates.ts", "tests/unit/pacingCandidates.test.ts", "docs/progress/v1.4/pacing-ledger.md", "docs/progress/v1.4/pacing-ledger.json", "docs/progress/v1.4/pacing-candidates.json"],
+  "checks": [
+    {"name": "refactor identity: npm run pacing before/after, md and json diff", "result": "identical"},
+    {"name": "npm run pacing -- --candidates twice, diff", "result": "identical"},
+    {"name": "vitest pacingCandidates + pacing", "result": "8 passed"},
+    {"name": "gate: typecheck, lint, npm test", "result": "green (98 files, 1442 tests)"}
+  ],
+  "tree": "HEAD edaa526 plus B4's uncommitted edits (renderer art, view.ts, stageCode.ts, scene/project/solar.ts, docs, goldens). No engine pace/maneuvers/schedule file was modified, so the numbers are the engine's at edaa526. Ledger regenerated last; the final rerun left it unchanged.",
+  "deviations": [
+    "Method P held time: PlannedManeuver has no attends, so held = max(duration, 1.8 s) unless quiet; agent.light excluded. Approximation, stated in the md.",
+    "E4c applies only when the P-5 predecessor's end (not note end) is the binding anchor.",
+    "Stack touched = sum of per-edit counts plus advanced waits; E6 members replaced by E5 are still counted (sets come from baseline plans, as the packet says)."
+  ],
+  "limitations": [
+    "Rows from P/F that land under 45 s would get a 'below the budget' flag; none did (all pods are far over).",
+    "E6 is small because the 10 s window is in presentation time, where merges are rarely that close: Comet 0, Nova 1 member, Quasar 2 of 66.",
+    "E7 is 0 for Comet, Nova, Quasar, Pulsar (no beat has 2+ creations). Convoy E7 is -2.3 s: one 23-creation beat becomes one sweep of 900+250x22 = 6.4 s, longer than the parallel creations it replaced; flagged 'longer than the baseline', assumption not tuned.",
+    "E5 on Comet is 0 s: both its merges are exempt (each author's first merge). Nova 2 of 10 replaced, Quasar 53 of 66 (30.1%, the outlier).",
+    "E8 at floor 500 is 0 s in every pod, as expected."
+  ],
+  "headline": {
+    "top3": {"Comet Pod": "E4d 14.1 s, E4c 3.4 s, E4a 2.0 s", "Nova Pod": "E4d 48.2, E5 11.1, E6 5.4", "Quasar Pod": "E5 324.9, E4d 250.7, E4c 23.4", "Pulsar Pod": "E4d 145.0, E5 89.5, E4c 16.1", "Convoy Planning Pod": "E4d 17.0, E4c 4.4, E2 4.1", "Harbor Pod": "E4d 29.9, E4c 6.3, E4a 6.0"},
+    "comet_column": "baseline 67.3 s; E1 0.6 (0.9%); E2 0.0; E3 0.0; E4a 2.0 (3.0%); E4b 0.0; E4c 3.4 (5.0%); E4d 14.1 (21.0%); E5 0.0; E6 0.0; E7 0.0; E8 0.0; E8-250 1.5 (2.2%); E9 0.0; Stack 5.9 (8.8%); Stack+short 18.1 (26.9%)"
+  }
+}

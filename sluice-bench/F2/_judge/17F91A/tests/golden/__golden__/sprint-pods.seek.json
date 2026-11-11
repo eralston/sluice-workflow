@@ -1,0 +1,98 @@
+[
+ {
+  "at": "2026-09-14T06:59:59.999Z",
+  "snapshot": {
+   "atUtc": 1789369199999,
+   "lens": "knownThen",
+   "workItems": [],
+   "prs": [],
+   "links": []
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8001",
+    "atUtc": 1789369199999,
+    "nodes": [],
+    "edges": [],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:undefined",
+    "atUtc": 1789369199999,
+    "nodes": [],
+    "edges": [],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   }
+  ]
+ },
+ {
+  "at": "2026-09-14T06:59:59.999Z",
+  "snapshot": {
+   "atUtc": 1789369199999,
+   "lens": "knownThen",
+   "workItems": [],
+   "prs": [],
+   "links": []
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8001",
+    "atUtc": 1789369199999,
+    "nodes": [],
+    "edges": [],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:undefined",
+    "atUtc": 1789369199999,
+    "nodes": [],
+    "edges": [],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   }
+  ]
+ },
+ {
+  "at": "2026-09-14T06:59:59.999Z",
+  "snapshot": {
+   "atUtc": 1789369199999,
+   "lens": "knownThen",
+   "workItems": [],
+   "prs": [],
+   "links": []
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:b54b59b1-b44b-481e-834b-568bb24b54f8:8001",
+    "atUtc": 1789369199999,
+    "nodes": [],
+    "edges": [],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:undefined",
+    "atUtc": 1789369199999,
+    "nodes": [],
+    "edges": [],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   }
+  ]
+ }
+]

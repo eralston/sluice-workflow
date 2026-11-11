@@ -1,0 +1,37 @@
+{
+ "item": "A2",
+ "role": "reviewer",
+ "round": 1,
+ "model_tier": "medium",
+ "effort": "medium",
+ "verdict": "pass",
+ "summary": "PieceState.outcomes and the o= stage field removed cleanly; behaviour and goldens unchanged; docs amended.",
+ "findings": [
+  {
+   "severity": "Nit",
+   "text": "Seat sample step label is `own share <n> \u00b7 nothing counted on the surface`, not the packet's bare `own share <n>`; disclosed by the builder, needed for the v1-worlds caption alignment check."
+  }
+ ],
+ "checks": [
+  {
+   "cmd": "grep -rn outcomes src/shared",
+   "pass": true,
+   "detail": "empty"
+  },
+  {
+   "cmd": "npm run typecheck / lint",
+   "pass": true,
+   "detail": "clean"
+  },
+  {
+   "cmd": "npm test",
+   "pass": true,
+   "detail": "96 files, 1414 tests"
+  },
+  {
+   "cmd": "e2e:spec -- gallery-v1 gallery-assets",
+   "pass": true,
+   "detail": "8 passed"
+  }
+ ]
+}

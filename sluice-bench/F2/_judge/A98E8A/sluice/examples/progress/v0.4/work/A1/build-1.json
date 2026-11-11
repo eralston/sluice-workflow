@@ -1,0 +1,10 @@
+{ "item": "A1", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "checks": [
+    { "cmd": "unit: retryMissing.test, load.test", "pass": true, "detail": "14/14" },
+    { "cmd": "e2e: partial-history.spec, player.spec", "pass": true, "detail": "6/6" }
+  ],
+  "files": ["src/history/load.ts", "src/history/types.ts", "src/panels/Player.tsx",
+            "tests/unit/retryMissing.test.ts", "tests/e2e/partial-history.spec.ts", "docs/ingestion.md"],
+  "deviations": [], "limitations": ["The notice's Retry has no keyboard shortcut."],
+  "summary": "Built as packeted; gate blocked once (a lint rule), fixed." }

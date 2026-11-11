@@ -1,0 +1,62 @@
+{
+  "scene": "feature:wi:00000000-0000-4000-8000-000000000001:101",
+  "totalMs": 31600,
+  "beats": [
+    {
+      "index": 0,
+      "sourceUtc": "2026-09-14T16:10:00.000Z",
+      "priority": "high",
+      "accented": true,
+      "presentationStartMs": 1700,
+      "events": 1
+    },
+    {
+      "index": 1,
+      "sourceUtc": "2026-09-15T17:30:00.000Z",
+      "priority": "high",
+      "accented": true,
+      "presentationStartMs": 4600,
+      "events": 1
+    },
+    {
+      "index": 2,
+      "sourceUtc": "2026-09-15T19:00:00.000Z",
+      "priority": "high",
+      "accented": true,
+      "presentationStartMs": 7700,
+      "events": 1
+    },
+    {
+      "index": 3,
+      "sourceUtc": "2026-09-16T16:20:00.000Z",
+      "priority": "high",
+      "accented": true,
+      "presentationStartMs": 10800,
+      "events": 1
+    },
+    {
+      "index": 4,
+      "sourceUtc": "2026-09-17T15:00:00.000Z",
+      "priority": "high",
+      "accented": true,
+      "presentationStartMs": 13900,
+      "events": 1
+    },
+    {
+      "index": 5,
+      "sourceUtc": "2026-09-17T20:30:00.000Z",
+      "priority": "high",
+      "accented": true,
+      "presentationStartMs": 16800,
+      "events": 1
+    },
+    {
+      "index": 6,
+      "sourceUtc": "2026-09-18T17:45:00.000Z",
+      "priority": "high",
+      "accented": true,
+      "presentationStartMs": 19700,
+      "events": 2
+    }
+  ]
+}

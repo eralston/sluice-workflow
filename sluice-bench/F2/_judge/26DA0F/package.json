@@ -1,0 +1,62 @@
+{
+  "name": "star-chart",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Azure DevOps work as an explorable, replayable space chart",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "gallery": "STAR_CHART_GALLERY=1 electron-vite dev",
+    "dev:fake-ado": "STAR_CHART_FAKE_ADO=1 electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "test": "vitest run",
+    "e2e": "electron-vite build && playwright test --project=parallel && playwright test --project=alone",
+    "fixtures": "vite-node -c vitest.config.ts scripts/build-fixtures.ts",
+    "pacing": "vite-node -c vitest.config.ts scripts/pacing.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json && tsc --noEmit -p tsconfig.e2e.json",
+    "lint": "eslint .",
+    "e2e:keystone": "electron-vite build && playwright test --grep @keystone",
+    "e2e:spec": "electron-vite build && playwright test",
+    "bake:asteroids": "electron-vite build && playwright test -c tests/bake/playwright.config.ts",
+    "drive": "electron-vite build && node tests/drive/run.mjs",
+    "dist:mac": "electron-vite build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dmg --publish never",
+    "dist:mac:dir": "electron-vite build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dir --publish never"
+  },
+  "dependencies": {
+    "@fontsource/caveat": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "pixi.js": "8.21.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.5",
+    "zustand": "5.0.15"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "5.2.0",
+    "electron": "44.5.1",
+    "electron-builder": "26.18.0",
+    "electron-vite": "5.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.0",
+    "vite": "7.3.6",
+    "vite-node": "^5.0.0",
+    "vitest": "5.0.3"
+  },
+  "volta": {
+    "node": "24.22.1",
+    "npm": "12.2.1"
+  },
+  "allowScripts": {
+    "electron@44.5.1": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true
+  }
+}

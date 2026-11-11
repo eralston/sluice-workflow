@@ -1,0 +1,19 @@
+{
+  "item": "E5c",
+  "role": "reviewer",
+  "round": 2,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "summary": "Fix-1 holds. On Quasar (78 noted beats) and Pulsar (36) every note now draws, with no noted plate overlapping another; the pre-fix build hid Quasar beats 2, 11 and 15. A same-beat A/B shows no captain name lost. The label-collision specs pass. One Minor: the fallback covers every noted cast plate, not only montage, and 06 still says a cast plate never crosses another label.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 2 },
+  "checks": [
+    { "cmd": "npm run -s typecheck; npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npx vitest run director maneuvers castLabels labelTiers docTables literalFence pacingBuilt pacing + tests/golden", "pass": true, "detail": "16 files, 334 tests" },
+    { "cmd": "npm run e2e:spec -- solar.spec solar-dense demo slice1 slice2 density montage-names", "pass": false, "detail": "72 passed, solar-dense:295 failed once (most 6 > 4) while a baseline Electron build and drive ran in parallel; 12 did not run after it" },
+    { "cmd": "npm run e2e:spec -- solar-dense (alone)", "pass": true, "detail": "20 passed (8.0 m), History-agreement case 295 included" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "npm run drive -- <scratchpad>/r2-crew.ts (Quasar, Pulsar; fix and pre-fix copy)", "pass": true, "detail": "fix: Quasar 78/78 and Pulsar 36/36 noted beats draw every note, 0 overlaps, Quasar beats 2/11/15 run 10 px under the side panel; pre-fix: Quasar beats 2, 11, 15 undrawn" },
+    { "cmd": "npm run drive -- <scratchpad>/r2-target.ts (Quasar beats 2, 11, 15, 68 x3; fix and pre-fix)", "pass": true, "detail": "captain and acting-captain sets identical on both builds; only the notes differ (drawn with the fix)" }
+  ]
+}

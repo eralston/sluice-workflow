@@ -1,0 +1,19 @@
+{ "item": "A4", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done", "summary": "Station plate rows no longer scroll sideways: rows clip x, titles/meta ellipsis, stat line wraps at its dot via nowrap facts.",
+  "checks": [
+    {"cmd": "npm run e2e:spec -- demo", "pass": true, "detail": "11 passed; the new Halcyon and Meridian cases failed first (scrollWidth 227 > 223), then passed after the row-margin fix"},
+    {"cmd": "npm run e2e:spec -- solar", "pass": true, "detail": "37 passed"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "npm run typecheck / lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test", "pass": true, "detail": "96 files, 1414 passed on rerun; one failure in the first run (inside a chained run under load), not reproduced"}
+  ],
+  "files": ["src/renderer/src/chart/holo/holo.css", "src/renderer/src/chart/holo/holoRows.ts", "tests/e2e/demo.spec.ts", "docs/06-visual-design.md (the Mega-labels paragraph, one sentence; file name per glob docs/06-*.md)"],
+  "deviations": [
+    "holo.css: .holo__row margin is now `0 0 0 -4px` (was `0 -4px`). The right-hand 4px overhang counted in the rows box's scrollWidth (227 vs 223) even with overflow-x hidden, so the acceptance could not pass otherwise. Row highlight now ends at the box edge on the right; text starts where it did.",
+    "New e2e case is appended at the end of the Halcyon describe, not after B1, because it leaves the pod scene and B2/B3 rely on being in Quasar Pod / Pulsar. Meridian is a second describe with its own launch.",
+    "Helper expandStation is copied, not shared with the B1/B2 cases (diff would not be small)."
+  ],
+  "limitations": [
+    "Per scene the test checks the ten stations with the most rows; whole run took about 1.2 min for demo.spec.ts, so no further cap.",
+    "Did not run npm run drive stills (optional)."
+  ] }

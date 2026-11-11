@@ -1,0 +1,15 @@
+{ "item": "block-AB", "role": "fixer", "round": 2, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "solar-play:128 fixed: placement order. devlog:16 is a keystone-only flake that also fails at 2cccce3, so not caused by round 1.",
+  "findings": [
+    { "n": 1, "severity": "Major", "action": "fixed", "detail": "solar-play reduced-motion: entering Harbor Pod selects the Harbor star; round 1 stopped its Features list opening, so its resting one-line plate (placed first as 'selected', focus 1) now sat over where the struck threat's cast plate goes and the threat plate got display:none (no free place). Fix in labels.ts position(): a piece a maneuver casts sorts with focus min(focus,1), so cast plates place before a merely selected plate. The decided behaviour (entry doesn't open the list) is unchanged. Bisected by reverting nav.ts to 2cccce3 (passes) and labels/ChartApp/nav together; CSS not involved." },
+    { "n": 2, "severity": "Minor", "action": "not-a-regression", "detail": "devlog.spec:16 'Error: typing' (no typing event logged): passes alone (5 of 6 runs here, once failed in a combined run) and fails reproducibly inside e2e:keystone at the pre-round-1 tree (2cccce3 src+tests checked out, same 42 passed / 1 failed). Cause not found; likely a timing race in the area-chooser typing step under keystone load. Left alone, outside this item." }
+  ],
+  "checks": [
+    { "cmd": "npm run e2e:spec -- solar-play devlog demo", "pass": true, "detail": "21 passed, 1 devlog flake in one run; solar-play 6/6 and demo all pass" },
+    { "cmd": "npm run e2e:keystone", "pass": false, "detail": "42 passed, devlog:16 failed, same as at 2cccce3" },
+    { "cmd": "typecheck, lint, npm test", "pass": true, "detail": "1462 tests" }
+  ],
+  "files": ["src/renderer/src/chart/labels.ts"],
+  "deviations": [],
+  "limitations": ["devlog keystone failure is pre-existing under keystone load; needs its own look. Full e2e not run."] }

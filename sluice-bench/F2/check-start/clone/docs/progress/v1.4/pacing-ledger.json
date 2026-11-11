@@ -1,0 +1,1907 @@
+{
+  "pods": [
+    {
+      "label": "Comet Pod",
+      "path": "Halcyon Reach\\Comet Pod",
+      "scenario": "sprint-pods",
+      "project": "Halcyon Reach",
+      "sprint": "Sprint 41",
+      "tz": "America/Los_Angeles",
+      "events": 32,
+      "beats": {
+        "total": 18,
+        "played": 8,
+        "silent": 10,
+        "cutByBudget": 2
+      },
+      "budgetMs": null,
+      "totalMs": 60795,
+      "uncappedMs": 74708,
+      "wallMs": 60795,
+      "story": {
+        "wallMs": 45795,
+        "played": 6,
+        "levers": []
+      },
+      "director": {
+        "targetMs": 300000,
+        "levers": [],
+        "estimateMs": 67405
+      },
+      "frame": {
+        "orientMs": 3000,
+        "gapMs": 850,
+        "dayTurnMs": 2300,
+        "dayTurns": 6,
+        "tailGapMs": 300,
+        "finalHoldMs": 1200,
+        "beatsMs": 53145
+      },
+      "playing": {
+        "byRule": [
+          {
+            "key": "attachment.merge/first",
+            "ms": 7900,
+            "share": 0.149,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2300,
+              "disperse": 900,
+              "echo": 3000,
+              "gather": 900,
+              "land": 500,
+              "tell": 300
+            }
+          },
+          {
+            "key": "attachment.merge",
+            "ms": 7200,
+            "share": 0.135,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1600,
+              "disperse": 900,
+              "echo": 3000,
+              "gather": 900,
+              "land": 500,
+              "tell": 300
+            }
+          },
+          {
+            "key": "threat.accomplish/beamed",
+            "ms": 6820,
+            "share": 0.128,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2600,
+              "disperse": 400,
+              "echo": 400,
+              "gather": 700,
+              "hold": 1220,
+              "land": 1200,
+              "tell": 300
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed",
+            "ms": 6520,
+            "share": 0.123,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2600,
+              "disperse": 300,
+              "echo": 400,
+              "gather": 400,
+              "hold": 1320,
+              "land": 1200,
+              "tell": 300
+            }
+          },
+          {
+            "key": "seat.complete",
+            "ms": 5120,
+            "share": 0.096,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1000,
+              "echo": 900,
+              "gather": 700,
+              "hold": 1120,
+              "land": 1100,
+              "tell": 300
+            }
+          },
+          {
+            "key": "objective.underway",
+            "ms": 4020,
+            "share": 0.076,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1200,
+              "echo": 400,
+              "gather": 500,
+              "hold": 1620,
+              "tell": 300
+            }
+          },
+          {
+            "key": "attachment.open",
+            "ms": 3400,
+            "share": 0.064,
+            "maneuvers": 2,
+            "phases": {
+              "act": 2000,
+              "land": 800,
+              "tell": 600
+            }
+          },
+          {
+            "key": "region.clear",
+            "ms": 2950,
+            "share": 0.056,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1600,
+              "echo": 1000,
+              "tell": 350
+            }
+          },
+          {
+            "key": "facility.enter",
+            "ms": 2815,
+            "share": 0.053,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1200,
+              "gather": 715,
+              "land": 600,
+              "tell": 300
+            }
+          },
+          {
+            "key": "objective.nearing",
+            "ms": 2400,
+            "share": 0.045,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1100,
+              "echo": 400,
+              "gather": 600,
+              "tell": 300
+            }
+          },
+          {
+            "key": "threat.engage",
+            "ms": 2400,
+            "share": 0.045,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1300,
+              "echo": 300,
+              "gather": 500,
+              "tell": 300
+            }
+          },
+          {
+            "key": "piece.appear",
+            "ms": 1600,
+            "share": 0.03,
+            "maneuvers": 1,
+            "phases": {
+              "act": 900,
+              "echo": 400,
+              "tell": 300
+            }
+          }
+        ],
+        "byPhase": {
+          "act": 19400,
+          "disperse": 2500,
+          "echo": 10200,
+          "gather": 5915,
+          "hold": 5280,
+          "land": 5900,
+          "tell": 3950
+        },
+        "playingMs": 53145
+      },
+      "held": {
+        "queueIdleMs": 0,
+        "noteHoldMs": 0
+      },
+      "waits": {
+        "byCause": {
+          "P-5": {
+            "ms": 24735,
+            "count": 4
+          },
+          "P-3": {
+            "ms": 11940,
+            "count": 1
+          },
+          "P-4": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-6": {
+            "ms": 0,
+            "count": 0
+          },
+          "other": {
+            "ms": 0,
+            "count": 0
+          }
+        },
+        "maneuvers": 5,
+        "carryMs": 0,
+        "carryBeats": 0
+      }
+    },
+    {
+      "label": "Nova Pod",
+      "path": "Halcyon Reach\\Nova Pod",
+      "scenario": "sprint-pods",
+      "project": "Halcyon Reach",
+      "sprint": "Sprint 41",
+      "tz": "America/Los_Angeles",
+      "events": 128,
+      "beats": {
+        "total": 96,
+        "played": 37,
+        "silent": 59,
+        "cutByBudget": 10
+      },
+      "budgetMs": null,
+      "totalMs": 209348,
+      "uncappedMs": 262692,
+      "wallMs": 209348,
+      "story": {
+        "wallMs": 170968,
+        "played": 29,
+        "levers": []
+      },
+      "director": {
+        "targetMs": 300000,
+        "levers": [],
+        "estimateMs": 217435
+      },
+      "frame": {
+        "orientMs": 3000,
+        "gapMs": 12100,
+        "dayTurnMs": 3113,
+        "dayTurns": 8,
+        "tailGapMs": 300,
+        "finalHoldMs": 1200,
+        "beatsMs": 189635
+      },
+      "playing": {
+        "byRule": [
+          {
+            "key": "attachment.merge",
+            "ms": 36000,
+            "share": 0.19,
+            "maneuvers": 5,
+            "phases": {
+              "act": 8000,
+              "disperse": 4500,
+              "echo": 15000,
+              "gather": 4500,
+              "land": 2500,
+              "tell": 1500
+            }
+          },
+          {
+            "key": "threat.accomplish/beamed",
+            "ms": 27280,
+            "share": 0.144,
+            "maneuvers": 4,
+            "phases": {
+              "act": 10400,
+              "disperse": 1600,
+              "echo": 1600,
+              "gather": 2800,
+              "hold": 4880,
+              "land": 4800,
+              "tell": 1200
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed",
+            "ms": 26080,
+            "share": 0.138,
+            "maneuvers": 4,
+            "phases": {
+              "act": 10400,
+              "disperse": 1200,
+              "echo": 1600,
+              "gather": 1600,
+              "hold": 5280,
+              "land": 4800,
+              "tell": 1200
+            }
+          },
+          {
+            "key": "objective.nearing",
+            "ms": 20100,
+            "share": 0.106,
+            "maneuvers": 5,
+            "phases": {
+              "act": 5500,
+              "echo": 2000,
+              "gather": 3000,
+              "hold": 8100,
+              "tell": 1500
+            }
+          },
+          {
+            "key": "objective.underway",
+            "ms": 20100,
+            "share": 0.106,
+            "maneuvers": 5,
+            "phases": {
+              "act": 6000,
+              "echo": 2000,
+              "gather": 2500,
+              "hold": 8100,
+              "tell": 1500
+            }
+          },
+          {
+            "key": "attachment.open",
+            "ms": 17000,
+            "share": 0.09,
+            "maneuvers": 11,
+            "phases": {
+              "act": 10000,
+              "land": 4000,
+              "tell": 3000
+            }
+          },
+          {
+            "key": "seat.complete",
+            "ms": 10240,
+            "share": 0.054,
+            "maneuvers": 2,
+            "phases": {
+              "act": 2000,
+              "echo": 1800,
+              "gather": 1400,
+              "hold": 2240,
+              "land": 2200,
+              "tell": 600
+            }
+          },
+          {
+            "key": "attachment.merge/first",
+            "ms": 7900,
+            "share": 0.042,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2300,
+              "disperse": 900,
+              "echo": 3000,
+              "gather": 900,
+              "land": 500,
+              "tell": 300
+            }
+          },
+          {
+            "key": "attachment.merge/short",
+            "ms": 6340,
+            "share": 0.033,
+            "maneuvers": 1,
+            "phases": {
+              "act": 960,
+              "disperse": 540,
+              "echo": 3820,
+              "gather": 540,
+              "land": 300,
+              "tell": 180
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed-short",
+            "ms": 5200,
+            "share": 0.027,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1560,
+              "disperse": 180,
+              "echo": 240,
+              "gather": 240,
+              "hold": 1600,
+              "land": 1200,
+              "tell": 180
+            }
+          },
+          {
+            "key": "facility.enter",
+            "ms": 4835,
+            "share": 0.025,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1200,
+              "gather": 715,
+              "hold": 2020,
+              "land": 600,
+              "tell": 300
+            }
+          },
+          {
+            "key": "agent.progress",
+            "ms": 3120,
+            "share": 0.016,
+            "maneuvers": 1,
+            "phases": {
+              "act": 800,
+              "echo": 400,
+              "gather": 300,
+              "hold": 1620
+            }
+          },
+          {
+            "key": "threat.engage",
+            "ms": 2400,
+            "share": 0.013,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1300,
+              "echo": 300,
+              "gather": 500,
+              "tell": 300
+            }
+          },
+          {
+            "key": "piece.appear",
+            "ms": 1600,
+            "share": 0.008,
+            "maneuvers": 1,
+            "phases": {
+              "act": 900,
+              "echo": 400,
+              "tell": 300
+            }
+          },
+          {
+            "key": "threat.engage/montage",
+            "ms": 1440,
+            "share": 0.008,
+            "maneuvers": 1,
+            "phases": {
+              "act": 780,
+              "echo": 180,
+              "gather": 300,
+              "tell": 180
+            }
+          }
+        ],
+        "byPhase": {
+          "act": 62100,
+          "disperse": 8920,
+          "echo": 32340,
+          "gather": 19295,
+          "hold": 33840,
+          "land": 20900,
+          "tell": 12240
+        },
+        "playingMs": 189635
+      },
+      "held": {
+        "queueIdleMs": 0,
+        "noteHoldMs": 0
+      },
+      "waits": {
+        "byCause": {
+          "P-5": {
+            "ms": 51775,
+            "count": 7
+          },
+          "P-3": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-4": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-6": {
+            "ms": 0,
+            "count": 0
+          },
+          "other": {
+            "ms": 0,
+            "count": 0
+          }
+        },
+        "maneuvers": 7,
+        "carryMs": 0,
+        "carryBeats": 0
+      }
+    },
+    {
+      "label": "Quasar Pod",
+      "path": "Halcyon Reach\\Quasar Pod",
+      "scenario": "sprint-pods",
+      "project": "Halcyon Reach",
+      "sprint": "Sprint 41",
+      "tz": "America/Los_Angeles",
+      "events": 472,
+      "beats": {
+        "total": 348,
+        "played": 86,
+        "silent": 262,
+        "cutByBudget": 7
+      },
+      "budgetMs": null,
+      "totalMs": 491863,
+      "uncappedMs": 526406,
+      "wallMs": 299132,
+      "story": {
+        "wallMs": 289626,
+        "played": 77,
+        "levers": [
+          "short",
+          "montage",
+          "speed",
+          "light"
+        ]
+      },
+      "director": {
+        "targetMs": 300000,
+        "levers": [
+          "short",
+          "montage",
+          "speed",
+          "light"
+        ],
+        "estimateMs": 304810
+      },
+      "frame": {
+        "orientMs": 3000,
+        "gapMs": 32583,
+        "dayTurnMs": 2700,
+        "dayTurns": 9,
+        "tailGapMs": 300,
+        "finalHoldMs": 1200,
+        "beatsMs": 452080
+      },
+      "playing": {
+        "byRule": [
+          {
+            "key": "agent.progress",
+            "ms": 75180,
+            "share": 0.166,
+            "maneuvers": 25,
+            "phases": {
+              "act": 19200,
+              "echo": 9600,
+              "gather": 7500,
+              "hold": 38880
+            }
+          },
+          {
+            "key": "attachment.merge/short",
+            "ms": 72860,
+            "share": 0.161,
+            "maneuvers": 16,
+            "phases": {
+              "act": 15360,
+              "disperse": 8340,
+              "echo": 32840,
+              "gather": 8640,
+              "land": 4800,
+              "tell": 2880
+            }
+          },
+          {
+            "key": "attachment.merge/first",
+            "ms": 63200,
+            "share": 0.14,
+            "maneuvers": 8,
+            "phases": {
+              "act": 18400,
+              "disperse": 7200,
+              "echo": 24000,
+              "gather": 7200,
+              "land": 4000,
+              "tell": 2400
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed-short",
+            "ms": 52000,
+            "share": 0.115,
+            "maneuvers": 10,
+            "phases": {
+              "act": 15600,
+              "disperse": 1800,
+              "echo": 2400,
+              "gather": 2400,
+              "hold": 16000,
+              "land": 12000,
+              "tell": 1800
+            }
+          },
+          {
+            "key": "facility.enter",
+            "ms": 34640,
+            "share": 0.077,
+            "maneuvers": 8,
+            "phases": {
+              "act": 9600,
+              "gather": 5720,
+              "hold": 12120,
+              "land": 4800,
+              "tell": 2400
+            }
+          },
+          {
+            "key": "attachment.merge/short/montage",
+            "ms": 30240,
+            "share": 0.067,
+            "maneuvers": 7,
+            "phases": {
+              "act": 6720,
+              "disperse": 3780,
+              "echo": 12600,
+              "gather": 3780,
+              "land": 2100,
+              "tell": 1260
+            }
+          },
+          {
+            "key": "attachment.merge",
+            "ms": 28800,
+            "share": 0.064,
+            "maneuvers": 4,
+            "phases": {
+              "act": 6400,
+              "disperse": 3600,
+              "echo": 12000,
+              "gather": 3600,
+              "land": 2000,
+              "tell": 1200
+            }
+          },
+          {
+            "key": "threat.accomplish/beamed-short",
+            "ms": 26900,
+            "share": 0.06,
+            "maneuvers": 5,
+            "phases": {
+              "act": 7800,
+              "disperse": 1200,
+              "echo": 1200,
+              "gather": 2100,
+              "hold": 7700,
+              "land": 6000,
+              "tell": 900
+            }
+          },
+          {
+            "key": "seat.complete/short",
+            "ms": 23280,
+            "share": 0.051,
+            "maneuvers": 6,
+            "phases": {
+              "act": 3600,
+              "echo": 3240,
+              "gather": 2520,
+              "hold": 8880,
+              "land": 3960,
+              "tell": 1080
+            }
+          },
+          {
+            "key": "threat.accomplish/beamed",
+            "ms": 20460,
+            "share": 0.045,
+            "maneuvers": 3,
+            "phases": {
+              "act": 7800,
+              "disperse": 1200,
+              "echo": 1200,
+              "gather": 2100,
+              "hold": 3660,
+              "land": 3600,
+              "tell": 900
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed-short/montage",
+            "ms": 18000,
+            "share": 0.04,
+            "maneuvers": 6,
+            "phases": {
+              "act": 7800,
+              "disperse": 900,
+              "echo": 1200,
+              "gather": 1200,
+              "land": 6000,
+              "tell": 900
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed",
+            "ms": 6520,
+            "share": 0.014,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2600,
+              "disperse": 300,
+              "echo": 400,
+              "gather": 400,
+              "hold": 1320,
+              "land": 1200,
+              "tell": 300
+            }
+          }
+        ],
+        "byPhase": {
+          "act": 120880,
+          "disperse": 28320,
+          "echo": 100680,
+          "gather": 47160,
+          "hold": 88560,
+          "land": 50460,
+          "tell": 16020
+        },
+        "playingMs": 452080
+      },
+      "held": {
+        "queueIdleMs": 0,
+        "noteHoldMs": 0
+      },
+      "waits": {
+        "byCause": {
+          "P-5": {
+            "ms": 73960,
+            "count": 11
+          },
+          "P-3": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-4": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-6": {
+            "ms": 11220,
+            "count": 1
+          },
+          "other": {
+            "ms": 0,
+            "count": 0
+          }
+        },
+        "maneuvers": 12,
+        "carryMs": 0,
+        "carryBeats": 0
+      }
+    },
+    {
+      "label": "Pulsar Pod",
+      "path": "Halcyon Reach\\Pulsar Pod",
+      "scenario": "sprint-pods",
+      "project": "Halcyon Reach",
+      "sprint": "Sprint 41",
+      "tz": "America/Los_Angeles",
+      "events": 335,
+      "beats": {
+        "total": 275,
+        "played": 56,
+        "silent": 219,
+        "cutByBudget": 6
+      },
+      "budgetMs": null,
+      "totalMs": 372570,
+      "uncappedMs": 399915,
+      "wallMs": 288808,
+      "story": {
+        "wallMs": 288618,
+        "played": 41,
+        "levers": [
+          "short",
+          "montage",
+          "speed",
+          "light"
+        ]
+      },
+      "director": {
+        "targetMs": 300000,
+        "levers": [
+          "short",
+          "montage",
+          "speed",
+          "light"
+        ],
+        "estimateMs": 294822
+      },
+      "frame": {
+        "orientMs": 3000,
+        "gapMs": 19575,
+        "dayTurnMs": 2400,
+        "dayTurns": 8,
+        "tailGapMs": 300,
+        "finalHoldMs": 1200,
+        "beatsMs": 346095
+      },
+      "playing": {
+        "byRule": [
+          {
+            "key": "attachment.merge/first",
+            "ms": 63200,
+            "share": 0.183,
+            "maneuvers": 8,
+            "phases": {
+              "act": 18400,
+              "disperse": 7200,
+              "echo": 24000,
+              "gather": 7200,
+              "land": 4000,
+              "tell": 2400
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed-short",
+            "ms": 46800,
+            "share": 0.135,
+            "maneuvers": 9,
+            "phases": {
+              "act": 14040,
+              "disperse": 1620,
+              "echo": 2160,
+              "gather": 2160,
+              "hold": 14400,
+              "land": 10800,
+              "tell": 1620
+            }
+          },
+          {
+            "key": "seat.complete/short",
+            "ms": 46560,
+            "share": 0.135,
+            "maneuvers": 12,
+            "phases": {
+              "act": 7200,
+              "echo": 6480,
+              "gather": 5040,
+              "hold": 17760,
+              "land": 7920,
+              "tell": 2160
+            }
+          },
+          {
+            "key": "facility.enter",
+            "ms": 41195,
+            "share": 0.119,
+            "maneuvers": 9,
+            "phases": {
+              "act": 10800,
+              "gather": 6435,
+              "hold": 15860,
+              "land": 5400,
+              "tell": 2700
+            }
+          },
+          {
+            "key": "attachment.merge/short",
+            "ms": 27940,
+            "share": 0.081,
+            "maneuvers": 6,
+            "phases": {
+              "act": 5760,
+              "disperse": 3240,
+              "echo": 12820,
+              "gather": 3240,
+              "land": 1800,
+              "tell": 1080
+            }
+          },
+          {
+            "key": "threat.accomplish/beamed-short",
+            "ms": 21520,
+            "share": 0.062,
+            "maneuvers": 4,
+            "phases": {
+              "act": 6240,
+              "disperse": 960,
+              "echo": 960,
+              "gather": 1680,
+              "hold": 6160,
+              "land": 4800,
+              "tell": 720
+            }
+          },
+          {
+            "key": "threat.accomplish/beamed",
+            "ms": 20460,
+            "share": 0.059,
+            "maneuvers": 3,
+            "phases": {
+              "act": 7800,
+              "disperse": 1200,
+              "echo": 1200,
+              "gather": 2100,
+              "hold": 3660,
+              "land": 3600,
+              "tell": 900
+            }
+          },
+          {
+            "key": "agent.progress",
+            "ms": 18720,
+            "share": 0.054,
+            "maneuvers": 6,
+            "phases": {
+              "act": 4800,
+              "echo": 2400,
+              "gather": 1800,
+              "hold": 9720
+            }
+          },
+          {
+            "key": "attachment.merge/short/montage",
+            "ms": 17280,
+            "share": 0.05,
+            "maneuvers": 4,
+            "phases": {
+              "act": 3840,
+              "disperse": 2160,
+              "echo": 7200,
+              "gather": 2160,
+              "land": 1200,
+              "tell": 720
+            }
+          },
+          {
+            "key": "attachment.merge",
+            "ms": 14400,
+            "share": 0.042,
+            "maneuvers": 2,
+            "phases": {
+              "act": 3200,
+              "disperse": 1800,
+              "echo": 6000,
+              "gather": 1800,
+              "land": 1000,
+              "tell": 600
+            }
+          },
+          {
+            "key": "objective.accomplish/short",
+            "ms": 12360,
+            "share": 0.036,
+            "maneuvers": 3,
+            "phases": {
+              "act": 1440,
+              "disperse": 540,
+              "echo": 720,
+              "gather": 720,
+              "hold": 4800,
+              "land": 3600,
+              "tell": 540
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed",
+            "ms": 6520,
+            "share": 0.019,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2600,
+              "disperse": 300,
+              "echo": 400,
+              "gather": 400,
+              "hold": 1320,
+              "land": 1200,
+              "tell": 300
+            }
+          },
+          {
+            "key": "threat.accomplish/short",
+            "ms": 4540,
+            "share": 0.013,
+            "maneuvers": 1,
+            "phases": {
+              "act": 720,
+              "disperse": 240,
+              "echo": 240,
+              "gather": 420,
+              "hold": 1540,
+              "land": 1200,
+              "tell": 180
+            }
+          },
+          {
+            "key": "attachment.settle",
+            "ms": 2800,
+            "share": 0.008,
+            "maneuvers": 1,
+            "phases": {
+              "act": 900,
+              "echo": 400,
+              "gather": 600,
+              "land": 600,
+              "tell": 300
+            }
+          },
+          {
+            "key": "piece.off",
+            "ms": 1800,
+            "share": 0.005,
+            "maneuvers": 1,
+            "phases": {
+              "act": 900,
+              "disperse": 600,
+              "tell": 300
+            }
+          }
+        ],
+        "byPhase": {
+          "act": 88640,
+          "disperse": 19860,
+          "echo": 64980,
+          "gather": 35755,
+          "hold": 75220,
+          "land": 47120,
+          "tell": 14520
+        },
+        "playingMs": 346095
+      },
+      "held": {
+        "queueIdleMs": 0,
+        "noteHoldMs": 0
+      },
+      "waits": {
+        "byCause": {
+          "P-5": {
+            "ms": 75495,
+            "count": 14
+          },
+          "P-3": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-4": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-6": {
+            "ms": 0,
+            "count": 0
+          },
+          "other": {
+            "ms": 0,
+            "count": 0
+          }
+        },
+        "maneuvers": 14,
+        "carryMs": 0,
+        "carryBeats": 0
+      }
+    },
+    {
+      "label": "Convoy Planning Pod",
+      "path": "Meridian Works\\Fleet Operations\\Logistics\\Convoy Planning Pod",
+      "scenario": "v1/meridian-sprint",
+      "project": "Meridian Works",
+      "sprint": "Sprint 7",
+      "tz": "America/Los_Angeles",
+      "events": 117,
+      "beats": {
+        "total": 36,
+        "played": 31,
+        "silent": 5,
+        "cutByBudget": 2
+      },
+      "budgetMs": null,
+      "totalMs": 183105,
+      "uncappedMs": 209130,
+      "wallMs": 183105,
+      "story": {
+        "wallMs": 179005,
+        "played": 31,
+        "levers": []
+      },
+      "director": {
+        "targetMs": 300000,
+        "levers": [],
+        "estimateMs": 191265
+      },
+      "frame": {
+        "orientMs": 3000,
+        "gapMs": 8883,
+        "dayTurnMs": 3517,
+        "dayTurns": 9,
+        "tailGapMs": 300,
+        "finalHoldMs": 1200,
+        "beatsMs": 166205
+      },
+      "playing": {
+        "byRule": [
+          {
+            "key": "objective.underway",
+            "ms": 50340,
+            "share": 0.303,
+            "maneuvers": 20,
+            "phases": {
+              "act": 16800,
+              "echo": 5600,
+              "gather": 7000,
+              "hold": 16740,
+              "tell": 4200
+            }
+          },
+          {
+            "key": "objective.nearing",
+            "ms": 28840,
+            "share": 0.174,
+            "maneuvers": 10,
+            "phases": {
+              "act": 8800,
+              "echo": 3200,
+              "gather": 4800,
+              "hold": 9640,
+              "tell": 2400
+            }
+          },
+          {
+            "key": "attachment.merge/first",
+            "ms": 15800,
+            "share": 0.095,
+            "maneuvers": 2,
+            "phases": {
+              "act": 4600,
+              "disperse": 1800,
+              "echo": 6000,
+              "gather": 1800,
+              "land": 1000,
+              "tell": 600
+            }
+          },
+          {
+            "key": "facility.enter",
+            "ms": 14505,
+            "share": 0.087,
+            "maneuvers": 3,
+            "phases": {
+              "act": 3600,
+              "gather": 2145,
+              "hold": 6060,
+              "land": 1800,
+              "tell": 900
+            }
+          },
+          {
+            "key": "attachment.merge",
+            "ms": 14400,
+            "share": 0.087,
+            "maneuvers": 2,
+            "phases": {
+              "act": 3200,
+              "disperse": 1800,
+              "echo": 6000,
+              "gather": 1800,
+              "land": 1000,
+              "tell": 600
+            }
+          },
+          {
+            "key": "objective.accomplish",
+            "ms": 14160,
+            "share": 0.085,
+            "maneuvers": 3,
+            "phases": {
+              "act": 2400,
+              "disperse": 900,
+              "echo": 1200,
+              "gather": 1200,
+              "hold": 3960,
+              "land": 3600,
+              "tell": 900
+            }
+          },
+          {
+            "key": "attachment.open",
+            "ms": 8500,
+            "share": 0.051,
+            "maneuvers": 5,
+            "phases": {
+              "act": 5000,
+              "land": 2000,
+              "tell": 1500
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed",
+            "ms": 6520,
+            "share": 0.039,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2600,
+              "disperse": 300,
+              "echo": 400,
+              "gather": 400,
+              "hold": 1320,
+              "land": 1200,
+              "tell": 300
+            }
+          },
+          {
+            "key": "seat.complete",
+            "ms": 5120,
+            "share": 0.031,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1000,
+              "echo": 900,
+              "gather": 700,
+              "hold": 1120,
+              "land": 1100,
+              "tell": 300
+            }
+          },
+          {
+            "key": "region.sweep",
+            "ms": 3700,
+            "share": 0.022,
+            "maneuvers": 1,
+            "phases": {
+              "act": 3000,
+              "echo": 400,
+              "tell": 300
+            }
+          },
+          {
+            "key": "objective.accomplish/short/montage",
+            "ms": 2520,
+            "share": 0.015,
+            "maneuvers": 4,
+            "phases": {
+              "act": 480,
+              "disperse": 180,
+              "echo": 240,
+              "gather": 240,
+              "land": 1200,
+              "tell": 180
+            }
+          },
+          {
+            "key": "piece.off",
+            "ms": 1800,
+            "share": 0.011,
+            "maneuvers": 1,
+            "phases": {
+              "act": 900,
+              "disperse": 600,
+              "tell": 300
+            }
+          },
+          {
+            "key": "objective.accomplish/arc",
+            "ms": 0,
+            "share": 0,
+            "maneuvers": 3,
+            "phases": {}
+          }
+        ],
+        "byPhase": {
+          "act": 52380,
+          "disperse": 5580,
+          "echo": 23940,
+          "gather": 20085,
+          "hold": 38840,
+          "land": 12900,
+          "tell": 12480
+        },
+        "playingMs": 166205
+      },
+      "held": {
+        "queueIdleMs": 0,
+        "noteHoldMs": 0
+      },
+      "waits": {
+        "byCause": {
+          "P-5": {
+            "ms": 32625,
+            "count": 6
+          },
+          "P-3": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-4": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-6": {
+            "ms": 16000,
+            "count": 5
+          },
+          "other": {
+            "ms": 0,
+            "count": 0
+          }
+        },
+        "maneuvers": 11,
+        "carryMs": 0,
+        "carryBeats": 0
+      }
+    },
+    {
+      "label": "Harbor Pod",
+      "path": "Tidewater Array\\Harbor Pod",
+      "scenario": "v1/pod-sprint",
+      "project": "Tidewater Array",
+      "sprint": "Sprint 13",
+      "tz": "America/Los_Angeles",
+      "events": 126,
+      "beats": {
+        "total": 38,
+        "played": 30,
+        "silent": 8,
+        "cutByBudget": 3
+      },
+      "budgetMs": null,
+      "totalMs": 178335,
+      "uncappedMs": 207572,
+      "wallMs": 178335,
+      "story": {
+        "wallMs": 179802,
+        "played": 32,
+        "levers": []
+      },
+      "director": {
+        "targetMs": 300000,
+        "levers": [],
+        "estimateMs": 197345
+      },
+      "frame": {
+        "orientMs": 3000,
+        "gapMs": 7833,
+        "dayTurnMs": 3517,
+        "dayTurns": 9,
+        "tailGapMs": 300,
+        "finalHoldMs": 1200,
+        "beatsMs": 162485
+      },
+      "playing": {
+        "byRule": [
+          {
+            "key": "attachment.merge/first",
+            "ms": 23700,
+            "share": 0.146,
+            "maneuvers": 3,
+            "phases": {
+              "act": 6900,
+              "disperse": 2700,
+              "echo": 9000,
+              "gather": 2700,
+              "land": 1500,
+              "tell": 900
+            }
+          },
+          {
+            "key": "attachment.merge",
+            "ms": 21600,
+            "share": 0.133,
+            "maneuvers": 3,
+            "phases": {
+              "act": 4800,
+              "disperse": 2700,
+              "echo": 9000,
+              "gather": 2700,
+              "land": 1500,
+              "tell": 900
+            }
+          },
+          {
+            "key": "objective.nearing",
+            "ms": 18480,
+            "share": 0.114,
+            "maneuvers": 5,
+            "phases": {
+              "act": 5500,
+              "echo": 2000,
+              "gather": 3000,
+              "hold": 6480,
+              "tell": 1500
+            }
+          },
+          {
+            "key": "objective.underway",
+            "ms": 17880,
+            "share": 0.11,
+            "maneuvers": 9,
+            "phases": {
+              "act": 6000,
+              "echo": 2000,
+              "gather": 2500,
+              "hold": 5880,
+              "tell": 1500
+            }
+          },
+          {
+            "key": "facility.enter",
+            "ms": 12485,
+            "share": 0.077,
+            "maneuvers": 3,
+            "phases": {
+              "act": 3600,
+              "gather": 2145,
+              "hold": 4040,
+              "land": 1800,
+              "tell": 900
+            }
+          },
+          {
+            "key": "attachment.open",
+            "ms": 11900,
+            "share": 0.073,
+            "maneuvers": 9,
+            "phases": {
+              "act": 7000,
+              "land": 2800,
+              "tell": 2100
+            }
+          },
+          {
+            "key": "threat.accomplish",
+            "ms": 10840,
+            "share": 0.067,
+            "maneuvers": 2,
+            "phases": {
+              "act": 2400,
+              "disperse": 800,
+              "echo": 800,
+              "gather": 1400,
+              "hold": 2440,
+              "land": 2400,
+              "tell": 600
+            }
+          },
+          {
+            "key": "threat.engage",
+            "ms": 9600,
+            "share": 0.059,
+            "maneuvers": 6,
+            "phases": {
+              "act": 5200,
+              "echo": 1200,
+              "gather": 2000,
+              "tell": 1200
+            }
+          },
+          {
+            "key": "objective.accomplish",
+            "ms": 9440,
+            "share": 0.058,
+            "maneuvers": 2,
+            "phases": {
+              "act": 1600,
+              "disperse": 600,
+              "echo": 800,
+              "gather": 800,
+              "hold": 2640,
+              "land": 2400,
+              "tell": 600
+            }
+          },
+          {
+            "key": "threat.accomplish/beamed",
+            "ms": 5920,
+            "share": 0.036,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2600,
+              "disperse": 400,
+              "echo": 400,
+              "gather": 700,
+              "hold": 320,
+              "land": 1200,
+              "tell": 300
+            }
+          },
+          {
+            "key": "seat.complete",
+            "ms": 5120,
+            "share": 0.032,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1000,
+              "echo": 900,
+              "gather": 700,
+              "hold": 1120,
+              "land": 1100,
+              "tell": 300
+            }
+          },
+          {
+            "key": "region.sweep",
+            "ms": 3570,
+            "share": 0.022,
+            "maneuvers": 1,
+            "phases": {
+              "act": 2870,
+              "echo": 400,
+              "tell": 300
+            }
+          },
+          {
+            "key": "threat.accomplish/short/montage",
+            "ms": 3000,
+            "share": 0.018,
+            "maneuvers": 1,
+            "phases": {
+              "act": 720,
+              "disperse": 240,
+              "echo": 240,
+              "gather": 420,
+              "land": 1200,
+              "tell": 180
+            }
+          },
+          {
+            "key": "region.clear",
+            "ms": 2950,
+            "share": 0.018,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1600,
+              "echo": 1000,
+              "tell": 350
+            }
+          },
+          {
+            "key": "piece.reseat",
+            "ms": 2400,
+            "share": 0.015,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1400,
+              "gather": 300,
+              "land": 400,
+              "tell": 300
+            }
+          },
+          {
+            "key": "piece.off",
+            "ms": 1800,
+            "share": 0.011,
+            "maneuvers": 1,
+            "phases": {
+              "act": 900,
+              "disperse": 600,
+              "tell": 300
+            }
+          },
+          {
+            "key": "piece.appear",
+            "ms": 1600,
+            "share": 0.01,
+            "maneuvers": 1,
+            "phases": {
+              "act": 900,
+              "echo": 400,
+              "tell": 300
+            }
+          },
+          {
+            "key": "attachment.settle",
+            "ms": 0,
+            "share": 0,
+            "maneuvers": 1,
+            "phases": {}
+          },
+          {
+            "key": "objective.accomplish/arc",
+            "ms": 0,
+            "share": 0,
+            "maneuvers": 4,
+            "phases": {}
+          },
+          {
+            "key": "objective.nearing/montage",
+            "ms": 0,
+            "share": 0,
+            "maneuvers": 1,
+            "phases": {}
+          },
+          {
+            "key": "threat.accomplish/arc",
+            "ms": 0,
+            "share": 0,
+            "maneuvers": 1,
+            "phases": {}
+          }
+        ],
+        "byPhase": {
+          "act": 54990,
+          "disperse": 8040,
+          "echo": 28140,
+          "gather": 19365,
+          "hold": 22920,
+          "land": 16300,
+          "tell": 12530
+        },
+        "playingMs": 162285
+      },
+      "held": {
+        "queueIdleMs": 0,
+        "noteHoldMs": 200
+      },
+      "waits": {
+        "byCause": {
+          "P-5": {
+            "ms": 59185,
+            "count": 11
+          },
+          "P-3": {
+            "ms": 3000,
+            "count": 1
+          },
+          "P-4": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-6": {
+            "ms": 5920,
+            "count": 1
+          },
+          "other": {
+            "ms": 0,
+            "count": 0
+          }
+        },
+        "maneuvers": 13,
+        "carryMs": 0,
+        "carryBeats": 0
+      }
+    },
+    {
+      "label": "Meteor Pod",
+      "path": "Halcyon Reach\\Meteor Pod",
+      "scenario": "sprint-pods",
+      "project": "Halcyon Reach",
+      "sprint": "Sprint 41",
+      "tz": "America/Los_Angeles",
+      "events": 159,
+      "beats": {
+        "total": 49,
+        "played": 31,
+        "silent": 18,
+        "cutByBudget": 0
+      },
+      "budgetMs": null,
+      "totalMs": 483950,
+      "uncappedMs": 489524,
+      "wallMs": 284681,
+      "story": {
+        "wallMs": 275947,
+        "played": 30,
+        "levers": [
+          "short",
+          "montage",
+          "speed",
+          "light"
+        ]
+      },
+      "director": {
+        "targetMs": 300000,
+        "levers": [
+          "short",
+          "montage",
+          "speed",
+          "light"
+        ],
+        "estimateMs": 310398
+      },
+      "frame": {
+        "orientMs": 3000,
+        "gapMs": 12143,
+        "dayTurnMs": 2100,
+        "dayTurns": 7,
+        "tailGapMs": 300,
+        "finalHoldMs": 1200,
+        "beatsMs": 465207
+      },
+      "playing": {
+        "byRule": [
+          {
+            "key": "attachment.merge/first",
+            "ms": 284400,
+            "share": 0.611,
+            "maneuvers": 36,
+            "phases": {
+              "act": 82800,
+              "disperse": 32400,
+              "echo": 108000,
+              "gather": 32400,
+              "land": 18000,
+              "tell": 10800
+            }
+          },
+          {
+            "key": "facility.enter",
+            "ms": 88625,
+            "share": 0.191,
+            "maneuvers": 19,
+            "phases": {
+              "act": 22800,
+              "gather": 13585,
+              "hold": 35140,
+              "land": 11400,
+              "tell": 5700
+            }
+          },
+          {
+            "key": "facility.enter/montage",
+            "ms": 30402,
+            "share": 0.065,
+            "maneuvers": 18,
+            "phases": {
+              "act": 12960,
+              "gather": 7722,
+              "land": 6480,
+              "tell": 3240
+            }
+          },
+          {
+            "key": "attachment.merge",
+            "ms": 21600,
+            "share": 0.046,
+            "maneuvers": 3,
+            "phases": {
+              "act": 4800,
+              "disperse": 2700,
+              "echo": 9000,
+              "gather": 2700,
+              "land": 1500,
+              "tell": 900
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed",
+            "ms": 13040,
+            "share": 0.028,
+            "maneuvers": 2,
+            "phases": {
+              "act": 5200,
+              "disperse": 600,
+              "echo": 800,
+              "gather": 800,
+              "hold": 2640,
+              "land": 2400,
+              "tell": 600
+            }
+          },
+          {
+            "key": "seat.complete/short",
+            "ms": 7760,
+            "share": 0.017,
+            "maneuvers": 2,
+            "phases": {
+              "act": 1200,
+              "echo": 1080,
+              "gather": 840,
+              "hold": 2960,
+              "land": 1320,
+              "tell": 360
+            }
+          },
+          {
+            "key": "objective.accomplish/beamed-short",
+            "ms": 5200,
+            "share": 0.011,
+            "maneuvers": 1,
+            "phases": {
+              "act": 1560,
+              "disperse": 180,
+              "echo": 240,
+              "gather": 240,
+              "hold": 1600,
+              "land": 1200,
+              "tell": 180
+            }
+          },
+          {
+            "key": "objective.accomplish",
+            "ms": 4720,
+            "share": 0.01,
+            "maneuvers": 1,
+            "phases": {
+              "act": 800,
+              "disperse": 300,
+              "echo": 400,
+              "gather": 400,
+              "hold": 1320,
+              "land": 1200,
+              "tell": 300
+            }
+          },
+          {
+            "key": "threat.accomplish/short",
+            "ms": 4540,
+            "share": 0.01,
+            "maneuvers": 1,
+            "phases": {
+              "act": 720,
+              "disperse": 240,
+              "echo": 240,
+              "gather": 420,
+              "hold": 1540,
+              "land": 1200,
+              "tell": 180
+            }
+          },
+          {
+            "key": "agent.progress",
+            "ms": 3120,
+            "share": 0.007,
+            "maneuvers": 1,
+            "phases": {
+              "act": 800,
+              "echo": 400,
+              "gather": 300,
+              "hold": 1620
+            }
+          },
+          {
+            "key": "region.clear/short",
+            "ms": 1770,
+            "share": 0.004,
+            "maneuvers": 1,
+            "phases": {
+              "act": 960,
+              "echo": 600,
+              "tell": 210
+            }
+          }
+        ],
+        "byPhase": {
+          "act": 134600,
+          "disperse": 36420,
+          "echo": 120760,
+          "gather": 59407,
+          "hold": 46820,
+          "land": 44700,
+          "tell": 22470
+        },
+        "playingMs": 465177
+      },
+      "held": {
+        "queueIdleMs": 0,
+        "noteHoldMs": 30
+      },
+      "waits": {
+        "byCause": {
+          "P-5": {
+            "ms": 1142866,
+            "count": 53
+          },
+          "P-3": {
+            "ms": 4540,
+            "count": 1
+          },
+          "P-4": {
+            "ms": 0,
+            "count": 0
+          },
+          "P-6": {
+            "ms": 0,
+            "count": 0
+          },
+          "other": {
+            "ms": 0,
+            "count": 0
+          }
+        },
+        "maneuvers": 54,
+        "carryMs": 0,
+        "carryBeats": 0
+      }
+    }
+  ]
+}

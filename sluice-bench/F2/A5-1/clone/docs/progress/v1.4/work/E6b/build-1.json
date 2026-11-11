@@ -1,0 +1,82 @@
+{
+  "item": "E6b",
+  "role": "builder",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "high",
+  "verdict": "done",
+  "summary": "Volley renderer (27 E6b, M-31). powerLink's act docks every member's tender together: cmd.act takes a slot or a list of slots; the art's shuttleSlots().docking is a bit mask; the stage's ds= takes a comma list (ds=1,3). The interpreter's nameVolley opens one turn per VolleyTurn, VOLLEY_TURN_MS apart from the claim. Each turn shows its plates with the member event's note, then names its drawn captains (agent/support/holder parts). Those names fold on the turn's own window (castLabels' turn crew flag) though the ships stay parked. The last turn holds to the end of the land and lingers. A turn ends a fade early when the next would pass ATTENTION_MAX. There is a new volleys() test hook, a gallery cell ('Merged · two tenders dock') and stills. Folded in (2026-11-02 Decisions row): 15 §7's short-form numbers are fixed (disperse 3780, stretch 2020 ms, echo 1800→3820, disperse 3780→5800), and pacingBuilt's 'E1 to E5 unchanged' test now compares against fixed rows (pacing-built.json at 3d4e402, 48 rows, identical to cc89afb's non-E6 rows).",
+  "windowSweep": {
+    "note": "For the block note (orchestrator): merges in volleys per window, the 10/20/30/60 s sweep picks 20 s (VOLLEY_WINDOW_MS)",
+    "Nova": "2/4/4/4 of 10",
+    "Quasar": "12/12/12/12 of 66 (unguarded 12/17/19/19)",
+    "Pulsar": "6/8/8/8 of 30",
+    "Harbor": "2/2/2/2 of 7",
+    "Comet": "0",
+    "Convoy": "0"
+  },
+  "stills": [
+    "docs/progress/v1.4/work/E6/e6-volley-act-formation.png (Pulsar volley 0 +1200 ms: the formation at Hale's Landing, first member's plate and note)",
+    "docs/progress/v1.4/work/E6/e6-volley-turn1.png (+2400: turn 1, PR #20760's plate, its author Hale Bellweather named)",
+    "docs/progress/v1.4/work/E6/e6-volley-turn2-beam.png (+4900: turn 2, PR #20742's plate and note, Dara Westerberg and Anselm Sorensen named, the station's split beam)"
+  ],
+  "checks": [
+    { "cmd": "npx vitest run (packet's mapped units: volleys director maneuvers limelight scheduleHooks sceneplay solarSeek castLabels commands docTables literalFence pacing pacingCandidates pacingBuilt stationStandby shuttleSlots + tests/golden)", "pass": true, "detail": "24 files, 460 tests" },
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean (re-run after the last e2e edit)" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean (re-run after the last e2e edit)" },
+    { "cmd": "npm test --silent", "pass": true, "detail": "106 files, 1639 tests" },
+    { "cmd": "npm run e2e:spec -- solar solar-play solar-dense montage-names gallery-assets (run 1)", "pass": false, "detail": "46 passed, 1 failed: the new volley case under parallel load named 5 of 6 people (it passed alone 3 times). Fixed by sampling in the page every frame (a rAF loop) instead of one round trip per 80 ms" },
+    { "cmd": "npx playwright test tests/e2e/solar-dense.spec.ts -g 'volleys name each cause'", "pass": true, "detail": "passes alone after the fix. Volley 0 (90645..106445 ms): 6 people, both members noted, at most 4 labels. Volley 1: 5 people, at most 4" },
+    { "cmd": "npm run e2e:spec -- solar solar-play solar-dense montage-names gallery-assets (run 2)", "pass": false, "detail": "42 passed, 1 failed: solar.spec.ts:352 'pieces are hover-only…' (hover plates, untouched by E6b), and its serial describe's later cases did not run. The volley case passed under load. Re-ran solar.spec.ts alone: 15 passed" },
+    { "cmd": "npx playwright test tests/e2e/solar.spec.ts", "pass": true, "detail": "15 passed" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "npm run e2e:spec -- perf", "pass": false, "detail": "2 passed, 1 failed: Pulsar seek max 282.9 ms against 250, the known red (fails at 3d4e402 too). Pulsar p95: rest 16.9, 1x 25, 4x 25 ms (budget 35.4). The cuts gain is 0.60 at 1x and 0.594 at 4x (min 0.2), the same shape as before" },
+    { "cmd": "npm run drive -- tests/drive/steps/e6-volley.ts --paradigm solar", "pass": true, "detail": "Six stills; three copied to work/E6 (see stills). Pulsar has 4 volleys; volley 0 is PRs #20760 and #20742" },
+    { "cmd": "mutation: nameVolley disabled (the old single-label path)", "pass": true, "detail": "The volley e2e case failed on 'every member's event shows on a note', as it should. Reverted, and the revert confirmed by grep" }
+  ],
+  "files": [
+    "src/renderer/src/chart/art/dreadnoughts.ts",
+    "src/renderer/src/chart/assets/types.ts",
+    "src/renderer/src/chart/fx/commands.ts",
+    "src/renderer/src/chart/fx/host.ts",
+    "src/renderer/src/chart/fx/types.ts",
+    "src/renderer/src/chart/fx/v1/castLabels.ts",
+    "src/renderer/src/chart/fx/v1/interpreter.ts",
+    "src/renderer/src/chart/scenes/GraphScene.ts",
+    "src/renderer/src/gallery/v1/stations.ts",
+    "src/renderer/src/testHooks.ts",
+    "src/renderer/src/theme/starChart/assets/adapt.ts",
+    "src/renderer/src/theme/starChart/assets/facility.ts",
+    "src/renderer/src/theme/starChart/maneuvers/powerLink.ts",
+    "src/renderer/src/theme/starChart/stageCodec.ts",
+    "tests/unit/shuttleSlots.test.ts",
+    "tests/unit/castLabels.test.ts",
+    "tests/unit/pacingBuilt.test.ts",
+    "tests/e2e/solar-dense.spec.ts",
+    "tests/drive/steps/e6-volley.ts",
+    "tests/README.md",
+    "docs/03-contracts.md",
+    "docs/05-playback.md",
+    "docs/13-game-design.md",
+    "docs/15-reference.md",
+    "docs/progress/v1.4/work/E6/e6-volley-act-formation.png",
+    "docs/progress/v1.4/work/E6/e6-volley-turn1.png",
+    "docs/progress/v1.4/work/E6/e6-volley-turn2-beam.png"
+  ],
+  "deviations": [
+    "03 (normative) changed; call it out in the block note. §stage codes: ds= takes a list (ds=1,3); a slot at or past the cap is dropped, and a malformed list does not decode. Per-slot acts: an act's slot may be a list (dock docks every one; launch and operate take the first). §10 test hooks: volleys().",
+    "The art's StationState.dockSlot is renamed dockMask, and shuttleSlots().docking is now a bit mask (0 = none), not a slot index.",
+    "castLabels' Crew gains a turn flag: a turn's name folds on its own window (the min of the flight's and the window's), not when the sortie leaves.",
+    "volleys().people counts the turn names that are captains drawn at the volley's start, so the e2e checks named ≥ people, not an exact list.",
+    "The volley e2e case samples in the page every animation frame (a rAF recorder) rather than in a Playwright loop: the loop missed a name under parallel load.",
+    "No 15 constant changed (no new values). Only the §7 merge row's What you see and the volley paragraph's numbers. docTables passes."
+  ],
+  "limitations": [
+    "A captain held back by a protect (busy elsewhere at the volley's start) can miss their turn's name; History still names them.",
+    "A name-only turn (overflow past four labels) marks no History row of its own.",
+    "Per-person order across fused beats is not guarded beyond B-15's pieces (as E6a recorded).",
+    "solar.spec.ts:352 ('pieces are hover-only…') failed once under parallel load in the mapped run and passes alone. It is outside E6b (hover plates).",
+    "The perf seek check is red (282.9 ms against 250), as at 3d4e402.",
+    "The window sweep table is in this record's windowSweep. The block note is the orchestrator's to write."
+  ]
+}

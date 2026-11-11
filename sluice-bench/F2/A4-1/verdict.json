@@ -1,0 +1,41 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "When the summoner's next sortie is waiting (P4), the pass's leg on still flies toward the ship's rest, not its next place, so the ship gets about 93% of the way home before the next sortie turns it back out. The fly-back the Decided paragraph removes is still there in practice, just without the stop.",
+      "evidence": "src/renderer/src/chart/fx/movers.ts:316 `const home = this.scene.goalOf(this.pk) ?? this.start;` is the leg's target, and :339 `onS = max(backS, waitS + 0.4)`. With backS = PASS_PLATE_MS 2.84 s and the planner's next start nearStartMs = start + max(workEnd 2515, release 715 - 0) (maneuvers.ts:128-129), an Underway (tell 300) starts its gather at 2815 ms. waitS is (2815 - 715)/1000 + 0.2 = 2.3 s, so onS = 2.84 s. At takeover, u = 2.1/2.84 = 0.74 and the ease 1-(1-u)^2 = 0.93 of the way home. tests/unit/summonOnTheFly.test.ts ('with its next sortie waiting') only checks that the ship never stands still, not which way it heads."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "A guest summoner (no ship in the region) gets no call blip, and its guest ship still stands still at the spot for the whole flight-plus-ride window, so the cause-and-effect pairing (R8, R10) and the 'no hold' are both missing in that case. No test covers it.",
+      "evidence": "src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts:49-52: the blip exists only when `present(c, 'agent')[0]` exists; a guest comes from `c.away`. :40 gives the guest `durS: (gather + ride) / 1000` = 3.555 s at `spot` (05 K-8: a guest 'jumps in ..., holds, and jumps out')."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The passing summoner's plate is shown for 2840 ms from the act (until 3555 ms), but the planner reserves its attention-budget place only until the maneuver's end (2515 ms). A maneuver placed right after can find the four places taken, so the label layer has to crossfade or delay its plates (R14).",
+      "evidence": "src/renderer/src/chart/fx/v1/interpreter.ts:620 sets `crew.closeMs = crew.openMs + PASS_PLATE_MS` (715 + 2840). src/shared/engine/maneuvers.ts:621 `heldMs = max(d.durMs, NOTE_MIN_MS)` = 2515, because durMs no longer includes the crew hold for `passes` (holdsCrew, maneuvers.ts:487 in the diff)."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The regenerated candidates ledger now says E1 makes every pod longer, and the convoy stack longer than its baseline. The E1 model in scripts/pacing-candidates.ts puts the retired 300 ms tell back onto F2's rule, while its assumption text still says 'this row reads 0'.",
+      "evidence": "docs/progress/v1.4/pacing-candidates.json: the E1 rows now have savingMs -300 (Comet, Nova), -2400 (Quasar), -2700 (Pulsar) and -900 (Convoy, Harbor), each flagged 'longer than the baseline'. Convoy's Stack row is -480 and also flagged. At 61e4958 only Convoy E7 was flagged. scripts/pacing-candidates.ts:238 is unchanged: `phases(['tell', 300], ['gather', E1_GATHER_MS], ...)`."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "solar-dense's 'parked while named' check leaves out summoners by the event kind `link_pr_added`. A summon triggered by a PR opening or merge (`pr_opened`, `pr_completed`, which M-13 also allows) still falls under the 12 px limit. Every non-summon plate on a link event is left out too, so the check is fragile to fixture changes and can hide regressions.",
+      "evidence": "tests/e2e/solar-dense.spec.ts:463 `whole.filter((e) => !e.key?.startsWith('link_pr_added'))`. docs/05-playback.md M-13 says the jump-in fires on 'its first PR event there in the round, an opening, a merge or a link'."
+    }
+  ],
+  "acceptance": {
+    "1": "met as written: tests/e2e/gallery-summon.spec.ts runs the jump-in cell in full and reduced motion and checks for no console errors (not run here)",
+    "2": "met: summonOnTheFly.test.ts checks for no hold to the rest or the next sortie and that the act starts within 50 ms of the blip; it passes. It doesn't check which way the ship heads (see the Major)",
+    "3": "mostly met: the 15 §7 row is 2515, matching 715+1200+600; docTables, golden director and pacing tests pass; director.json is updated. Whether the packet names each change can't be checked here (the packet is stripped)",
+    "4": "met: pacing-ledger.md has F2 (undirected) and F2d (directed) rows for all seven pods, Pulsar's directed row negative as stated"
+  },
+  "summary": "The change does what the item asks for a lone summoner: no tell, no hold, no fly-back; one same-hue, same-shape call blip with the station's jump in the same act; a plate that rides the moving ship; reduced motion handled; and the docs, 15 rows, goldens and ledger in step, with the targeted tests and typecheck passing. When a next sortie is waiting, though, the ship still flies almost all the way home before the next sortie redirects it. Guest summoners get no blip, and the committed candidates ledger now reports E1 as a cost."
+}

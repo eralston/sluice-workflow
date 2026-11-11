@@ -1,0 +1,3 @@
+{ "item": "A4", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned", "summary": "Rows box overflow-x hidden, titles/meta ellipsis to 100%, stat line as nowrap facts wrapping at the dots; e2e across Halcyon pods and Meridian.",
+  "tier": "medium", "score": {"blast": 0, "verify": 1, "design": 0, "acceptance": 0, "track": 1, "sum": 2}, "needs": null }

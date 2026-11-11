@@ -1,0 +1,87 @@
+{
+  "_about": "Project specifics for the sluice. The hooks, scripts, skills and agents read anything project- or model-specific from this file only. The bootstrap (install/BOOTSTRAP.md) fills in the empty fields.",
+  "designDoc": "sluice/docs/design.md",
+  "scopeDir": "docs/scopes",
+  "progressDir": "docs/sluice",
+  "_projectNotesNote": "This project's knowledge for the sluice's agents: review lenses, verification methods, rules worth quoting. The planner, reviewer, auditor and fixer read it. Keep it under about 800 words: it's re-read on every call. Created by the bootstrap from templates; never overwritten by an upgrade.",
+  "projectNotes": ".claude/sluice/project.md",
+  "workBranchPrefix": "sluice/",
+  "_gateNote": "The fast checks a builder, fixer or clerk (gateRoles) must pass before it may finish: typically typecheck, lint, unit tests. Each runs in a shell from the project root. Keep the total under about a minute.",
+  "gate": [],
+  "gateRoles": [
+    "builder",
+    "clerk",
+    "fixer"
+  ],
+  "gateMaxBlocks": 3,
+  "fullSuite": "",
+  "mappedTestsGuide": "",
+  "_lockedNote": "Commands that share a build folder or port, so parallel agents must take turns (via with-lock.sh).",
+  "lockedCommands": [],
+  "_healthNote": "The code-health snapshot (health.mjs) in every block note and the scoreboard. extensions, include and exclude (path prefixes) choose the source files; an empty include means all tracked files. commands are project measures that print one line, e.g. a complexity count from the linter. Set \"health\": \"off\" to skip it.",
+  "health": {
+    "extensions": [
+      ".ts",
+      ".tsx",
+      ".js",
+      ".jsx",
+      ".mjs",
+      ".py",
+      ".go",
+      ".rs",
+      ".java",
+      ".kt",
+      ".cs",
+      ".rb",
+      ".php",
+      ".swift",
+      ".c",
+      ".cc",
+      ".cpp",
+      ".h"
+    ],
+    "include": [],
+    "exclude": [
+      "sluice/",
+      ".claude/"
+    ],
+    "largeFileLines": 800,
+    "hotspotCommits": 50,
+    "commands": []
+  },
+  "_viewsNote": "The views (visualize.mjs): Markdown with Mermaid, redrawn by the hooks into <progressDir>/<tranche>/<dir>/ for a preview left open beside a run. Gitignore that folder; --freeze <block> writes a committed copy to snapshots/. Set \"views\": \"off\" to skip them.",
+  "views": {
+    "dir": "views"
+  },
+  "budget": {
+    "windowHoldPct": 85,
+    "weekStopPct": 80,
+    "staleMinutes": 15
+  },
+  "_pricesNote": "List prices in USD per million tokens, by model family. Used only to compare runs and convert spend to windows, never as a bill. Update with docs/design.md §14.",
+  "prices": {
+    "opus": {
+      "in": 4,
+      "cacheWrite5m": 5,
+      "cacheWrite1h": 8,
+      "cacheRead": 0.2,
+      "out": 20
+    },
+    "sonnet": {
+      "in": 2,
+      "cacheWrite5m": 2.5,
+      "cacheWrite1h": 4,
+      "cacheRead": 0.1,
+      "out": 10
+    },
+    "haiku": {
+      "in": 0.1,
+      "cacheWrite5m": 0.125,
+      "cacheWrite1h": 0.2,
+      "cacheRead": 0.01,
+      "out": 0.5
+    }
+  },
+  "_windowNote": "List-price-equivalent spend one 5-hour usage window held in the case study. A starting guess: re-estimate it after your first block from the statusline's percentages.",
+  "windowCapacityUsd": 27
+}

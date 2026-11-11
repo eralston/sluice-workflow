@@ -1,0 +1,36 @@
+{
+ "item": "E4bc", "round": 1, "verdict": "built",
+ "summary": "P3 seams and P4 stay-near built inside sequence (maneuvers.ts) with seamStartMs/nearStartMs, STAY_NEAR_MS=3000, nearWaits, renderer waitS on Sortie/pursue/interpreter; ledger E4b/E4c rows and seam/near anchors; E4a Minor fixed (dead surge loop, row, stale comments).",
+ "checks": {
+  "typecheck": "pass", "lint": "pass",
+  "npm test": "pass (102 files, 1509 tests)",
+  "mapped units": "pass (maneuvers, limelight, docTables, pacing, pacingCandidates, pacingBuilt: 141 tests)",
+  "e2e solar solar-play solar-dense motions": "42 passed",
+  "e2e:keystone": "43 passed",
+  "new tests": "nearWaits describe; acts-in-order/no-actor-twice sweep over resolvePods; pacingBuilt E4b/E4c rows (savedMs >= 0)"
+ },
+ "podTotalsMs": {
+  "note": "before = committed pacing-ledger.json at start; pods in ledger order. Only the last two moved.",
+  "before": [61845, 235755, 1050180, 670355, 189985, 200115],
+  "after":  [61845, 235755, 1050180, 670355, 189585, 199415],
+  "saved": {"ConvoyPlanning": 400, "Harbor": 700, "Quasar": 0, "Pulsar": 0},
+  "C2Estimate": "Quasar about 23.4 s; real savings far below it"
+ },
+ "nearWaits": {"Quasar": {"count": 13, "meanMs": 785}, "Pulsar": {"count": 16, "meanMs": 575}},
+ "movedExpectations": ["maneuvers.test beamed-close case", "one-captain-at-a-time", "attention queue", "crew-turn case"],
+ "goldensMoved": 0,
+ "files": ["src/shared/engine/maneuvers.ts","src/shared/engine/limelight.ts","src/shared/engine/pace.ts","src/renderer/src/chart/fx/movers.ts","src/renderer/src/chart/fx/commands.ts","src/renderer/src/chart/fx/v1/interpreter.ts","src/renderer/src/chart/art/dreadnoughts.ts","src/renderer/src/theme/starChart/assets/facility.ts","src/renderer/src/theme/starChart/maneuvers/powerLink.ts","scripts/pacing-ledger.ts","scripts/pacing-built.ts","scripts/pacing-candidates.ts","tests/unit/maneuvers.test.ts","tests/unit/pacingBuilt.test.ts","docs/03-contracts.md","docs/05-playback.md","docs/13-game-design.md","docs/15-reference.md","docs/progress/v1.4/pacing-ledger.json","docs/progress/v1.4/pacing-ledger.md","docs/progress/v1.4/pacing-built.json","docs/progress/v1.4/pacing-candidates.json"],
+ "deviations": [
+  "03, 05, 13, 15 amended as listed (15 s10 Stay near row; effects row for ring surge removed)",
+  "E4a Minor fixed: dead surge loop removed from powerLink land, stale comments reworded",
+  "ACTING_ROLES, flyingPlay, releaseOfPlay exported for the ledger and nearWaits",
+  "BuiltItem gained optional inputs/before/after; after unused until E4d",
+  "E4d assumption in pacing-candidates left unprefixed for E4d"
+ ],
+ "limitations": [
+  "Real savings on busy pods near zero: waits there are bound by same-event waitsFor rules or protected pairs sharing a captain, which keep full-end waits per the packet",
+  "Sweep invariant passes with overlaps on and off; a mutation removing the claim cap in seamStartMs was not caught by real pods (synthetic P3 unit test catches it)",
+  "interpreter/Sortie waitS covered by unit tests on nearWaits and e2e suites, no drive run (packet did not require one)",
+  "E4a Nit 4 wording in 03 left alone; pause nit goes to E8"
+ ]
+}

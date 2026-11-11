@@ -1,0 +1,14 @@
+{
+  "item": "F2", "role": "reviewer", "round": 2, "model_tier": "medium", "effort": "medium",
+  "verdict": "replan",
+  "summary": "Fix-1 changed nothing (blocked: no packet). The tree still equals HEAD; both round-1 Blockers stand: nothing for F2 is built and there is no packet.md/plan-1.json. Run the planner for F2, then the builder. Baseline checks green.",
+  "findings": { "blocker": 2, "major": 0, "minor": 1, "nit": 0 },
+  "checks": [
+    {"cmd": "git diff HEAD --name-only; git ls-files --others --exclude-standard", "pass": false, "detail": "0 tracked changes; untracked only the F2 work-folder records and probe-engine.diff"},
+    {"cmd": "ls docs/progress/v1.4/work/F2/packet.md plan-1.json", "pass": false, "detail": "both missing"},
+    {"cmd": "grep crewHoldMs/backS stationJumpIn.ts", "pass": false, "detail": "hold (line 26) and 0.8 s fly-back (line 35) still present"},
+    {"cmd": "npm test", "pass": true, "detail": "109 files, 1719 tests passed in 87 s (tree = HEAD)"},
+    {"cmd": "npm run e2e:spec -- gallery-assets", "pass": true, "detail": "4 passed (existing demos only; no F2 cell)"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"}
+  ]
+}

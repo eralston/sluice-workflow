@@ -1,0 +1,137 @@
+# CI on every push and PR; on main, each run also cuts a release.
+# Version: <major>.<minor> from the active tranche folder (docs/progress/v1.4 -> 1.4), plus a patch
+# one higher than the last v<major>.<minor>.* tag (first release is .1). The release tag is the counter.
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# Releases run one at a time so two merges can't claim the same patch number.
+concurrency:
+  group: ${{ github.ref == 'refs/heads/main' && 'release-main' || format('ci-{0}', github.ref) }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+          cache: npm
+      - run: npm install -g "npm@$(node -p 'require("./package.json").volta.npm')"
+      - run: npm ci
+      - run: npm run fixtures # fixtures/generated/ is gitignored; the unit tests import from it
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+
+  e2e:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+          cache: npm
+      - run: npm install -g "npm@$(node -p 'require("./package.json").volta.npm')"
+      - run: npm ci
+      # Electron 44 fetches its binary on first use, not at install; fetch it once here, or every
+      # Playwright worker downloads it at the same time and they corrupt each other's copy.
+      - run: node -e "require('electron')"
+      - run: npm run e2e:keystone
+        env:
+          E2E_WORKERS: 2 # the macOS runner has 3 cores; 4 Electron apps starve each other
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: e2e-results
+          path: test-results/
+          retention-days: 7
+
+  version:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: [checks, e2e]
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.next.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - id: next
+        run: |
+          tranche=$(ls -d docs/progress/v*/ 2>/dev/null | sed -E 's#docs/progress/v([0-9]+\.[0-9]+)/#\1#' | sort -V | tail -1)
+          if [ -z "$tranche" ]; then echo "::error::No docs/progress/v<major>.<minor>/ folder to take the version from"; exit 1; fi
+          # grep exits 1 when there are no tags yet; under pipefail that would end the step silently.
+          last=$(git tag --list "v${tranche}.*" | sed -E "s/^v${tranche//./\\.}\.//" | { grep -E '^[0-9]+$' || true; } | sort -n | tail -1)
+          version="${tranche}.$(( ${last:-0} + 1 ))"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Releasing $version (last patch: ${last:-none})"
+
+  package:
+    needs: version
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            args: --mac dmg --universal
+            files: dist/*.dmg
+          - os: windows-latest
+            args: --win nsis --x64
+            files: dist/*.exe
+    runs-on: ${{ matrix.os }}
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+          cache: npm
+      - run: npm install -g "npm@$(node -p 'require("./package.json").volta.npm')"
+      - run: npm ci
+      - run: npm version "${{ needs.version.outputs.version }}" --no-git-tag-version --allow-same-version
+      - run: npm run build
+      - run: npx electron-builder ${{ matrix.args }} --publish never
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package-${{ matrix.os }}
+          path: ${{ matrix.files }}
+          if-no-files-found: error
+          retention-days: 7
+
+  release:
+    needs: [version, package]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: git archive --format=zip --prefix="star-chart-${VERSION}/" -o "star-chart-${VERSION}-source.zip" "$GITHUB_SHA"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: package-*
+          path: packages
+          merge-multiple: true
+      - run: |
+          gh release create "v${VERSION}" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Star Chart ${VERSION}" \
+            --generate-notes \
+            packages/* "star-chart-${VERSION}-source.zip"

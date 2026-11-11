@@ -1,0 +1,22 @@
+{
+  "item": "E10",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "summary": "Late-day montage meets acceptance: only Convoy Planning (-1.6 s) and Harbor (-1.5 s) fold, Comet 60 795 ms unchanged, over-cap pods identical, every exclusion held by one shared eligibility; guard passes on all four montage pods. Two Minors: the guard now skips (annotates) a listed beat missing from the app instead of failing (Quasar 19:25Z, a pre-existing app-vs-unit schedule gap), and the working tree carries ~1,122 environmental mode flips (100644 to 100755) the commit must exclude.",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 1 },
+  "checks": [
+    { "cmd": "npx vitest run director golden/director pacingBuilt rising volleys maneuvers limelight sweep docTables pacingCandidates", "pass": true, "detail": "10 files, 311 tests passed" },
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean once my throwaway probe was removed (lint covers docs/progress work folders)" },
+    { "cmd": "npm run e2e:spec -- montage-names", "pass": true, "detail": "4 passed (Quasar, Pulsar, Convoy Planning, Harbor); Quasar annotated 'not in the app's schedule: 2026-09-15T19:25:00Z'" },
+    { "cmd": "npm run e2e:spec -- camera-directs solar-dense solar-play", "pass": true, "detail": "30 passed (8.6 m)" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (1.2 m); no stray snapshot changes afterwards" },
+    { "cmd": "probe (vite-node, removed): scheduleOf Quasar beats near 2026-09-15T19:25Z", "pass": true, "detail": "unit run plays 19:25Z (d=3600) and 20:04Z silent; confirms the app/unit divergence is pre-existing and Quasar-only" },
+    { "cmd": "probe (vite-node, removed): late montage folds per pod, {} and targetMs 1e9", "pass": true, "detail": "{}: Convoy Planning objective.accomplish x4, Harbor threat.accomplish x1, others none; 1e9: Quasar merge x2 + accomplish x1, Pulsar merge x3" },
+    { "cmd": "git diff db74d6b golden/director.json, pacing-built.json, pacing-ledger.md", "pass": true, "detail": "golden moves only Convoy Planning and Harbor forms/estimateMs; pacing-built.json +54/-0 (E10 rows only); ledger tables move only for those two pods plus the Built E10 rows" },
+    { "cmd": "git diff --summary db74d6b | grep -c 'mode change'", "pass": false, "detail": "1122 files 100644 -> 100755 (rising from 549 during the review; environmental, OneDrive); core.fileMode=true, so the commit must use git -c core.fileMode=false or restore modes" }
+  ]
+}

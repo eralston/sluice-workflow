@@ -1,0 +1,34 @@
+{
+  "item": "C4c",
+  "role": "builder",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "done",
+  "checks": [
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test --silent", "pass": true, "detail": "99 files, 1462 tests; docTables passes with the retargeted Frame budget and Live effects cap rows; goldens unchanged"},
+    {"cmd": "e2e:spec -- profile perf settings slice3a (locked)", "pass": true, "detail": "profile (3 new) passes. settings:169 and slice3a:214 failed once under load and passed on a rerun (settings+slice3a: 26 passed). perf's two tests fail on their soft frame-budget checks, as before (known red, 09 §7; C3 owns the fix); the budget now comes from the profile."},
+    {"cmd": "npm run e2e:keystone (locked)", "pass": true, "detail": "43 passed"},
+    {"cmd": "grep MAX_ACTIVE_FX|VSYNC_TOLERANCE_MS in src scripts tests", "pass": true, "detail": "only a 'was MAX_ACTIVE_FX' comment in contracts/profile.ts"}
+  ],
+  "files": [
+    "src/renderer/src/chart/ChartApp.ts (painted starts from switches.paint; applyProfile on onProfile; twinkle layer hidden and its alpha loop skipped when off)",
+    "src/renderer/src/chart/fx/timing.ts (MAX_ACTIVE_FX deleted; ornamentOk(v) added)",
+    "src/renderer/src/chart/fx/director.ts, movers.ts (cap from activeProfile().render.limits.maxActiveFx), director.ts, host.ts, v1/interpreter.ts (ornamentOk at the ornament sites)",
+    "src/renderer/src/testHooks.ts (profile(), paintOn(), setProfile(partial|null))",
+    "tests/e2e/profile.spec.ts (new), tests/e2e/perf.spec.ts (budget from profile.render.budget)",
+    "docs/15-reference.md (section 10 Frame budget and Live effects cap retargeted; section 11 intro and cap row), tests/README.md"
+  ],
+  "deviations": [
+    "The packet's phone e2e used Pulsar; per the task and the C4b finding it compares totalMs/accented beats on orbit-week's Billing statement redesign star (default fixture): phone must be no longer and no more accented, and strictly less in one.",
+    "The Settings fieldset case launches with STAR_CHART_PARADIGM '' and fixture pod-sprint, because the cog is not shown in the default backlog fixture launch."
+  ],
+  "limitations": [
+    "Place for C3's cuts: add a key to render.switches or render.limits in profile.ts, the four JSONs and the section 11 tables; applyProfile in ChartApp.ts is the re-apply point and setProfile flips a cut in one run.",
+    "Ornament sites at the packet's lines were switched; the two waits (director 362, interpreter 365: volatility() >= CALM && waited < 4) were left alone as decided.",
+    "perf.spec frame checks remain soft and red on this machine (Pulsar p95 and seek); not touched.",
+    "Label caps and a holo-filter switch remain out, as in the packet."
+  ]
+}

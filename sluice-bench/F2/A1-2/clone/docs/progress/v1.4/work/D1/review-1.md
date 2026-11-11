@@ -1,0 +1,8 @@
+# Review D1, round 1 · Verdict: pass
+1. Minor — The e2e check (b) tests a plate only against ships whose plate is also shown (ship list is built from shown acting plates), so a member whose plate is blocked/hidden is not protected by the assertion. The code does cover it (crewBodies uses every crew member's body), so this is a test-coverage gap only.
+   Evidence: tests/e2e/solar-dense.spec.ts, per-sample `ship` comes from `plates.map(...)`; labels.ts:726-735 builds crewBodies from all crew members.
+   Acceptance line or rule: "no plate covers another member's ship" (still met by the code).
+2. Nit — `eventKey` grouping also treats a captain-jump pair (a beam lent by the other person) as a "formation" if both are in `motion.crew` under one eventKey; behaviour is benign (side/above-below plates, clear of the other ship).
+   Evidence: labels.ts:722-736.
+Not findings: no gallery still (the Power link demo has no label layer; recorded in build-1 and the packet). Quasar horizontal has no still (one acting plate only); recorded. The new describe uses a fresh app per pod and the file-level beforeAll still launches Meridian: slower, harmless. Fallback trade-off (a member with no clear place stays a picture) is recorded.
+Checks run by me: labelTiers unit (16 pass), typecheck, lint clean; `npm run e2e:spec -- solar-dense -g "formation plates"` both Quasar and Pulsar pass (1.9 m). Build record shows the new test failing against unchanged code (Quasar (b), Pulsar (c)), and the mapped specs and keystone passing. Quasar vertical still: three plates beside their ships, none over a ship or another plate.

@@ -1,0 +1,24 @@
+{
+  "item": "E7",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Two sequential builds from one packet. E7a: a beat with 4+ creations (CROWD_MIN) collapses its creation drafts into one region.sweep draft. It is placed first, holds back later drafts on its pieces, names no crew and carries the star's one note (count and sprint). The Sector sweep choreography reveals each piece in turn by distance from the star, with a Nav cyan sweep ring; there is a gallery cell, ledger rows, and E1-E6 rows frozen by filtering the rule out. E7b: the round's first consecutive creation-only beats on one day fuse into one beat through Direction.fuse, composed with the volleys' fuse.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "split": [
+    { "id": "E7a", "part": "the sweep within one beat: rule, collapse, sequencing, limelight exemption, plan field, note, choreography and sweep command, interpreter star note, labels.ts star note, gallery cell, ledger E7 row, docs, drive step e7-sweep", "files": ["src/shared/engine/pace.ts", "src/shared/engine/maneuvers.ts", "src/shared/engine/director.ts", "src/shared/contracts/maneuver.ts", "src/shared/packs/events.ts", "src/renderer/src/theme/starChart/maneuvers/sectorSweep.ts (new)", "src/renderer/src/theme/starChart/maneuvers/sweepOrder.ts (new)", "src/renderer/src/theme/starChart/maneuvers/index.ts", "src/renderer/src/theme/starChart/finales.ts", "src/renderer/src/chart/fx/v1/interpreter.ts", "src/renderer/src/chart/labels.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts", "tests/unit/sweep.test.ts (new)", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts", "tests/golden/__golden__/director.json", "docs 05 P-12 M-32, 03, 13 §6, 15 §7 §8 §9 §10, tests/README.md", "tests/drive/steps/e7-sweep.ts (new)"] },
+    { "id": "E7b", "part": "the round's first beats: openingSweep, the fuse composed with volleys in pacing().limelight, directorOf carrying fuse without volleys, tests (hand-built and a DSL mini sprint), 05 B-22, 03", "files": ["src/shared/engine/maneuvers.ts", "src/shared/engine/director.ts", "tests/unit/sweep.test.ts", "docs/05-playback.md", "docs/03-contracts.md"] }
+  ],
+  "notes": [
+    "The effect where it's meant: Halcyon has no creations in the round (Pulsar 0, Quasar 0, Comet 1, Nova 1). The bursts are Harbor Pod (pod-sprint Sprint 13, beat 0, 17 arrivals from 4 creators, 12.7 s) and Convoy Planning Pod (meridian-sprint Sprint 7, beat 0, 23 arrivals from 11 creators, 6.4 s). With the packet's timing (110 ms apart, a 2 s spread at most, plus a 1 s entrance), the sweep beat is about 3.6-3.7 s: roughly 9 s saved on Harbor and 2.7 s on Convoy. Comet, Pulsar and Quasar don't move.",
+    "No fixture pod has an opening run of 2 or more creation-only beats, so E7b is checked only by synthetic tests, and its ledger numbers are zero. Real data, where creations are minutes apart, is where it matters.",
+    "The scheduleOf rules path equals the app path (wallMs identical on all six pods, probed). Freezing E1-E6's Built rows by filtering region.sweep out of both runs is therefore exact.",
+    "The star's note needs a one-line labels.ts change: today a cast note shows only on hover-only plates. It counts 1 in the attention budget, in the planner (attends 1) and in castLabels alike.",
+    "Tier: the sum is 5, so medium. The same class (E6a, E6b) passed its first review at large; at medium, E5a and E5c failed their first review. The orchestrator may raise E7a to large.",
+    "The planner ran out of turns before a final pass over 05's 'what plays' table format (rulebook.test requires `region.sweep` in it) and over GEOMETRY.starR. Both are left to the builder as questions in the packet."
+  ]
+}

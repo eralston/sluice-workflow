@@ -1,0 +1,40 @@
+{
+  "findings": [
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "When the same captain has another turn waiting, the pass doesn't carry on to it. It always flies home to its rest, and the next sortie then flies out from there. Decided asks for 'its next sortie if one is waiting (E4's P4)', and P4 exists so that a captain never flies home between turns. The docs were rewritten to describe the departure ('ignores the wait') instead of the code implementing what Decided asks.",
+      "kept": true,
+      "why": "movers.ts:258 zeroes holdS/waitS for a pass and updatePass flies to goalOf (324); docs/27-v1.4.md:604 asks for the next sortie if waiting. [Was Major. 2026-11-10, the user: one behaviour, one severity. The pass glides to its rest even when a next sortie waits; the real F2 shipped it, signed off with no escape (its packet left the hand-off at speed to F3). Scored a Minor in every run.]",
+      "class": "next-sortie"
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "When the summoner has no ship in the region and flies as a guest, the call blip is drawn at the station's centre instead of at the summoner. It lands inside the station's own bloom ring, so the guest's summon loses the summoner\u2192station cause and effect that Decided (R8, R10) asks for.",
+      "kept": true,
+      "why": "stationJumpIn.ts:46-48 draws the fallback ring at f.at when no present agent, i.e. the guest case."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "On the directed measure the ledger shows Meteor, the 36-summon pod this item is aimed at, getting longer: F2's row reads \u22127.8 s and the pod table's App s rises 275.9 \u2192 296.1 s. A hand-written note explains the gap with undirected savings (13.9, 21.3, 24.3 s), but only Meteor's '> 10 s' is checked; the Quasar and Pulsar figures are prose that no test verifies.",
+      "kept": true,
+      "why": "pacing-ledger.md:580 shows -7.8 for Meteor; pacingBuilt.test.ts:168 only checks Meteor > 10_000; Quasar/Pulsar figures are prose."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The docs say the pass's plate stays whole for NOTE_MIN_MS 'on a moving ship'. In the code the ship stops at its rest 0.8 s after the blip, but the plate is only whole from 0.52 s to 2.32 s after the blip, so it rides a moving ship for about 0.28 s of its 1.8 s.",
+      "kept": true,
+      "why": "Docs say 'on a moving ship' (15:1257); ship stops 0.8 s after the blip while plate is whole from 0.52 s, so about 0.28 s overlaps."
+    },
+    {
+      "severity": "Nit",
+      "rules": true,
+      "summary": "13 \u00a76 calls the call blip 'an at-rest-blue ring at twice the ship's radius', but the code draws a ring that grows from 1.4\u00d7 to 3.2\u00d7 the ship's radius. That is the station ring's 0.7\u20131.6 shape doubled, not a ring at 2\u00d7. Test (c) also checks the shape with toBeCloseTo(\u2026, 0), which tolerates \u00b10.5 on a ratio of 2.29.",
+      "kept": true,
+      "why": "13:685 says 'twice the ship's radius'; stationJumpIn.ts:47 uses 1.4x to 3.2x; commands.test.ts:539 toBeCloseTo(...,0) is loose."
+    }
+  ]
+}

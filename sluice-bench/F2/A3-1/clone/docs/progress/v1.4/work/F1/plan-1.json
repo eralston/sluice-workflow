@@ -1,0 +1,22 @@
+{
+  "item": "F1",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "A new hand-written Halcyon pod, Meteor Pod (area 8005, last everywhere so nothing existing moves). Captain A opens 36 PRs into 36 repos in 52.5 s on Wed 16 Sep and merges them over Wed and Thu, approved by sets of 3, then 4, then 5 drawn from 5 approvers. It also holds every bounding case from the scope, timed exactly so that B-1, B-12 and B-13 can't blur them: B's beats inside the opening and between two merges; C's same-instant merge at one run station (F-Q5, checked as an E6 volley today); a pair the B-15 guard refuses on Mon 21; a pair more than a working day apart (Wed 23 and Fri 25); and a lone summon on Thu 24 left open. The cast comes from find-cast.ts by appending picks, so existing lines don't change. The ledger gains Meteor through a PodSpec `extra` flag: buildLedger asks for all pods, while resolvePods() by default keeps the six that C2, Built, the director golden and the E-item tests were set against. New: a Meteor Solar golden, a VC-3 e2e case and structural fixture tests. 03's fixture row is amended.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 0, "acceptance": 1, "track": 1, "sum": 4 },
+  "needs": null,
+  "notes": [
+    "Interpretation (orchestrator may overrule): the pod has 37 stations, the run's 36 plus the lone summon's. A single summon always brings a new station, and F3's ledger line counts 36 summons in the run. The e2e asserts all 36 run repos are drawn and 37 in all. Acceptance is copied unchanged.",
+    "Interpretation: 'its halcyon golden' is the Meteor scope's new entry in sprint-pods.scenes.json (it appears by itself) plus a new Meteor-only Solar golden, halcyon-meteor.{plan,scenes}.json, so F2 to F4 have a diff to read. sprint-pods.seek/schedule (Comet default scope), director.json, solar.* and meridian.* must not move.",
+    "Choice: resolvePods() leaves Meteor out by default (`all: true` brings it in). Otherwise the frozen Built rows (pinned in pacingBuilt.test), the committed candidates, the director golden and sweep.test's toHaveLength(6) would all move, and C2 has no estimate for Meteor. F2 to F4 opt in when they change the engine.",
+    "Probe (work/F1/probe-rings.ts) on the current engine: a 3-seat pod with 36 one-seat stations plans with 0 world overlaps, a minimum centre gap of 1065 units, and about 59 px at 1024x640 fit against the 24 px the 12 px hit floor needs. VC-3 looks reachable without a layout change. The builder deletes the probe.",
+    "Halcyon's sprint scene gains a fifth star, so demo.spec's star list changes. The builder reads the order from the app.",
+    "The scope's Touches line doesn't list sprint-pods.ts, scripts/find-cast.ts (cast.ts is generated), 03-contracts.md:1813 (normative fixture row), solar.test.ts, solar.spec.ts, demo.spec.ts, pacing.test.ts or halcyonCoverage.test.ts. All are needed. That's about 11 hand-edited files plus generated outputs, one cohesive fixture change, so no split.",
+    "Risk the builder may hit: a whole-fixture property test (stationSlotsInvariant, formationBounds, frontierStations, board) failing on Meteor, or E6 not grouping the F-Q5 pair. The packet says to stop and report, not to change the engine or exclude the pod.",
+    "Score: blast 1 (a shared fixture many tests and the demo read; nothing persisted, engine untouched). Verify 1 (goldens, unit tests and the VC-3 e2e decide most of it; whether the cases bound F3/F4 correctly is only structurally checkable before those exist). Design 0 (every time, id and approver set is fixed in the packet). Acceptance 1 (two lines needed interpreting, above). Track 1 (no fixture item yet this tranche). Sum 4, so medium."
+  ]
+}

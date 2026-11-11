@@ -1,0 +1,199 @@
+{
+  "source": "/Users/amorgan/.claude/projects/-Users-amorgan-sluice-bench-F2-A3-1-clone",
+  "run": "A3-1",
+  "at": "2026-11-10T00:03:14.758Z",
+  "usd": 8.968,
+  "windows": 0.332,
+  "calls": 214,
+  "firstPrompt": "2026-11-09T22:23:47.363Z",
+  "lastEntry": "2026-11-10T00:02:10.391Z",
+  "wallMin": 98.4,
+  "toCommitMin": 98.2,
+  "agentSecs": 5033,
+  "sessionSecs": 5903,
+  "ctx": {
+    "mean": 106406,
+    "p95": 244532,
+    "peak": 258594
+  },
+  "roles": {
+    "session": {
+      "usd": 1.8662,
+      "calls": 22,
+      "secs": 5903,
+      "agents": 1,
+      "out": 14694,
+      "ctx": {
+        "mean": 51161,
+        "p95": 67218,
+        "peak": 68539
+      }
+    },
+    "workflow:fixer": {
+      "usd": 0.0727,
+      "calls": 5,
+      "secs": 36,
+      "agents": 1,
+      "out": 359,
+      "ctx": {
+        "mean": 22309,
+        "p95": 24144,
+        "peak": 24144
+      }
+    },
+    "workflow:reviewer": {
+      "usd": 1.1177,
+      "calls": 41,
+      "secs": 1176,
+      "agents": 3,
+      "out": 6744,
+      "ctx": {
+        "mean": 43183,
+        "p95": 81467,
+        "peak": 86466
+      }
+    },
+    "workflow:builder": {
+      "usd": 1.1209,
+      "calls": 66,
+      "secs": 1617,
+      "agents": 2,
+      "out": 1920,
+      "ctx": {
+        "mean": 98684,
+        "p95": 147348,
+        "peak": 152691
+      }
+    },
+    "workflow:planner": {
+      "usd": 4.7904,
+      "calls": 80,
+      "secs": 2204,
+      "agents": 1,
+      "out": 996,
+      "ctx": {
+        "mean": 165626,
+        "p95": 253519,
+        "peak": 258594
+      }
+    }
+  },
+  "models": {
+    "claude-opus-5-5": {
+      "usd": 7.7743,
+      "calls": 143,
+      "out": 22434
+    },
+    "claude-sonnet-5-5": {
+      "usd": 1.1936,
+      "calls": 71,
+      "out": 2279
+    }
+  },
+  "agents": [
+    {
+      "role": "session",
+      "kind": "main",
+      "workflow": null,
+      "file": "08e4547d-f2ef-4996-9ffa-f7d38b5a822b.jsonl",
+      "calls": 22,
+      "secs": 5903,
+      "usd": 1.8662,
+      "out": 14694,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "workflow:fixer",
+      "kind": "workflow",
+      "workflow": "wf_1091680f-d21",
+      "file": "08e4547d-f2ef-4996-9ffa-f7d38b5a822b/subagents/workflows/wf_1091680f-d21/agent-a3028a1a307397a07.jsonl",
+      "calls": 5,
+      "secs": 36,
+      "usd": 0.0727,
+      "out": 359,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "role": "workflow:reviewer",
+      "kind": "workflow",
+      "workflow": "wf_1091680f-d21",
+      "file": "08e4547d-f2ef-4996-9ffa-f7d38b5a822b/subagents/workflows/wf_1091680f-d21/agent-a3616383d7aa4b729.jsonl",
+      "calls": 9,
+      "secs": 531,
+      "usd": 0.183,
+      "out": 714,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "workflow:builder",
+      "kind": "workflow",
+      "workflow": "wf_1091680f-d21",
+      "file": "08e4547d-f2ef-4996-9ffa-f7d38b5a822b/subagents/workflows/wf_1091680f-d21/agent-a6444c00ff87c889a.jsonl",
+      "calls": 6,
+      "secs": 25,
+      "usd": 0.1042,
+      "out": 316,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "role": "workflow:reviewer",
+      "kind": "workflow",
+      "workflow": "wf_1091680f-d21",
+      "file": "08e4547d-f2ef-4996-9ffa-f7d38b5a822b/subagents/workflows/wf_1091680f-d21/agent-aa63e044f1f45f6cd.jsonl",
+      "calls": 8,
+      "secs": 295,
+      "usd": 0.1461,
+      "out": 2039,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "workflow:planner",
+      "kind": "workflow",
+      "workflow": "wf_1091680f-d21",
+      "file": "08e4547d-f2ef-4996-9ffa-f7d38b5a822b/subagents/workflows/wf_1091680f-d21/agent-acbc3c572b0422fad.jsonl",
+      "calls": 80,
+      "secs": 2204,
+      "usd": 4.7904,
+      "out": 996,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "workflow:reviewer",
+      "kind": "workflow",
+      "workflow": "wf_f80d2855-7e9",
+      "file": "08e4547d-f2ef-4996-9ffa-f7d38b5a822b/subagents/workflows/wf_f80d2855-7e9/agent-a5cb7614125095801.jsonl",
+      "calls": 24,
+      "secs": 350,
+      "usd": 0.7886,
+      "out": 3991,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "workflow:builder",
+      "kind": "workflow",
+      "workflow": "wf_f80d2855-7e9",
+      "file": "08e4547d-f2ef-4996-9ffa-f7d38b5a822b/subagents/workflows/wf_f80d2855-7e9/agent-aebed895e4e4ceca3.jsonl",
+      "calls": 60,
+      "secs": 1592,
+      "usd": 1.0167,
+      "out": 1604,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    }
+  ]
+}

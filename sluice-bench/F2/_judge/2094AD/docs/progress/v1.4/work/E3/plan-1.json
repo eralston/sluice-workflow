@@ -1,0 +1,20 @@
+{
+  "item": "E3",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "New rule agent.progress (narrative, unprotected, gather 300 / act 800 / echo 400 = 1500 ms) appended to PACE_RULES with match: () => false, so nothing schedules it until E5; a Progress beam choreography: an at-rest-blue ring on the captain, then the stations' mine or phaser at half weight from where the captain is to each piece of work (dock on a merge), and a small hero-blue hit flare as the look lands; MineArgs gains scale; the gallery builds its cell from a pod-sprint merge recast through the rule's own cast; 15 §7, §8 (audit and commands) and 13 §6.1–6.2 updated; gallery-assets counts 17 rules.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "match: () => false rather than a new 'directed' flag: the planner, ledger and every matched() test stay exactly as they are; E5 calls rule.cast itself.",
+    "A 300 ms gather (light gathers, no travel) so the beam holds a turn and its captain is named; the interpreter names a crew only for a maneuver with a gather.",
+    "Beam: the stations' mine (asteroid) and phaser (enemy) at scale 0.5 keep the 13 §6.1 grammar (weapons only at enemies); mine needs a new optional scale, default 1, so Power link and the beamed closes are unchanged.",
+    "On a merge the tender's dock act plays during the act, so the merged tender doesn't vanish unexplained; the station doesn't charge, transform or fire.",
+    "One-of-every-rule sum rises to 46 315 ms against a 47 250 ms ceiling in maneuvers.test.ts; it still passes, with little room left for E4/E7 additions.",
+    "Track record mixed: E1 (medium) failed first review on a docs table; E2 and D1–D3 passed."
+  ]
+}

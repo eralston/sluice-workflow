@@ -1,0 +1,21 @@
+{
+  "item": "F2",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Summons pass through: facility.enter drops its tell (2515 ms), a new PaceRule.passes gives the crew passTimes (named from the act for NOTE_MIN_MS, no held turn), Sortie gets a C1 Hermite pass mode (PursueArgs.rideS), the call blip and the station's arrival ring share Hero blue and shape at the act's start; the ledger adds F2/F2+ Built rows over seven pods with E rows and C2's candidates held by withoutF2; docs 15/13/05/03 amended.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "split": [],
+  "decisions": [
+    "Phases: gather 715, act 1200, land 600 (tell dropped); the plate's NOTE_MIN_MS from the act ends exactly with the land, so durMs = spanMs = 2515 (was 4835 with the held turn).",
+    "Sequencing otherwise unchanged: the next same-captain sortie starts at the summon's work end (nearStartMs); flying straight to the next sortie's spot is left to F3.",
+    "Blip and station arrival ring both Hero blue (15 §2: summons; 13 §6), same r1/r, durS, alpha; flare stays At-rest blue.",
+    "Path: Hermite through the spot with the bisector tangent (a +90 deg turn when the legs cancel), C1 at the spot, at rest only at its ends.",
+    "Ledger: withoutF2 keeps E1-E10 Built rows and pacing-candidates.json unchanged; F2 and F2+ rows (as E6/E6+) measure all seven pods.",
+    "solar-dense 22 B9 test: a PR-event episode whole under 1.2 s is a pass, asserted to move and exempt from the parked checks (test-only, no app marker)."
+  ]
+}

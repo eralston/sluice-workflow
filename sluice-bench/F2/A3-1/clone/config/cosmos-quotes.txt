@@ -1,0 +1,14 @@
+# Quotes for the empty cosmos (06 §3), one per line: “quote” — Name, Source.
+# Blank lines and lines starting with # are skipped. Edit freely; the app rotates through them.
+“We are a way for the cosmos to know itself.” — Carl Sagan, Cosmos
+“For small creatures such as we the vastness is bearable only through love.” — Carl Sagan, Contact
+“Look again at that dot. That’s here. That’s home. That’s us.” — Carl Sagan, Pale Blue Dot
+“Space is big. Really big. You just won’t believe how vastly, hugely, mind-bogglingly big it is.” — Douglas Adams, The Hitchhiker’s Guide to the Galaxy
+“It is good to have an end to journey towards; but it is the journey that matters, in the end.” — Ursula K. Le Guin, The Left Hand of Darkness
+“All that you touch you change. All that you change changes you.” — Octavia E. Butler, Parable of the Sower
+“Nature uses only the longest threads to weave her patterns, so that each small piece of her fabric reveals the organization of the entire tapestry.” — Richard Feynman, The Character of Physical Law
+“Remember to look up at the stars and not down at your feet.” — Stephen Hawking
+“The universe is under no obligation to make sense to you.” — Neil deGrasse Tyson, Astrophysics for People in a Hurry
+“The Earth is the cradle of humanity, but one cannot remain in the cradle forever.” — Konstantin Tsiolkovsky
+“Equipped with his five senses, man explores the universe around him and calls the adventure Science.” — Edwin Hubble, The Nature of Science
+“I have loved the stars too truly to be fearful of the night.” — Sarah Williams, The Old Astronomer

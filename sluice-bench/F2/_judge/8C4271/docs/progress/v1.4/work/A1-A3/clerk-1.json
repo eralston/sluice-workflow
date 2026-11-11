@@ -1,0 +1,75 @@
+{
+  "item": "A1-A3",
+  "role": "clerk",
+  "round": 1,
+  "model_tier": "small",
+  "effort": "low",
+  "verdict": "done",
+  "summary": "A1 done (floor size from FLOOR_PX in stations.ts; floor added as a drawn size). A3 done: perf spec uses the measured vsync, 09 §7 and 15 §10 updated with numbers taken under parallel load. The Pulsar p95 assertions stay soft and known red until B1 (orchestrator decision).",
+  "checks": [
+    {
+      "cmd": "grep -n \"48 px\" src/renderer/src/gallery/v1/stations.ts",
+      "pass": true,
+      "detail": "no matches"
+    },
+    {
+      "cmd": "grep -n \"25\" tests/e2e/perf.spec.ts",
+      "pass": true,
+      "detail": "no budget literal left; line 39 is frameTimes(ms = 2500), line 163 is the 250 ms seek bound (kept, per packet)"
+    },
+    {
+      "cmd": "npm test -- docTables (npm test --silent full unit run)",
+      "pass": true,
+      "detail": "docTables 35/35; full unit 96 files, 1414 tests passed Re-run after 09 §7 edit: full unit 1414 passed."
+    },
+    {
+      "cmd": "npm run -s typecheck",
+      "pass": true,
+      "detail": "exit 0"
+    },
+    {
+      "cmd": "npm run -s lint",
+      "pass": true,
+      "detail": "no output"
+    },
+    {
+      "cmd": ".claude/sluice/with-lock.sh npm run e2e:spec -- gallery-v1",
+      "pass": true,
+      "detail": "5/5 passed; the -sizes cell is not a cycling cell, so no still of it was written and its layout was not viewed"
+    },
+    {
+      "cmd": ".claude/sluice/with-lock.sh npm run e2e:spec -- perf",
+      "pass": false,
+      "detail": "dense-system and dense-body pass (painted p95 9.3 and 9.1 ms, budget 18.6 ms). Pulsar: rest 25.1, play 1x 33.8, play 4x 41.6 ms p95 all over 18.6; seek p95 194 ms, max under 250. Measured vsync 8.3 ms. Soft assertions fail, so this run is red. Orchestrator accepted the rest miss as known red until B1; the assertions stay soft."
+    },
+    {
+      "cmd": "npm run e2e:keystone",
+      "pass": true,
+      "detail": "43/43 passed under with-lock.sh"
+    },
+    {
+      "cmd": "npm run -s typecheck; npm run -s lint (re-run after 09 §7 edit)",
+      "pass": true,
+      "detail": "both exit 0"
+    }
+  ],
+  "files": [
+    "src/renderer/src/gallery/v1/stations.ts",
+    "tests/e2e/perf.spec.ts",
+    "docs/09-signal-ladder.md",
+    "docs/15-reference.md",
+    "docs/progress/v1.4/work/A1-A3/clerk-1.json"
+  ],
+  "deviations": [
+    "A1: the FormSizes array gets two new views at FLOOR_LEN (115 px) at (-150, 66) and (-20, 66), placed without a visual check. The title lists 115 among the sizes. Overlap with the other forms was not viewed: no still of the -sizes cell is produced by gallery-v1, so the reviewer should look in npm run gallery.",
+    "A3: the rule row sits in 15 §10 (budgets table), as the packet says, not §9. The Constant cell is `unguarded: tests/e2e/perf.spec.ts VSYNC_TOLERANCE_MS`, which docTables accepted with the path as written.",
+    "A3: the report JSON gains vsyncMs and budgetMs fields, and the Pulsar JSON is written as { vsyncMs, budgetMs, ...report }. The soft-assertion titles say 'within 2 vsyncs' and show the budget.",
+    "Per orchestrator decision: the Pulsar rest miss (and play 1x/4x misses) stays as soft assertions, known red until B1 makes them hard. 09 §7 notes they were measured under parallel load and will be re-measured at the block's end.",
+    "09 §7 stale 60 fps sentence corrected to the measured 8.3 ms vsync (about 120 Hz)."
+  ],
+  "limitations": [
+    "09 §7 and 15 §10 record the measured Pulsar numbers as of 2026-10-29. Rest and playing both miss the budget. B1 owns playing; rest is the open decision above.",
+    "Other files show as modified in git status (docs 03, 05, 06, 14; several src and test files). They are not from this item and were not touched by it."
+  ],
+  "gate_note": "Stop-hook gate on 'unit' (block 2 of 3) failed: tests/unit/stageCode.test.ts 'unknown stages decode to null (INV-11)' for 'v1|seat|underway|c=InProgress|sh=0.50|o=m2r1' now decodes. This is outside A1-A3: my item touched only stations.ts, perf.spec.ts, 09 and 15. The failing files (src/shared/engine/stageCode.ts, tests/unit/stageCode.test.ts, stageCodec.ts) are modified by another item's work in the tree. Not fixed here; stopping per the item contract."
+}

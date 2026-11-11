@@ -1,0 +1,20 @@
+{
+  "item": "E8",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Rising tempo on Solar schedules only (ScheduleOptions.risingTempo, set by pacing()). Every gap, day turn and the tail gap keeps a share of itself that falls linearly by day-turn count from 1.1 on the first day to 0.5 on the last. It never goes below 300 ms or above today's caps. On a dense episode (the director pulled a lever) each day turn is the 300 ms floor (P10). The ledger keeps C2's candidates and the E1-E7 Built rows as they were measured, and adds an E8 Built row. The montage threshold is not scaled, because no such number exists.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "HG-C (2026-11-01) picked all of E1-E9, so E8 is built. The ledger at 0278b3c shows every gap and day turn on all six pods at 500 ms (GAP_MIN_MS), because each Solar pod is far over the 45 s schedule budget and fit() squeezes to 0. P10 is therefore already met by B-18's squeeze, and C2 modelled E8 at 0 s. Only a floor below 500 ms saves anything.",
+    "Planner's probe (the curve applied to today's gaps, wall time with each beat's tempo): Comet 1.05 s (1.7%), Nova 3.48 s (1.6%), Quasar 4.51 s (1.5%), Pulsar 4.71 s (1.6%), Convoy Planning 3.30 s (1.8%), Harbor 3.85 s (2.1%). That would take Quasar from 303.6 s to about 299.1 s, just inside HG-C's soft 300 s cap. It is not asserted in tests.",
+    "Departure from the item's Decided line: 'scales ... the montage threshold'. No montage threshold exists to scale: P-24 folds a back-to-back repeat, and P-15 triggers on a wait for a label place. A new run-length rule would sit in director.ts, outside Touches, and on dense pods the speed lever would re-fit it away. The orchestrator should log this in the block note and raise it at the final check.",
+    "Comet shortens by about 1 s (gaps only, no drama), within its 5% yardstick. The E5 decision said the director must not shorten Comet further, so flag it at the final check.",
+    "03 is amended (ScheduleOptions.risingTempo, PacingOptions.risingTempo), though 27's Touches line doesn't list 03.",
+    "Score: blast 1 (shared schedule, but v0 is untouched behind the switch), verify 1, design 1 (settled, with one departure the human may overrule), acceptance 1 ('the ledger shows the saving' needs a look), track 1 (E5a and E5c failed their first review at medium; E6 and E7 passed). Sum 5, medium. About 10 files plus the regenerated ledger, so no split."
+  ]
+}

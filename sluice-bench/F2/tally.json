@@ -1,0 +1,424 @@
+[
+  {
+    "run": "A1-1",
+    "arm": "A1",
+    "n": 1,
+    "usd": 6.8845,
+    "windows": 0.255,
+    "calls": 170,
+    "wallMin": 84.7,
+    "agentMin": 166.7,
+    "ctxMean": 87169,
+    "ctxPeak": 177780,
+    "roles": {
+      "session": 0.9579,
+      "builder": 1.3369,
+      "planner": 2.0498,
+      "reviewer": 2.5398
+    },
+    "gate": false,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "met"
+    },
+    "parts": {
+      "acceptance": 40,
+      "regress": 20,
+      "defects": 2,
+      "rules": 4,
+      "look": 10
+    },
+    "Q": 0,
+    "U": -22.2,
+    "findings": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 6,
+      "nit": 0
+    },
+    "churn": 1404,
+    "outsideTouches": 7,
+    "realTests": {
+      "ok": false,
+      "failed": 8,
+      "passed": 158
+    }
+  },
+  {
+    "run": "A1-2",
+    "arm": "A1",
+    "n": 2,
+    "usd": 8.3604,
+    "windows": 0.31,
+    "calls": 166,
+    "wallMin": 94.2,
+    "agentMin": 186.1,
+    "ctxMean": 103201,
+    "ctxPeak": 230537,
+    "roles": {
+      "session": 0.8953,
+      "reviewer": 2.9036,
+      "builder": 1.5759,
+      "planner": 2.9856
+    },
+    "gate": false,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "met"
+    },
+    "parts": {
+      "acceptance": 40,
+      "regress": 20,
+      "defects": 11,
+      "rules": 6,
+      "look": 10
+    },
+    "Q": 0,
+    "U": -26.1,
+    "findings": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 3,
+      "nit": 0
+    },
+    "churn": 1326,
+    "outsideTouches": 9,
+    "realTests": {
+      "ok": false,
+      "failed": 7,
+      "passed": 159
+    }
+  },
+  {
+    "run": "A2-1",
+    "arm": "A2",
+    "n": 1,
+    "usd": 10.4579,
+    "windows": 0.387,
+    "calls": 108,
+    "wallMin": 56.3,
+    "agentMin": 56.6,
+    "ctxMean": 204097,
+    "ctxPeak": 300231,
+    "roles": {
+      "session": 10.4579
+    },
+    "gate": true,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "met"
+    },
+    "parts": {
+      "acceptance": 40,
+      "regress": 20,
+      "defects": 0,
+      "rules": 8,
+      "look": 8.88888888888889
+    },
+    "Q": 76.88888888888889,
+    "U": 50.3,
+    "findings": {
+      "blocker": 0,
+      "major": 1,
+      "minor": 4,
+      "nit": 0
+    },
+    "churn": 1469,
+    "outsideTouches": 9,
+    "realTests": {
+      "ok": false,
+      "failed": 7,
+      "passed": 159
+    }
+  },
+  {
+    "run": "A2-2",
+    "arm": "A2",
+    "n": 2,
+    "usd": 10.5922,
+    "windows": 0.392,
+    "calls": 103,
+    "wallMin": 63.5,
+    "agentMin": 63.8,
+    "ctxMean": 184280,
+    "ctxPeak": 273821,
+    "roles": {
+      "session": 10.5922
+    },
+    "gate": true,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "met"
+    },
+    "parts": {
+      "acceptance": 40,
+      "regress": 20,
+      "defects": 4,
+      "rules": 6,
+      "look": 8.88888888888889
+    },
+    "Q": 78.88888888888889,
+    "U": 51.4,
+    "findings": {
+      "blocker": 0,
+      "major": 1,
+      "minor": 2,
+      "nit": 0
+    },
+    "churn": 2036,
+    "outsideTouches": 7,
+    "realTests": {
+      "ok": false,
+      "failed": 7,
+      "passed": 159
+    }
+  },
+  {
+    "run": "A3-1",
+    "arm": "A3",
+    "n": 1,
+    "usd": 8.968,
+    "windows": 0.332,
+    "calls": 214,
+    "wallMin": 98.2,
+    "agentMin": 182.3,
+    "ctxMean": 106406,
+    "ctxPeak": 258594,
+    "roles": {
+      "session": 1.8662,
+      "workflow:fixer": 0.0727,
+      "workflow:reviewer": 1.1177,
+      "workflow:builder": 1.1209,
+      "workflow:planner": 4.7904
+    },
+    "gate": true,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "met"
+    },
+    "parts": {
+      "acceptance": 40,
+      "regress": 20,
+      "defects": 5,
+      "rules": 4,
+      "look": 7.777777777777778
+    },
+    "Q": 76.77777777777777,
+    "U": 49,
+    "findings": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 5,
+      "nit": 1
+    },
+    "churn": 1103,
+    "outsideTouches": 9,
+    "realTests": {
+      "ok": false,
+      "failed": 6,
+      "passed": 160
+    }
+  },
+  {
+    "run": "A3-2",
+    "arm": "A3",
+    "n": 2,
+    "usd": 8.2462,
+    "windows": 0.305,
+    "calls": 209,
+    "wallMin": 93.4,
+    "agentMin": 174.3,
+    "ctxMean": 105572,
+    "ctxPeak": 240556,
+    "roles": {
+      "session": 1.0172,
+      "builder": 1.9246,
+      "fixer": 0.209,
+      "planner": 3.1816,
+      "reviewer": 1.9138
+    },
+    "gate": true,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "met"
+    },
+    "parts": {
+      "acceptance": 40,
+      "regress": 20,
+      "defects": 8,
+      "rules": 4,
+      "look": 10
+    },
+    "Q": 82,
+    "U": 56.2,
+    "findings": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 4,
+      "nit": 1
+    },
+    "churn": 1901,
+    "outsideTouches": 12,
+    "realTests": {
+      "ok": false,
+      "failed": 6,
+      "passed": 160
+    }
+  },
+  {
+    "run": "A4-1",
+    "arm": "A4",
+    "n": 1,
+    "usd": 7.3856,
+    "windows": 0.274,
+    "calls": 189,
+    "wallMin": 106.6,
+    "agentMin": 212.9,
+    "ctxMean": 98426,
+    "ctxPeak": 211225,
+    "roles": {
+      "session": 1.087,
+      "F2 test writer": 3.0055,
+      "F2 builder": 0.7761,
+      "F2 adversarial review": 1.3415,
+      "F2 fix and commit": 1.1754
+    },
+    "gate": true,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "met"
+    },
+    "parts": {
+      "acceptance": 40,
+      "regress": 20,
+      "defects": 5,
+      "rules": 6,
+      "look": 7.777777777777778
+    },
+    "Q": 78.77777777777777,
+    "U": 53.3,
+    "findings": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 5,
+      "nit": 0
+    },
+    "churn": 2088,
+    "outsideTouches": 5,
+    "realTests": {
+      "ok": false,
+      "failed": 7,
+      "passed": 159
+    }
+  },
+  {
+    "run": "A4-2",
+    "arm": "A4",
+    "n": 2,
+    "usd": 8.0623,
+    "windows": 0.299,
+    "calls": 224,
+    "wallMin": 139.6,
+    "agentMin": 279.2,
+    "ctxMean": 102773,
+    "ctxPeak": 200112,
+    "roles": {
+      "session": 0.9659,
+      "F2 fix majors and commit": 2.0982,
+      "F2 test writer": 2.9666,
+      "F2 builder": 1.0119,
+      "F2 adversarial review": 1.0198
+    },
+    "gate": true,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "partial"
+    },
+    "parts": {
+      "acceptance": 35,
+      "regress": 20,
+      "defects": 8,
+      "rules": 4,
+      "look": 7.777777777777778
+    },
+    "Q": 74.77777777777777,
+    "U": 44.7,
+    "findings": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 4,
+      "nit": 1
+    },
+    "churn": 2150,
+    "outsideTouches": 9,
+    "realTests": {
+      "ok": false,
+      "failed": 11,
+      "passed": 155
+    }
+  },
+  {
+    "run": "A5-1",
+    "arm": "A5",
+    "n": 1,
+    "usd": 8.8629,
+    "windows": 0.328,
+    "calls": 226,
+    "wallMin": 96.9,
+    "agentMin": 189.2,
+    "ctxMean": 105310,
+    "ctxPeak": 220191,
+    "roles": {
+      "session": 1.5024,
+      "reviewer": 2.6753,
+      "fixer": 0.2014,
+      "planner": 2.7712,
+      "builder": 1.7126
+    },
+    "gate": true,
+    "probes": {
+      "P1": "met",
+      "P2": "met",
+      "P3": "met",
+      "P4": "met"
+    },
+    "parts": {
+      "acceptance": 40,
+      "regress": 20,
+      "defects": 11,
+      "rules": 10,
+      "look": 8.333333333333334
+    },
+    "Q": 89.33333333333333,
+    "U": 61.9,
+    "findings": {
+      "blocker": 0,
+      "major": 0,
+      "minor": 3,
+      "nit": 2
+    },
+    "churn": 1340,
+    "outsideTouches": 9,
+    "realTests": {
+      "ok": false,
+      "failed": 6,
+      "passed": 160
+    }
+  }
+]

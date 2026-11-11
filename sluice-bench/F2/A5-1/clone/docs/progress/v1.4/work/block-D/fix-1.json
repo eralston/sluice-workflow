@@ -1,0 +1,22 @@
+{
+  "item": "block-D",
+  "role": "fixer",
+  "round": 1,
+  "verdict": "done",
+  "summary": "Fixed both audit Minors and the three Nits.",
+  "findings": [
+    {"id": 1, "severity": "Minor", "action": "fixed", "how": "formationSides (chart/labelTiers.ts) now takes each member's signed offset from the crew's own line: principal axis through the mean, its angle snapped to D3's 15 degree steps (the zigzag of staggered members otherwise tilts the fit and shrinks the offsets), normal pointing right for v and down for h. Added a labelTiers unit case for lines at 15 and 60 degrees (neighbours alternate). Existing straight-line cases unchanged. Not checked in the app."},
+    {"id": 2, "severity": "Minor", "action": "fixed", "how": "tests/README.md: formationBounds, formationCorridor and solar-dense (D2) added to the maneuvers row; solar-dense (D1 formation plates) and the formation-sides note added to the labelTiers/labels row."},
+    {"id": 3, "severity": "Nit", "action": "fixed", "how": "docs/08 D2 bullet reworded: the board is scale- and camera-free; the spacing follows the station's drawn size."},
+    {"id": 4, "severity": "Nit", "action": "fixed", "how": "powerLink.ts header comment now says the default side and names D2 and D3 (far end, other axis, turned line)."},
+    {"id": 5, "severity": "Nit", "action": "fixed", "how": "docs/15 Merge formation row now names formationSpots.ts for APPROVER_STEP, APPROVER_OUT."}
+  ],
+  "checks": [
+    {"cmd": "npm run -s typecheck", "pass": true},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "after removing the auditor's scratch probe-tilt-sides.mjs, which failed no-undef on console"},
+    {"cmd": "npx vitest run labelTiers docTables formationCorridor formationBounds", "pass": true, "detail": "77 passed"}
+  ],
+  "files": ["src/renderer/src/chart/labelTiers.ts", "tests/unit/labelTiers.test.ts", "tests/README.md", "docs/08-layout-solver.md", "docs/15-reference.md", "src/renderer/src/theme/starChart/maneuvers/powerLink.ts", "docs/progress/v1.4/work/block-D/probe-tilt-sides.mjs (deleted)"],
+  "deviations": ["Deleted the audit's scratch probe-tilt-sides.mjs because it broke the lint gate."],
+  "limitations": ["The snap assumes lines on D3's 15 degree grid (theta0 is axis-aligned); e2e solar-dense not re-run this round."]
+}

@@ -1,0 +1,19 @@
+{
+  "item": "F2",
+  "arm": "check",
+  "run": null,
+  "start": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "commit": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "base": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "startedAt": "2026-11-09T15:16:06.641Z",
+  "clone": "/Users/amorgan/sluice-bench/F2/check-start/clone",
+  "lockHash": "a979ce9326d1",
+  "userSettingsHash": "eb70016eb1ab18db",
+  "models": {
+    "opus": "claude-opus-5-5",
+    "sonnet": "claude-sonnet-5-5",
+    "haiku": "claude-haiku-5-5"
+  },
+  "node": "v24.22.1",
+  "tz": "UTC"
+}

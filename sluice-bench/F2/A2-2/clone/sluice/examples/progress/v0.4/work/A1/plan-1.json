@@ -1,0 +1,4 @@
+{ "item": "A1", "role": "planner", "round": 1, "model_tier": "large", "effort": "high",
+  "verdict": "planned", "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 0, "acceptance": 0, "track": 1, "sum": 3 },
+  "needs": null, "summary": "Missing ids collected in ScopeHistory; Retry refetches only those; line reserved." }

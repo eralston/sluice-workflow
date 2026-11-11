@@ -1,0 +1,18 @@
+{
+  "item": "E3",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "summary": "Both acceptance lines hold: the gallery cell loops in full and reduced motion with no console errors, and the 15 §7 row passes docTables. I watched the cell myself: a half-weight mining beam goes from Juno Achterberg's captain to the Story's asteroid, replaying PR 21001 (stills are in the work folder). One Minor: the 15 §7 row says 'Hero blue' for an At-rest blue ring. One Nit: the demo replays a first merge.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 1 },
+  "checks": [
+    { "cmd": "npx vitest run maneuvers commands docTables pacingCandidates pacingBuilt solarSeek rulebook", "pass": true, "detail": "173 passed" },
+    { "cmd": "npm run -s typecheck; npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test", "pass": true, "detail": "102 files, 1503 passed" },
+    { "cmd": "npm run e2e:spec -- gallery-assets", "pass": true, "detail": "4 passed; 17 rules, agent.progress present, full and reduced motion, no console errors" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "scratchpad Playwright probe of maneuvers:agent.progress", "pass": true, "detail": "the gather ring is on the captain, a half-weight mining beam goes to an asteroid, PR 21001 in Harbor Pod; no console errors; stills are review-1-still-gather.png and review-1-still-act.png" }
+  ]
+}

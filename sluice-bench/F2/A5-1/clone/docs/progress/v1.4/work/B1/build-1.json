@@ -1,0 +1,29 @@
+{ "item": "B1", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Every plate rests at T4 Sky and rises to its own tier when pointed, selected, followed, expanded, cast or acting; lines 1-3 pass, line 4 stays soft and red (option A), numbers in 09 section 7.",
+  "checks": [
+    {"cmd": "npm run typecheck; npm run lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test", "pass": true, "detail": "96 files, 1417 tests, incl. new raisedTier/ownTier cases in labelTiers.test.ts"},
+    {"cmd": "npm run e2e:spec -- demo solar solar-dense slice1 gallery-v1", "pass": true, "detail": "74 passed, incl. the new Pulsar rest/point/select case in demo.spec.ts"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "GALLERY_FAMILY=labels npm run e2e:spec -- gallery-v1", "pass": true, "detail": "1 passed"},
+    {"cmd": "npm run e2e:spec -- perf (before and after)", "pass": false, "detail": "Soft Pulsar p95 assertions red both times, as expected under option A. Vsync 16.7 ms, budget 35.4 ms. p50/p95 before then after: rest 32.4/34.3 then 33.2/34.2; 1x 33.3/50.0 then 33.3/50.0; 4x 33.4/50.1 then 33.3/50.1; seek p95 196.6 then 203.8. No movement. Recorded in 09 section 7."}
+  ],
+  "files": [
+    "src/renderer/src/chart/labelTiers.ts", "src/renderer/src/chart/labels.ts", "src/renderer/src/chart/holo/holoLabel.ts",
+    "src/renderer/src/chart/holo/holo.css", "src/renderer/src/gallery/labelHierarchy.ts",
+    "tests/unit/labelTiers.test.ts", "tests/e2e/demo.spec.ts", "tests/e2e/solar.spec.ts", "tests/e2e/solar-dense.spec.ts", "tests/e2e/perf.spec.ts",
+    "docs/13-game-design.md", "docs/06-visual-brief.md", "docs/15-reference.md", "docs/09-signal-ladder.md",
+    "docs/progress/v1.4/work/B1/stills.ts", "docs/progress/v1.4/work/B1/pulsar-rest.png", "docs/progress/v1.4/work/B1/pulsar-playing.png"
+  ],
+  "deviations": [
+    "Amends R1 (13 section 1) and 15 section 6 (prose, three rows, the standby-dim row in section 10) as the packet says; 06 section 9 gets the same sentence.",
+    "solar-dense attention case: a plate whose rows are open (is-expanded) is exempt from the rests-at-sky check. During play a seat plate (Nova Vash) legitimately expands and reads place, because expanded is a raising flag in the packet's rule. Acting captains are checked before the note rule, since an acting captain's plate also carries a .holo__note.",
+    "perf.spec.ts had no 'until B1' comment; I added one comment above the soft assertion saying the hard budget is C3.",
+    "The new demo case checks the captain's frame by counting .holo[data-holo-tier=lead].is-hover (at least one), not by pairing frame to plate."
+  ],
+  "limitations": [
+    "Line 4 (Pulsar p95 within 2 vsyncs) is not met, by the human's option A. Hard budget is item C3.",
+    "At rest, quiet and active galaxies look alike (T4); show at the final check.",
+    "Stills pulsar-rest.png and pulsar-playing.png are in the work folder; the drive window is visible, so they show the plates' look, not frame timing."
+  ] }

@@ -1,0 +1,29 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "When the summoner's next sortie is waiting, the pass doesn't carry on to it as Decided requires (\"its next sortie if one is waiting (E4's P4)\"). It always flies home to its layout rest and stops there, and nearWaits now drops the P4 wait for passing rules, so the stop-and-go just moves from the spot to the ship's home.",
+      "evidence": "movers.ts:347 `const home = this.scene.goalOf(this.pk) ?? this.start;` with passPoint ending at rest (`hermite(spot, ..., home, zero, ...)`, movers.ts:263); maneuvers.ts:834 `if (passing(m)) continue; // a passing ship never waits`; crewBusy/nearStartMs (maneuvers.ts:141,332) start the next gather at leaveMs = the moment the pass reaches home. A read-only probe over every fixture pod (scheduleOf + planOf, directed) found {total: 62, near: 33}: 33 of 62 summons (all in Meteor Pod, F1's bulk-PR run) have the same captain's next flying turn (another facility.enter) setting off 0–998 ms after the pass lands at home. The unit test encodes the gap instead of catching it: maneuvers.test.ts `expect(nearWaits([enter, next]).get(enter)).toBeUndefined()`."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The summoner's plate is whole and still for only 760 ms, because passTimes fits the unfurl and the fold inside NOTE_MIN_MS. The project's convention is that neither animation counts toward a read minimum, and the user already judged 1 s too short (R14: held long enough to read). The solar-dense check on that minimum now skips passes.",
+      "evidence": "maneuvers.ts:95 `closeMs: openMs + NOTE_MIN_MS - CREW_FOLD_MS` with NOTE_MIN_MS = 1800 and CREW_FOLD_MS = 520 (maneuvers.ts:42,60), so the plate is whole from 715+520 = 1235 to 1995 ms; maneuvers.ts:52-57 says 'Neither animation counts toward either minimum ... (the user's second look: 1 s after the work read too short)'; tests/e2e/solar-dense.spec.ts: `const whole = seen.filter((e) => !passes.includes(e));`"
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "13 §6.1's new Call blip row calls the ring 'closing 0.7 → 1.6', but the code grows it from 0.7 to 1.6 (the same doc calls the matching station ring 'expanding').",
+      "evidence": "docs/13-game-design.md (§6.1 Call blip row): 'One ring on the summoner, closing 0.7 → 1.6 of twice its radius'; stationJumpIn.ts:18 `cmd.ring({ at, r: r * 0.7, r1: r * 1.6, ... })` (r < r1); 13 §6 Station jump-in row: 'an expanding ring in hero blue, the blip's shape'"
+    }
+  ],
+  "acceptance": {
+    "1": "met (not run): the gallery-assets spec adds a jump-in cell test in full and reduced motion with loops, stuck and console-error asserts; reduced motion skips the pursue (snap) and the blip plays at the ship's live place",
+    "2": "met: commands.test.ts checks holdS 0, no waitS, rideS = NOTE_MIN_MS, the gather ending at the act within 50 ms, the blip and arrival rings matching in the act, and passPoint never at rest between legs; it passes",
+    "3": "met: the 15 §7 row (2515, new text) and the 15 §10/E1 audit rows are updated, docTables passes, and the director golden moved (estimates down, Quasar's speed re-fit 1.9→1.8); whether the packet names each change can't be checked from the stripped record",
+    "4": "met: pacing-ledger.md has F2 and F2+ Built rows on all seven pods (Meteor saves 34.3 s before speed; F2+ Pulsar costs 1.8 s, which the test allows)"
+  },
+  "summary": "The pass is cleanly built: a C1 Hermite path through the spot, one call blip matched in hue and shape to the arrival ring at the act's start, pass crew times threaded through the planner, interpreter and gallery, and docs, 15 rows, goldens and ledger kept in step, with the tests and typecheck passing. Its main gap is the Decided paragraph's 'next sortie if one is waiting': the ship always returns home and the P4 wait is dropped, so in the bulk-PR fixture half the summons still stop and go, at home instead of at the spot."
+}

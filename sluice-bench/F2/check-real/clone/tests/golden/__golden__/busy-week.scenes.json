@@ -1,0 +1,4580 @@
+[
+ {
+  "scope": {
+   "project": "Larkspur",
+   "area": "Larkspur\\Gale Team"
+  },
+  "sole": "wi:00000000-0000-4000-8000-000000000001:1001",
+  "beats": [
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1021:r3"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1015:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+   ],
+   [
+    "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1012:r4"
+   ],
+   [
+    "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+   ],
+   [
+    "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1011:u4:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1016:r3"
+   ],
+   [
+    "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+    "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1022:r3"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1023:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+   ],
+   [
+    "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+   ],
+   [
+    "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1013:r4"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1024:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+   ],
+   [
+    "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1012:u5:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1015:r4"
+   ],
+   [
+    "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1021:r4"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1016:r4"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1001:r14"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1023:r4"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1021:r5"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+   ],
+   [
+    "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+   ],
+   [
+    "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1014:r4"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1022:r4"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1022:r5"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1017:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1024:r4"
+   ],
+   [
+    "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1015:r5"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1000:r3"
+   ]
+  ],
+  "scenes": [
+   {
+    "scene": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51",
+    "inView": [
+     "area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51",
+     "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "wi:00000000-0000-4000-8000-000000000001:1001",
+     "wi:00000000-0000-4000-8000-000000000001:1011",
+     "wi:00000000-0000-4000-8000-000000000001:1012",
+     "wi:00000000-0000-4000-8000-000000000001:1013",
+     "wi:00000000-0000-4000-8000-000000000001:1014",
+     "wi:00000000-0000-4000-8000-000000000001:1015",
+     "wi:00000000-0000-4000-8000-000000000001:1016",
+     "wi:00000000-0000-4000-8000-000000000001:1017",
+     "wi:00000000-0000-4000-8000-000000000001:1021",
+     "wi:00000000-0000-4000-8000-000000000001:1022",
+     "wi:00000000-0000-4000-8000-000000000001:1023",
+     "wi:00000000-0000-4000-8000-000000000001:1024"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+     ],
+     [
+      "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+      "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1001:r14"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1001",
+        "kind": "star",
+        "stage": "feature.active",
+        "x": 0,
+        "y": 0,
+        "r": 96,
+        "label": "Storm alert feed",
+        "meta": "Feature · #1001 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": -90,
+        "y": 130,
+        "r": 22,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 90,
+        "y": 130,
+        "r": 22,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": -128,
+        "y": 156,
+        "r": 22,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 128,
+        "y": 156,
+        "r": 22,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -166,
+        "y": 182,
+        "r": 22,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 166,
+        "y": 182,
+        "r": 22,
+        "label": "County and ZIP picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 260,
+        "r": 22,
+        "label": "Quiet hours for alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": -204,
+        "y": 208,
+        "r": 22,
+        "label": "Duplicate push on reconnect",
+        "meta": "Bug · #1021 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 204,
+        "y": 208,
+        "r": 22,
+        "label": "Overlay flickers on zoom",
+        "meta": "Bug · #1022 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": -242,
+        "y": 234,
+        "r": 22,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": 242,
+        "y": 234,
+        "r": 22,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1001",
+        "kind": "star",
+        "stage": "feature.accept",
+        "x": 0,
+        "y": 0,
+        "r": 96,
+        "label": "Storm alert feed",
+        "meta": "Feature · #1001 · Ready to Accept",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.lush",
+        "x": -90,
+        "y": 130,
+        "r": 22,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Closed",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 90,
+        "y": 130,
+        "r": 22,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Resolved",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": -128,
+        "y": 156,
+        "r": 22,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Resolved",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 128,
+        "y": 156,
+        "r": 22,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -166,
+        "y": 182,
+        "r": 22,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 166,
+        "y": 182,
+        "r": 22,
+        "label": "County picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 260,
+        "r": 22,
+        "label": "Quiet hours for storm alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": -204,
+        "y": 208,
+        "r": 22,
+        "label": "Duplicate push after reconnect",
+        "meta": "Bug · #1021 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 204,
+        "y": 208,
+        "r": 22,
+        "label": "Overlay flickers while zooming",
+        "meta": "Bug · #1022 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": -242,
+        "y": 234,
+        "r": 22,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 242,
+        "y": 234,
+        "r": 22,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "wi:00000000-0000-4000-8000-000000000001:1001",
+     "wi:00000000-0000-4000-8000-000000000001:1011",
+     "wi:00000000-0000-4000-8000-000000000001:1012",
+     "wi:00000000-0000-4000-8000-000000000001:1013",
+     "wi:00000000-0000-4000-8000-000000000001:1014",
+     "wi:00000000-0000-4000-8000-000000000001:1015",
+     "wi:00000000-0000-4000-8000-000000000001:1016",
+     "wi:00000000-0000-4000-8000-000000000001:1017",
+     "wi:00000000-0000-4000-8000-000000000001:1021",
+     "wi:00000000-0000-4000-8000-000000000001:1022",
+     "wi:00000000-0000-4000-8000-000000000001:1023",
+     "wi:00000000-0000-4000-8000-000000000001:1024"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+     ],
+     [
+      "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+      "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1001:r14"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 273,
+        "y": 864,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": -3021,
+        "y": 4234,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+        "kind": "flight",
+        "stage": "flight.active",
+        "x": -3065,
+        "y": 4360,
+        "r": 48,
+        "label": "Warning overlay layer",
+        "meta": "PR · #9502 · active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+        "kind": "flight",
+        "stage": "flight.active",
+        "x": 3065,
+        "y": 4360,
+        "r": 48,
+        "label": "Subscription endpoints",
+        "meta": "PR · #9501 · active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "station",
+        "stage": "station.active",
+        "x": -3065,
+        "y": 5600,
+        "r": 150,
+        "label": "gale-web",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 3065,
+        "y": 5600,
+        "r": 150,
+        "label": "gale-api",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1001",
+        "kind": "star",
+        "stage": "feature.active",
+        "x": 0,
+        "y": 0,
+        "r": 240,
+        "label": "Storm alert feed",
+        "meta": "Feature · #1001 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 2159,
+        "y": 2957,
+        "r": 123,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 300,
+        "y": 2059,
+        "r": 127,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 273,
+        "y": 1231,
+        "r": 129,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 310,
+        "y": 3144,
+        "r": 125,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -2159,
+        "y": 2957,
+        "r": 130,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -1546,
+        "y": 3052,
+        "r": 116,
+        "label": "County and ZIP picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -2765,
+        "y": 2828,
+        "r": 129,
+        "label": "Quiet hours for alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 1546,
+        "y": 3052,
+        "r": 110,
+        "label": "Duplicate push on reconnect",
+        "meta": "Bug · #1021 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 929,
+        "y": 3114,
+        "r": 111,
+        "label": "Overlay flickers on zoom",
+        "meta": "Bug · #1022 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": -929,
+        "y": 3114,
+        "r": 112,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": -310,
+        "y": 3144,
+        "r": 109,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": -999,
+        "y": 718,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 300,
+        "y": 1627,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+        "kind": "flight",
+        "stage": "flight.completed",
+        "x": -3065,
+        "y": 4353,
+        "r": 48,
+        "label": "Warning overlay layer",
+        "meta": "PR · #9502 · completed",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+        "kind": "flight",
+        "stage": "flight.completed",
+        "x": 3065,
+        "y": 4353,
+        "r": 48,
+        "label": "Subscription endpoints",
+        "meta": "PR · #9501 · completed",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "station",
+        "stage": "station.active",
+        "x": -3065,
+        "y": 5600,
+        "r": 150,
+        "label": "gale-web",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 3065,
+        "y": 5600,
+        "r": 150,
+        "label": "gale-api",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1001",
+        "kind": "star",
+        "stage": "feature.accept",
+        "x": 0,
+        "y": 0,
+        "r": 240,
+        "label": "Storm alert feed",
+        "meta": "Feature · #1001 · Ready to Accept",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.lush",
+        "x": 2679,
+        "y": 2849,
+        "r": 74,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Closed",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 1141,
+        "y": 1984,
+        "r": 127,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Resolved",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 1033,
+        "y": 1126,
+        "r": 129,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Resolved",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 300,
+        "y": 2059,
+        "r": 125,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -999,
+        "y": 1133,
+        "r": 130,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -1365,
+        "y": 3073,
+        "r": 116,
+        "label": "County picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -1979,
+        "y": 2989,
+        "r": 129,
+        "label": "Quiet hours for storm alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 2035,
+        "y": 2979,
+        "r": 110,
+        "label": "Duplicate push after reconnect",
+        "meta": "Bug · #1021 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 1422,
+        "y": 3067,
+        "r": 111,
+        "label": "Overlay flickers while zooming",
+        "meta": "Bug · #1022 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 765,
+        "y": 3125,
+        "r": 112,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 145,
+        "y": 3147,
+        "r": 109,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1011",
+    "inView": [
+     "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "wi:00000000-0000-4000-8000-000000000001:1011"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1011",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+        "kind": "flight",
+        "stage": "flight.active",
+        "x": 0,
+        "y": 940,
+        "r": 64,
+        "label": "Subscription endpoints",
+        "meta": "PR · #9501 · active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 0,
+        "y": 1650,
+        "r": 170,
+        "label": "gale-api",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Resolved",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|body:wi:00000000-0000-4000-8000-000000000001:1011|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|body:wi:00000000-0000-4000-8000-000000000001:1011|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "route",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1011",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+        "kind": "flight",
+        "stage": "flight.completed",
+        "x": 0,
+        "y": 940,
+        "r": 64,
+        "label": "Subscription endpoints",
+        "meta": "PR · #9501 · completed",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 0,
+        "y": 1650,
+        "r": 170,
+        "label": "gale-api",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.lush",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Closed",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|body:wi:00000000-0000-4000-8000-000000000001:1011|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|body:wi:00000000-0000-4000-8000-000000000001:1011|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "route",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1012",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "wi:00000000-0000-4000-8000-000000000001:1012"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1012",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 143,
+        "y": 940,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+        "kind": "flight",
+        "stage": "flight.active",
+        "x": 0,
+        "y": 940,
+        "r": 64,
+        "label": "Warning overlay layer",
+        "meta": "PR · #9502 · active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 0,
+        "y": 1650,
+        "r": 170,
+        "label": "gale-web",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|body:wi:00000000-0000-4000-8000-000000000001:1012|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|body:wi:00000000-0000-4000-8000-000000000001:1012|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "route",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1012",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 143,
+        "y": 940,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+        "kind": "flight",
+        "stage": "flight.completed",
+        "x": 0,
+        "y": 940,
+        "r": 64,
+        "label": "Warning overlay layer",
+        "meta": "PR · #9502 · completed",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 0,
+        "y": 1650,
+        "r": 170,
+        "label": "gale-web",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Resolved",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|body:wi:00000000-0000-4000-8000-000000000001:1012|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|body:wi:00000000-0000-4000-8000-000000000001:1012|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "route",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1013",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "wi:00000000-0000-4000-8000-000000000001:1013"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1013",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1013|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1013|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1013",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1013|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1013|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Resolved",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1014",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "wi:00000000-0000-4000-8000-000000000001:1014"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1014",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1014|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1014",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1014|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1014|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1015",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "wi:00000000-0000-4000-8000-000000000001:1015"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1015",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1015|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1015",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1015|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1015|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1016",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1016"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1016",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1016|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "County and ZIP picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1016",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1016|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "County picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1017",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1017"
+    ],
+    "highlights": [
+     [
+      "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+      "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1017",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1017|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Quiet hours for alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1017",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1017|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Quiet hours for storm alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1021",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1021"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1021",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1021|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Duplicate push on reconnect",
+        "meta": "Bug · #1021 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1021",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1021|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Duplicate push after reconnect",
+        "meta": "Bug · #1021 · Resolved",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1022",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1022"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1022",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1022|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Overlay flickers on zoom",
+        "meta": "Bug · #1022 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1022",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1022|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Overlay flickers while zooming",
+        "meta": "Bug · #1022 · Resolved",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1023",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1023"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1023",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1023|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1023",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1023|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1024",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1024"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1024",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1024|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1024",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1024|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   }
+  ],
+  "follow": [
+   {
+    "captain": "id:00000000-0000-4000-8000-000000000001:17203383-1620-41f0-8920-36a918203516",
+    "anchors": [],
+    "story": [
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789596000000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "PR 9501 completed (merged)"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789747200000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "PR 9502 completed (merged)"
+     }
+    ]
+   },
+   {
+    "captain": "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+    "anchors": [
+     {
+      "eventKey": "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789423200000,
+      "kind": "pr",
+      "body": null,
+      "outside": false,
+      "text": "PR 9501 opened by Ivy Castellan · Subscription endpoints"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1013:r4",
+      "atUtc": 1789579800000,
+      "kind": "assignment",
+      "body": "wi:00000000-0000-4000-8000-000000000001:1013",
+      "outside": false,
+      "text": "Ivy Castellan assigned to User Story #1013"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1015:r5",
+      "atUtc": 1789840800000,
+      "kind": "assignment",
+      "body": "wi:00000000-0000-4000-8000-000000000001:1015",
+      "outside": false,
+      "text": "Ivy Castellan assigned to User Story #1015"
+     }
+    ],
+    "story": [
+     {
+      "eventKey": "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789423200000,
+      "stage": null,
+      "item": null,
+      "outside": false,
+      "text": "PR 9501 opened by Ivy Castellan · Subscription endpoints"
+     },
+     {
+      "eventKey": "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1011:u4:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+      "atUtc": 1789493400000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "PR 9501 linked to User Story #1011"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1013:r4",
+      "atUtc": 1789579800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1013",
+      "outside": false,
+      "text": "Ivy Castellan assigned to User Story #1013"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789596000000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "PR 9501 completed (merged)"
+     },
+     {
+      "eventKey": "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5",
+      "atUtc": 1789682400000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1013",
+      "outside": false,
+      "text": "User Story #1013 Active → Resolved"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789747200000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "PR 9502 completed (merged)"
+     },
+     {
+      "eventKey": "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6",
+      "atUtc": 1789758000000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "User Story #1011 Resolved → Closed"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1015:r5",
+      "atUtc": 1789840800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1015",
+      "outside": false,
+      "text": "Ivy Castellan assigned to User Story #1015"
+     }
+    ]
+   },
+   {
+    "captain": "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+    "anchors": [
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1012:r4",
+      "atUtc": 1789417800000,
+      "kind": "assignment",
+      "body": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "Tomas Ferreira assigned to User Story #1012"
+     },
+     {
+      "eventKey": "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789574400000,
+      "kind": "pr",
+      "body": null,
+      "outside": false,
+      "text": "PR 9502 opened by Tomas Ferreira · Warning overlay layer"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1014:r4",
+      "atUtc": 1789752600000,
+      "kind": "assignment",
+      "body": "wi:00000000-0000-4000-8000-000000000001:1014",
+      "outside": false,
+      "text": "Tomas Ferreira assigned to User Story #1014"
+     }
+    ],
+    "story": [
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1012:r4",
+      "atUtc": 1789417800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "Tomas Ferreira assigned to User Story #1012"
+     },
+     {
+      "eventKey": "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789574400000,
+      "stage": null,
+      "item": null,
+      "outside": false,
+      "text": "PR 9502 opened by Tomas Ferreira · Warning overlay layer"
+     },
+     {
+      "eventKey": "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1012:u5:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+      "atUtc": 1789590600000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "PR 9502 linked to User Story #1012"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789596000000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "PR 9501 completed (merged)"
+     },
+     {
+      "eventKey": "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6",
+      "atUtc": 1789660800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "User Story #1012 Active → Resolved"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789747200000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "PR 9502 completed (merged)"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1014:r4",
+      "atUtc": 1789752600000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1014",
+      "outside": false,
+      "text": "Tomas Ferreira assigned to User Story #1014"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "scope": {
+   "project": "Larkspur",
+   "epic": 1000
+  },
+  "sole": "wi:00000000-0000-4000-8000-000000000001:1001",
+  "beats": [
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1021:r3"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1015:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+   ],
+   [
+    "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1012:r4"
+   ],
+   [
+    "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+   ],
+   [
+    "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1011:u4:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1016:r3"
+   ],
+   [
+    "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+    "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1022:r3"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1023:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+   ],
+   [
+    "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+   ],
+   [
+    "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1013:r4"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1024:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+   ],
+   [
+    "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1012:u5:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1015:r4"
+   ],
+   [
+    "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1021:r4"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1016:r4"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1001:r14"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1023:r4"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1021:r5"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+   ],
+   [
+    "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+   ],
+   [
+    "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1014:r4"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1022:r4"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1022:r5"
+   ],
+   [
+    "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1017:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1024:r4"
+   ],
+   [
+    "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1015:r5"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1000:r3"
+   ]
+  ],
+  "scenes": [
+   {
+    "scene": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "wi:00000000-0000-4000-8000-000000000001:1000",
+     "wi:00000000-0000-4000-8000-000000000001:1001",
+     "wi:00000000-0000-4000-8000-000000000001:1011",
+     "wi:00000000-0000-4000-8000-000000000001:1012",
+     "wi:00000000-0000-4000-8000-000000000001:1013",
+     "wi:00000000-0000-4000-8000-000000000001:1014",
+     "wi:00000000-0000-4000-8000-000000000001:1015",
+     "wi:00000000-0000-4000-8000-000000000001:1016",
+     "wi:00000000-0000-4000-8000-000000000001:1017",
+     "wi:00000000-0000-4000-8000-000000000001:1021",
+     "wi:00000000-0000-4000-8000-000000000001:1022",
+     "wi:00000000-0000-4000-8000-000000000001:1023",
+     "wi:00000000-0000-4000-8000-000000000001:1024"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+     ],
+     [
+      "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+      "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1001:r14"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1001",
+        "kind": "star",
+        "stage": "feature.active",
+        "x": 0,
+        "y": 0,
+        "r": 96,
+        "label": "Storm alert feed",
+        "meta": "Feature · #1001 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": -90,
+        "y": 130,
+        "r": 22,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 90,
+        "y": 130,
+        "r": 22,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": -128,
+        "y": 156,
+        "r": 22,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 128,
+        "y": 156,
+        "r": 22,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -166,
+        "y": 182,
+        "r": 22,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 166,
+        "y": 182,
+        "r": 22,
+        "label": "County and ZIP picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 260,
+        "r": 22,
+        "label": "Quiet hours for alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": -204,
+        "y": 208,
+        "r": 22,
+        "label": "Duplicate push on reconnect",
+        "meta": "Bug · #1021 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 204,
+        "y": 208,
+        "r": 22,
+        "label": "Overlay flickers on zoom",
+        "meta": "Bug · #1022 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": -242,
+        "y": 234,
+        "r": 22,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": 242,
+        "y": 234,
+        "r": 22,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1001",
+        "kind": "star",
+        "stage": "feature.accept",
+        "x": 0,
+        "y": 0,
+        "r": 96,
+        "label": "Storm alert feed",
+        "meta": "Feature · #1001 · Ready to Accept",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.lush",
+        "x": -90,
+        "y": 130,
+        "r": 22,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Closed",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 90,
+        "y": 130,
+        "r": 22,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Resolved",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": -128,
+        "y": 156,
+        "r": 22,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Resolved",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 128,
+        "y": 156,
+        "r": 22,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -166,
+        "y": 182,
+        "r": 22,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 166,
+        "y": 182,
+        "r": 22,
+        "label": "County picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 260,
+        "r": 22,
+        "label": "Quiet hours for storm alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": -204,
+        "y": 208,
+        "r": 22,
+        "label": "Duplicate push after reconnect",
+        "meta": "Bug · #1021 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 204,
+        "y": 208,
+        "r": 22,
+        "label": "Overlay flickers while zooming",
+        "meta": "Bug · #1022 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": -242,
+        "y": 234,
+        "r": 22,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 242,
+        "y": 234,
+        "r": 22,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:epic:wi:00000000-0000-4000-8000-000000000001:1000|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "wi:00000000-0000-4000-8000-000000000001:1001",
+     "wi:00000000-0000-4000-8000-000000000001:1011",
+     "wi:00000000-0000-4000-8000-000000000001:1012",
+     "wi:00000000-0000-4000-8000-000000000001:1013",
+     "wi:00000000-0000-4000-8000-000000000001:1014",
+     "wi:00000000-0000-4000-8000-000000000001:1015",
+     "wi:00000000-0000-4000-8000-000000000001:1016",
+     "wi:00000000-0000-4000-8000-000000000001:1017",
+     "wi:00000000-0000-4000-8000-000000000001:1021",
+     "wi:00000000-0000-4000-8000-000000000001:1022",
+     "wi:00000000-0000-4000-8000-000000000001:1023",
+     "wi:00000000-0000-4000-8000-000000000001:1024"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+     ],
+     [
+      "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+      "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1001:r14"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 273,
+        "y": 864,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": -3021,
+        "y": 4234,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+        "kind": "flight",
+        "stage": "flight.active",
+        "x": -3065,
+        "y": 4360,
+        "r": 48,
+        "label": "Warning overlay layer",
+        "meta": "PR · #9502 · active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+        "kind": "flight",
+        "stage": "flight.active",
+        "x": 3065,
+        "y": 4360,
+        "r": 48,
+        "label": "Subscription endpoints",
+        "meta": "PR · #9501 · active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "station",
+        "stage": "station.active",
+        "x": -3065,
+        "y": 5600,
+        "r": 150,
+        "label": "gale-web",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 3065,
+        "y": 5600,
+        "r": 150,
+        "label": "gale-api",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1001",
+        "kind": "star",
+        "stage": "feature.active",
+        "x": 0,
+        "y": 0,
+        "r": 240,
+        "label": "Storm alert feed",
+        "meta": "Feature · #1001 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 2159,
+        "y": 2957,
+        "r": 123,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 300,
+        "y": 2059,
+        "r": 127,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 273,
+        "y": 1231,
+        "r": 129,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 310,
+        "y": 3144,
+        "r": 125,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -2159,
+        "y": 2957,
+        "r": 130,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -1546,
+        "y": 3052,
+        "r": 116,
+        "label": "County and ZIP picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -2765,
+        "y": 2828,
+        "r": 129,
+        "label": "Quiet hours for alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 1546,
+        "y": 3052,
+        "r": 110,
+        "label": "Duplicate push on reconnect",
+        "meta": "Bug · #1021 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 929,
+        "y": 3114,
+        "r": 111,
+        "label": "Overlay flickers on zoom",
+        "meta": "Bug · #1022 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": -929,
+        "y": 3114,
+        "r": 112,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": -310,
+        "y": 3144,
+        "r": 109,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": -999,
+        "y": 718,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 300,
+        "y": 1627,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+        "kind": "flight",
+        "stage": "flight.completed",
+        "x": -3065,
+        "y": 4353,
+        "r": 48,
+        "label": "Warning overlay layer",
+        "meta": "PR · #9502 · completed",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+        "kind": "flight",
+        "stage": "flight.completed",
+        "x": 3065,
+        "y": 4353,
+        "r": 48,
+        "label": "Subscription endpoints",
+        "meta": "PR · #9501 · completed",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "station",
+        "stage": "station.active",
+        "x": -3065,
+        "y": 5600,
+        "r": 150,
+        "label": "gale-web",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 3065,
+        "y": 5600,
+        "r": 150,
+        "label": "gale-api",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1001",
+        "kind": "star",
+        "stage": "feature.accept",
+        "x": 0,
+        "y": 0,
+        "r": 240,
+        "label": "Storm alert feed",
+        "meta": "Feature · #1001 · Ready to Accept",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.lush",
+        "x": 2679,
+        "y": 2849,
+        "r": 74,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Closed",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 1141,
+        "y": 1984,
+        "r": 127,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Resolved",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 1033,
+        "y": 1126,
+        "r": 129,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Resolved",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 300,
+        "y": 2059,
+        "r": 125,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -999,
+        "y": 1133,
+        "r": 130,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -1365,
+        "y": 3073,
+        "r": 116,
+        "label": "County picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": -1979,
+        "y": 2989,
+        "r": 129,
+        "label": "Quiet hours for storm alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 2035,
+        "y": 2979,
+        "r": 110,
+        "label": "Duplicate push after reconnect",
+        "meta": "Bug · #1021 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 1422,
+        "y": 3067,
+        "r": 111,
+        "label": "Overlay flickers while zooming",
+        "meta": "Bug · #1022 · Resolved",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 765,
+        "y": 3125,
+        "r": 112,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 145,
+        "y": 3147,
+        "r": 109,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1011",
+    "inView": [
+     "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "wi:00000000-0000-4000-8000-000000000001:1011"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1011",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+        "kind": "flight",
+        "stage": "flight.active",
+        "x": 0,
+        "y": 940,
+        "r": 64,
+        "label": "Subscription endpoints",
+        "meta": "PR · #9501 · active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 0,
+        "y": 1650,
+        "r": 170,
+        "label": "gale-api",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Resolved",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|body:wi:00000000-0000-4000-8000-000000000001:1011|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|body:wi:00000000-0000-4000-8000-000000000001:1011|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "route",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1011",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+        "kind": "flight",
+        "stage": "flight.completed",
+        "x": 0,
+        "y": 940,
+        "r": 64,
+        "label": "Subscription endpoints",
+        "meta": "PR · #9501 · completed",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 0,
+        "y": 1650,
+        "r": 170,
+        "label": "gale-api",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1011|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "planet",
+        "stage": "story.lush",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert subscription settings",
+        "meta": "User Story · #1011 · Closed",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|body:wi:00000000-0000-4000-8000-000000000001:1011|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1011|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|body:wi:00000000-0000-4000-8000-000000000001:1011|wi:00000000-0000-4000-8000-000000000001:1011",
+        "kind": "route",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1012",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "wi:00000000-0000-4000-8000-000000000001:1012"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+     ],
+     [
+      "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+     ],
+     [
+      "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1012",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 143,
+        "y": 940,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+        "kind": "flight",
+        "stage": "flight.active",
+        "x": 0,
+        "y": 940,
+        "r": 64,
+        "label": "Warning overlay layer",
+        "meta": "PR · #9502 · active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 0,
+        "y": 1650,
+        "r": 170,
+        "label": "gale-web",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|body:wi:00000000-0000-4000-8000-000000000001:1012|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|body:wi:00000000-0000-4000-8000-000000000001:1012|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "route",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1012",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 143,
+        "y": 940,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+        "kind": "flight",
+        "stage": "flight.completed",
+        "x": 0,
+        "y": 940,
+        "r": 64,
+        "label": "Warning overlay layer",
+        "meta": "PR · #9502 · completed",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "station",
+        "stage": "station.active",
+        "x": 0,
+        "y": 1650,
+        "r": 170,
+        "label": "gale-web",
+        "meta": "Repository",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1012|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Map overlay for warnings",
+        "meta": "User Story · #1012 · Resolved",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|body:wi:00000000-0000-4000-8000-000000000001:1012|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+        "kind": "route",
+        "uncertain": false
+       },
+       {
+        "key": "body:wi:00000000-0000-4000-8000-000000000001:1012|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|body:wi:00000000-0000-4000-8000-000000000001:1012|wi:00000000-0000-4000-8000-000000000001:1012",
+        "kind": "route",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1013",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "wi:00000000-0000-4000-8000-000000000001:1013"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1013",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1013|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1013|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Active",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1013",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1013|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1013|wi:00000000-0000-4000-8000-000000000001:1013",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Push notification copy",
+        "meta": "User Story · #1013 · Resolved",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1014",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "wi:00000000-0000-4000-8000-000000000001:1014"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1014",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1014|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1014",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1014|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Tomas Ferreira",
+        "meta": "Captain · Tomas-XD",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1014|wi:00000000-0000-4000-8000-000000000001:1014",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert history page",
+        "meta": "User Story · #1014 · Active",
+        "meta2": "Tomas Ferreira",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1015",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "wi:00000000-0000-4000-8000-000000000001:1015"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1015",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1015|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1015",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1015|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Ivy Castellan",
+        "meta": "Captain · Ivy-TJ",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1015|wi:00000000-0000-4000-8000-000000000001:1015",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Severity filters",
+        "meta": "User Story · #1015 · New",
+        "meta2": "Ivy Castellan",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1016",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1016"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1016",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1016|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "County and ZIP picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1016",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1016|wi:00000000-0000-4000-8000-000000000001:1016",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "County picker",
+        "meta": "User Story · #1016 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1017",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1017"
+    ],
+    "highlights": [
+     [
+      "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+      "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1017",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1017|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Quiet hours for alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1017",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1017|wi:00000000-0000-4000-8000-000000000001:1017",
+        "kind": "planet",
+        "stage": "story.uncharted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Quiet hours for storm alerts",
+        "meta": "User Story · #1017 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1021",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1021"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1021",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1021|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Duplicate push on reconnect",
+        "meta": "Bug · #1021 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1021",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1021|wi:00000000-0000-4000-8000-000000000001:1021",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Duplicate push after reconnect",
+        "meta": "Bug · #1021 · Resolved",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1022",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1022"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1022",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1022|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Overlay flickers on zoom",
+        "meta": "Bug · #1022 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1022",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1022|wi:00000000-0000-4000-8000-000000000001:1022",
+        "kind": "anomaly",
+        "stage": "bug.contracted",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Overlay flickers while zooming",
+        "meta": "Bug · #1022 · Resolved",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1023",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1023"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1023",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1023|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1023",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1023|wi:00000000-0000-4000-8000-000000000001:1023",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Wrong county for some ZIP codes",
+        "meta": "Bug · #1023 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:1024",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:1024"
+    ],
+    "highlights": [],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1024",
+      "atUtc": 1789593300000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1024|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.detected",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · New",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:1024",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:1024|wi:00000000-0000-4000-8000-000000000001:1024",
+        "kind": "anomaly",
+        "stage": "bug.disturbance",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert times shown in UTC",
+        "meta": "Bug · #1024 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   }
+  ],
+  "follow": [
+   {
+    "captain": "id:00000000-0000-4000-8000-000000000001:17203383-1620-41f0-8920-36a918203516",
+    "anchors": [],
+    "story": [
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789596000000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "PR 9501 completed (merged)"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789747200000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "PR 9502 completed (merged)"
+     }
+    ]
+   },
+   {
+    "captain": "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+    "anchors": [
+     {
+      "eventKey": "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789423200000,
+      "kind": "pr",
+      "body": null,
+      "outside": false,
+      "text": "PR 9501 opened by Ivy Castellan · Subscription endpoints"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1013:r4",
+      "atUtc": 1789579800000,
+      "kind": "assignment",
+      "body": "wi:00000000-0000-4000-8000-000000000001:1013",
+      "outside": false,
+      "text": "Ivy Castellan assigned to User Story #1013"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1015:r5",
+      "atUtc": 1789840800000,
+      "kind": "assignment",
+      "body": "wi:00000000-0000-4000-8000-000000000001:1015",
+      "outside": false,
+      "text": "Ivy Castellan assigned to User Story #1015"
+     }
+    ],
+    "story": [
+     {
+      "eventKey": "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789423200000,
+      "stage": null,
+      "item": null,
+      "outside": false,
+      "text": "PR 9501 opened by Ivy Castellan · Subscription endpoints"
+     },
+     {
+      "eventKey": "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1011:u4:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+      "atUtc": 1789493400000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "PR 9501 linked to User Story #1011"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1013:r4",
+      "atUtc": 1789579800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1013",
+      "outside": false,
+      "text": "Ivy Castellan assigned to User Story #1013"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789596000000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "PR 9501 completed (merged)"
+     },
+     {
+      "eventKey": "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5",
+      "atUtc": 1789682400000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1013",
+      "outside": false,
+      "text": "User Story #1013 Active → Resolved"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789747200000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "PR 9502 completed (merged)"
+     },
+     {
+      "eventKey": "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6",
+      "atUtc": 1789758000000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "User Story #1011 Resolved → Closed"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1015:r5",
+      "atUtc": 1789840800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1015",
+      "outside": false,
+      "text": "Ivy Castellan assigned to User Story #1015"
+     }
+    ]
+   },
+   {
+    "captain": "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+    "anchors": [
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1012:r4",
+      "atUtc": 1789417800000,
+      "kind": "assignment",
+      "body": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "Tomas Ferreira assigned to User Story #1012"
+     },
+     {
+      "eventKey": "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789574400000,
+      "kind": "pr",
+      "body": null,
+      "outside": false,
+      "text": "PR 9502 opened by Tomas Ferreira · Warning overlay layer"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1014:r4",
+      "atUtc": 1789752600000,
+      "kind": "assignment",
+      "body": "wi:00000000-0000-4000-8000-000000000001:1014",
+      "outside": false,
+      "text": "Tomas Ferreira assigned to User Story #1014"
+     }
+    ],
+    "story": [
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1012:r4",
+      "atUtc": 1789417800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "Tomas Ferreira assigned to User Story #1012"
+     },
+     {
+      "eventKey": "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789574400000,
+      "stage": null,
+      "item": null,
+      "outside": false,
+      "text": "PR 9502 opened by Tomas Ferreira · Warning overlay layer"
+     },
+     {
+      "eventKey": "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1012:u5:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+      "atUtc": 1789590600000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "PR 9502 linked to User Story #1012"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr",
+      "atUtc": 1789596000000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1011",
+      "outside": false,
+      "text": "PR 9501 completed (merged)"
+     },
+     {
+      "eventKey": "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6",
+      "atUtc": 1789660800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "User Story #1012 Active → Resolved"
+     },
+     {
+      "eventKey": "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr",
+      "atUtc": 1789747200000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1012",
+      "outside": false,
+      "text": "PR 9502 completed (merged)"
+     },
+     {
+      "eventKey": "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1014:r4",
+      "atUtc": 1789752600000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:1001",
+      "item": "wi:00000000-0000-4000-8000-000000000001:1014",
+      "outside": false,
+      "text": "Tomas Ferreira assigned to User Story #1014"
+     }
+    ]
+   }
+  ]
+ }
+]

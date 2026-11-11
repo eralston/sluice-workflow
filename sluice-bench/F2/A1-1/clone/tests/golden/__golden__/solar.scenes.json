@@ -1,0 +1,3407 @@
+[
+ {
+  "region": "Harbor Pod",
+  "graphs": [
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+    "atUtc": "2026-09-28T07:00:00.000Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+      "kind": "star",
+      "stage": "feature.faint",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Harbor Pod",
+      "meta": "0 items",
+      "counts": {
+       "objective": 0,
+       "threat": 0,
+       "done": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1|aw=1",
+      "x": -2615,
+      "y": 0,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": -3551,
+      "y": 0,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1|aw=1",
+      "x": 0,
+      "y": 1830,
+      "r": 520,
+      "label": "Wren Calloway"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2767,
+      "r": 56,
+      "label": "Wren Calloway",
+      "meta": "Wren-I8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1|aw=1",
+      "x": 2615,
+      "y": 0,
+      "r": 520,
+      "label": "Ossian Vale"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 3551,
+      "y": 0,
+      "r": 56,
+      "label": "Ossian Vale",
+      "meta": "Ossian-QO",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1|aw=1",
+      "x": 0,
+      "y": -1830,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2766,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat": {
+      "title": "Wren Calloway",
+      "rows": [],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat": {
+      "title": "Ossian Vale",
+      "rows": [],
+      "more": 0
+     }
+    }
+   },
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+    "atUtc": "2026-10-01T19:00:00.000Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Harbor Pod",
+      "meta": "16 items",
+      "counts": {
+       "objective": 12,
+       "threat": 4,
+       "done": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00",
+      "x": -2615,
+      "y": 0,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": -3551,
+      "y": 0,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.35",
+      "x": 0,
+      "y": 1830,
+      "r": 520,
+      "label": "Wren Calloway"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2767,
+      "r": 56,
+      "label": "Wren Calloway",
+      "meta": "Wren-I8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.00",
+      "x": 2615,
+      "y": 0,
+      "r": 520,
+      "label": "Ossian Vale"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 3551,
+      "y": 0,
+      "r": 56,
+      "label": "Ossian Vale",
+      "meta": "Ossian-QO",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:7f2b0f9f-7e2b-4e0c-812b-12c5802b1132|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 222,
+      "y": 2740,
+      "r": 56,
+      "label": "Pell Ibarra",
+      "meta": "Pell-V8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.00",
+      "x": 0,
+      "y": -1830,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2766,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1",
+      "kind": "facility",
+      "asset": "facility",
+      "stage": "v1|facility|underway|c=InProgress|i=0.00|pr=2|pm=3",
+      "x": 1283,
+      "y": 898,
+      "r": 260,
+      "label": "tide-gateway",
+      "meta": "Repository",
+      "compound": {
+       "slots": [
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21000@0:underway",
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21001@1:underway"
+       ],
+       "more": 0,
+       "intensity": 0,
+       "summoner": null,
+       "guards": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20101",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=cc",
+      "x": 0,
+      "y": 1061,
+      "r": 83,
+      "label": "Tide table widget",
+      "meta": "User Story · #20101 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20102",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress|s=a",
+      "x": -203,
+      "y": 1534,
+      "r": 101,
+      "label": "Low-water warnings",
+      "meta": "User Story · #20102 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|objective",
+       "index": 1,
+       "size": 3
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20103",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": -203,
+      "y": 2127,
+      "r": 101,
+      "label": "Berth schedule export",
+      "meta": "User Story · #20103 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|objective",
+       "index": 2,
+       "size": 3
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20111",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress|s=nn",
+      "x": 2356,
+      "y": 0,
+      "r": 66,
+      "label": "Harbor master dashboard",
+      "meta": "User Story · #20111 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 0,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20112",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": 2517,
+      "y": -295,
+      "r": 66,
+      "label": "Pilot boat roster",
+      "meta": "User Story · #20112 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 1,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20113",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 2517,
+      "y": 295,
+      "r": 66,
+      "label": "Swell forecast feed",
+      "meta": "User Story · #20113 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 2,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20114",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 2291,
+      "y": -237,
+      "r": 66,
+      "label": "Mooring fee calculator",
+      "meta": "User Story · #20114 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 3,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20115",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": 2291,
+      "y": 237,
+      "r": 66,
+      "label": "Quay camera grid",
+      "meta": "User Story · #20115 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 4,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20121",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress|s=n",
+      "x": -221,
+      "y": -2051,
+      "r": 104,
+      "label": "Harbor alerts opt-in",
+      "meta": "User Story · #20121 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|objective",
+       "index": 0,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20122",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": -2836,
+      "y": -221,
+      "r": 104,
+      "label": "Crane booking form",
+      "meta": "User Story · #20122 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|objective",
+       "index": 0,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20131",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready+sketch|c=Proposed",
+      "x": 0,
+      "y": -3057,
+      "r": 88,
+      "label": "Seasonal berth pricing",
+      "meta": "User Story · #20131 · New"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20132",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 3782,
+      "y": 1528,
+      "r": 88,
+      "label": "Harbor map legend",
+      "meta": "User Story · #20132 · Ready"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20211",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|underway|c=InProgress",
+      "x": 2741,
+      "y": 0,
+      "r": 66,
+      "label": "Buoy pings drop at midnight",
+      "meta": "Bug · #20211 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 0,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20212",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|off+ghost+strike|c=Removed",
+      "x": 2994,
+      "y": 0,
+      "r": 66,
+      "label": "Duplicate berth bookings",
+      "meta": "Bug · #20212 · Rejected",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 1,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20213",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|ready|c=Proposed",
+      "x": 2803,
+      "y": -338,
+      "r": 66,
+      "label": "Tide offsets off by an hour",
+      "meta": "Bug · #20213 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 2,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20221",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|ready|c=Proposed",
+      "x": -2394,
+      "y": 0,
+      "r": 104,
+      "label": "Console freezes on export",
+      "meta": "Bug · #20221 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|threat",
+       "index": 0,
+       "size": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20231",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|ready|c=Proposed",
+      "x": -3782,
+      "y": 1528,
+      "r": 88,
+      "label": "Wrong time zone on receipts",
+      "meta": "Bug · #20231 · Ready"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20121",
+        "label": "Harbor alerts opt-in",
+        "meta": "User Story · #20121 · Active",
+        "rung": "underway",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20122",
+        "label": "Crane booking form",
+        "meta": "User Story · #20122 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20221",
+        "label": "Console freezes on export",
+        "meta": "Bug · #20221 · Ready",
+        "rung": "ready",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat": {
+      "title": "Wren Calloway",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20101",
+        "label": "Tide table widget",
+        "meta": "User Story · #20101 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20102",
+        "label": "Low-water warnings",
+        "meta": "User Story · #20102 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20103",
+        "label": "Berth schedule export",
+        "meta": "User Story · #20103 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat": {
+      "title": "Ossian Vale",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20111",
+        "label": "Harbor master dashboard",
+        "meta": "User Story · #20111 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20112",
+        "label": "Pilot boat roster",
+        "meta": "User Story · #20112 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20113",
+        "label": "Swell forecast feed",
+        "meta": "User Story · #20113 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20114",
+        "label": "Mooring fee calculator",
+        "meta": "User Story · #20114 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20115",
+        "label": "Quay camera grid",
+        "meta": "User Story · #20115 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20211",
+        "label": "Buoy pings drop at midnight",
+        "meta": "Bug · #20211 · Active",
+        "rung": "underway",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20212",
+        "label": "Duplicate berth bookings",
+        "meta": "Bug · #20212 · Rejected",
+        "rung": "off",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20213",
+        "label": "Tide offsets off by an hour",
+        "meta": "Bug · #20213 · Ready",
+        "rung": "ready",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1": {
+      "title": "tide-gateway",
+      "rows": [
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21000",
+        "label": "Dashboard endpoints",
+        "meta": "PR · #21000 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20111"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20111",
+         "url": null
+        },
+        "stat": "✓ 2 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21001",
+        "label": "Alert opt-in flags",
+        "meta": "PR · #21001 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20121"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20121",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       }
+      ],
+      "more": 0,
+      "run": {
+       "text": ""
+      }
+     }
+    }
+   },
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+    "atUtc": "2026-10-05T07:00:00.000Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Harbor Pod",
+      "meta": "17 items",
+      "counts": {
+       "objective": 13,
+       "threat": 4,
+       "done": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.00",
+      "x": -2615,
+      "y": 0,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": -3551,
+      "y": 0,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.35",
+      "x": 0,
+      "y": 1830,
+      "r": 520,
+      "label": "Wren Calloway"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2767,
+      "r": 56,
+      "label": "Wren Calloway",
+      "meta": "Wren-I8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.00",
+      "x": 2615,
+      "y": 0,
+      "r": 520,
+      "label": "Ossian Vale"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 3551,
+      "y": 0,
+      "r": 56,
+      "label": "Ossian Vale",
+      "meta": "Ossian-QO",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:7f2b0f9f-7e2b-4e0c-812b-12c5802b1132|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 222,
+      "y": 2740,
+      "r": 56,
+      "label": "Pell Ibarra",
+      "meta": "Pell-V8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.00",
+      "x": 0,
+      "y": -1830,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2766,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1",
+      "kind": "facility",
+      "asset": "facility",
+      "stage": "v1|facility|underway|c=InProgress|i=0.00|pr=5|pm=31",
+      "x": 1283,
+      "y": 898,
+      "r": 260,
+      "label": "tide-gateway",
+      "meta": "Repository",
+      "compound": {
+       "slots": [
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21000@0:underway",
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21001@1:underway",
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21002@2:underway",
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21003@3:underway",
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21004@4:underway"
+       ],
+       "more": 0,
+       "intensity": 0,
+       "summoner": null,
+       "guards": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20101",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=cc",
+      "x": 0,
+      "y": 1061,
+      "r": 83,
+      "label": "Tide table widget",
+      "meta": "User Story · #20101 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20102",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress|s=a",
+      "x": -203,
+      "y": 1534,
+      "r": 101,
+      "label": "Low-water warnings",
+      "meta": "User Story · #20102 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|objective",
+       "index": 1,
+       "size": 3
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20103",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": -203,
+      "y": 2127,
+      "r": 101,
+      "label": "Berth schedule export",
+      "meta": "User Story · #20103 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|objective",
+       "index": 2,
+       "size": 3
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20111",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress|s=nn",
+      "x": 2356,
+      "y": 0,
+      "r": 66,
+      "label": "Harbor master dashboard",
+      "meta": "User Story · #20111 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 0,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20112",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": 2517,
+      "y": -295,
+      "r": 66,
+      "label": "Pilot boat roster",
+      "meta": "User Story · #20112 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 1,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20113",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 2517,
+      "y": 295,
+      "r": 66,
+      "label": "Swell forecast feed",
+      "meta": "User Story · #20113 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 2,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20114",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 2291,
+      "y": -237,
+      "r": 66,
+      "label": "Mooring fee calculator",
+      "meta": "User Story · #20114 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 3,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20115",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": 2291,
+      "y": 237,
+      "r": 66,
+      "label": "Quay camera grid",
+      "meta": "User Story · #20115 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 4,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20121",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress|s=n",
+      "x": -221,
+      "y": -2051,
+      "r": 104,
+      "label": "Harbor alerts opt-in",
+      "meta": "User Story · #20121 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|objective",
+       "index": 0,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20122",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": -2836,
+      "y": -221,
+      "r": 104,
+      "label": "Crane booking form",
+      "meta": "User Story · #20122 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|objective",
+       "index": 0,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20131",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready+sketch|c=Proposed",
+      "x": 0,
+      "y": -3057,
+      "r": 88,
+      "label": "Seasonal berth pricing",
+      "meta": "User Story · #20131 · New"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20132",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 3782,
+      "y": 1528,
+      "r": 88,
+      "label": "Harbor map legend",
+      "meta": "User Story · #20132 · Ready"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20141",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": -2836,
+      "y": 221,
+      "r": 104,
+      "label": "Lamp-room telemetry",
+      "meta": "User Story · #20141 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|objective",
+       "index": 1,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20211",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|underway|c=InProgress",
+      "x": 2741,
+      "y": 0,
+      "r": 66,
+      "label": "Buoy pings drop at midnight",
+      "meta": "Bug · #20211 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 0,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20212",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|off+ghost+strike|c=Removed",
+      "x": 2994,
+      "y": 0,
+      "r": 66,
+      "label": "Duplicate berth bookings",
+      "meta": "Bug · #20212 · Rejected",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 1,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20213",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|ready|c=Proposed",
+      "x": 2803,
+      "y": -338,
+      "r": 66,
+      "label": "Tide offsets off by an hour",
+      "meta": "Bug · #20213 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 2,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20221",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|underway|c=InProgress",
+      "x": -2394,
+      "y": 0,
+      "r": 104,
+      "label": "Console freezes on export",
+      "meta": "Bug · #20221 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|threat",
+       "index": 0,
+       "size": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20231",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|underway|c=InProgress",
+      "x": 221,
+      "y": -1830,
+      "r": 104,
+      "label": "Wrong time zone on receipts",
+      "meta": "Bug · #20231 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|threat",
+       "index": 0,
+       "size": 1
+      }
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20121",
+        "label": "Harbor alerts opt-in",
+        "meta": "User Story · #20121 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20231",
+        "label": "Wrong time zone on receipts",
+        "meta": "Bug · #20231 · Active",
+        "rung": "underway",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20122",
+        "label": "Crane booking form",
+        "meta": "User Story · #20122 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20141",
+        "label": "Lamp-room telemetry",
+        "meta": "User Story · #20141 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20221",
+        "label": "Console freezes on export",
+        "meta": "Bug · #20221 · Active",
+        "rung": "underway",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat": {
+      "title": "Wren Calloway",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20101",
+        "label": "Tide table widget",
+        "meta": "User Story · #20101 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20102",
+        "label": "Low-water warnings",
+        "meta": "User Story · #20102 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20103",
+        "label": "Berth schedule export",
+        "meta": "User Story · #20103 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat": {
+      "title": "Ossian Vale",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20111",
+        "label": "Harbor master dashboard",
+        "meta": "User Story · #20111 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20112",
+        "label": "Pilot boat roster",
+        "meta": "User Story · #20112 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20113",
+        "label": "Swell forecast feed",
+        "meta": "User Story · #20113 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20114",
+        "label": "Mooring fee calculator",
+        "meta": "User Story · #20114 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20115",
+        "label": "Quay camera grid",
+        "meta": "User Story · #20115 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20211",
+        "label": "Buoy pings drop at midnight",
+        "meta": "Bug · #20211 · Active",
+        "rung": "underway",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20212",
+        "label": "Duplicate berth bookings",
+        "meta": "Bug · #20212 · Rejected",
+        "rung": "off",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20213",
+        "label": "Tide offsets off by an hour",
+        "meta": "Bug · #20213 · Ready",
+        "rung": "ready",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1": {
+      "title": "tide-gateway",
+      "rows": [
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21000",
+        "label": "Dashboard endpoints",
+        "meta": "PR · #21000 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20111"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20111",
+         "url": null
+        },
+        "stat": "✓ 2 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21001",
+        "label": "Alert opt-in flags",
+        "meta": "PR · #21001 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20121"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20121",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21002",
+        "label": "Low-water thresholds",
+        "meta": "PR · #21002 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20102"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20102",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21003",
+        "label": "Keep buoy pings across midnight",
+        "meta": "PR · #21003 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20211"
+        ],
+        "subtitle": {
+         "label": "→ Bug #20211",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21004",
+        "label": "Camera grid tiling",
+        "meta": "PR · #21004 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20115"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20115",
+         "url": null
+        },
+        "stat": "0 threads"
+       }
+      ],
+      "more": 0,
+      "run": {
+       "text": ""
+      }
+     }
+    }
+   },
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+    "atUtc": "2026-10-08T19:00:00.000Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Harbor Pod",
+      "meta": "17 items",
+      "counts": {
+       "objective": 12,
+       "threat": 5,
+       "done": 6
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.50",
+      "x": -2615,
+      "y": 0,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": -3551,
+      "y": 0,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|nearing|c=Resolved|sh=0.65",
+      "x": 0,
+      "y": 1830,
+      "r": 520,
+      "label": "Wren Calloway"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2767,
+      "r": 56,
+      "label": "Wren Calloway",
+      "meta": "Wren-I8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6d30bca1-6c30-4b0e-8b30-b97b6a30b7e8|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 3524,
+      "y": 222,
+      "r": 56,
+      "label": "Sable Nakamura",
+      "meta": "Sable-SV",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.15",
+      "x": 2615,
+      "y": 0,
+      "r": 520,
+      "label": "Ossian Vale"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 3551,
+      "y": 0,
+      "r": 56,
+      "label": "Ossian Vale",
+      "meta": "Ossian-QO",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:7f2b0f9f-7e2b-4e0c-812b-12c5802b1132|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 222,
+      "y": 2740,
+      "r": 56,
+      "label": "Pell Ibarra",
+      "meta": "Pell-V8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:8794f294-8894-4427-8994-f5ba8a94f74d|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": -3524,
+      "y": 222,
+      "r": 56,
+      "label": "Tamsin Oduya",
+      "meta": "Tamsin-BF",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.65",
+      "x": 0,
+      "y": -1830,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2766,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:016f95d2-026f-4765-8f6f-92ac006f943f",
+      "kind": "facility",
+      "asset": "facility",
+      "stage": "v1|facility|underway|c=InProgress|i=0.50|pr=1|pm=1",
+      "x": 1283,
+      "y": -898,
+      "r": 260,
+      "label": "ledger-sync",
+      "meta": "Repository",
+      "compound": {
+       "slots": [
+        "attachment:pr:00000000-0000-4000-8000-000000000001:016f95d2-026f-4765-8f6f-92ac006f943f:21008@0:underway"
+       ],
+       "more": 0,
+       "intensity": 0.5,
+       "summoner": null,
+       "guards": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:631cd0c5-621c-4f32-811c-cd9f601ccc0c",
+      "kind": "facility",
+      "asset": "facility",
+      "stage": "v1|facility|accomplished|c=Completed|i=1.00|pr=0|pm=0|mg=1",
+      "x": -1283,
+      "y": 898,
+      "r": 260,
+      "label": "harbor-console",
+      "meta": "Repository",
+      "compound": {
+       "slots": [],
+       "more": 0,
+       "intensity": 1,
+       "summoner": null,
+       "guards": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1",
+      "kind": "facility",
+      "asset": "facility",
+      "stage": "v1|facility|underway|c=InProgress|i=0.45|pr=2|pm=34|mg=4",
+      "x": 1283,
+      "y": 898,
+      "r": 260,
+      "label": "tide-gateway",
+      "meta": "Repository",
+      "compound": {
+       "slots": [
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21005@5:underway",
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21006@1:underway"
+       ],
+       "more": 0,
+       "intensity": 0.42857142857142855,
+       "summoner": null,
+       "guards": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20101",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=cc",
+      "x": 0,
+      "y": 1061,
+      "r": 83,
+      "label": "Tide table widget",
+      "meta": "User Story · #20101 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20102",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=c",
+      "x": -313,
+      "y": 1127,
+      "r": 83,
+      "label": "Low-water warnings",
+      "meta": "User Story · #20102 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20103",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|nearing+step0.65|c=InProgress",
+      "x": -203,
+      "y": 2127,
+      "r": 101,
+      "label": "Berth schedule export",
+      "meta": "User Story · #20103 · Ready to Accept",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|objective",
+       "index": 2,
+       "size": 3
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20111",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=cc",
+      "x": 1912,
+      "y": 313,
+      "r": 83,
+      "label": "Harbor master dashboard",
+      "meta": "User Story · #20111 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20112",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": 2517,
+      "y": -295,
+      "r": 66,
+      "label": "Pilot boat roster",
+      "meta": "User Story · #20112 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 1,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20113",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 2517,
+      "y": 295,
+      "r": 66,
+      "label": "Swell forecast feed",
+      "meta": "User Story · #20113 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 2,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20115",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": 2291,
+      "y": 237,
+      "r": 66,
+      "label": "Quay camera grid",
+      "meta": "User Story · #20115 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 4,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20121",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=n",
+      "x": 313,
+      "y": -1127,
+      "r": 83,
+      "label": "Harbor alerts opt-in",
+      "meta": "User Story · #20121 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20122",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": -221,
+      "y": -1610,
+      "r": 104,
+      "label": "Crane booking form",
+      "meta": "User Story · #20122 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|objective",
+       "index": 1,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20131",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready+sketch|c=Proposed",
+      "x": 0,
+      "y": -3057,
+      "r": 88,
+      "label": "Seasonal berth pricing",
+      "meta": "User Story · #20131 · New"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20132",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 3782,
+      "y": 1528,
+      "r": 88,
+      "label": "Harbor map legend",
+      "meta": "User Story · #20132 · Ready"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20141",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": -2836,
+      "y": 221,
+      "r": 104,
+      "label": "Lamp-room telemetry",
+      "meta": "User Story · #20141 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|objective",
+       "index": 1,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20211",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|nearing+step0.30|c=Resolved",
+      "x": 2741,
+      "y": 0,
+      "r": 66,
+      "label": "Buoy pings drop at midnight",
+      "meta": "Bug · #20211 · Resolved",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 0,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20212",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|off+ghost+strike|c=Removed",
+      "x": 2994,
+      "y": 0,
+      "r": 66,
+      "label": "Duplicate berth bookings",
+      "meta": "Bug · #20212 · Rejected",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 1,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20213",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|nearing+step0.65|c=Resolved",
+      "x": 2803,
+      "y": -338,
+      "r": 66,
+      "label": "Tide offsets off by an hour",
+      "meta": "Bug · #20213 · Ready to Accept",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 2,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20214",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|underway|c=InProgress",
+      "x": 2803,
+      "y": 338,
+      "r": 66,
+      "label": "Alert sound loops",
+      "meta": "Bug · #20214 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 3,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20221",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|accomplished|c=Completed",
+      "x": -1845,
+      "y": 0,
+      "r": 83,
+      "label": "Console freezes on export",
+      "meta": "Bug · #20221 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20231",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|accomplished|c=Completed",
+      "x": 0,
+      "y": -1061,
+      "r": 83,
+      "label": "Wrong time zone on receipts",
+      "meta": "Bug · #20231 · Closed"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20121",
+        "label": "Harbor alerts opt-in",
+        "meta": "User Story · #20121 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20122",
+        "label": "Crane booking form",
+        "meta": "User Story · #20122 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20231",
+        "label": "Wrong time zone on receipts",
+        "meta": "Bug · #20231 · Closed",
+        "rung": "accomplished",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20141",
+        "label": "Lamp-room telemetry",
+        "meta": "User Story · #20141 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20221",
+        "label": "Console freezes on export",
+        "meta": "Bug · #20221 · Closed",
+        "rung": "accomplished",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat": {
+      "title": "Wren Calloway",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20101",
+        "label": "Tide table widget",
+        "meta": "User Story · #20101 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20102",
+        "label": "Low-water warnings",
+        "meta": "User Story · #20102 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20103",
+        "label": "Berth schedule export",
+        "meta": "User Story · #20103 · Ready to Accept",
+        "rung": "nearing",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat": {
+      "title": "Ossian Vale",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20111",
+        "label": "Harbor master dashboard",
+        "meta": "User Story · #20111 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20112",
+        "label": "Pilot boat roster",
+        "meta": "User Story · #20112 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20113",
+        "label": "Swell forecast feed",
+        "meta": "User Story · #20113 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20115",
+        "label": "Quay camera grid",
+        "meta": "User Story · #20115 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20211",
+        "label": "Buoy pings drop at midnight",
+        "meta": "Bug · #20211 · Resolved",
+        "rung": "nearing",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20212",
+        "label": "Duplicate berth bookings",
+        "meta": "Bug · #20212 · Rejected",
+        "rung": "off",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20213",
+        "label": "Tide offsets off by an hour",
+        "meta": "Bug · #20213 · Ready to Accept",
+        "rung": "nearing",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20214",
+        "label": "Alert sound loops",
+        "meta": "Bug · #20214 · Active",
+        "rung": "underway",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1": {
+      "title": "tide-gateway",
+      "rows": [
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21000",
+        "label": "Dashboard endpoints",
+        "meta": "PR · #21000 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20111"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20111",
+         "url": null
+        },
+        "stat": "✓ 2 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21001",
+        "label": "Alert opt-in flags",
+        "meta": "PR · #21001 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20121"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20121",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21002",
+        "label": "Low-water thresholds",
+        "meta": "PR · #21002 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20102"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20102",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21003",
+        "label": "Keep buoy pings across midnight",
+        "meta": "PR · #21003 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20211"
+        ],
+        "subtitle": {
+         "label": "→ Bug #20211",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21004",
+        "label": "Camera grid tiling",
+        "meta": "PR · #21004 · Abandoned",
+        "role": "attachment",
+        "rung": "off",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20115"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20115",
+         "url": null
+        },
+        "stat": "0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21005",
+        "label": "Berth export endpoint",
+        "meta": "PR · #21005 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20103"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20103",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21006",
+        "label": "Crane slot lookup",
+        "meta": "PR · #21006 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20122"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20122",
+         "url": null
+        },
+        "stat": "0 threads"
+       }
+      ],
+      "more": 0,
+      "run": {
+       "text": ""
+      }
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:631cd0c5-621c-4f32-811c-cd9f601ccc0c": {
+      "title": "harbor-console",
+      "rows": [
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:631cd0c5-621c-4f32-811c-cd9f601ccc0c:21007",
+        "label": "Stream the export",
+        "meta": "PR · #21007 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20221"
+        ],
+        "subtitle": {
+         "label": "→ Bug #20221",
+         "url": null
+        },
+        "stat": "✓ 2 · 0 threads"
+       }
+      ],
+      "more": 0,
+      "run": {
+       "text": ""
+      }
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:016f95d2-026f-4765-8f6f-92ac006f943f": {
+      "title": "ledger-sync",
+      "rows": [
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:016f95d2-026f-4765-8f6f-92ac006f943f:21008",
+        "label": "Roster and export ledger rows",
+        "meta": "PR · #21008 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20112",
+         "wi:00000000-0000-4000-8000-000000000001:20221"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20112, Bug #20221",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       }
+      ],
+      "more": 0,
+      "run": {
+       "text": ""
+      }
+     }
+    }
+   },
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+    "atUtc": "2026-10-12T06:59:59.999Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001",
+      "kind": "star",
+      "stage": "feature.accept",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Harbor Pod",
+      "meta": "16 items",
+      "counts": {
+       "objective": 11,
+       "threat": 5,
+       "done": 10
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|nearing|c=Resolved|sh=0.50",
+      "x": -2615,
+      "y": 0,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": -3551,
+      "y": 0,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|accomplished|c=Completed|sh=1.00",
+      "x": 0,
+      "y": 1830,
+      "r": 520,
+      "label": "Wren Calloway"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2767,
+      "r": 56,
+      "label": "Wren Calloway",
+      "meta": "Wren-I8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6d30bca1-6c30-4b0e-8b30-b97b6a30b7e8|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 3524,
+      "y": 222,
+      "r": 56,
+      "label": "Sable Nakamura",
+      "meta": "Sable-SV",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.55",
+      "x": 2615,
+      "y": 0,
+      "r": 520,
+      "label": "Ossian Vale"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 3551,
+      "y": 0,
+      "r": 56,
+      "label": "Ossian Vale",
+      "meta": "Ossian-QO",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:7f2b0f9f-7e2b-4e0c-812b-12c5802b1132|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 222,
+      "y": 2740,
+      "r": 56,
+      "label": "Pell Ibarra",
+      "meta": "Pell-V8",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:8794f294-8894-4427-8994-f5ba8a94f74d|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": -222,
+      "y": 2740,
+      "r": 56,
+      "label": "Tamsin Oduya",
+      "meta": "Tamsin-BF",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.65",
+      "x": 0,
+      "y": -1830,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2766,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:016f95d2-026f-4765-8f6f-92ac006f943f",
+      "kind": "facility",
+      "asset": "facility",
+      "stage": "v1|facility|nearing|c=Resolved|i=0.50|pr=0|pm=0|mg=1|sb=1",
+      "x": 1283,
+      "y": -898,
+      "r": 260,
+      "label": "ledger-sync",
+      "meta": "Repository",
+      "compound": {
+       "slots": [],
+       "more": 0,
+       "intensity": 0.5,
+       "summoner": null,
+       "guards": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:631cd0c5-621c-4f32-811c-cd9f601ccc0c",
+      "kind": "facility",
+      "asset": "facility",
+      "stage": "v1|facility|accomplished|c=Completed|i=1.00|pr=0|pm=0|mg=1|sb=1",
+      "x": -1283,
+      "y": 898,
+      "r": 260,
+      "label": "harbor-console",
+      "meta": "Repository",
+      "compound": {
+       "slots": [],
+       "more": 0,
+       "intensity": 1,
+       "summoner": null,
+       "guards": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1",
+      "kind": "facility",
+      "asset": "facility",
+      "stage": "v1|facility|underway|c=InProgress|i=0.70|pr=1|pm=2|mg=5",
+      "x": 1283,
+      "y": 898,
+      "r": 260,
+      "label": "tide-gateway",
+      "meta": "Repository",
+      "compound": {
+       "slots": [
+        "attachment:pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21006@1:underway"
+       ],
+       "more": 0,
+       "intensity": 0.7142857142857143,
+       "summoner": null,
+       "guards": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20101",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=cc",
+      "x": 0,
+      "y": 1061,
+      "r": 83,
+      "label": "Tide table widget",
+      "meta": "User Story · #20101 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20102",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=c",
+      "x": -313,
+      "y": 1127,
+      "r": 83,
+      "label": "Low-water warnings",
+      "meta": "User Story · #20102 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20103",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed",
+      "x": 313,
+      "y": 1127,
+      "r": 83,
+      "label": "Berth schedule export",
+      "meta": "User Story · #20103 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20111",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=cc",
+      "x": 1912,
+      "y": 313,
+      "r": 83,
+      "label": "Harbor master dashboard",
+      "meta": "User Story · #20111 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20112",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|nearing+step0.30|c=InProgress",
+      "x": 2517,
+      "y": -295,
+      "r": 66,
+      "label": "Pilot boat roster",
+      "meta": "User Story · #20112 · Resolved",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 1,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20113",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 2517,
+      "y": 295,
+      "r": 66,
+      "label": "Swell forecast feed",
+      "meta": "User Story · #20113 · Ready",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 2,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20115",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": 2291,
+      "y": 237,
+      "r": 66,
+      "label": "Quay camera grid",
+      "meta": "User Story · #20115 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|objective",
+       "index": 4,
+       "size": 5
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20121",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed|s=n",
+      "x": 313,
+      "y": -1127,
+      "r": 83,
+      "label": "Harbor alerts opt-in",
+      "meta": "User Story · #20121 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20122",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": -221,
+      "y": -1610,
+      "r": 104,
+      "label": "Crane booking form",
+      "meta": "User Story · #20122 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|objective",
+       "index": 1,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20131",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|off+ghost|c=Removed",
+      "x": 0,
+      "y": -3057,
+      "r": 88,
+      "label": "Seasonal berth pricing",
+      "meta": "User Story · #20131 · Removed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20132",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|ready|c=Proposed",
+      "x": 3782,
+      "y": 1528,
+      "r": 88,
+      "label": "Harbor map legend",
+      "meta": "User Story · #20132 · Ready"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20141",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|nearing+step0.30|c=InProgress",
+      "x": -2836,
+      "y": 221,
+      "r": 104,
+      "label": "Lamp-room telemetry",
+      "meta": "User Story · #20141 · Resolved",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|objective",
+       "index": 1,
+       "size": 2
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20211",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|accomplished|c=Completed",
+      "x": 1912,
+      "y": -313,
+      "r": 83,
+      "label": "Buoy pings drop at midnight",
+      "meta": "Bug · #20211 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20212",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|off+ghost+strike|c=Removed",
+      "x": 2994,
+      "y": 0,
+      "r": 66,
+      "label": "Duplicate berth bookings",
+      "meta": "Bug · #20212 · Rejected",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|threat",
+       "index": 1,
+       "size": 4
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20213",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|accomplished|c=Completed",
+      "x": 2100,
+      "y": -572,
+      "r": 83,
+      "label": "Tide offsets off by an hour",
+      "meta": "Bug · #20213 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20214",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|accomplished|c=Completed",
+      "x": 2100,
+      "y": 572,
+      "r": 83,
+      "label": "Alert sound loops",
+      "meta": "Bug · #20214 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20221",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|accomplished|c=Completed",
+      "x": -1845,
+      "y": 0,
+      "r": 83,
+      "label": "Console freezes on export",
+      "meta": "Bug · #20221 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|wi:00000000-0000-4000-8000-000000000001:20231",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|accomplished|c=Completed",
+      "x": 0,
+      "y": -1061,
+      "r": 83,
+      "label": "Wrong time zone on receipts",
+      "meta": "Bug · #20231 · Closed"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20121",
+        "label": "Harbor alerts opt-in",
+        "meta": "User Story · #20121 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20122",
+        "label": "Crane booking form",
+        "meta": "User Story · #20122 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20231",
+        "label": "Wrong time zone on receipts",
+        "meta": "Bug · #20231 · Closed",
+        "rung": "accomplished",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20141",
+        "label": "Lamp-room telemetry",
+        "meta": "User Story · #20141 · Resolved",
+        "rung": "nearing",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20221",
+        "label": "Console freezes on export",
+        "meta": "Bug · #20221 · Closed",
+        "rung": "accomplished",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:6638744a-6738-45dd-8438-7124653872b7|seat": {
+      "title": "Wren Calloway",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20101",
+        "label": "Tide table widget",
+        "meta": "User Story · #20101 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20102",
+        "label": "Low-water warnings",
+        "meta": "User Story · #20102 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20103",
+        "label": "Berth schedule export",
+        "meta": "User Story · #20103 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|id:00000000-0000-4000-8000-000000000001:71c14f61-70c1-4dce-8fc1-4c3b6ec14aa8|seat": {
+      "title": "Ossian Vale",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20111",
+        "label": "Harbor master dashboard",
+        "meta": "User Story · #20111 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20112",
+        "label": "Pilot boat roster",
+        "meta": "User Story · #20112 · Resolved",
+        "rung": "nearing",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20113",
+        "label": "Swell forecast feed",
+        "meta": "User Story · #20113 · Ready",
+        "rung": "ready",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20115",
+        "label": "Quay camera grid",
+        "meta": "User Story · #20115 · Active",
+        "rung": "underway",
+        "role": "objective"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20211",
+        "label": "Buoy pings drop at midnight",
+        "meta": "Bug · #20211 · Closed",
+        "rung": "accomplished",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20212",
+        "label": "Duplicate berth bookings",
+        "meta": "Bug · #20212 · Rejected",
+        "rung": "off",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20213",
+        "label": "Tide offsets off by an hour",
+        "meta": "Bug · #20213 · Closed",
+        "rung": "accomplished",
+        "role": "threat"
+       },
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20214",
+        "label": "Alert sound loops",
+        "meta": "Bug · #20214 · Closed",
+        "rung": "accomplished",
+        "role": "threat"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1": {
+      "title": "tide-gateway",
+      "rows": [
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21000",
+        "label": "Dashboard endpoints",
+        "meta": "PR · #21000 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20111"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20111",
+         "url": null
+        },
+        "stat": "✓ 2 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21001",
+        "label": "Alert opt-in flags",
+        "meta": "PR · #21001 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20121"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20121",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21002",
+        "label": "Low-water thresholds",
+        "meta": "PR · #21002 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20102"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20102",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21003",
+        "label": "Keep buoy pings across midnight",
+        "meta": "PR · #21003 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20211"
+        ],
+        "subtitle": {
+         "label": "→ Bug #20211",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21004",
+        "label": "Camera grid tiling",
+        "meta": "PR · #21004 · Abandoned",
+        "role": "attachment",
+        "rung": "off",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20115"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20115",
+         "url": null
+        },
+        "stat": "0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21005",
+        "label": "Berth export endpoint",
+        "meta": "PR · #21005 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20103"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20103",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       },
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:d3e7ad28-d4e7-4ebb-85e7-b04ed6e7b1e1:21006",
+        "label": "Crane slot lookup",
+        "meta": "PR · #21006 · Active",
+        "role": "attachment",
+        "rung": "underway",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20122"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20122",
+         "url": null
+        },
+        "stat": "0 threads"
+       }
+      ],
+      "more": 0,
+      "run": {
+       "text": ""
+      }
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:631cd0c5-621c-4f32-811c-cd9f601ccc0c": {
+      "title": "harbor-console",
+      "rows": [
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:631cd0c5-621c-4f32-811c-cd9f601ccc0c:21007",
+        "label": "Stream the export",
+        "meta": "PR · #21007 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20221"
+        ],
+        "subtitle": {
+         "label": "→ Bug #20221",
+         "url": null
+        },
+        "stat": "✓ 2 · 0 threads"
+       }
+      ],
+      "more": 0,
+      "run": {
+       "text": ""
+      }
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22001|repo:00000000-0000-4000-8000-000000000001:016f95d2-026f-4765-8f6f-92ac006f943f": {
+      "title": "ledger-sync",
+      "rows": [
+       {
+        "key": "pr:00000000-0000-4000-8000-000000000001:016f95d2-026f-4765-8f6f-92ac006f943f:21008",
+        "label": "Roster and export ledger rows",
+        "meta": "PR · #21008 · Completed",
+        "role": "attachment",
+        "rung": "accomplished",
+        "serves": [
+         "wi:00000000-0000-4000-8000-000000000001:20112",
+         "wi:00000000-0000-4000-8000-000000000001:20221"
+        ],
+        "subtitle": {
+         "label": "→ User Story #20112, Bug #20221",
+         "url": null
+        },
+        "stat": "✓ 1 · 0 threads"
+       }
+      ],
+      "more": 0,
+      "run": {
+       "text": ""
+      }
+     }
+    }
+   }
+  ]
+ },
+ {
+  "region": "Lantern Pod",
+  "graphs": [
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+    "atUtc": "2026-09-28T07:00:00.000Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+      "kind": "star",
+      "stage": "feature.faint",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Lantern Pod",
+      "meta": "0 items",
+      "counts": {
+       "objective": 0,
+       "threat": 0,
+       "done": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1|aw=1",
+      "x": 0,
+      "y": -1505,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2441,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1|aw=1",
+      "x": 0,
+      "y": 1505,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2441,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [],
+      "more": 0
+     }
+    }
+   },
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+    "atUtc": "2026-10-01T19:00:00.000Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Lantern Pod",
+      "meta": "3 items",
+      "counts": {
+       "objective": 2,
+       "threat": 1,
+       "done": 0
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.00",
+      "x": 0,
+      "y": -1505,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2441,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|underway|c=InProgress|sh=0.00",
+      "x": 0,
+      "y": 1505,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2441,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20141",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": -221,
+      "y": -1505,
+      "r": 104,
+      "label": "Lamp-room telemetry",
+      "meta": "User Story · #20141 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|objective",
+       "index": 0,
+       "size": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20151",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|underway|c=InProgress",
+      "x": -221,
+      "y": 1505,
+      "r": 104,
+      "label": "Beacon rotation timer",
+      "meta": "User Story · #20151 · Active",
+      "cluster": {
+       "id": "id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|objective",
+       "index": 0,
+       "size": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20251",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|ready+sketch|c=Proposed",
+      "x": 0,
+      "y": -2731,
+      "r": 88,
+      "label": "Beacon log gaps",
+      "meta": "Bug · #20251 · New"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20141",
+        "label": "Lamp-room telemetry",
+        "meta": "User Story · #20141 · Active",
+        "rung": "underway",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20151",
+        "label": "Beacon rotation timer",
+        "meta": "User Story · #20151 · Active",
+        "rung": "underway",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     }
+    }
+   },
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+    "atUtc": "2026-10-05T07:00:00.000Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Lantern Pod",
+      "meta": "2 items",
+      "counts": {
+       "objective": 1,
+       "threat": 1,
+       "done": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1",
+      "x": 0,
+      "y": -1505,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2441,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|accomplished|c=Completed|sh=1.00",
+      "x": 0,
+      "y": 1505,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2441,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20151",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed",
+      "x": 0,
+      "y": 735,
+      "r": 83,
+      "label": "Beacon rotation timer",
+      "meta": "User Story · #20151 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20251",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|ready+sketch|c=Proposed",
+      "x": 0,
+      "y": -2731,
+      "r": 88,
+      "label": "Beacon log gaps",
+      "meta": "Bug · #20251 · New"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20151",
+        "label": "Beacon rotation timer",
+        "meta": "User Story · #20151 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     }
+    }
+   },
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+    "atUtc": "2026-10-08T19:00:00.000Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Lantern Pod",
+      "meta": "2 items",
+      "counts": {
+       "objective": 1,
+       "threat": 1,
+       "done": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1",
+      "x": 0,
+      "y": -1505,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2441,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|accomplished|c=Completed|sh=1.00",
+      "x": 0,
+      "y": 1505,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2441,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20151",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed",
+      "x": 0,
+      "y": 735,
+      "r": 83,
+      "label": "Beacon rotation timer",
+      "meta": "User Story · #20151 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20251",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|ready+sketch|c=Proposed",
+      "x": 0,
+      "y": -2731,
+      "r": 88,
+      "label": "Beacon log gaps",
+      "meta": "Bug · #20251 · New"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20151",
+        "label": "Beacon rotation timer",
+        "meta": "User Story · #20151 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     }
+    }
+   },
+   {
+    "sceneKey": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+    "atUtc": "2026-10-12T06:59:59.999Z",
+    "nodes": [
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 150,
+      "label": "Lantern Pod",
+      "meta": "2 items",
+      "counts": {
+       "objective": 1,
+       "threat": 1,
+       "done": 1
+      }
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|ready|c=Proposed|sh=0.00|vc=1",
+      "x": 0,
+      "y": -1505,
+      "r": 520,
+      "label": "Kit Marchetti"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": -2441,
+      "r": 56,
+      "label": "Kit Marchetti",
+      "meta": "Kit-SH",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat",
+      "kind": "seat",
+      "asset": "seat",
+      "stage": "v1|seat|accomplished|c=Completed|sh=1.00",
+      "x": 0,
+      "y": 1505,
+      "r": 520,
+      "label": "Juno Achterberg"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|ship",
+      "kind": "captain",
+      "asset": "agent",
+      "stage": "captain",
+      "x": 0,
+      "y": 2441,
+      "r": 56,
+      "label": "Juno Achterberg",
+      "meta": "Juno-U2",
+      "attach": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20151",
+      "kind": "objective",
+      "asset": "objective",
+      "stage": "v1|objective|accomplished|c=Completed",
+      "x": 0,
+      "y": 735,
+      "r": 83,
+      "label": "Beacon rotation timer",
+      "meta": "User Story · #20151 · Closed"
+     },
+     {
+      "pk": "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|wi:00000000-0000-4000-8000-000000000001:20251",
+      "kind": "threat",
+      "asset": "threat",
+      "stage": "v1|threat|ready+sketch|c=Proposed",
+      "x": 0,
+      "y": -2731,
+      "r": 88,
+      "label": "Beacon log gaps",
+      "meta": "Bug · #20251 · New"
+     }
+    ],
+    "edges": [
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat|orbit",
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat|orbit"
+    ],
+    "lists": {
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:3b286c04-3c28-4d97-8d28-6f2a3e2870bd|seat": {
+      "title": "Kit Marchetti",
+      "rows": [],
+      "more": 0
+     },
+     "pod:area:00000000-0000-4000-8000-000000000001:61105330-6210-44c3-8310-5656641057e9:22002|id:00000000-0000-4000-8000-000000000001:d77af3ee-d87a-4581-857a-f0c8d67af25b|seat": {
+      "title": "Juno Achterberg",
+      "rows": [
+       {
+        "key": "wi:00000000-0000-4000-8000-000000000001:20151",
+        "label": "Beacon rotation timer",
+        "meta": "User Story · #20151 · Closed",
+        "rung": "accomplished",
+        "role": "objective"
+       }
+      ],
+      "more": 0
+     }
+    }
+   }
+  ]
+ }
+]

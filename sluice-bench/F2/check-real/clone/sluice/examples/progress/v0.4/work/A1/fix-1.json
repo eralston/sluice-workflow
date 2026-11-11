@@ -1,0 +1,10 @@
+{ "item": "A1", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "findings_addressed": [
+    { "n": 1, "action": "fixed: retryMissing snapshots the ids before awaiting; reload keeps missing" },
+    { "n": 2, "action": "fixed: the notice stacks below the banner by measurement" },
+    { "n": 3, "action": "left: nit" } ],
+  "checks": [ { "cmd": "unit + probe-reload.test", "pass": true, "detail": "15/15" },
+              { "cmd": "e2e: partial-history.spec, player.spec", "pass": true, "detail": "6/6" } ],
+  "files": ["src/history/load.ts", "src/panels/Player.tsx", "tests/unit/retryMissing.test.ts"],
+  "summary": "Both findings fixed; the reviewer's probe is now a unit test." }

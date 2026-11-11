@@ -1,0 +1,23 @@
+{
+  "item": "F2",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Each summon becomes a passing turn. PaceRule.passes on facility.enter, whose phases go to gather 715, act 1200, land 600 (2515 ms; the tell goes). crewTimes(phases, passes) opens the plate at the act for NOTE_MIN_MS and releases the turn then, with no hold, so a summon lasts 2515 ms, not 4835. nearWaits never parks a passing ship. Sortie gains a `through` mode: a Hermite-in-time path through the spot at speed, then a glide to its rest over NOTE_MIN_MS with the plate open. Station jump-in drops its tell and gives one call blip at the ship in the act, in the arrival ring's hue and shape, at the station's jump instant. The ledger gains beforeF2(rules): every E Built row and C2's candidates run with F2 undone, so their frozen numbers hold. A new F2 Built row set measures the saving in story time over all seven pods (Meteor opted in). Docs: 15 §7, §8, §9, §10; 13 §6; 05 M-13, P-7, K-4; 03 (normative) amended.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "Interpretation (orchestrator may overrule): 'its next sortie if one is waiting (E4's P4)'. The ship glides toward its rest with its plate open for NOTE_MIN_MS. A next sortie of the same captain sets off no sooner than the plate's end and takes the ship over from where it's drawn. P4's park (waitS) never applies, since it is a stop. Letting the next sortie take over mid-glide would cut the plate short: castLabels follows the current Sortie's crewOpen. Speed through a hand-off between two maneuvers is left to F3, whose chain is one mover.",
+    "Interpretation: 'the rule's phases shrink to the flight plus the arrival' means the tell is dropped and the land kept: gather 715 (the flight), act 1200 and land 600 (the arrival and its settle). Because claim + NOTE_MIN_MS = 715 + 1800 = 2515 = the span, the attention window, the plate's life and the maneuver's length coincide.",
+    "Interpretation: 'the ledger shows the saving per pod' means a new F2 row set in the Built table, measured in story time (27 Decisions 2026-11-06: targets and the final check read story time) over all seven pods with all: true, beside the Summary's App s column. The frozen E rows stay recorded-time history and must not move.",
+    "Interpretation: 'the schedule goldens' are expected to move only director.json, plus montageBeats.ts if the director's montage picks move. The v0 *.schedule/seek/scenes/highlights goldens and the layout goldens plan no maneuvers and should not move. The builder names every changed file.",
+    "Choice: F2 sits on the rule (PaceRule.passes plus phases), not an EngineInputs switch, so the ledger, the sweep test and C2's candidates undo it with one rule edit (beforeF2), as E1's Built row does. Rejected: an EngineInputs flag threaded through pacing(), schedule and planner. More code, and it duplicates what a rule edit already gives.",
+    "For the orchestrator: Comet has a summon, so its App s falls further below its 50.3 s story-time yardstick (45.8 s today, already 9% under, raised for the final check). Expect about 2 s more off. The builder records the before and after.",
+    "Files: about 9 source and script files (pace.ts, maneuvers.ts, fx/commands.ts, movers.ts, interpreter.ts, stationJumpIn.ts, pacing-ledger.ts, pacing-built.ts, pacing-candidates.ts), 4 docs (03, 05, 13, 15) and about 5 tests. A split was considered and rejected. The engine without the renderer leaves the ship holding 3.8 s while the schedule moves on. The renderer without the engine has nothing to pass. The docs and the 03 amendment must land in the same change.",
+    "Track record: E1 changed this same rule and choreography at medium and needed one fix round; block E's first pass was 13/16. Mixed, so 1.",
+    "Score: blast 1 (shared planner and renderer timing for every summon; nothing persisted; no shared Pixi resource lifecycle). Verify 1 (unit tests decide the timing and the path; the look of the pass and the blip needs an eye in the gallery and the drive stills). Design 1 (every behaviour is fixed; the curve's constants are small choices). Acceptance 1 (two lines needed reading, above). Track 1. Sum 5, medium."
+  ]
+}

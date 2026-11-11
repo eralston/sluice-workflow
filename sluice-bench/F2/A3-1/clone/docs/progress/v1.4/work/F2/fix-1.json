@@ -1,0 +1,17 @@
+{
+  "item": "F2", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "blocked",
+  "summary": "Review verdict is replan: F2 has no packet.md or plan-1.json and nothing is built. Planner must run first; a fixer cannot invent the Approach or goldens.",
+  "findings": [
+    {"id": "B1", "severity": "blocker", "title": "Nothing for F2 was built", "action": "not fixed", "detail": "This is a full build (renderer, pursue pass-through, pace.ts phases, ledger entry, 15 section 7 row, goldens, tests), not a fix to existing work. It depends on a packet that does not exist."},
+    {"id": "B2", "severity": "blocker", "title": "No packet.md / plan-1.json", "action": "not fixed", "detail": "Planning is the planner's role. Orchestrator should run the planner for F2, then the builder (probe-engine.diff is usable as planner input)."},
+    {"id": "m1", "severity": "minor", "title": "probe-engine.diff covers engine and ledger only", "action": "none", "detail": "Informational; confirmed it is not a build. Left untouched."},
+    {"id": "m2", "severity": "minor", "title": "Baseline npm test flake under load", "action": "none", "detail": "Reviewer's rerun passed 1719 tests; outside F2."}
+  ],
+  "checks": [
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean (tree equals HEAD)"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean (tree equals HEAD)"},
+    {"cmd": "npm test / mapped e2e / e2e:keystone", "pass": null, "detail": "not rerun: no code changed since the reviewer's HEAD baseline (npm test 1719 passed on rerun); no F2 specs exist to map"}
+  ],
+  "limitations": ["No code changed in this round."]
+}

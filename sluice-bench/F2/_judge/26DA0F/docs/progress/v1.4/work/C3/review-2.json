@@ -1,0 +1,13 @@
+{
+  "item": "C3", "role": "reviewer", "round": 2, "model_tier": "medium", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "The HG-C fallback holds (desktop live path unchanged with the switch off, tablet and phone on, goldens unmoved, 4x gain 0.495), but the hard cuts test sits in a serial describe after the known-red soft budget test and is skipped whenever that test fails.",
+  "findings": { "blocker": 0, "major": 1, "minor": 0, "nit": 3 },
+  "checks": [
+    {"cmd": "npm run -s typecheck; npm run -s lint; npm test --silent", "pass": true, "detail": "99 files, 1462 tests"},
+    {"cmd": "with-lock npm run e2e:spec -- perf profile gallery-v1 slice3b", "pass": false, "detail": "25 passed, 1 failed (perf absolute test: soft lines red, 1x 50.7, 4x 100.1, seek 447.5), 1 did not run (the cuts test, skipped by serial mode)"},
+    {"cmd": "with-lock npx playwright test perf -g \"the cuts lower\"", "pass": true, "detail": "4x off 33.3 on 16.8 gain 0.495; 1x off 17.1 within 1.25 vsync, skip clause applied"},
+    {"cmd": "with-lock npm run e2e:spec -- solar solar-dense", "pass": true, "detail": "37 passed"},
+    {"cmd": "with-lock npm run e2e:keystone", "pass": true, "detail": "42 passed, 1 failed devlog.spec.ts:16; re-run of devlog 2/2 passed (flaky under load, unrelated)"}
+  ]
+}

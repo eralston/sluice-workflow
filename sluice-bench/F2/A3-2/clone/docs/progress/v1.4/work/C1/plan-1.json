@@ -1,0 +1,5 @@
+{ "item": "C1", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned", "summary": "Read-only pacing ledger: scripts/pacing-ledger.ts (logic) + scripts/pacing.ts (CLI) + unit test; all engine calls via one EngineInputs door for C4's profile.",
+  "tier": "medium",
+  "score": { "blast": 0, "verify": 1, "design": 1, "acceptance": 0, "track": 1, "sum": 3 },
+  "needs": null }

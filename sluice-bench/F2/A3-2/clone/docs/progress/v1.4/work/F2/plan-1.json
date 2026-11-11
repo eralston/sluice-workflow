@@ -1,0 +1,23 @@
+{
+  "item": "F2",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "A pass. facility.enter gets PaceRule.pass and shrinks to gather 715 + act 1200 (1915 ms; tell, fold and land rings cut). crewTimes(phases, true) releases the ship at the blip and keeps its plate whole for NOTE_MIN_MS from there, so the 4.8 s held turn and the fly-back go. Sortie gains a pass mode: two C1 Hermite legs, start to spot to its own place (goalOf) over 0.8 s, never stopping, looping past the spot on a there-and-back. stationJumpIn issues one At-rest blue call blip at the ship's live anchor in the same act tick as the station's jump (so it plays at the ship's place under reduced motion). The plate is marked is-passing, so solar-dense's parked-while-named check exempts it. The ledger gains an F2 Built row on all seven pods; PRE_PASS keeps every earlier row byte-identical. Docs: 15 §7, §8, §9 and §10; 13 §6; 05 M-13, P-7 and K-4; 03 PaceRule.pass (normative).",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "Score 5 gives medium, at the top of the band. It spans the engine, the mover, the interpreter, the label layer, an e2e, the ledger and 4 docs (about 10 source files, 4 test files, 4 docs), the same breadth as E6, which ran at large and passed first time. The orchestrator may launch the builder at large.",
+    "No split: engine-only would commit a state where the schedule drops the held turn while the renderer still parks the ship 3.9 s, and the attachment opens under it. One cohesive behaviour.",
+    "Interpretation: 'its next sortie if one is waiting (P4)'. The pass never parks, so waitS is ignored. The engine keeps the next same-captain turn at or after the arrival's end (1200 ms after the blip), so the 0.8 s carry-on reaches the ship's place first and the next sortie sets off from rest. Flowing a pass straight into the next sortie is F3's chain path.",
+    "Choice: the plate is whole for NOTE_MIN_MS after a CREW_FOLD_MS unfurl at the blip (2.84 s in all), not 1.8 s including its folds: 0.76 s whole on a moving ship would be too short to read, and solar-dense's whole >= 1400 ms check keeps holding. The attention budget and the beat hold that whole window (heldMs).",
+    "Choice: the blip is a ring at the ship's live anchor (the spot in full motion; the ship's place under reduced motion), At-rest blue (HERO_GLOW), with the station ring's 0.7 to 1.6 shape at twice the ship's radius, 0.6 s. The tell, fold and land rings are cut, so stationJumpIn has no repeats( and the effect audit has no 'mutes first' row for it.",
+    "Expected golden movement: tests/golden/__golden__/director.json only. Every *.schedule, *.seek, *.scenes and *.highlights golden uses the v0 schedule (buildBeatSchedule without beatShape) or projects at UTC playheads, so they must not move. Ledger files: pacing-ledger.{md,json} (all pods), pacing-built.json (F2 rows added only), pacing-candidates.json (re-run, as each E build did; E1's candidate fixed to rewrite only the gather, so it still reads 0).",
+    "R8 tension: the summoner interacts (the blip) while moving. The scope decided it. The 13 §6 row says the interaction is the instant of the blip; R8's text is unchanged.",
+    "Known follow-ons for the final check: Comet gets shorter (2 summons, about 2.9 s each, against its story-time yardstick already 9% under), reported in the ledger, not tuned back.",
+    "Packet runs about 2,500 words, over the 2,000 guide, because the mover's path and the ledger isolation are specified exactly."
+  ]
+}

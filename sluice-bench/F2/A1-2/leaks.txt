@@ -1,0 +1,1 @@
+21:+crewTimesOf(rule, phases)               // passTimes when rule.passes, else crewTimes; the planner (releaseOf, durMs) and the interpreter use it

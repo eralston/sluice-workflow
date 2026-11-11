@@ -1,0 +1,1 @@
+{ "item": "A2", "role": "planner", "round": 1, "model_tier": "large", "effort": "high", "verdict": "planned", "tier": "small", "score": { "blast": 0, "verify": 0, "design": 0, "acceptance": 0, "track": 1, "sum": 1 }, "needs": null, "summary": "Docs-only table; the doc-links test fully decides it." }

@@ -1,0 +1,13 @@
+{
+  "item": "F2", "role": "reviewer", "round": 3, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "F2 meets every acceptance line. The jump-in gallery cell passes in full and reduced motion with no console errors. The commands.test pursue has pass and holdS 0, and the act starts within 50 ms of the blip. The 15 §7 row is 1915 and docTables passes. The director golden moves exactly as the packet lists. The ledger has F2 and F2+ rows on seven pods. Three Minors: 13 §6 and 05 M-13 claim the ship goes on to its next sortie but the code goes to its rest; two 15 §8 Beat ms values are wrong (tell 585, should be 300; fold 600, should be 0); and the solar-dense exemption covers any event that also plans a jump-in. Two Nits.",
+  "findings": { "blocker": 0, "major": 0, "minor": 3, "nit": 2 },
+  "checks": [
+    {"cmd": "npm test", "pass": true, "detail": "1721/1721, goldens without -u (commands, maneuvers, docTables, pacingBuilt, sweep, golden suites)"},
+    {"cmd": "npm run -s typecheck && npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm run e2e:spec -- gallery-assets", "pass": true, "detail": "4 passed; every maneuver demo runs and clears in full and reduced motion with no console errors"},
+    {"cmd": "npm run e2e:spec -- solar-dense -g \"captain’s turn\"", "pass": true, "detail": "1 passed (the check with the jump-in exemption)"},
+    {"cmd": "git diff HEAD -- tests/golden/__golden__/director.json", "pass": true, "detail": "6 estimateMs plus two tempo values, exactly as packet.md lists"}
+  ]
+}

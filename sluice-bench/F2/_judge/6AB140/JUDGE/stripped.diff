@@ -1,0 +1,2783 @@
+diff --git a/docs/03-contracts.md b/docs/03-contracts.md
+index 7ddb560..725f2f5 100644
+--- a/docs/03-contracts.md
++++ b/docs/03-contracts.md
+@@ -1030,7 +1030,7 @@ length and tier is in [15 §7](15-reference.md#7-maneuvers); the behavior, as ru
+   (`agent.light`: plays only where nothing else does, costs no time), `variant?(mv, e, f)` (a second
+   shape: its name, the plan's `variant`, phases that replace the rule's, and optional `holds`,
+   2026-10-12), `leads?` (in a beat, this moment goes ahead of any other it shares a cast member
+-  with) and `short?` (27 E4d: the phases of a shorter play, keyed by the form it shortens, `plain` or a
++  with), `passes?` (27 F2: its crew flies through without stopping, so it holds no turn: the ship's plate rides from the act for `NOTE_MIN_MS`; set on `facility.enter` only) and `short?` (27 E4d: the phases of a shorter play, keyed by the form it shortens, `plain` or a
+   variant's name; the planner never picks one, the director (27 E5) will). Helpers: `phases`, `spanMs`,
+   `shortOf(ps, keep)` (each phase × `SHORT_PACE`, rounded, but the `keep` phases), `shortForm(rule, variant?)`
+   (`{ name: 'short' | '<variant>-short', phases }`, or null: a first merge has none), `castOf` (sorted, de-duplicated, empty parts dropped),
+@@ -1488,9 +1488,13 @@ PlanOptions.sequence?: SequenceOptions  // { seams, near }, default SEQUENCE_ON;
+ STAY_NEAR_MS = 3000                     // maneuvers.ts: a captain whose next gather is within this of their release waits near the work
+ nearWaits(plays, startOf?): Map<PlannedManeuver, Map<CanonicalKey, number>>   // pure: the ms each such captain's ship waits parked
+ PursueArgs.waitS?: number               // a sortie stays parked this long after its hold (plate shut) before flying back; Sortie's trailing waitS
++PursueArgs.pass?: { turnR: number }     // 27 F2: a sortie that flies through its spot without stopping (holdS 0), coasts at most turnR past it while waitS lasts, then on to its place over backS; Sortie's last parameter
++crewTimes(phases, passes?): { openMs, closeMs, leaveMs }   // 27 F2: when passing, { claim, claim + NOTE_MIN_MS - CREW_FOLD_MS, claim }; releaseOfPlay is the claim for a plan that passes
+ 
+ // Maneuvers (22 C3, C4, C6, C7)
+ PlannedManeuver.arc?: { holders?: CanonicalKey[]; merge?: eventKey }   // a close at a merge's impact (ARC_IMPACT_MS), its holders in the formation
++PlannedManeuver.passes?: true          // 27 F2: copied from PaceRule.passes; the renderer and the ledger read it here, never from the global rules
++PaceRule.passes?: true                  // 27 F2: its crew flies through without stopping; no held turn (facility.enter only)
+ PlannedManeuver.quiet?: boolean         // limelight didn't name it: no labels, no held turn
+ PlannedManeuver.plate?: CanonicalKey   // 27 E5b: the director's montage lights this one plate; also sets montage
+ BeatSchedule += { wallMs: number; tempoAt(x): number; wallAt(x): number }   // totalMs stays the x-length; wallMs is what plays (27 E5b)
+diff --git a/docs/05-playback.md b/docs/05-playback.md
+index 4e9239d..a047759 100644
+--- a/docs/05-playback.md
++++ b/docs/05-playback.md
+@@ -713,7 +713,7 @@ overloaded, below Maximum)
+ | **M-10** `threat.engage` (Engage) | A bug to Underway or Nearing | Sortie; target lock; hero bolts; red return fire on the shield; linked stations fire | As M-8 |
+ | **M-11** `piece.off` (Warp out) | Removed or Rejected | A grey ring; an enemy ship's warp spark; the piece stays as a ghost | The piece |
+ | **M-12** `piece.reseat` (Reassign) | Assigned to someone else, or unassigned | A cyan route inks from the old seat to the new; the piece flies the arc; the belt fades with it | The piece, *Assigned to …* · Now the hand-off (M-24, built) |
+-| **M-13** `facility.enter` (Station jump-in) | The moment a region first needs a station (S-9): its first PR event there in the round, an opening, a merge or a link (`introduces`; `isFirstNeed`, region by region) | Who made it flies ahead; space folds and the station slides out (the beacon and the planets' rings are retired, 27 E1) | The summoner named (*Opened it*). A station already on the board never jumps in (the interpreter checks; 22 C11, closing G-4) |
++| **M-13** `facility.enter` (Station jump-in) | The moment a region first needs a station (S-9): its first PR event there in the round, an opening, a merge or a link (`introduces`; `isFirstNeed`, region by region) | Who made it flies ahead and passes the spot without stopping; as it passes it gives one call blip, and the station slides out at that instant (the beacon, the planets' rings, the tell and the fold ring are retired, 27 E1, F2) | The summoner named (*Opened it*), from the blip, its plate riding `NOTE_MIN_MS`. A station already on the board never jumps in (the interpreter checks; 22 C11, closing G-4) |
+ | **M-14** `attachment.open` (Shuttle tender) | Any PR opened (`introduces`; after M-13) | A ring at the station; the new tender appears | None (no piece cast) |
+ | **M-15** `attachment.settle` (Satellite cycle) | A PR abandoned (settles other than merged) | Charge ring; author and others energise the station | None |
+ 
+@@ -760,7 +760,7 @@ adjusts them at run time (`ManeuverInterpreter.spawn`). Values: 15 §10.
+ | **P-4** The rest | Each waits for the protected moments it shares actors with and for its `waitsFor` rules, overlapping their echo and disperse as in P-3 when it only shares a hold; otherwise unrelated work plays alongside | `blockedUntil` |
+ | **P-5** One person, one thing | Any maneuver waits for every earlier one that flies the same person (agent or support), starting once that one's ship leaves (`nearStartMs`: the work's end, or the release less this one's gather): its tell plays in the earlier plate's fold and its ship sets off as the earlier's leaves, so a captain never flies home between. A protected pair still waits for the end (P-3: a shared captain is a shared actor) (27 E4, P4) | `crewBusy` (22 A11, R8); `SequenceOptions.near` |
+ | **P-6** The attention budget | At most `ATTENTION_MAX` (4) labels at once, counting the pieces' plates the interactions light (one per objective or threat cast as subject, frontier or target) and the captains they name (their flying crew, K-4): a sortie takes two, a merge with its author and two reviewers all four; each holds its place for its length, at least `NOTE_MIN_MS`, claimed at its act (`claimMs`: travel is free, 27 E2, R11), so a maneuver that must wait sets off early enough to arrive as places free; what doesn't fit waits | `attentionFrom` works in claim windows `[start + claimMs, start + held)` (22 B7; four, counting captains, from 22 C10). A crowd of arrivals (`CROWD_MIN`, 4) asks for none · In a crowded beat, montage (P-15, built; rare once limelight quiets the routine work) |
+-| **P-7** A captain's turn | A maneuver a captain flies (it has a gather) lasts until they leave: parked at the act's start, whole at least `CREW_HOLD_MS` past the work and `CREW_OPEN_MIN_MS` in all, folded over `CREW_FOLD_MS`. A captain whose next turn's gather sets off within `STAY_NEAR_MS` (3 s) of their release waits parked near the work, plate shut, then sets off from there, instead of flying home first (27 E4, P4) | `crewTimes` (22 B9). Now only where a ship flies (P-16, built). `nearWaits`, `Sortie`'s `waitS` |
++| **P-7** A captain's turn | A maneuver a captain flies (it has a gather) lasts until they leave: parked at the act's start, whole at least `CREW_HOLD_MS` past the work and `CREW_OPEN_MIN_MS` in all, folded over `CREW_FOLD_MS`. A captain whose next turn's gather sets off within `STAY_NEAR_MS` (3 s) of their release waits parked near the work, plate shut, then sets off from there, instead of flying home first (27 E4, P4). A rule that `passes` (the summon, 27 F2) holds no turn: the ship flies through, named from the act for `NOTE_MIN_MS` | `crewTimes` (22 B9). Now only where a ship flies (P-16, built). `nearWaits`, `Sortie`'s `waitS` |
+ | **P-8** The beat's length | The latest start + hold of its maneuvers (P-6, P-7) | `shapeOf` |
+ | **P-9** Load at run time | Below Maximum: essential always, narrative unless overloaded (`OVERLOAD`), ornament unless busy (`BUSY`); per command (27 E1), it plays only while its value per cost (Value ÷ Weight, 15 §8) clears the floor for the load: none under `CALM`, `MUTE_FLOOR.calm` from `CALM` (even at Maximum, so ornament and repeats stop), `MUTE_FLOOR.busy` from `BUSY`, nothing but essential from `OVERLOAD` (15 §10); a `repeats` call has value 0. The profile's `ornament` switch applies the calm floor at every load; light work (`agentLight`, the ornament-tier maneuver) names a real cause (R13) and follows the activity level and `BUSY` (27 Decisions, 2026-11-01) | `spawn`, `make` (`interpreter.ts`); X-2 |
+ | **P-10** Carry | A maneuver waits for an earlier beat's protected moment that holds one of its actors (never its own beat's) | `runner.protectedFor` |
+@@ -774,7 +774,7 @@ adjusts them at run time (`ManeuverInterpreter.spawn`). Values: 15 §10.
+ | Rule | What | Notes |
+ |---|---|---|
+ | **P-15** Montage | In a beat where labelled work would wait for a place (P-6), the routine work limelight doesn't name (P-17) plays **alongside**: unlabelled, quicker (`MONTAGE_PACE`, its phases × 0.6), with no held turn. Moments, arcs and named turns keep their full labelled turns. One person still does one thing at a time (P-5) | Revises P-6. A busy hour stays lively instead of a long queue. **Built** (`applyLimelight`, `PlannedManeuver.quiet`, `montage`) |
+-| **P-16** Turns | A held, named turn (P-7) belongs to a maneuver whose captain flies (a sortie or the hand-off); a rule may declare none (`turn: false`: an abandoned PR) | Revises P-7 (G-7). **Built** with 22 C7: `PaceRule.turn`; `flies` and the crew read it, and the interpreter names no crew for such a rule |
++| **P-16** Turns | A held, named turn (P-7) belongs to a maneuver whose captain flies (a sortie or the hand-off); a rule may declare none (`turn: false`: an abandoned PR). A rule that `passes` (the summon, 27 F2) holds no turn: the ship flies through, named from the act for `NOTE_MIN_MS` | Revises P-7 (G-7). **Built** with 22 C7: `PaceRule.turn`; `flies` and the crew read it, and the interpreter names no crew for such a rule |
+ | **P-18** Looks land on time | A claimed look lands at its maneuver's land on the schedule clock; the wall-time fallback is a 30 s safety | Revises P-13 (G-16). **Built** with 22 C9: the land was already on the travel clock (`max(1, rate)`); the fallback now ages on that clock too, with a 30 s safety (`CLAIM_SAFETY_S`) |
+ | **P-19** Short forms | Each protected rule has a **short form** for the director (27 E5) to choose: its phases at `SHORT_PACE` (0.6), rounded, a close's `land` kept at `CLOSE_SLIDE_MS`. A first merge has none (it happens once per station and the transformation floors it). The planner never picks one | Built with 27 E4d: `PaceRule.short`, `shortForm` (`pace.ts`), listed in 15 §7 variants. The director (P-20..P-23) plays them |
+ 
+diff --git a/docs/13-game-design.md b/docs/13-game-design.md
+index e5a4730..00c4ef7 100644
+--- a/docs/13-game-design.md
++++ b/docs/13-game-design.md
+@@ -682,7 +682,7 @@ row of [15 §7](15-reference.md#7-maneuvers); the phase timings below are the te
+ | **Strike run** · `threat.accomplish` | A threat reaches Accomplished (Bug Closed) | **Act (1.2 s):** the enemy ship starts to break up; captain → enemy ship: a burst of six hero bolts (0.25 s each, from 100 ms, 170 ms apart); each reviewer of the fix → captain: an **energy transfer** for the whole act; each station → enemy ship: one slow bolt at 0.36 s. *Beamed* (act 2.6 s): each station charges (0.6 s) and fires its **phaser** instead, with a hero-blue lock ring during the charge, and the enemy ship blows apart under the beam (at 62% of the act). **Land (1.2 s, the turn and the glide):** a culminating explosion in Explosion orange hides the swap to its caged hulk, which glides to orbit. **Echo:** the **blossom**: the grand gold flare where it settled, and a grey ring. *Arc* (22 C4): it breaks up at the merge's impact, then the explosion, the glide and the blossom | Captain and reviewers sortie as a pass, each 120 ms behind the last: out 0.7 s, hold through their turn (05 §8 P-7: whole 1.5 s past the land, then the fold), home 1.3 s |
+ | **Warp out** · `piece.off` | A piece goes Off (Removed, Rejected, set aside) | **Tell:** a grey ring tightens (0.3 s). **Act (0.9 s):** a threat warps out: a grey streak to a point 5 r away on a seeded heading, and a collapsing grey ring; an objective fades to a drifting ghost inside an expanding grey ring. **Disperse:** a faint grey ring | The threat's retreat; no ships |
+ | **Reassign** · `piece.reseat` | A piece moves between seats, or to or from the frontier (assignee changed) | **Tell and gather:** the piece holds in place while a cyan route inks from its old slot to its new one; for the frontier belt it still counts where it was (`ManeuverDef.freezes`, 19 S2). **Act (1.4 s):** it flies the arc, and the belt fades out if this was its last piece, or in if it's the first. **Land:** a cyan arrival ring. **The hand-off (22 C7):** from the gather, the new holder's captain flies to their own planet to meet it, arriving as it lands, and holds named *Takes it* | The piece flies the arc (lifted 20% of the distance) with a wake, keeping its facing. One ship, the new holder's; none when unassigned |
+-| **Station jump-in** · `facility.enter` | The first attachment into a facility in the round (a repo's first PR here) | **Tell:** a faint hero-blue ring closes on where it will come in. **Gather (0.715 s):** the summoner flies to the spot (the **broadcast ping**, its beacon pulses and bearing, is retired, 27 E1), and a hero-blue ring closes on the arrival point at the end. **Act (1.2 s):** space folds and the station slides out (the art's jump), with a flare and an expanding ring in at-rest blue. **Land:** an at-rest-blue ring (the planets' cyan rings are retired, 27 E1) | The summoner (the PR's author) flies 0.7 s to a spot 1.9 station radii out on its own side, holds through the jump, and flies home in 0.8 s. With no ship here, it jumps in there as a guest |
++| **Station jump-in** · `facility.enter` | The first attachment into a facility in the round (a repo's first PR here) | **Gather (0.715 s):** the summoner flies to a spot beside where it will come in (the **broadcast ping**, its beacon pulses and bearing, is retired, 27 E1; so are the tell and the fold ring, 27 F2). **Act (1.2 s):** as the summoner passes the spot it gives one call blip, and at that instant space folds and the station slides out (the art's jump), with a flare and an expanding ring in at-rest blue, the same hue and ring shape as the blip, so the two read as one cause and effect (R8, R10). **Land:** an at-rest-blue ring (the planets' cyan rings are retired, 27 E1) | The summoner (the PR's author) flies 0.7 s to a spot 1.9 station radii out on its own side and passes through it without stopping (27 F2); it carries on to its next place (its next sortie if one is waiting, else its rest), its plate riding with it for `NOTE_MIN_MS`. Under reduced motion the blip and the arrival play at its place. With no ship here, a guest jumps in at the spot and out as the arrival ends |
+ | **Shuttle tender** · `attachment.open` | An attachment opens (PR opened); after the station's jump-in when both play | **Tell:** a progress-blue ring spreads on the station. **Act (1.0 s):** a tender launches from the bay to join the patrol (the author → station tractor beam is retired, 27 E1). **Land:** a progress-blue ring | **None:** the author is named by the cast label |
+ | **Satellite cycle** · `attachment.settle` | An attachment settles any way but merged (PR abandoned) | **Gather:** a ring in the new rung's colour closes on the station. **Act (0.9 s):** the station operates; author → station: a tractor beam; each approver (and whoever else settled it) → author: an **energy transfer**, 90 ms apart, or → the station when the author has no ship here. **Land:** the station settles with a ring in that colour. **Echo:** a smaller one | **None:** each ship beams from where it is. The author is the agent, as in a merge |
+ | **Power link** · `attachment.merge` | An attachment merges (PR completed); it goes ahead of the close of the same work | **Tell:** a gold ring on the station. **Gather (0.9 s):** the formation forms. **Act (1.6 s; 2.3 s on a first merge):** each approver → author: an **energy transfer** (90 ms apart), held to the end of the echo; a ring of at-rest blue tightens on the author as it charges (0.8 s); then author → station: a tractor beam, also held to the end; the tender docks (the merge itself). On a *first* merge the transformation starts with the gather (4.4 s), and the station fires as it ends. **Land (0.5 s):** a gold ring as the bay takes the tender. **Echo (3.0 s):** the station charges (0.7 s), then fires one split beam at the work the attachment served: a **phaser** at a enemy ship, a **mining beam** at an asteroid (a Task stands for its parent). A hit flare in the beam's blue lands at 1.3 s (`ARC_IMPACT_MS`): a strong hit, never a finish (INV-06), except in an arc (22 C4): when the work it strikes closes in the same beat, the impact is the finishing blow and that close plays from it (its turn, glide and blossom), its holder in the formation. With no work in the scene: an at-rest-blue ring. **Disperse:** a gold ring. **A volley (27 E6, 05 M-31):** merges into one station close in time play as one Power link: the lead (the author with the most merges in it) takes the author's spot, every other member's author and approvers fly as support with the union of their energy, every member's tender docks together, and the echo lengthens so the causes are named in **turns**, one per member: its work's plates with its note, then its people not yet named, at most four labels at once | The formation is one line through the station, so it stays in view (22 C11, 2026-10-16): horizontal when the station is near the top or bottom of the circle, vertical on the sides, toward the view's middle unless that would cover the station's or the work's plate; it never leaves the board (the frontier belt's rectangle): failing that end, the other end, then the other axis, then the spots are held inside it (27 D2); and clear of the beam: if the line would put a ship within a corridor round a strand from the station to the work, the nearest on-board line (turned in 15 degree steps) that keeps clear takes its place; with none, it keeps its place and the beam fades as it passes the ships (27 D3). The author flies 0.9 s to the spot beside the station; the approvers carry on along the line beyond, a little staggered off it, 180 ms and then 140 ms apart. All face the station and hold to the end of the echo, then fly home in 0.9 s. Guests jump in and out instead. Their named plates stand beside each ship, away from the line, when it runs closer to vertical, and above or below it when closer to horizontal, never over each other or another's ship (27 D1) |
+diff --git a/docs/15-reference.md b/docs/15-reference.md
+index e7eb735..6e8d5b7 100644
+--- a/docs/15-reference.md
++++ b/docs/15-reference.md
+@@ -815,7 +815,7 @@ These tables are the authority; 05 §8 and 13 §6 keep the rationale and the bea
+ | `threat.accomplish` | Strike run | Bug Closed · `climb` → Accomplished | 4200 | essential | yes | Captain and reviewers make a pass: six Hero blue bolts, reviewers' Given blue energy; the enemy ship breaks up; a culminating explosion in Explosion orange as it turns to its caged hulk; it glides 1.2 s to orbit; the grand flare blossoms as it settles (22 C3) | `theme/starChart/maneuvers/strikeRun.ts` |
+ | `piece.off` | Warp out | Story or Bug Removed, Rejected or set aside · `climb` → Off | 1800 | narrative | no | Off grey rings; a enemy ship streaks away on a seeded heading; an asteroid fades to a drifting ghost | `theme/starChart/maneuvers/warpOut.ts` |
+ | `piece.reseat` | Reassign | Assignee changed, to or from Unassigned too · `reseat` | 2400 | narrative | no | The hand-off (22 C7): the piece holds while a Nav cyan route inks to its new slot; it flies the arc with a wake; a Nav cyan arrival ring. The new holder's captain flies to their planet to meet it, arriving as it lands, named *Takes it*; whoever made the change isn't kept busy. The frontier belt holds until it flies, then fades out as the last unassigned piece leaves it, or in as one comes to it (19 S2) | `theme/starChart/maneuvers/reassign.ts` |
+-| `facility.enter` | Station jump-in | A repository's first PR in the round · `attach` (the first into its facility) | 2815 | narrative | no | The author flies out to where it comes in; space folds, the station slides in; an At-rest blue flare | `theme/starChart/maneuvers/stationJumpIn.ts` |
++| `facility.enter` | Station jump-in | A repository's first PR in the round · `attach` (the first into its facility) | 2515 | narrative | no | The author flies past where it comes in without stopping; as they pass, one call blip, and the station slides in at that instant; an At-rest blue flare | `theme/starChart/maneuvers/stationJumpIn.ts` |
+ | `attachment.open` | Shuttle tender | PR opened · `attach` (after `facility.enter` when both play) | 1700 | narrative | no | Progress blue rings on the station; a tender launches to join its patrol | `theme/starChart/maneuvers/shuttleTender.ts` |
+ | `attachment.settle` | Satellite cycle | PR abandoned (any settle but a merge) · `settle` | 2800 | narrative | no | A ring in the new rung's colour closes on the station; it operates under the author's tractor; approvers lend energy; settle rings. No ship flies it, so it holds no turn (`turn: false`, 22 C7) | `theme/starChart/maneuvers/satelliteCycle.ts` |
+ | `attachment.merge` | Power link | PR completed (merged) · `settle` → Accomplished; goes ahead of the close of the same work | 7200 | essential | yes | Author and approvers form up; energy chains approvers → author → station; the tender docks in Victory gold; it charges and fires a split beam at the work. In a volley (27 E6): the lead, every member's author and approvers form up; every member's tender docks together; the causes are named in turns, one member's plates and note, then its people, at most four labels at once | `theme/starChart/maneuvers/powerLink.ts` |
+@@ -953,10 +953,11 @@ The effect audit (27 E1): what each cue in a choreography tells, and which other
+ | Reassign | gather | `pursue` the new holder's captain | Who takes it | The cast label | 0 | keep |
+ | Reassign | act | `pursue` the piece | It moves to its new holder | `ink` route | 0 | keep |
+ | Reassign | land | `ring` arrival | It has arrived | — | 0 | keep |
+-| Station jump-in | tell | `ring` closing on the station's spot | A station is about to arrive | — | 0 | keep |
+-| Station jump-in | gather | `pursue` (or `guest`) the summoner flies out | Who summons it, and where it will come in | The cast label | 0 | keep |
++| Station jump-in | tell | `ring` closing on the station's spot | A station is about to arrive | `pursue` the summoner's flight | 300 | cut |
++| Station jump-in | gather | `pursue` (or `guest`) the summoner flies out | Who summons it, flying past where it comes in | The cast label | 0 | keep |
+ | Station jump-in | gather | `ring` three pulses and `spark` bearing, the beacon | Where the station will come in | `pursue` the summoner's flight | 585 | cut |
+-| Station jump-in | gather | `ring` fold | Space folds | `pursue` the summoner's flight | 0 | mutes first |
++| Station jump-in | gather | `ring` fold | Space folds | `pursue` the summoner's flight | 0 | cut |
++| Station jump-in | act | `ring` call blip at the summoner | Who called it, as it arrives | `act` jump | 0 | keep |
+ | Station jump-in | act | `act` jump and `flare` At-rest blue | The station arrives | — | 0 | keep |
+ | Station jump-in | act | `ring` blooming from the station | The station arrives | candidate: `flare` in the act | 0 | keep |
+ | Station jump-in | land | `ring` on the station | The station has settled | `flare` in the act | 0 | mutes first |
+@@ -1120,7 +1121,7 @@ at most (Lively and Maximum only).
+ | Moved to another area path or sprint | `enter` or `leave` | none | Captain jump (light) | The scene's own arrive or depart | `sectorRekey` |
+ | Task created or changed | `appear` or `climb` (step) | none | none | The parent's look changes (a step is drawn inside it) | `emerge.task`, `stageShift.task` |
+ | Parent link added or removed | `bind` or `unbind` | none | Captain jump (light) | Nothing of its own | `orbitDraw`, `orbitFade` |
+-| First PR into a repository in the round | `attach` (first into its facility) | `facility.enter`, then `attachment.open` | Station jump-in, then Shuttle tender | The author flies out; the station folds in; then a tender launches | `launch`, `stationPowerUp` |
++| First PR into a repository in the round | `attach` (first into its facility) | `facility.enter`, then `attachment.open` | Station jump-in, then Shuttle tender | The author flies past the spot and calls; the station jumps in at the blip; then a tender launches | `launch`, `stationPowerUp` |
+ | PR opened | `attach` | `attachment.open` | Shuttle tender | Progress blue rings; a tender launches | `launch` + `authorBeam` |
+ | PR linked to work | `bind` (attachment) | none | Captain jump (light) | A tractor on the station | `routeInk` |
+ | PR merged | `settle` → Accomplished | `attachment.merge` (`first` on a facility's first merge) | Power link | Formation; energy chain; Victory gold dock; split beam at the work | `dock` (review formation) |
+diff --git a/scripts/pacing-built.ts b/scripts/pacing-built.ts
+index a5cb0b6..0fb6860 100644
+--- a/scripts/pacing-built.ts
++++ b/scripts/pacing-built.ts
+@@ -3,7 +3,7 @@
+ // real re-schedule (`scheduleOf`) and not a model. Later E items add their own entry (method P or F items
+ // need a different hook and are not handled here). Pure and deterministic, like the ledger it extends.
+ import { PACE_RULES, RULE, phases, shortForm, type PaceRule } from '../src/shared/engine/pace';
+-import { resolvePods, scheduleOf, type EngineInputs } from './pacing-ledger';
++import { beforeF2, resolvePods, scheduleOf, type EngineInputs } from './pacing-ledger';
+ 
+ export interface BuiltItem {
+   id: string;
+@@ -24,6 +24,10 @@ export interface BuiltItem {
+   rises?: true;
+   /** The item runs with late-day montage (27 E10); every item built before it runs both schedules without it, as it was measured. */
+   late?: true;
++  /** The item runs with the summon on the fly (27 F2) in today's rules; every item built before it runs both schedules on `beforeF2(...)`, as measured. */
++  passes?: true;
++  /** The item's pods come from `resolvePods({ all: true })`, adding Meteor (27 F1). */
++  all?: true;
+   /** C2's estimate of the saving, ms, per pod label. */
+   estimateMs: Record<string, number>;
+ }
+@@ -140,6 +144,32 @@ export const BUILT: BuiltItem[] = [{
+   rises: true,
+   late: true,
+   estimateMs: { 'Comet Pod': 0, 'Nova Pod': 0, 'Quasar Pod': 0, 'Pulsar Pod': 0, 'Convoy Planning Pod': 0, 'Harbor Pod': 0 },
++}, {
++  id: 'F2',
++  name: 'Summon on the fly (before adaptive speed)',
++  // Both runs direct with short forms and montage only, so speed doesn't re-fit the saving away. Before: F2 undone (the
++  // summoner's held turn). C2 never modelled it.
++  before: beforeF2,
++  directs: true,
++  sweeps: true,
++  rises: true,
++  late: true,
++  passes: true,
++  all: true,
++  both: { levers: ['short', 'montage'] },
++  estimateMs: {},
++}, {
++  id: 'F2+',
++  name: 'Summon on the fly, with every lever',
++  // Both runs direct with every lever; speed re-fits, so a pod over the target stays near it. Before: F2 undone.
++  before: beforeF2,
++  directs: true,
++  sweeps: true,
++  rises: true,
++  late: true,
++  passes: true,
++  all: true,
++  estimateMs: {},
+ }];
+ 
+ const ri = Math.round;
+@@ -148,14 +178,16 @@ const ri = Math.round;
+ export function buildBuilt(inputs: EngineInputs = {}): BuiltRow[] {
+   const rows: BuiltRow[] = [];
+   for (const item of BUILT) {
+-    for (const rp of resolvePods()) {
++    for (const rp of resolvePods(item.all ? { all: true } : {})) {
+       // Items built before the director keep measuring what they measured: both runs undirected.
+       // Items built before rising tempo (27 E8) run both schedules without it, so their rows stay as measured.
+       const base: EngineInputs = { ...(item.directs ? inputs : { ...inputs, direct: false }), ...(item.rises ? {} : { risingTempo: false as const }), ...(item.late ? {} : { lateMontage: false as const }), ...item.both };
+       // Items built before the sector sweep (27 E7) run both schedules without it, so their rows stay as measured.
+-      const rules = item.sweeps ? [...PACE_RULES] : PACE_RULES.filter((r) => r.id !== RULE.regionSweep);
+-      const beforeMs = ri(scheduleOf(rp.h, rp.scene, rp.tz, { ...base, ...item.inputs, ...(item.before ? { rules: item.before([...rules]) } : item.sweeps ? {} : { rules: [...rules] }) }).wallMs);
+-      const nowMs = ri(scheduleOf(rp.h, rp.scene, rp.tz, { ...base, ...(item.after ? { rules: item.after([...rules]) } : item.sweeps ? {} : { rules: [...rules] }) }).wallMs);
++      // And without the summon on the fly (27 F2): `beforeF2`. The "now" run's rules are always passed explicitly.
++      const today = item.passes ? [...PACE_RULES] : beforeF2([...PACE_RULES]);
++      const rules = item.sweeps ? today : today.filter((r) => r.id !== RULE.regionSweep);
++      const beforeMs = ri(scheduleOf(rp.h, rp.scene, rp.tz, { ...base, ...item.inputs, ...(item.before ? { rules: item.before([...rules]) } : { rules: [...rules] }) }).wallMs);
++      const nowMs = ri(scheduleOf(rp.h, rp.scene, rp.tz, { ...base, ...(item.after ? { rules: item.after([...rules]) } : { rules: [...rules] }) }).wallMs);
+       const savedMs = beforeMs - nowMs;
+       const estimateMs = item.estimateMs[rp.label] ?? 0;
+       rows.push({ id: item.id, pod: rp.label, beforeMs, nowMs, savedMs, estimateMs, diffMs: savedMs - estimateMs });
+diff --git a/scripts/pacing-candidates.ts b/scripts/pacing-candidates.ts
+index 784753d..3b379ea 100644
+--- a/scripts/pacing-candidates.ts
++++ b/scripts/pacing-candidates.ts
+@@ -12,7 +12,7 @@ import { CLOSE_SLIDE_MS, PACE_RULES, RULE, castOf, phases, workOf, type PaceRule
+ import { DESKTOP } from '../src/shared/profile/bundled';
+ import { SOLAR } from '../src/shared/hierarchy/solar';
+ import { FINAL_HOLD_MS, GAP_MIN_MS, ORIENT_MS } from '../src/shared/playback/constants';
+-import { bindingOf, planOf, resolvePods, scheduleOf, type Binding, type EngineInputs, type ResolvedPod } from './pacing-ledger';
++import { beforeF2, bindingOf, planOf, resolvePods, scheduleOf, type Binding, type EngineInputs, type ResolvedPod } from './pacing-ledger';
+ 
+ 
+ // ---- The model's assumptions (named here; the md lists them) ----
+@@ -292,8 +292,8 @@ const EDITS: Record<string, RuleEdit> = {
+   },
+ };
+ 
+-/** C2's rules: today's, less the sector sweep (27 E7, built since), so its committed numbers don't move. */
+-const NO_SWEEP: readonly PaceRule[] = PACE_RULES.filter((r) => r.id !== RULE.regionSweep);
++/** C2's rules: today's, less the sector sweep (27 E7, built since) and with the summon on the fly (27 F2) undone, so its committed numbers don't move. */
++const NO_SWEEP: readonly PaceRule[] = beforeF2(PACE_RULES.filter((r) => r.id !== RULE.regionSweep));
+ 
+ /** Compose rule edits in the order given: wrappers chain `when` with && and variants first-hit. */
+ function compose(ids: string[], d: Derived): { rules: PaceRule[]; touched: Record<string, number>; detail: string[] } {
+diff --git a/scripts/pacing-ledger.ts b/scripts/pacing-ledger.ts
+index 509af40..3c278ef 100644
+--- a/scripts/pacing-ledger.ts
++++ b/scripts/pacing-ledger.ts
+@@ -14,7 +14,7 @@ import { sceneFacts } from '../src/shared/engine/facts';
+ import { ACTING_ROLES, NOTE_MIN_MS, claimMs, flyingPlay, gatherAtOf, nearStartMs, pacing, planManeuvers, priorityFor, releaseOfPlay, seamStartMs, tailOf, workEndOf, type SequenceOptions } from '../src/shared/engine/maneuvers';
+ import type { DeviceProfile } from '../src/shared/contracts/profile';
+ import { DIRECTOR_TARGET_MS } from '../src/shared/engine/director';
+-import { PACE_RULES, type PaceRule } from '../src/shared/engine/pace';
++import { PACE_RULES, RULE, phases, type PaceRule } from '../src/shared/engine/pace';
+ import { SOLAR } from '../src/shared/hierarchy/solar';
+ import { paceFacts } from '../src/shared/hierarchy/solarSource';
+ import '../src/shared/packs/all';
+@@ -50,6 +50,14 @@ export interface EngineInputs {
+   lateMontage?: false;
+ }
+ 
++/**
++ * Today's rules with the summon on the fly (27 F2) undone: `facility.enter` holds its turn (a tell, the flight, the act and the
++ * land, and the ship's held turn) as it did before F2. Every Built row built ahead of F2 and C2's candidates run on it, so they stay as measured.
++ */
++export const beforeF2 = (rules: PaceRule[]): PaceRule[] => rules.map((r) => (r.id === RULE.facilityEnter
++  ? { ...r, passes: undefined, phases: phases(['tell', 300], ['gather', 715], ['act', 1200], ['land', 600]) }
++  : r));
++
+ type SceneKeyArg = Parameters<typeof buildScene>[3];
+ 
+ /** The schedule the app plays for a pod's scene (budget 45 s by default). */
+diff --git a/src/renderer/src/chart/fx/commands.ts b/src/renderer/src/chart/fx/commands.ts
+index 8359563..eb20f2e 100644
+--- a/src/renderer/src/chart/fx/commands.ts
++++ b/src/renderer/src/chart/fx/commands.ts
+@@ -49,6 +49,11 @@ export interface PursueArgs extends MoverArgs {
+   to?: Anchor; look?: Anchor; holdS?: number; backS?: number;
+   /** A sortie: stay parked this long after the hold (plate shut) before flying back, when the captain's next turn follows soon (P4). */
+   waitS?: number;
++  /**
++   * A sortie that flies through its spot without stopping (27 F2): no hold; it passes at speed, coasts at most `turnR` past it while the
++   * next sortie waits, then swings on to its place over `backS`.
++   */
++  pass?: { turnR: number };
+   /**
+    * Other places to park, in order after `to` (22 B9): the first whose parked ship, with `clearPx`
+    * screen px round it for its own plate, stands clear of `avoid`'s plate is chosen, once, as it sets
+@@ -363,7 +368,7 @@ export const SEED_COMMANDS: readonly CommandDef[] = Object.freeze([
+       if (a.to !== undefined) {
+         const to = a.toChoices?.length && a.avoid ? clearOfPlate(host, [a.to, ...a.toChoices], a.avoid, a.clearPx ?? 0, () => scene.drawnR?.(a.pk) ?? 0) : live(a.to);
+         // A guest new this beat jumps in at its spot on its first sortie, never flying out (22 C8, K-13).
+-        return new Sortie(scene, a.pk, start, to, live(a.look ?? a.to), a.durS, a.holdS ?? 0, a.backS ?? a.durS, a.wake ?? 0, scene.takeJump(a.pk), a.waitS ?? 0);
++        return new Sortie(scene, a.pk, start, to, live(a.look ?? a.to), a.durS, a.pass ? 0 : a.holdS ?? 0, a.backS ?? a.durS, a.wake ?? 0, scene.takeJump(a.pk), a.waitS ?? 0, a.pass ?? null);
+       }
+       return new Pursue(scene, a.pk, start, a.durS, { lift: a.lift, wake: a.wake, face: a.face, ease: a.ease ? EASE[a.ease] : undefined });
+     },
+diff --git a/src/renderer/src/chart/fx/movers.ts b/src/renderer/src/chart/fx/movers.ts
+index 59b8028..b17332c 100644
+--- a/src/renderer/src/chart/fx/movers.ts
++++ b/src/renderer/src/chart/fx/movers.ts
+@@ -6,6 +6,7 @@
+ // a timed hold, and a sortie (out to a live point, hold, back home).
+ import type { CanonicalKey } from '@shared/contracts/keys';
+ import type { ViewNode } from '@shared/contracts/view';
++import { NOTE_MIN_MS } from '@shared/engine/maneuvers';
+ import { motion } from '../art/motion';
+ import type { GraphScene } from '../scenes/GraphScene';
+ import { Graphics } from 'pixi.js';
+@@ -249,6 +250,11 @@ export class Sortie implements Fx {
+     private readonly jump = false,
+     /** Seconds it stays parked after its hold (plate shut), when the same captain's next turn follows soon (P4, `nearWaits`), before flying back. */
+     private readonly waitS = 0,
++    /**
++     * Pass mode (27 F2): the summoner flies through the spot without stopping, so `holdS` is 0. It passes the spot at speed,
++     * coasts at most `turnR` past it while the next sortie waits, then swings on to its place; it never reverses at the spot.
++     */
++    private readonly pass: { turnR: number } | null = null,
+   ) {
+     scene.own(pk);
+     scene.placeAt(pk, start[0], start[1]);
+@@ -270,6 +276,7 @@ export class Sortie implements Fx {
+     const k = 1 - (1 - u) ** 3;
+     const look = this.look();
+     const dir = look && Math.abs(look[0] - slot[0]) > 1e-6 ? Math.sign(look[0] - slot[0]) : this.scene.facingOf(this.pk) ?? 1;
++    this.jumpDir = dir;
+     this.scene.faceView(this.pk, dir);
+     const px = 1 / this.scene.currentScale();
+     const reach = 90 * px;
+@@ -284,21 +291,84 @@ export class Sortie implements Fx {
+     }
+     return p;
+   }
+-  private arc(a: readonly [number, number], b: readonly [number, number], u: number): [number, number] {
+-    const k = easeInOut(u);
++  /** The out leg's control point: the chord's midpoint lifted 0.18 of its length to one side. */
++  private control(a: readonly [number, number], b: readonly [number, number]): [number, number] {
+     const len = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1;
+     const lift = len * 0.18;
+-    const cx = (a[0] + b[0]) / 2 + (-(b[1] - a[1]) / len) * lift;
+-    const cy = (a[1] + b[1]) / 2 + ((b[0] - a[0]) / len) * lift;
++    return [(a[0] + b[0]) / 2 + (-(b[1] - a[1]) / len) * lift, (a[1] + b[1]) / 2 + ((b[0] - a[0]) / len) * lift];
++  }
++  private arc(a: readonly [number, number], b: readonly [number, number], u: number, ease: (u: number) => number = easeInOut): [number, number] {
++    const k = ease(u);
++    const [cx, cy] = this.control(a, b);
+     const v = 1 - k;
+     return [v * v * a[0] + 2 * v * k * cx + k * k * b[0], v * v * a[1] + 2 * v * k * cy + k * k * b[1]];
+   }
++  /** Pass mode (27 F2): the spot, the heading it passes it on and the time constant of its coast, fixed once as the out leg ends. */
++  private passed: { spot: [number, number]; h: [number, number]; tau: number } | null = null;
++  /** Pass mode: where the onward leg starts, fixed once at the leg's start. */
++  private onFrom: [number, number] | null = null;
++  private jumpDir = 1;
++  /** Pass mode's out leg: it starts from rest and passes the spot at speed. */
++  private static readonly PASS_EASE = (u: number): number => (3 * u * u - u * u * u) / 2;
++  private fixPass(slot: readonly [number, number], turnR: number): void {
++    const spot: [number, number] = [slot[0], slot[1]];
++    let h: [number, number] = [this.jumpDir, 0];
++    let v0 = turnR / JUMP_IN_S; // a jump arrives at rest: coast on the jump's own time scale
++    if (!this.flash) {
++      const [cx, cy] = this.control(this.start, slot);
++      const dx = slot[0] - cx, dy = slot[1] - cy, d = Math.hypot(dx, dy);
++      if (d > 1e-9) { h = [dx / d, dy / d]; v0 = (3 * d) / Math.max(1e-3, this.outS); } // the out leg's end speed: 2|b - c| k'(1) / outS
++      else h = [Math.sign(slot[0] - this.start[0]) || 1, 0];
++    }
++    this.passed = { spot, h, tau: turnR / Math.max(1e-6, v0) };
++  }
++  private updatePass(t: number, slot: readonly [number, number], pass: { turnR: number }): [number, number] {
++    if (t < this.outS) {
++      if (this.flash) return this.jumpIn(slot, t);
++      const p = this.arc(this.start, slot, t / Math.max(1e-3, this.outS), Sortie.PASS_EASE);
++      if (Math.abs(slot[0] - this.start[0]) > 1e-6) this.scene.faceView(this.pk, slot[0] - this.start[0]);
++      if (this.streak) this.streak.draw(this.start, p, this.wake / this.scene.currentScale(), 0.6 * (1 - t / this.outS));
++      return p;
++    }
++    if (!this.passed) {
++      this.fixPass(slot, pass.turnR);
++      if (this.flash) { this.scene.fadeView(this.pk, 1); this.flash.clear(); }
++    }
++    const { spot, h, tau } = this.passed!;
++    const into = t - this.outS;
++    let p: [number, number];
++    if (into < this.waitS) {
++      // The next sortie is waiting: coast on, slowing toward at most `turnR` past the spot.
++      const g = coasted(pass.turnR, into, tau);
++      p = [spot[0] + h[0] * g, spot[1] + h[1] * g];
++      this.scene.faceView(this.pk, h[0] || 1);
++      this.streak?.draw(p, p, 0, 0);
++      return p;
++    }
++    if (!this.onFrom) {
++      const g = this.waitS > 0 ? coasted(pass.turnR, this.waitS, tau) : 0;
++      this.onFrom = [spot[0] + h[0] * g, spot[1] + h[1] * g];
++    }
++    // The onward leg: a quadratic from there to its place, leaving along the heading (never reversing at the spot), eased out.
++    const a = this.onFrom;
++    const home = this.scene.goalOf(this.pk) ?? this.start;
++    const L = Math.hypot(home[0] - a[0], home[1] - a[1]);
++    const reach = Math.min(L / 2, pass.turnR);
++    const c: [number, number] = [a[0] + h[0] * reach, a[1] + h[1] * reach];
++    const u = Math.max(0, Math.min(1, (t - this.outS - this.waitS) / Math.max(1e-3, this.backS)));
++    const k = 1 - (1 - u) ** 3;
++    const v = 1 - k;
++    p = [v * v * a[0] + 2 * v * k * c[0] + k * k * home[0], v * v * a[1] + 2 * v * k * c[1] + k * k * home[1]];
++    if (Math.abs(home[0] - a[0]) > 1e-6) this.scene.faceView(this.pk, home[0] - a[0]);
++    return p;
++  }
+   update(dt: number): boolean {
+     this.t += dt;
+     const t = this.t;
+     const slot = this.to() ?? this.parked ?? this.start;
+     let p: [number, number];
+-    if (this.flash && t < this.outS) p = this.jumpIn(slot, t);
++    if (this.pass) p = this.updatePass(t, slot, this.pass);
++    else if (this.flash && t < this.outS) p = this.jumpIn(slot, t);
+     else if (t < this.outS) {
+       p = this.arc(this.start, slot, t / Math.max(1e-3, this.outS));
+       if (Math.abs(slot[0] - this.start[0]) > 1e-6) this.scene.faceView(this.pk, slot[0] - this.start[0]);
+@@ -327,6 +397,11 @@ export class Sortie implements Fx {
+    */
+   crewOpen(foldS: number): number {
+     const h = this.t - this.outS;
++    if (this.pass) {
++      // A pass holds no turn (27 F2): the plate unfurls at the blip and is folded `NOTE_MIN_MS` on.
++      const n = NOTE_MIN_MS / 1000;
++      return h < 0 || h > n ? 0 : Math.min(1, h / foldS, (n - h) / foldS);
++    }
+     if (h < 0 || h > this.holdS) return 0;
+     return Math.max(0, Math.min(1, h / foldS, (this.holdS - h) / foldS));
+   }
+@@ -339,6 +414,12 @@ export class Sortie implements Fx {
+   }
+ }
+ 
++/**
++ * How far past the spot a pass has coasted after `s` seconds (27 F2): `turnR * (s/tau) / (1 + s/tau)`, with `tau = turnR / v0`. It leaves the
++ * spot at the out leg's end speed `v0`, never stops (its speed falls as 1/(1 + s/tau)^2, not to zero), and stays within `turnR` of the spot.
++ */
++export const coasted = (turnR: number, s: number, tau: number): number => (turnR * (s / tau)) / (1 + s / tau);
++
+ /** A guest's drop out of hyperspace at its spot (s, K-13): it fits inside every rule's gather (≥ 400 ms). */
+ export const JUMP_IN_S = 0.4;
+ 
+diff --git a/src/renderer/src/chart/fx/v1/interpreter.ts b/src/renderer/src/chart/fx/v1/interpreter.ts
+index 89c26ce..02de472 100644
+--- a/src/renderer/src/chart/fx/v1/interpreter.ts
++++ b/src/renderer/src/chart/fx/v1/interpreter.ts
+@@ -615,7 +615,7 @@ export class ManeuverInterpreter implements FxDirector {
+       if (e && !m.plate && m.phases.some((p) => p.phase === 'gather') && (ruleById(m.id) as PaceRule | undefined)?.turn !== false) {
+         const parts = partsOf(ctx.history, e);
+         // Open as the ships arrive, a second past the work, folded before they leave (22 B9, `crewTimes`).
+-        const crew = crewTimes(m.phases);
++        const crew = crewTimes(m.phases, !!m.passes);
+         // Named within the budget (22 C10): what its pieces' plates leave of it, the author first, then
+         // the reviewers in order; any beyond keep their picture.
+         let names = ATTENTION_MAX - Math.min(ATTENTION_MAX, this.litPieces(cast));
+diff --git a/src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts b/src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts
+index f5fc79e..02baf97 100644
+--- a/src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts
++++ b/src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts
+@@ -1,54 +1,68 @@
+ // Station jump-in (13 §6, rule `facility.enter`): the station arrives near the planets it serves,
+ // ponderously, summoned by the captain whose attachment first brings it into the round. The summoner
+-// flies ahead to where it will come in (a guest jumps in there), so the eye is waiting at the spot
+-// (2026-10-12); then space folds and the station slides out, and a slow bloom spreads as it settles.
+-// The beacon pulses, bearing and planet rings are retired (27 E1: the flight already says it). The
+-// station's arrival is hero energy at rest (13 §6.1, 2026-10-13).
++// flies ahead to the spot beside where it will come in (a guest jumps in there), and passes through it
++// without stopping (27 F2): as it passes it gives one call blip, and the station jumps in at that instant,
++// in the same hue and ring shape, so the two read as one cause and effect (R8, R10). The ship carries on to
++// its next place, its plate riding with it for `NOTE_MIN_MS`. The tell, the fold ring, the beacon pulses,
++// bearing and planet rings are retired (27 E1, F2: the flight and the blip say it). The station's arrival is
++// hero energy at rest (13 §6.1, 2026-10-13).
+ import { RULE } from '@shared/engine/pace';
+-import { HERO, HERO_GLOW } from '../../../chart/art/energy';
+-import { cmd, crewHoldMs, drawnR, one, phaseMs, pointOf, present, repeats } from '../../../chart/fx/commands';
+-import type { CommandCall, ManeuverDef } from '../../../chart/fx/types';
++import { NOTE_MIN_MS } from '@shared/engine/maneuvers';
++import { HERO_GLOW } from '../../../chart/art/energy';
++import { cmd, drawnR, one, phaseMs, pointOf, present, repeats } from '../../../chart/fx/commands';
++import type { CastViews, CommandCall, ManeuverDef } from '../../../chart/fx/types';
+ import { themeCmd } from '../commands';
+ 
++/** The call, as the blip and the arrival both draw it: one hue, one ring shape (27 F2, R10). */
++const callRing = (at: Parameters<typeof cmd.ring>[0]['at'], r: number): CommandCall =>
++  cmd.ring({ at, r: r * 0.7, r1: r * 1.6, color: HERO_GLOW, durS: 1.2, alpha: 0.7 });
++
++/** The spot beside where the station comes in, on the side the summoner arrives from (or toward the star). */
++function spotOf(c: CastViews): { spot: [number, number]; R: number; p: [number, number] } | null {
++  const f = one(c, 'facility') ?? one(c, 'subject');
++  if (!f) return null;
++  const R = drawnR(f);
++  const p = pointOf(f.at) ?? [f.node.world.x, f.node.world.y];
++  const a = present(c, 'agent')[0];
++  const from = (a && pointOf(a.at)) ?? [0, 0];
++  const l = Math.hypot(from[0] - p[0], from[1] - p[1]) || 1;
++  return { spot: [p[0] + ((from[0] - p[0]) / l) * R * 1.9, p[1] + ((from[1] - p[1]) / l) * R * 1.9], R, p };
++}
++
+ export const stationJumpIn: ManeuverDef = {
+   id: RULE.facilityEnter,
+   title: 'Station jump-in',
+   phase: {
+-    tell: (c) => {
+-      const f = one(c, 'facility') ?? one(c, 'subject');
+-      return f ? [cmd.ring({ at: f.at, r: drawnR(f) * 2.4, r1: drawnR(f) * 0.6, color: HERO, durS: 0.3, alpha: 0.35 })] : [];
+-    },
+     gather: (c, m) => {
+       const f = one(c, 'facility') ?? one(c, 'subject');
+-      if (!f) return [];
++      const s = spotOf(c);
++      if (!f || !s) return [];
++      const { spot, R, p } = s;
+       const gather = phaseMs(m, 'gather');
+-      const fly = gather; // the flight alone (27 E1: no beacon pulses)
+-      const rest = crewHoldMs(m); // through the arrival, then a second with the summoner named (22 B9)
+-      const R = drawnR(f);
+-      const p = pointOf(f.at) ?? [f.node.world.x, f.node.world.y];
+-      // The spot beside where it comes in, on the side the summoner arrives from (or toward the star).
+       const a = present(c, 'agent')[0];
+-      const from = (a && pointOf(a.at)) ?? [0, 0];
+-      const l = Math.hypot(from[0] - p[0], from[1] - p[1]) || 1;
+-      const spot: [number, number] = [p[0] + ((from[0] - p[0]) / l) * R * 1.9, p[1] + ((from[1] - p[1]) / l) * R * 1.9];
+       const calls: CommandCall[] = [];
+-      if (a) calls.push(cmd.pursue({ pk: a.node.projectionKey, durS: fly / 1000, holdS: rest / 1000, backS: 0.8, to: spot, look: f.at, wake: 4 }));
+-      else {
++      if (a) {
++        // It flies through the spot without stopping (27 F2) and on over the length its plate rides.
++        calls.push(cmd.pursue({ pk: a.node.projectionKey, durS: gather / 1000, pass: { turnR: R * 0.95 }, backS: NOTE_MIN_MS / 1000, to: spot, look: f.at, wake: 4 }));
++      } else {
++        // No ship on the board to carry on to a rest: the guest jumps in at the spot and out as the arrival ends.
+         const away = c.away?.agent?.[0];
+-        if (away) calls.push(themeCmd.guest({ key: away.key, seed: away.seed, at: spot, face: p[0] >= spot[0] ? 1 : -1, durS: (gather + rest + 600) / 1000 }));
++        if (away) calls.push(themeCmd.guest({ key: away.key, seed: away.seed, at: spot, face: p[0] >= spot[0] ? 1 : -1, durS: (m.phases.reduce((e, x) => Math.max(e, x.atMs + x.durMs), 0)) / 1000 }));
+       }
+-      // Space folds as the flight ends (the flight is the call; this ring only repeats it).
+-      calls.push(repeats(cmd.ring({ at: f.at, r: R * 2.2, r1: R * 0.8, color: HERO, durS: 0.6, alpha: 0.5 }, gather - 600)));
+       return calls;
+     },
+     act: (c) => {
+       const f = one(c, 'facility') ?? one(c, 'subject');
+       if (!f) return [];
+       const r = drawnR(f);
++      const s = spotOf(c);
++      const a = present(c, 'agent')[0];
+       return [
++        // The call blip at the summoner's live point (the spot in full motion; its own place under reduced motion).
++        callRing(a ? a.at : s ? s.spot : f.at, (s?.R ?? r) * 0.5),
+         cmd.act(f.key, 'jump'),
+         cmd.flare({ at: f.at, r, color: HERO_GLOW, scale: 1.3, linger: 2 }),
+-        cmd.ring({ at: f.at, r: r * 0.7, r1: r * 1.6, color: HERO_GLOW, durS: 1.2, alpha: 0.7 }),
++        callRing(f.at, r),
+       ];
+     },
+     land: (c) => {
+diff --git a/src/shared/contracts/maneuver.ts b/src/shared/contracts/maneuver.ts
+index 941b71d..0c0eb7b 100644
+--- a/src/shared/contracts/maneuver.ts
++++ b/src/shared/contracts/maneuver.ts
+@@ -77,6 +77,8 @@ export interface PlannedManeuver {
+    * event key, whose impact it plays at.
+    */
+   arc?: { holders?: CanonicalKey[]; merge?: string };
++  /** Its crew flies through without stopping (27 F2, `PaceRule.passes`): no held turn; the renderer reads it here, not from the rule. */
++  passes?: true;
+   /** Limelight didn't name it (22 C6): it plays unlabelled, no plate or name, and no held turn. */
+   quiet?: boolean;
+   /** Montage (22 C5): quiet in a crowded beat, its phases already shortened. */
+diff --git a/src/shared/engine/maneuvers.ts b/src/shared/engine/maneuvers.ts
+index 50f72e8..9f9245a 100644
+--- a/src/shared/engine/maneuvers.ts
++++ b/src/shared/engine/maneuvers.ts
+@@ -74,9 +74,12 @@ export const claimMs = (phases: readonly PhaseSpan[]): number => phases.find((x)
+  * When, from a maneuver's start, its flying crew's plates open (the act's start: the ship has
+  * arrived, and the unfurl begins) and close (the fold begins: the work's end plus `CREW_HOLD_MS`, no
+  * sooner than `CREW_OPEN_MIN_MS` after the unfurl ends, or later when the payoff runs on until the
+- * disperse), and when the ships leave (once folded).
++ * disperse), and when the ships leave (once folded). A crew that `passes` (27 F2) flies through: the plate
++ * unfurls at the blip and is folded `NOTE_MIN_MS` on, and the ship is released at the claim.
+  */
+-export function crewTimes(phases: readonly PhaseSpan[]): { openMs: number; closeMs: number; leaveMs: number } {
++export function crewTimes(phases: readonly PhaseSpan[], passes = false): { openMs: number; closeMs: number; leaveMs: number } {
++  // A crew that flies through (27 F2) holds no turn: the plate unfurls at the blip and is folded `NOTE_MIN_MS` on, as the ship is released.
++  if (passes) { const claim = claimMs(phases); return { openMs: claim, closeMs: claim + NOTE_MIN_MS - CREW_FOLD_MS, leaveMs: claim }; }
+   const span = (p: string) => phases.find((x) => x.phase === p);
+   const end = (p?: PhaseSpan) => (p ? p.atMs + p.durMs : undefined);
+   const openMs = claimMs(phases);
+@@ -169,6 +172,8 @@ interface Draft {
+   crew: Set<CanonicalKey>;
+   /** Whether its crew's ships fly a turn for it (`flies`). */
+   flying: boolean;
++  /** Its crew flies through without stopping (27 F2, `PaceRule.passes`): no held turn; released at the claim. */
++  passes?: true;
+   /**
+    * How many labels it shows, at most `ATTENTION_MAX`: the pieces' plates it lights and the captains it
+    * names (22 C10). A merge serving two pieces lights both. 0: it asks for no attention.
+@@ -304,8 +309,8 @@ export const workEndOf = (phases: readonly PhaseSpan[]): number => {
+   const end = (p: string) => { const x = phases.find((q) => q.phase === p); return x ? x.atMs + x.durMs : undefined; };
+   return end('land') ?? end('act') ?? 0;
+ };
+-/** When a flying maneuver's ships leave, from its start: once folded, or for a quiet or montage turn (no held turn) as the work ends. */
+-const releaseOf = (d: Draft): number => (d.quiet || d.plate ? workEndOf(d.phases) : crewTimes(d.phases).leaveMs);
++/** When a flying maneuver's ships leave, from its start: at the claim for a crew that passes (27 F2), else once folded, or for a quiet or montage turn (no held turn) as the work ends. */
++const releaseOf = (d: Draft): number => (d.passes ? claimMs(d.phases) : d.quiet || d.plate ? workEndOf(d.phases) : crewTimes(d.phases).leaveMs);
+ /** Where a maneuver's gather starts, from its start. */
+ export const gatherAtOf = (phases: readonly PhaseSpan[]): number => phases.find((x) => x.phase === 'gather')?.atMs ?? 0;
+ /** A maneuver's echo and disperse together: the tail its successor's tell and gather may overlap (P3). */
+@@ -375,10 +380,12 @@ function draftsOf(h: ScopeHistory, events: readonly AnyTimelineEvent[], f: Round
+         const attends = rule.tier === 'ornament' ? 0 : plate ? 1 : Math.min(ATTENTION_MAX, lit.size + (flying ? crewOf(cast).size : 0));
+         // A flying crew's turn holds the maneuver open until their ships leave (22 B9), so their next
+         // work (crewBusy) never cuts the hold short.
+-        const durMs = flying && !plate ? Math.max(spanMs(phases), crewTimes(phases).leaveMs) : spanMs(phases);
++        // A rule that `passes` (27 F2) holds no turn: its ship flies through and the plate rides `NOTE_MIN_MS` from the act.
++        const passes = flying && !plate && !!rule.passes;
++        const durMs = passes ? Math.max(spanMs(phases), claimMs(phases) + NOTE_MIN_MS) : flying && !plate ? Math.max(spanMs(phases), crewTimes(phases).leaveMs) : spanMs(phases);
+         // No turn (22 C7, P-16): no ship flies it, so no one in it is kept busy.
+         out.push({
+-          rule, mv, e, cast, durMs, protect, acting: actingOf(cast), crew: rule.turn === false ? new Set() : crewOf(cast), flying, attends, startMs: 0, phases, holds,
++          rule, mv, e, cast, durMs, protect, acting: actingOf(cast), crew: rule.turn === false ? new Set() : crewOf(cast), flying, attends, startMs: 0, phases, holds, ...(passes ? { passes: true as const } : {}),
+           all: new Set(Object.values(cast).flat()), ...(variant ? { variant } : {}), ...(directed ? { directed } : {}), ...(dir?.climaxes.has(key) ? { climax: true } : {}),
+           ...(plate ? { plate } : {}),
+         });
+@@ -723,7 +730,7 @@ export function shapeOf(h: ScopeHistory, events: readonly AnyTimelineEvent[], f:
+ 
+ const allKeys = (cast: Cast) => [...new Set(Object.values(cast).flat())].sort();
+ 
+-function planned(d: { rule: ManeuverRule; mv: Move; e: AnyTimelineEvent; cast: Cast; startMs: number; durMs: number; protect: boolean; acting: Set<CanonicalKey>; phases?: readonly PhaseSpan[]; variant?: string; holds?: Set<CanonicalKey>; arc?: Draft['arc']; quiet?: boolean; montage?: boolean; climax?: boolean; plate?: CanonicalKey; volley?: Draft['volley']; sweep?: Draft['sweep'] }): PlannedManeuver {
++function planned(d: { rule: ManeuverRule; mv: Move; e: AnyTimelineEvent; cast: Cast; startMs: number; durMs: number; protect: boolean; acting: Set<CanonicalKey>; phases?: readonly PhaseSpan[]; variant?: string; holds?: Set<CanonicalKey>; arc?: Draft['arc']; quiet?: boolean; montage?: boolean; climax?: boolean; plate?: CanonicalKey; volley?: Draft['volley']; sweep?: Draft['sweep']; passes?: true }): PlannedManeuver {
+   const { mv } = d;
+   const from = mv.m === 'climb' ? { from: mv.from } : {};
+   const to = mv.m === 'climb' || mv.m === 'appear' || mv.m === 'settle' ? { to: mv.to } : {};
+@@ -735,7 +742,7 @@ function planned(d: { rule: ManeuverRule; mv: Move; e: AnyTimelineEvent; cast: C
+     ...(d.holds?.size ? { holds: [...d.holds].sort() } : {}),
+     ...(d.arc ? { arc: { ...(d.arc.holders ? { holders: [...d.arc.holders] } : {}), ...(d.arc.merge ? { merge: d.arc.merge.e.eventKey } : {}) } } : {}),
+     ...(d.quiet ? { quiet: true } : {}), ...(d.montage || d.plate ? { montage: true } : {}), ...(d.plate ? { plate: d.plate } : {}),
+-    ...(d.climax ? { climax: true as const } : {}),
++    ...(d.climax ? { climax: true as const } : {}), ...(d.passes ? { passes: true as const } : {}),
+     ...(d.volley ? { volley: { lead: d.volley.lead, members: d.volley.members.map((x) => x.eventKey), turns: d.volley.turns } } : {}),
+     ...(d.sweep ? { sweep: { members: [...d.sweep.members], counts: { ...d.sweep.counts } } } : {}),
+   };
+@@ -797,7 +804,7 @@ export function planManeuvers(h: ScopeHistory, beat: Beat, f: RoundFacts, rules:
+ }
+ 
+ /** When a planned flying maneuver's ships leave, from its start (`releaseOf`, from the plan). */
+-export const releaseOfPlay = (m: Pick<PlannedManeuver, 'phases' | 'quiet' | 'plate'>): number => (m.quiet || m.plate ? workEndOf(m.phases) : crewTimes(m.phases).leaveMs);
++export const releaseOfPlay = (m: Pick<PlannedManeuver, 'phases' | 'quiet' | 'plate' | 'passes'>): number => (m.passes ? claimMs(m.phases) : m.quiet || m.plate ? workEndOf(m.phases) : crewTimes(m.phases).leaveMs);
+ 
+ /** Whether a planned maneuver sends its crew's ships on a turn: the rule's own test, from the plan. */
+ export function flyingPlay(m: PlannedManeuver): boolean {
+diff --git a/src/shared/engine/pace.ts b/src/shared/engine/pace.ts
+index c2a328c..e129535 100644
+--- a/src/shared/engine/pace.ts
++++ b/src/shared/engine/pace.ts
+@@ -81,6 +81,11 @@ export interface PaceRule extends ManeuverRule {
+    * it for a crew's hold or keep the crew busy, and no one is named (an abandoned PR's settle, G-7).
+    */
+   turn?: false;
++  /**
++   * Its crew flies through without stopping (27 F2). No held turn: the ship's plate rides from the act for
++   * `NOTE_MIN_MS`, and the ship is released at the act's start. Set on `facility.enter` only.
++   */
++  passes?: true;
+   /**
+    * Short forms for the director (27 E5) to choose (27 E4d, P7): the phases of a shorter play of this
+    * rule, keyed by the form it shortens, `plain` or a variant's name. The planner never picks one:
+@@ -500,7 +505,7 @@ export const PACE_RULES: readonly PaceRule[] = Object.freeze([
+   {
+     // A facility jumps in when a region first needs it (22 C11): its first PR event there in the
+     // round, an opening, a merge or a link, summoned by who made it. Never twice.
+-    id: RULE.facilityEnter, tier: 'narrative', introduces: true,
++    id: RULE.facilityEnter, tier: 'narrative', introduces: true, passes: true,
+     match: (mv, f) => attachmentMove(mv, f) !== null || regionsIn(f).some((rf) => attachmentMove(mv, rf) !== null),
+     when: (mv, e, f) => isFirstNeed(mv, e, f),
+     cast: (mv, e, f) => {
+@@ -510,8 +515,9 @@ export const PACE_RULES: readonly PaceRule[] = Object.freeze([
+       const seats = (f.attachments.get(a.key)?.links ?? []).map((k) => seatAt(f, k, e.occurredAt));
+       return castOf({ subject: [a.facility], facility: [a.facility], agent: [actorOf(mv, e)], seat: seats });
+     },
+-    // The summoner flies ahead to where it will come in (0.715 s, 27 E1: the beacon pulses are retired), then it jumps in.
+-    phases: phases(['tell', 300], ['gather', 715], ['act', 1200], ['land', 600]),
++    // The summoner flies ahead to where it will come in (0.715 s, 27 E1), gives one call blip as it passes and does not
++    // stop (27 F2: `passes`); the facility jumps in at the blip. The tell is gone: the blip is the one call.
++    phases: phases(['gather', 715], ['act', 1200], ['land', 600]),
+   },
+   {
+     // An attachment launches into its slot around the facility.
+diff --git a/tests/drive/steps/solar-station.ts b/tests/drive/steps/solar-station.ts
+index 9654065..0f6a6fa 100644
+--- a/tests/drive/steps/solar-station.ts
++++ b/tests/drive/steps/solar-station.ts
+@@ -1,6 +1,6 @@
+ // A station's arrival and its life at rest (2026-10-12, run with --paradigm solar): on pod-sprint's
+ // Harbor Pod, find the beat where the first station comes in, step it at 1× and shoot it every 400 ms
+-// (the summoner flies ahead and broadcasts its beacon, then the station jumps in). Then hold on the
++// (the summoner flies through the spot without stopping and gives one call blip, and the station jumps in at that instant, 27 F2). Then hold on the
+ // board and shoot it every 8 s: the hull's slow drift and its tenders' patrol. Fixture data only (INV-18).
+ import type { Drive } from '../drive';
+ 
+diff --git a/tests/e2e/gallery-assets.spec.ts b/tests/e2e/gallery-assets.spec.ts
+index 8c7e696..a0de51e 100644
+--- a/tests/e2e/gallery-assets.spec.ts
++++ b/tests/e2e/gallery-assets.spec.ts
+@@ -164,3 +164,31 @@ test('the three victories flare, then settle, in full and reduced motion (27 B3)
+   await page.evaluate(() => (window as DemoWindow).__starChartGalleryDemos!.setReduced(false));
+   expect(errors).toEqual([]);
+ });
++
++test('the jump-in cell passes through, in full and reduced motion (27 F2)', async () => {
++  test.setTimeout(150_000);
++  const rule = 'facility.enter';
++  const stat = async () => (await demos()).find((d) => d.rule === rule)!;
++  const cell = page.locator(`[data-art="maneuvers:${rule}"]`).locator('xpath=ancestor::figure[1]');
++  expect(await stat(), `a demo for ${rule}`).toBeTruthy();
++  await page.evaluate(() => (window as DemoWindow).__starChartGalleryDemos!.setReduced(false));
++  await cell.scrollIntoViewIfNeeded();
++  // Full motion: stills in the act (the blip and the station's jump), then it runs on and clears.
++  // (Leave any play in progress, then catch a fresh one, so the frame lands in the act.)
++  await expect.poll(async () => (await stat()).state, { timeout: 60_000, intervals: [50] }).not.toBe('play');
++  await expect.poll(async () => (await stat()).state, { timeout: 60_000, intervals: [50] }).toBe('play');
++  await page.waitForTimeout(750);
++  await cell.screenshot({ path: 'test-results/gallery/f2-jump-in-full.png' });
++  await expect.poll(async () => (await stat()).loops, { timeout: 60_000, intervals: [100] }).toBeGreaterThanOrEqual(1);
++  expect((await stat()).stuck).toBe(0);
++  // Reduced motion: the blip and the arrival play at the ship's place.
++  await page.evaluate(() => (window as DemoWindow).__starChartGalleryDemos!.setReduced(true));
++  await expect.poll(async () => (await stat()).reducedLoops, { timeout: 60_000, intervals: [200] }).toBeGreaterThanOrEqual(1);
++  await expect.poll(async () => (await stat()).state, { timeout: 60_000, intervals: [50] }).not.toBe('play');
++  await expect.poll(async () => (await stat()).state, { timeout: 60_000, intervals: [50] }).toBe('play');
++  await page.waitForTimeout(750);
++  await cell.screenshot({ path: 'test-results/gallery/f2-jump-in-reduced.png' });
++  expect((await stat()).stuck).toBe(0);
++  await page.evaluate(() => (window as DemoWindow).__starChartGalleryDemos!.setReduced(false));
++  expect(errors).toEqual([]);
++});
+diff --git a/tests/e2e/solar-dense.spec.ts b/tests/e2e/solar-dense.spec.ts
+index 8b6d077..03b711b 100644
+--- a/tests/e2e/solar-dense.spec.ts
++++ b/tests/e2e/solar-dense.spec.ts
+@@ -408,6 +408,8 @@ test('a captain’s turn: named once parked, held a second past the work, folded
+   const sides = new Map<string, { side: string; flips: number; shown: number }>();
+   let overWork = 0;
+   let opens = 0;
++  let baseFac: Set<string> | null = null; // the stations on the board at the first sample
++  const newFac = new Set<string>(); // stations that came in during the sample: each is at most one summon
+   const t0 = Date.now();
+   for (let i = 0; i < 420; i++) {
+     await page.waitForTimeout(60);
+@@ -429,9 +431,11 @@ test('a captain’s turn: named once parked, held a second past the work, folded
+         return { pk, at: w ? { x: w.x * scale, y: w.y * scale } : null, over };
+       });
+       const plates = shown.filter((e) => e.classList.contains('is-acting') || e.querySelector('.holo__note')).map((e) => ({ id: (e.querySelector('.callout__title')?.textContent ?? '') + (e.classList.contains('callout--captain') ? '|c' : '|p'), side: e.dataset.side ?? '' }));
+-      return { acting, plates };
++      return { acting, plates, fac: t.viewGraph()!.nodes.filter((n) => n.kind === 'facility').map((n) => n.projectionKey) };
+     });
+     const now = Date.now() - t0;
++    if (!baseFac) baseFac = new Set(s.fac);
++    for (const k of s.fac) if (!baseFac.has(k)) newFac.add(k);
+     for (const a of s.acting) {
+       const list = episodes.get(a.pk) ?? [];
+       const last = list.at(-1);
+@@ -452,7 +456,13 @@ test('a captain’s turn: named once parked, held a second past the work, folded
+   await page.evaluate(() => window.__starChartTest!.pause());
+   const end = Date.now() - t0;
+   // The opens seen whole: begun after the first sample, ended before the last.
+-  const whole = [...episodes.values()].flat().filter((e) => e.from > 100 && e.to < end - 300);
++  const seen = [...episodes.values()].flat().filter((e) => e.from > 100 && e.to < end - 300);
++  // A summon (27 F2, `passes`) holds no turn: its ship flies on with its plate open for NOTE_MIN_MS (1.8 s), so it
++  // moves while named. Any other plate travelling with its ship is a failure, and a summon's rides no longer than that.
++  const riding = seen.filter((e) => e.moved >= 12);
++  const whole = seen.filter((e) => e.moved < 12);
++  expect(riding.length, 'plates riding with their ships: at most one per station that came in').toBeLessThanOrEqual(newFac.size);
++  for (const e of riding) expect(e.to - e.from, 'a plate rides with its ship only for a summon, NOTE_MIN_MS').toBeLessThan(2200);
+   expect(whole.length).toBeGreaterThan(2);
+   // Whole (unfurled, not folding) at least CREW_OPEN_MIN_MS, 1.5 s at 1×, less the sampling step: the
+   // animations count toward no minimum (22 B9, the user's second look).
+diff --git a/tests/golden/__golden__/director.json b/tests/golden/__golden__/director.json
+index d43e85b..29a7d8d 100644
+--- a/tests/golden/__golden__/director.json
++++ b/tests/golden/__golden__/director.json
+@@ -2,7 +2,7 @@
+   {
+     "pod": "Comet Pod",
+     "levers": [],
+-    "estimateMs": 53065,
++    "estimateMs": 50745,
+     "tempo": null,
+     "forms": {},
+     "climaxes": [
+@@ -13,7 +13,7 @@
+   {
+     "pod": "Nova Pod",
+     "levers": [],
+-    "estimateMs": 188375,
++    "estimateMs": 186055,
+     "tempo": null,
+     "forms": {
+       "short": 3,
+@@ -39,8 +39,8 @@
+       "speed",
+       "light"
+     ],
+-    "estimateMs": 296189,
+-    "tempo": 1.9,
++    "estimateMs": 296950,
++    "tempo": 1.8,
+     "forms": {
+       "montage": 13,
+       "progress": 26,
+@@ -69,8 +69,8 @@
+       "speed",
+       "light"
+     ],
+-    "estimateMs": 294434,
+-    "tempo": 1.1,
++    "estimateMs": 284444,
++    "tempo": 1.05,
+     "forms": {
+       "short": 26,
+       "progress": 7,
+@@ -91,7 +91,7 @@
+   {
+     "pod": "Convoy Planning Pod",
+     "levers": [],
+-    "estimateMs": 187265,
++    "estimateMs": 180305,
+     "tempo": null,
+     "forms": {
+       "montage": 4
+@@ -107,7 +107,7 @@
+   {
+     "pod": "Harbor Pod",
+     "levers": [],
+-    "estimateMs": 199565,
++    "estimateMs": 192605,
+     "tempo": null,
+     "forms": {
+       "montage": 1,
+diff --git a/tests/unit/commands.test.ts b/tests/unit/commands.test.ts
+index 5249e45..911541f 100644
+--- a/tests/unit/commands.test.ts
++++ b/tests/unit/commands.test.ts
+@@ -415,7 +415,7 @@ const timing = await load<{
+   muteFloor(v: number, ignoreLoad: boolean, ornament?: boolean): number;
+   valuePerCost(value: number, weight: number): number;
+ }>('chart/fx/timing.ts');
+-const calls = await load<{ cmd: Record<string, (args: unknown, delayMs?: number) => Call>; repeats(c: Call): Call & { value?: number } }>('chart/fx/commands.ts');
++const calls = await load<{ cmd: Record<string, (args: unknown, delayMs?: number) => Call>; repeats(c: Call): Call & { value?: number }; pointOf(a: unknown): number[] | null }>('chart/fx/commands.ts');
+ const { commands: themed } = await load<{ commands: Def[] }>('theme/starChart/commands.ts');
+ const { entranceCommands } = await load<{ entranceCommands: Def[] }>('theme/starChart/entrance.ts');
+ const { finaleCommands } = await load<{ finaleCommands: Def[] }>('theme/starChart/finales.ts');
+@@ -486,8 +486,7 @@ describe('the mute rule (27 E1)', () => {
+     const m = planned(RULE.facilityEnter, 'e1', { facility: [WI1], agent: [A] });
+     const gather = jump.gather!(cast, m);
+     expect(gather.filter((c) => c.cmd === 'spark')).toEqual([]);
+-    expect(gather.filter((c) => c.cmd === 'ring')).toHaveLength(1);
+-    expect((gather.find((c) => c.cmd === 'ring') as Call & { value?: number }).value).toBe(0); // the fold: a repeat
++    expect(gather.filter((c) => c.cmd === 'ring')).toEqual([]); // 27 F2: no tell, no fold ring; the blip is in the act
+     expect(gather.find((c) => c.cmd === 'pursue')).toBeDefined();
+     const land = jump.land!(cast, m);
+     expect(land.filter((c) => c.cmd === 'ring')).toHaveLength(1); // the station's own, no seat's
+@@ -495,3 +494,123 @@ describe('the mute rule (27 E1)', () => {
+     expect(act.filter((c) => c.cmd === 'tractor')).toEqual([]);
+   });
+ });
++
++// ---- 27 F2: the summon on the fly ----
++
++const { Sortie } = await load<{ Sortie: new (...a: unknown[]) => { update(dt: number): boolean; crewOpen(foldS: number): number } }>('chart/fx/movers.ts');
++
++describe('Summon on the fly (27 F2)', () => {
++  const view = (key: string, x: number) => ({ key, node: { world: { x, y: 0, r: 20 }, projectionKey: key, kind: 'x' }, at: [x, 0] });
++  const cast = { facility: [view('fac', 100)], agent: [view('ag', 0)], seat: [view('s1', 200)] };
++  const jump = maneuvers.find((m) => m.title === 'Station jump-in')!.phase as Record<string, (c: unknown, m: unknown) => Call[]>;
++  const enter = () => ({ ...planned(RULE.facilityEnter, 'e1', { facility: [WI1], agent: [A] }), passes: true as const });
++
++  it('(a) the gather is one pass pursue, no hold and no ring; the act is a blip at the agent and a station ring of the same shape, plus the jump', () => {
++    const m = enter();
++    const gather = jump.gather!(cast, m);
++    expect(gather).toHaveLength(1);
++    const pursue = gather[0]!;
++    expect(pursue.cmd).toBe('pursue');
++    const args = pursue.args as { pass?: { turnR: number }; holdS?: number; backS: number };
++    expect(args.pass?.turnR).toBeGreaterThan(0);
++    expect(args.holdS).toBeUndefined();
++    expect(args.backS).toBe(1.8);
++    const act = jump.act!(cast, m);
++    const rings = act.filter((c) => c.cmd === 'ring').map((c) => c.args as { at: unknown; r: number; r1: number; color: number; durS: number; alpha: number });
++    expect(rings).toHaveLength(2);
++    const [blip, arrival] = rings as [typeof rings[0], typeof rings[0]];
++    expect(blip.at).toEqual(cast.agent[0]!.at);
++    expect(arrival.at).toEqual(cast.facility[0]!.at);
++    expect(blip.color).toBe(arrival.color);
++    expect(blip.r1 / blip.r).toBeCloseTo(arrival.r1 / arrival.r, 9);
++    expect(blip.durS).toBe(arrival.durS);
++    expect(blip.alpha).toBe(arrival.alpha);
++    expect(act.filter((c) => 'act' in c).map((c) => (c as unknown as { act: { act: string } }).act.act)).toEqual(['jump']);
++    expect(act.filter((c) => c.cmd === 'ring' && (c as Call & { value?: number }).value === 0)).toEqual([]); // the blip is not a repeat
++  });
++
++  /** A scene stub for a real Sortie: every placeAt recorded. */
++  function sortieScene(goal: [number, number]) {
++    const placed: [number, number][] = [];
++    const scene = {
++      own: () => {}, release: () => {}, restoreFacing: () => {}, faceView: () => {}, fadeView: () => {}, facingOf: () => 1,
++      placeAt: (_pk: string, x: number, y: number) => placed.push([x, y]),
++      goalOf: () => goal, currentScale: () => 1, fxLayer: () => ({ addChild: () => {} }),
++    };
++    return { scene, placed };
++  }
++
++  for (const waitS of [0, 1.8]) {
++    it(`(b) a Sortie in pass mode never stops: waitS ${waitS}`, () => {
++      const spot: [number, number] = [300, 100];
++      const goal: [number, number] = [60, 40];
++      const { scene, placed } = sortieScene(goal);
++      const sortie = new Sortie(scene, 'ag', [0, 0], () => spot, () => [400, 100], 0.715, 0, 1.8, 0, false, waitS, { turnR: 19 });
++      const dt = 1 / 60;
++      let t = 0;
++      let atOut: [number, number] | null = null;
++      let openBefore = 1, openAfter = 0;
++      for (let i = 0; i < 2000; i++) {
++        // One short step lands exactly on the out leg's end, to read the spot there.
++        const step = !atOut && t + dt > 0.715 ? 0.715 - t + 1e-9 : dt;
++        const more = sortie.update(step);
++        t += step;
++        const p = placed[placed.length - 1]!;
++        const q = placed[placed.length - 2]!;
++        if (more && step === dt) expect(Math.hypot(p[0] - q[0], p[1] - q[1]), `frame ${i} at ${t.toFixed(3)} s`).toBeGreaterThan(1e-6);
++        if (!atOut && t >= 0.715) atOut = p;
++        if (t < 0.7) openBefore = Math.min(openBefore, 0) + sortie.crewOpen(0.52);
++        if (Math.abs(t - (0.715 + 0.9)) < dt / 2) openAfter = sortie.crewOpen(0.52);
++        if (!more) break;
++      }
++      expect(Math.hypot(atOut![0] - spot[0], atOut![1] - spot[1])).toBeLessThan(1); // at the spot at outS
++      const last = placed[placed.length - 1]!;
++      expect(last[0]).toBeCloseTo(goal[0], 6); // ends at goalOf
++      expect(last[1]).toBeCloseTo(goal[1], 6);
++      expect(openBefore).toBe(0);
++      expect(openAfter).toBeGreaterThan(0);
++      expect(t).toBeCloseTo(0.715 + waitS + 1.8, 1);
++    });
++  }
++
++  it('(b) the coast stays within turnR of the spot, and the ship does not reverse at it', () => {
++    const spot: [number, number] = [300, 100];
++    const { scene, placed } = sortieScene([60, 40]);
++    const sortie = new Sortie(scene, 'ag', [0, 0], () => spot, () => [400, 100], 0.715, 0, 1.8, 0, false, 1.8, { turnR: 19 });
++    const out = Math.ceil(0.715 * 60); // the first frame past the out leg
++    const coastEnd = Math.floor((0.715 + 1.8) * 60) - 1; // the last frame still in the coast
++    for (let i = 1; i <= coastEnd; i++) sortie.update(1 / 60);
++    const far = Math.max(...placed.slice(out + 1).map((p) => Math.hypot(p[0] - spot[0], p[1] - spot[1])));
++    expect(far).toBeLessThanOrEqual(19 + 1e-6);
++    expect(far).toBeGreaterThan(10); // it did carry on past the spot
++  });
++
++  it('(c) the blip and the station\'s act start within 50 ms of each other', () => {
++    registry.installTheme({ maneuvers, commands: [] });
++    const FAC = 'fac|1';
++    const board = [node(FAC, 'repo:org:r' as CanonicalKey, 'facility', 100), node('ship|a', A, 'captain', 0)];
++    const { fx, scene, clock, run, ctx } = rig(board, board.slice(1));
++    // The scene's art-act seam (`actView`) logs the station's act.
++    (scene as unknown as { actView: (pk: string, act: string) => boolean }).actView = (pk, act) => { scene.log.push(`${Math.round(clock.ms)} act ${pk} ${act}`); return true; };
++    // The ring recorder logs its point and size; the host logs the station's act.
++    commands.registerCommand({
++      ...commands.commandByName('ring')!,
++      make: (_h: unknown, a: { at: unknown; r: number }) => {
++        const p = calls.pointOf(a.at);
++        scene.log.push(`${Math.round(clock.ms)} ring ${a.r.toFixed(2)} ${p ? p.map((x) => x.toFixed(0)).join(',') : '-'}`);
++        let t = 0;
++        return { kind: 'accent', update: (dt: number) => (t += dt) < 0.5, destroy: () => {} };
++      },
++    } as Def);
++    fx.queue(ctx([{ ...planned(RULE.facilityEnter, 'e1', { subject: ['repo:org:r' as CanonicalKey], facility: ['repo:org:r' as CanonicalKey], agent: [A] }), passes: true }]));
++    const errs: unknown[] = []; const oe = console.error; console.error = (...a: unknown[]) => { errs.push(a); };
++    run(3000);
++    console.error = oe; if (errs.length) throw new Error(String((errs[0] as unknown[])[1] ?? errs[0]));
++    const actAt = time(scene.log, 'act fac|1 jump');
++    const rings = scene.log.filter((l) => / ring /.test(l));
++    expect(actAt, scene.log.join('\n')).toBeGreaterThan(0);
++    const blip = rings.find((l) => l.endsWith(' 0,0') || l.includes(' ring 7.00 '));
++    expect(blip, scene.log.join('\n')).toBeDefined();
++    expect(Math.abs(Number(blip!.split(' ')[0]) - actAt)).toBeLessThanOrEqual(50);
++  });
++});
+diff --git a/tests/unit/maneuvers.test.ts b/tests/unit/maneuvers.test.ts
+index 5ba7720..ae87fd1 100644
+--- a/tests/unit/maneuvers.test.ts
++++ b/tests/unit/maneuvers.test.ts
+@@ -340,6 +340,12 @@ describe('the merge and the beamed close (2026-10-12)', () => {
+     const plan = planManeuvers(b.h, b.beat, f, PACE_RULES, ENGAGEMENT.calm);
+     const [enter, open, merge] = [RULE.facilityEnter, RULE.attachmentOpen, RULE.attachmentMerge].map((id) => plan.find((m) => m.id === id)!) as [PlannedManeuver, PlannedManeuver, PlannedManeuver];
+     expect(enter.afterMs).toBe(0);
++    // The summon flies through (27 F2): gather 715, act 1200, land 600; no held turn, so it holds its place for the note and no longer.
++    expect(enter.durationMs).toBe(2515);
++    expect(enter.passes).toBe(true);
++    expect(releaseOfPlay(enter)).toBe(claimMs(enter.phases));
++    expect(crewTimes(enter.phases, true)).toEqual({ openMs: 715, closeMs: 1995, leaveMs: 715 });
++    expect(open.passes).toBeUndefined();
+     expect(open.afterMs).toBe(enter.durationMs);
+     expect(merge).toMatchObject({ variant: 'first', afterMs: open.afterMs + open.durationMs });
+   });
+diff --git a/tests/unit/pacingBuilt.test.ts b/tests/unit/pacingBuilt.test.ts
+index 4308299..7f1a445 100644
+--- a/tests/unit/pacingBuilt.test.ts
++++ b/tests/unit/pacingBuilt.test.ts
+@@ -150,9 +150,28 @@ describe('the pacing ledger\'s Built section', () => {
+     expect(Math.abs(r.find((x) => x.pod.includes('Comet'))!.nowMs - 60795) / 60795).toBeLessThan(0.05);
+   }, 180_000);
+ 
++  it('F2, the summon on the fly: 7 rows each for F2 and F2+ (Meteor included); the saving is real on Pulsar and Meteor; F2+ starts from the ledger as it was', () => {
++    const f2 = rows.filter((x) => x.id === 'F2');
++    const plus = rows.filter((x) => x.id === 'F2+');
++    expect(f2).toHaveLength(7);
++    expect(plus).toHaveLength(7);
++    // F2 runs with short forms and montage only (no speed to re-fit it away), so it never costs time.
++    for (const x of f2) expect(x.savedMs, `F2 ${x.pod}`).toBeGreaterThanOrEqual(0);
++    // F2+ has every lever: adaptive speed re-fits each pod to the director's target, so a pod already there can move a little either way.
++    for (const x of plus) expect(x.savedMs, `F2+ ${x.pod}`).toBeGreaterThanOrEqual(-2000); // E6+ Quasar is -1880 in pacing-built.json: precedent for a pod the tempo lever re-fits
++    for (const n of ['Pulsar', 'Meteor']) expect(f2.find((x) => x.pod.includes(n))!.savedMs, n).toBeGreaterThan(0);
++    // F2+'s "before" is the ledger as it stood at the start commit (2b33931): each pod's wall time then. Hard-coded, as
++    // BEFORE_VOLLEYS is: CI checks out one commit, so `git show` of the start commit isn't there.
++    const START_WALL_MS: Record<string, number> = { Comet: 60795, Nova: 209348, Quasar: 299132, Pulsar: 288808, 'Convoy Planning': 183105, Harbor: 178335, Meteor: 284681 };
++    for (const x of plus) expect(x.beforeMs, x.pod).toBe(START_WALL_MS[Object.keys(START_WALL_MS).find((n) => x.pod.includes(n))!]);
++    // Its "now" is the new ledger's.
++    const now = JSON.parse(readFileSync(resolve(DIR, 'pacing-ledger.json'), 'utf8')) as { pods: { label: string; wallMs: number }[] };
++    for (const x of plus) expect(x.nowMs, x.pod).toBe(Math.round(now.pods.find((p) => p.label === x.pod)!.wallMs));
++  }, 180_000);
++
+   it('E1 to E5 measure what they measured before volleys: their rows are the ones committed before E6 (3d4e402)', () => {
+     const before = BEFORE_VOLLEYS.map(([id, pod, beforeMs, nowMs, savedMs, estimateMs, diffMs]) => ({ id, pod, beforeMs, nowMs, savedMs, estimateMs, diffMs }));
+-    expect(rows.filter((x) => !x.id.startsWith('E6') && !x.id.startsWith('E7') && !x.id.startsWith('E8') && !x.id.startsWith('E10'))).toEqual(before);
++    expect(rows.filter((x) => !x.id.startsWith('E6') && !x.id.startsWith('E7') && !x.id.startsWith('E8') && !x.id.startsWith('E10') && !x.id.startsWith('F'))).toEqual(before);
+   }, 120_000);
+ 
+   it('the committed ledger has the Built section and the committed pacing-built.json is current', () => {
+diff --git a/tests/unit/sweep.test.ts b/tests/unit/sweep.test.ts
+index 074540f..f44f848 100644
+--- a/tests/unit/sweep.test.ts
++++ b/tests/unit/sweep.test.ts
+@@ -168,9 +168,9 @@ describe('the sector sweep leaves Halcyon alone (no creation burst) (Check 2)',
+     const ids = sch.beats.filter((b) => b.durationMs > 0).flatMap((b) => planOf(comet.h, comet.areaKey, b, sch.limelight, {}).map((m) => m.id));
+     expect(ids).toContain(RULE.pieceAppear);
+     expect(ids).not.toContain(RULE.regionSweep);
+-    // Comet's length as E7 measured it, before rising tempo (27 E8) tightened its gaps.
++    // Comet's length as E7 measured it, before rising tempo (27 E8) tightened its gaps. It moved from 61 845 to 61 545 ms by F2's one summon (27 F2).
+     const flat = scheduleOf(comet.h, comet.scene, comet.tz, { risingTempo: false });
+-    expect(flat.wallMs ?? flat.totalMs).toBe(61_845);
++    expect(flat.wallMs ?? flat.totalMs).toBe(61_545);
+     for (const rp of HALCYON) {
+       const a = scheduleOf(rp.h, rp.scene, rp.tz, {});
+       const b = scheduleOf(rp.h, rp.scene, rp.tz, { rules: NO_SWEEP });
+diff --git a/docs/progress/v1.4/pacing-built.json b/docs/progress/v1.4/pacing-built.json
+index d8aad0f..3c330d1 100644
+--- a/docs/progress/v1.4/pacing-built.json
++++ b/docs/progress/v1.4/pacing-built.json
+@@ -700,5 +700,131 @@
+     "savedMs": 1540,
+     "estimateMs": 0,
+     "diffMs": 1540
++  },
++  {
++    "id": "F2",
++    "pod": "Comet Pod",
++    "beforeMs": 60795,
++    "nowMs": 60495,
++    "savedMs": 300,
++    "estimateMs": 0,
++    "diffMs": 300
++  },
++  {
++    "id": "F2",
++    "pod": "Nova Pod",
++    "beforeMs": 209348,
++    "nowMs": 207028,
++    "savedMs": 2320,
++    "estimateMs": 0,
++    "diffMs": 2320
++  },
++  {
++    "id": "F2",
++    "pod": "Quasar Pod",
++    "beforeMs": 769070,
++    "nowMs": 754550,
++    "savedMs": 14520,
++    "estimateMs": 0,
++    "diffMs": 14520
++  },
++  {
++    "id": "F2",
++    "pod": "Pulsar Pod",
++    "beforeMs": 545415,
++    "nowMs": 526555,
++    "savedMs": 18860,
++    "estimateMs": 0,
++    "diffMs": 18860
++  },
++  {
++    "id": "F2",
++    "pod": "Convoy Planning Pod",
++    "beforeMs": 183105,
++    "nowMs": 176145,
++    "savedMs": 6960,
++    "estimateMs": 0,
++    "diffMs": 6960
++  },
++  {
++    "id": "F2",
++    "pod": "Harbor Pod",
++    "beforeMs": 178335,
++    "nowMs": 175015,
++    "savedMs": 3320,
++    "estimateMs": 0,
++    "diffMs": 3320
++  },
++  {
++    "id": "F2",
++    "pod": "Meteor Pod",
++    "beforeMs": 564581,
++    "nowMs": 530297,
++    "savedMs": 34284,
++    "estimateMs": 0,
++    "diffMs": 34284
++  },
++  {
++    "id": "F2+",
++    "pod": "Comet Pod",
++    "beforeMs": 60795,
++    "nowMs": 60495,
++    "savedMs": 300,
++    "estimateMs": 0,
++    "diffMs": 300
++  },
++  {
++    "id": "F2+",
++    "pod": "Nova Pod",
++    "beforeMs": 209348,
++    "nowMs": 207028,
++    "savedMs": 2320,
++    "estimateMs": 0,
++    "diffMs": 2320
++  },
++  {
++    "id": "F2+",
++    "pod": "Quasar Pod",
++    "beforeMs": 299132,
++    "nowMs": 291872,
++    "savedMs": 7260,
++    "estimateMs": 0,
++    "diffMs": 7260
++  },
++  {
++    "id": "F2+",
++    "pod": "Pulsar Pod",
++    "beforeMs": 288808,
++    "nowMs": 290639,
++    "savedMs": -1831,
++    "estimateMs": 0,
++    "diffMs": -1831
++  },
++  {
++    "id": "F2+",
++    "pod": "Convoy Planning Pod",
++    "beforeMs": 183105,
++    "nowMs": 176145,
++    "savedMs": 6960,
++    "estimateMs": 0,
++    "diffMs": 6960
++  },
++  {
++    "id": "F2+",
++    "pod": "Harbor Pod",
++    "beforeMs": 178335,
++    "nowMs": 175015,
++    "savedMs": 3320,
++    "estimateMs": 0,
++    "diffMs": 3320
++  },
++  {
++    "id": "F2+",
++    "pod": "Meteor Pod",
++    "beforeMs": 284681,
++    "nowMs": 283361,
++    "savedMs": 1320,
++    "estimateMs": 0,
++    "diffMs": 1320
+   }
+ ]
+diff --git a/docs/progress/v1.4/pacing-ledger.json b/docs/progress/v1.4/pacing-ledger.json
+index 0cb8f0a..a698e57 100644
+--- a/docs/progress/v1.4/pacing-ledger.json
++++ b/docs/progress/v1.4/pacing-ledger.json
+@@ -15,18 +15,18 @@
+         "cutByBudget": 2
+       },
+       "budgetMs": null,
+-      "totalMs": 60795,
+-      "uncappedMs": 74708,
+-      "wallMs": 60795,
++      "totalMs": 60495,
++      "uncappedMs": 74408,
++      "wallMs": 60495,
+       "story": {
+-        "wallMs": 45795,
++        "wallMs": 45495,
+         "played": 6,
+         "levers": []
+       },
+       "director": {
+         "targetMs": 300000,
+         "levers": [],
+-        "estimateMs": 67405
++        "estimateMs": 65085
+       },
+       "frame": {
+         "orientMs": 3000,
+@@ -35,7 +35,7 @@
+         "dayTurns": 6,
+         "tailGapMs": 300,
+         "finalHoldMs": 1200,
+-        "beatsMs": 53145
++        "beatsMs": 52845
+       },
+       "playing": {
+         "byRule": [
+@@ -56,7 +56,7 @@
+           {
+             "key": "attachment.merge",
+             "ms": 7200,
+-            "share": 0.135,
++            "share": 0.136,
+             "maneuvers": 1,
+             "phases": {
+               "act": 1600,
+@@ -70,7 +70,7 @@
+           {
+             "key": "threat.accomplish/beamed",
+             "ms": 6820,
+-            "share": 0.128,
++            "share": 0.129,
+             "maneuvers": 1,
+             "phases": {
+               "act": 2600,
+@@ -100,7 +100,7 @@
+           {
+             "key": "seat.complete",
+             "ms": 5120,
+-            "share": 0.096,
++            "share": 0.097,
+             "maneuvers": 1,
+             "phases": {
+               "act": 1000,
+@@ -148,14 +148,13 @@
+           },
+           {
+             "key": "facility.enter",
+-            "ms": 2815,
+-            "share": 0.053,
++            "ms": 2515,
++            "share": 0.048,
+             "maneuvers": 1,
+             "phases": {
+               "act": 1200,
+               "gather": 715,
+-              "land": 600,
+-              "tell": 300
++              "land": 600
+             }
+           },
+           {
+@@ -201,9 +200,9 @@
+           "gather": 5915,
+           "hold": 5280,
+           "land": 5900,
+-          "tell": 3950
++          "tell": 3650
+         },
+-        "playingMs": 53145
++        "playingMs": 52845
+       },
+       "held": {
+         "queueIdleMs": 0,
+@@ -212,7 +211,7 @@
+       "waits": {
+         "byCause": {
+           "P-5": {
+-            "ms": 24735,
++            "ms": 24435,
+             "count": 4
+           },
+           "P-3": {
+@@ -252,18 +251,18 @@
+         "cutByBudget": 10
+       },
+       "budgetMs": null,
+-      "totalMs": 209348,
+-      "uncappedMs": 262692,
+-      "wallMs": 209348,
++      "totalMs": 207028,
++      "uncappedMs": 260372,
++      "wallMs": 207028,
+       "story": {
+-        "wallMs": 170968,
++        "wallMs": 170668,
+         "played": 29,
+         "levers": []
+       },
+       "director": {
+         "targetMs": 300000,
+         "levers": [],
+-        "estimateMs": 217435
++        "estimateMs": 215115
+       },
+       "frame": {
+         "orientMs": 3000,
+@@ -272,14 +271,14 @@
+         "dayTurns": 8,
+         "tailGapMs": 300,
+         "finalHoldMs": 1200,
+-        "beatsMs": 189635
++        "beatsMs": 187315
+       },
+       "playing": {
+         "byRule": [
+           {
+             "key": "attachment.merge",
+             "ms": 36000,
+-            "share": 0.19,
++            "share": 0.192,
+             "maneuvers": 5,
+             "phases": {
+               "act": 8000,
+@@ -293,7 +292,7 @@
+           {
+             "key": "threat.accomplish/beamed",
+             "ms": 27280,
+-            "share": 0.144,
++            "share": 0.146,
+             "maneuvers": 4,
+             "phases": {
+               "act": 10400,
+@@ -308,7 +307,7 @@
+           {
+             "key": "objective.accomplish/beamed",
+             "ms": 26080,
+-            "share": 0.138,
++            "share": 0.139,
+             "maneuvers": 4,
+             "phases": {
+               "act": 10400,
+@@ -323,7 +322,7 @@
+           {
+             "key": "objective.nearing",
+             "ms": 20100,
+-            "share": 0.106,
++            "share": 0.107,
+             "maneuvers": 5,
+             "phases": {
+               "act": 5500,
+@@ -336,7 +335,7 @@
+           {
+             "key": "objective.underway",
+             "ms": 20100,
+-            "share": 0.106,
++            "share": 0.107,
+             "maneuvers": 5,
+             "phases": {
+               "act": 6000,
+@@ -349,7 +348,7 @@
+           {
+             "key": "attachment.open",
+             "ms": 17000,
+-            "share": 0.09,
++            "share": 0.091,
+             "maneuvers": 11,
+             "phases": {
+               "act": 10000,
+@@ -360,7 +359,7 @@
+           {
+             "key": "seat.complete",
+             "ms": 10240,
+-            "share": 0.054,
++            "share": 0.055,
+             "maneuvers": 2,
+             "phases": {
+               "act": 2000,
+@@ -388,7 +387,7 @@
+           {
+             "key": "attachment.merge/short",
+             "ms": 6340,
+-            "share": 0.033,
++            "share": 0.034,
+             "maneuvers": 1,
+             "phases": {
+               "act": 960,
+@@ -402,7 +401,7 @@
+           {
+             "key": "objective.accomplish/beamed-short",
+             "ms": 5200,
+-            "share": 0.027,
++            "share": 0.028,
+             "maneuvers": 1,
+             "phases": {
+               "act": 1560,
+@@ -414,23 +413,10 @@
+               "tell": 180
+             }
+           },
+-          {
+-            "key": "facility.enter",
+-            "ms": 4835,
+-            "share": 0.025,
+-            "maneuvers": 1,
+-            "phases": {
+-              "act": 1200,
+-              "gather": 715,
+-              "hold": 2020,
+-              "land": 600,
+-              "tell": 300
+-            }
+-          },
+           {
+             "key": "agent.progress",
+             "ms": 3120,
+-            "share": 0.016,
++            "share": 0.017,
+             "maneuvers": 1,
+             "phases": {
+               "act": 800,
+@@ -439,6 +425,17 @@
+               "hold": 1620
+             }
+           },
++          {
++            "key": "facility.enter",
++            "ms": 2515,
++            "share": 0.013,
++            "maneuvers": 1,
++            "phases": {
++              "act": 1200,
++              "gather": 715,
++              "land": 600
++            }
++          },
+           {
+             "key": "threat.engage",
+             "ms": 2400,
+@@ -454,7 +451,7 @@
+           {
+             "key": "piece.appear",
+             "ms": 1600,
+-            "share": 0.008,
++            "share": 0.009,
+             "maneuvers": 1,
+             "phases": {
+               "act": 900,
+@@ -480,11 +477,11 @@
+           "disperse": 8920,
+           "echo": 32340,
+           "gather": 19295,
+-          "hold": 33840,
++          "hold": 31820,
+           "land": 20900,
+-          "tell": 12240
++          "tell": 11940
+         },
+-        "playingMs": 189635
++        "playingMs": 187315
+       },
+       "held": {
+         "queueIdleMs": 0,
+@@ -493,7 +490,7 @@
+       "waits": {
+         "byCause": {
+           "P-5": {
+-            "ms": 51775,
++            "ms": 49455,
+             "count": 7
+           },
+           "P-3": {
+@@ -533,11 +530,11 @@
+         "cutByBudget": 7
+       },
+       "budgetMs": null,
+-      "totalMs": 491863,
+-      "uncappedMs": 526406,
+-      "wallMs": 299132,
++      "totalMs": 477343,
++      "uncappedMs": 511886,
++      "wallMs": 291872,
+       "story": {
+-        "wallMs": 289626,
++        "wallMs": 293356,
+         "played": 77,
+         "levers": [
+           "short",
+@@ -554,7 +551,7 @@
+           "speed",
+           "light"
+         ],
+-        "estimateMs": 304810
++        "estimateMs": 295530
+       },
+       "frame": {
+         "orientMs": 3000,
+@@ -563,14 +560,14 @@
+         "dayTurns": 9,
+         "tailGapMs": 300,
+         "finalHoldMs": 1200,
+-        "beatsMs": 452080
++        "beatsMs": 437560
+       },
+       "playing": {
+         "byRule": [
+           {
+             "key": "agent.progress",
+             "ms": 75180,
+-            "share": 0.166,
++            "share": 0.172,
+             "maneuvers": 25,
+             "phases": {
+               "act": 19200,
+@@ -582,7 +579,7 @@
+           {
+             "key": "attachment.merge/short",
+             "ms": 72860,
+-            "share": 0.161,
++            "share": 0.167,
+             "maneuvers": 16,
+             "phases": {
+               "act": 15360,
+@@ -596,7 +593,7 @@
+           {
+             "key": "attachment.merge/first",
+             "ms": 63200,
+-            "share": 0.14,
++            "share": 0.144,
+             "maneuvers": 8,
+             "phases": {
+               "act": 18400,
+@@ -610,7 +607,7 @@
+           {
+             "key": "objective.accomplish/beamed-short",
+             "ms": 52000,
+-            "share": 0.115,
++            "share": 0.119,
+             "maneuvers": 10,
+             "phases": {
+               "act": 15600,
+@@ -622,23 +619,10 @@
+               "tell": 1800
+             }
+           },
+-          {
+-            "key": "facility.enter",
+-            "ms": 34640,
+-            "share": 0.077,
+-            "maneuvers": 8,
+-            "phases": {
+-              "act": 9600,
+-              "gather": 5720,
+-              "hold": 12120,
+-              "land": 4800,
+-              "tell": 2400
+-            }
+-          },
+           {
+             "key": "attachment.merge/short/montage",
+             "ms": 30240,
+-            "share": 0.067,
++            "share": 0.069,
+             "maneuvers": 7,
+             "phases": {
+               "act": 6720,
+@@ -652,7 +636,7 @@
+           {
+             "key": "attachment.merge",
+             "ms": 28800,
+-            "share": 0.064,
++            "share": 0.066,
+             "maneuvers": 4,
+             "phases": {
+               "act": 6400,
+@@ -666,7 +650,7 @@
+           {
+             "key": "threat.accomplish/beamed-short",
+             "ms": 26900,
+-            "share": 0.06,
++            "share": 0.061,
+             "maneuvers": 5,
+             "phases": {
+               "act": 7800,
+@@ -681,7 +665,7 @@
+           {
+             "key": "seat.complete/short",
+             "ms": 23280,
+-            "share": 0.051,
++            "share": 0.053,
+             "maneuvers": 6,
+             "phases": {
+               "act": 3600,
+@@ -695,7 +679,7 @@
+           {
+             "key": "threat.accomplish/beamed",
+             "ms": 20460,
+-            "share": 0.045,
++            "share": 0.047,
+             "maneuvers": 3,
+             "phases": {
+               "act": 7800,
+@@ -707,10 +691,21 @@
+               "tell": 900
+             }
+           },
++          {
++            "key": "facility.enter",
++            "ms": 20120,
++            "share": 0.046,
++            "maneuvers": 8,
++            "phases": {
++              "act": 9600,
++              "gather": 5720,
++              "land": 4800
++            }
++          },
+           {
+             "key": "objective.accomplish/beamed-short/montage",
+             "ms": 18000,
+-            "share": 0.04,
++            "share": 0.041,
+             "maneuvers": 6,
+             "phases": {
+               "act": 7800,
+@@ -724,7 +719,7 @@
+           {
+             "key": "objective.accomplish/beamed",
+             "ms": 6520,
+-            "share": 0.014,
++            "share": 0.015,
+             "maneuvers": 1,
+             "phases": {
+               "act": 2600,
+@@ -742,11 +737,11 @@
+           "disperse": 28320,
+           "echo": 100680,
+           "gather": 47160,
+-          "hold": 88560,
++          "hold": 76440,
+           "land": 50460,
+-          "tell": 16020
++          "tell": 13620
+         },
+-        "playingMs": 452080
++        "playingMs": 437560
+       },
+       "held": {
+         "queueIdleMs": 0,
+@@ -795,11 +790,11 @@
+         "cutByBudget": 6
+       },
+       "budgetMs": null,
+-      "totalMs": 372570,
+-      "uncappedMs": 399915,
+-      "wallMs": 288808,
++      "totalMs": 354010,
++      "uncappedMs": 381355,
++      "wallMs": 290639,
+       "story": {
+-        "wallMs": 288618,
++        "wallMs": 280246,
+         "played": 41,
+         "levers": [
+           "short",
+@@ -816,7 +811,7 @@
+           "speed",
+           "light"
+         ],
+-        "estimateMs": 294822
++        "estimateMs": 295528
+       },
+       "frame": {
+         "orientMs": 3000,
+@@ -825,14 +820,14 @@
+         "dayTurns": 8,
+         "tailGapMs": 300,
+         "finalHoldMs": 1200,
+-        "beatsMs": 346095
++        "beatsMs": 327535
+       },
+       "playing": {
+         "byRule": [
+           {
+             "key": "attachment.merge/first",
+             "ms": 63200,
+-            "share": 0.183,
++            "share": 0.193,
+             "maneuvers": 8,
+             "phases": {
+               "act": 18400,
+@@ -846,7 +841,7 @@
+           {
+             "key": "objective.accomplish/beamed-short",
+             "ms": 46800,
+-            "share": 0.135,
++            "share": 0.143,
+             "maneuvers": 9,
+             "phases": {
+               "act": 14040,
+@@ -861,7 +856,7 @@
+           {
+             "key": "seat.complete/short",
+             "ms": 46560,
+-            "share": 0.135,
++            "share": 0.142,
+             "maneuvers": 12,
+             "phases": {
+               "act": 7200,
+@@ -872,23 +867,10 @@
+               "tell": 2160
+             }
+           },
+-          {
+-            "key": "facility.enter",
+-            "ms": 41195,
+-            "share": 0.119,
+-            "maneuvers": 9,
+-            "phases": {
+-              "act": 10800,
+-              "gather": 6435,
+-              "hold": 15860,
+-              "land": 5400,
+-              "tell": 2700
+-            }
+-          },
+           {
+             "key": "attachment.merge/short",
+             "ms": 27940,
+-            "share": 0.081,
++            "share": 0.085,
+             "maneuvers": 6,
+             "phases": {
+               "act": 5760,
+@@ -899,10 +881,21 @@
+               "tell": 1080
+             }
+           },
++          {
++            "key": "facility.enter",
++            "ms": 22635,
++            "share": 0.069,
++            "maneuvers": 9,
++            "phases": {
++              "act": 10800,
++              "gather": 6435,
++              "land": 5400
++            }
++          },
+           {
+             "key": "threat.accomplish/beamed-short",
+             "ms": 21520,
+-            "share": 0.062,
++            "share": 0.066,
+             "maneuvers": 4,
+             "phases": {
+               "act": 6240,
+@@ -917,7 +910,7 @@
+           {
+             "key": "threat.accomplish/beamed",
+             "ms": 20460,
+-            "share": 0.059,
++            "share": 0.062,
+             "maneuvers": 3,
+             "phases": {
+               "act": 7800,
+@@ -932,7 +925,7 @@
+           {
+             "key": "agent.progress",
+             "ms": 18720,
+-            "share": 0.054,
++            "share": 0.057,
+             "maneuvers": 6,
+             "phases": {
+               "act": 4800,
+@@ -944,7 +937,7 @@
+           {
+             "key": "attachment.merge/short/montage",
+             "ms": 17280,
+-            "share": 0.05,
++            "share": 0.053,
+             "maneuvers": 4,
+             "phases": {
+               "act": 3840,
+@@ -958,7 +951,7 @@
+           {
+             "key": "attachment.merge",
+             "ms": 14400,
+-            "share": 0.042,
++            "share": 0.044,
+             "maneuvers": 2,
+             "phases": {
+               "act": 3200,
+@@ -972,7 +965,7 @@
+           {
+             "key": "objective.accomplish/short",
+             "ms": 12360,
+-            "share": 0.036,
++            "share": 0.038,
+             "maneuvers": 3,
+             "phases": {
+               "act": 1440,
+@@ -987,7 +980,7 @@
+           {
+             "key": "objective.accomplish/beamed",
+             "ms": 6520,
+-            "share": 0.019,
++            "share": 0.02,
+             "maneuvers": 1,
+             "phases": {
+               "act": 2600,
+@@ -1002,7 +995,7 @@
+           {
+             "key": "threat.accomplish/short",
+             "ms": 4540,
+-            "share": 0.013,
++            "share": 0.014,
+             "maneuvers": 1,
+             "phases": {
+               "act": 720,
+@@ -1017,7 +1010,7 @@
+           {
+             "key": "attachment.settle",
+             "ms": 2800,
+-            "share": 0.008,
++            "share": 0.009,
+             "maneuvers": 1,
+             "phases": {
+               "act": 900,
+@@ -1044,11 +1037,11 @@
+           "disperse": 19860,
+           "echo": 64980,
+           "gather": 35755,
+-          "hold": 75220,
++          "hold": 59360,
+           "land": 47120,
+-          "tell": 14520
++          "tell": 11820
+         },
+-        "playingMs": 346095
++        "playingMs": 327535
+       },
+       "held": {
+         "queueIdleMs": 0,
+@@ -1057,7 +1050,7 @@
+       "waits": {
+         "byCause": {
+           "P-5": {
+-            "ms": 75495,
++            "ms": 73475,
+             "count": 14
+           },
+           "P-3": {
+@@ -1097,18 +1090,18 @@
+         "cutByBudget": 2
+       },
+       "budgetMs": null,
+-      "totalMs": 183105,
+-      "uncappedMs": 209130,
+-      "wallMs": 183105,
++      "totalMs": 176145,
++      "uncappedMs": 202170,
++      "wallMs": 176145,
+       "story": {
+-        "wallMs": 179005,
++        "wallMs": 172045,
+         "played": 31,
+         "levers": []
+       },
+       "director": {
+         "targetMs": 300000,
+         "levers": [],
+-        "estimateMs": 191265
++        "estimateMs": 184305
+       },
+       "frame": {
+         "orientMs": 3000,
+@@ -1117,14 +1110,14 @@
+         "dayTurns": 9,
+         "tailGapMs": 300,
+         "finalHoldMs": 1200,
+-        "beatsMs": 166205
++        "beatsMs": 159245
+       },
+       "playing": {
+         "byRule": [
+           {
+             "key": "objective.underway",
+             "ms": 50340,
+-            "share": 0.303,
++            "share": 0.316,
+             "maneuvers": 20,
+             "phases": {
+               "act": 16800,
+@@ -1137,7 +1130,7 @@
+           {
+             "key": "objective.nearing",
+             "ms": 28840,
+-            "share": 0.174,
++            "share": 0.181,
+             "maneuvers": 10,
+             "phases": {
+               "act": 8800,
+@@ -1150,7 +1143,7 @@
+           {
+             "key": "attachment.merge/first",
+             "ms": 15800,
+-            "share": 0.095,
++            "share": 0.099,
+             "maneuvers": 2,
+             "phases": {
+               "act": 4600,
+@@ -1161,23 +1154,10 @@
+               "tell": 600
+             }
+           },
+-          {
+-            "key": "facility.enter",
+-            "ms": 14505,
+-            "share": 0.087,
+-            "maneuvers": 3,
+-            "phases": {
+-              "act": 3600,
+-              "gather": 2145,
+-              "hold": 6060,
+-              "land": 1800,
+-              "tell": 900
+-            }
+-          },
+           {
+             "key": "attachment.merge",
+             "ms": 14400,
+-            "share": 0.087,
++            "share": 0.09,
+             "maneuvers": 2,
+             "phases": {
+               "act": 3200,
+@@ -1191,7 +1171,7 @@
+           {
+             "key": "objective.accomplish",
+             "ms": 14160,
+-            "share": 0.085,
++            "share": 0.089,
+             "maneuvers": 3,
+             "phases": {
+               "act": 2400,
+@@ -1206,7 +1186,7 @@
+           {
+             "key": "attachment.open",
+             "ms": 8500,
+-            "share": 0.051,
++            "share": 0.053,
+             "maneuvers": 5,
+             "phases": {
+               "act": 5000,
+@@ -1214,10 +1194,21 @@
+               "tell": 1500
+             }
+           },
++          {
++            "key": "facility.enter",
++            "ms": 7545,
++            "share": 0.047,
++            "maneuvers": 3,
++            "phases": {
++              "act": 3600,
++              "gather": 2145,
++              "land": 1800
++            }
++          },
+           {
+             "key": "objective.accomplish/beamed",
+             "ms": 6520,
+-            "share": 0.039,
++            "share": 0.041,
+             "maneuvers": 1,
+             "phases": {
+               "act": 2600,
+@@ -1232,7 +1223,7 @@
+           {
+             "key": "seat.complete",
+             "ms": 5120,
+-            "share": 0.031,
++            "share": 0.032,
+             "maneuvers": 1,
+             "phases": {
+               "act": 1000,
+@@ -1246,7 +1237,7 @@
+           {
+             "key": "region.sweep",
+             "ms": 3700,
+-            "share": 0.022,
++            "share": 0.023,
+             "maneuvers": 1,
+             "phases": {
+               "act": 3000,
+@@ -1257,7 +1248,7 @@
+           {
+             "key": "objective.accomplish/short/montage",
+             "ms": 2520,
+-            "share": 0.015,
++            "share": 0.016,
+             "maneuvers": 4,
+             "phases": {
+               "act": 480,
+@@ -1292,11 +1283,11 @@
+           "disperse": 5580,
+           "echo": 23940,
+           "gather": 20085,
+-          "hold": 38840,
++          "hold": 32780,
+           "land": 12900,
+-          "tell": 12480
++          "tell": 11580
+         },
+-        "playingMs": 166205
++        "playingMs": 159245
+       },
+       "held": {
+         "queueIdleMs": 0,
+@@ -1305,7 +1296,7 @@
+       "waits": {
+         "byCause": {
+           "P-5": {
+-            "ms": 32625,
++            "ms": 25665,
+             "count": 6
+           },
+           "P-3": {
+@@ -1345,18 +1336,18 @@
+         "cutByBudget": 3
+       },
+       "budgetMs": null,
+-      "totalMs": 178335,
+-      "uncappedMs": 207572,
+-      "wallMs": 178335,
++      "totalMs": 175015,
++      "uncappedMs": 204252,
++      "wallMs": 175015,
+       "story": {
+-        "wallMs": 179802,
++        "wallMs": 176482,
+         "played": 32,
+         "levers": []
+       },
+       "director": {
+         "targetMs": 300000,
+         "levers": [],
+-        "estimateMs": 197345
++        "estimateMs": 190385
+       },
+       "frame": {
+         "orientMs": 3000,
+@@ -1365,14 +1356,14 @@
+         "dayTurns": 9,
+         "tailGapMs": 300,
+         "finalHoldMs": 1200,
+-        "beatsMs": 162485
++        "beatsMs": 159165
+       },
+       "playing": {
+         "byRule": [
+           {
+             "key": "attachment.merge/first",
+             "ms": 23700,
+-            "share": 0.146,
++            "share": 0.149,
+             "maneuvers": 3,
+             "phases": {
+               "act": 6900,
+@@ -1386,7 +1377,7 @@
+           {
+             "key": "attachment.merge",
+             "ms": 21600,
+-            "share": 0.133,
++            "share": 0.136,
+             "maneuvers": 3,
+             "phases": {
+               "act": 4800,
+@@ -1397,49 +1388,36 @@
+               "tell": 900
+             }
+           },
+-          {
+-            "key": "objective.nearing",
+-            "ms": 18480,
+-            "share": 0.114,
+-            "maneuvers": 5,
+-            "phases": {
+-              "act": 5500,
+-              "echo": 2000,
+-              "gather": 3000,
+-              "hold": 6480,
+-              "tell": 1500
+-            }
+-          },
+           {
+             "key": "objective.underway",
+-            "ms": 17880,
+-            "share": 0.11,
++            "ms": 19500,
++            "share": 0.123,
+             "maneuvers": 9,
+             "phases": {
+               "act": 6000,
+               "echo": 2000,
+               "gather": 2500,
+-              "hold": 5880,
++              "hold": 7500,
+               "tell": 1500
+             }
+           },
+           {
+-            "key": "facility.enter",
+-            "ms": 12485,
+-            "share": 0.077,
+-            "maneuvers": 3,
++            "key": "objective.nearing",
++            "ms": 18480,
++            "share": 0.116,
++            "maneuvers": 5,
+             "phases": {
+-              "act": 3600,
+-              "gather": 2145,
+-              "hold": 4040,
+-              "land": 1800,
+-              "tell": 900
++              "act": 5500,
++              "echo": 2000,
++              "gather": 3000,
++              "hold": 6480,
++              "tell": 1500
+             }
+           },
+           {
+             "key": "attachment.open",
+             "ms": 11900,
+-            "share": 0.073,
++            "share": 0.075,
+             "maneuvers": 9,
+             "phases": {
+               "act": 7000,
+@@ -1450,7 +1428,7 @@
+           {
+             "key": "threat.accomplish",
+             "ms": 10840,
+-            "share": 0.067,
++            "share": 0.068,
+             "maneuvers": 2,
+             "phases": {
+               "act": 2400,
+@@ -1465,7 +1443,7 @@
+           {
+             "key": "threat.engage",
+             "ms": 9600,
+-            "share": 0.059,
++            "share": 0.06,
+             "maneuvers": 6,
+             "phases": {
+               "act": 5200,
+@@ -1477,7 +1455,7 @@
+           {
+             "key": "objective.accomplish",
+             "ms": 9440,
+-            "share": 0.058,
++            "share": 0.059,
+             "maneuvers": 2,
+             "phases": {
+               "act": 1600,
+@@ -1489,10 +1467,21 @@
+               "tell": 600
+             }
+           },
++          {
++            "key": "facility.enter",
++            "ms": 7545,
++            "share": 0.047,
++            "maneuvers": 3,
++            "phases": {
++              "act": 3600,
++              "gather": 2145,
++              "land": 1800
++            }
++          },
+           {
+             "key": "threat.accomplish/beamed",
+             "ms": 5920,
+-            "share": 0.036,
++            "share": 0.037,
+             "maneuvers": 1,
+             "phases": {
+               "act": 2600,
+@@ -1532,7 +1521,7 @@
+           {
+             "key": "threat.accomplish/short/montage",
+             "ms": 3000,
+-            "share": 0.018,
++            "share": 0.019,
+             "maneuvers": 1,
+             "phases": {
+               "act": 720,
+@@ -1546,7 +1535,7 @@
+           {
+             "key": "region.clear",
+             "ms": 2950,
+-            "share": 0.018,
++            "share": 0.019,
+             "maneuvers": 1,
+             "phases": {
+               "act": 1600,
+@@ -1622,11 +1611,11 @@
+           "disperse": 8040,
+           "echo": 28140,
+           "gather": 19365,
+-          "hold": 22920,
++          "hold": 20500,
+           "land": 16300,
+-          "tell": 12530
++          "tell": 11630
+         },
+-        "playingMs": 162285
++        "playingMs": 158965
+       },
+       "held": {
+         "queueIdleMs": 0,
+@@ -1635,7 +1624,7 @@
+       "waits": {
+         "byCause": {
+           "P-5": {
+-            "ms": 59185,
++            "ms": 54245,
+             "count": 11
+           },
+           "P-3": {
+@@ -1675,11 +1664,11 @@
+         "cutByBudget": 0
+       },
+       "budgetMs": null,
+-      "totalMs": 483950,
+-      "uncappedMs": 489524,
+-      "wallMs": 284681,
++      "totalMs": 431822,
++      "uncappedMs": 437396,
++      "wallMs": 283361,
+       "story": {
+-        "wallMs": 275947,
++        "wallMs": 280032,
+         "played": 30,
+         "levers": [
+           "short",
+@@ -1696,7 +1685,7 @@
+           "speed",
+           "light"
+         ],
+-        "estimateMs": 310398
++        "estimateMs": 299271
+       },
+       "frame": {
+         "orientMs": 3000,
+@@ -1705,14 +1694,14 @@
+         "dayTurns": 7,
+         "tailGapMs": 300,
+         "finalHoldMs": 1200,
+-        "beatsMs": 465207
++        "beatsMs": 413079
+       },
+       "playing": {
+         "byRule": [
+           {
+             "key": "attachment.merge/first",
+             "ms": 284400,
+-            "share": 0.611,
++            "share": 0.689,
+             "maneuvers": 36,
+             "phases": {
+               "act": 82800,
+@@ -1724,34 +1713,31 @@
+             }
+           },
+           {
+-            "key": "facility.enter",
+-            "ms": 88625,
+-            "share": 0.191,
+-            "maneuvers": 19,
++            "key": "facility.enter/montage",
++            "ms": 39234,
++            "share": 0.095,
++            "maneuvers": 26,
+             "phases": {
+-              "act": 22800,
+-              "gather": 13585,
+-              "hold": 35140,
+-              "land": 11400,
+-              "tell": 5700
++              "act": 18720,
++              "gather": 11154,
++              "land": 9360
+             }
+           },
+           {
+-            "key": "facility.enter/montage",
+-            "ms": 30402,
+-            "share": 0.065,
+-            "maneuvers": 18,
++            "key": "facility.enter",
++            "ms": 27665,
++            "share": 0.067,
++            "maneuvers": 11,
+             "phases": {
+-              "act": 12960,
+-              "gather": 7722,
+-              "land": 6480,
+-              "tell": 3240
++              "act": 13200,
++              "gather": 7865,
++              "land": 6600
+             }
+           },
+           {
+             "key": "attachment.merge",
+             "ms": 21600,
+-            "share": 0.046,
++            "share": 0.052,
+             "maneuvers": 3,
+             "phases": {
+               "act": 4800,
+@@ -1765,7 +1751,7 @@
+           {
+             "key": "objective.accomplish/beamed",
+             "ms": 13040,
+-            "share": 0.028,
++            "share": 0.032,
+             "maneuvers": 2,
+             "phases": {
+               "act": 5200,
+@@ -1780,7 +1766,7 @@
+           {
+             "key": "seat.complete/short",
+             "ms": 7760,
+-            "share": 0.017,
++            "share": 0.019,
+             "maneuvers": 2,
+             "phases": {
+               "act": 1200,
+@@ -1794,7 +1780,7 @@
+           {
+             "key": "objective.accomplish/beamed-short",
+             "ms": 5200,
+-            "share": 0.011,
++            "share": 0.013,
+             "maneuvers": 1,
+             "phases": {
+               "act": 1560,
+@@ -1809,7 +1795,7 @@
+           {
+             "key": "objective.accomplish",
+             "ms": 4720,
+-            "share": 0.01,
++            "share": 0.011,
+             "maneuvers": 1,
+             "phases": {
+               "act": 800,
+@@ -1824,7 +1810,7 @@
+           {
+             "key": "threat.accomplish/short",
+             "ms": 4540,
+-            "share": 0.01,
++            "share": 0.011,
+             "maneuvers": 1,
+             "phases": {
+               "act": 720,
+@@ -1839,7 +1825,7 @@
+           {
+             "key": "agent.progress",
+             "ms": 3120,
+-            "share": 0.007,
++            "share": 0.008,
+             "maneuvers": 1,
+             "phases": {
+               "act": 800,
+@@ -1861,15 +1847,15 @@
+           }
+         ],
+         "byPhase": {
+-          "act": 134600,
++          "act": 130760,
+           "disperse": 36420,
+           "echo": 120760,
+-          "gather": 59407,
+-          "hold": 46820,
+-          "land": 44700,
+-          "tell": 22470
++          "gather": 57119,
++          "hold": 11680,
++          "land": 42780,
++          "tell": 13530
+         },
+-        "playingMs": 465177
++        "playingMs": 413049
+       },
+       "held": {
+         "queueIdleMs": 0,
+@@ -1878,7 +1864,7 @@
+       "waits": {
+         "byCause": {
+           "P-5": {
+-            "ms": 1142866,
++            "ms": 692804,
+             "count": 53
+           },
+           "P-3": {
+diff --git a/docs/progress/v1.4/pacing-ledger.md b/docs/progress/v1.4/pacing-ledger.md
+index 07a54d5..d4c50b0 100644
+--- a/docs/progress/v1.4/pacing-ledger.md
++++ b/docs/progress/v1.4/pacing-ledger.md
+@@ -9,13 +9,13 @@ The time frame and the playing/held split are in schedule time and sum to the sc
+ 
+ | Pod | App s | Total s | Schedule s | Uncapped s | Orient | Gaps | Day turns | Playing | Held | Tail + hold | Target | Levers |
+ |---|---|---|---|---|---|---|---|---|---|---|---|---|
+-| Comet Pod | 45.8 | 60.8 | 60.8 | 74.7 | 3.0 | 0.8 | 2.3 | 53.1 | 0.0 | 1.5 | ok | none |
+-| Nova Pod | 171.0 | 209.3 | 209.3 | 262.7 | 3.0 | 12.1 | 3.1 | 189.6 | 0.0 | 1.5 | ok | none |
+-| Quasar Pod | 289.6 | 299.1 | 491.9 | 526.4 | 3.0 | 32.6 | 2.7 | 452.1 | 0.0 | 1.5 | ok | short, montage, speed, light |
+-| Pulsar Pod | 288.6 | 288.8 | 372.6 | 399.9 | 3.0 | 19.6 | 2.4 | 346.1 | 0.0 | 1.5 | ok | short, montage, speed, light |
+-| Convoy Planning Pod | 179.0 | 183.1 | 183.1 | 209.1 | 3.0 | 8.9 | 3.5 | 166.2 | 0.0 | 1.5 | ok | none |
+-| Harbor Pod | 179.8 | 178.3 | 178.3 | 207.6 | 3.0 | 7.8 | 3.5 | 162.3 | 0.2 | 1.5 | ok | none |
+-| Meteor Pod | 275.9 | 284.7 | 483.9 | 489.5 | 3.0 | 12.1 | 2.1 | 465.2 | 0.0 | 1.5 | ok | short, montage, speed, light |
++| Comet Pod | 45.5 | 60.5 | 60.5 | 74.4 | 3.0 | 0.8 | 2.3 | 52.8 | 0.0 | 1.5 | ok | none |
++| Nova Pod | 170.7 | 207.0 | 207.0 | 260.4 | 3.0 | 12.1 | 3.1 | 187.3 | 0.0 | 1.5 | ok | none |
++| Quasar Pod | 293.4 | 291.9 | 477.3 | 511.9 | 3.0 | 32.6 | 2.7 | 437.6 | 0.0 | 1.5 | ok | short, montage, speed, light |
++| Pulsar Pod | 280.2 | 290.6 | 354.0 | 381.4 | 3.0 | 19.6 | 2.4 | 327.5 | 0.0 | 1.5 | ok | short, montage, speed, light |
++| Convoy Planning Pod | 172.0 | 176.1 | 176.1 | 202.2 | 3.0 | 8.9 | 3.5 | 159.2 | 0.0 | 1.5 | ok | none |
++| Harbor Pod | 176.5 | 175.0 | 175.0 | 204.3 | 3.0 | 7.8 | 3.5 | 159.0 | 0.2 | 1.5 | ok | none |
++| Meteor Pod | 280.0 | 283.4 | 431.8 | 437.4 | 3.0 | 12.1 | 2.1 | 413.0 | 0.0 | 1.5 | ok | short, montage, speed, light |
+ 
+ ## Comet Pod (Halcyon Reach, Sprint 41)
+ 
+@@ -23,34 +23,34 @@ sprint-pods, tz America/Los_Angeles, 32 events; 8 beats played of 18 (10 silent,
+ 
+ | Component | s | % |
+ |---|---|---|
+-| Orient | 3.0 | 4.9 |
++| Orient | 3.0 | 5.0 |
+ | Gaps | 0.8 | 1.4 |
+ | Day turns (6) | 2.3 | 3.8 |
+ | Tail gap | 0.3 | 0.5 |
+ | Final hold | 1.2 | 2.0 |
+-| Beats: playing | 53.1 | 87.4 |
++| Beats: playing | 52.8 | 87.4 |
+ | Beats: queue idle | 0.0 | 0.0 |
+ | Beats: note hold | 0.0 | 0.0 |
+-| **Total** | 60.8 | 100.0 |
++| **Total** | 60.5 | 100.0 |
+ 
+ | Rule | s | Share | Maneuvers | tell | gather | act | land | echo | disperse | hold |
+ |---|---|---|---|---|---|---|---|---|---|---|
+ | attachment.merge/first | 7.9 | 14.9% | 1 | 0.3 | 0.9 | 2.3 | 0.5 | 3.0 | 0.9 |  |
+-| attachment.merge | 7.2 | 13.5% | 1 | 0.3 | 0.9 | 1.6 | 0.5 | 3.0 | 0.9 |  |
+-| threat.accomplish/beamed | 6.8 | 12.8% | 1 | 0.3 | 0.7 | 2.6 | 1.2 | 0.4 | 0.4 | 1.2 |
++| attachment.merge | 7.2 | 13.6% | 1 | 0.3 | 0.9 | 1.6 | 0.5 | 3.0 | 0.9 |  |
++| threat.accomplish/beamed | 6.8 | 12.9% | 1 | 0.3 | 0.7 | 2.6 | 1.2 | 0.4 | 0.4 | 1.2 |
+ | objective.accomplish/beamed | 6.5 | 12.3% | 1 | 0.3 | 0.4 | 2.6 | 1.2 | 0.4 | 0.3 | 1.3 |
+-| seat.complete | 5.1 | 9.6% | 1 | 0.3 | 0.7 | 1.0 | 1.1 | 0.9 |  | 1.1 |
++| seat.complete | 5.1 | 9.7% | 1 | 0.3 | 0.7 | 1.0 | 1.1 | 0.9 |  | 1.1 |
+ | objective.underway | 4.0 | 7.6% | 1 | 0.3 | 0.5 | 1.2 |  | 0.4 |  | 1.6 |
+ | attachment.open | 3.4 | 6.4% | 2 | 0.6 |  | 2.0 | 0.8 |  |  |  |
+ | region.clear | 3.0 | 5.6% | 1 | 0.3 |  | 1.6 |  | 1.0 |  |  |
+-| facility.enter | 2.8 | 5.3% | 1 | 0.3 | 0.7 | 1.2 | 0.6 |  |  |  |
++| facility.enter | 2.5 | 4.8% | 1 |  | 0.7 | 1.2 | 0.6 |  |  |  |
+ | objective.nearing | 2.4 | 4.5% | 1 | 0.3 | 0.6 | 1.1 |  | 0.4 |  |  |
+ | threat.engage | 2.4 | 4.5% | 1 | 0.3 | 0.5 | 1.3 |  | 0.3 |  |  |
+ | piece.appear | 1.6 | 3.0% | 1 | 0.3 |  | 0.9 |  | 0.4 |  |  |
+ 
+ | Waiting cause (inferred) | Maneuver-s | Maneuvers |
+ |---|---|---|
+-| P-5 | 24.7 | 4 |
++| P-5 | 24.4 | 4 |
+ | P-3 | 11.9 | 1 |
+ | P-4 | 0.0 | 0 |
+ | P-6 | 0.0 | 0 |
+@@ -68,32 +68,32 @@ sprint-pods, tz America/Los_Angeles, 128 events; 37 beats played of 96 (59 silen
+ | Day turns (8) | 3.1 | 1.5 |
+ | Tail gap | 0.3 | 0.1 |
+ | Final hold | 1.2 | 0.6 |
+-| Beats: playing | 189.6 | 90.6 |
++| Beats: playing | 187.3 | 90.5 |
+ | Beats: queue idle | 0.0 | 0.0 |
+ | Beats: note hold | 0.0 | 0.0 |
+-| **Total** | 209.3 | 100.0 |
++| **Total** | 207.0 | 100.0 |
+ 
+ | Rule | s | Share | Maneuvers | tell | gather | act | land | echo | disperse | hold |
+ |---|---|---|---|---|---|---|---|---|---|---|
+-| attachment.merge | 36.0 | 19.0% | 5 | 1.5 | 4.5 | 8.0 | 2.5 | 15.0 | 4.5 |  |
+-| threat.accomplish/beamed | 27.3 | 14.4% | 4 | 1.2 | 2.8 | 10.4 | 4.8 | 1.6 | 1.6 | 4.9 |
+-| objective.accomplish/beamed | 26.1 | 13.8% | 4 | 1.2 | 1.6 | 10.4 | 4.8 | 1.6 | 1.2 | 5.3 |
+-| objective.nearing | 20.1 | 10.6% | 5 | 1.5 | 3.0 | 5.5 |  | 2.0 |  | 8.1 |
+-| objective.underway | 20.1 | 10.6% | 5 | 1.5 | 2.5 | 6.0 |  | 2.0 |  | 8.1 |
+-| attachment.open | 17.0 | 9.0% | 11 | 3.0 |  | 10.0 | 4.0 |  |  |  |
+-| seat.complete | 10.2 | 5.4% | 2 | 0.6 | 1.4 | 2.0 | 2.2 | 1.8 |  | 2.2 |
++| attachment.merge | 36.0 | 19.2% | 5 | 1.5 | 4.5 | 8.0 | 2.5 | 15.0 | 4.5 |  |
++| threat.accomplish/beamed | 27.3 | 14.6% | 4 | 1.2 | 2.8 | 10.4 | 4.8 | 1.6 | 1.6 | 4.9 |
++| objective.accomplish/beamed | 26.1 | 13.9% | 4 | 1.2 | 1.6 | 10.4 | 4.8 | 1.6 | 1.2 | 5.3 |
++| objective.nearing | 20.1 | 10.7% | 5 | 1.5 | 3.0 | 5.5 |  | 2.0 |  | 8.1 |
++| objective.underway | 20.1 | 10.7% | 5 | 1.5 | 2.5 | 6.0 |  | 2.0 |  | 8.1 |
++| attachment.open | 17.0 | 9.1% | 11 | 3.0 |  | 10.0 | 4.0 |  |  |  |
++| seat.complete | 10.2 | 5.5% | 2 | 0.6 | 1.4 | 2.0 | 2.2 | 1.8 |  | 2.2 |
+ | attachment.merge/first | 7.9 | 4.2% | 1 | 0.3 | 0.9 | 2.3 | 0.5 | 3.0 | 0.9 |  |
+-| attachment.merge/short | 6.3 | 3.3% | 1 | 0.2 | 0.5 | 1.0 | 0.3 | 3.8 | 0.5 |  |
+-| objective.accomplish/beamed-short | 5.2 | 2.7% | 1 | 0.2 | 0.2 | 1.6 | 1.2 | 0.2 | 0.2 | 1.6 |
+-| facility.enter | 4.8 | 2.5% | 1 | 0.3 | 0.7 | 1.2 | 0.6 |  |  | 2.0 |
+-| agent.progress | 3.1 | 1.6% | 1 |  | 0.3 | 0.8 |  | 0.4 |  | 1.6 |
++| attachment.merge/short | 6.3 | 3.4% | 1 | 0.2 | 0.5 | 1.0 | 0.3 | 3.8 | 0.5 |  |
++| objective.accomplish/beamed-short | 5.2 | 2.8% | 1 | 0.2 | 0.2 | 1.6 | 1.2 | 0.2 | 0.2 | 1.6 |
++| agent.progress | 3.1 | 1.7% | 1 |  | 0.3 | 0.8 |  | 0.4 |  | 1.6 |
++| facility.enter | 2.5 | 1.3% | 1 |  | 0.7 | 1.2 | 0.6 |  |  |  |
+ | threat.engage | 2.4 | 1.3% | 1 | 0.3 | 0.5 | 1.3 |  | 0.3 |  |  |
+-| piece.appear | 1.6 | 0.8% | 1 | 0.3 |  | 0.9 |  | 0.4 |  |  |
++| piece.appear | 1.6 | 0.9% | 1 | 0.3 |  | 0.9 |  | 0.4 |  |  |
+ | threat.engage/montage | 1.4 | 0.8% | 1 | 0.2 | 0.3 | 0.8 |  | 0.2 |  |  |
+ 
+ | Waiting cause (inferred) | Maneuver-s | Maneuvers |
+ |---|---|---|
+-| P-5 | 51.8 | 7 |
++| P-5 | 49.5 | 7 |
+ | P-3 | 0.0 | 0 |
+ | P-4 | 0.0 | 0 |
+ | P-6 | 0.0 | 0 |
+@@ -107,29 +107,29 @@ sprint-pods, tz America/Los_Angeles, 472 events; 86 beats played of 348 (262 sil
+ | Component | s | % |
+ |---|---|---|
+ | Orient | 3.0 | 0.6 |
+-| Gaps | 32.6 | 6.6 |
+-| Day turns (9) | 2.7 | 0.5 |
++| Gaps | 32.6 | 6.8 |
++| Day turns (9) | 2.7 | 0.6 |
+ | Tail gap | 0.3 | 0.1 |
+-| Final hold | 1.2 | 0.2 |
+-| Beats: playing | 452.1 | 91.9 |
++| Final hold | 1.2 | 0.3 |
++| Beats: playing | 437.6 | 91.7 |
+ | Beats: queue idle | 0.0 | 0.0 |
+ | Beats: note hold | 0.0 | 0.0 |
+-| **Total** | 491.9 | 100.0 |
++| **Total** | 477.3 | 100.0 |
+ 
+ | Rule | s | Share | Maneuvers | tell | gather | act | land | echo | disperse | hold |
+ |---|---|---|---|---|---|---|---|---|---|---|
+-| agent.progress | 75.2 | 16.6% | 25 |  | 7.5 | 19.2 |  | 9.6 |  | 38.9 |
+-| attachment.merge/short | 72.9 | 16.1% | 16 | 2.9 | 8.6 | 15.4 | 4.8 | 32.8 | 8.3 |  |
+-| attachment.merge/first | 63.2 | 14.0% | 8 | 2.4 | 7.2 | 18.4 | 4.0 | 24.0 | 7.2 |  |
+-| objective.accomplish/beamed-short | 52.0 | 11.5% | 10 | 1.8 | 2.4 | 15.6 | 12.0 | 2.4 | 1.8 | 16.0 |
+-| facility.enter | 34.6 | 7.7% | 8 | 2.4 | 5.7 | 9.6 | 4.8 |  |  | 12.1 |
+-| attachment.merge/short/montage | 30.2 | 6.7% | 7 | 1.3 | 3.8 | 6.7 | 2.1 | 12.6 | 3.8 |  |
+-| attachment.merge | 28.8 | 6.4% | 4 | 1.2 | 3.6 | 6.4 | 2.0 | 12.0 | 3.6 |  |
+-| threat.accomplish/beamed-short | 26.9 | 6.0% | 5 | 0.9 | 2.1 | 7.8 | 6.0 | 1.2 | 1.2 | 7.7 |
+-| seat.complete/short | 23.3 | 5.1% | 6 | 1.1 | 2.5 | 3.6 | 4.0 | 3.2 |  | 8.9 |
+-| threat.accomplish/beamed | 20.5 | 4.5% | 3 | 0.9 | 2.1 | 7.8 | 3.6 | 1.2 | 1.2 | 3.7 |
+-| objective.accomplish/beamed-short/montage | 18.0 | 4.0% | 6 | 0.9 | 1.2 | 7.8 | 6.0 | 1.2 | 0.9 |  |
+-| objective.accomplish/beamed | 6.5 | 1.4% | 1 | 0.3 | 0.4 | 2.6 | 1.2 | 0.4 | 0.3 | 1.3 |
++| agent.progress | 75.2 | 17.2% | 25 |  | 7.5 | 19.2 |  | 9.6 |  | 38.9 |
++| attachment.merge/short | 72.9 | 16.7% | 16 | 2.9 | 8.6 | 15.4 | 4.8 | 32.8 | 8.3 |  |
++| attachment.merge/first | 63.2 | 14.4% | 8 | 2.4 | 7.2 | 18.4 | 4.0 | 24.0 | 7.2 |  |
++| objective.accomplish/beamed-short | 52.0 | 11.9% | 10 | 1.8 | 2.4 | 15.6 | 12.0 | 2.4 | 1.8 | 16.0 |
++| attachment.merge/short/montage | 30.2 | 6.9% | 7 | 1.3 | 3.8 | 6.7 | 2.1 | 12.6 | 3.8 |  |
++| attachment.merge | 28.8 | 6.6% | 4 | 1.2 | 3.6 | 6.4 | 2.0 | 12.0 | 3.6 |  |
++| threat.accomplish/beamed-short | 26.9 | 6.1% | 5 | 0.9 | 2.1 | 7.8 | 6.0 | 1.2 | 1.2 | 7.7 |
++| seat.complete/short | 23.3 | 5.3% | 6 | 1.1 | 2.5 | 3.6 | 4.0 | 3.2 |  | 8.9 |
++| threat.accomplish/beamed | 20.5 | 4.7% | 3 | 0.9 | 2.1 | 7.8 | 3.6 | 1.2 | 1.2 | 3.7 |
++| facility.enter | 20.1 | 4.6% | 8 |  | 5.7 | 9.6 | 4.8 |  |  |  |
++| objective.accomplish/beamed-short/montage | 18.0 | 4.1% | 6 | 0.9 | 1.2 | 7.8 | 6.0 | 1.2 | 0.9 |  |
++| objective.accomplish/beamed | 6.5 | 1.5% | 1 | 0.3 | 0.4 | 2.6 | 1.2 | 0.4 | 0.3 | 1.3 |
+ 
+ | Waiting cause (inferred) | Maneuver-s | Maneuvers |
+ |---|---|---|
+@@ -147,36 +147,36 @@ sprint-pods, tz America/Los_Angeles, 335 events; 56 beats played of 275 (219 sil
+ | Component | s | % |
+ |---|---|---|
+ | Orient | 3.0 | 0.8 |
+-| Gaps | 19.6 | 5.3 |
+-| Day turns (8) | 2.4 | 0.6 |
++| Gaps | 19.6 | 5.5 |
++| Day turns (8) | 2.4 | 0.7 |
+ | Tail gap | 0.3 | 0.1 |
+ | Final hold | 1.2 | 0.3 |
+-| Beats: playing | 346.1 | 92.9 |
++| Beats: playing | 327.5 | 92.5 |
+ | Beats: queue idle | 0.0 | 0.0 |
+ | Beats: note hold | 0.0 | 0.0 |
+-| **Total** | 372.6 | 100.0 |
++| **Total** | 354.0 | 100.0 |
+ 
+ | Rule | s | Share | Maneuvers | tell | gather | act | land | echo | disperse | hold |
+ |---|---|---|---|---|---|---|---|---|---|---|
+-| attachment.merge/first | 63.2 | 18.3% | 8 | 2.4 | 7.2 | 18.4 | 4.0 | 24.0 | 7.2 |  |
+-| objective.accomplish/beamed-short | 46.8 | 13.5% | 9 | 1.6 | 2.2 | 14.0 | 10.8 | 2.2 | 1.6 | 14.4 |
+-| seat.complete/short | 46.6 | 13.5% | 12 | 2.2 | 5.0 | 7.2 | 7.9 | 6.5 |  | 17.8 |
+-| facility.enter | 41.2 | 11.9% | 9 | 2.7 | 6.4 | 10.8 | 5.4 |  |  | 15.9 |
+-| attachment.merge/short | 27.9 | 8.1% | 6 | 1.1 | 3.2 | 5.8 | 1.8 | 12.8 | 3.2 |  |
+-| threat.accomplish/beamed-short | 21.5 | 6.2% | 4 | 0.7 | 1.7 | 6.2 | 4.8 | 1.0 | 1.0 | 6.2 |
+-| threat.accomplish/beamed | 20.5 | 5.9% | 3 | 0.9 | 2.1 | 7.8 | 3.6 | 1.2 | 1.2 | 3.7 |
+-| agent.progress | 18.7 | 5.4% | 6 |  | 1.8 | 4.8 |  | 2.4 |  | 9.7 |
+-| attachment.merge/short/montage | 17.3 | 5.0% | 4 | 0.7 | 2.2 | 3.8 | 1.2 | 7.2 | 2.2 |  |
+-| attachment.merge | 14.4 | 4.2% | 2 | 0.6 | 1.8 | 3.2 | 1.0 | 6.0 | 1.8 |  |
+-| objective.accomplish/short | 12.4 | 3.6% | 3 | 0.5 | 0.7 | 1.4 | 3.6 | 0.7 | 0.5 | 4.8 |
+-| objective.accomplish/beamed | 6.5 | 1.9% | 1 | 0.3 | 0.4 | 2.6 | 1.2 | 0.4 | 0.3 | 1.3 |
+-| threat.accomplish/short | 4.5 | 1.3% | 1 | 0.2 | 0.4 | 0.7 | 1.2 | 0.2 | 0.2 | 1.5 |
+-| attachment.settle | 2.8 | 0.8% | 1 | 0.3 | 0.6 | 0.9 | 0.6 | 0.4 |  |  |
++| attachment.merge/first | 63.2 | 19.3% | 8 | 2.4 | 7.2 | 18.4 | 4.0 | 24.0 | 7.2 |  |
++| objective.accomplish/beamed-short | 46.8 | 14.3% | 9 | 1.6 | 2.2 | 14.0 | 10.8 | 2.2 | 1.6 | 14.4 |
++| seat.complete/short | 46.6 | 14.2% | 12 | 2.2 | 5.0 | 7.2 | 7.9 | 6.5 |  | 17.8 |
++| attachment.merge/short | 27.9 | 8.5% | 6 | 1.1 | 3.2 | 5.8 | 1.8 | 12.8 | 3.2 |  |
++| facility.enter | 22.6 | 6.9% | 9 |  | 6.4 | 10.8 | 5.4 |  |  |  |
++| threat.accomplish/beamed-short | 21.5 | 6.6% | 4 | 0.7 | 1.7 | 6.2 | 4.8 | 1.0 | 1.0 | 6.2 |
++| threat.accomplish/beamed | 20.5 | 6.2% | 3 | 0.9 | 2.1 | 7.8 | 3.6 | 1.2 | 1.2 | 3.7 |
++| agent.progress | 18.7 | 5.7% | 6 |  | 1.8 | 4.8 |  | 2.4 |  | 9.7 |
++| attachment.merge/short/montage | 17.3 | 5.3% | 4 | 0.7 | 2.2 | 3.8 | 1.2 | 7.2 | 2.2 |  |
++| attachment.merge | 14.4 | 4.4% | 2 | 0.6 | 1.8 | 3.2 | 1.0 | 6.0 | 1.8 |  |
++| objective.accomplish/short | 12.4 | 3.8% | 3 | 0.5 | 0.7 | 1.4 | 3.6 | 0.7 | 0.5 | 4.8 |
++| objective.accomplish/beamed | 6.5 | 2.0% | 1 | 0.3 | 0.4 | 2.6 | 1.2 | 0.4 | 0.3 | 1.3 |
++| threat.accomplish/short | 4.5 | 1.4% | 1 | 0.2 | 0.4 | 0.7 | 1.2 | 0.2 | 0.2 | 1.5 |
++| attachment.settle | 2.8 | 0.9% | 1 | 0.3 | 0.6 | 0.9 | 0.6 | 0.4 |  |  |
+ | piece.off | 1.8 | 0.5% | 1 | 0.3 |  | 0.9 |  |  | 0.6 |  |
+ 
+ | Waiting cause (inferred) | Maneuver-s | Maneuvers |
+ |---|---|---|
+-| P-5 | 75.5 | 14 |
++| P-5 | 73.5 | 14 |
+ | P-3 | 0.0 | 0 |
+ | P-4 | 0.0 | 0 |
+ | P-6 | 0.0 | 0 |
+@@ -189,35 +189,35 @@ v1/meridian-sprint, tz America/Los_Angeles, 117 events; 31 beats played of 36 (5
+ 
+ | Component | s | % |
+ |---|---|---|
+-| Orient | 3.0 | 1.6 |
+-| Gaps | 8.9 | 4.9 |
+-| Day turns (9) | 3.5 | 1.9 |
++| Orient | 3.0 | 1.7 |
++| Gaps | 8.9 | 5.0 |
++| Day turns (9) | 3.5 | 2.0 |
+ | Tail gap | 0.3 | 0.2 |
+ | Final hold | 1.2 | 0.7 |
+-| Beats: playing | 166.2 | 90.8 |
++| Beats: playing | 159.2 | 90.4 |
+ | Beats: queue idle | 0.0 | 0.0 |
+ | Beats: note hold | 0.0 | 0.0 |
+-| **Total** | 183.1 | 100.0 |
++| **Total** | 176.1 | 100.0 |
+ 
+ | Rule | s | Share | Maneuvers | tell | gather | act | land | echo | disperse | hold |
+ |---|---|---|---|---|---|---|---|---|---|---|
+-| objective.underway | 50.3 | 30.3% | 20 | 4.2 | 7.0 | 16.8 |  | 5.6 |  | 16.7 |
+-| objective.nearing | 28.8 | 17.4% | 10 | 2.4 | 4.8 | 8.8 |  | 3.2 |  | 9.6 |
+-| attachment.merge/first | 15.8 | 9.5% | 2 | 0.6 | 1.8 | 4.6 | 1.0 | 6.0 | 1.8 |  |
+-| facility.enter | 14.5 | 8.7% | 3 | 0.9 | 2.1 | 3.6 | 1.8 |  |  | 6.1 |
+-| attachment.merge | 14.4 | 8.7% | 2 | 0.6 | 1.8 | 3.2 | 1.0 | 6.0 | 1.8 |  |
+-| objective.accomplish | 14.2 | 8.5% | 3 | 0.9 | 1.2 | 2.4 | 3.6 | 1.2 | 0.9 | 4.0 |
+-| attachment.open | 8.5 | 5.1% | 5 | 1.5 |  | 5.0 | 2.0 |  |  |  |
+-| objective.accomplish/beamed | 6.5 | 3.9% | 1 | 0.3 | 0.4 | 2.6 | 1.2 | 0.4 | 0.3 | 1.3 |
+-| seat.complete | 5.1 | 3.1% | 1 | 0.3 | 0.7 | 1.0 | 1.1 | 0.9 |  | 1.1 |
+-| region.sweep | 3.7 | 2.2% | 1 | 0.3 |  | 3.0 |  | 0.4 |  |  |
+-| objective.accomplish/short/montage | 2.5 | 1.5% | 4 | 0.2 | 0.2 | 0.5 | 1.2 | 0.2 | 0.2 |  |
++| objective.underway | 50.3 | 31.6% | 20 | 4.2 | 7.0 | 16.8 |  | 5.6 |  | 16.7 |
++| objective.nearing | 28.8 | 18.1% | 10 | 2.4 | 4.8 | 8.8 |  | 3.2 |  | 9.6 |
++| attachment.merge/first | 15.8 | 9.9% | 2 | 0.6 | 1.8 | 4.6 | 1.0 | 6.0 | 1.8 |  |
++| attachment.merge | 14.4 | 9.0% | 2 | 0.6 | 1.8 | 3.2 | 1.0 | 6.0 | 1.8 |  |
++| objective.accomplish | 14.2 | 8.9% | 3 | 0.9 | 1.2 | 2.4 | 3.6 | 1.2 | 0.9 | 4.0 |
++| attachment.open | 8.5 | 5.3% | 5 | 1.5 |  | 5.0 | 2.0 |  |  |  |
++| facility.enter | 7.5 | 4.7% | 3 |  | 2.1 | 3.6 | 1.8 |  |  |  |
++| objective.accomplish/beamed | 6.5 | 4.1% | 1 | 0.3 | 0.4 | 2.6 | 1.2 | 0.4 | 0.3 | 1.3 |
++| seat.complete | 5.1 | 3.2% | 1 | 0.3 | 0.7 | 1.0 | 1.1 | 0.9 |  | 1.1 |
++| region.sweep | 3.7 | 2.3% | 1 | 0.3 |  | 3.0 |  | 0.4 |  |  |
++| objective.accomplish/short/montage | 2.5 | 1.6% | 4 | 0.2 | 0.2 | 0.5 | 1.2 | 0.2 | 0.2 |  |
+ | piece.off | 1.8 | 1.1% | 1 | 0.3 |  | 0.9 |  |  | 0.6 |  |
+ | objective.accomplish/arc | 0.0 | 0.0% | 3 |  |  |  |  |  |  |  |
+ 
+ | Waiting cause (inferred) | Maneuver-s | Maneuvers |
+ |---|---|---|
+-| P-5 | 32.6 | 6 |
++| P-5 | 25.7 | 6 |
+ | P-3 | 0.0 | 0 |
+ | P-4 | 0.0 | 0 |
+ | P-6 | 16.0 | 5 |
+@@ -231,31 +231,31 @@ v1/pod-sprint, tz America/Los_Angeles, 126 events; 30 beats played of 38 (8 sile
+ | Component | s | % |
+ |---|---|---|
+ | Orient | 3.0 | 1.7 |
+-| Gaps | 7.8 | 4.4 |
++| Gaps | 7.8 | 4.5 |
+ | Day turns (9) | 3.5 | 2.0 |
+ | Tail gap | 0.3 | 0.2 |
+ | Final hold | 1.2 | 0.7 |
+-| Beats: playing | 162.3 | 91.0 |
++| Beats: playing | 159.0 | 90.8 |
+ | Beats: queue idle | 0.0 | 0.0 |
+ | Beats: note hold | 0.2 | 0.1 |
+-| **Total** | 178.3 | 100.0 |
++| **Total** | 175.0 | 100.0 |
+ 
+ | Rule | s | Share | Maneuvers | tell | gather | act | land | echo | disperse | hold |
+ |---|---|---|---|---|---|---|---|---|---|---|
+-| attachment.merge/first | 23.7 | 14.6% | 3 | 0.9 | 2.7 | 6.9 | 1.5 | 9.0 | 2.7 |  |
+-| attachment.merge | 21.6 | 13.3% | 3 | 0.9 | 2.7 | 4.8 | 1.5 | 9.0 | 2.7 |  |
+-| objective.nearing | 18.5 | 11.4% | 5 | 1.5 | 3.0 | 5.5 |  | 2.0 |  | 6.5 |
+-| objective.underway | 17.9 | 11.0% | 9 | 1.5 | 2.5 | 6.0 |  | 2.0 |  | 5.9 |
+-| facility.enter | 12.5 | 7.7% | 3 | 0.9 | 2.1 | 3.6 | 1.8 |  |  | 4.0 |
+-| attachment.open | 11.9 | 7.3% | 9 | 2.1 |  | 7.0 | 2.8 |  |  |  |
+-| threat.accomplish | 10.8 | 6.7% | 2 | 0.6 | 1.4 | 2.4 | 2.4 | 0.8 | 0.8 | 2.4 |
+-| threat.engage | 9.6 | 5.9% | 6 | 1.2 | 2.0 | 5.2 |  | 1.2 |  |  |
+-| objective.accomplish | 9.4 | 5.8% | 2 | 0.6 | 0.8 | 1.6 | 2.4 | 0.8 | 0.6 | 2.6 |
+-| threat.accomplish/beamed | 5.9 | 3.6% | 1 | 0.3 | 0.7 | 2.6 | 1.2 | 0.4 | 0.4 | 0.3 |
++| attachment.merge/first | 23.7 | 14.9% | 3 | 0.9 | 2.7 | 6.9 | 1.5 | 9.0 | 2.7 |  |
++| attachment.merge | 21.6 | 13.6% | 3 | 0.9 | 2.7 | 4.8 | 1.5 | 9.0 | 2.7 |  |
++| objective.underway | 19.5 | 12.3% | 9 | 1.5 | 2.5 | 6.0 |  | 2.0 |  | 7.5 |
++| objective.nearing | 18.5 | 11.6% | 5 | 1.5 | 3.0 | 5.5 |  | 2.0 |  | 6.5 |
++| attachment.open | 11.9 | 7.5% | 9 | 2.1 |  | 7.0 | 2.8 |  |  |  |
++| threat.accomplish | 10.8 | 6.8% | 2 | 0.6 | 1.4 | 2.4 | 2.4 | 0.8 | 0.8 | 2.4 |
++| threat.engage | 9.6 | 6.0% | 6 | 1.2 | 2.0 | 5.2 |  | 1.2 |  |  |
++| objective.accomplish | 9.4 | 5.9% | 2 | 0.6 | 0.8 | 1.6 | 2.4 | 0.8 | 0.6 | 2.6 |
++| facility.enter | 7.5 | 4.7% | 3 |  | 2.1 | 3.6 | 1.8 |  |  |  |
++| threat.accomplish/beamed | 5.9 | 3.7% | 1 | 0.3 | 0.7 | 2.6 | 1.2 | 0.4 | 0.4 | 0.3 |
+ | seat.complete | 5.1 | 3.2% | 1 | 0.3 | 0.7 | 1.0 | 1.1 | 0.9 |  | 1.1 |
+ | region.sweep | 3.6 | 2.2% | 1 | 0.3 |  | 2.9 |  | 0.4 |  |  |
+-| threat.accomplish/short/montage | 3.0 | 1.8% | 1 | 0.2 | 0.4 | 0.7 | 1.2 | 0.2 | 0.2 |  |
+-| region.clear | 3.0 | 1.8% | 1 | 0.3 |  | 1.6 |  | 1.0 |  |  |
++| threat.accomplish/short/montage | 3.0 | 1.9% | 1 | 0.2 | 0.4 | 0.7 | 1.2 | 0.2 | 0.2 |  |
++| region.clear | 3.0 | 1.9% | 1 | 0.3 |  | 1.6 |  | 1.0 |  |  |
+ | piece.reseat | 2.4 | 1.5% | 1 | 0.3 | 0.3 | 1.4 | 0.4 |  |  |  |
+ | piece.off | 1.8 | 1.1% | 1 | 0.3 |  | 0.9 |  |  | 0.6 |  |
+ | piece.appear | 1.6 | 1.0% | 1 | 0.3 |  | 0.9 |  | 0.4 |  |  |
+@@ -266,7 +266,7 @@ v1/pod-sprint, tz America/Los_Angeles, 126 events; 30 beats played of 38 (8 sile
+ 
+ | Waiting cause (inferred) | Maneuver-s | Maneuvers |
+ |---|---|---|
+-| P-5 | 59.2 | 11 |
++| P-5 | 54.2 | 11 |
+ | P-3 | 3.0 | 1 |
+ | P-4 | 0.0 | 0 |
+ | P-6 | 5.9 | 1 |
+@@ -279,33 +279,33 @@ sprint-pods, tz America/Los_Angeles, 159 events; 31 beats played of 49 (18 silen
+ 
+ | Component | s | % |
+ |---|---|---|
+-| Orient | 3.0 | 0.6 |
+-| Gaps | 12.1 | 2.5 |
+-| Day turns (7) | 2.1 | 0.4 |
++| Orient | 3.0 | 0.7 |
++| Gaps | 12.1 | 2.8 |
++| Day turns (7) | 2.1 | 0.5 |
+ | Tail gap | 0.3 | 0.1 |
+-| Final hold | 1.2 | 0.2 |
+-| Beats: playing | 465.2 | 96.1 |
++| Final hold | 1.2 | 0.3 |
++| Beats: playing | 413.0 | 95.7 |
+ | Beats: queue idle | 0.0 | 0.0 |
+ | Beats: note hold | 0.0 | 0.0 |
+-| **Total** | 483.9 | 100.0 |
++| **Total** | 431.8 | 100.0 |
+ 
+ | Rule | s | Share | Maneuvers | tell | gather | act | land | echo | disperse | hold |
+ |---|---|---|---|---|---|---|---|---|---|---|
+-| attachment.merge/first | 284.4 | 61.1% | 36 | 10.8 | 32.4 | 82.8 | 18.0 | 108.0 | 32.4 |  |
+-| facility.enter | 88.6 | 19.1% | 19 | 5.7 | 13.6 | 22.8 | 11.4 |  |  | 35.1 |
+-| facility.enter/montage | 30.4 | 6.5% | 18 | 3.2 | 7.7 | 13.0 | 6.5 |  |  |  |
+-| attachment.merge | 21.6 | 4.6% | 3 | 0.9 | 2.7 | 4.8 | 1.5 | 9.0 | 2.7 |  |
+-| objective.accomplish/beamed | 13.0 | 2.8% | 2 | 0.6 | 0.8 | 5.2 | 2.4 | 0.8 | 0.6 | 2.6 |
+-| seat.complete/short | 7.8 | 1.7% | 2 | 0.4 | 0.8 | 1.2 | 1.3 | 1.1 |  | 3.0 |
+-| objective.accomplish/beamed-short | 5.2 | 1.1% | 1 | 0.2 | 0.2 | 1.6 | 1.2 | 0.2 | 0.2 | 1.6 |
+-| objective.accomplish | 4.7 | 1.0% | 1 | 0.3 | 0.4 | 0.8 | 1.2 | 0.4 | 0.3 | 1.3 |
+-| threat.accomplish/short | 4.5 | 1.0% | 1 | 0.2 | 0.4 | 0.7 | 1.2 | 0.2 | 0.2 | 1.5 |
+-| agent.progress | 3.1 | 0.7% | 1 |  | 0.3 | 0.8 |  | 0.4 |  | 1.6 |
++| attachment.merge/first | 284.4 | 68.9% | 36 | 10.8 | 32.4 | 82.8 | 18.0 | 108.0 | 32.4 |  |
++| facility.enter/montage | 39.2 | 9.5% | 26 |  | 11.2 | 18.7 | 9.4 |  |  |  |
++| facility.enter | 27.7 | 6.7% | 11 |  | 7.9 | 13.2 | 6.6 |  |  |  |
++| attachment.merge | 21.6 | 5.2% | 3 | 0.9 | 2.7 | 4.8 | 1.5 | 9.0 | 2.7 |  |
++| objective.accomplish/beamed | 13.0 | 3.2% | 2 | 0.6 | 0.8 | 5.2 | 2.4 | 0.8 | 0.6 | 2.6 |
++| seat.complete/short | 7.8 | 1.9% | 2 | 0.4 | 0.8 | 1.2 | 1.3 | 1.1 |  | 3.0 |
++| objective.accomplish/beamed-short | 5.2 | 1.3% | 1 | 0.2 | 0.2 | 1.6 | 1.2 | 0.2 | 0.2 | 1.6 |
++| objective.accomplish | 4.7 | 1.1% | 1 | 0.3 | 0.4 | 0.8 | 1.2 | 0.4 | 0.3 | 1.3 |
++| threat.accomplish/short | 4.5 | 1.1% | 1 | 0.2 | 0.4 | 0.7 | 1.2 | 0.2 | 0.2 | 1.5 |
++| agent.progress | 3.1 | 0.8% | 1 |  | 0.3 | 0.8 |  | 0.4 |  | 1.6 |
+ | region.clear/short | 1.8 | 0.4% | 1 | 0.2 |  | 1.0 |  | 0.6 |  |  |
+ 
+ | Waiting cause (inferred) | Maneuver-s | Maneuvers |
+ |---|---|---|
+-| P-5 | 1142.9 | 53 |
++| P-5 | 692.8 | 53 |
+ | P-3 | 4.5 | 1 |
+ | P-4 | 0.0 | 0 |
+ | P-6 | 0.0 | 0 |
+@@ -572,4 +572,18 @@ What each built E item saves per pod: a real re-schedule with the item's change
+ | E10 Late-day montage | Pulsar Pod | 288.8 | 288.8 | 0.0 | 0.0 | 0.0 |
+ | E10 Late-day montage | Convoy Planning Pod | 184.7 | 183.1 | 1.6 | 0.0 | 1.6 |
+ | E10 Late-day montage | Harbor Pod | 179.9 | 178.3 | 1.5 | 0.0 | 1.5 |
++| F2 Summon on the fly (before adaptive speed) | Comet Pod | 60.8 | 60.5 | 0.3 | 0.0 | 0.3 |
++| F2 Summon on the fly (before adaptive speed) | Nova Pod | 209.3 | 207.0 | 2.3 | 0.0 | 2.3 |
++| F2 Summon on the fly (before adaptive speed) | Quasar Pod | 769.1 | 754.5 | 14.5 | 0.0 | 14.5 |
++| F2 Summon on the fly (before adaptive speed) | Pulsar Pod | 545.4 | 526.6 | 18.9 | 0.0 | 18.9 |
++| F2 Summon on the fly (before adaptive speed) | Convoy Planning Pod | 183.1 | 176.1 | 7.0 | 0.0 | 7.0 |
++| F2 Summon on the fly (before adaptive speed) | Harbor Pod | 178.3 | 175.0 | 3.3 | 0.0 | 3.3 |
++| F2 Summon on the fly (before adaptive speed) | Meteor Pod | 564.6 | 530.3 | 34.3 | 0.0 | 34.3 |
++| F2+ Summon on the fly, with every lever | Comet Pod | 60.8 | 60.5 | 0.3 | 0.0 | 0.3 |
++| F2+ Summon on the fly, with every lever | Nova Pod | 209.3 | 207.0 | 2.3 | 0.0 | 2.3 |
++| F2+ Summon on the fly, with every lever | Quasar Pod | 299.1 | 291.9 | 7.3 | 0.0 | 7.3 |
++| F2+ Summon on the fly, with every lever | Pulsar Pod | 288.8 | 290.6 | -1.8 | 0.0 | -1.8 |
++| F2+ Summon on the fly, with every lever | Convoy Planning Pod | 183.1 | 176.1 | 7.0 | 0.0 | 7.0 |
++| F2+ Summon on the fly, with every lever | Harbor Pod | 178.3 | 175.0 | 3.3 | 0.0 | 3.3 |
++| F2+ Summon on the fly, with every lever | Meteor Pod | 284.7 | 283.4 | 1.3 | 0.0 | 1.3 |
+ 

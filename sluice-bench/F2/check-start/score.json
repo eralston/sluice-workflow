@@ -1,0 +1,295 @@
+{
+  "item": "F2",
+  "arm": "check",
+  "run": null,
+  "start": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "head": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "at": "2026-11-09T15:59:01.515Z",
+  "gates": {
+    "typecheck": true,
+    "lint": true,
+    "unit": true,
+    "noPat": true,
+    "noAdoWrite": true,
+    "sharedPure": true,
+    "finished": true,
+    "evidence": {
+      "typecheck": "",
+      "lint": "",
+      "unit": "",
+      "pat": [],
+      "adoWrite": [],
+      "sharedImpure": []
+    },
+    "pass": true
+  },
+  "probes": {
+    "P1": {
+      "status": "partial",
+      "detail": {
+        "cell": 1,
+        "loops": [
+          {
+            "still": 2492,
+            "leave": 2436,
+            "rest": 8792,
+            "path": 350
+          }
+        ],
+        "full": {
+          "id": "facility.enter",
+          "rule": "facility.enter",
+          "title": "Station jump-in",
+          "state": "after",
+          "loops": 1,
+          "reducedLoops": 0,
+          "peak": 7,
+          "active": 0,
+          "stuck": 0,
+          "started": 1,
+          "flare": 0,
+          "flarePeak": 0,
+          "reducedFlarePeak": 0
+        },
+        "reduced": {
+          "id": "facility.enter",
+          "rule": "facility.enter",
+          "title": "Station jump-in",
+          "state": "after",
+          "loops": 2,
+          "reducedLoops": 1,
+          "peak": 4,
+          "active": 0,
+          "stuck": 0,
+          "started": 4,
+          "flare": 0,
+          "flarePeak": 0,
+          "reducedFlarePeak": 0
+        },
+        "errors": [],
+        "runs": true,
+        "moves": false
+      }
+    },
+    "P2": {
+      "status": "missing",
+      "detail": {
+        "beats": [
+          {
+            "pod": "Harbor Pod",
+            "beat": 7,
+            "startMs": 23330,
+            "frames": 468,
+            "summoner": "ship",
+            "arrivalMs": 1014,
+            "flight": {
+              "still": 3792,
+              "leave": 314,
+              "rest": 5647,
+              "path": 3707
+            },
+            "hold": true,
+            "blip": false,
+            "blipPx": null,
+            "blipFromArrivalMs": null
+          },
+          {
+            "pod": "Harbor Pod",
+            "beat": 24,
+            "startMs": 84975,
+            "frames": 453,
+            "summoner": "ship",
+            "arrivalMs": 1013,
+            "flight": {
+              "still": 3792,
+              "leave": 305,
+              "rest": 5630,
+              "path": 6349
+            },
+            "hold": true,
+            "blip": false,
+            "blipPx": null,
+            "blipFromArrivalMs": null
+          },
+          {
+            "pod": "Pulsar Pod",
+            "beat": 4,
+            "startMs": 3550,
+            "frames": 268,
+            "summoner": "ship",
+            "arrivalMs": 1024,
+            "flight": {
+              "still": 0,
+              "leave": 24,
+              "rest": 4282,
+              "path": 25942
+            },
+            "hold": false,
+            "blip": false,
+            "blipPx": null,
+            "blipFromArrivalMs": null
+          },
+          {
+            "pod": "Pulsar Pod",
+            "beat": 6,
+            "startMs": 8935,
+            "frames": 270,
+            "summoner": "ship",
+            "arrivalMs": 1011,
+            "flight": {
+              "still": 3783,
+              "leave": 311,
+              "rest": 5628,
+              "path": 23307
+            },
+            "hold": true,
+            "blip": false,
+            "blipPx": null,
+            "blipFromArrivalMs": null
+          }
+        ],
+        "noHold": false,
+        "blips": "0 of 4",
+        "blip": false,
+        "unitTests": [],
+        "behaviour": "missing"
+      }
+    },
+    "P3": {
+      "status": "missing",
+      "detail": {
+        "docTables": true,
+        "rowChanged": false,
+        "row": "| `facility.enter` | Station jump-in | A repository's first PR in the round · `attach` (the first into its facility) | 2815 | narrative | no | The author flies out to where it comes in; space folds, the station slides in; an At-rest blue flare | `theme/starChart/maneuvers/stationJumpIn.ts` |",
+        "goldens": [],
+        "unnamed": [],
+        "goldensNamed": false
+      }
+    },
+    "P4": {
+      "status": "missing",
+      "detail": {
+        "pacingRuns": true,
+        "pacingOut": "",
+        "ledgerCurrent": false,
+        "newRows": 0,
+        "newRowPods": [],
+        "perPodRow": false,
+        "summonMs": 4835,
+        "phases": [
+          [
+            "tell",
+            300
+          ],
+          [
+            "gather",
+            715
+          ],
+          [
+            "act",
+            1200
+          ],
+          [
+            "land",
+            600
+          ]
+        ],
+        "summonShorter": false,
+        "appS": {
+          "Comet Pod": 45.8,
+          "Nova Pod": 171,
+          "Quasar Pod": 289.6,
+          "Pulsar Pod": 288.6,
+          "Convoy Planning Pod": 179,
+          "Harbor Pod": 179.8,
+          "Meteor Pod": 275.9
+        },
+        "appSStart": {
+          "Comet Pod": 45.8,
+          "Nova Pod": 171,
+          "Quasar Pod": 289.6,
+          "Pulsar Pod": 288.6,
+          "Convoy Planning Pod": 179,
+          "Harbor Pod": 179.8,
+          "Meteor Pod": 275.9
+        },
+        "shorter": [],
+        "fourShorter": false
+      }
+    }
+  },
+  "acceptance": 5,
+  "regress": {
+    "ran": 238,
+    "failures": [
+      {
+        "id": "demo.spec.ts:439 no expanded station plate in Halcyon’s five pods scrolls sideways, and every fact stays inside it",
+        "file": "demo.spec.ts",
+        "line": 439,
+        "error": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+      },
+      {
+        "id": "solar-dense.spec.ts:184 ships and stations point the way they travel (22: facing follows motion)",
+        "file": "solar-dense.spec.ts",
+        "line": 184,
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m0.05\u001b[39m\nReceived:   \u001b[31m0.10256410256410256\u001b[39m"
+      },
+      {
+        "id": "solar.spec.ts:645 draws all 37 stations at the end of the sprint, and keeps VC-3 at 1024×640",
+        "file": "solar.spec.ts",
+        "line": 645,
+        "error": "Error: 1024×640\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 49\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"star Meteor Pod < 12px\",\u001b[39m\n\u001b[31m+   \"seat Bea's Promise < 12px\",\u001b"
+      },
+      {
+        "id": "perf.spec.ts:171 p95 frame time stays within the profile vsync budget at rest, playing at 1x and 4x, and on seeks",
+        "file": "perf.spec.ts",
+        "line": 171,
+        "error": "Error: Pulsar Pod, a seek: ms to land and draw 2 frames\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m250\u001b[39m\nReceived:   \u001b[31m311.1\u001b[39m"
+      }
+    ],
+    "newFailures": [],
+    "persists": [],
+    "points": 20
+  },
+  "rules": {
+    "amended": {
+      "13": false,
+      "03": false,
+      "05": false
+    },
+    "lapses": [
+      "doc 13 not amended",
+      "doc 03 not amended",
+      "doc 05 not amended"
+    ],
+    "points": 4
+  },
+  "informative": {
+    "realTests": {
+      "ok": false,
+      "failed": 10,
+      "passed": 156
+    },
+    "churn": {
+      "files": 0,
+      "lines": 0,
+      "outsideTouches": [],
+      "goldens": []
+    },
+    "health": {
+      "over800New": [],
+      "complexity": "145 functions over 15 · worst 272 (labels.ts position) · 41 over 80 lines"
+    },
+    "secs": {
+      "typecheck": 6,
+      "lint": 6,
+      "unit": 92,
+      "build": 5
+    }
+  },
+  "partial": {
+    "acceptance": 5,
+    "regress": 20,
+    "rules": 4
+  }
+}

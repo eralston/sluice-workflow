@@ -1,0 +1,135 @@
+{
+  "source": "/Users/amorgan/.claude/projects/-Users-amorgan-sluice-bench-F2-A1-1-clone",
+  "run": "A1-1",
+  "at": "2026-11-09T19:43:50.516Z",
+  "usd": 6.8845,
+  "windows": 0.255,
+  "calls": 170,
+  "firstPrompt": "2026-11-09T18:18:58.087Z",
+  "lastEntry": "2026-11-09T19:43:49.955Z",
+  "wallMin": 84.9,
+  "toCommitMin": 84.7,
+  "agentSecs": 4910,
+  "sessionSecs": 5092,
+  "ctx": {
+    "mean": 87169,
+    "p95": 156510,
+    "peak": 177780
+  },
+  "roles": {
+    "session": {
+      "usd": 0.9579,
+      "calls": 10,
+      "secs": 5092,
+      "agents": 1,
+      "out": 4279,
+      "ctx": {
+        "mean": 39602,
+        "p95": 46627,
+        "peak": 46627
+      }
+    },
+    "builder": {
+      "usd": 1.3369,
+      "calls": 45,
+      "secs": 1841,
+      "agents": 1,
+      "out": 993,
+      "ctx": {
+        "mean": 89202,
+        "p95": 131985,
+        "peak": 137926
+      }
+    },
+    "planner": {
+      "usd": 2.0498,
+      "calls": 56,
+      "secs": 658,
+      "agents": 1,
+      "out": 6225,
+      "ctx": {
+        "mean": 95675,
+        "p95": 170607,
+        "peak": 177780
+      }
+    },
+    "reviewer": {
+      "usd": 2.5398,
+      "calls": 59,
+      "secs": 2411,
+      "agents": 1,
+      "out": 4700,
+      "ctx": {
+        "mean": 85609,
+        "p95": 122637,
+        "peak": 126350
+      }
+    }
+  },
+  "models": {
+    "claude-opus-5-5": {
+      "usd": 5.5476,
+      "calls": 125,
+      "out": 15204
+    },
+    "claude-sonnet-5-5": {
+      "usd": 1.3369,
+      "calls": 45,
+      "out": 993
+    }
+  },
+  "agents": [
+    {
+      "role": "session",
+      "kind": "main",
+      "workflow": null,
+      "file": "fb71da1b-2a76-4c33-a143-36e61095f5cd.jsonl",
+      "calls": 10,
+      "secs": 5092,
+      "usd": 0.9579,
+      "out": 4279,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "builder",
+      "kind": "subagent",
+      "workflow": null,
+      "file": "fb71da1b-2a76-4c33-a143-36e61095f5cd/subagents/agent-a537f0716ae04c0b4.jsonl",
+      "calls": 45,
+      "secs": 1841,
+      "usd": 1.3369,
+      "out": 993,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "role": "planner",
+      "kind": "subagent",
+      "workflow": null,
+      "file": "fb71da1b-2a76-4c33-a143-36e61095f5cd/subagents/agent-a8755e798f45b130e.jsonl",
+      "calls": 56,
+      "secs": 658,
+      "usd": 2.0498,
+      "out": 6225,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "reviewer",
+      "kind": "subagent",
+      "workflow": null,
+      "file": "fb71da1b-2a76-4c33-a143-36e61095f5cd/subagents/agent-ab9fc7013ee9db6c1.jsonl",
+      "calls": 59,
+      "secs": 2411,
+      "usd": 2.5398,
+      "out": 4700,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    }
+  ]
+}

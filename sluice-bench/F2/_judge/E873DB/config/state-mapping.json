@@ -1,0 +1,77 @@
+{
+  "$comment": "Source of truth for ADO state -> visual stage. Keyed by work item type, then raw state name. 'category' is the ADO state category (authoritative for reporting); 'stage' is a local visual metaphor defined in docs/06-visual-brief.md. Values reported from the pilot team's process settings on 2026-09-29. Any (type, state) not listed here gets stage 'unknown' plus its raw name (INV-11). Compare against the runtime work-item-type-states API at connect time and surface mismatches. v1 (docs/14-architecture.md §2.1): each type also declares its engine 'role', and each state its 'rung' on the signal ladder plus its flags (sketch, step, deferred, ghost, strike), copied from SIGNALS in src/renderer/src/chart/art/progress.ts and kept equal by tests/unit/signal.test.ts. 'entities.attachment' does the same for pull request statuses.",
+  "version": 1,
+  "unknownStage": "unknown",
+  "types": {
+    "Epic": {
+      "$comment": "Epic states not yet supplied. Epic visuals stay neutral; sector activity comes from descendant events.",
+      "kind": "epic",
+      "role": "container",
+      "states": {}
+    },
+    "Feature": {
+      "kind": "feature",
+      "role": "container",
+      "states": {
+        "New":              { "category": "Proposed",   "stage": "feature.faint",      "rung": "ready", "sketch": true },
+        "Draft":            { "category": "Proposed",   "stage": "feature.draft",      "rung": "ready" },
+        "Ready for Review": { "category": "Proposed",   "stage": "feature.review",     "rung": "ready" },
+        "Ready":            { "category": "Proposed",   "stage": "feature.ready",      "rung": "ready" },
+        "Deferred":         { "category": "Proposed",   "stage": "feature.deferred",   "rung": "ready", "deferred": true },
+        "Active":           { "category": "InProgress", "stage": "feature.active",     "rung": "underway" },
+        "Ready to Accept":  { "category": "InProgress", "stage": "feature.accept",     "rung": "nearing", "step": 0.65 },
+        "Closed":           { "category": "Completed",  "stage": "feature.whiteDwarf", "rung": "accomplished" },
+        "Removed":          { "category": "Removed",    "stage": "feature.ghost",      "rung": "off", "ghost": true }
+      }
+    },
+    "User Story": {
+      "kind": "story",
+      "role": "objective",
+      "states": {
+        "New":              { "category": "Proposed",   "stage": "story.uncharted",       "rung": "ready", "sketch": true },
+        "Ready":            { "category": "Proposed",   "stage": "story.surveyed",        "rung": "ready" },
+        "Deferred":         { "category": "Proposed",   "stage": "story.dormant",         "rung": "ready", "deferred": true },
+        "Ready for Review": { "category": "Proposed",   "stage": "story.review",          "rung": "ready" },
+        "Active":           { "category": "InProgress", "stage": "story.terraforming",    "rung": "underway" },
+        "Resolved":         { "category": "InProgress", "stage": "story.developed",       "rung": "nearing", "step": 0.3 },
+        "Ready to Accept":  { "category": "InProgress", "stage": "story.developedAccept", "rung": "nearing", "step": 0.65 },
+        "Closed":           { "category": "Completed",  "stage": "story.lush",            "rung": "accomplished" },
+        "Removed":          { "category": "Removed",    "stage": "story.ghost",           "rung": "off", "ghost": true }
+      }
+    },
+    "Bug": {
+      "kind": "bug",
+      "role": "threat",
+      "states": {
+        "New":              { "category": "Proposed",   "stage": "bug.detected",         "rung": "ready", "sketch": true },
+        "Ready":            { "category": "Proposed",   "stage": "bug.stable",           "rung": "ready" },
+        "Ready for Review": { "category": "Proposed",   "stage": "bug.review",           "rung": "ready" },
+        "Active":           { "category": "InProgress", "stage": "bug.disturbance",      "rung": "underway" },
+        "Resolved":         { "category": "Resolved",   "stage": "bug.contracted",       "rung": "nearing", "step": 0.3 },
+        "Ready to Accept":  { "category": "Resolved",   "stage": "bug.contractedAccept", "rung": "nearing", "step": 0.65 },
+        "Closed":           { "category": "Completed",  "stage": "bug.remnant",          "rung": "accomplished" },
+        "Removed":          { "category": "Removed",    "stage": "bug.ghost",            "rung": "off", "ghost": true },
+        "Rejected":         { "category": "Removed",    "stage": "bug.rejected",         "rung": "off", "ghost": true, "strike": true }
+      }
+    },
+    "Task": {
+      "kind": "task",
+      "role": "step",
+      "states": {
+        "New":     { "category": "Proposed",   "stage": "task.unstarted", "rung": "ready", "sketch": true },
+        "Active":  { "category": "InProgress", "stage": "task.lit",       "rung": "underway" },
+        "Closed":  { "category": "Completed",  "stage": "task.settled",   "rung": "accomplished" },
+        "Removed": { "category": "Removed",    "stage": "task.faint",     "rung": "off", "ghost": true }
+      }
+    }
+  },
+  "entities": {
+    "attachment": {
+      "states": {
+        "active":    { "category": "InProgress", "stage": "flight.active",    "rung": "underway" },
+        "completed": { "category": "Completed",  "stage": "flight.completed", "rung": "accomplished" },
+        "abandoned": { "category": "Removed",    "stage": "flight.abandoned", "rung": "off", "ghost": true }
+      }
+    }
+  }
+}

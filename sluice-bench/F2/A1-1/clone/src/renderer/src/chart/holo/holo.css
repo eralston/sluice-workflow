@@ -1,0 +1,267 @@
+/* Holographic labels (chart/holo, 2026-10-12): pale HUD cyan lines on dark glass, one palette for the
+   chart's chrome: people, places, infrastructure and stars. A piece's plate is the one exception (22 A6,
+   2026-10-14): its frame, pointer and dot wear its role's colour (Opportunity Blue for an objective,
+   Deadly Red for a threat), as its outline on the chart does, so the label says what it names by more
+   than its words (13 §1, *identity by more than one cue*). Its text keeps the tier's neutral colours.
+   The plate is the `.callout` (so the label contrast check, VC-2, covers it); the frame and pointer are
+   a sibling SVG in the plate's coordinates. */
+:root {
+  --holo-line: #7fe3ff;
+  --holo-glass: rgba(5, 19, 31, 0.86);
+  --holo-glow: rgba(127, 227, 255, 0.5);
+
+  /* The label hierarchy (19 §2, 22 A5; 15 §6 holo-tiers): four tiers of one cyan family on the same glass,
+     quieted mostly by the frame, the glow and the saturation; the text stays 6:1 or more on ink. */
+  /* T1, Lead: captains and dreadnoughts. */
+  --holo-t1-title: #d4f7ff;
+  --holo-t1-sub: #8fb6c2;
+  --holo-t1-line: rgba(127, 227, 255, 0.85);
+  --holo-t1-dot: #7fe3ff;
+  --holo-t1-text-glow: 0 0 6px var(--holo-glow);
+  --holo-t1-frame-glow: drop-shadow(0 0 2.5px var(--holo-glow));
+  --holo-t1-weight: 600;
+  --holo-t1-size: 12px;
+  /* T2, Door: galaxies, the round's stars, pieces. */
+  --holo-t2-title: #b7d3da;
+  --holo-t2-sub: #8aa2a9;
+  --holo-t2-line: rgba(127, 227, 255, 0.5);
+  --holo-t2-dot: rgba(127, 227, 255, 0.7);
+  --holo-t2-text-glow: none;
+  --holo-t2-frame-glow: drop-shadow(0 0 1.5px var(--holo-glow));
+  --holo-t2-weight: 400;
+  --holo-t2-size: 12px;
+  /* T3, Place: homeworlds. A desaturated grey-cyan frame. */
+  --holo-t3-title: #9db4ba;
+  --holo-t3-sub: #8a9ea3;
+  --holo-t3-line: rgba(141, 179, 189, 0.4);
+  --holo-t3-dot: rgba(141, 179, 189, 0.5);
+  --holo-t3-text-glow: none;
+  --holo-t3-frame-glow: none;
+  --holo-t3-weight: 400;
+  --holo-t3-size: 11.5px;
+  /* T4, Sky: the stars, the round's and the region's (22 A5). The quietest at rest: a faint cyan
+     frame (the stars keep their cyan), no glow, a size down; its text stays at AA over white. */
+  --holo-t4-title: #8ca6ad;
+  --holo-t4-sub: #84a0a8;
+  --holo-t4-line: rgba(127, 227, 255, 0.36);
+  --holo-t4-dot: rgba(127, 227, 255, 0.5);
+  --holo-t4-text-glow: none;
+  --holo-t4-frame-glow: none;
+  --holo-t4-weight: 400;
+  --holo-t4-size: 11px;
+  /* Lifted: pointed, selected or lit, whatever the tier. The tier's size, at T1's weight and light. */
+  --holo-lift-title: #d4f7ff;
+  --holo-lift-sub: #8fb6c2;
+  --holo-lift-line: #7fe3ff;
+  --holo-lift-dot: #7fe3ff;
+  --holo-lift-text-glow: 0 0 6px var(--holo-glow);
+  --holo-lift-frame-glow: drop-shadow(0 0 4px var(--holo-glow));
+  --holo-lift-weight: 600;
+  /* Role outlines (22 A6): a piece's frame, pointer and rim dot, at rest and lifted, with a glow of its
+     own colour. Opportunity Blue (AURA.objective #009CCC) and Deadly Red (AURA.threat #CC293D),
+     brightened a little for a 1 px line on the glass; lifted, lighter still. */
+  --holo-objective-line: rgba(18, 170, 222, 0.85);
+  --holo-objective-dot: rgba(18, 170, 222, 0.95);
+  --holo-objective-glow: rgba(0, 156, 204, 0.55);
+  --holo-objective-lift: #4cc6f0;
+  --holo-threat-line: rgba(222, 58, 78, 0.85);
+  --holo-threat-dot: rgba(222, 58, 78, 0.95);
+  --holo-threat-glow: rgba(204, 41, 61, 0.55);
+  --holo-threat-lift: #ff6a7c;
+  /* In play every tier steps down to this size (the title only); the contrast stays the tier's. */
+  --holo-play-size: 11px;
+}
+
+/* Each tier sets the plate's working values; the rules below read only these. */
+.callout--holo[data-holo-tier='lead'], .holo[data-holo-tier='lead'] {
+  --h-title: var(--holo-t1-title); --h-sub: var(--holo-t1-sub); --h-line: var(--holo-t1-line); --h-dot: var(--holo-t1-dot);
+  --h-text-glow: var(--holo-t1-text-glow); --h-frame-glow: var(--holo-t1-frame-glow); --h-weight: var(--holo-t1-weight); --h-size: var(--holo-t1-size);
+}
+.callout--holo[data-holo-tier='door'], .holo[data-holo-tier='door'] {
+  --h-title: var(--holo-t2-title); --h-sub: var(--holo-t2-sub); --h-line: var(--holo-t2-line); --h-dot: var(--holo-t2-dot);
+  --h-text-glow: var(--holo-t2-text-glow); --h-frame-glow: var(--holo-t2-frame-glow); --h-weight: var(--holo-t2-weight); --h-size: var(--holo-t2-size);
+}
+.callout--holo[data-holo-tier='place'], .holo[data-holo-tier='place'] {
+  --h-title: var(--holo-t3-title); --h-sub: var(--holo-t3-sub); --h-line: var(--holo-t3-line); --h-dot: var(--holo-t3-dot);
+  --h-text-glow: var(--holo-t3-text-glow); --h-frame-glow: var(--holo-t3-frame-glow); --h-weight: var(--holo-t3-weight); --h-size: var(--holo-t3-size);
+}
+.callout--holo[data-holo-tier='sky'], .holo[data-holo-tier='sky'] {
+  --h-title: var(--holo-t4-title); --h-sub: var(--holo-t4-sub); --h-line: var(--holo-t4-line); --h-dot: var(--holo-t4-dot);
+  --h-text-glow: var(--holo-t4-text-glow); --h-frame-glow: var(--holo-t4-frame-glow); --h-weight: var(--holo-t4-weight); --h-size: var(--holo-t4-size);
+}
+/* A piece's frame takes its role's colour (22 A6), at whatever tier; its glow only when raised (27 B1: T4 has no filters). */
+.holo[data-holo-role='objective'] { --h-line: var(--holo-objective-line); --h-dot: var(--holo-objective-dot); }
+.holo[data-holo-role='threat'] { --h-line: var(--holo-threat-line); --h-dot: var(--holo-threat-dot); }
+.holo[data-holo-role='objective']:not([data-holo-tier='sky']) { --h-frame-glow: drop-shadow(0 0 1.5px var(--holo-objective-glow)); }
+.holo[data-holo-role='threat']:not([data-holo-tier='sky']) { --h-frame-glow: drop-shadow(0 0 1.5px var(--holo-threat-glow)); }
+/* States lift a plate (19 §2): hovered (the object or its label), lit from a list, selected, or
+   expanded into its rows. */
+.callout--holo.is-hover, .callout--holo.is-selected, .callout--holo.is-expanded, .holo.is-hover, .holo.is-selected, .holo.is-expanded {
+  --h-title: var(--holo-lift-title); --h-sub: var(--holo-lift-sub); --h-line: var(--holo-lift-line); --h-dot: var(--holo-lift-dot);
+  --h-text-glow: var(--holo-lift-text-glow); --h-frame-glow: var(--holo-lift-frame-glow); --h-weight: var(--holo-lift-weight);
+}
+.holo[data-holo-role='objective']:is(.is-hover, .is-selected, .is-expanded) {
+  --h-line: var(--holo-objective-lift); --h-dot: var(--holo-objective-lift); --h-frame-glow: drop-shadow(0 0 4px var(--holo-objective-glow));
+}
+.holo[data-holo-role='threat']:is(.is-hover, .is-selected, .is-expanded) {
+  --h-line: var(--holo-threat-lift); --h-dot: var(--holo-threat-lift); --h-frame-glow: drop-shadow(0 0 4px var(--holo-threat-glow));
+}
+
+.callout.callout--holo {
+  padding: 3px 10px 3px; border: 0; border-radius: 0; background: var(--holo-glass); box-shadow: none;
+  max-width: 220px;
+}
+.callout.callout--holo .callout__title {
+  /* Regular casing in the UI sans for every holo plate, ships included (2026-10-12: capitals shouted).
+     Only Inter 400 and 600 are bundled, so the tiers use those two weights and nothing between. */
+  color: var(--h-title); font-family: var(--sans); font-size: var(--h-size); font-weight: var(--h-weight); letter-spacing: 0.01em;
+  text-shadow: var(--h-text-glow);
+}
+/* A plate's own title (not its rows) wraps onto a second line, then ends in "…" (22 A7): a line clamp
+   inside the plate's padding, so the text and the "…" keep 10 px of glass on each side. The plate is as
+   wide as its text up to its 220 px, so a short title stays on one line and keeps its width. */
+.callout.callout--holo > .callout__title, .callout.callout--holo > .callout__lines > .callout__title {
+  white-space: normal; overflow-wrap: anywhere; line-height: 1.25; max-width: 100%; min-width: 0;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+  text-align: center;
+}
+/* The `subtitle` variant's second line: smaller and dimmer (still 4.5:1 on the glass over anything). */
+.callout.callout--holo .callout__meta {
+  color: var(--h-sub); font-family: var(--sans); font-size: 10.5px; font-weight: 400; letter-spacing: 0.01em; line-height: 1.25;
+}
+/* The subtitle never runs past the plate (19 P1): its last part (`· 16 items`) keeps its width, and the
+   head gives way with an ellipsis at its start (right-to-left overflow over left-to-right text), so a
+   long Area Path loses its root first, not its leaf or the count. */
+.callout.callout--holo .holo__meta { display: flex; max-width: 100%; min-width: 0; }
+.holo__meta-head { min-width: 0; overflow: hidden; text-overflow: ellipsis; direction: rtl; }
+/* A left-to-right mark at each end keeps the text in its own order under the rtl base: without them the
+   bidi algorithm moves a leading number to the end (`2 areas` read `areas 2`). */
+.holo__meta-head::before, .holo__meta-head::after { content: '\200E'; }
+.holo__meta-tail { flex: none; white-space: pre; }
+/* The chart's name after the identity line (22 B3, R12): the subtitle's own colour (its contrast held),
+   set apart by italics, and never the part that gives way. A captain's and a homeworld's plate is a
+   name at rest: theirs shows only pointed at, selected or expanded. */
+.holo__metaphor { flex: none; white-space: pre; font-style: italic; }
+/* A cast plate's note in play (22 B6, R13): why it's lit, its event's action in History's words, under
+   the title in the subtitle's colour, at most two lines. It shows in the Title state too. */
+.callout.callout--holo > .holo__note, .callout.callout--holo > .callout__lines > .holo__note {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+  max-width: 100%; min-width: 0; text-align: center; color: var(--h-sub); font-family: var(--sans); font-size: 10.5px;
+  font-weight: 500; line-height: 1.25; overflow-wrap: anywhere; white-space: normal; /* a callout's text is one line; a note wraps (review: a PR's lost its action) */
+}
+.callout.callout--holo .holo__metaphor--expanded { display: none; }
+.callout.callout--holo:is(.is-expanded, .is-hover, .is-selected) .holo__metaphor--expanded { display: block; }
+.callout.callout--holo.is-compact { padding-top: 2px; padding-bottom: 2px; }
+/* The Title state shows the title alone: the split subtitle's `display: flex` above outranks styles.css's
+   `.is-compact .callout__meta` by load order, so it's hidden here too. */
+.callout.callout--holo.is-compact .holo__meta { display: none; }
+/* The `avatar` variant (19 L8): the picture fills the plate's near end as a square, the plate's full
+   height and flush with its frame, so the plate's clip cuts the picture's corners with its own. No ring:
+   the frame is the only line. A picture of any shape fills the square from its centre (object-fit). */
+.callout.callout--holo.callout--avatar { padding: 0 10px 0 0; gap: 7px; }
+.callout.callout--holo .callout__avatar { --avatar: 24px; border-radius: 0; box-shadow: none; }
+.callout.callout--holo .callout__avatar img { border-radius: 0; }
+/* In play a ship's label is its picture alone, hugging the ship: a small square with the plate's cut
+   corners and its tier's frame line (labels.ts clips it; HoloFrame.bare draws the line), no pointer. */
+.callout.callout--holo[data-tier='picture'] { padding: 0; background: none; }
+.callout.callout--holo[data-tier='picture'] .callout__avatar { --avatar: 20px; }
+.callout.callout--holo.is-compact .callout__title { font-size: var(--holo-play-size); }
+.callout.callout--holo.is-hover, .callout.callout--holo.is-selected, .callout.callout--holo.is-expanded { background: rgba(9, 33, 50, 0.9); }
+/* An acting captain (22 B9): while their maneuver plays the picture opens to the name and their part
+   (the `is-compact` ship rules hide the lines and the glass), and folds after. Roomier than a plate at
+   rest (the review: the text was crowded): wider, with air round the two lines, and the picture fills
+   the plate's whole height, flush with its frame, however tall the lines make it (no gap beneath). */
+.callout.callout--holo.callout--captain.is-acting {
+  padding: 0 14px 0 0; gap: 10px; max-width: 300px; min-height: 36px; align-items: stretch; background: var(--holo-glass);
+}
+.callout.callout--holo.callout--captain.is-acting .callout__lines { display: flex; justify-content: center; padding: 5px 0; min-width: 0; }
+.callout.callout--holo.callout--captain.is-acting .callout__avatar {
+  --avatar: 36px; height: auto; min-height: var(--avatar); align-self: stretch; box-shadow: none;
+}
+/* A quiet galaxy (nothing saved, nothing this range) names itself at T3's colour. */
+.callout.callout--holo.is-quiet:not([data-holo-tier='sky']):not(.is-hover):not(.is-selected) .callout__title { color: var(--holo-t3-title); }
+
+/* Expanded (19 L2): the same plate grows its rows under its title, in the same frame. The label layer
+   caps it at the view's size (inline max-height and max-width); the rows scroll inside it. Rows are
+   the T2 text colours until lit; their rung marks keep the ladder's colours, with a shape per rung
+   (INV-20): holoRows.ts sets `--rung` on each row from art/progress.ts, so Off is the ladder's grey. */
+.callout.callout--holo.is-expanded { align-items: stretch; padding-bottom: 5px; overflow: hidden; z-index: 3; }
+/* A capped plate shrinks its rows (they scroll), never its title or subtitle lines. */
+.callout.callout--holo.is-expanded > :not(.holo__list) { flex-shrink: 0; }
+.holo__list { display: flex; flex-direction: column; flex: 0 1 auto; min-height: 0; margin-top: 3px; }
+.holo__rows {
+  list-style: none; margin: 0; padding: 3px 0 0; display: flex; flex-direction: column; gap: 1px;
+  border-top: 1px solid rgba(127, 227, 255, 0.22);
+  flex: 0 1 auto; min-height: 0; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y;
+  scrollbar-width: thin; scrollbar-color: rgba(127, 227, 255, 0.3) transparent;
+}
+/* A row runs 4 px past the box on the left only (clipped): a right-hand overhang would count in the box's scrollWidth (A4). */
+.holo__row { display: flex; align-items: baseline; gap: 6px; padding: 1px 4px; margin: 0 0 0 -4px; cursor: pointer; }
+.holo__row:hover, .holo__row.is-lit { background: rgba(127, 227, 255, 0.1); }
+.holo__mark { font-size: 10px; width: 10px; flex: none; text-align: center; color: var(--rung, #8a93a6); }
+.holo__text { display: flex; flex-direction: column; min-width: 0; }
+.callout.callout--holo .holo__row .callout__title {
+  color: var(--holo-t2-title); font-size: 11.5px; font-weight: 400; text-shadow: none;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+}
+/* A long repository or container line ellipsises inside the plate (the row's hover title carries it whole); the stat line below wraps at its `·` instead. */
+.callout.callout--holo .holo__row .callout__meta:not(.holo__stat), .callout.callout--holo .holo__row .holo__sub {
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.callout.callout--holo .holo__row .callout__meta { color: var(--holo-t2-sub); }
+.callout.callout--holo .holo__row:hover .callout__title, .callout.callout--holo .holo__row.is-lit .callout__title { color: var(--holo-lift-title); }
+.callout.callout--holo .holo__row:hover .callout__meta, .callout.callout--holo .holo__row.is-lit .callout__meta { color: var(--holo-lift-sub); }
+/* The selected object's row (19 L7: a selected piece keeps its row marked in its planet's plate): its
+   title in the selection's ivory (09) and at weight 600, so it differs from a lit row by more than hue
+   (INV-20), on a faint ivory wash. (An edge would be clipped: the rows scroll, and a row runs 4 px past
+   them on each side.) */
+.holo__row.is-selected { background: rgba(244, 240, 222, 0.08); }
+.callout.callout--holo .holo__row.is-selected .callout__title { color: var(--ivory); font-weight: 600; }
+.callout.callout--holo .holo__row.is-selected .callout__meta { color: var(--holo-lift-sub); }
+.holo__row--off .callout__title { text-decoration: line-through; text-decoration-color: var(--ivory-35); }
+.callout.callout--holo .holo__sub { font-size: 9.5px; }
+/* B1: the PR stat line is the subtitle's colour (T2's: T3's measured 4.39:1 over white here, under the 4.5:1 bar) at a size down, even on a lifted plate or lit row (15 §6 `pr-stat`). */
+.callout.callout--holo .holo__row .holo__stat,
+.callout.callout--holo .holo__row:hover .holo__stat, .callout.callout--holo .holo__row.is-lit .holo__stat,
+.callout.callout--holo .holo__row.is-selected .holo__stat { font-size: 9px; color: var(--holo-t2-sub); }
+/* A long stat line wraps at its `·` (never cut: R9); a fact like `✓ 2  ⧖ 1` stays whole. */
+.callout.callout--holo .holo__row .holo__stat { white-space: normal; }
+.holo__fact { white-space: nowrap; }
+.callout.callout--holo .holo__link { color: var(--holo-line); text-decoration: underline; text-decoration-color: rgba(127, 227, 255, 0.35); cursor: pointer; }
+.holo__link:hover { text-decoration-color: var(--holo-line); }
+/* B2: the station's pipeline line (15 §6 `run-line`): T2's subtitle colour at the stat line's size, a neutral dot before it
+   (soft green or slate, never red, never a ladder or hostile colour), a different shape for every result, so the word and the
+   shape carry it, never colour alone. Empty it keeps its height (R4). */
+.callout.callout--holo .holo__run { display: flex; align-items: center; gap: 5px; font-size: 9px; color: var(--holo-t2-sub); padding: 1px 0 2px; }
+.holo__run-dot { width: 7px; height: 7px; flex: none; box-sizing: border-box; border-radius: 50%; background: var(--run); border: 1.5px solid var(--run); }
+.holo__run-dot--half { background: linear-gradient(90deg, var(--run) 50%, transparent 50%); }
+.holo__run-dot--ring { background: transparent; }
+.holo__run-dot--dotted { background: transparent; border-style: dotted; }
+.holo__run-dot--diamond { background: transparent; border-radius: 0; transform: rotate(45deg) scale(0.85); }
+.holo__run-dot--bar { height: 2.5px; border: 0; border-radius: 1px; width: 8px; }
+/* B3, 27 B2: the star plate's Features (15 §6 `feature-row`): the stat line's colour and size. At rest one line, the top Feature with
+   `+N more` at its end; the row adds height, not width (the name gives way to its ellipsis). Pointed at or selected, the plate
+   opens the whole list in place. Empty it keeps one line (R4). */
+.callout.callout--holo .holo__features { display: flex; flex-direction: column; gap: 0; max-width: 100%; padding-top: 2px; }
+.callout.callout--holo .holo__feat { display: flex; font-size: 9px; color: var(--holo-t2-sub); max-width: 100%; min-width: 0; }
+.holo__feat-scroll { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(127, 227, 255, 0.3) transparent; }
+.callout.callout--holo .holo__feat { line-height: 12px; }
+.holo__feat-name { min-width: 0; max-width: 230px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.holo__feat-count { flex: none; white-space: pre; }
+.callout.callout--holo .holo__features:not(.is-open) { contain: inline-size; align-self: stretch; }
+.callout.callout--holo .holo__feat-more { font-size: 9px; color: var(--holo-t2-sub); flex: none; white-space: pre; padding-left: 0.5em; }
+.callout.is-compact .holo__features { display: none; }
+.holo__more { align-self: flex-start; padding-top: 1px; flex: none; }
+/* Over the other labels, its own frame over its glass (the frame follows the plate in the DOM). */
+.holo.is-expanded { z-index: 3; }
+
+.holo {
+  position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none;
+  filter: var(--h-frame-glow);
+}
+.holo__outline { fill: none; stroke: var(--h-line); stroke-width: 1; }
+.holo__leader { fill: none; stroke: var(--h-line); stroke-width: 1; stroke-linejoin: miter; }
+.holo__dot { fill: var(--h-dot); stroke: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .holo__outline, .holo__leader { transition: stroke 120ms; }
+}

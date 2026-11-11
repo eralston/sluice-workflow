@@ -1,0 +1,438 @@
+{
+  "totalMs": 48900,
+  "beats": [
+    {
+      "index": 0,
+      "sourceUtc": "2026-09-14T16:00:00.000Z",
+      "firstUtc": "2026-09-14T16:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r3"
+      ],
+      "priority": "high",
+      "presentationStartMs": 1700,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 1,
+      "sourceUtc": "2026-09-14T17:30:00.000Z",
+      "firstUtc": "2026-09-14T17:30:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1021:r3"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 4350,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 2,
+      "sourceUtc": "2026-09-14T18:15:00.000Z",
+      "firstUtc": "2026-09-14T18:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1015:r3"
+      ],
+      "priority": "low",
+      "presentationStartMs": 4475,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 3,
+      "sourceUtc": "2026-09-14T19:00:00.000Z",
+      "firstUtc": "2026-09-14T19:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r3"
+      ],
+      "priority": "high",
+      "presentationStartMs": 4600,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 4,
+      "sourceUtc": "2026-09-14T20:30:00.000Z",
+      "firstUtc": "2026-09-14T20:30:00.000Z",
+      "eventKeys": [
+        "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1012:r4"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 7250,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 5,
+      "sourceUtc": "2026-09-14T22:00:00.000Z",
+      "firstUtc": "2026-09-14T22:00:00.000Z",
+      "eventKeys": [
+        "pr_opened:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 7500,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 6,
+      "sourceUtc": "2026-09-15T16:00:00.000Z",
+      "firstUtc": "2026-09-15T16:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r3"
+      ],
+      "priority": "high",
+      "presentationStartMs": 10600,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 7,
+      "sourceUtc": "2026-09-15T17:30:00.000Z",
+      "firstUtc": "2026-09-15T17:30:00.000Z",
+      "eventKeys": [
+        "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1011:u4:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 13250,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 8,
+      "sourceUtc": "2026-09-15T18:15:00.000Z",
+      "firstUtc": "2026-09-15T18:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1016:r3"
+      ],
+      "priority": "low",
+      "presentationStartMs": 13375,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 9,
+      "sourceUtc": "2026-09-15T19:00:00.000Z",
+      "firstUtc": "2026-09-15T19:00:00.000Z",
+      "eventKeys": [
+        "wi_created:wi:00000000-0000-4000-8000-000000000001:1017:r1",
+        "link_parent_added:wi:00000000-0000-4000-8000-000000000001:1017:u2:wi:00000000-0000-4000-8000-000000000001:1001"
+      ],
+      "priority": "high",
+      "presentationStartMs": 13500,
+      "durationMs": 1600,
+      "accented": true
+    },
+    {
+      "index": 10,
+      "sourceUtc": "2026-09-15T20:30:00.000Z",
+      "firstUtc": "2026-09-15T20:30:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1022:r3"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 15350,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 11,
+      "sourceUtc": "2026-09-15T21:15:00.000Z",
+      "firstUtc": "2026-09-15T21:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1023:r3"
+      ],
+      "priority": "low",
+      "presentationStartMs": 15475,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 12,
+      "sourceUtc": "2026-09-15T22:00:00.000Z",
+      "firstUtc": "2026-09-15T22:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r5"
+      ],
+      "priority": "high",
+      "presentationStartMs": 15600,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 13,
+      "sourceUtc": "2026-09-16T16:00:00.000Z",
+      "firstUtc": "2026-09-16T16:00:00.000Z",
+      "eventKeys": [
+        "pr_opened:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 18500,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 14,
+      "sourceUtc": "2026-09-16T17:30:00.000Z",
+      "firstUtc": "2026-09-16T17:30:00.000Z",
+      "eventKeys": [
+        "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1013:r4"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 21350,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 15,
+      "sourceUtc": "2026-09-16T18:15:00.000Z",
+      "firstUtc": "2026-09-16T18:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1024:r3"
+      ],
+      "priority": "low",
+      "presentationStartMs": 21475,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 16,
+      "sourceUtc": "2026-09-16T19:00:00.000Z",
+      "firstUtc": "2026-09-16T19:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1014:r3"
+      ],
+      "priority": "high",
+      "presentationStartMs": 21600,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 17,
+      "sourceUtc": "2026-09-16T20:30:00.000Z",
+      "firstUtc": "2026-09-16T20:30:00.000Z",
+      "eventKeys": [
+        "link_pr_added:wi:00000000-0000-4000-8000-000000000001:1012:u5:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 24250,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 18,
+      "sourceUtc": "2026-09-16T21:15:00.000Z",
+      "firstUtc": "2026-09-16T21:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1015:r4"
+      ],
+      "priority": "low",
+      "presentationStartMs": 24375,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 19,
+      "sourceUtc": "2026-09-16T22:00:00.000Z",
+      "firstUtc": "2026-09-16T22:00:00.000Z",
+      "eventKeys": [
+        "pr_completed:pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 24500,
+      "durationMs": 5100,
+      "accented": true
+    },
+    {
+      "index": 20,
+      "sourceUtc": "2026-09-17T16:00:00.000Z",
+      "firstUtc": "2026-09-17T16:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1012:r6"
+      ],
+      "priority": "high",
+      "presentationStartMs": 30100,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 21,
+      "sourceUtc": "2026-09-17T17:30:00.000Z",
+      "firstUtc": "2026-09-17T17:30:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1021:r4"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 32750,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 22,
+      "sourceUtc": "2026-09-17T18:15:00.000Z",
+      "firstUtc": "2026-09-17T18:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1016:r4"
+      ],
+      "priority": "low",
+      "presentationStartMs": 32875,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 23,
+      "sourceUtc": "2026-09-17T19:00:00.000Z",
+      "firstUtc": "2026-09-17T19:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1001:r14"
+      ],
+      "priority": "high",
+      "presentationStartMs": 33000,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 24,
+      "sourceUtc": "2026-09-17T20:30:00.000Z",
+      "firstUtc": "2026-09-17T20:30:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1023:r4"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 35850,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 25,
+      "sourceUtc": "2026-09-17T21:15:00.000Z",
+      "firstUtc": "2026-09-17T21:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1021:r5"
+      ],
+      "priority": "low",
+      "presentationStartMs": 35975,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 26,
+      "sourceUtc": "2026-09-17T22:00:00.000Z",
+      "firstUtc": "2026-09-17T22:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1013:r5"
+      ],
+      "priority": "high",
+      "presentationStartMs": 36100,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 27,
+      "sourceUtc": "2026-09-18T16:00:00.000Z",
+      "firstUtc": "2026-09-18T16:00:00.000Z",
+      "eventKeys": [
+        "pr_completed:pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502:pr"
+      ],
+      "priority": "high",
+      "presentationStartMs": 39000,
+      "durationMs": 5100,
+      "accented": true
+    },
+    {
+      "index": 28,
+      "sourceUtc": "2026-09-18T17:30:00.000Z",
+      "firstUtc": "2026-09-18T17:30:00.000Z",
+      "eventKeys": [
+        "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1014:r4"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 44350,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 29,
+      "sourceUtc": "2026-09-18T18:15:00.000Z",
+      "firstUtc": "2026-09-18T18:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1022:r4"
+      ],
+      "priority": "low",
+      "presentationStartMs": 44475,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 30,
+      "sourceUtc": "2026-09-18T19:00:00.000Z",
+      "firstUtc": "2026-09-18T19:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1011:r6"
+      ],
+      "priority": "high",
+      "presentationStartMs": 44600,
+      "durationMs": 2600,
+      "accented": true
+    },
+    {
+      "index": 31,
+      "sourceUtc": "2026-09-18T20:30:00.000Z",
+      "firstUtc": "2026-09-18T20:30:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1022:r5"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 47213,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 32,
+      "sourceUtc": "2026-09-18T21:15:00.000Z",
+      "firstUtc": "2026-09-18T21:15:00.000Z",
+      "eventKeys": [
+        "wi_title_changed:wi:00000000-0000-4000-8000-000000000001:1017:r3"
+      ],
+      "priority": "low",
+      "presentationStartMs": 47219,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 33,
+      "sourceUtc": "2026-09-19T16:00:00.000Z",
+      "firstUtc": "2026-09-19T16:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1024:r4"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 47375,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 34,
+      "sourceUtc": "2026-09-19T18:00:00.000Z",
+      "firstUtc": "2026-09-19T18:00:00.000Z",
+      "eventKeys": [
+        "wi_assignee_changed:wi:00000000-0000-4000-8000-000000000001:1015:r5"
+      ],
+      "priority": "medium",
+      "presentationStartMs": 47392,
+      "durationMs": 0,
+      "accented": false
+    },
+    {
+      "index": 35,
+      "sourceUtc": "2026-09-19T20:00:00.000Z",
+      "firstUtc": "2026-09-19T20:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:1000:r3"
+      ],
+      "priority": "low",
+      "presentationStartMs": 47408,
+      "durationMs": 0,
+      "accented": false
+    }
+  ]
+}

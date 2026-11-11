@@ -1,0 +1,10 @@
+{
+  "item": "C3", "role": "reviewer", "round": 3, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "Review-2's Major is fixed: the hard cuts test runs first and passed (4x gain 0.471) while the soft absolute test went red in the same run; all three Nits are fixed. One new Nit: a partial run can mix stale numbers into perf-pulsar-report.json.",
+  "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 1 },
+  "checks": [
+    {"cmd": "npm run -s typecheck; npm run -s lint; npm test --silent", "pass": true, "detail": "clean; 99 files, 1462 tests"},
+    {"cmd": "rm test-results/perf-pulsar-report.json; with-lock npm run e2e:spec -- perf profile", "pass": true, "detail": "6 passed, 1 failed: the absolute test's soft seek line (292.5 vs 250, known red). The cuts test ran and passed: 4x off 33.3 on 17.6 gain 0.471; 1x off 17.7 inside 1.25 vsync (skip clause). The report has the cuts key alongside the absolute keys. profile.spec passed, including the Pulsar flip case"}
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "run": "A2-1",
+  "start": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "head": "982de53bcf6cab39fd4e8d0f618c507fe836615c",
+  "at": "2026-11-11T18:07:49.137Z",
+  "size": {
+    "added": 453,
+    "removed": 108,
+    "files": 21,
+    "byArea": {
+      "docs": {
+        "added": 18,
+        "removed": 12,
+        "files": 4
+      },
+      "scripts": {
+        "added": 57,
+        "removed": 12,
+        "files": 3
+      },
+      "src": {
+        "added": 247,
+        "removed": 57,
+        "files": 7
+      },
+      "tests": {
+        "added": 131,
+        "removed": 27,
+        "files": 7
+      }
+    },
+    "newFiles": [],
+    "deleted": [],
+    "outsideTouches": [
+      "src/renderer/src/chart/fx/movers.ts",
+      "src/renderer/src/chart/fx/v1/interpreter.ts",
+      "src/renderer/src/testHooks.ts",
+      "src/shared/engine/maneuvers.ts"
+    ]
+  },
+  "tests": {
+    "unit": {
+      "added": 4,
+      "removed": 0,
+      "total": 1147
+    },
+    "e2e": {
+      "added": 0,
+      "removed": 0,
+      "total": 252
+    },
+    "assertionsAdded": 41,
+    "testLinesPerSrcLine": 0.53,
+    "goldensMoved": [
+      "tests/golden/__golden__/director.json"
+    ]
+  },
+  "complexity": {
+    "touchedFiles": 7,
+    "functionsNow": 692,
+    "functionsBefore": 675,
+    "sumNow": 2038,
+    "sumBefore": 1962,
+    "added": 76,
+    "over15Now": 15,
+    "over15Before": 14,
+    "newOver15": 1,
+    "worst": "59 (interpreter.ts play)",
+    "over80LinesNew": 0,
+    "crossed800": []
+  },
+  "hygiene": {
+    "anyAdded": 0,
+    "asUnknownAs": 1,
+    "tsSuppress": 0,
+    "eslintDisable": 0,
+    "lintWarnings": 0,
+    "lintErrors": 0
+  },
+  "coupling": {
+    "importsAdded": 12,
+    "exportsAdded": 10,
+    "sharedImpureImports": 0
+  },
+  "docs": {
+    "normative": [
+      "03",
+      "05",
+      "13",
+      "15"
+    ]
+  },
+  "coverage": {
+    "touchedLinesNow": 65.09,
+    "touchedBranchesNow": 57.54,
+    "sameFilesAtStart": 68,
+    "sameFilesNow": 65.1,
+    "perFile": {
+      "src/renderer/src/testHooks.ts": {
+        "lines": 0,
+        "branches": 0,
+        "linesTotal": 124
+      },
+      "src/renderer/src/chart/fx/commands.ts": {
+        "lines": 43.75,
+        "branches": 34.9,
+        "linesTotal": 160
+      },
+      "src/renderer/src/chart/fx/movers.ts": {
+        "lines": 56.29,
+        "branches": 39.79,
+        "linesTotal": 254
+      },
+      "src/renderer/src/chart/fx/v1/interpreter.ts": {
+        "lines": 50.78,
+        "branches": 35.12,
+        "linesTotal": 508
+      },
+      "src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts": {
+        "lines": 88,
+        "branches": 37.03,
+        "linesTotal": 25
+      },
+      "src/shared/engine/maneuvers.ts": {
+        "lines": 98.73,
+        "branches": 91.25,
+        "linesTotal": 395
+      },
+      "src/shared/engine/pace.ts": {
+        "lines": 99.51,
+        "branches": 89.39,
+        "linesTotal": 207
+      }
+    }
+  },
+  "runtime": {
+    "unitSecs": 95.5,
+    "unitOk": true,
+    "bundleKb": 6608
+  }
+}

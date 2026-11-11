@@ -1,0 +1,10 @@
+{ "item": "C1", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "The ledger meets its content acceptance: it is deterministic across two CLI runs, the totals and frame sums are exact against an independent buildScene, and there is a table per pod. But the determinism unit test builds the full ledger inside a default 5 s test timeout and fails under the parallel `npm test`, so the gate is red. One Major: raise that test's timeout.",
+  "findings": { "blocker": 0, "major": 1, "minor": 0, "nit": 0 },
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/pacing.test.ts (x3 alone)", "pass": true, "detail": "4/4, determinism test ~2.0-2.4 s"},
+    {"cmd": "npm test --silent", "pass": false, "detail": "pacing determinism test: Test timed out in 5000ms; 1437 others pass"},
+    {"cmd": "npm run pacing twice; diff md and json; diff against committed", "pass": true, "detail": "byte-identical, and equal to the committed files"},
+    {"cmd": "npm run typecheck; eslint scripts tests/unit/pacing.test.ts", "pass": true, "detail": "clean"}
+  ] }

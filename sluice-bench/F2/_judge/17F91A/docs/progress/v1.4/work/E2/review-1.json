@@ -1,0 +1,20 @@
+{
+  "item": "E2",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "summary": "Both acceptance lines hold: the new unit test, and solar-dense's attention case among 41 passing solar specs. Keystone passes. The fixer's predicted plate rect clears 22 B9, and perf shows no regression. One Minor (the gate stills weren't kept in the work folder and don't show the same captain in flight then parked; copies are now in the folder) and one wording Nit.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 1 },
+  "checks": [
+    { "cmd": "npx vitest run (the packet's 10 mapped unit files)", "pass": true, "detail": "189 passed" },
+    { "cmd": "npm run -s typecheck; npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm run e2e:spec -- solar-dense solar-play solar", "pass": true, "detail": "41 passed, incl. the attention case (acceptance 2) and 22 B9 captain's turn" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "npm run drive -- tests/drive/steps/c11-labels.ts --paradigm solar", "pass": true, "detail": "pieces 0 before arrival; captain:4 at the first frame (recorded by build-1 as a flake present at the start commit)" },
+    { "cmd": "npm run drive -- docs/progress/v1.4/work/E2/stills.ts --paradigm solar", "pass": true, "detail": "deterministic frame at 27.3 s; copies kept as review-1-still-01/02 in the work folder" },
+    { "cmd": "npm run e2e:spec -- perf (this tree, twice) and the same at 274c737 via git archive into the scratchpad", "pass": false, "detail": "the seek bound (<250 ms) fails on both trees (base 306, here 280 and 307), so it predates E2; Pulsar p95 at rest, 1x and 4x is 17.4/24.9/25.1 at the base against 17.4/25.1/25.2 here: no regression" },
+    { "cmd": "npx tsx scratch bench of holoCandidates", "pass": true, "detail": "0.21 ms per frame for 300 hidden pieces" }
+  ]
+}

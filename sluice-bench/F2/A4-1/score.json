@@ -1,0 +1,323 @@
+{
+  "item": "F2",
+  "arm": "A4",
+  "run": 1,
+  "start": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "head": "b6ac77846ffb4b67bdb70243a3a73dec5d39e66e",
+  "at": "2026-11-10T02:13:50.401Z",
+  "gates": {
+    "typecheck": true,
+    "lint": true,
+    "unit": true,
+    "noPat": true,
+    "noAdoWrite": true,
+    "sharedPure": true,
+    "finished": true,
+    "evidence": {
+      "typecheck": "",
+      "lint": "",
+      "unit": "",
+      "pat": [],
+      "adoWrite": [],
+      "sharedImpure": []
+    },
+    "pass": true
+  },
+  "probes": {
+    "P1": {
+      "status": "met",
+      "detail": {
+        "cell": 1,
+        "loops": [
+          {
+            "still": 0,
+            "leave": 2324,
+            "rest": 5959,
+            "path": 331
+          },
+          {
+            "still": 0,
+            "leave": 9244,
+            "rest": 12912,
+            "path": 304
+          }
+        ],
+        "full": {
+          "id": "facility.enter",
+          "rule": "facility.enter",
+          "title": "Station jump-in",
+          "state": "after",
+          "loops": 1,
+          "reducedLoops": 0,
+          "peak": 6,
+          "active": 0,
+          "stuck": 0,
+          "started": 1,
+          "flare": 0,
+          "flarePeak": 0,
+          "reducedFlarePeak": 0,
+          "agentStillMs": 0,
+          "agentTravel": 3884.1647047333167,
+          "reducedAgentTravel": 0
+        },
+        "reduced": {
+          "id": "facility.enter",
+          "rule": "facility.enter",
+          "title": "Station jump-in",
+          "state": "after",
+          "loops": 3,
+          "reducedLoops": 1,
+          "peak": 4,
+          "active": 0,
+          "stuck": 0,
+          "started": 4,
+          "flare": 0,
+          "flarePeak": 0,
+          "reducedFlarePeak": 0,
+          "agentStillMs": 0,
+          "agentTravel": 3804.3077746668746,
+          "reducedAgentTravel": 0
+        },
+        "errors": [],
+        "runs": true,
+        "moves": true
+      }
+    },
+    "P2": {
+      "status": "met",
+      "detail": {
+        "beats": [
+          {
+            "pod": "Harbor Pod",
+            "beat": 7,
+            "startMs": 23330,
+            "frames": 360,
+            "summoner": "ship",
+            "arrivalMs": 719,
+            "flight": {
+              "still": 0,
+              "leave": 19,
+              "rest": 3537,
+              "path": 3702
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -17
+          },
+          {
+            "pod": "Harbor Pod",
+            "beat": 24,
+            "startMs": 82655,
+            "frames": 360,
+            "summoner": "ship",
+            "arrivalMs": 724,
+            "flight": {
+              "still": 0,
+              "leave": 22,
+              "rest": 3609,
+              "path": 6387
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -17
+          },
+          {
+            "pod": "Pulsar Pod",
+            "beat": 4,
+            "startMs": 3550,
+            "frames": 317,
+            "summoner": "ship",
+            "arrivalMs": 698,
+            "flight": {
+              "still": 0,
+              "leave": 15,
+              "rest": 4250,
+              "path": 25700
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -17
+          },
+          {
+            "pod": "Pulsar Pod",
+            "beat": 6,
+            "startMs": 6615,
+            "frames": 318,
+            "summoner": "ship",
+            "arrivalMs": 695,
+            "flight": {
+              "still": 0,
+              "leave": 10,
+              "rest": 3513,
+              "path": 23272
+            },
+            "hold": false,
+            "blip": true,
+            "blipPx": 0,
+            "blipFromArrivalMs": -17
+          }
+        ],
+        "noHold": true,
+        "blips": "4 of 4",
+        "blip": true,
+        "unitTests": [
+          "tests/unit/commands.test.ts",
+          "tests/unit/pacingBuilt.test.ts",
+          "tests/unit/summonOnTheFly.test.ts",
+          "tests/unit/sweep.test.ts"
+        ],
+        "behaviour": "met"
+      }
+    },
+    "P3": {
+      "status": "met",
+      "detail": {
+        "docTables": true,
+        "rowChanged": true,
+        "row": "| `facility.enter` | Station jump-in | A repository's first PR in the round · `attach` (the first into its facility) | 2515 | narrative | no | The author flies out and passes the spot where it comes in without stopping; as it passes, one call blip at the ship, and space folds at that instant, the st",
+        "goldens": [
+          "tests/golden/__golden__/director.json"
+        ],
+        "unnamed": [],
+        "goldensNamed": true
+      }
+    },
+    "P4": {
+      "status": "met",
+      "detail": {
+        "pacingRuns": true,
+        "pacingOut": "",
+        "ledgerCurrent": false,
+        "newRows": 14,
+        "newRowPods": [
+          "Comet Pod",
+          "Nova Pod",
+          "Quasar Pod",
+          "Pulsar Pod",
+          "Convoy Planning Pod",
+          "Harbor Pod",
+          "Meteor Pod"
+        ],
+        "perPodRow": true,
+        "summonMs": 2515,
+        "phases": [
+          [
+            "gather",
+            715
+          ],
+          [
+            "act",
+            1200
+          ],
+          [
+            "land",
+            600
+          ]
+        ],
+        "summonShorter": true,
+        "appS": {
+          "Comet Pod": 45.5,
+          "Nova Pod": 170.7,
+          "Quasar Pod": 293.4,
+          "Pulsar Pod": 280.2,
+          "Convoy Planning Pod": 172,
+          "Harbor Pod": 176.5,
+          "Meteor Pod": 280
+        },
+        "appSStart": {
+          "Comet Pod": 45.8,
+          "Nova Pod": 171,
+          "Quasar Pod": 289.6,
+          "Pulsar Pod": 288.6,
+          "Convoy Planning Pod": 179,
+          "Harbor Pod": 179.8,
+          "Meteor Pod": 275.9
+        },
+        "shorter": [
+          "Comet Pod",
+          "Pulsar Pod",
+          "Convoy Planning Pod",
+          "Harbor Pod"
+        ],
+        "fourShorter": true
+      }
+    }
+  },
+  "acceptance": 40,
+  "regress": {
+    "ran": 254,
+    "failures": [
+      {
+        "id": "demo.spec.ts:439 no expanded station plate in Halcyon’s five pods scrolls sideways, and every fact stays inside it",
+        "file": "demo.spec.ts",
+        "line": 439,
+        "error": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+      },
+      {
+        "id": "solar.spec.ts:645 draws all 37 stations at the end of the sprint, and keeps VC-3 at 1024×640",
+        "file": "solar.spec.ts",
+        "line": 645,
+        "error": "Error: 1024×640\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 49\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"star Meteor Pod < 12px\",\u001b[39m\n\u001b[31m+   \"seat Bea's Promise < 12px\",\u001b"
+      },
+      {
+        "id": "perf.spec.ts:171 p95 frame time stays within the profile vsync budget at rest, playing at 1x and 4x, and on seeks",
+        "file": "perf.spec.ts",
+        "line": 171,
+        "error": "Error: Pulsar Pod, a seek: ms to land and draw 2 frames\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m250\u001b[39m\nReceived:   \u001b[31m311.4\u001b[39m"
+      }
+    ],
+    "newFailures": [],
+    "persists": [],
+    "points": 20
+  },
+  "rules": {
+    "amended": {
+      "13": true,
+      "03": false,
+      "05": true
+    },
+    "lapses": [
+      "doc 03 not amended"
+    ],
+    "points": 8
+  },
+  "informative": {
+    "realTests": {
+      "ok": false,
+      "failed": 7,
+      "passed": 159
+    },
+    "churn": {
+      "files": 23,
+      "lines": 2088,
+      "outsideTouches": [
+        "scripts/pacing-built.ts",
+        "src/renderer/src/chart/fx/movers.ts",
+        "src/renderer/src/chart/fx/v1/interpreter.ts",
+        "src/renderer/src/gallery/maneuverDemos.ts",
+        "src/shared/engine/maneuvers.ts"
+      ],
+      "goldens": [
+        "tests/golden/__golden__/director.json"
+      ]
+    },
+    "health": {
+      "over800New": [],
+      "complexity": "145 functions over 15 · worst 272 (labels.ts position) · 41 over 80 lines"
+    },
+    "secs": {
+      "typecheck": 7,
+      "lint": 7,
+      "unit": 89,
+      "build": 4
+    }
+  },
+  "partial": {
+    "acceptance": 40,
+    "regress": 20,
+    "rules": 8
+  }
+}

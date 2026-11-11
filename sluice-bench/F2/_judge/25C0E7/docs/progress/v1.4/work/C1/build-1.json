@@ -1,0 +1,25 @@
+{ "item": "C1", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Pacing ledger built: scripts/pacing-ledger.ts (pure logic, one EngineInputs door via scheduleOf/planOf), scripts/pacing.ts (CLI), npm run pacing, tests/unit/pacing.test.ts; ledger md/json written. Nothing under src/ touched.",
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/pacing.test.ts", "pass": true, "detail": "4 tests: determinism, six pods + uncapped>=total, total vs independent buildScene and frame/playing sums exact, committed files have a table per pod"},
+    {"cmd": "npm run pacing twice, diff md and json", "pass": true, "detail": "byte-identical"},
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean after removing two unused names"},
+    {"cmd": "npm test --silent", "pass": true, "detail": "97 files, 1438 tests passed (run before the two lint-only edits; pacing test re-run after, 4/4)"}
+  ],
+  "files": ["scripts/pacing-ledger.ts", "scripts/pacing.ts", "package.json", "tests/unit/pacing.test.ts", "docs/progress/v1.4/pacing-ledger.md", "docs/progress/v1.4/pacing-ledger.json", "docs/progress/v1.4/work/C1/build-1.json"],
+  "deviations": [
+    "Meridian's busiest pod by scene-event count is Convoy Planning Pod, as expected.",
+    "Pod labels are the path tail ('Comet Pod', 'Harbor Pod'), not bare names.",
+    "waits adds carryBeats (beats with carry > 0) beside carryMs (sum over beats); carryMs is 0 for every pod at 1x.",
+    "Frame components are rounded to integer ms and tailGapMs takes the rounding remainder, so sums are exact; playingMs is likewise beatsMs minus held, so the rule rows can differ from playingMs by a few ms.",
+    "byRule rows also carry per-phase ms and the maneuver count; byPhase keys include 'hold'."
+  ],
+  "limitations": [
+    "Ledger reflects the working tree on top of start commit 75fb4a7 at the moment of the last regeneration; B4 had uncommitted src/ edits in the tree (src/shared/scene/project/solar.ts etc. were already modified at start). If B4's changes move schedule numbers, rerun npm run pacing.",
+    "Waiting causes are inferred from the plan (P-5/P-3/P-4/P-6/other), labelled as such; the engine's queue is private.",
+    "Held time is ~0 for every pod (beats are sized to their maneuvers); Harbor shows 0.2 s.",
+    "Budget (45 s) only cuts accented beats, so totals far exceed 45 s on the busy pods (Quasar 1080 s, Pulsar 702 s)."
+  ],
+  "numbers_for_HG_C": "total s / uncapped s / share playing: Comet 67.3/82.3/0.871; Nova 239.5/304.3/0.895; Quasar 1080.5/1195.2/0.915; Pulsar 702.0/815.2/0.920; Convoy Planning 202.2/233.8/0.900; Harbor 214.1/252.8/0.905. Top Pulsar rows: attachment.merge 24.5%, attachment.merge/first 13.7%, objective.accomplish/beamed 10.1%." }

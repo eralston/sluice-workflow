@@ -1,0 +1,29 @@
+{
+  "totalMs": 13578,
+  "beats": [
+    {
+      "index": 0,
+      "sourceUtc": "2026-09-15T17:00:00.000Z",
+      "firstUtc": "2026-09-15T17:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:911:r3"
+      ],
+      "priority": "high",
+      "presentationStartMs": 3573,
+      "durationMs": 2400,
+      "accented": true
+    },
+    {
+      "index": 1,
+      "sourceUtc": "2026-09-19T18:00:00.000Z",
+      "firstUtc": "2026-09-19T18:00:00.000Z",
+      "eventKeys": [
+        "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:912:r3"
+      ],
+      "priority": "high",
+      "presentationStartMs": 8473,
+      "durationMs": 2400,
+      "accented": true
+    }
+  ]
+}

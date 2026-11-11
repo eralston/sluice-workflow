@@ -1,0 +1,8 @@
+{ "item": "A1-A3", "role": "reviewer", "round": 1, "model_tier": "small", "effort": "low",
+  "verdict": "fix needed", "summary": "A3 and the docs meet acceptance; A1's added 115 px forms overlap the 96 px forms and clip in the -sizes cells (viewed), and the note prints float noise.",
+  "findings": { "blocker": 0, "major": 1, "minor": 1, "nit": 1 },
+  "checks": [
+    { "cmd": "grep -n \"48 px\" src/renderer/src/gallery/v1/stations.ts", "pass": true, "detail": "no matches" },
+    { "cmd": "grep -n 25 tests/e2e/perf.spec.ts / docs", "pass": true, "detail": "no budget literal" },
+    { "cmd": "gallery render of -sizes and -sizes-flat (trek, mecha) via throwaway probe", "pass": false, "detail": "115 px forms overlap the 96 px forms and clip at the cell bottom; note shows 57.599999999999994" }
+  ] }

@@ -1,0 +1,39 @@
+{
+  "item": "E4d", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "P7 short forms: PaceRule.short, SHORT_PACE 0.6, shortOf and shortForm in pace.ts; seven variant rows in 15 §7; E4d Built row; nothing plays them until E5.",
+  "checks": [
+    {"cmd": "npx vitest run <mapped units: maneuvers limelight scheduleHooks sceneplay solarSeek castLabels commands stationStandby docTables pacing pacingCandidates pacingBuilt>", "pass": true, "detail": "12 files, 233 tests"},
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean (after typing the single-key short maps as PaceRule['short'])"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test --silent", "pass": true, "detail": "102 files, 1513 tests (literalFence caught the word 'station' in a pace.ts comment; reworded)"},
+    {"cmd": "npm run pacing -- --candidates", "pass": true, "detail": "regenerated pacing-built.json, pacing-candidates.json, pacing-ledger.md; the pacingBuilt test confirms the committed JSON is current"},
+    {"cmd": "npm run e2e:keystone", "pass": false, "detail": "42 passed, 1 failed: devlog.spec.ts:16 (@keystone). Identical failure at the start commit (changes stashed), so pre-existing; the spec passes when run alone with this change (npm run e2e:spec -- devlog: 2 passed). Not caused by E4d."}
+  ],
+  "files": [
+    "src/shared/engine/pace.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts",
+    "tests/unit/maneuvers.test.ts", "tests/unit/docTables.test.ts", "tests/unit/pacingBuilt.test.ts",
+    "docs/15-reference.md", "docs/05-playback.md", "docs/03-contracts.md",
+    "docs/progress/v1.4/pacing-built.json", "docs/progress/v1.4/pacing-candidates.json", "docs/progress/v1.4/pacing-ledger.md"
+  ],
+  "ledger": {
+    "note": "E4d Built row (ceiling: every protected moment short, first merges keep their long form), total s before -> now, saved, C2 estimate",
+    "pods": {
+      "Comet Pod": "61.8 -> 53.8, saved 8.0, est 14.1",
+      "Nova Pod": "235.8 -> 191.8, saved 44.0, est 48.2",
+      "Quasar Pod": "1050.2 -> 835.0, saved 215.2, est 250.7",
+      "Pulsar Pod": "670.4 -> 562.9, saved 107.4, est 145.0",
+      "Convoy Planning Pod": "189.6 -> 179.7, saved 9.9, est 17.0",
+      "Harbor Pod": "199.4 -> 182.8, saved 16.6, est 29.9"
+    }
+  },
+  "deviations": [
+    "None from the approach. The docs for E4a/E4bc (the first-merge row, STAY_NEAR_MS, P-3..P-7, 13 §6, 13 §4.4, 03 sequencing) were already in place, so E4d added only its own: 15 §7 variants (7 rows, source line), 15 §10 SHORT_PACE row, 05 §8.5a P-19, 03 PaceRule.short?/shortOf/shortForm (contract prose and v1.2 field list). 03 is normative: this amends it (PaceRule gains an optional field; ManeuverRule, the contract the renderer sees, is unchanged)."
+  ],
+  "limitations": [
+    "E4d savings fall short of C2's estimate on every pod (Quasar 215 s vs 251 s, Pulsar 107 s vs 145 s): C2's model also shortened first merges, which have no short form here (the transformation floors them), and a real re-schedule keeps the captain plate minimums and sequencing. This is a ceiling for E5, not a result; the pacingBuilt test asserts only saved > 0 for E4d.",
+    "The Built E4d row's 'after' wraps variants to prefer the short form; since a short form replaces a variant's name, a beamed close's `beamed` variant name becomes `beamed-short` in that run only. Nothing in the app does this.",
+    "e2e:keystone devlog.spec.ts failure is pre-existing at the start commit (see checks).",
+    "Not run for E4d: the E4a drive/solar e2e specs, since no renderer code changed; no golden moved (unit suite green)."
+  ]
+}

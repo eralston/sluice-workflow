@@ -1,0 +1,19 @@
+{
+ "item": "F2",
+ "role": "reviewer",
+ "round": 1,
+ "model_tier": "large",
+ "effort": "high",
+ "verdict": "pass",
+ "summary": "Acceptance met: pass mover with no hold, blip and jump in one tick (a real 50 ms test, full and reduced), 15 §7 and docTables green, only director.json moved, F2 Built rows on seven pods. Minors: gate stills missing, Meteor's Built row reads -7.8 s with no note in the ledger, the F2 ledger test uses hardcoded pre-F2 totals, and Pulsar's director jumps to TEMPO_MAX 2 (for the gate).",
+ "findings": { "blocker": 0, "major": 0, "minor": 4, "nit": 2 },
+ "checks": [
+  { "cmd": "npm run -s typecheck && npm run -s lint", "pass": true, "detail": "clean" },
+  { "cmd": "npm test --silent", "pass": true, "detail": "109 files, 1728 tests passed" },
+  { "cmd": "npm run e2e:spec -- gallery-assets solar solar-play solar-dense montage-names camera-directs", "pass": true, "detail": "38 passed, 1 failed (solar-dense facing follows motion, 5.4% vs 5%, the pre-existing flake F1 also saw), 15 serial did not run; re-run of solar-dense alone 21/21 passed" },
+  { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+  { "cmd": "npm run pacing -- --candidates", "pass": true, "detail": "reproduces all four committed ledger files byte for byte; pacing-built.json diff adds only" },
+  { "cmd": "npx vite-node -c vitest.config.ts docs/progress/v1.4/work/F2/probe-review-plate.ts", "pass": true, "detail": "0 named summons on 7 pods whose summoner's next sortie sets off before the plate's whole window ends" },
+  { "cmd": "npm run drive -- tests/drive/steps/f2-pass.ts --paradigm solar --name f2review", "pass": true, "detail": "Meteor: is-passing plate seen at +4225 ms, riding a moving ship; stills in test-results/drive/f2review" }
+ ]
+}

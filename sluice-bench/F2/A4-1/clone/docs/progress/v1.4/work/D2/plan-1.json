@@ -1,0 +1,13 @@
+{ "item": "D2", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "The Power link crew's spots (powerLink.ts formation()) move into a pure formationSpots() that keeps every spot inside the plan's frontier rectangle (the board), trying the centre-ward end, the far end, then the other axis, then clamping; on board beats plates; the board reaches it through CastViews.board from GraphScene.solarBoard().",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "Scope 'Today'/'Touches' name placeFormation.ts (a planet's pieces); the captain formation is powerLink.ts formation(). Packet corrects this; no scope edit made.",
+    "Design choice: the board is the plan's frontier rectangle, not the camera's fit. boundsOf always includes it, so inside it implies inside the fitted bounds, and it is scale-free so seek and play agree (the Decided line).",
+    "Risk: the unchanged rule may already pass at plan level (it already prefers the star's side); the packet tells the builder to record that honestly rather than invent a bug. The unit test's no-board mode reproduces today's output, so nothing outside a solar region moves.",
+    "D3 will extend the candidate list in formationSpots (on-board slots first), per the 2026-11-01 priority decision.",
+    "CastViews gains a non-role key (board): the builder must grep for code iterating CastViews by key before adding it."
+  ] }

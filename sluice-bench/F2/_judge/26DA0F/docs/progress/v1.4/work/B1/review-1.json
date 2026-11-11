@@ -1,0 +1,14 @@
+{ "item": "B1", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "Lines 1-2 and the docs amendments hold, but the solar-dense attention case (line 3) fails 3 of 4 runs: position() applies the tier before expand/collapse, so a collapsing plate stays raised one frame without is-expanded. Two docs (05 A-1, 12 glossary) still say plates rest at their own tier.",
+  "findings": { "blocker": 0, "major": 1, "minor": 1, "nit": 1 },
+  "checks": [
+    {"cmd": "npm run typecheck; npm run lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test", "pass": true, "detail": "96 files, 1417 tests"},
+    {"cmd": "npm run e2e:spec -- demo solar solar-dense slice1 (parallel, loaded machine)", "pass": false, "detail": "3 failed (settle timeouts under load: Quasar seats, empty homeworld, solar-play strike seek), 24 did not run; re-run below"},
+    {"cmd": "npm run e2e:spec -- tests/e2e/demo.spec.ts tests/e2e/solar-dense.spec.ts tests/e2e/solar.spec.ts --workers=1", "pass": false, "detail": "34 passed incl. new demo B1 case and solar galaxy/seat/standby; solar-dense:295 failed: 'Nova Vash: at rest, place (... is-compact)'"},
+    {"cmd": "npm run e2e:spec -- tests/e2e/solar-dense.spec.ts -g 'History and the scene' --repeat-each=3 --workers=1", "pass": false, "detail": "2 failed, 1 passed; same Nova Vash entry"},
+    {"cmd": "npm run e2e:spec -- tests/e2e/solar-dense.spec.ts --grep-invert 'History and the scene' --workers=1", "pass": true, "detail": "15 passed"},
+    {"cmd": "npm run e2e:spec -- tests/e2e/solar-play.spec.ts --workers=1", "pass": true, "detail": "6 passed"},
+    {"cmd": "STAR_CHART_FIXTURE=meridian-sprint npm run drive -- docs/progress/v1.4/work/B1/review-probe-tier-lag.ts --paradigm solar --name b1-review-lag", "pass": true, "detail": "Nova Vash place|exp at f0, place|- at f24 (collapse), sky at f25: one frame raised without is-expanded"}
+  ] }

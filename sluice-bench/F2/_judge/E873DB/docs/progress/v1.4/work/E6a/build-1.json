@@ -1,0 +1,144 @@
+{
+  "item": "E6a",
+  "role": "builder",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "high",
+  "verdict": "done",
+  "summary": "Volleys (27 E6a): director.volleysOf groups a facility's merges within VOLLEY_WINDOW_MS = 20000 (x under D0, one local day, no day turn), checked by the B-15 guard on every non-member draft in range. Single-merge groups and overlapping groups are dropped. Direction.fuse joins each group's raw beats (schedule.fuseRanges in buildBeatSchedule). maneuvers.joinVolleys recasts the head as a carrier: cast = the members' union, agent = the lead (most merges, then the latest), the other members get the form 'joined'. Its echo holds the naming turns (volleyTurns/volleyPhases, VOLLEY_TURN_MS = 2540, at most 4 labels, everyone named once). Director step b and montage skip carriers; step d credits volley authors. Counts: Nova 2 volleys (4/10 merges), Quasar 6 (12/66), Pulsar 4 (8/30), Harbor 1 (2/7), Comet and Convoy 0. Built E6 savedMs: Nova 11760, Quasar 18700, Pulsar 7380, Harbor 5680, Comet/Convoy 0. E6+: Pulsar 2192, Quasar -1880. E1-E5 rows unchanged (they now run with volleys:false on both sides).",
+  "perPod": {
+    "Comet": {
+      "beforeMs": 61845,
+      "afterMs": 61845,
+      "levers": []
+    },
+    "Nova": {
+      "beforeMs": 224595,
+      "afterMs": 212835,
+      "levers": []
+    },
+    "Quasar": {
+      "beforeMs": 301760,
+      "afterMs": 303640,
+      "levers": [
+        "short",
+        "montage",
+        "speed",
+        "light"
+      ]
+    },
+    "Pulsar": {
+      "beforeMs": 295714,
+      "afterMs": 293522,
+      "levers": [
+        "short",
+        "montage",
+        "speed",
+        "light"
+      ]
+    },
+    "Convoy": {
+      "beforeMs": 188985,
+      "afterMs": 188985,
+      "levers": []
+    },
+    "Harbor": {
+      "beforeMs": 196515,
+      "afterMs": 190835,
+      "levers": []
+    }
+  },
+  "checks": [
+    {
+      "cmd": "npm run -s typecheck",
+      "pass": true,
+      "detail": "clean (re-run after the montage-names spec edit)"
+    },
+    {
+      "cmd": "npm run -s lint",
+      "pass": true,
+      "detail": "clean"
+    },
+    {
+      "cmd": "npm test",
+      "pass": true,
+      "detail": "106 files, 1637 tests pass"
+    },
+    {
+      "cmd": "npx vitest run (mapped: volleys, director, pacingBuilt, golden/director, docTables, schedule, maneuvers, pace and the rest of tests/README's director row)",
+      "pass": true,
+      "detail": "22 files, 439 tests pass. New tests/unit/volleys.test.ts has 40 tests. Mutation check: with the guard off, the B-15 test and the guard-refuses test both fail."
+    },
+    {
+      "cmd": "npm run pacing (ledger, built, candidates regenerated)",
+      "pass": true,
+      "detail": "E6 savedMs >= 0 on every pod, > 0 on Pulsar. E6+ Pulsar nowMs 293522 <= 300000; Comet 0. 48 E1-E5 rows equal to the committed json."
+    },
+    {
+      "cmd": "window sweep probe (scratchpad sweep.ts): merges in volleys at 10/20/30/60 s",
+      "pass": true,
+      "detail": "Nova 2/4/4/4 of 10; Quasar 12/12/12/12 of 66 (unguarded 12/17/19/19); Pulsar 6/8/8/8 of 30; Harbor 2/2/2/2 of 7; Comet/Convoy 0. 20 s is the smallest window at Pulsar's highest count."
+    },
+    {
+      "cmd": "warm schedule build probe (scratchpad perf.ts), same run, median",
+      "pass": true,
+      "detail": "Quasar 147.8 ms vs 127.0 ms with volleys:false (x1.16); Pulsar 108.0 vs 94.4 ms (x1.14)"
+    },
+    {
+      "cmd": "npm run e2e:spec -- solar solar-play solar-dense montage-names gallery-assets",
+      "pass": true,
+      "detail": "First run: 45 passed, 1 failed. montage-names: '2026-09-24T19:58:00Z: no such beat'. That merge now heads a fused volley beat (19:58Z to 20:04Z), and carriers never fold to montage, so the beat is gone by design. Spec updated to 2026-09-23T17:32Z, an accomplish montage that still exists. Re-run: 1 passed."
+    },
+    {
+      "cmd": "npm run e2e:keystone",
+      "pass": true,
+      "detail": "43 passed (38.3 s)"
+    },
+    {
+      "cmd": "npm run e2e:spec -- perf",
+      "pass": false,
+      "detail": "2 passed. The seek check is the known red from 274c737: 280.9 ms vs < 250, against 276.4 ms in the earlier perf-before run, so about the same. A '-g vsync' run on its own passed the seek but failed play 1x/4x p95 (24.9/25.2 vs 18.6). Two full-spec runs passed play, so this looks like an artifact of running it alone, not something E6a caused."
+    }
+  ],
+  "files": [
+    "src/shared/contracts/playback.ts",
+    "src/shared/contracts/maneuver.ts",
+    "src/shared/playback/schedule.ts",
+    "src/shared/engine/pace.ts",
+    "src/shared/engine/maneuvers.ts",
+    "src/shared/engine/director.ts",
+    "scripts/pacing-ledger.ts",
+    "scripts/pacing-built.ts",
+    "scripts/pacing-candidates.ts",
+    "tests/unit/volleys.test.ts",
+    "tests/unit/director.test.ts",
+    "tests/unit/pacingBuilt.test.ts",
+    "tests/golden/__golden__/director.json",
+    "tests/e2e/montage-names.spec.ts",
+    "tests/README.md",
+    "docs/03-contracts.md",
+    "docs/05-playback.md",
+    "docs/15-reference.md",
+    "docs/progress/v1.4/pacing-built.json",
+    "docs/progress/v1.4/pacing-candidates.json",
+    "docs/progress/v1.4/pacing-ledger.json",
+    "docs/progress/v1.4/pacing-ledger.md"
+  ],
+  "deviations": [
+    "The new 05 rule is B-21, not B-20: B-20 already exists ('A region's own PRs').",
+    "03 (normative) changed: MomentForm 'joined', Volley, Direction.volleys/fuse, VolleyTurn, PlannedManeuver.volley, volleysOf, fuseRanges, volleyTurns/volleyPhases, the momentsOf/directorOf trailing params, PacingOptions.volleys. Call it out in the block note.",
+    "volleysOf takes a trailing VolleyOptions {windowMs?, guard?: false} object instead of a bare window number, so tests can turn the guard off.",
+    "The B-15 guard checks every non-member base draft in the range, not only the moments. This is stricter than the packet's wording, so Quasar gets 12 merges in volleys where the planner's sweep had 14-16.",
+    "pacing-built.ts has a new 'both' field so E5a-E5c run with volleys:false on both sides, which keeps their committed rows unchanged.",
+    "The E6 assumption text in pacing-candidates.json now starts with 'Built (E6): ...'.",
+    "tests/e2e/montage-names.spec.ts: MONTAGES swaps 2026-09-24T19:58Z (now a volley head) for 2026-09-23T17:32Z, and the comment says why."
+  ],
+  "limitations": [
+    "Quasar E6+ costs 1.9 s: k is already at the 2x ceiling and volley climaxes play at 1x.",
+    "Volley carriers now win daily climaxes on Quasar and Pulsar (they have the most people), so the golden's climax picks moved.",
+    "Fixtures don't exercise step d's volley-author credit: every volley author also has a 'first' or non-progress merge.",
+    "The B-15 e2e check leaves out agent.light. Across fused beats, per-person order is guarded only through pieces. A close inside a fused range may become an arc of the carrier.",
+    "No same-run before/after perf e2e at the start commit (that needs a worktree). The perf figures are the in-process schedule probe plus the perf spec matching the earlier perf-before run.",
+    "The banned-word grep finds 16 'station' hits in src/shared/engine (types.ts, solar/stations.ts, solar/plan.ts, maneuvers.ts:33). All were present at 3d4e402; none are in E6a's added lines. Not fixed (outside the item)."
+  ]
+}

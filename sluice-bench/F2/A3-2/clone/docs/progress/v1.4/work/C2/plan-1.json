@@ -1,0 +1,11 @@
+{ "item": "C2", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "Estimate E1-E9 by re-scheduling with edited PACE_RULES through the engine's own rules parameter (exact reflow), post-hoc plan re-timing for the private-sequencer ones (E2, P3, P4), and a frame model for E8; output is a Candidates section plus a pacing-candidates.json.",
+  "tier": "medium",
+  "score": { "blast": 0, "verify": 1, "design": 1, "acceptance": 0, "track": 1, "sum": 3 },
+  "needs": null,
+  "notes": [
+    "Files: pacing-ledger.ts (small refactor, output unchanged), new pacing-candidates.ts, pacing.ts, new unit test, ledger md/json, new pacing-candidates.json: about 7, no split.",
+    "Expected finding for HG-C: E8 as scoped saves 0 s because every pod is over budget and already at the 500 ms gap floor; the sensitivity row shows what lowering the floor would give.",
+    "Scope doc lists C2's Touches as scripts/pacing.ts and the ledger; the new script file and test follow C1's precedent."
+  ] }

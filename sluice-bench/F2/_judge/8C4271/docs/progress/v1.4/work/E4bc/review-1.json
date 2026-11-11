@@ -1,0 +1,14 @@
+{
+  "item": "E4bc", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "P3/P4 meet acceptance (the sweep holds by construction and is green; the moved expectations are as the packet says; the ledger rows exist for every pod); the near-zero busy-pod saving is already decided (E4-Q1); 4 nits.",
+  "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 4 },
+  "checks": [
+    { "cmd": "npx vitest run <packet's 12 mapped unit files>", "pass": true, "detail": "12 files, 229 tests" },
+    { "cmd": "npx vitest run tests/unit/formationBounds.test.ts tests/unit/formationCorridor.test.ts", "pass": true, "detail": "23 tests" },
+    { "cmd": "npm run -s typecheck && npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm run e2e:spec -- solar solar-play solar-dense motions", "pass": true, "detail": "42 passed (7.9 min)" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (38.7 s)" },
+    { "cmd": "throwaway probe over planOf (scratchpad probe.ts)", "pass": true, "detail": "P3 moves 0 starts on every pod; P4 moves 0 on Quasar/Pulsar, 1 on Convoy (400 ms), 2 on Harbor (700 ms); nearWaits: Quasar 13 (mean 785 ms), Pulsar 16 (mean 575 ms)" }
+  ]
+}

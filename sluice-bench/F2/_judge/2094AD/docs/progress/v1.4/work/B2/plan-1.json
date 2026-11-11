@@ -1,0 +1,10 @@
+{
+  "item": "B2", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "FEATURE_ROW_CAP 1 with +N more inline on the one resting line (reservation min(1, ever); the row adds height, not width), the list opens in place while the star is pointed at or selected (GRACE_MS hysteresis) and holds its resting place without overwriting label.k; Inspector lists every Feature; 15 §6, 06 §9, 02 INV-10 and 03 amended. A probe confirmed one line uncovers Quasar's payments-sync and search-api and puts Harbor's plate above, but only when placed fresh (the kept-place rule), which the design accounts for.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 0, "track": 2, "sum": 5 },
+  "needs": null,
+  "probes": ["docs/progress/v1.4/work/B2/probe-oneline.ts"],
+  "split": null
+}

@@ -1,0 +1,14 @@
+{ "item": "D3", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "formationSpots keeps D2's pick unless a strand from the station to its work passes within a ship-based corridor of a crew member, then takes the nearest on-board line (15 degree steps) that clears it, else keeps D2's place flagged blocked and Power link's beam fades past the ships.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "Scope 'Touches' names placeFormation.ts and stationFire.ts; the crew is powerLink.ts formation() over formationSpots.ts (D2) and the beam is Power link's own echo. placeFormation.ts and stationFire.ts are left alone; no scope edit made.",
+    "Priority per the 2026-11-01 Decision: on board beats corridor beats plates; D2's pick is returned unchanged whenever it is already clear, so D2's tests and the goldens do not move.",
+    "Choices: corridor half-width 1.5 ship sizes; arc step 15 degrees searching outward from D2's direction; the fade is 30 percent alpha on the beam's four hot strokes near a ship, only when blocked.",
+    "New marked table formation-corridor in 15 §5, registered in docTables.test.ts (GUARDED and the Value loop).",
+    "Acceptance line 2 (stills of the gallery's Power link demo) needs a look; the packet gives the builder a throwaway spec to shoot the cell and a Pulsar drive still as a backup if the demo's strand does not cross the crew.",
+    "About 9 files: no split needed."
+  ] }

@@ -1,0 +1,47 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "Decided says the summoner carries on to 'its next sortie if one is waiting (E4's P4), else its rest', but the pass-through always flies all the way home first: its out leg ends exactly at the release, a waiting next sortie can't set off before the release, and the P4 wait is dropped for a pass. So a captain with a next turn waiting still stops and goes, only now at home, not at the spot. The docs' 'a sortie close behind flies out from wherever the ship is drawn' describes a case that never happens.",
+      "evidence": "stationJumpIn.ts:36 `ride = releaseOfPlay(m) - phaseAtMs(m,'act')` → backS ends at the release (movers.ts:303-311 arc to goalOf over backS); maneuvers.ts:133-134 `nearStartMs = startMs + max(workEnd, release - gatherAt)` so the next gather is ≥ release; interpreter.ts:702 `if (waitS !== undefined && !args.pass)` drops the P4 stay for a pass; 13-game-design.md:685 and 05-playback.md:716 claim the following sortie leaves 'from wherever the ship is drawn'"
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "03 is normative and lists every PlannedManeuver field, PursueArgs.waitS and PaceRule.turn, but the change adds ManeuverRule.passes, PlannedManeuver.passes, PursueArgs.pass and crewTimes(phases, passes?) without updating 03.",
+      "evidence": "git diff 61e4958 --stat shows docs/03-contracts.md untouched; 03-contracts.md:1449-1461 (PlannedManeuver.climax/volley/sweep…), :1490 `PursueArgs.waitS?`, :1498 `PaceRule.turn?`; new fields at src/shared/contracts/maneuver.ts (passes on ManeuverRule and PlannedManeuver), commands.ts PursueArgs `pass?: true`"
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "Other 05 rows still state the held-turn rules that F2 breaks for the summoner (parked at the act's start, whole CREW_HOLD_MS past the work, the plate opens only once parked, the station jumps in 'where its summoner waits'), and R8 ('movement and interaction never blur') has no note of the exception. Only M-13 and 13 §6 were updated.",
+      "evidence": "05-playback.md:763 (P-7 'parked at the act's start, whole at least CREW_HOLD_MS past the work'), :812 (K-4 'The plate opens only once parked'), :857 (A-6 'while parked'), :833 (T-1 'it jumps in where its summoner waits'); 13-game-design.md:50 R8; the e2e had to exempt the summoner from 'parked while named' (solar-dense.spec.ts held filter)"
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The 'pass-through' is an out-and-back hairpin with a speed jump: the spot lies on the summoner's own side toward its start, and the ship goes back to its rest (≈ start). The in leg ends at 2·L/0.715 s (PASS_IN′(1)=2), the out leg starts at 2·L/2.84 s (PASS_OUT′(0)=2), a ~4× drop in speed at the spot, and the facing flips in a single frame. It reads as a bounce more than a fly-through.",
+      "evidence": "movers.ts:355-356 PASS_IN u², PASS_OUT 1-(1-u)²; movers.ts:303-310 out leg arc(slot, home) over backS=2.84 s (715+2·520+1800-715) with faceView(home-slot); stationJumpIn.ts spotOf puts the spot 1.9R toward `from` (the ship's own position)"
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "No test exercises the Sortie pass branch, so 'no hold between its flight and its next place' is checked only as command args (holdS 0, pass true). The 50 ms check compares durS·1000 with the act's atMs and ignores where the gather starts, so it holds only because the gather is the first phase.",
+      "evidence": "`grep -rln Sortie tests` → only tests/drive/steps/v12-D.ts; `grep -rn 'PASS_IN\\|PASS_OUT\\|pass: true' tests` → none; commands.test.ts F2 test: `blipAtMs = pursue.args.durS * 1000` vs `actAtMs`"
+    },
+    {
+      "severity": "Nit",
+      "rules": false,
+      "summary": "The guest branch's facing uses `pointOf(f.at)![0]` with a non-null assertion, dropping the `f.node.world` fallback that spotOf (and the old code) keep.",
+      "evidence": "stationJumpIn.ts:40 `face: pointOf(f.at)![0] >= spot[0] ? 1 : -1` vs spotOf `pointOf(f.at) ?? [f.node.world.x, f.node.world.y]`"
+    }
+  ],
+  "acceptance": {
+    "1": "partial: the jump-in cell is generated from the fixture plan (maneuverDemos.ts carries `passes`), and gallery-assets.spec.ts loops every cell in full and reduced motion. No gallery or e2e change is in the diff, and the e2e wasn't run here, so 'no console errors' is unverified.",
+    "2": "partial: commands.test.ts asserts pass/holdS 0/no waitS and the act within 50 ms of the arrival, but only on command args. The mover's motion and the waiting-next-sortie case are untested.",
+    "3": "met: the 15 §7 row is 1915 (715+1200), along with the effect-audit rows; docTables passes; the director.json golden moved consistently (Comet −1280 ms = old leave 4835 − new 3555). The full unit suite passes (1721 tests). Whether the packet names each change couldn't be checked (the records are stripped).",
+    "4": "met: pacing-built.json and the ledger have F2 and F2+ rows for all seven pods (e.g. Comet 0.9 s, Meteor 12.3 s undirected), guarded by pacingBuilt.test.ts."
+  },
+  "summary": "The change does what was asked for the basic case: the summoner flies to the spot with no hold, the blip and the station's arrival fire together in the same hue, the phases shrink to 1915 ms, and the tests, typecheck, docTables, ledger and goldens are all consistent. But it doesn't deliver 'on to its next sortie if one is waiting': the ship always flies home before its next turn. It also leaves 03 and several 05 rows out of step with the new pass-through contract."
+}

@@ -1,0 +1,3 @@
+/sluice run docs/27-v1.4.md F
+
+Item F2 only; stop after it's accepted and committed; no block audit. Nobody is watching this run, so no one can answer a question. If you need a decision, take it from docs/27-v1.4.md's Decisions where they cover it; otherwise use your judgment and record the decision where the item's record goes. Fixture data only (INV-18); never a real PAT; the app never writes to ADO. Never push.

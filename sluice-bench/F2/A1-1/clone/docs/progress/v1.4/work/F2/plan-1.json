@@ -1,0 +1,15 @@
+{
+  "item": "F2", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "Summons pass through: a PaceRule.passes flag shrinks facility.enter to gather 715 + act 1200 (1915 ms, from 4835 with the crew hold), a pass-through Sortie (two Hermite legs, never zero speed at the spot), one At-rest blue blip at the ship's live point in the act, plate rides NOTE_MIN_MS; ledger F2/F2+ rows with undoPass keeping E rows as measured.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "decisions": [
+    "Phases: gather 715, act 1200; tell and land dropped (the blip is the call).",
+    "Plate: opens at the act (the blip), fold starts NOTE_MIN_MS later (crewTimes(phases, true)); release for P4 is the fold's end, so a next same-captain turn never cuts it.",
+    "Blip lives in the act phase at delay 0, anchored at the ship's live point: at the spot in full motion, at its place under reduced motion, no motion check in the theme.",
+    "After the pass the ship flies to its live goal over the act's length; a waiting next sortie takes over from its live point (runner hand-off); waitS is ignored by a pass Sortie.",
+    "Ledger: undoPass in pacing-ledger.ts; E rows and C2 candidates run with F2 undone so they don't move; F2 and F2+ rows include Meteor (all: true)."
+  ]
+}

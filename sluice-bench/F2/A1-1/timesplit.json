@@ -1,0 +1,12 @@
+{
+  "run": "A1-1",
+  "arm": "A1",
+  "wallMin": 84.7,
+  "e2eMin": 37.3,
+  "checkMin": 22.9,
+  "waitMin": 0,
+  "otherToolsMin": 0.1,
+  "flowMin": 24.4,
+  "wallLessE2eMin": 47.3,
+  "e2eShare": 44
+}

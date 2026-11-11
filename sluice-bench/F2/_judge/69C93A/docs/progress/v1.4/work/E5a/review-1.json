@@ -1,0 +1,16 @@
+{
+  "item": "E5a", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "The director pass works: every directed form plays on Quasar and Pulsar, every close survives, the History-agreement case passes. But the acceptance's close test is tautological, the gate stills show nothing, and three docs promise Task-update beams in E5b.",
+  "findings": { "blocker": 1, "major": 0, "minor": 3, "nit": 2 },
+  "checks": [
+    {"cmd": "npm run -s typecheck && npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npx vitest run <packet's mapped units> tests/golden", "pass": true, "detail": "23 files, 364 tests; only director.json new among goldens"},
+    {"cmd": "npm run e2e:spec -- solar-dense gallery-assets", "pass": true, "detail": "24 passed (7.9m); History-agreement case solar-dense.spec.ts:295 passed (25.5s)"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (38.6s)"},
+    {"cmd": "probe: undirected vs directed close plays, six pods", "pass": true, "detail": "all present: 2/9/25/21/11/11; none a progress beam"},
+    {"cmd": "probe: directed forms reach played beats", "pass": true, "detail": "Quasar 33/33 beams, 48/48 short, 10/10 climaxes; Pulsar 8/8, 40/40, 8/8"},
+    {"cmd": "probe: warm schedule build, explicit path, median of 7", "pass": true, "detail": "Quasar 132->141 ms (1.06x), Pulsar 93->101 ms (1.08x)"},
+    {"cmd": "npm run drive -- docs/progress/v1.4/work/E5a/review-stills.ts --paradigm solar", "pass": true, "detail": "stills review-1-progress-act.png, review-1-short-link-echo.png, review-1-beamed-close-act.png in work/E5a/"}
+  ]
+}

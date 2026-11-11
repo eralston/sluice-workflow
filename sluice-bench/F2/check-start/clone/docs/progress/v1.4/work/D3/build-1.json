@@ -1,0 +1,30 @@
+{ "item": "D3", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "formationSpots takes optional beams and, when D2's pick has a member within CORRIDOR_HALF (1.5 ship sizes) of a strand, searches lines turned in 15 degree steps (board, then corridor, then plates; else D2's pick with blocked:true); a blocked crew's beams fade (VEIL_ALPHA 0.3) as they pass the ships.",
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/formationCorridor.test.ts", "pass": true, "detail": "13 passed: 6 pure cases (no beams = D2 bit for bit; beams off the line unchanged; strand along the line gives a clear on-board line 15/30 degrees round; tiers; 24 directions gives blocked with D2's pick; tiny board gives blocked; no board) and per-pod sweeps over every merge at 7 scales"},
+    {"cmd": "acceptance sweep results", "pass": true, "detail": "Pulsar 441 checks (88 attachment/station pairs skipped: another pod's station or no target in scene), Quasar 532 (75 skipped), Harbor 49 (0 skipped). Fallbacks (blocked): 0 of 441, 0 of 532, 0 of 49. Every member of every non-blocked result is at least CORRIDOR_HALF * ship from every strand; every spot inside the board."},
+    {"cmd": "bite check: same sweep with D2's rule alone (no beams)", "pass": true, "detail": "D2's pick has a member in a corridor in 98 of 441 checks (Pulsar), 49 of 532 (Quasar), 21 of 49 (Harbor); so the search runs and the guarantee is not vacuous."},
+    {"cmd": "npm run typecheck; npm run lint; npm test", "pass": true, "detail": "clean; 101 files, 1491 passed (docTables with the new formation-corridor table, formationBounds, commands, maneuvers, goldens unmoved)"},
+    {"cmd": "npm run e2e:spec -- solar-dense gallery-assets gallery-v1 solar demo", "pass": true, "detail": "64 passed (8.2 m), incl. D1 formation plates and D2 formations stay on screen at both sizes"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"}
+  ],
+  "files": [
+    "src/renderer/src/theme/starChart/maneuvers/formationSpots.ts (CORRIDOR_HALF, CORRIDOR_STEP, beams input, blocked result, nearest-clear-line search)",
+    "src/renderer/src/theme/starChart/maneuvers/powerLink.ts (formation() passes beams; spots carry blocked; echo passes veil when blocked)",
+    "src/renderer/src/theme/starChart/commands.ts (BeamVeil, VEIL_ALPHA, strokeVeiled; FireArgs/MineArgs.veil; the two hot-beam stroke loops use it)",
+    "tests/unit/formationCorridor.test.ts (new)",
+    "tests/unit/docTables.test.ts (formation-corridor in GUARDED and the value loop)",
+    "docs/13-game-design.md (Power link row), docs/08-layout-solver.md (On screen bullet), docs/15-reference.md (section 5: formation-corridor table)",
+    "docs/progress/v1.4/work/D3/stills.ts, still-gallery-merge-echo.png, still-gallery-merge-first.png, still-pulsar-vertical.png"
+  ],
+  "deviations": [
+    "Quasar added to the sweep (packet said Pulsar and Harbor, Quasar if time allowed).",
+    "strokeVeiled draws the outer round caps as a half-disc polygon (butt strokes at joints), since Pixi strokes take one cap per stroke."
+  ],
+  "limitations": [
+    "The fade (veil) is never exercised by the fixtures: no merge in Pulsar, Quasar or Harbor ended blocked, so the fade was not seen by eye and has no unit test beyond typecheck. The pure rule's blocked path is unit-tested only on synthetic input.",
+    "Stills: the gallery's Power link demo (still-gallery-merge-echo.png: strand out, crew up-left, no crossing; still-gallery-merge-first.png) shows crew and strand not crossing, so it does not itself show the search. still-pulsar-vertical.png is a Pulsar merge from the drive, not chosen as one where D2's pick was blocked (the drive cannot tell which targets a merge has); no still of the fade exists.",
+    "Corridor is measured from the station's centre, conservative against the rim start; targets are measured to their centres (Mining beam aims at a cut point on the rock face).",
+    "The throwaway tests/e2e/d3-stills.spec.ts was deleted as asked."
+  ] }

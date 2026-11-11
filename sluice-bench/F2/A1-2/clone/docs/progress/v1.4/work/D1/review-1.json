@@ -1,0 +1,8 @@
+{ "item": "D1", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass", "summary": "Formation plates stand beside ships away from the axis (vertical) or above/below (horizontal) and never cover another member's ship; unit and new e2e pass on Quasar and Pulsar, docs sentence added.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 1 },
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/labelTiers.test.ts", "pass": true, "detail": "16 passed"},
+    {"cmd": "npm run typecheck; npm run lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm run e2e:spec -- solar-dense -g 'formation plates'", "pass": true, "detail": "Quasar and Pulsar pass (1.9 m)"}
+  ] }

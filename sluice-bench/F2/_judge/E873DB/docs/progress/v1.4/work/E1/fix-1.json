@@ -1,0 +1,7 @@
+{"item":"E1","role":"fixer","round":1,"model_tier":"medium","effort":"low","verdict":"done",
+"summary":"Swapped Meaning/Looks like cells in all 22 commands rows; added empty-Meaning check; removed stale tractor/Shuttle tender text.",
+"findings":[{"n":1,"severity":"Major","action":"fixed: swapped the last two cells in every commands row of 15 §8 so Meaning holds the meaning"},
+{"n":2,"severity":"Minor","action":"fixed: docTables commands check flags an empty Meaning cell"},
+{"n":3,"severity":"Minor","action":"fixed: dropped the tractor clause in 05 M-14 and 'Shuttle tender' from the 13 captains-beam list"}],
+"checks":[{"cmd":"vitest tests/unit/docTables.test.ts","pass":true,"detail":"38 passed"},{"cmd":"npm run typecheck","pass":true,"detail":"clean"},{"cmd":"npm run lint","pass":true,"detail":"clean"}],
+"files":["docs/15-reference.md","docs/05-playback.md","docs/13-game-design.md","tests/unit/docTables.test.ts"],"deviations":[],"limitations":[]}

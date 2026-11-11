@@ -1,0 +1,10 @@
+{ "item": "A4", "role": "reviewer", "round": 1, "model_tier": "medium", "verdict": "pass",
+  "summary": "Acceptance met: new e2e cases (Halcyon four pods, Meridian) pass; rows never scroll sideways and facts stay inside the box.",
+  "checks": [
+    {"cmd": "npm run e2e:spec -- demo", "pass": true, "detail": "11 passed, including both new A4 cases"},
+    {"cmd": "typecheck, lint, docTables", "pass": true, "detail": "clean"}
+  ],
+  "findings": [
+    {"severity": "Nit", "text": "holo.css .holo__row margin changed from `0 -4px` to `0 0 0 -4px` (builder deviation, disclosed). It also affects the row highlight in other plates that share .holo__row: the highlight now ends at the box edge on the right. Harmless and justified (the right overhang counted in scrollWidth)."},
+    {"severity": "Nit", "text": "Doc sentence sits in the Mega-labels paragraph of 06 (docs/06-visual-brief.md), not a paragraph found by the packet's grep; location is reasonable."}
+  ] }

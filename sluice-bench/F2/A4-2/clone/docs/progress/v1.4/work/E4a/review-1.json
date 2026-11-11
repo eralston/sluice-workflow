@@ -1,0 +1,21 @@
+{
+  "item": "E4a",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "pass",
+  "summary": "U1 is built as the packet asks. The first merge is 7900 ms and transforms from its gather. On forward play every first merge in Harbor Pod, including the Wars ring-docking station, logs played then finished with no interrupted or cut, and the Wars transform ends 4.4 s after it starts, as the station fires. A seek mid-merge logs interrupted/scrubbed-back and shows the first form. The ledger shows E4a's saving per pod, at least C2's estimate on each. One Minor: 13 §6 and 15's effects row still promise land surge rings that no merge plays now, and several comments still describe the old transform-at-the-land path. Three Nits.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 3 },
+  "checks": [
+    { "cmd": "npx vitest run <packet's 12 mapped units>", "pass": true, "detail": "12 files, 224 passed" },
+    { "cmd": "npm run -s typecheck; npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test --silent", "pass": true, "detail": "102 files, 1504 passed" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (38.4 s)" },
+    { "cmd": "npm run e2e:spec -- solar-play", "pass": true, "detail": "6 passed, including the seek mid-strike and the resting-equals-seek checks" },
+    { "cmd": "npm run e2e:spec -- gallery-assets", "pass": true, "detail": "4 passed; every maneuver demo runs and clears in full and reduced motion" },
+    { "cmd": "npm run pacing -- --candidates", "pass": true, "detail": "re-generated; the diff against efdd54b is unchanged (78/392/407/442 lines), so the committed ledger is current" },
+    { "cmd": "ledger totals: git show efdd54b:pacing-ledger.json vs now", "pass": true, "detail": "Comet 66665->61845, Nova 238955->235755, Quasar 1075780->1050180, Pulsar 695955->670355, Convoy 196385->189985, Harbor 211435->200115: matches the build record" },
+    { "cmd": "npm run drive -- <scratchpad probe, copy in review-1-probe.ts.txt> --paradigm solar", "pass": true, "detail": "Three Harbor Pod first merges (tide-gateway slide, harbor-console dock/Wars, ledger-sync slide). Forward play: played then finished, no interrupted or cut; Wars finished 4.4 s after played. Seek mid-merge: interrupted/scrubbed-back, first form shown. Pause mid-merge: the morph finished while paused (Nit 2). Lines in review-1-station-form.txt; stills review-1-wars-*.png" }
+  ]
+}

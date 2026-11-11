@@ -1,0 +1,19 @@
+{
+  "item": "E2",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "A labelled maneuver claims its attention places at its act (claimMs = the act's start): attentionFrom works in [start+claim, start+held) windows, so a waiting maneuver sets off to arrive as places free; plates open at the act, the tell lights none, CAST_LABEL_LEAD_MS goes; the ledger's bindingOf learns a 'claim' anchor so P-6 waits stay attributed; ledger regenerated; 05, 15, 03 (normative) and 13 amended.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "'Starts its gather on time' is read as C2 modelled E2: the travel isn't delayed by the wait; it starts at max(fromMs, freeAt - claim), so its act lands as places free. The literal alternative (start at fromMs and hover until free) would need variable phases in the renderer; not chosen.",
+    "heldMs is unchanged (NOTE_MIN_MS from the start, not from the claim), matching C2's 'no budget re-fit' and leaving beats that never waited the same length.",
+    "Plates lose their 500 ms lead and the tell's pre-beat lighting (R11, U5). 03's label-window paragraph is amended; the builder must call out the departure.",
+    "E1's exact Built check may stop holding (a real interaction with the new baseline); the packet's fallback is within 5% per pod, recorded.",
+    "Track record mixed: E1 (medium) failed first review on a docs table; D1-D3 passed."
+  ]
+}

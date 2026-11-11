@@ -1,0 +1,14 @@
+{
+  "item": "B3", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "Gold's resting weight drops to 0.68: the only two-decimal value within 10% of both red's and blue's nominal contrast (3.78 against 3.47 and 4.18; 0.6 fails at 3.10), and it predicts about 4.8 measured. A new `victory` act on asteroids and hive ships flares the gold outline to AURA_FLARE_WEIGHT 1 and eases it back over AURA_FLARE_MS 1600 (15 §10). It is driven through the adapter's existing overlay seam, with a new `end` hook, so a seek rests it. There is no flare under reduced motion. It is issued at the land of landing, strikeRun and seatComplete. The gallery demos report the flare peak per mode for the review copies, and a new outline-flare cell sits beside the platform cells.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 0, "acceptance": 1, "track": 1, "sum": 4 },
+  "needs": null,
+  "split": null,
+  "notes": [
+    "The scope's 'about 0.6' is replaced by 0.68. The acceptance (within 10% of red and blue in the auraContrast test) can't be met at 0.6. The orchestrator may want to note this in the block's decisions.",
+    "About 13 source files, plus 4 test files and 5 docs. Each source change is a few lines, and together they form one feature (constant, act, three call sites, gallery hooks), so no split is proposed.",
+    "The resting gold renders as a darker gold (channel times 0.68). Judge the look at the final check."
+  ]
+}

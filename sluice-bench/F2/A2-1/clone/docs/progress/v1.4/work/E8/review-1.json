@@ -1,0 +1,19 @@
+{
+  "item": "E8",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "low",
+  "verdict": "pass",
+  "summary": "Rising tempo meets both acceptance lines. rising.test.ts covers the curve, the floor, P10 on Pulsar, determinism and v0. The regenerated ledger shows a saving on all six pods (Quasar 299.1 s, Comet 1.7%). v0 goldens, E1-E7 rows and pacing-candidates.json don't move. The sweep.test edit is legitimate. Two nits: B-19's reworded safeguard reason, and volleysOf's flat GAP_MIN_MS.",
+  "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 2 },
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test", "pass": true, "detail": "108 files, 1675 tests; git status tests/golden clean afterwards" },
+    { "cmd": "npm run pacing -- --candidates", "pass": true, "detail": "All four ledger files byte-identical to the builder's; pacing-candidates.json identical to HEAD; pacing-built.json diff is 54 added, 0 removed" },
+    { "cmd": "vite-node probe (scratchpad/probe.ts)", "pass": true, "detail": "Wall ms rising vs flat: Comet 60795/61845, Nova 209348/212835, Quasar 299132/303640, Pulsar 288808/293522, Convoy 184705/188005, Harbor 179875/183725. Levers only on Quasar and Pulsar. Minimum accented-beat separation is 2000 ms or more" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (53.4 s)" },
+    { "cmd": "npm run e2e:spec -- solar-dense", "pass": true, "detail": "21 passed (8.5 m)" }
+  ]
+}

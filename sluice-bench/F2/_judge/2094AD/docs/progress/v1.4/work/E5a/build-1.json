@@ -1,0 +1,45 @@
+{
+  "item": "E5a", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Director pass (engine/director.ts): closing merges play the volley, others the progress beam, hero shots, monotony, daily climax, short lever past 300 s. Acceptance lines 1 and 3 met; line 2 reported (Quasar and Pulsar stay over 300 s until E5b/E5c).",
+  "checks": [
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test --silent", "pass": true, "detail": "104 files, 1548 tests, includes new director unit + golden tests, docTables, pacing, pacingBuilt, pacingCandidates"},
+    {"cmd": "npm run e2e:spec -- solar solar-play solar-dense gallery-assets", "pass": true, "detail": "45 passed (8.0m). solar-dense 'History and the scene explain the same events: at most four labels, each note its History row's action (22 B5-B8, C10; 27 B1)' passed (25.4s)"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (38.8s)"},
+    {"cmd": "warm schedule build, median of 5, same run, direct:false vs directed", "pass": true, "detail": "Quasar 148 ms -> 145 ms (0.98x); Pulsar 101 -> 107 ms (1.05x). Measured while an e2e run shared the machine, so relative only"}
+  ],
+  "pods_before_after_ms": {
+    "Comet": {"before": 61845, "after": 61845, "levers": [], "estimate": 67405},
+    "Nova": {"before": 235755, "after": 224595, "levers": [], "estimate": 226515},
+    "Quasar": {"before": 1050180, "after": 807460, "levers": ["short"], "estimate": 819200},
+    "Pulsar": {"before": 670355, "after": 562395, "levers": ["short"], "estimate": 567655},
+    "Convoy Planning": {"before": 189585, "after": 188985, "levers": [], "estimate": 195565},
+    "Harbor": {"before": 199415, "after": 196515, "levers": [], "estimate": 213695}
+  },
+  "files": [
+    "src/shared/engine/director.ts (new)", "src/shared/engine/maneuvers.ts", "src/shared/engine/pace.ts", "src/shared/engine/limelight.ts",
+    "src/shared/contracts/playback.ts", "src/shared/contracts/maneuver.ts", "src/shared/playback/schedule.ts",
+    "src/renderer/src/theme/starChart/maneuvers/landing.ts", "src/renderer/src/theme/starChart/maneuvers/strikeRun.ts", "src/renderer/src/gallery/maneuverDemos.ts",
+    "scripts/pacing-ledger.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts",
+    "docs/progress/v1.4/pacing-built.json", "docs/progress/v1.4/pacing-candidates.json", "docs/progress/v1.4/pacing-ledger.json", "docs/progress/v1.4/pacing-ledger.md",
+    "tests/unit/director.test.ts (new)", "tests/golden/director.test.ts (new)", "tests/golden/__golden__/director.json (new)", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts",
+    "tests/drive/steps/e5-director.ts (new)", "tests/README.md",
+    "docs/05-playback.md (new 8.5c P-20..P-23; progress note; P-19)", "docs/15-reference.md (7 agent.progress and short rows; 10 DIRECTOR_TARGET_MS)", "docs/13-game-design.md (6 Progress beam)", "docs/03-contracts.md (Direction, Limelight.direction, climax, momentsOf, options)",
+    "docs/progress/v1.4/work/E5/e5a-progress-act.png, e5a-short-link-echo.png, e5a-climax-merge.png"
+  ],
+  "deviations": [
+    "03 departures (updated in the same change): Limelight gains `direction`; PlannedManeuver gains `climax`; turnsOf/limelightOf/draftsOf take the direction; PacingOptions gains direct and targetMs; momentsOf and BaseMoment are new exports. The planManeuvers prose notes the director.",
+    "pacing-candidates.ts builds its baseline with direct:false so C2's estimates stay undirected; its E5 assumption is marked Built.",
+    "pace.ts form constants (LANDING etc.) are exported so a test can check short forms equal shortOf(source); this also closes the E4d review Minor.",
+    "No existing golden moved; only tests/golden/__golden__/director.json is new."
+  ],
+  "limitations": [
+    "Comet yardstick: read as 61,845 ms (the ledger at the start commit); the director leaves Comet at exactly 61,845 (0%), within the 5% bound. If the human meant 67.3 s, line 2 cannot be met by a director that only shortens.",
+    "Line 2 numbers: Quasar 807.5 s and Pulsar 562.4 s stay over the 300 s target (short lever only); estimates 819 s and 568 s. They need E5b and E5c levers. Nova 224.6, Convoy 189.0, Harbor 196.5 s are within target.",
+    "Drive stills (e5a-*.png in work/E5/) do not show the maneuvers: in the driver, play did not advance the playhead past the beat start, so they show the pod at the beat, not the beam, short echo or climax. Visual check of the forms is not done by me; solar-play and solar-dense e2e pass. A reviewer should look at the forms with the gallery short cells (new) or by hand.",
+    "The new unit test's monotony check is weak where a rule has a variant switch; the Harbor targetMs:1 test checks forms by phases.",
+    "Perf timing was taken with an e2e run alive on the machine; only the same-run ratio (about 1.0) is meaningful."
+  ]
+}

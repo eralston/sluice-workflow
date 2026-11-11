@@ -1,0 +1,23 @@
+{
+  "item": "E6b",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "high",
+  "verdict": "pass",
+  "summary": "E6b meets acceptance line 2. On all four Pulsar volleys, every member's event shows on a note, plates plus acting captains peak at 4, and both tenders dock together (tenders() shows 2 docking at once). One Minor: the e2e check of named people (≥ people) also counts other maneuvers' crews in the fused beat. One Nit: the stills are too far out to show the docking, and their file names count turns from 1. solar.spec:352 passed. solar-dense:295 ('at most four labels') flaked once at 5 labels. It predates E6b: the base cc89afb shows the same overflow at x ≈ 31.2 s in meridian Convoy (no volleys there) in 2 of 4 runs.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 1 },
+  "checks": [
+    { "cmd": "npx vitest run (packet's mapped units + stationStandby, shuttleSlots, tests/golden)", "pass": true, "detail": "24 files, 460 tests" },
+    { "cmd": "npm run -s typecheck; npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "pacingBuilt BEFORE_VOLLEYS vs git show 3d4e402:pacing-built.json", "pass": true, "detail": "48 rows identical" },
+    { "cmd": "tsx probe: volleyPhases(shortForm(merge), 2 turns)", "pass": true, "detail": "echo 1800 -> 3820, disperse 3780 -> 5800, as 15 §7 now says" },
+    { "cmd": "npm run e2e:spec -- solar solar-play solar-dense montage-names gallery-assets", "pass": false, "detail": "33 passed, 1 failed (solar-dense:295, 5 labels), 13 skipped in its serial describe. solar.spec:352 passed" },
+    { "cmd": "npx playwright test solar-dense.spec.ts -g 'History and the scene explain' x3", "pass": false, "detail": "2 passed, 1 failed (5): a flake" },
+    { "cmd": "scratch budget probe (meridian Convoy Planning Pod, 2x from 0, per-frame), working tree x3 and base cc89afb x4", "pass": true, "detail": "No volleys in that pod. The overflow is at x≈31.2 s: 3 wi_state_changed, 2 plates fading at 0.67 plus 2-3 named captains. Working tree peaked at 4/5/4; base at 6/5/4/4. The flake predates E6b" },
+    { "cmd": "npx playwright test tests/e2e/solar-dense.spec.ts", "pass": true, "detail": "21 passed (8.4 m), the new volley case included" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed (38.6 s)" },
+    { "cmd": "npm run drive -- scratch e6probe.ts --paradigm solar (all four Pulsar volleys, rAF sampling)", "pass": true, "detail": "Docking 2 at once: 135/123/45/76 frames. At most 4 labels. Every member noted. Named 8/5/4/5 vs people 6/5/4/5 (V0's extra 2 are PR #20733's crew)" },
+    { "cmd": "npm run drive -- scratch e6zoom.ts (3.5x on volley 0's station during the dock)", "pass": true, "detail": "One formation of six, Dara (lead) beside the station; slots 0 and 1 docking, converging on the bay" }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "item": "C4b",
+  "role": "builder",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "done",
+  "checks": [
+    {"cmd": "npm run -s typecheck", "pass": true, "detail": "clean"},
+    {"cmd": "npm run -s lint", "pass": true, "detail": "clean"},
+    {"cmd": "npm test --silent", "pass": true, "detail": "99 files, 1462 tests; goldens (schedule, scenes, seek) and docTables unchanged in value; 4 new tests in pacing.test.ts, explicit timeouts"},
+    {"cmd": "npm run pacing -- --candidates", "pass": true, "detail": "committed pacing-ledger.md/.json and pacing-candidates.json unchanged (git status clean for docs/progress)"},
+    {"cmd": "npm run pacing -- --profile phone / nope", "pass": true, "detail": "phone writes pacing-ledger.phone.* (removed after the check); unknown id exits 1 with the list"},
+    {"cmd": "grep BUDGET_MS|HIGHLIGHT_BUDGET_MS in src scripts tests", "pass": true, "detail": "none left except two comments in contracts/profile.ts saying 'was BUDGET_MS'. MAX_ACTIVE_FX and VSYNC_TOLERANCE_MS remain (C4c)."}
+  ],
+  "files": [
+    "src/shared/playback/constants.ts", "src/shared/playback/schedule.ts", "src/shared/playback/highlights.ts",
+    "src/renderer/src/playback.ts",
+    "scripts/pacing-ledger.ts", "scripts/pacing-candidates.ts", "scripts/pacing.ts",
+    "tests/golden/schedule.test.ts", "tests/unit/maneuvers.test.ts", "tests/unit/story.test.ts", "tests/unit/pacing.test.ts",
+    "docs/15-reference.md (section 10 rows Episode budget, Highlights budget; section 11 notes)", "docs/03-contracts.md", "docs/05-playback.md", "docs/06-visual-brief.md (BUDGET_MS mentions)"
+  ],
+  "deviations": [
+    "The packet's check 'Pulsar buildScene with phone budgets is shorter or cuts more beats' does not hold: Pulsar (Solar hierarchy) gives 702020 ms and 282 beats at 45 s, 30 s and 5 s alike, because its pacing hooks floor on maneuvers. The test asserts the effect on orbit-week (Backlog) instead: phone total 40.9 s vs desktop 45.0 s, accents no more, High never cut. The profile.spec e2e in C4c should use a scene where the budget bites, not Pulsar.",
+    "scripts/pacing.ts --profile <id> writes pacing-ledger.<id>.md/.json (and pacing-candidates.<id>.json) beside the committed files, so the committed ledger can never be overwritten by a profile run."
+  ],
+  "limitations": [
+    "Frame budget and Live effects cap rows in 15 section 10 are left for C4c (their constants still exist).",
+    "playback.ts scheduleFor is not unit-tested (renderer, needs window); covered by the C4c e2e.",
+    "The three scope-doc mentions of BUDGET_MS in docs/27-v1.4.md are the scope's own prose, left alone."
+  ]
+}

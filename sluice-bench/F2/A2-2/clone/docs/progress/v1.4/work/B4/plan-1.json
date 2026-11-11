@@ -1,0 +1,16 @@
+{
+  "item": "B4",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "First light on a seat's first arrival: a new shared PieceState.awaiting (stage aw=1, 03 amended, two goldens move) makes 'first of the round' seek-proof; SeatView plays an 800 ms terminator-to-limb front of transient pinpoint lights that settle to the world's own over 600 ms, while returns keep today's ease.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 0, "acceptance": 1, "track": 1, "sum": 4 },
+  "needs": null,
+  "notes": [
+    "Beyond the scope's Touches: src/shared/contracts/view.ts, src/shared/engine/stageCode.ts, src/shared/scene/project/solar.ts, docs/03-contracts.md, and goldens solar.scenes.json and meridian.scenes.json (seat stages gain |aw=1). Reason: a view-local 'has it held' flag plays the wrong transition after a backward seek or a mid-round scene entry.",
+    "Interpretation: a share-0 world has no city lights (WEATHER.lights is 0 below 1/2, the settled mask is empty at share 0), so first light is a transient that settles back to today's look. The human gate should judge it in the B4 stills."
+  ]
+}

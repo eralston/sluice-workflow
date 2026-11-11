@@ -1,0 +1,19 @@
+{
+  "item": "E7a",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "large",
+  "effort": "high",
+  "verdict": "pass",
+  "summary": "E7a meets acceptance. On Harbor and Convoy, the sweep reveals exactly the beat's drawn creations (Harbor 16 of 16, the note '11 User Stories · 5 Bugs created in Sprint 13'; Convoy 23 of 23). A seek lands on graphAt(sourceUtc) at both ends of the beat. The 17-vs-16 gap is 20141: it is upstream, and it predates E7 (without the rule the same beat already planned a piece.appear for it, off the board). It doesn't break R9: the note counts what is drawn. The four moved tests are legitimate. 03 is called out under the build record's deviations. E1–E6 rows are frozen. Two Minors: the displayed note's on-board count (interpreter noteSweep) is untested, since sweep.test checks the plan-count note instead (17); and the packet's gallery still of the Sector sweep cell is missing. One Nit: Check 4's tolerance is keyed by pod label, not by the key 20141.",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 1 },
+  "checks": [
+    { "cmd": "npm run -s typecheck; npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npx vitest run sweep maneuvers director volleys limelight pacing pacingBuilt pacingCandidates docTables rulebook literalFence castLabels commands tests/golden", "pass": true, "detail": "21 files, 423 tests" },
+    { "cmd": "git diff 71e98cc -- docs/progress/v1.4/pacing-built.json | grep -c '^-[^-]'", "pass": true, "detail": "0 removed lines: only the six E7 rows were added. pacing-ledger.json hunks all fall at or after line 1056 (Convoy 1056, Harbor 1300). The C2 candidates change only the E7 assumption text. In director.json only Convoy's and Harbor's estimateMs moved" },
+    { "cmd": "vite-node scratch probe p1 (Harbor and Convoy plans, with and without region.sweep)", "pass": true, "detail": "Harbor beat 1: sweep n=17, 16 on board, the one off it is 20141, counts 12/5, span 3570. Without the rule: 13 piece.appear + 4 threat.emerge, including a piece.appear for 20141 (off the board). Convoy beat 1: 23 of 23 on board, span 3700. Walls: Harbor 183725 vs 190835, Convoy 188005 vs 188985" },
+    { "cmd": "vite-node scratch probe p2 (Harbor board across beat 1)", "pass": true, "detail": "Before: 1 objective. At sourceUtc: 12 objectives, 5 threats. 16 new pieces, matching the note (11 + 5) and the inspector (12 User Stories · 5 Bugs)" },
+    { "cmd": ".claude/sluice/with-lock.sh npm run e2e:spec -- gallery-assets solar-dense", "pass": true, "detail": "25 passed (8.7 m)" },
+    { "cmd": "Read stills work/E7/e7-sweep-{mid-act,act-end,seek-end}.png", "pass": true, "detail": "Mid-act: the Nav cyan ring is on the frontier ellipse, the pieces enter, and the star's note reads. The seek-end board matches the act-end board" }
+  ]
+}

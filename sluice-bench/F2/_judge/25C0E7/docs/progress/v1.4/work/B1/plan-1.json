@@ -1,0 +1,12 @@
+{
+  "item": "B1", "role": "planner", "round": 1, "model_tier": "medium", "effort": "high",
+  "verdict": "planned",
+  "summary": "Plates rest at T4 Sky and rise to their own tier for pointed, selected, followed, expanded, cast or acting (one pure raisedTier rule; the layer owns data-holo-tier). Held for the human: probes show Pulsar's frame time is GPU/compositor-bound (labels hidden and paint off: p50 33 ms, p95 50 ms against an 18.6 ms budget; main thread 7-11 ms a frame), so acceptance line 4 can't be met by this design.",
+  "tier": "large",
+  "score": { "blast": 1, "verify": 1, "design": 2, "acceptance": 1, "track": 1, "sum": 6 },
+  "score_if_option_A": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5, "tier": "medium" },
+  "needs": "human",
+  "human_question": "B1's acceptance line 4 (Pulsar playing p95 <= 2 vsyncs, hard) assumes T4's missing filters bring Pulsar into budget. The planner's probes say they don't: with every holo filter off, with the label layer hidden, and with paint off, Pulsar still plays at p50 33 ms and p95 50 ms in the hidden 120 Hz window (budget 18.6 ms), and the main thread is busy only 7-11 ms a frame. Choose: A (recommended) build B1 for lines 1-3, keep the Pulsar p95 assertions soft, record before and after numbers in 09 section 7, and move the hard budget to a new perf item that profiles the GPU side of the Pulsar scene; B widen B1 to find and cut the GPU cost (open design, large, needs a re-plan); C keep line 4 and accept that it stays red.",
+  "probes": ["docs/progress/v1.4/work/B1/probe-filters.ts", "docs/progress/v1.4/work/B1/probe-cost.ts"],
+  "split": null
+}

@@ -1,0 +1,4 @@
+{ "item": "A1", "role": "reviewer", "round": 1, "model_tier": "large", "effort": "high",
+  "verdict": "fix needed", "findings": { "blocker": 0, "major": 1, "minor": 1, "nit": 1 },
+  "checks": [ { "cmd": "probe-reload.test", "pass": false, "detail": "40 requests, expected 3" } ],
+  "summary": "Reload mid-retry refetches everything; banner overlap at 900 px." }

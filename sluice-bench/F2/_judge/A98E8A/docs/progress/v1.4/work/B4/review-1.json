@@ -1,0 +1,12 @@
+{ "item": "B4", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "B4 meets its acceptance: the vacantWorld tests cover first arrival, later return and seek landing on the same look, and the drive stills show the first-light transient on Lantern Pod. Goldens moved only by |aw=1 after |vc=1. solar.spec.ts:352 is pre-existing: it fails the same way on the start commit in a throwaway worktree. Keystone passes (43).",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 0 },
+  "checks": [
+    {"cmd": "npm run typecheck; npm run lint", "pass": true, "detail": "clean"},
+    {"cmd": "npx vitest run vacantWorld stageCode docTables golden", "pass": true, "detail": "10 files, 214 tests"},
+    {"cmd": "with-lock npm run e2e:spec -- gallery-assets gallery-v1 solar", "pass": false, "detail": "41 passed, 1 failed (solar.spec.ts:352), 4 did not run; the run finished, no stall"},
+    {"cmd": "solar.spec.ts -g 'pieces are hover-only' alone, on the B4 tree (x3) and on a throwaway worktree at 75fb4a7 (x2)", "pass": false, "detail": "fails on both, so it is pre-existing and not B4's"},
+    {"cmd": "with-lock npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "golden diff, line by line", "pass": true, "detail": "21 lines, all |vc=1 to |vc=1|aw=1 on seat stages"}
+  ] }

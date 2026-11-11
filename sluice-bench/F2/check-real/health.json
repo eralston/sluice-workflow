@@ -1,0 +1,135 @@
+{
+  "run": "check-real",
+  "start": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "head": "4f6990af6009858915994946b1bd02ba63570cad",
+  "at": "2026-11-11T17:46:58.966Z",
+  "size": {
+    "added": 372,
+    "removed": 72,
+    "files": 19,
+    "byArea": {
+      "docs": {
+        "added": 19,
+        "removed": 12,
+        "files": 4
+      },
+      "scripts": {
+        "added": 44,
+        "removed": 11,
+        "files": 3
+      },
+      "src": {
+        "added": 130,
+        "removed": 33,
+        "files": 6
+      },
+      "tests": {
+        "added": 179,
+        "removed": 16,
+        "files": 6
+      }
+    },
+    "newFiles": [],
+    "deleted": [],
+    "outsideTouches": [
+      "src/renderer/src/chart/fx/movers.ts",
+      "src/renderer/src/chart/fx/v1/interpreter.ts",
+      "src/shared/engine/maneuvers.ts"
+    ]
+  },
+  "tests": {
+    "unit": {
+      "added": 10,
+      "removed": 0,
+      "total": 1153
+    },
+    "e2e": {
+      "added": 0,
+      "removed": 0,
+      "total": 252
+    },
+    "assertionsAdded": 40,
+    "testLinesPerSrcLine": 1.38,
+    "goldensMoved": [
+      "tests/golden/__golden__/director.json"
+    ]
+  },
+  "complexity": {
+    "touchedFiles": 6,
+    "functionsNow": 577,
+    "functionsBefore": 570,
+    "sumNow": 1838,
+    "sumBefore": 1798,
+    "added": 40,
+    "over15Now": 14,
+    "over15Before": 13,
+    "newOver15": 1,
+    "worst": "59 (interpreter.ts play)",
+    "over80LinesNew": 0,
+    "crossed800": []
+  },
+  "hygiene": {
+    "anyAdded": 0,
+    "asUnknownAs": 1,
+    "tsSuppress": 0,
+    "eslintDisable": 0,
+    "lintWarnings": 0,
+    "lintErrors": 0
+  },
+  "coupling": {
+    "importsAdded": 9,
+    "exportsAdded": 4,
+    "sharedImpureImports": 0
+  },
+  "docs": {
+    "normative": [
+      "03",
+      "05",
+      "13",
+      "15"
+    ]
+  },
+  "coverage": {
+    "touchedLinesNow": 74.57,
+    "touchedBranchesNow": 62.26,
+    "sameFilesAtStart": 73.3,
+    "sameFilesNow": 74.6,
+    "perFile": {
+      "src/renderer/src/chart/fx/commands.ts": {
+        "lines": 44.3,
+        "branches": 36.27,
+        "linesTotal": 158
+      },
+      "src/renderer/src/chart/fx/movers.ts": {
+        "lines": 82.32,
+        "branches": 58.04,
+        "linesTotal": 215
+      },
+      "src/renderer/src/chart/fx/v1/interpreter.ts": {
+        "lines": 50.78,
+        "branches": 35.23,
+        "linesTotal": 508
+      },
+      "src/renderer/src/theme/starChart/maneuvers/stationJumpIn.ts": {
+        "lines": 90.32,
+        "branches": 53.84,
+        "linesTotal": 31
+      },
+      "src/shared/engine/maneuvers.ts": {
+        "lines": 98.73,
+        "branches": 91.05,
+        "linesTotal": 395
+      },
+      "src/shared/engine/pace.ts": {
+        "lines": 99.51,
+        "branches": 89.39,
+        "linesTotal": 207
+      }
+    }
+  },
+  "runtime": {
+    "unitSecs": 90,
+    "unitOk": true,
+    "bundleKb": 6608
+  }
+}

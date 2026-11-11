@@ -1,0 +1,160 @@
+{
+  "source": "/Users/amorgan/.claude/projects/-Users-amorgan-sluice-bench-F2-A4-2-clone",
+  "run": "A4-2",
+  "at": "2026-11-10T06:55:43.499Z",
+  "usd": 8.0623,
+  "windows": 0.299,
+  "calls": 224,
+  "firstPrompt": "2026-11-10T04:34:28.065Z",
+  "lastEntry": "2026-11-10T06:54:36.152Z",
+  "wallMin": 140.1,
+  "toCommitMin": 139.6,
+  "agentSecs": 8346,
+  "sessionSecs": 8408,
+  "ctx": {
+    "mean": 102773,
+    "p95": 183809,
+    "peak": 200112
+  },
+  "roles": {
+    "session": {
+      "usd": 0.9659,
+      "calls": 6,
+      "secs": 8408,
+      "agents": 1,
+      "out": 5124,
+      "ctx": {
+        "mean": 35304,
+        "p95": 40987,
+        "peak": 40987
+      }
+    },
+    "F2 fix majors and commit": {
+      "usd": 2.0982,
+      "calls": 58,
+      "secs": 4430,
+      "agents": 1,
+      "out": 657,
+      "ctx": {
+        "mean": 99855,
+        "p95": 133434,
+        "peak": 134738
+      }
+    },
+    "F2 test writer": {
+      "usd": 2.9666,
+      "calls": 68,
+      "secs": 922,
+      "agents": 1,
+      "out": 16263,
+      "ctx": {
+        "mean": 123552,
+        "p95": 196303,
+        "peak": 200112
+      }
+    },
+    "F2 builder": {
+      "usd": 1.0119,
+      "calls": 63,
+      "secs": 2545,
+      "agents": 1,
+      "out": 833,
+      "ctx": {
+        "mean": 102510,
+        "p95": 144213,
+        "peak": 148953
+      }
+    },
+    "F2 adversarial review": {
+      "usd": 1.0198,
+      "calls": 29,
+      "secs": 449,
+      "agents": 1,
+      "out": 4729,
+      "ctx": {
+        "mean": 74413,
+        "p95": 98335,
+        "peak": 102786
+      }
+    }
+  },
+  "models": {
+    "claude-opus-5-5": {
+      "usd": 4.9522,
+      "calls": 103,
+      "out": 26116
+    },
+    "claude-sonnet-5-5": {
+      "usd": 3.11,
+      "calls": 121,
+      "out": 1490
+    }
+  },
+  "agents": [
+    {
+      "role": "session",
+      "kind": "main",
+      "workflow": null,
+      "file": "90d49c60-e90e-4818-aea7-11cf13337937.jsonl",
+      "calls": 6,
+      "secs": 8408,
+      "usd": 0.9659,
+      "out": 5124,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "F2 fix majors and commit",
+      "kind": "subagent",
+      "workflow": null,
+      "file": "90d49c60-e90e-4818-aea7-11cf13337937/subagents/agent-ac5b8d33d5b761c4c.jsonl",
+      "calls": 58,
+      "secs": 4430,
+      "usd": 2.0982,
+      "out": 657,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "role": "F2 test writer",
+      "kind": "subagent",
+      "workflow": null,
+      "file": "90d49c60-e90e-4818-aea7-11cf13337937/subagents/agent-aea128a3c2f2488b1.jsonl",
+      "calls": 68,
+      "secs": 922,
+      "usd": 2.9666,
+      "out": 16263,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    },
+    {
+      "role": "F2 builder",
+      "kind": "subagent",
+      "workflow": null,
+      "file": "90d49c60-e90e-4818-aea7-11cf13337937/subagents/agent-aee366b9556b43dfd.jsonl",
+      "calls": 63,
+      "secs": 2545,
+      "usd": 1.0119,
+      "out": 833,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "role": "F2 adversarial review",
+      "kind": "subagent",
+      "workflow": null,
+      "file": "90d49c60-e90e-4818-aea7-11cf13337937/subagents/agent-af8cd42c5b690d708.jsonl",
+      "calls": 29,
+      "secs": 449,
+      "usd": 1.0198,
+      "out": 4729,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    }
+  ]
+}

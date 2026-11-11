@@ -1,0 +1,4007 @@
+[
+ {
+  "at": "2026-09-15T18:00:00.000Z",
+  "snapshot": {
+   "atUtc": 1789495200000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:51",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Modern quoting platform",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Nimbus Deck",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1786982400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:52",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Self-service billing",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Nimbus Deck",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1786982400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:101",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Unified quote ledger",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1788192000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:102",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Rate card editor",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1789423200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:103",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Quote PDF export",
+     "rawState": "Draft",
+     "category": "Proposed",
+     "stage": "feature.draft",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:104",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Agent dashboard refresh",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:52",
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:105",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Bulk policy import",
+     "rawState": "Deferred",
+     "category": "Proposed",
+     "stage": "feature.deferred",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:106",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Audit trail for quotes",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "feature.whiteDwarf",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:211",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Edit rate tables inline",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789423200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "lastEventAt": 1789423200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:212",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Rate card version history",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "story.surveyed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:213",
+     "type": "User Story",
+     "kind": "story",
+     "title": "PDF layout templates",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:103",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:221",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Dashboard KPI tiles",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:222",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Saved dashboard filters",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:223",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Dashboard load under 2 seconds",
+     "rawState": "Resolved",
+     "category": "InProgress",
+     "stage": "story.developed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:231",
+     "type": "User Story",
+     "kind": "story",
+     "title": "CSV import validation",
+     "rawState": "Deferred",
+     "category": "Proposed",
+     "stage": "story.dormant",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:105",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:241",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Audit log viewer",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:242",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Audit export for compliance",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:311",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "KPI tiles show stale totals",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:201",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Show quote history on the policy page",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789402200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1789402200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:202",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Export ledger entries to CSV",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812",
+     "assignedAt": 1787853600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1788901200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:204",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Ledger search by policy number",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1787932800000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:205",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Archive ledger entries older than 7 years",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "story.surveyed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1787936400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:203",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Reconcile ledger with billing nightly",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1788376500000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:405",
+     "type": "Task",
+     "kind": "task",
+     "title": "Tile data service",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "lastEventAt": 1788451200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:406",
+     "type": "Task",
+     "kind": "task",
+     "title": "Tile accessibility pass",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1788451200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "lastEventAt": 1788451200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:301",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Duplicate ledger rows after retry",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1788974400000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1789495200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:401",
+     "type": "Task",
+     "kind": "task",
+     "title": "Add history endpoint",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "task.lit",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789493400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:402",
+     "type": "Task",
+     "kind": "task",
+     "title": "History panel UI",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "task.lit",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789405200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:403",
+     "type": "Task",
+     "kind": "task",
+     "title": "History API contract tests",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789056000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:404",
+     "type": "Task",
+     "kind": "task",
+     "title": "CSV column mapping",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "task.settled",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "lastEventAt": 1789056000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:407",
+     "type": "Task",
+     "kind": "task",
+     "title": "Idempotency key on retry",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "lastEventAt": 1789056000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:408",
+     "type": "Task",
+     "kind": "task",
+     "title": "Spike: ledger sharding",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "lastEventAt": 1789056000000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+     "title": "Quote history endpoint",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:52",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:203",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:204",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:205",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:211",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:212",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:213",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:103",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:222",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:223",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:231",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:105",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:241",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:242",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:311",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:401",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:402",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:403",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:404",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:405",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:406",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:407",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:408",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:401",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11",
+    "atUtc": 1789495200000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:101",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 960,
+      "y": 522,
+      "r": 96,
+      "label": "Unified quote ledger",
+      "meta": "Feature · #101 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:102",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 522,
+      "r": 96,
+      "label": "Rate card editor",
+      "meta": "Feature · #102 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:103",
+      "kind": "star",
+      "stage": "feature.draft",
+      "x": -960,
+      "y": 522,
+      "r": 96,
+      "label": "Quote PDF export",
+      "meta": "Feature · #103 · Draft",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:104",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": -960,
+      "y": 0,
+      "r": 96,
+      "label": "Agent dashboard refresh",
+      "meta": "Feature · #104 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:105",
+      "kind": "star",
+      "stage": "feature.deferred",
+      "x": 960,
+      "y": 0,
+      "r": 96,
+      "label": "Bulk policy import",
+      "meta": "Feature · #105 · Deferred",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:106",
+      "kind": "star",
+      "stage": "feature.whiteDwarf",
+      "x": 0,
+      "y": 0,
+      "r": 56,
+      "label": "Audit trail for quotes",
+      "meta": "Feature · #106 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 870,
+      "y": 652,
+      "r": 22,
+      "label": "Show quote history on the policy page",
+      "meta": "User Story · #201 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:202",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 1050,
+      "y": 652,
+      "r": 22,
+      "label": "Export ledger entries to CSV",
+      "meta": "User Story · #202 · Closed",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:203",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 794,
+      "y": 704,
+      "r": 22,
+      "label": "Reconcile ledger with billing nightly",
+      "meta": "User Story · #203 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:204",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 832,
+      "y": 678,
+      "r": 22,
+      "label": "Ledger search by policy number",
+      "meta": "User Story · #204 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:205",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": 1088,
+      "y": 678,
+      "r": 22,
+      "label": "Archive ledger entries older than 7 years",
+      "meta": "User Story · #205 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:211",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -90,
+      "y": 652,
+      "r": 22,
+      "label": "Edit rate tables inline",
+      "meta": "User Story · #211 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:212",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": 90,
+      "y": 652,
+      "r": 22,
+      "label": "Rate card version history",
+      "meta": "User Story · #212 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:213",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -960,
+      "y": 652,
+      "r": 22,
+      "label": "PDF layout templates",
+      "meta": "User Story · #213 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:221",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -1050,
+      "y": 130,
+      "r": 22,
+      "label": "Dashboard KPI tiles",
+      "meta": "User Story · #221 · Active",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:222",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": -870,
+      "y": 130,
+      "r": 22,
+      "label": "Saved dashboard filters",
+      "meta": "User Story · #222 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:223",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": -1088,
+      "y": 156,
+      "r": 22,
+      "label": "Dashboard load under 2 seconds",
+      "meta": "User Story · #223 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:231",
+      "kind": "planet",
+      "stage": "story.dormant",
+      "x": 960,
+      "y": 130,
+      "r": 22,
+      "label": "CSV import validation",
+      "meta": "User Story · #231 · Deferred",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:241",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Audit log viewer",
+      "meta": "User Story · #241 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:242",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 90,
+      "y": 130,
+      "r": 22,
+      "label": "Audit export for compliance",
+      "meta": "User Story · #242 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:301",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 1126,
+      "y": 704,
+      "r": 22,
+      "label": "Duplicate ledger rows after retry",
+      "meta": "Bug · #301 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:311",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": -832,
+      "y": 156,
+      "r": 22,
+      "label": "KPI tiles show stale totals",
+      "meta": "Bug · #311 · Active",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:201|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:202|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:203|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:204|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:205|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:211|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:212|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:213|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:221|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:222|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:223|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:231|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:241|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:242|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:301|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:311|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [],
+     "unlinked": [
+      "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004"
+     ]
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:101",
+    "atUtc": 1789495200000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 1765,
+      "y": 1375,
+      "r": 56,
+      "label": "Mina Sato",
+      "meta": "Captain · Mina-P3",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 459,
+      "y": 2502,
+      "r": 56,
+      "label": "Rafe Okoro",
+      "meta": "Captain · Rafe-AJ",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 379,
+      "y": 854,
+      "r": 56,
+      "label": "Ava Lindqvist",
+      "meta": "Captain · Ava-3B",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+      "kind": "flight",
+      "stage": "flight.active",
+      "x": 0,
+      "y": 4867,
+      "r": 48,
+      "label": "Quote history endpoint",
+      "meta": "PR · #9001 · active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+      "kind": "station",
+      "stage": "station.active",
+      "x": 2461,
+      "y": 5868,
+      "r": 150,
+      "label": "ledger-svc",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:101",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Unified quote ledger",
+      "meta": "Feature · #101 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 379,
+      "y": 1224,
+      "r": 129,
+      "label": "Show quote history on the policy page",
+      "meta": "User Story · #201 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:202",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 1765,
+      "y": 1866,
+      "r": 71,
+      "label": "Export ledger entries to CSV",
+      "meta": "User Story · #202 · Closed",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:203",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -707,
+      "y": 3883,
+      "r": 132,
+      "label": "Reconcile ledger with billing nightly",
+      "meta": "User Story · #203 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:204",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -1943,
+      "y": 3776,
+      "r": 119,
+      "label": "Ledger search by policy number",
+      "meta": "User Story · #204 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:205",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": -1326,
+      "y": 3843,
+      "r": 121,
+      "label": "Archive ledger entries older than 7 years",
+      "meta": "User Story · #205 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:301",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 459,
+      "y": 2961,
+      "r": 116,
+      "label": "Duplicate ledger rows after retry",
+      "meta": "Bug · #301 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401",
+      "kind": "missionPoint",
+      "stage": "task.lit",
+      "x": 345,
+      "y": 1383,
+      "r": 11,
+      "label": "Add history endpoint",
+      "meta": "Task · #401 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:402",
+      "kind": "missionPoint",
+      "stage": "task.lit",
+      "x": 379,
+      "y": 1383,
+      "r": 11,
+      "label": "History panel UI",
+      "meta": "Task · #402 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:403",
+      "kind": "missionPoint",
+      "stage": "task.unstarted",
+      "x": 413,
+      "y": 1383,
+      "r": 11,
+      "label": "History API contract tests",
+      "meta": "Task · #403 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:404",
+      "kind": "missionPoint",
+      "stage": "task.settled",
+      "x": 1748,
+      "y": 1968,
+      "r": 11,
+      "label": "CSV column mapping",
+      "meta": "Task · #404 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:407",
+      "kind": "missionPoint",
+      "stage": "task.unstarted",
+      "x": 459,
+      "y": 3107,
+      "r": 11,
+      "label": "Idempotency key on retry",
+      "meta": "Task · #407 · New",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:408",
+      "kind": "missionPoint",
+      "stage": "task.unstarted",
+      "x": 1782,
+      "y": 1968,
+      "r": 11,
+      "label": "Spike: ledger sharding",
+      "meta": "Task · #408 · New",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001|route|feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001|route|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:202|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:203|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:204|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:205|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:301|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401|routeContinuation|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "routeContinuation",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [],
+     "unlinked": [
+      "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "at": "2026-09-16T21:00:00.000Z",
+  "snapshot": {
+   "atUtc": 1789592400000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:51",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Modern quoting platform",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Nimbus Deck",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1786982400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:52",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Self-service billing",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Nimbus Deck",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1786982400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:101",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Unified quote ledger",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1788192000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:102",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Rate card editor",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1789423200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:103",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Quote PDF export",
+     "rawState": "Draft",
+     "category": "Proposed",
+     "stage": "feature.draft",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:104",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Agent dashboard refresh",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:52",
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:105",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Bulk policy import",
+     "rawState": "Deferred",
+     "category": "Proposed",
+     "stage": "feature.deferred",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:106",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Audit trail for quotes",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "feature.whiteDwarf",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:211",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Edit rate tables inline",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789423200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "lastEventAt": 1789423200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:212",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Rate card version history",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "story.surveyed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:213",
+     "type": "User Story",
+     "kind": "story",
+     "title": "PDF layout templates",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:103",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:221",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Dashboard KPI tiles",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:222",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Saved dashboard filters",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:223",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Dashboard load under 2 seconds",
+     "rawState": "Resolved",
+     "category": "InProgress",
+     "stage": "story.developed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:231",
+     "type": "User Story",
+     "kind": "story",
+     "title": "CSV import validation",
+     "rawState": "Deferred",
+     "category": "Proposed",
+     "stage": "story.dormant",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:105",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:241",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Audit log viewer",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:242",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Audit export for compliance",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:311",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "KPI tiles show stale totals",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:201",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Show quote history on the policy page",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789402200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1789575600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:202",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Export ledger entries to CSV",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812",
+     "assignedAt": 1787853600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1788901200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:204",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Ledger search by policy number",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1787932800000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:205",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Archive ledger entries older than 7 years",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "story.surveyed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1787936400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:203",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Reconcile ledger with billing nightly",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1788376500000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:405",
+     "type": "Task",
+     "kind": "task",
+     "title": "Tile data service",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "lastEventAt": 1788451200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:406",
+     "type": "Task",
+     "kind": "task",
+     "title": "Tile accessibility pass",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1788451200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "lastEventAt": 1788451200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:301",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Duplicate ledger rows after retry",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1788974400000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1789498800000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:401",
+     "type": "Task",
+     "kind": "task",
+     "title": "Add history endpoint",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "task.lit",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789493400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:402",
+     "type": "Task",
+     "kind": "task",
+     "title": "History panel UI",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "task.lit",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789405200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:403",
+     "type": "Task",
+     "kind": "task",
+     "title": "History API contract tests",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "task.settled",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789581600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:404",
+     "type": "Task",
+     "kind": "task",
+     "title": "CSV column mapping",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "task.settled",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "lastEventAt": 1789056000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:407",
+     "type": "Task",
+     "kind": "task",
+     "title": "Idempotency key on retry",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "lastEventAt": 1789056000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:408",
+     "type": "Task",
+     "kind": "task",
+     "title": "Spike: ledger sharding",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1789581600000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+     "title": "Quote history endpoint",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+     "title": "Make ledger writes idempotent",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+     "title": "Quote history panel",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+     "title": "Bump UI toolkit",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:52",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:203",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:204",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:205",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:211",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:212",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:213",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:103",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:222",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:223",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:231",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:105",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:241",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:242",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:311",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:401",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:402",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:403",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:404",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:405",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:406",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:407",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:401",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11",
+    "atUtc": 1789592400000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:101",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 960,
+      "y": 522,
+      "r": 96,
+      "label": "Unified quote ledger",
+      "meta": "Feature · #101 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:102",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 522,
+      "r": 96,
+      "label": "Rate card editor",
+      "meta": "Feature · #102 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:103",
+      "kind": "star",
+      "stage": "feature.draft",
+      "x": -960,
+      "y": 522,
+      "r": 96,
+      "label": "Quote PDF export",
+      "meta": "Feature · #103 · Draft",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:104",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": -960,
+      "y": 0,
+      "r": 96,
+      "label": "Agent dashboard refresh",
+      "meta": "Feature · #104 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:105",
+      "kind": "star",
+      "stage": "feature.deferred",
+      "x": 960,
+      "y": 0,
+      "r": 96,
+      "label": "Bulk policy import",
+      "meta": "Feature · #105 · Deferred",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:106",
+      "kind": "star",
+      "stage": "feature.whiteDwarf",
+      "x": 0,
+      "y": 0,
+      "r": 56,
+      "label": "Audit trail for quotes",
+      "meta": "Feature · #106 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 870,
+      "y": 652,
+      "r": 22,
+      "label": "Show quote history on the policy page",
+      "meta": "User Story · #201 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:202",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 1050,
+      "y": 652,
+      "r": 22,
+      "label": "Export ledger entries to CSV",
+      "meta": "User Story · #202 · Closed",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:203",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 794,
+      "y": 704,
+      "r": 22,
+      "label": "Reconcile ledger with billing nightly",
+      "meta": "User Story · #203 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:204",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 832,
+      "y": 678,
+      "r": 22,
+      "label": "Ledger search by policy number",
+      "meta": "User Story · #204 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:205",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": 1088,
+      "y": 678,
+      "r": 22,
+      "label": "Archive ledger entries older than 7 years",
+      "meta": "User Story · #205 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:211",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -90,
+      "y": 652,
+      "r": 22,
+      "label": "Edit rate tables inline",
+      "meta": "User Story · #211 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:212",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": 90,
+      "y": 652,
+      "r": 22,
+      "label": "Rate card version history",
+      "meta": "User Story · #212 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:213",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -960,
+      "y": 652,
+      "r": 22,
+      "label": "PDF layout templates",
+      "meta": "User Story · #213 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:221",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -1050,
+      "y": 130,
+      "r": 22,
+      "label": "Dashboard KPI tiles",
+      "meta": "User Story · #221 · Active",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:222",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": -870,
+      "y": 130,
+      "r": 22,
+      "label": "Saved dashboard filters",
+      "meta": "User Story · #222 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:223",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": -1088,
+      "y": 156,
+      "r": 22,
+      "label": "Dashboard load under 2 seconds",
+      "meta": "User Story · #223 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:231",
+      "kind": "planet",
+      "stage": "story.dormant",
+      "x": 960,
+      "y": 130,
+      "r": 22,
+      "label": "CSV import validation",
+      "meta": "User Story · #231 · Deferred",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:241",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Audit log viewer",
+      "meta": "User Story · #241 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:242",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 90,
+      "y": 130,
+      "r": 22,
+      "label": "Audit export for compliance",
+      "meta": "User Story · #242 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:301",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 1126,
+      "y": 704,
+      "r": 22,
+      "label": "Duplicate ledger rows after retry",
+      "meta": "Bug · #301 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:311",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": -832,
+      "y": 156,
+      "r": 22,
+      "label": "KPI tiles show stale totals",
+      "meta": "Bug · #311 · Active",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:201|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:202|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:203|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:204|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:205|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:211|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:212|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:213|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:221|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:222|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:223|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:231|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:241|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:242|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:301|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:311|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:408"
+     ],
+     "unlinked": [
+      "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004"
+     ]
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:101",
+    "atUtc": 1789592400000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 1765,
+      "y": 1375,
+      "r": 56,
+      "label": "Mina Sato",
+      "meta": "Captain · Mina-P3",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 459,
+      "y": 2502,
+      "r": 56,
+      "label": "Rafe Okoro",
+      "meta": "Captain · Rafe-AJ",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": -2418,
+      "y": 4741,
+      "r": 56,
+      "label": "Ava Lindqvist",
+      "meta": "Captain · Ava-3B",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002",
+      "kind": "flight",
+      "stage": "flight.active",
+      "x": -2461,
+      "y": 4867,
+      "r": 48,
+      "label": "Quote history panel",
+      "meta": "PR · #9002 · active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+      "kind": "flight",
+      "stage": "flight.active",
+      "x": 2461,
+      "y": 4867,
+      "r": 48,
+      "label": "Quote history endpoint",
+      "meta": "PR · #9001 · active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003",
+      "kind": "flight",
+      "stage": "flight.active",
+      "x": 0,
+      "y": 4867,
+      "r": 48,
+      "label": "Make ledger writes idempotent",
+      "meta": "PR · #9003 · active",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+      "kind": "station",
+      "stage": "station.active",
+      "x": -2461,
+      "y": 5868,
+      "r": 150,
+      "label": "portal-web",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+      "kind": "station",
+      "stage": "station.active",
+      "x": 2461,
+      "y": 5868,
+      "r": 150,
+      "label": "ledger-svc",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:101",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Unified quote ledger",
+      "meta": "Feature · #101 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 379,
+      "y": 1224,
+      "r": 129,
+      "label": "Show quote history on the policy page",
+      "meta": "User Story · #201 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:202",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 1765,
+      "y": 1866,
+      "r": 71,
+      "label": "Export ledger entries to CSV",
+      "meta": "User Story · #202 · Closed",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:203",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -707,
+      "y": 3883,
+      "r": 132,
+      "label": "Reconcile ledger with billing nightly",
+      "meta": "User Story · #203 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:204",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -1943,
+      "y": 3776,
+      "r": 119,
+      "label": "Ledger search by policy number",
+      "meta": "User Story · #204 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:205",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": -1326,
+      "y": 3843,
+      "r": 121,
+      "label": "Archive ledger entries older than 7 years",
+      "meta": "User Story · #205 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:301",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 459,
+      "y": 2961,
+      "r": 116,
+      "label": "Duplicate ledger rows after retry",
+      "meta": "Bug · #301 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401",
+      "kind": "missionPoint",
+      "stage": "task.lit",
+      "x": 345,
+      "y": 1383,
+      "r": 11,
+      "label": "Add history endpoint",
+      "meta": "Task · #401 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:402",
+      "kind": "missionPoint",
+      "stage": "task.lit",
+      "x": 379,
+      "y": 1383,
+      "r": 11,
+      "label": "History panel UI",
+      "meta": "Task · #402 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:403",
+      "kind": "missionPoint",
+      "stage": "task.settled",
+      "x": 413,
+      "y": 1383,
+      "r": 11,
+      "label": "History API contract tests",
+      "meta": "Task · #403 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:404",
+      "kind": "missionPoint",
+      "stage": "task.settled",
+      "x": 1765,
+      "y": 1968,
+      "r": 11,
+      "label": "CSV column mapping",
+      "meta": "Task · #404 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:407",
+      "kind": "missionPoint",
+      "stage": "task.unstarted",
+      "x": 459,
+      "y": 3107,
+      "r": 11,
+      "label": "Idempotency key on retry",
+      "meta": "Task · #407 · New",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002|route|feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002|route|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001|route|feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001|route|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003|route|feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003|route|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:301",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:202|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:203|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:204|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:205|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:301|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401|routeContinuation|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "routeContinuation",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:408"
+     ],
+     "unlinked": [
+      "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "at": "2026-09-18T17:45:00.000Z",
+  "snapshot": {
+   "atUtc": 1789753500000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:51",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Modern quoting platform",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Nimbus Deck",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1786982400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:52",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Self-service billing",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Nimbus Deck",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1786982400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:101",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Unified quote ledger",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1788192000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:102",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Rate card editor",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1789423200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:103",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Quote PDF export",
+     "rawState": "Draft",
+     "category": "Proposed",
+     "stage": "feature.draft",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:104",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Agent dashboard refresh",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:52",
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:105",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Bulk policy import",
+     "rawState": "Deferred",
+     "category": "Proposed",
+     "stage": "feature.deferred",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:106",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Audit trail for quotes",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "feature.whiteDwarf",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "lastEventAt": 1787589000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:211",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Edit rate tables inline",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789423200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "lastEventAt": 1789423200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:212",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Rate card version history",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "story.surveyed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:213",
+     "type": "User Story",
+     "kind": "story",
+     "title": "PDF layout templates",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:103",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:221",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Dashboard KPI tiles",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812",
+     "assignedAt": 1787673600000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:222",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Saved dashboard filters",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:223",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Dashboard load under 2 seconds",
+     "rawState": "Resolved",
+     "category": "InProgress",
+     "stage": "story.developed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:231",
+     "type": "User Story",
+     "kind": "story",
+     "title": "CSV import validation",
+     "rawState": "Deferred",
+     "category": "Proposed",
+     "stage": "story.dormant",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:105",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:241",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Audit log viewer",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:242",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Audit export for compliance",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:311",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "KPI tiles show stale totals",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "lastEventAt": 1787673600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:201",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Show quote history on the policy page",
+     "rawState": "Resolved",
+     "category": "InProgress",
+     "stage": "story.developed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789402200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1789677000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:202",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Export ledger entries to CSV",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "story.lush",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789677000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1789677000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:204",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Ledger search by policy number",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1789657200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:205",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Archive ledger entries older than 7 years",
+     "rawState": "Ready",
+     "category": "Proposed",
+     "stage": "story.surveyed",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1787936400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:203",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Reconcile ledger with billing nightly",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1788376500000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:405",
+     "type": "Task",
+     "kind": "task",
+     "title": "Tile data service",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "lastEventAt": 1789664400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:406",
+     "type": "Task",
+     "kind": "task",
+     "title": "Tile accessibility pass",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1788451200000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "lastEventAt": 1788451200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:301",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Duplicate ledger rows after retry",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1788974400000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "lastEventAt": 1789498800000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:401",
+     "type": "Task",
+     "kind": "task",
+     "title": "Add history endpoint",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "task.lit",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789493400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:402",
+     "type": "Task",
+     "kind": "task",
+     "title": "History panel UI",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "task.lit",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789405200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:403",
+     "type": "Task",
+     "kind": "task",
+     "title": "History API contract tests",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "task.settled",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "lastEventAt": 1789581600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:404",
+     "type": "Task",
+     "kind": "task",
+     "title": "CSV column mapping",
+     "rawState": "Closed",
+     "category": "Completed",
+     "stage": "task.settled",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "lastEventAt": 1789056000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:407",
+     "type": "Task",
+     "kind": "task",
+     "title": "Idempotency key on retry",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d",
+     "assignedAt": 1789056000000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "lastEventAt": 1789056000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:408",
+     "type": "Task",
+     "kind": "task",
+     "title": "Spike: ledger sharding",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "task.unstarted",
+     "reopened": false,
+     "areaPath": "Nimbus Deck\\Comet Crew",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f",
+     "assignedAt": 1789657200000,
+     "parentKey": null,
+     "lastEventAt": 1789657200000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+     "title": "Quote history endpoint",
+     "status": "completed",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+     "title": "Make ledger writes idempotent",
+     "status": "completed",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+     "title": "Quote history panel",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+     "title": "Bump UI toolkit",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9005",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+     "title": "KPI tile data wiring",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:1dde267f-1cde-44ec-8fde-29a51ede2812"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:52",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:51",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:203",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:204",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:205",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:211",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:212",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:102",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:213",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:103",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:222",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:223",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:231",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:105",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:241",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:242",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:106",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:101",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:311",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:104",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:401",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:402",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:403",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:404",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:202",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:405",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:406",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:221",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:407",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:201",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9005",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:405",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:401",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:301",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11",
+    "atUtc": 1789753500000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:101",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 960,
+      "y": 522,
+      "r": 96,
+      "label": "Unified quote ledger",
+      "meta": "Feature · #101 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:102",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 522,
+      "r": 96,
+      "label": "Rate card editor",
+      "meta": "Feature · #102 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:103",
+      "kind": "star",
+      "stage": "feature.draft",
+      "x": -960,
+      "y": 522,
+      "r": 96,
+      "label": "Quote PDF export",
+      "meta": "Feature · #103 · Draft",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:104",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": -960,
+      "y": 0,
+      "r": 96,
+      "label": "Agent dashboard refresh",
+      "meta": "Feature · #104 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:105",
+      "kind": "star",
+      "stage": "feature.deferred",
+      "x": 960,
+      "y": 0,
+      "r": 96,
+      "label": "Bulk policy import",
+      "meta": "Feature · #105 · Deferred",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:106",
+      "kind": "star",
+      "stage": "feature.whiteDwarf",
+      "x": 0,
+      "y": 0,
+      "r": 56,
+      "label": "Audit trail for quotes",
+      "meta": "Feature · #106 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": 870,
+      "y": 652,
+      "r": 22,
+      "label": "Show quote history on the policy page",
+      "meta": "User Story · #201 · Resolved",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:202",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 1050,
+      "y": 652,
+      "r": 22,
+      "label": "Export ledger entries to CSV",
+      "meta": "User Story · #202 · Closed",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:203",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 794,
+      "y": 704,
+      "r": 22,
+      "label": "Reconcile ledger with billing nightly",
+      "meta": "User Story · #203 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:204",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 832,
+      "y": 678,
+      "r": 22,
+      "label": "Ledger search by policy number",
+      "meta": "User Story · #204 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:205",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": 1088,
+      "y": 678,
+      "r": 22,
+      "label": "Archive ledger entries older than 7 years",
+      "meta": "User Story · #205 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:211",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -90,
+      "y": 652,
+      "r": 22,
+      "label": "Edit rate tables inline",
+      "meta": "User Story · #211 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:212",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": 90,
+      "y": 652,
+      "r": 22,
+      "label": "Rate card version history",
+      "meta": "User Story · #212 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:213",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -960,
+      "y": 652,
+      "r": 22,
+      "label": "PDF layout templates",
+      "meta": "User Story · #213 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:221",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -1050,
+      "y": 130,
+      "r": 22,
+      "label": "Dashboard KPI tiles",
+      "meta": "User Story · #221 · Active",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:222",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": -870,
+      "y": 130,
+      "r": 22,
+      "label": "Saved dashboard filters",
+      "meta": "User Story · #222 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:223",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": -1088,
+      "y": 156,
+      "r": 22,
+      "label": "Dashboard load under 2 seconds",
+      "meta": "User Story · #223 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:231",
+      "kind": "planet",
+      "stage": "story.dormant",
+      "x": 960,
+      "y": 130,
+      "r": 22,
+      "label": "CSV import validation",
+      "meta": "User Story · #231 · Deferred",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:241",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Audit log viewer",
+      "meta": "User Story · #241 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:242",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 90,
+      "y": 130,
+      "r": 22,
+      "label": "Audit export for compliance",
+      "meta": "User Story · #242 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:301",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 1126,
+      "y": 704,
+      "r": 22,
+      "label": "Duplicate ledger rows after retry",
+      "meta": "Bug · #301 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:311",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": -832,
+      "y": 156,
+      "r": 22,
+      "label": "KPI tiles show stale totals",
+      "meta": "Bug · #311 · Active",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:201|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:202|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:203|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:204|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:205|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:211|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:212|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:213|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:221|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:222|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:223|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:231|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:241|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:242|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:301|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:119555a9-1095-4416-8f95-52830e9550f0:11|wi:00000000-0000-4000-8000-000000000001:311|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:408"
+     ],
+     "unlinked": [
+      "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004"
+     ]
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:101",
+    "atUtc": 1789753500000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|id:00000000-0000-4000-8000-000000000001:98fcede4-99fc-4f77-8afc-f10a9bfcf29d|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": -2418,
+      "y": 4739,
+      "r": 56,
+      "label": "Rafe Okoro",
+      "meta": "Captain · Rafe-AJ",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|id:00000000-0000-4000-8000-000000000001:e7f615d2-e8f6-4765-85f6-12ace6f6143f|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 1581,
+      "y": 375,
+      "r": 56,
+      "label": "Ava Lindqvist",
+      "meta": "Captain · Ava-3B",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002",
+      "kind": "flight",
+      "stage": "flight.active",
+      "x": 2461,
+      "y": 4864,
+      "r": 48,
+      "label": "Quote history panel",
+      "meta": "PR · #9002 · active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001",
+      "kind": "flight",
+      "stage": "flight.completed",
+      "x": -2461,
+      "y": 4864,
+      "r": 48,
+      "label": "Quote history endpoint",
+      "meta": "PR · #9001 · completed",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003",
+      "kind": "flight",
+      "stage": "flight.completed",
+      "x": 0,
+      "y": 4864,
+      "r": 48,
+      "label": "Make ledger writes idempotent",
+      "meta": "PR · #9003 · completed",
+      "meta2": "Mina Sato",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+      "kind": "station",
+      "stage": "station.active",
+      "x": 2461,
+      "y": 5868,
+      "r": 150,
+      "label": "portal-web",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+      "kind": "station",
+      "stage": "station.active",
+      "x": -2461,
+      "y": 5868,
+      "r": 150,
+      "label": "ledger-svc",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:101",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Unified quote ledger",
+      "meta": "Feature · #101 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": 1119,
+      "y": 1105,
+      "r": 129,
+      "label": "Show quote history on the policy page",
+      "meta": "User Story · #201 · Resolved",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:202",
+      "kind": "planet",
+      "stage": "story.lush",
+      "x": 1590,
+      "y": 950,
+      "r": 71,
+      "label": "Export ledger entries to CSV",
+      "meta": "User Story · #202 · Closed",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:203",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -1017,
+      "y": 3866,
+      "r": 132,
+      "label": "Reconcile ledger with billing nightly",
+      "meta": "User Story · #203 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:204",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 504,
+      "y": 3891,
+      "r": 119,
+      "label": "Ledger search by policy number",
+      "meta": "User Story · #204 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:205",
+      "kind": "planet",
+      "stage": "story.surveyed",
+      "x": -1635,
+      "y": 3813,
+      "r": 121,
+      "label": "Archive ledger entries older than 7 years",
+      "meta": "User Story · #205 · Ready",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:301",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 459,
+      "y": 2961,
+      "r": 116,
+      "label": "Duplicate ledger rows after retry",
+      "meta": "Bug · #301 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401",
+      "kind": "missionPoint",
+      "stage": "task.lit",
+      "x": 1085,
+      "y": 1264,
+      "r": 11,
+      "label": "Add history endpoint",
+      "meta": "Task · #401 · Active",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:402",
+      "kind": "missionPoint",
+      "stage": "task.lit",
+      "x": 1119,
+      "y": 1264,
+      "r": 11,
+      "label": "History panel UI",
+      "meta": "Task · #402 · Active",
+      "meta2": "Ava Lindqvist",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:403",
+      "kind": "missionPoint",
+      "stage": "task.settled",
+      "x": 1153,
+      "y": 1264,
+      "r": 11,
+      "label": "History API contract tests",
+      "meta": "Task · #403 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:404",
+      "kind": "missionPoint",
+      "stage": "task.settled",
+      "x": 1590,
+      "y": 1051,
+      "r": 11,
+      "label": "CSV column mapping",
+      "meta": "Task · #404 · Closed",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:407",
+      "kind": "missionPoint",
+      "stage": "task.unstarted",
+      "x": 459,
+      "y": 3107,
+      "r": 11,
+      "label": "Idempotency key on retry",
+      "meta": "Task · #407 · New",
+      "meta2": "Rafe Okoro",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002|route|feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9002|route|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001|route|feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9001|route|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003|route|feature:wi:00000000-0000-4000-8000-000000000001:101|repo:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|pr:00000000-0000-4000-8000-000000000001:c908d466-ca08-45f9-8708-d140c808d2d3:9003|route|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:301",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:202|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:203|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:204|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:205|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:301|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:401|routeContinuation|feature:wi:00000000-0000-4000-8000-000000000001:101|wi:00000000-0000-4000-8000-000000000001:201",
+      "kind": "routeContinuation",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [
+      "wi:00000000-0000-4000-8000-000000000001:408"
+     ],
+     "unlinked": [
+      "pr:00000000-0000-4000-8000-000000000001:9924f4bd-9824-432a-8724-f1979624f004:9004"
+     ]
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,20 @@
+{
+  "item": "E9",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "A directed camera for Solar episodes with a director. It eases toward each daily climax's cast (from PlannedManeuver.climax) as its gather starts (900 ms, up to 1.5x the fit, centre clamped inside the cast's bounds). It returns to the fitted board at montage beats, at the first beat after a climax, and at the end. It owns the camera only while the camera's target is still what it asked for, so a seek snaps a held shot to the board and leaves user or other camera moves alone. Follow, framing off, reduced motion and a held click all stop it. New climaxFrame (framing.ts), camera.target, ChartApp direct*/directedCamera, playback.ts pending shot, two test hooks (03 §10), a 15 §10 row, 05 §6/§2/P-22/R-1 text, a unit test, an e2e spec and a drive step for gate stills.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 0, "track": 1, "sum": 4 },
+  "needs": null,
+  "notes": [
+    "Interpretation 1 (the orchestrator may want to log it in the block note): the camera returns to the board at the first beat after a climax, as well as at montage. Pulsar has no montage beats (E5b: the montage lever saves 0 s there), so a montage-only return would leave the camera zoomed for the rest of the day and beats would play off-screen.",
+    "Interpretation 2: 'A seek lands on the fitted board (no stale camera)' is read as the director's camera. A seek snaps to the board when the director's last shot still holds (the camera's target unchanged since). A camera the user or follow moved is left as today. Snapping every seek would undo users' own zooms, and the existing specs that call setCamera then seek (solar-play's station spots) rely on that.",
+    "The montage half of the e2e uses Quasar: Pulsar has no montage beats. The climax and seek halves use Pulsar, as the acceptance says.",
+    "Amends 03 §10 (two test hooks: shots(), directedCamera()) and 03's framing.ts seam bullet. The 27 Touches line names 05 §6 only; 15 §9 and §10 and 05 §2, §8.5c and §8.10 also change.",
+    "Also pulls back at the episode's end (recap) when a climax shot holds, so the finale isn't zoomed. This is beyond the Decided line, and it is small.",
+    "Score: blast 1 (a behaviour change in every directed Solar episode while playing, nothing persisted), verify 1 (e2e decides target and seek; the feel needs the gate's stills), design 1 (settled here; the zoom factor and the post-climax return are choices the human may revisit), acceptance 0 (both lines are executable e2e checks), track 1 (E6b to E8 passed first time at medium, E5a and E5c did not; a camera item has no history). Sum 4, medium. About 8 source and test files plus 3 docs, so no split."
+  ]
+}

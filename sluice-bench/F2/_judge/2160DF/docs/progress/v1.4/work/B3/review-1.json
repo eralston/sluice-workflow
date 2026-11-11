@@ -1,0 +1,12 @@
+{ "item": "B3", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "Both acceptance lines met. Gold rests within 10% of red and blue (unit test). Every close variant, including both arcs and beamed, flares to about 0.95 and settles smoothly in about 1.6 s, with none under reduced motion and no console errors. Three nits only.",
+  "findings": { "blocker": 0, "major": 0, "minor": 0, "nit": 3 },
+  "checks": [
+    { "cmd": "npm run typecheck && npm run lint && npm test", "pass": true, "detail": "clean; 96 files, 1423 tests passed" },
+    { "cmd": "npm run e2e:spec -- gallery-assets", "pass": true, "detail": "4 of 4, including the three victories test (43.4 s); errors []" },
+    { "cmd": "npm run e2e:spec -- gallery-v1 gallery-layout", "pass": true, "detail": "6 of 6" },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "throwaway probe (scratchpad): flare hook series over every close demo variant", "pass": true, "detail": "objective.accomplish 0.94, :arc 0.94, threat.accomplish 0.95, :arc 0.95, :beamed 0.94, seat.complete 0.94; each decays smoothly to 0; errors []; stills copied as review-1-*-arc-flare.png" },
+    { "cmd": "throwaway probe (scratchpad): outline-flare cell gold-pixel brightness over 20 s", "pass": true, "detail": "a periodic rise about every 4 s, then back to rest; stills review-1-outline-flare-{peak,rest}.png" }
+  ] }

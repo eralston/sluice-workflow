@@ -1,0 +1,40 @@
+{
+  "findings": [
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "When the summoner's next sortie is waiting (P4), the pass's leg on still flies toward the ship's rest, not its next place, so the ship gets about 93% of the way home before the next sortie turns it back out.",
+      "kept": true,
+      "why": "movers.ts:316 targets goalOf (rest) and :339 onS stretches to waitS+0.4 while interpreter.ts:701 passes waitS, so the leg runs home until takeover; the arithmetic follows. [Was Major. 2026-11-10, the user: one behaviour, one severity. The pass glides to its rest even when a next sortie waits; the real F2 shipped it, signed off with no escape (its packet left the hand-off at speed to F3). Scored a Minor in every run.]",
+      "class": "next-sortie"
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "A guest summoner gets no call blip and stands still at the spot for the flight-plus-ride window.",
+      "kept": true,
+      "why": "stationJumpIn.ts:49-52 builds the blip only when present(c,'agent')[0] exists; the guest branch (:40) has a single durS of gather+ride at spot."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The passing summoner's plate is shown 2840 ms from the act but the planner reserves attention only until 2515 ms.",
+      "kept": true,
+      "why": "interpreter.ts:620 sets closeMs = openMs+PASS_PLATE_MS, while maneuvers.ts:310/380/568 holdsCrew excludes passes so durMs drops the crew hold and heldMs (:621) uses durMs."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "The regenerated candidates ledger now says E1 makes every pod longer; the E1 model still puts the retired 300 ms tell back.",
+      "kept": true,
+      "why": "scripts/pacing-candidates.ts:238 still has ['tell',300] against the new F2 baseline, and pacing-candidates.json carries many new 'longer than the baseline' flags."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "solar-dense's parked-while-named check leaves out summoners by event kind link_pr_added only, though pr_opened/pr_completed summons are allowed too, and it hides every non-summon link plate.",
+      "kept": true,
+      "why": "solar-dense.spec.ts:463 filters on startsWith('link_pr_added'); docs/05-playback.md:716 M-13 allows an opening, a merge or a link, so the filter is both narrow and broad."
+    }
+  ]
+}

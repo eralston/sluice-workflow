@@ -1,0 +1,16 @@
+{ "item": "block-B", "role": "fixer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "solar.spec.ts:352 is not a B1-B4 regression: on a clean checkout of c212105 (B4) the full solar describe passes 2 of 2 (37 passed each); no code or test change made.",
+  "findings": [
+    { "id": "review B4 'not a finding': solar.spec.ts:352 fails in full describe", "action": "no change (not reproducible on clean tree)",
+      "detail": "In the shared main tree (dirty with C2/C4 in-flight edits) the test failed 3 times with varying symptoms: pick() found no seated+frontier pair once, and twice the frontier click selected a neighbouring piece (wi:...:20141 instead of 20132) although the pointer hover showed the right plate and elementFromPoint was the canvas. In a throwaway worktree at clean c212105, `npm run e2e:spec -- solar` passed twice (37 passed, incl. :352) and `e2e:keystone` passed (43; one earlier keystone run had 1 unattributed failure, not repeated). So the cause is the working tree's uncommitted edits or timing noise, not B1 (T4 rest), B2 (one-line plate, list grace) or B3/B4. The 22bde78 baseline run was killed by the orchestrator restart, so no per-commit bisect was completed; unnecessary given HEAD passes." }
+  ],
+  "checks": [
+    { "cmd": "npm run e2e:spec -- solar (clean worktree c212105) x2", "pass": true, "detail": "37 passed both times" },
+    { "cmd": "npm run e2e:keystone (clean worktree c212105)", "pass": true, "detail": "43 passed on rerun; first run 1 failed, unidentified" },
+    { "cmd": "npm run e2e:spec -- solar (main tree, dirty)", "pass": false, "detail": "failed at :352 / :397 / 2 failed in three runs; tree held other agents' uncommitted src/main, src/preload, pacing edits" }
+  ],
+  "files": [],
+  "deviations": ["Ran solar and keystone in a clean worktree rather than the main tree, because the main tree is changing under other agents. Worktrees removed; temporary DBG edit to solar.spec.ts reverted."],
+  "limitations": ["Cannot rule out a real intermittent hit-test vs hover mismatch (click selected a different piece than hovered); it did not appear in 2 clean runs. If :352 fails again on a clean tree, investigate the Pixi press hit-test vs hover pick."]
+}

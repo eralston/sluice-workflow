@@ -1,0 +1,29 @@
+{
+  "item": "E4",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Three sequential builds from one packet: E4a (U1: the first merge's transform begins at its gather via a new DreadnoughtView.beginTransform, the variant shortens 11100 -> 7900 with act 2300 so the station fires as the 4.4 s Wars transform ends), E4bc (P3: a holds-only wait overlaps its tell and gather with the predecessor's echo and disperse; P4: a captain's next sortie sets off as their last one leaves, and waits parked up to STAY_NEAR_MS instead of flying home, via nearWaits and Sortie.waitS), E4d (P7: PaceRule.short forms at SHORT_PACE 0.6 for every protected rule and beamed variant, none for `first`, unused until E5). The ledger gets E4a-E4d Built rows through new BuiltItem.inputs/after hooks and an engine SequenceOptions switch.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "split": [
+    { "id": "E4a", "part": "U1", "files": ["src/shared/engine/pace.ts", "src/renderer/src/theme/starChart/maneuvers/powerLink.ts", "src/renderer/src/theme/starChart/assets/facility.ts", "src/renderer/src/chart/art/dreadnoughts.ts", "src/renderer/src/theme/starChart/assets/standby.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts", "docs 15 §7, 13 §4.4 §6, 05 M-1, 03"] },
+    { "id": "E4bc", "part": "P3 + P4", "files": ["src/shared/engine/maneuvers.ts", "src/shared/engine/limelight.ts", "src/renderer/src/chart/fx/v1/interpreter.ts", "src/renderer/src/chart/fx/movers.ts", "src/renderer/src/chart/fx/commands.ts", "scripts/pacing-ledger.ts", "scripts/pacing-candidates.ts", "scripts/pacing-built.ts", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts", "docs 05 §8.5, 15 §10, 13 §4.4, 03"] },
+    { "id": "E4d", "part": "P7", "files": ["src/shared/engine/pace.ts", "tests/unit/docTables.test.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts", "docs 15 §7 §10, 05 P-19, 03"] }
+  ],
+  "notes": [
+    "Split for size (about 20 files over three parts that each change the schedule), not for risk class: each part is medium on its own. Order E4a -> E4bc -> E4d: the P3 test uses the new first-variant length, and E4d excludes `first`.",
+    "U1 departs from C2's E4a model (act 3500, 2.0 s saved) with act 2300 (3.2 s saved per first merge): 300 + 900 + 2300 + 500 + LINK_CHARGE_MS 700 = 4700 = the Wars transform's end from the gather. The station fires off the energy chain as on any merge, 0.7 s later. The ledger's Built row shows the difference.",
+    "U1 needs an art change: the morph is driven by the stage's form change, and the dock act (a ship-form stage at the act's start) would interrupt a morph begun early. beginTransform plus a `leading` guard in retarget, and settleForm() on StationView.settle (seek, scene entry) so a seek mid-merge snaps to the stage (INV-15). The look still lands at the land, so stages, seek and play are unchanged.",
+    "P3 is read as the code's ACTING roles ('share no actor at the act'): only holds-only waits overlap, as in C2's model (E4b about 0 s). The liberal reading (overlap even when sharing a subject) was not chosen: it would put one piece's next tell during its previous echo and needs the human to want it.",
+    "P4's schedule start is the predecessor's leave minus the next one's tell, not C2's crew close: C2's start lets the next sortie take the ship over mid-fold, and crew() reads the new sortie, so the plate would snap shut. It saves about 60% of C2's E4c estimate. In practice it binds only between non-protected sorties (blocks still holds protected pairs).",
+    "P7 gives `first` no short form (once per station, floored by the transform); the director (E5) picks short forms through shortForm(rule, variant). E5 will need to plan with them (a PlanOptions field); that is E5's.",
+    "SequenceOptions is an engine switch the app never sets: it lets the ledger's Built section undo P3 or P4 alone, which the acceptance's 'each part's saving per pod' needs. It threads through limelightOf so the counterfactual is consistent.",
+    "Goldens: none expected to move (the schedule goldens are v0 schedules without Solar hooks; solar goldens are plans and scenes). The acceptance line 'the packet names every change' is met by naming the moved unit expectations (:236, :276, :427, :493, :800) and the regenerated ledger files.",
+    "03 is amended (PaceRule.short?, PlanOptions/PacingOptions.sequence?, PursueArgs.waitS?, nearWaits, the first variant, station-form 'played' at the gather): normative, each build must call it out.",
+    "Track record mixed: E1 failed first review on a docs table, E2's build was blocked once on parking, E3 passed."
+  ]
+}

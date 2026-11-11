@@ -1,0 +1,49 @@
+{
+  "item": "E2",
+  "role": "builder",
+  "round": 1,
+  "verdict": "blocked",
+  "summary": "Built all ten Approach steps; unit, typecheck, lint and gate pass. But plates opening at the act (step 5) break an existing e2e, solar-dense 'a captain's turn ... (22 B9)': a parked captain stands over its work's plate in 16% of samples (limit 5%). It passes on the start commit, so it is caused by this change. The fix is outside the packet (parking), so I stopped.",
+  "blocked_reason": "A sortie chooses its parking spot with clearOfPlate (commands.ts:197), which needs the work's plate rect (labels.rectOf) when it first asks. Before E2 the piece's plate opened 500 ms before the maneuver started, so the rect was known during the flight and the captain parked clear of it (22 B9, PARK_TURNS). With plates opening at the act (R11), the ship has already arrived and parked at the first choice when the plate appears, so it sits over the plate. Needs a decision: (a) predict the plate's rect before it shows (labels.rectOf returns null for a hidden plate), (b) let a parked ship re-pick once the plate appears (it would move while named; the same test caps that at 12 px), or (c) relax the 5% bound. Each is a parking or label-layer change the packet doesn't list.",
+  "checks": [
+    { "name": "vitest (packet's mapped list: maneuvers, castLabels, limelight, scheduleHooks, docTables, pacing, pacingCandidates, pacingBuilt, solarSeek, sceneplay)", "result": "pass (after regenerating the ledger and editing the 15 rows)" },
+    { "name": "gate: typecheck, lint, npm test", "result": "pass (1500 unit tests)" },
+    { "name": "e2e solar-play", "result": "pass (6)" },
+    { "name": "e2e solar", "result": "pass except the same test, solar-dense 'captain's turn' (30 pass, 1 fail; the run spans both specs)" },
+    { "name": "e2e solar-dense", "result": "FAIL 1 of 10: 'a captain's turn: named once parked ...' overWork/opens = 0.162 (< 0.05 expected). Passes on 274c737 (verified by stashing src). The attention case (at most four labels, each matching its History row) passes." },
+    { "name": "e2e keystone", "result": "not run (stopped at the blocker)" },
+    { "name": "drive c11-labels --paradigm solar", "result": "pieces: 0 labels before arrival, after play and after seek. 4 captain samples at the first frame: also present on the start commit in 2 of 3 runs (a flake, not E2)." },
+    { "name": "stills", "result": "work/E2/stills.ts ran on Meridian's Convoy Planning Pod at 1x; output test-results/drive/stills: 01-flight-four-labels.png, 02-parked-plates.png. Detection is the lit-plate plus acting-captain count reaching four; it does not prove a particular captain is mid-flight, so judge by eye." }
+  ],
+  "pods_total_ms": {
+    "note": "committed pacing-ledger.json at 274c737 (before) vs regenerated (after) vs C2 estimate saving",
+    "Comet Pod": { "before": 66665, "after": 66665, "saved": 0, "c2": 0 },
+    "Nova Pod": { "before": 238955, "after": 238955, "saved": 0, "c2": 0 },
+    "Quasar Pod": { "before": 1075780, "after": 1075780, "saved": 0, "c2": 0 },
+    "Pulsar Pod": { "before": 696755, "after": 695955, "saved": 800, "c2": 800 },
+    "Convoy Planning Pod": { "before": 200485, "after": 196385, "saved": 4100, "c2": 4100 },
+    "Harbor Pod": { "before": 212335, "after": 211435, "saved": 900, "c2": 1200 }
+  },
+  "files_changed": [
+    "src/shared/engine/maneuvers.ts (claimMs export; crewTimes uses it; attentionFrom in claim windows)",
+    "src/renderer/src/chart/fx/v1/interpreter.ts (plates open at claimMs; tell lights none; toldTag and the retire loop removed)",
+    "src/renderer/src/chart/fx/timing.ts (CAST_LABEL_LEAD_MS removed)",
+    "src/renderer/src/chart/fx/v1/castLabels.ts (comments only)",
+    "scripts/pacing-ledger.ts (claim anchor in bindingOf)",
+    "scripts/pacing-candidates.ts (claim-anchored waits advance by 0; E2 assumption prefixed 'Built (E2)')",
+    "docs/progress/v1.4/pacing-{ledger.json,ledger.md,candidates.json,built.json} (regenerated)",
+    "tests/unit/maneuvers.test.ts (new 27 E2 test; existing expectations moved at the budget test's start offsets and window, the merge test's `o.afterMs`, and the captain-queue test's window: all use claim windows and held minus claim)",
+    "docs/05-playback.md (P-6, A-3, A-4), docs/15-reference.md (NOTE_MIN_MS and ATTENTION_MAX rows edited, CAST_LABEL_LEAD_MS row deleted, linger row carries its text), docs/03-contracts.md, docs/13-game-design.md",
+    "docs/progress/v1.4/work/E2/stills.ts"
+  ],
+  "deviations": [
+    "03 is normative and amended: 'Pieces' labels in play' now says `tell` opens no windows and `play` opens one from the act. This departs from the 2026-10-13 text; the block note should call it out.",
+    "Step 9's fallback was not needed: E1's exact Built check in pacingBuilt.test.ts still passes after regeneration.",
+    "The linger row in 15 §10 took over the text of the deleted lead row (where plates start and the note), since the lead row was the only place it was stated."
+  ],
+  "limitations": [
+    "The captain's-turn e2e failure above is unresolved.",
+    "The one-hold-per-person queue (crewBusy) is unchanged; I did not check whether a waiting sortie that now sets off early could cross a same-captain hold. The unit test for it passes.",
+    "The c11 captain-at-first-frame count is a pre-existing flake; not touched."
+  ]
+}

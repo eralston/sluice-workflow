@@ -1,0 +1,27 @@
+{
+  "item": "F2",
+  "arm": "A1",
+  "run": 2,
+  "start": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "commit": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "base": "61e49587326f4dab605a1afe09b2e48f431f9fd3",
+  "startedAt": "2026-11-10T10:27:20.101Z",
+  "clone": "/Users/amorgan/sluice-bench/F2/A1-2/clone",
+  "lockHash": "a979ce9326d1",
+  "userSettingsHash": "eb70016eb1ab18db",
+  "models": {
+    "opus": "claude-opus-5-5",
+    "sonnet": "claude-sonnet-5-5",
+    "haiku": "claude-haiku-5-5"
+  },
+  "node": "v24.22.1",
+  "tz": "UTC",
+  "launch": {
+    "permissionMode": "auto",
+    "maxBudgetUsd": 20,
+    "model": "claude-opus-5-5",
+    "prompt": "/sluice run docs/27-v1.4.md F\n\nItem F2 only; stop after it's accepted and committed; no block audit. Nobody is watching this run, so no one can answer a question. If you need a decision, take it from docs/27-v1.4.md's Decisions where they cover it; otherwise use your judgment and record the decision where the item's record goes. Fixture data only (INV-18); never a real PAT; the app never writes to ADO. Never push.",
+    "launchedAt": "2026-11-10T10:27:20.180Z"
+  },
+  "endedAt": "2026-11-10T12:02:54.875Z"
+}

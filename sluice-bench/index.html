@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bench stills, side by side (blind)</title>
+  <link rel="stylesheet" href="viewer/viewer.css">
+</head>
+<body>
+  <header>
+    <h1>Stills, blind</h1>
+    <button class="prev" title="Previous title (←)">←</button>
+    <span class="title"></span>
+    <button class="next" title="Next title (→)">→</button>
+    <span class="pos"></span>
+    <span class="spacer"></span>
+    <label>Columns <input class="cols" type="range" min="1" max="5" value="3"></label>
+    <span class="rated pos"></span>
+    <button class="export" title="Download your ratings as human.json">Export ratings</button>
+  </header>
+  <main></main>
+  <footer>← / → move between titles · click a still to zoom, Esc to close · 0–3 rates it (0 wrong or unreadable, 1 weak, 2 good, 3 excellent). The letters are random per run and the same on every title; the key isn't loaded here.</footer>
+  <script src="viewer/data.js"></script>
+  <script src="viewer/viewer.js"></script>
+</body>
+</html>

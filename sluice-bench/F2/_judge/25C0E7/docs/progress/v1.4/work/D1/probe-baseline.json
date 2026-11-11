@@ -1,0 +1,30 @@
+[
+  {
+    "pod": "Pulsar Pod",
+    "merge": {
+      "startMs": 46940,
+      "label": "rates-sync"
+    },
+    "samples": 150,
+    "plateHits": 0,
+    "shipHits": 0,
+    "worst": {
+      "n": 0,
+      "at": 0
+    }
+  },
+  {
+    "pod": "Pulsar Pod",
+    "merge": {
+      "startMs": 62440,
+      "label": "booking-mobile"
+    },
+    "samples": 150,
+    "plateHits": 0,
+    "shipHits": 0,
+    "worst": {
+      "n": 0,
+      "at": 0
+    }
+  }
+]

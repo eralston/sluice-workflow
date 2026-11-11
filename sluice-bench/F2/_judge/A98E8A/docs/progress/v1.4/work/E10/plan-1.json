@@ -1,0 +1,20 @@
+{
+  "item": "E10",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Late-day montage: a new director step e2 folds routine repeats to montage in rising tempo's tight end, even under the cap and before the levers. The tight end is RISING_TIGHT_SHARE = 0.7, read through risingShare: p >= 2/3, or the last day on short sprints. p is the schedule's chapter count, from the new chapterPs/inTightEnd helpers in schedule.ts, taken over the beats the director's estimate keeps; the probe found these equal to the played beats on all six pods. Lever 2 and the new step share one eligibility helper. It is not listed as a lever, so B-23's dense test is unchanged. lateMontage:false is the ledger's before, and every earlier Built row runs with it. A new E10 Built row. montage-names.spec.ts walks every pod with plate-lit montage beats, from a MONTAGE_BEATS list that a unit test pins to planOf.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "notes": [
+    "Probe at db74d6b: the director's estimate-kept beats equal the schedule's played beats on all six pods (same T, same p). Under the cap, the only routine repeats are Nova's 2 (p 1/8 and 5/8, outside the tight end), Convoy Planning's 4 (p 7/9 and 1) and Harbor's 1 (p 1). Expected change: Convoy Planning and Harbor shorten; Comet, Nova, Quasar and Pulsar don't move. Comet has no back-to-back repeat in a day, so the Decided line's 'Comet included' changes nothing on it.",
+    "Choice (the human may revisit at the final check): the tight end is p >= 2/3, i.e. share <= 0.7, with a 1e-9 tolerance because risingShare(2/3) evaluates to 0.7000000000000001. On Nova that leaves 2026-09-21 (p 5/8) out.",
+    "Choice: D0 (volleysOf's first director pass) runs the late-day montage too, so the volleys are measured on the pass that plays. Harbor's one volley could in principle shift. The build record reports it.",
+    "Found in planning: montage-names.spec.ts claims to cover 'every montage beat of Quasar' but lists 5 of its 13 plate-lit montage beats, and Pulsar's 4 are unguarded. The packet extends the guard to all 13, plus Pulsar, Convoy Planning and Harbor, pinned by a unit test. If a beat that predates E10 fails to draw its note, the builder stops and reports: labels.ts is out of scope, and the orchestrator decides.",
+    "Amends 03 (directorOf's late parameter, VolleyOptions.late, PacingOptions.lateMontage, the chapterPs/inTightEnd helpers). The 27 Touches line doesn't list 03 or playback/constants.ts. The constant sits beside the other RISING_* constants.",
+    "Score: blast 1 (the shared director in every Solar episode, nothing persisted). Verify 1 (unit tests and the ledger decide the rule; the e2e guard checks notes on screen; Comet's feel is for the gate). Design 1 (settled here; the threshold and D0 are choices). Acceptance 1 (the ledger line is a report). Track 1 (E8 and E9 passed review first time, E9 after a needs-decision fix; E5a and E5c didn't). Sum 5, so medium. About 11 source and test files plus 4 docs and the regenerated ledger, one cohesive change, so no split."
+  ]
+}

@@ -1,0 +1,10 @@
+{ "item": "C2", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "C2 meets its acceptance: `npm run pacing -- --candidates` writes a ranked table per pod plus a six-pod matrix with Comet first, every row names its saving in s and %, and states its assumption. C1's output is unchanged (append-only md hunk, json untouched), the output is deterministic (fresh build equals committed json), and gate checks are clean. Two Minors: the P rows are optimistic upper bounds and the md does not say so, and Comet's E5 0.0 s in the matrix does not say it is not exercised. The ranking is not affected.",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 4 },
+  "checks": [
+    {"cmd": "npx vitest run tests/unit/pacingCandidates.test.ts tests/unit/pacing.test.ts", "pass": true, "detail": "8/8"},
+    {"cmd": "vite-node probe: buildCandidates() vs committed pacing-candidates.json", "pass": true, "detail": "byte-identical"},
+    {"cmd": "git diff edaa526 pacing-ledger.md / .json", "pass": true, "detail": "one append-only hunk of 176 lines, json untouched: C1 output unchanged"},
+    {"cmd": "npx tsc --noEmit; npx eslint scripts/pacing*.ts tests/unit/pacingCandidates.test.ts", "pass": true, "detail": "clean"}
+  ] }

@@ -1,0 +1,32 @@
+{
+  "item": "C3", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "The auraBake cut cuts Pulsar p95 by about 48% (hard check passes), but the look gate fails, so it ships OFF in all four profiles; options for HG-C are in profile-note.md.",
+  "checks": [
+    {"cmd": "npm run typecheck; npm run lint; npm test", "pass": true, "detail": "99 files, 1462 tests"},
+    {"cmd": "e2e:spec perf profile", "pass": true, "detail": "7 passed; cuts test: 1x off 33.4 on 17.6 (47%), 4x off 34.0 on 17.6 (48%), median of 3 alternating rounds, same run"},
+    {"cmd": "e2e:spec slice3b solar solar-dense gallery-v1 profile", "pass": true, "detail": "61 passed; goldens untouched (switch ships off)"},
+    {"cmd": "e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "drive c3-aura-diff --paradigm solar (Harbor Pod)", "pass": false, "detail": "worst p99 109/255 (limit 12), worst max 140 (limit 64); the 1-2 px rim ring differs, visually near-identical; moving pixels masked"},
+    {"cmd": "drive c1-contrast --paradigm solar, C1_AURABAKE=off vs on", "pass": false, "detail": "keyed medians live vs baked: blue 4.03/5.76/5.31 vs 2.63/3.87/3.60; red 5.20/5.45/4.95 vs 3.27/3.47/3.43; gold 4.80/5.24/4.89 vs 3.39/3.73/3.53 (limit 0.1): baked outline reads about 1.4-1.9 lower"},
+    {"cmd": "drive probe-gpu.ts", "pass": true, "detail": "4x: draws 885 to 184, passes 404 to 8.5; p95 33.4 to 17.6"}
+  ],
+  "files": [
+    "src/renderer/src/chart/art/aura.ts (this round: phase-compensated bake, lastM/shift/phase)",
+    "config/profiles/{desktop,laptop-battery,phone,tablet}.json (auraBake set to false)",
+    "tests/unit/profile.test.ts", "tests/e2e/perf.spec.ts (ensurePulsar, CUT_GAIN_MIN, CUTS, cuts test)",
+    "tests/e2e/profile.spec.ts (Pulsar flip case)", "tests/drive/steps/c3-aura-diff.ts (mask moving pixels)",
+    "docs/15-reference.md", "docs/09-signal-ladder.md", "tests/README.md", "docs/progress/v1.4/work/C3/profile-note.md"
+  ],
+  "deviations": [
+    "Packet step 8 on a failed look gate: switch kept, default set to false in the four JSONs, unit test and 15 §11 rows updated to off. One fix attempt (phase-compensated rasterisation) brought p99 from 245 to 109 but not under 12.",
+    "c3-aura-diff now masks pixels that move between two live shots (satellites orbit even when paused); without it the live-vs-live noise alone exceeded the limit.",
+    "docs/progress/v1.4/work/block-AB/ was untracked before this round and is not mine."
+  ],
+  "limitations": [
+    "devicePixelRatio 2 check and the HG-C probes (BlurFilter quality 1, glow dropped) were not run.",
+    "Baked rim is dimmer than live; cause not settled (see profile-note options).",
+    "The perf hard check sets the switch explicitly, so it passes with the default off; the three absolute Pulsar lines stay soft and run with the default (off).",
+    "Moving auras (hive ships) are snapped to the pixel grid when baked: up to half a pixel of jitter."
+  ]
+}

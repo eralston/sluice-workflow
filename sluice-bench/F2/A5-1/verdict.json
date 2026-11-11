@@ -1,0 +1,35 @@
+{
+  "findings": [
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "A summoner whose ship is new this beat (the K-13 jump, `flash`) still comes to a stop at the spot and then lurches on: `jumpIn` eases out to rest at outS, and the coast then starts at once at `v0 = turnR / JUMP_IN_S`. That is the stop-and-go F2 was meant to remove, plus a jump in speed.",
+      "evidence": "src/renderer/src/chart/fx/movers.ts:276 (`const k = 1 - (1 - u) ** 3;` in jumpIn, so speed is 0 at u=1) and :316 (`let v0 = turnR / JUMP_IN_S; // a jump arrives at rest: coast on the jump's own time scale`); updatePass uses jumpIn for t < outS at :327. The unit tests only build Sorties with jump=false (tests/unit/commands.test.ts:552, :576)."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "Test (c), 'the blip and the station's act start within 50 ms', can't fail in any meaningful way. The blip ring and `cmd.act(f.key,'jump')` come back from the same `act()` call, so they're simultaneous by construction, and the stub scene never moves the ship (`placeAt` is a no-op). The test finds the blip by its unmoved 0,0 point and never checks that the summoner is at the spot when the blip fires, which is the correlation the Asked is about.",
+      "evidence": "tests/unit/commands.test.ts:180 (`placeAt: () => {}` in stubScene), :612 (`rings.find((l) => l.endsWith(' 0,0') || l.includes(' ring 7.00 '))`); stationJumpIn.ts act() returns `[callRing(a ? a.at : ...), cmd.act(f.key, 'jump'), ...]` in one list."
+    },
+    {
+      "severity": "Nit",
+      "rules": false,
+      "summary": "The F2+ test comment names the start commit as 2b33931, but no such object exists. The start commit is 61e4958.",
+      "evidence": "tests/unit/pacingBuilt.test.ts:163 `the start commit (2b33931)`; `git cat-file -t 2b33931` → `fatal: Not a valid object name 2b33931`"
+    },
+    {
+      "severity": "Nit",
+      "rules": false,
+      "summary": "In test (b), the `openBefore` accumulator `Math.min(openBefore, 0) + crewOpen(...)` only keeps the last sample before 0.7 s, so it doesn't show the plate stayed shut for the whole flight.",
+      "evidence": "tests/unit/commands.test.ts:562 `if (t < 0.7) openBefore = Math.min(openBefore, 0) + sortie.crewOpen(0.52);`"
+    }
+  ],
+  "acceptance": {
+    "1": "met as far as can be checked: tests/e2e/gallery-assets.spec.ts adds a jump-in cell test that runs full and reduced motion, checks no stuck loops and `errors` is empty. The judge didn't run e2e.",
+    "2": "met, weakly: (a) and (b) show a pass pursue with no hold that keeps moving and ends at goalOf; (c) checks the blip is within 50 ms of the jump, but that holds by construction (see findings). vitest passes.",
+    "3": "met: 15 §7 row is 2515 (= 715+1200+600, matching pace.ts), docTables, golden, pacing and director suites pass; director.json estimates/tempos moved; the packet itself was stripped so its naming of each change can't be checked.",
+    "4": "met: pacing-built.json and pacing-ledger.md gain F2 and F2+ rows for all 7 pods (Meteor included); F2+ before matches the start commit's ledger (asserted); F2+ Pulsar shows a 1.8 s cost from the tempo re-fit."
+  },
+  "summary": "The change does what was decided: the summon drops its tell and held turn, the pursue passes through the spot and goes on to the next sortie or the rest, the blip and the arrival share hue and ring shape, and the planner/renderer read `passes` from the plan; 03, 05, 13 and 15 are in step, and typecheck and the unit and golden suites pass. What's left is minor: a summoner new this beat still stops briefly at the spot, and the 50 ms blip test is close to a tautology."
+}

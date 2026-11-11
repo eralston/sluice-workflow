@@ -1,0 +1,23 @@
+:root { color-scheme: dark; --bg: #0b1424; --panel: #13203a; --ink: #e8e4d6; --dim: #93a0b8; --accent: #f2c14e; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.4 -apple-system, system-ui, sans-serif; }
+header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 16px; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid #24335a; }
+header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+header .title { font: 600 18px/1 ui-monospace, Menlo, monospace; color: var(--accent); }
+header .pos { color: var(--dim); }
+header button { background: #1d2c4d; color: var(--ink); border: 1px solid #33467a; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 14px; }
+header button:hover { border-color: var(--accent); }
+header .spacer { flex: 1; }
+header label { color: var(--dim); display: flex; gap: 6px; align-items: center; }
+main { display: grid; gap: 12px; padding: 12px; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); }
+figure { margin: 0; background: var(--panel); border: 1px solid #24335a; border-radius: 8px; overflow: hidden; }
+figure.zoomed { position: fixed; inset: 56px 12px 12px; z-index: 3; display: flex; flex-direction: column; }
+figure.zoomed img { flex: 1; object-fit: contain; min-height: 0; }
+figure img { display: block; width: 100%; height: auto; cursor: zoom-in; background: #000; }
+figcaption { display: flex; align-items: center; gap: 10px; padding: 6px 10px; }
+figcaption .letter { font: 700 20px/1 ui-monospace, Menlo, monospace; color: var(--accent); width: 1.4em; }
+figcaption .code { color: var(--dim); font: 12px ui-monospace, Menlo, monospace; }
+figcaption .rate { margin-left: auto; display: flex; gap: 4px; }
+figcaption .rate button { width: 28px; height: 26px; border-radius: 5px; border: 1px solid #33467a; background: #1d2c4d; color: var(--ink); cursor: pointer; }
+figcaption .rate button.on { background: var(--accent); color: #1a1a1a; border-color: var(--accent); font-weight: 700; }
+footer { color: var(--dim); padding: 0 16px 16px; font-size: 12px; }

@@ -1,0 +1,19 @@
+# Packaging for the release workflow (.github/workflows/ci.yml). Unsigned builds.
+appId: io.github.amorgan.star-chart
+productName: Star Chart
+directories:
+  output: dist
+files:
+  - out/**
+  - package.json
+mac:
+  target: dmg
+  category: public.app-category.developer-tools
+  artifactName: star-chart-${version}-mac.${ext}
+win:
+  target: nsis
+  artifactName: star-chart-${version}-win-setup.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true

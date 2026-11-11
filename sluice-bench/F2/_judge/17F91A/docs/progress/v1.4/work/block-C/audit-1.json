@@ -1,0 +1,15 @@
+{ "item": "block-C", "role": "auditor", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "No Blocker or Major. Four Minors: the ornament switch gates ornament commands but not the ornament-tier light-work maneuver (two gates, one switch); C3 found the live rim ignores RIM_ALPHA, but 15's row and B3's auraContrast model still assume it (at alpha 1 the model puts gold 10.8% from blue); profile.spec claims the effects cap and ornament but asserts only paint; 14 §2.9 and 03 (buildHighlights signature, the --star-chart-profile argument) lag the profile contract. Three Nits. The committed pacing ledger reproduces byte-identical at HEAD.",
+  "findings": { "blocker": 0, "major": 0, "minor": 4, "nit": 3 },
+  "checks": [
+    { "cmd": "git show edaa526 ecac64c f318980 e567dfe 7a79302 a42a986 2cccce3 (src, tests, scripts, config, docs)", "pass": true, "detail": "read every C diff; B commits between left out; committed state only (a block A/B fixer is editing the working tree)" },
+    { "cmd": "git archive 2cccce3 into the scratchpad; npx vite-node -c vitest.config.ts scripts/pacing.ts --candidates", "pass": true, "detail": "pacing-ledger.md, pacing-ledger.json, pacing-candidates.json byte-identical to the committed files (Comet 67.3 s, Pulsar 702.0 s)" },
+    { "cmd": "npx vitest run profile docTables auraContrast pacing pacingCandidates golden/schedule (snapshot)", "pass": true, "detail": "6 files, 91 tests passed" },
+    { "cmd": "grep ornament / CALM / BUSY across src/renderer/src/chart/fx and src/shared/engine/pace.ts", "pass": false, "detail": "interpreter.ts:479-484 maneuver gate ignores the switch; agentLight (pace.ts:524) is ornament tier" },
+    { "cmd": "node docs/progress/v1.4/work/block-C/probe-rim-alpha.mjs ffc76b", "pass": false, "detail": "auraContrast model at RIM_ALPHA 0.8: gold-blue 9.5%; at 1 (C3's measured live rim): 10.8%, outside B3's 10%" },
+    { "cmd": "compare config/profiles/*.json with 15 §11 profile-desktop and profile-deltas", "pass": true, "detail": "every value matches, auraBake off/off/on/on" },
+    { "cmd": "grep BUDGET_MS|HIGHLIGHT_BUDGET_MS|MAX_ACTIVE_FX|VSYNC_TOLERANCE_MS|45_?000|30_?000 in src scripts", "pass": true, "detail": "none left outside 'was X' comments" },
+    { "cmd": "grep profile/ProfileState/star-chart-profile in docs/03, docs/14", "pass": false, "detail": "14:465-472 stale (no auraBake, 'Nothing consumes it yet'); 03:1705 buildHighlights lacks hier, budgetMs; 03 never names --star-chart-profile=" },
+    { "cmd": "no e2e, drive, gallery or build run", "pass": true, "detail": "lean audit on code, records and a snapshot; findings rest on code and recorded measurements" }
+  ] }

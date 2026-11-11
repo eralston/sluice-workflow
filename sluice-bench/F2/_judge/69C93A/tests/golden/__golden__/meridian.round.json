@@ -1,0 +1,592 @@
+{
+ "sceneKey": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101",
+ "atUtc": "2026-10-05T06:59:59.999Z",
+ "nodes": [
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003",
+   "kind": "star",
+   "stage": "feature.active",
+   "x": -420,
+   "y": 0,
+   "r": 96,
+   "label": "Convoy Planning Pod",
+   "meta": "37 items",
+   "counts": {
+    "objective": 28,
+    "threat": 9,
+    "done": 18
+   }
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive0",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -262,
+   "y": -29,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive1",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -226,
+   "y": -3,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive2",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -226,
+   "y": -29,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive3",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -262,
+   "y": -3,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive4",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -244,
+   "y": -16,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive5",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -262,
+   "y": -89,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive6",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -226,
+   "y": -63,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive7",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -226,
+   "y": -89,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|hive8",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": -262,
+   "y": -63,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock0",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -601,
+   "y": -26,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock1",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -573,
+   "y": -6,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock10",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -601,
+   "y": -142,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock11",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -573,
+   "y": -122,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock12",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -573,
+   "y": -142,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock13",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -601,
+   "y": -122,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock14",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -587,
+   "y": -132,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock15",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -601,
+   "y": -200,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock16",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -573,
+   "y": -180,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock17",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -573,
+   "y": -200,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock18",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -601,
+   "y": -180,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock19",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -587,
+   "y": -190,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock2",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -573,
+   "y": -26,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock20",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -675,
+   "y": -26,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock21",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -647,
+   "y": -6,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock22",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -647,
+   "y": -26,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock23",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -675,
+   "y": -6,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock24",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -661,
+   "y": -16,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock25",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -675,
+   "y": -84,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock26",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -647,
+   "y": -64,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock27",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -647,
+   "y": -84,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock3",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -601,
+   "y": -6,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock4",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -587,
+   "y": -16,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock5",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -601,
+   "y": -84,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock6",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -573,
+   "y": -64,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock7",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -573,
+   "y": -84,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock8",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -601,
+   "y": -64,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|rock9",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": -587,
+   "y": -74,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:134d4e5a-144d-4fed-814d-4b34124d4cc7",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|accomplished|c=Completed|sh=1.00",
+   "x": -466,
+   "y": 173,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:22759b0a-2375-4c9d-8075-97e421759977",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|underway|c=InProgress|sh=0.40",
+   "x": -374,
+   "y": 173,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:42b5de5b-41b5-4cc8-84b5-e18143b5dfee",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|underway|c=InProgress|sh=0.60",
+   "x": -553,
+   "y": 157,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:7154e7b5-7054-4622-8f54-e48f6e54e2fc",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|underway|c=InProgress|sh=0.20",
+   "x": -287,
+   "y": 157,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:921f0216-931f-43a9-801e-fef0911f0083",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|nearing|c=Resolved|sh=0.75",
+   "x": -627,
+   "y": 126,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:aa01be48-ab01-4fdb-8c01-c16ead01c301",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|underway|c=InProgress|sh=0.35",
+   "x": -213,
+   "y": 126,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:b3450ce2-b445-4e75-8145-09bcb2450b4f",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|underway|c=InProgress|sh=0.50",
+   "x": -683,
+   "y": 84,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:c88169cd-c781-483a-8681-66a7c5816514",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|ready|c=Proposed|sh=0.00",
+   "x": -196,
+   "y": 186,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:d2f01eca-d3f0-405d-80f0-1ba4d1f01d37",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|ready|c=Proposed|sh=0.00",
+   "x": -157,
+   "y": 84,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:deb6a37b-ddb6-41e8-80b6-a6a1dfb6a50e",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|underway|c=InProgress|sh=0.50",
+   "x": -420,
+   "y": 228,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:ee3bb9f0-ef3b-4b83-803b-bd16f13bbea9",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|ready|c=Proposed|sh=0.00",
+   "x": -537,
+   "y": 217,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:f2ead242-f3ea-43d5-80ea-cf1cf1ead0af",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|underway|c=InProgress|sh=0.50",
+   "x": -303,
+   "y": 217,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57004",
+   "kind": "star",
+   "stage": "feature.accept",
+   "x": 420,
+   "y": 0,
+   "r": 96,
+   "label": "Signals Pod",
+   "meta": "3 items",
+   "counts": {
+    "objective": 2,
+    "threat": 1,
+    "done": 1
+   }
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57004|preview|hive0",
+   "kind": "threat",
+   "asset": "threat",
+   "stage": "v1|threat|ready|c=Proposed",
+   "x": 578,
+   "y": -29,
+   "r": 15,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57004|preview|rock0",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": 239,
+   "y": -26,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57004|preview|rock1",
+   "kind": "objective",
+   "asset": "objective",
+   "stage": "v1|objective|ready|c=Proposed",
+   "x": 267,
+   "y": -6,
+   "r": 11,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57004|preview|seat|id:00000000-0000-4000-8000-000000000001:02cb0cd8-03cb-4e6b-84cb-0ffe05cb1191",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|nearing|c=Resolved|sh=0.50",
+   "x": 374,
+   "y": 173,
+   "r": 27,
+   "label": ""
+  },
+  {
+   "pk": "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57004|preview|seat|id:00000000-0000-4000-8000-000000000001:c88169cd-c781-483a-8681-66a7c5816514",
+   "kind": "seat",
+   "asset": "seat",
+   "stage": "v1|seat|nearing|c=Resolved|sh=0.00",
+   "x": 466,
+   "y": 173,
+   "r": 27,
+   "label": ""
+  }
+ ],
+ "edges": [
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:134d4e5a-144d-4fed-814d-4b34124d4cc7|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:22759b0a-2375-4c9d-8075-97e421759977|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:42b5de5b-41b5-4cc8-84b5-e18143b5dfee|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:7154e7b5-7054-4622-8f54-e48f6e54e2fc|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:921f0216-931f-43a9-801e-fef0911f0083|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:aa01be48-ab01-4fdb-8c01-c16ead01c301|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:b3450ce2-b445-4e75-8145-09bcb2450b4f|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:c88169cd-c781-483a-8681-66a7c5816514|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:d2f01eca-d3f0-405d-80f0-1ba4d1f01d37|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:deb6a37b-ddb6-41e8-80b6-a6a1dfb6a50e|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:ee3bb9f0-ef3b-4b83-803b-bd16f13bbea9|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57003|preview|seat|id:00000000-0000-4000-8000-000000000001:f2ead242-f3ea-43d5-80ea-cf1cf1ead0af|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57004|preview|seat|id:00000000-0000-4000-8000-000000000001:02cb0cd8-03cb-4e6b-84cb-0ffe05cb1191|orbit",
+  "sprint:iter:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57101|area:00000000-0000-4000-8000-000000000001:1b1f1ca7-1a1f-4b14-8d1f-1fcd1c1f1e3a:57004|preview|seat|id:00000000-0000-4000-8000-000000000001:c88169cd-c781-483a-8681-66a7c5816514|orbit"
+ ]
+}

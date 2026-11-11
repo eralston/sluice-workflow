@@ -1,0 +1,22 @@
+/* The guided tour (23 E7, 06 §9): R1 holo plates, the chart's own glass, cyan line and ring. */
+.tour { position: absolute; inset: 0; z-index: 15; pointer-events: none; }
+.tour__lines { position: absolute; inset: 0; overflow: visible; }
+.tour__ring { fill: none; stroke: var(--holo-lift-line, #7fe3ff); stroke-width: 1.5; filter: var(--holo-lift-frame-glow); animation: tour-pulse 1.8s ease-in-out infinite; }
+.tour__leader { fill: none; stroke: var(--holo-lift-line, #7fe3ff); stroke-width: 1; filter: var(--holo-lift-frame-glow); }
+.tour__plate, .tour-offer {
+  position: absolute; pointer-events: auto; box-sizing: border-box; padding: 12px 14px;
+  background: var(--holo-glass, rgba(5, 19, 31, 0.86)); border: 1px solid var(--holo-lift-line, #7fe3ff);
+  border-radius: 4px; color: var(--holo-lift-title, #d4f7ff); filter: var(--holo-lift-frame-glow);
+  display: grid; gap: 6px;
+}
+.tour__count { margin: 0; font-size: 11px; color: var(--holo-lift-sub, #8fb6c2); }
+.tour__title { margin: 0; font-size: 14px; font-weight: 600; text-shadow: var(--holo-lift-text-glow); }
+.tour__body, .tour-offer__text { margin: 0; white-space: normal; font-size: 12.5px; line-height: 1.5; color: var(--holo-t1-title, #d4f7ff); }
+.tour__wait { margin: 0; }
+.tour__actions { display: flex; gap: 8px; justify-content: flex-end; align-items: center; margin-top: 4px; }
+.tour__actions .enter-link { margin-top: 0; min-height: 44px; min-width: 44px; padding: 0 12px; width: auto; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; }
+.tour-offer { left: 50%; bottom: 44px; transform: translateX(-50%); width: 380px; z-index: 16; position: fixed; }
+.tour-offer .muted { margin: 0; }
+@keyframes tour-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+@media (prefers-reduced-motion: reduce) { .tour__ring { animation: none; } }
+.tour--reduced .tour__ring { animation: none; }

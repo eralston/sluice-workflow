@@ -1,0 +1,17 @@
+{
+  "item": "E1",
+  "role": "reviewer",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "fix needed",
+  "summary": "Code, cuts, mute rule and Built ledger are right and acceptance 2 and 3 pass, but 15 §8's commands table has its Meaning and Looks like cells swapped in every row (acceptance 1), docTables lacks the packet's non-empty Meaning check, and 05 M-14 and 13 :605 still describe the retired tender tractor.",
+  "findings": { "blocker": 0, "major": 1, "minor": 2, "nit": 0 },
+  "checks": [
+    { "cmd": "npx vitest run commands docTables maneuvers pacingCandidates pacing stationArrival pacingBuilt", "pass": true, "detail": "7 files / 154 tests" },
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar-play", "pass": true, "detail": "gallery maneuver demos in full and reduced motion, no console errors; solar-play cases pass" },
+    { "cmd": "git show 552d631:docs/progress/v1.4/pacing-candidates.json (E1 savingMs per pod)", "pass": true, "detail": "585/585/4680/5265/1755/1755 match pacing-built.ts estimateMs" }
+  ]
+}

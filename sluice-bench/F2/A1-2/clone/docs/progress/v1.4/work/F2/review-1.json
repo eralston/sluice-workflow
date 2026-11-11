@@ -1,0 +1,15 @@
+{
+  "item": "F2", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "Acceptance met. The summon passes, its blip and the arrival share hue and shape at the act's start, 2515 ms with docs and goldens matching, and the ledger has F2/F2+ rows for all seven pods. Two Minors: the pass path can come to rest and reverse when home is in line past the spot, and the F2+ test is looser than the packet (Pulsar F2+ costs 1.8 s through the director's tempo re-fit).",
+  "findings": { "blocker": 0, "major": 0, "minor": 2, "nit": 2 },
+  "checks": [
+    { "cmd": "npm run -s typecheck", "pass": true, "detail": "clean" },
+    { "cmd": "npm run -s lint", "pass": true, "detail": "clean" },
+    { "cmd": "npm test --silent", "pass": true, "detail": "109 files, 1726 tests" },
+    { "cmd": "npm run e2e:spec -- gallery-assets solar-dense solar solar-play", "pass": true, "detail": "run 1: 34 passed, 2 failed (solar.spec galaxy click not stable; solar-dense four-label budget saw 5 once), 14 not run. Re-runs: solar-dense alone 21/21 passed; all four specs 50/50 passed. The Meteor 1024x640 failure is F1's expected test.fail." },
+    { "cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed" },
+    { "cmd": "node docs/progress/v1.4/work/F2/probe/pass.mjs", "pass": false, "detail": "probe of passPoint: home 0.05-0.2·d past the spot in line reverses (min speed ~0.07-0.09 mid on-leg); the U-turn, side and 90-degree cases never rest" },
+    { "cmd": "git diff --numstat 61e4958 -- pacing-built.json pacing-candidates.json; director.json diff", "pass": true, "detail": "pacing-built +126/-0; candidates no diff; director.json estimateMs/tempo only" }
+  ]
+}

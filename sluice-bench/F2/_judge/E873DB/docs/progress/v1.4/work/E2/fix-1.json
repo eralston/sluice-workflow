@@ -1,0 +1,25 @@
+{
+  "item": "E2",
+  "role": "fixer",
+  "round": 1,
+  "verdict": "fixed",
+  "summary": "Took the orchestrator's option (a): a hidden piece plate now carries a predicted rect, so a sortie's clearOfPlate sees where the plate will stand and parks once, clear of it.",
+  "findings": [
+    {
+      "id": "build-1 blocker",
+      "severity": "Blocker",
+      "action": "fixed",
+      "detail": "src/renderer/src/chart/labels.ts: new Label.predicted, set each frame in the hidden branch for a piece (labelOnHover) with a non-vertical holo plate, as the first holoCandidates rect from the same anchor and direction the placement uses (size: measured w/h, else PREDICT_W x PREDICT_H = 190x56). rectOf returns predicted while the plate is hidden, else the placed rect. No change to commands.ts or the maneuvers; the ship still picks once."
+    }
+  ],
+  "checks": [
+    { "name": "typecheck, lint", "result": "pass" },
+    { "name": "npm test", "result": "pass (1500)" },
+    { "name": "e2e solar-dense (all 20, incl. 'a captain's turn' 22 B9)", "result": "pass" },
+    { "name": "e2e:keystone", "result": "pass (43)" }
+  ],
+  "limitations": [
+    "The prediction is the plate's first-choice place; if the live placement later takes another because of a collision, the ship may be over it. The 5% bound held in the run. Unmeasured plates use a 190x56 estimate.",
+    "The full npm run e2e was not run (orchestrator's step before handing back); solar and solar-play specs were not re-run after this change."
+  ]
+}

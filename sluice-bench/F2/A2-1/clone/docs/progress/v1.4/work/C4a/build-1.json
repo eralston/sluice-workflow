@@ -1,0 +1,63 @@
+{
+  "item": "C4a",
+  "role": "builder",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "medium",
+  "verdict": "done",
+  "checks": [
+    {
+      "cmd": "npm run -s typecheck",
+      "pass": true,
+      "detail": "clean"
+    },
+    {
+      "cmd": "npm run -s lint",
+      "pass": true,
+      "detail": "clean"
+    },
+    {
+      "cmd": "npm test --silent",
+      "pass": true,
+      "detail": "99 files, 1458 tests; goldens and docTables unchanged in value; new profile.test.ts and profile-desktop check pass"
+    },
+    {
+      "cmd": "with-lock npm run build",
+      "pass": true,
+      "detail": "main, preload (profile argv parse) and renderer bundle"
+    },
+    {
+      "cmd": "with-lock npm run e2e:spec -- settings",
+      "pass": true,
+      "detail": "8 passed (first attempt killed by the session restart, rerun green)"
+    }
+  ],
+  "files": [
+    "config/profiles/{desktop,laptop-battery,tablet,phone}.json",
+    "src/shared/contracts/profile.ts",
+    "src/shared/profile/bundled.ts",
+    "src/shared/profile/resolve.ts",
+    "src/main/profile.ts",
+    "src/main/index.ts",
+    "src/preload/index.ts",
+    "src/shared/contracts/ipc.ts",
+    "src/renderer/src/profile.ts",
+    "src/renderer/src/settings/tabs/Theme.tsx",
+    "tests/unit/profile.test.ts",
+    "tests/unit/docTables.test.ts",
+    "docs/03-contracts.md",
+    "docs/14-architecture.md",
+    "docs/15-reference.md",
+    "tests/README.md"
+  ],
+  "deviations": [
+    "15 section 11 adds a second marked table, profile-deltas, listed in UNGUARDED (as the packet said); its Guard line says the values are not checked against the files.",
+    "The 15 section 10 rows were NOT retargeted (BUDGET_MS etc. still exist); that is C4b/C4c. Section 11 says so."
+  ],
+  "limitations": [
+    "Nothing reads the profile yet (C4a by design); no e2e case for the launch argument beyond the Settings spec passing. The pinned/override path is covered by unit tests only; the phone e2e is C4c.",
+    "Label caps and a holo-filter switch are left out of the schema on purpose (packet).",
+    "The Device profile fieldset has no dedicated e2e assertion (data-testid=device-profile exists); C4c's profile.spec covers the notice."
+  ],
+  "summary": "Device profile schema, four bundled JSONs, pure resolver, main loader, preload env.profile, renderer profile.ts, Settings display, tests and docs 03/14/15; nothing reads it yet."
+}

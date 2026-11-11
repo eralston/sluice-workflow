@@ -1,0 +1,41 @@
+{
+  "findings": [
+    {
+      "severity": "Major",
+      "rules": false,
+      "summary": "When a next sortie is waiting (the P4 hand-off this item enables), the summoner is never named for the summon: the sortie retires the Pass at the blip, and the summon's crew window then reads the new Sortie's crewOpen, which is 0 for its whole out leg. The Decided's 'plate rides with the ship for NOTE_MIN_MS' (R14) fails, and the engine still reserves attention budget for a plate that never shows.",
+      "evidence": "Engine hands off at the blip: maneuvers.ts crewBusy `nearStartMs(p.startMs, p.pass ? 0 : workEndOf(p.phases), releaseOf(p)=claimMs, gatherAtOf(d.phases))`, proven by the new maneuvers.test 'their next sortie sets off at the blip'. Renderer: movers.ts FxRunner.move retires `prev` (the Pass) when the sortie's pursue starts. interpreter.ts:281-283 `m instanceof Sortie || m instanceof Pass ? m.crewOpen(...) : 0` then reads the Sortie, and movers.ts:352-354 Sortie.crewOpen returns 0 while `h = t - outS < 0`. castLabels.ts:103-108: the latest window already begun is the pass's (from = claim), and `open = flown ?? own` = 0, so the plate is hidden until the next sortie's own window. heldMs still counts `passNoteMs` for the pass (maneuvers.ts heldMs)."
+    },
+    {
+      "severity": "Minor",
+      "rules": true,
+      "summary": "Normative 03 gives a pass's crewTimes closeMs as claim + NOTE_MIN_MS − CREW_FOLD_MS, but the code returns claim + CREW_FOLD_MS + NOTE_MIN_MS. That is 1040 ms apart (1280 vs 2320 ms past the claim).",
+      "evidence": "docs/03-contracts.md:1501 `a pass: { openMs: claim, closeMs: claim + NOTE_MIN_MS − CREW_FOLD_MS, leaveMs: claim }` vs src/shared/engine/maneuvers.ts:85 `if (pass) return { openMs, closeMs: openMs + CREW_FOLD_MS + NOTE_MIN_MS, leaveMs: openMs };` (NOTE_MIN_MS = 1800, CREW_FOLD_MS = 520; maneuvers.test asserts the code's form)."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The solar-dense 'captain's turn' e2e now marks any captain episode whose plate carries a summoning event's key as a pass. That exempts it from the parked, CREW_OPEN_MIN_MS and not-over-its-work checks, so a first merge's or link's whole formation (same event key as its facility.enter) is no longer checked for parking.",
+      "evidence": "tests/e2e/solar-dense.spec.ts: `const pass = summons.has(a.key)` (key = the plate's data-event-key), `if (pass) list.at(-1)!.pass = true; // a summon and its merge or link share their event`, `if (a.over && !pass) overWork++`, `const whole = seen.filter((e) => !e.pass)`. M-13's trigger includes 'a merge or a link' (05 §8)."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "F2's small saving pushes Pulsar's directed run over a lever cliff: it no longer pulls 'light' and plays its non-climax beats at TEMPO_MAX 2× instead of 1.1×. Meteor's directed run gets 8.2 s longer. The ledger's F2+ Pulsar row reports this as a 1.7 s saving, which hides how much faster the episode plays.",
+      "evidence": "tests/golden/__golden__/director.json Pulsar: levers `[short, montage, speed, light]` → `[short, montage, speed]`, `tempo: 1.1` → `2`, `light: 72` removed, estimate 294434 → 298298. director.ts:232-250 (speed tried to TEMPO_MAX before light). docs/progress/v1.4/pacing-ledger.md:584 `F2+ ... Pulsar Pod | 288.8 | 287.1 | 1.7` and :587 `F2+ ... Meteor Pod | 284.7 | 292.9 | -8.2`."
+    },
+    {
+      "severity": "Minor",
+      "rules": false,
+      "summary": "The new Pass mover (two Hermite legs, carried velocity into a Sortie, plate ownership past the second leg) has no unit test. The acceptance's 'no hold between its flight and its next place' is checked only on the pursue command's arguments (pass: true, holdS absent), not on the path the ship actually flies.",
+      "evidence": "`grep -rln \"new Pass\\|PASS_ON_MIN_S\\|takeCarried\" tests src` → only src/renderer/src/chart/fx/commands.ts and movers.ts. tests/unit/commands.test.ts F2 test asserts `a.pass`, `a.holdS ?? 0`, `a.backS` undefined."
+    }
+  ],
+  "acceptance": {
+    "1": "partial: the gallery builds a cell for every rule (maneuverDemos.ts), so the jump-in cell plays the new choreography in both modes, but no gallery or e2e run is shown, so 'no console errors' is unverified",
+    "2": "met with caveats: commands.test checks the pass pursue has no hold, wait or fly-back and that the blip, jump act and station ring fall within 50 ms of the gather's end; maneuvers.test checks release at the claim and no near-wait; the mover itself is untested",
+    "3": "mostly met: the 15 §7 row is 1915 (715 + 1200) and docTables passes; director.json is updated and golden tests pass; whether the packet names each change can't be checked (records stripped); 03's crewTimes line disagrees with the code",
+    "4": "met: pacing-ledger.md has F2 (undirected) and F2+ (directed) rows for all seven pods; every undirected pod saves (0.9–24.3 s), and directed Meteor shows −8.2 s"
+  },
+  "summary": "The change does what the item asks in the engine and the choreography: facility.enter shrinks to gather plus act, its captain is released at the blip and never parked, the blip and the arrival share one ring shape and hue at the act's start, and the docs, 15 rows, goldens and ledger are brought along (typecheck and the touched unit and golden suites pass). The weak spot is the hand-off the item enables: when a next sortie takes over at the blip, the summoner's plate never shows. It also has a normative 03 line that doesn't match crewTimes, an e2e check loosened too broadly, and a director cliff on Pulsar that the ledger's saving hides."
+}

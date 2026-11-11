@@ -1,0 +1,30 @@
+{
+  "item": "E5",
+  "role": "planner",
+  "round": 1,
+  "model_tier": "medium",
+  "effort": "high",
+  "verdict": "planned",
+  "summary": "Three sequential builds from one packet. E5a: a pure directorOf pass (engine/director.ts) gives each moment a form (full, short, progress) and marks each day's climax. The rules: closing merges by B-12's last-merge test within 24 working hours, progress beams otherwise, hero shots, the daily climax, monotony to short, and trade-down to short over a 300 s target, estimated as an upper bound. It is carried on Limelight.direction, so seek and play read one pass with no renderer glue. E5a also derives the short forms from shared constants, makes beamed-short fire its stations, adds gallery short cells and an E5a Built row. E5b: montage the routine and adaptive speed (beat tempo, clock and motion rate, the ledger's wall time). E5c: light work for more rules and fewer hero shots.",
+  "tier": "medium",
+  "score": { "blast": 1, "verify": 1, "design": 1, "acceptance": 1, "track": 1, "sum": 5 },
+  "needs": null,
+  "split": [
+    { "id": "E5a", "part": "the pass: forms, hero shots, daily climax, monotony, short over the target", "files": ["src/shared/engine/director.ts (new)", "src/shared/engine/maneuvers.ts", "src/shared/engine/limelight.ts", "src/shared/engine/pace.ts", "src/shared/playback/schedule.ts", "src/shared/contracts/playback.ts", "src/shared/contracts/maneuver.ts", "src/renderer/src/theme/starChart/maneuvers/landing.ts", "src/renderer/src/theme/starChart/maneuvers/strikeRun.ts", "src/renderer/src/gallery/maneuverDemos.ts", "scripts/pacing-ledger.ts", "scripts/pacing-built.ts", "scripts/pacing-candidates.ts", "tests/unit/director.test.ts (new)", "tests/golden/director.test.ts (new)", "tests/unit/maneuvers.test.ts", "tests/unit/pacingBuilt.test.ts", "tests/drive/steps/e5-director.ts (new)", "docs 05 §8.5c + M-30, 15 §7 §10, 13 §6, 03, tests/README.md"] },
+    { "id": "E5b", "part": "levers 1-2: montage the routine, adaptive speed", "files": ["src/shared/engine/director.ts", "src/shared/engine/maneuvers.ts", "src/shared/contracts/playback.ts", "src/shared/contracts/maneuver.ts", "src/shared/playback/schedule.ts", "src/shared/playback/clock.ts", "src/renderer/src/playback.ts", "src/renderer/src/chart/fx/commands.ts", "src/renderer/src/chart/fx/v1/interpreter.ts", "scripts/pacing-ledger.ts", "tests (director, tempo/replay, pacing, pacingBuilt)", "docs 05 P-23, 15 §10 TEMPO_MAX, 03"] },
+    { "id": "E5c", "part": "levers 3-4: light work for more rules, fewer hero shots", "files": ["src/shared/engine/director.ts", "src/shared/engine/maneuvers.ts", "src/shared/contracts/playback.ts", "scripts/pacing-built.ts", "tests/unit/director.test.ts", "tests/unit/pacingBuilt.test.ts", "docs 05 P-23, 03"] }
+  ],
+  "notes": [
+    "Split for size: E5a alone is about 18 files with docs. Order E5a -> E5b -> E5c follows HG-C's lever order, so each build's ledger shows how far the earlier levers got. E5's acceptance line 2 (Pulsar inside 300 s) needs the levers: the E4d ceiling (everything short) leaves Pulsar at 562.9 s.",
+    "For the orchestrator: HG-C's Comet yardstick is 67.3 s (C1), but E1-E4 already took Comet to 61.8 s (-8.2%). The packet reads 'its measured length' as 61 845 ms, the ledger at the start commit; E5a leaves Comet unchanged. If the human meant 67.3 s, acceptance line 2 is unmeetable by shortening alone: confirm it in 27's Decisions, or raise it at the final check.",
+    "The closing-merge test is B-12's (the last merge serving a piece within 24 working hours of its close), not engine arcs. Halcyon's pods have no same-beat arcs, so the arcsOf reading would make every non-first merge a beam (C2's E5 model). The probe: progress beams on Comet 0, Nova 1, Quasar 34, Pulsar 9, Convoy 0, Harbor 0, and no hero shots needed.",
+    "The direction rides on Limelight (Limelight.direction), not a new BeatSchedule field and hook. The limelight already reaches play, tell and the ledger from one schedule, so seek and play can't diverge, and playback.ts, playHooks.ts and v1/plan.ts stay as they are. schedule.ts must stop spotlightsOnTurns dropping it. 03 is amended.",
+    "The target estimate is an upper bound: kept beats (a moment or High) at GAP_MIN_MS gaps. That is what the schedule does over its 45 s budget, which is always the case past a 5 min target. A real re-layout per lever was not chosen: up to six schedule passes on scene entry (Quasar's build is about 140 ms warm).",
+    "A progress beam from a merge is always named (a directed draft), so every moment names its ADO cause (PA-Q3) and solar-dense's History agreement holds. It stays narrative tier as E3 decided, so under OVERLOAD the renderer may drop it; History still lists it.",
+    "Montage (E5b) is read as 'each named in History and on one note': a moment in a run of its kind plays short, unnamed crew, no held turn, and one plate (PlannedManeuver.plate). Folding beats together was not chosen: it would change grouping, B-15 and the ruler.",
+    "Adaptive speed (E5b) is a clock tempo per beat (x unchanged, wall pace faster), not scaled phases. Fixed art timings (the 700 ms charge, the 1.2 s glide, the 4.4 s transform) stay in step, as at the user's own 2x, and INV-15 holds by construction.",
+    "The target is a constant (DIRECTOR_TARGET_MS, a 15 §10 row) with a PacingOptions.targetMs override, not a device-profile value. HG-C set one cap for every pod and device, and the hierarchy's pacing hook doesn't see the profile. The user's memory prefers profile budgets for perf numbers; this is a story-pacing target, so it is noted in Out of scope rather than built.",
+    "The packet is about 3,100 words, over the 2,000 guide: three parts share it, as E4's did.",
+    "Track record mixed: E1 failed its first review (docs table), E2 was blocked once, E3 and E4a-E4d passed first time at medium."
+  ]
+}

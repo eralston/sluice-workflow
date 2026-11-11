@@ -1,0 +1,25 @@
+{
+  "item": "E3", "role": "builder", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "done",
+  "summary": "Progress beam: agent.progress rule (never matches), progressBeam choreography, mine gains scale, gallery cell replaying a fixture merge, docs rows, tests.",
+  "checks": [
+    {"cmd": "npx vitest run maneuvers commands docTables pacingCandidates pacingBuilt solarSeek", "pass": true, "detail": "6 files, 169 tests passed; existing tests untouched, one-of-every-rule sum under budget"},
+    {"cmd": "npm run typecheck; npm run lint; npm test", "pass": true, "detail": "102 files, 1503 tests passed (after the 05 §8.4 note, see deviations)"},
+    {"cmd": "npm run e2e:spec -- gallery-assets solar-play", "pass": true, "detail": "10 passed, including the maneuver-demo spec at 17 rules with agent.progress present, full and reduced motion, no console errors"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "npm run pacing", "pass": true, "detail": "Ran without --candidates, which rewrote pacing-ledger.md without its Candidates section; restored with git checkout. No other golden or ledger moved."}
+  ],
+  "files": [
+    "src/shared/engine/pace.ts", "src/renderer/src/theme/starChart/maneuvers/progressBeam.ts", "src/renderer/src/theme/starChart/maneuvers/index.ts",
+    "src/renderer/src/theme/starChart/commands.ts", "src/renderer/src/gallery/maneuverDemos.ts",
+    "tests/unit/maneuvers.test.ts", "tests/e2e/gallery-assets.spec.ts",
+    "docs/15-reference.md", "docs/13-game-design.md", "docs/05-playback.md"
+  ],
+  "deviations": [
+    "docs/05-playback.md: added one 'not yet scheduled' sentence before 8.4(d) naming agent.progress. rulebook.test.ts requires every PACE_RULES id to appear in 05 §8.4; the packet put 05 §8 rules out of scope (no M-row added), so this is a note only."
+  ],
+  "limitations": [
+    "The Look check (watching the Progress beam cell in npm run gallery, full motion and R) was NOT done by eye: this environment has no display. The e2e gallery spec proves the cell loops, issues commands, clears, and logs no console errors in both motion modes. Which aim it draws (asteroid or enemy ship) and from which fixture merge was not observed; the human gate should look. The cell is the first planned pod-sprint merge with a target on the after board.",
+    "Beam flare uses the packet's values; the mine scale change keeps sheath, kerf, debris and ore unscaled as specified."
+  ]
+}

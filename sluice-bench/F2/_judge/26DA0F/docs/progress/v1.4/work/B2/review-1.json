@@ -1,0 +1,11 @@
+{ "item": "B2", "role": "reviewer", "round": 1, "model_tier": "medium", "effort": "medium",
+  "verdict": "pass",
+  "summary": "The one-line resting plate, the in-place open list (openK, resting k never written while open), the reservation, Inspector and doc amendments all meet acceptance. Probes on Quasar and Pulsar at rest show one line with +N more, payments-sync and search-api visible, and the plate above. One Minor: the drive walk's rest stills are taken with the star selected, so they show the open list.",
+  "findings": { "blocker": 0, "major": 0, "minor": 1, "nit": 3 },
+  "checks": [
+    {"cmd": "npm run typecheck; npm run lint; vitest featureRow docTables", "pass": true, "detail": "clean; 47 passed"},
+    {"cmd": ".claude/sluice/with-lock.sh npm run e2e:spec -- demo solar", "pass": true, "detail": "50 passed, incl. the Quasar, overlap, Pulsar and Harbor cases"},
+    {"cmd": "npm run e2e:keystone", "pass": true, "detail": "43 passed"},
+    {"cmd": "GALLERY_FAMILY=labels e2e:spec -- gallery-v1", "pass": true, "detail": "1 passed"},
+    {"cmd": "npm run drive -- work/B2/probe-rest.ts (Quasar, Pulsar), select(null) first", "pass": true, "detail": "one line + '+N more', side above; the pointed Quasar list opens upward and covers the two station plates while open"}
+  ] }

@@ -1,0 +1,2250 @@
+[
+ {
+  "at": "2026-09-15T16:00:00.000Z",
+  "snapshot": {
+   "atUtc": 1789488000000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Severe weather readiness",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Larkspur",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Storm alert feed",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1011",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Alert subscription settings",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789401600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1012",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Map overlay for warnings",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "assignedAt": 1789417800000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789417800000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1013",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Push notification copy",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789488000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1014",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Alert history page",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1015",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Severity filter chips",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789409700000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1016",
+     "type": "User Story",
+     "kind": "story",
+     "title": "County picker",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1021",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Duplicate push on reconnect",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789407000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1022",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Overlay flickers on zoom",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "bug.detected",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1023",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Wrong county for ZIP 98101",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "bug.detected",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1024",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Times shown in UTC",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "bug.detected",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1787587200000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+     "title": "Subscription endpoints",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1011",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1012",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1013",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1014",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1015",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1016",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1021",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1022",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1023",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1024",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51",
+    "atUtc": 1789488000000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1001",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 96,
+      "label": "Storm alert feed",
+      "meta": "Feature · #1001 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Alert subscription settings",
+      "meta": "User Story · #1011 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 90,
+      "y": 130,
+      "r": 22,
+      "label": "Map overlay for warnings",
+      "meta": "User Story · #1012 · Active",
+      "meta2": "Tomas Ferreira",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -128,
+      "y": 156,
+      "r": 22,
+      "label": "Push notification copy",
+      "meta": "User Story · #1013 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 128,
+      "y": 156,
+      "r": 22,
+      "label": "Alert history page",
+      "meta": "User Story · #1014 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -166,
+      "y": 182,
+      "r": 22,
+      "label": "Severity filter chips",
+      "meta": "User Story · #1015 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 166,
+      "y": 182,
+      "r": 22,
+      "label": "County picker",
+      "meta": "User Story · #1016 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": -204,
+      "y": 208,
+      "r": 22,
+      "label": "Duplicate push on reconnect",
+      "meta": "Bug · #1021 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": 204,
+      "y": 208,
+      "r": 22,
+      "label": "Overlay flickers on zoom",
+      "meta": "Bug · #1022 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": -242,
+      "y": 234,
+      "r": 22,
+      "label": "Wrong county for ZIP 98101",
+      "meta": "Bug · #1023 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": 242,
+      "y": 234,
+      "r": 22,
+      "label": "Times shown in UTC",
+      "meta": "Bug · #1024 · New",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+    "atUtc": 1789488000000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 300,
+      "y": 1627,
+      "r": 56,
+      "label": "Tomas Ferreira",
+      "meta": "Captain · Tomas-XD",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1001",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Storm alert feed",
+      "meta": "Feature · #1001 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 2159,
+      "y": 2957,
+      "r": 123,
+      "label": "Alert subscription settings",
+      "meta": "User Story · #1011 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 300,
+      "y": 2059,
+      "r": 127,
+      "label": "Map overlay for warnings",
+      "meta": "User Story · #1012 · Active",
+      "meta2": "Tomas Ferreira",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 929,
+      "y": 3114,
+      "r": 129,
+      "label": "Push notification copy",
+      "meta": "User Story · #1013 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -2765,
+      "y": 2828,
+      "r": 125,
+      "label": "Alert history page",
+      "meta": "User Story · #1014 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -2159,
+      "y": 2957,
+      "r": 130,
+      "label": "Severity filter chips",
+      "meta": "User Story · #1015 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -1546,
+      "y": 3052,
+      "r": 116,
+      "label": "County picker",
+      "meta": "User Story · #1016 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 1546,
+      "y": 3052,
+      "r": 110,
+      "label": "Duplicate push on reconnect",
+      "meta": "Bug · #1021 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": -929,
+      "y": 3114,
+      "r": 111,
+      "label": "Overlay flickers on zoom",
+      "meta": "Bug · #1022 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": -310,
+      "y": 3144,
+      "r": 112,
+      "label": "Wrong county for ZIP 98101",
+      "meta": "Bug · #1023 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": 310,
+      "y": 3144,
+      "r": 109,
+      "label": "Times shown in UTC",
+      "meta": "Bug · #1024 · New",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   }
+  ]
+ },
+ {
+  "at": "2026-09-16T21:15:00.000Z",
+  "snapshot": {
+   "atUtc": 1789593300000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Severe weather readiness",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Larkspur",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Storm alert feed",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "feature.active",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1011",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Alert subscription settings",
+     "rawState": "Resolved",
+     "category": "InProgress",
+     "stage": "story.developed",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789509600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1012",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Map overlay for warnings",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "assignedAt": 1789417800000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789590600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1013",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Push notification copy",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "assignedAt": 1789579800000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789579800000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1014",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Alert history page",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789585200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1015",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Severity filters",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789593300000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1016",
+     "type": "User Story",
+     "kind": "story",
+     "title": "County and ZIP picker",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789496100000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1021",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Duplicate push on reconnect",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789407000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1022",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Overlay flickers on zoom",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789504200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1023",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Wrong county for some ZIP codes",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "bug.detected",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789506900000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1024",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Alert times shown in UTC",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "bug.detected",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789582500000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1017",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Quiet hours for alerts",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789498800000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+     "title": "Subscription endpoints",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+     "title": "Warning overlay layer",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1011",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1012",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1013",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1014",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1015",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1016",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1017",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1021",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1022",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1023",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1024",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1012",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1011",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51",
+    "atUtc": 1789593300000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1001",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 96,
+      "label": "Storm alert feed",
+      "meta": "Feature · #1001 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Alert subscription settings",
+      "meta": "User Story · #1011 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 90,
+      "y": 130,
+      "r": 22,
+      "label": "Map overlay for warnings",
+      "meta": "User Story · #1012 · Active",
+      "meta2": "Tomas Ferreira",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": -128,
+      "y": 156,
+      "r": 22,
+      "label": "Push notification copy",
+      "meta": "User Story · #1013 · Active",
+      "meta2": "Ivy Castellan",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 128,
+      "y": 156,
+      "r": 22,
+      "label": "Alert history page",
+      "meta": "User Story · #1014 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -166,
+      "y": 182,
+      "r": 22,
+      "label": "Severity filters",
+      "meta": "User Story · #1015 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 166,
+      "y": 182,
+      "r": 22,
+      "label": "County and ZIP picker",
+      "meta": "User Story · #1016 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1017",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 0,
+      "y": 260,
+      "r": 22,
+      "label": "Quiet hours for alerts",
+      "meta": "User Story · #1017 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": -204,
+      "y": 208,
+      "r": 22,
+      "label": "Duplicate push on reconnect",
+      "meta": "Bug · #1021 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 204,
+      "y": 208,
+      "r": 22,
+      "label": "Overlay flickers on zoom",
+      "meta": "Bug · #1022 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": -242,
+      "y": 234,
+      "r": 22,
+      "label": "Wrong county for some ZIP codes",
+      "meta": "Bug · #1023 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": 242,
+      "y": 234,
+      "r": 22,
+      "label": "Alert times shown in UTC",
+      "meta": "Bug · #1024 · New",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+    "atUtc": 1789593300000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 273,
+      "y": 864,
+      "r": 56,
+      "label": "Ivy Castellan",
+      "meta": "Captain · Ivy-TJ",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": -3021,
+      "y": 4234,
+      "r": 56,
+      "label": "Tomas Ferreira",
+      "meta": "Captain · Tomas-XD",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+      "kind": "flight",
+      "stage": "flight.active",
+      "x": -3065,
+      "y": 4360,
+      "r": 48,
+      "label": "Warning overlay layer",
+      "meta": "PR · #9502 · active",
+      "meta2": "Tomas Ferreira",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+      "kind": "flight",
+      "stage": "flight.active",
+      "x": 3065,
+      "y": 4360,
+      "r": 48,
+      "label": "Subscription endpoints",
+      "meta": "PR · #9501 · active",
+      "meta2": "Ivy Castellan",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+      "kind": "station",
+      "stage": "station.active",
+      "x": -3065,
+      "y": 5600,
+      "r": 150,
+      "label": "gale-web",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+      "kind": "station",
+      "stage": "station.active",
+      "x": 3065,
+      "y": 5600,
+      "r": 150,
+      "label": "gale-api",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1001",
+      "kind": "star",
+      "stage": "feature.active",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Storm alert feed",
+      "meta": "Feature · #1001 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": 2159,
+      "y": 2957,
+      "r": 123,
+      "label": "Alert subscription settings",
+      "meta": "User Story · #1011 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 300,
+      "y": 2059,
+      "r": 127,
+      "label": "Map overlay for warnings",
+      "meta": "User Story · #1012 · Active",
+      "meta2": "Tomas Ferreira",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 273,
+      "y": 1231,
+      "r": 129,
+      "label": "Push notification copy",
+      "meta": "User Story · #1013 · Active",
+      "meta2": "Ivy Castellan",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 310,
+      "y": 3144,
+      "r": 125,
+      "label": "Alert history page",
+      "meta": "User Story · #1014 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -2159,
+      "y": 2957,
+      "r": 130,
+      "label": "Severity filters",
+      "meta": "User Story · #1015 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -1546,
+      "y": 3052,
+      "r": 116,
+      "label": "County and ZIP picker",
+      "meta": "User Story · #1016 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -2765,
+      "y": 2828,
+      "r": 129,
+      "label": "Quiet hours for alerts",
+      "meta": "User Story · #1017 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 1546,
+      "y": 3052,
+      "r": 110,
+      "label": "Duplicate push on reconnect",
+      "meta": "Bug · #1021 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 929,
+      "y": 3114,
+      "r": 111,
+      "label": "Overlay flickers on zoom",
+      "meta": "Bug · #1022 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": -929,
+      "y": 3114,
+      "r": 112,
+      "label": "Wrong county for some ZIP codes",
+      "meta": "Bug · #1023 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": -310,
+      "y": 3144,
+      "r": 109,
+      "label": "Alert times shown in UTC",
+      "meta": "Bug · #1024 · New",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   }
+  ]
+ },
+ {
+  "at": "2026-09-17T22:00:00.000Z",
+  "snapshot": {
+   "atUtc": 1789682400000,
+   "lens": "knownThen",
+   "workItems": [
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "type": "Epic",
+     "kind": "epic",
+     "title": "Severe weather readiness",
+     "rawState": "Active",
+     "category": "Unknown",
+     "stage": "unknown",
+     "reopened": false,
+     "areaPath": "Larkspur",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": null,
+     "lastEventAt": 1787587200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "type": "Feature",
+     "kind": "feature",
+     "title": "Storm alert feed",
+     "rawState": "Ready to Accept",
+     "category": "InProgress",
+     "stage": "feature.accept",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "lastEventAt": 1789671600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1011",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Alert subscription settings",
+     "rawState": "Resolved",
+     "category": "InProgress",
+     "stage": "story.developed",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789509600000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1012",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Map overlay for warnings",
+     "rawState": "Resolved",
+     "category": "InProgress",
+     "stage": "story.developed",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035",
+     "assignedAt": 1789417800000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789660800000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1013",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Push notification copy",
+     "rawState": "Resolved",
+     "category": "InProgress",
+     "stage": "story.developed",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f",
+     "assignedAt": 1789579800000,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789682400000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1014",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Alert history page",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "story.terraforming",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789585200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1015",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Severity filters",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789593300000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1016",
+     "type": "User Story",
+     "kind": "story",
+     "title": "County picker",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789668900000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1021",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Duplicate push after reconnect",
+     "rawState": "Resolved",
+     "category": "Resolved",
+     "stage": "bug.contracted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789679700000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1022",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Overlay flickers on zoom",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789504200000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1023",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Wrong county for some ZIP codes",
+     "rawState": "Active",
+     "category": "InProgress",
+     "stage": "bug.disturbance",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789677000000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1024",
+     "type": "Bug",
+     "kind": "bug",
+     "title": "Alert times shown in UTC",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "bug.detected",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789582500000
+    },
+    {
+     "key": "wi:00000000-0000-4000-8000-000000000001:1017",
+     "type": "User Story",
+     "kind": "story",
+     "title": "Quiet hours for alerts",
+     "rawState": "New",
+     "category": "Proposed",
+     "stage": "story.uncharted",
+     "reopened": false,
+     "areaPath": "Larkspur\\Gale Team",
+     "assigneeKey": null,
+     "assignedAt": null,
+     "parentKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "lastEventAt": 1789498800000
+    }
+   ],
+   "prs": [
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+     "title": "Subscription endpoints",
+     "status": "completed",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f"
+    },
+    {
+     "key": "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "repoKey": "repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+     "title": "Warning overlay layer",
+     "status": "active",
+     "statusUncertain": false,
+     "authorKey": "id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035"
+    }
+   ],
+   "links": [
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1000",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1011",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1012",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1013",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1014",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1015",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1016",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1017",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1021",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1022",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1023",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "parent",
+     "fromKey": "wi:00000000-0000-4000-8000-000000000001:1024",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1001",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1012",
+     "uncertain": false
+    },
+    {
+     "kind": "pr",
+     "fromKey": "pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+     "toKey": "wi:00000000-0000-4000-8000-000000000001:1011",
+     "uncertain": false
+    }
+   ]
+  },
+  "graphs": [
+   {
+    "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51",
+    "atUtc": 1789682400000,
+    "nodes": [
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1001",
+      "kind": "star",
+      "stage": "feature.accept",
+      "x": 0,
+      "y": 0,
+      "r": 96,
+      "label": "Storm alert feed",
+      "meta": "Feature · #1001 · Ready to Accept",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": -90,
+      "y": 130,
+      "r": 22,
+      "label": "Alert subscription settings",
+      "meta": "User Story · #1011 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": 90,
+      "y": 130,
+      "r": 22,
+      "label": "Map overlay for warnings",
+      "meta": "User Story · #1012 · Resolved",
+      "meta2": "Tomas Ferreira",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": -128,
+      "y": 156,
+      "r": 22,
+      "label": "Push notification copy",
+      "meta": "User Story · #1013 · Resolved",
+      "meta2": "Ivy Castellan",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 128,
+      "y": 156,
+      "r": 22,
+      "label": "Alert history page",
+      "meta": "User Story · #1014 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -166,
+      "y": 182,
+      "r": 22,
+      "label": "Severity filters",
+      "meta": "User Story · #1015 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 166,
+      "y": 182,
+      "r": 22,
+      "label": "County picker",
+      "meta": "User Story · #1016 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1017",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": 0,
+      "y": 260,
+      "r": 22,
+      "label": "Quiet hours for alerts",
+      "meta": "User Story · #1017 · New",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021",
+      "kind": "anomaly",
+      "stage": "bug.contracted",
+      "x": -204,
+      "y": 208,
+      "r": 22,
+      "label": "Duplicate push after reconnect",
+      "meta": "Bug · #1021 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 204,
+      "y": 208,
+      "r": 22,
+      "label": "Overlay flickers on zoom",
+      "meta": "Bug · #1022 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": -242,
+      "y": 234,
+      "r": 22,
+      "label": "Wrong county for some ZIP codes",
+      "meta": "Bug · #1023 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": 242,
+      "y": 234,
+      "r": 22,
+      "label": "Alert times shown in UTC",
+      "meta": "Bug · #1024 · New",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "sector:area:area:00000000-0000-4000-8000-000000000001:422e4ebe-432e-4051-802e-4b98412e4d2b:51|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   },
+   {
+    "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:1001",
+    "atUtc": 1789682400000,
+    "nodes": [
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:7d758cf2-7e75-4e85-8b75-89cc7c758b5f|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 1033,
+      "y": 707,
+      "r": 56,
+      "label": "Ivy Castellan",
+      "meta": "Captain · Ivy-TJ",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|id:00000000-0000-4000-8000-000000000001:f6dc5b7c-f7dc-4d0f-88dc-5ea2f9dc6035|ship",
+      "kind": "captain",
+      "stage": "captain",
+      "x": 1141,
+      "y": 1531,
+      "r": 56,
+      "label": "Tomas Ferreira",
+      "meta": "Captain · Tomas-XD",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502",
+      "kind": "flight",
+      "stage": "flight.active",
+      "x": -3065,
+      "y": 4358,
+      "r": 48,
+      "label": "Warning overlay layer",
+      "meta": "PR · #9502 · active",
+      "meta2": "Tomas Ferreira",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501",
+      "kind": "flight",
+      "stage": "flight.completed",
+      "x": 3065,
+      "y": 4358,
+      "r": 48,
+      "label": "Subscription endpoints",
+      "meta": "PR · #9501 · completed",
+      "meta2": "Ivy Castellan",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+      "kind": "station",
+      "stage": "station.active",
+      "x": -3065,
+      "y": 5600,
+      "r": 150,
+      "label": "gale-web",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+      "kind": "station",
+      "stage": "station.active",
+      "x": 3065,
+      "y": 5600,
+      "r": 150,
+      "label": "gale-api",
+      "meta": "Repository",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1001",
+      "kind": "star",
+      "stage": "feature.accept",
+      "x": 0,
+      "y": 0,
+      "r": 240,
+      "label": "Storm alert feed",
+      "meta": "Feature · #1001 · Ready to Accept",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": 2258,
+      "y": 2939,
+      "r": 123,
+      "label": "Alert subscription settings",
+      "meta": "User Story · #1011 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": 1141,
+      "y": 1984,
+      "r": 127,
+      "label": "Map overlay for warnings",
+      "meta": "User Story · #1012 · Resolved",
+      "meta2": "Tomas Ferreira",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013",
+      "kind": "planet",
+      "stage": "story.developed",
+      "x": 1033,
+      "y": 1126,
+      "r": 129,
+      "label": "Push notification copy",
+      "meta": "User Story · #1013 · Resolved",
+      "meta2": "Ivy Castellan",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014",
+      "kind": "planet",
+      "stage": "story.terraforming",
+      "x": 411,
+      "y": 3141,
+      "r": 125,
+      "label": "Alert history page",
+      "meta": "User Story · #1014 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -2059,
+      "y": 2975,
+      "r": 130,
+      "label": "Severity filters",
+      "meta": "User Story · #1015 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -1445,
+      "y": 3064,
+      "r": 116,
+      "label": "County picker",
+      "meta": "User Story · #1016 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017",
+      "kind": "planet",
+      "stage": "story.uncharted",
+      "x": -2666,
+      "y": 2852,
+      "r": 129,
+      "label": "Quiet hours for alerts",
+      "meta": "User Story · #1017 · New",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021",
+      "kind": "anomaly",
+      "stage": "bug.contracted",
+      "x": 1647,
+      "y": 3039,
+      "r": 110,
+      "label": "Duplicate push after reconnect",
+      "meta": "Bug · #1021 · Resolved",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": 1030,
+      "y": 3106,
+      "r": 111,
+      "label": "Overlay flickers on zoom",
+      "meta": "Bug · #1022 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023",
+      "kind": "anomaly",
+      "stage": "bug.disturbance",
+      "x": -209,
+      "y": 3146,
+      "r": 112,
+      "label": "Wrong county for some ZIP codes",
+      "meta": "Bug · #1023 · Active",
+      "flags": {}
+     },
+     {
+      "pk": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024",
+      "kind": "anomaly",
+      "stage": "bug.detected",
+      "x": -828,
+      "y": 3121,
+      "r": 109,
+      "label": "Alert times shown in UTC",
+      "meta": "Bug · #1024 · New",
+      "flags": {}
+     }
+    ],
+    "edges": [
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:0f64fd73-0e64-4be0-8165-00991064ff06:9502|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|repo:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|pr:00000000-0000-4000-8000-000000000001:b08a5b59-af8a-49c6-8e8a-5833ad8a56a0:9501|route|feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011",
+      "kind": "route",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1011|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1012|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1013|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1014|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1015|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1016|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1017|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1021|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1022|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1023|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     },
+     {
+      "key": "feature:wi:00000000-0000-4000-8000-000000000001:1001|wi:00000000-0000-4000-8000-000000000001:1024|orbit",
+      "kind": "orbit",
+      "uncertain": false
+     }
+    ],
+    "trays": {
+     "uncharted": [],
+     "unlinked": []
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,459 @@
+[
+ {
+  "scope": {
+   "project": "Stillwater",
+   "area": "Stillwater\\Moss Team"
+  },
+  "sole": "wi:00000000-0000-4000-8000-000000000001:901",
+  "beats": [
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:911:r3"
+   ],
+   [
+    "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:912:r3"
+   ]
+  ],
+  "scenes": [
+   {
+    "scene": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41",
+    "inView": [
+     "area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41",
+     "id:00000000-0000-4000-8000-000000000001:b42af255-b32a-40c2-822a-ef2fb12aed9c",
+     "wi:00000000-0000-4000-8000-000000000001:901",
+     "wi:00000000-0000-4000-8000-000000000001:911",
+     "wi:00000000-0000-4000-8000-000000000001:912"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:911:r3"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:912:r3"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41",
+      "atUtc": 1789491600000,
+      "nodes": [
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:901",
+        "kind": "star",
+        "stage": "feature.active",
+        "x": 0,
+        "y": 0,
+        "r": 96,
+        "label": "Quiet hours for alerts",
+        "meta": "Feature · #901 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:911",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": -90,
+        "y": 130,
+        "r": 22,
+        "label": "Do-not-disturb schedule",
+        "meta": "User Story · #911 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:912",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 90,
+        "y": 130,
+        "r": 22,
+        "label": "Alert digest email",
+        "meta": "User Story · #912 · Active",
+        "meta2": "Ren Halvorsen",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:911|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:912|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:901",
+        "kind": "star",
+        "stage": "feature.active",
+        "x": 0,
+        "y": 0,
+        "r": 96,
+        "label": "Quiet hours for alerts",
+        "meta": "Feature · #901 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:911",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": -90,
+        "y": 130,
+        "r": 22,
+        "label": "Do-not-disturb schedule",
+        "meta": "User Story · #911 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:912",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 90,
+        "y": 130,
+        "r": 22,
+        "label": "Alert digest email",
+        "meta": "User Story · #912 · Resolved",
+        "meta2": "Ren Halvorsen",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:911|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "sector:area:area:00000000-0000-4000-8000-000000000001:9acf906b-99cf-4ed8-8ccf-93919bcf91fe:41|wi:00000000-0000-4000-8000-000000000001:912|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "feature:wi:00000000-0000-4000-8000-000000000001:901",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:b42af255-b32a-40c2-822a-ef2fb12aed9c",
+     "wi:00000000-0000-4000-8000-000000000001:901",
+     "wi:00000000-0000-4000-8000-000000000001:911",
+     "wi:00000000-0000-4000-8000-000000000001:912"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:911:r3"
+     ],
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:912:r3"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:901",
+      "atUtc": 1789491600000,
+      "nodes": [
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:901|id:00000000-0000-4000-8000-000000000001:b42af255-b32a-40c2-822a-ef2fb12aed9c|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": -228,
+        "y": 868,
+        "r": 56,
+        "label": "Ren Halvorsen",
+        "meta": "Captain · Ren-CM",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:901",
+        "kind": "star",
+        "stage": "feature.active",
+        "x": 0,
+        "y": 0,
+        "r": 240,
+        "label": "Quiet hours for alerts",
+        "meta": "Feature · #901 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:911",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": -251,
+        "y": 2061,
+        "r": 123,
+        "label": "Do-not-disturb schedule",
+        "meta": "User Story · #911 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:912",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": -228,
+        "y": 1233,
+        "r": 119,
+        "label": "Alert digest email",
+        "meta": "User Story · #912 · Active",
+        "meta2": "Ren Halvorsen",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:911|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:912|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "feature:wi:00000000-0000-4000-8000-000000000001:901",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:901|id:00000000-0000-4000-8000-000000000001:b42af255-b32a-40c2-822a-ef2fb12aed9c|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 988,
+        "y": 722,
+        "r": 56,
+        "label": "Ren Halvorsen",
+        "meta": "Captain · Ren-CM",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:901",
+        "kind": "star",
+        "stage": "feature.active",
+        "x": 0,
+        "y": 0,
+        "r": 240,
+        "label": "Quiet hours for alerts",
+        "meta": "Feature · #901 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:911",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": -251,
+        "y": 2061,
+        "r": 123,
+        "label": "Do-not-disturb schedule",
+        "meta": "User Story · #911 · Active",
+        "flags": {}
+       },
+       {
+        "pk": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:912",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 988,
+        "y": 1136,
+        "r": 119,
+        "label": "Alert digest email",
+        "meta": "User Story · #912 · Resolved",
+        "meta2": "Ren Halvorsen",
+        "flags": {}
+       }
+      ],
+      "edges": [
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:911|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       },
+       {
+        "key": "feature:wi:00000000-0000-4000-8000-000000000001:901|wi:00000000-0000-4000-8000-000000000001:912|orbit",
+        "kind": "orbit",
+        "uncertain": false
+       }
+      ],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:911",
+    "inView": [
+     "wi:00000000-0000-4000-8000-000000000001:911"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:911:r3"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:911",
+      "atUtc": 1789491600000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:911|wi:00000000-0000-4000-8000-000000000001:911",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Do-not-disturb schedule",
+        "meta": "User Story · #911 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:911",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:911|wi:00000000-0000-4000-8000-000000000001:911",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Do-not-disturb schedule",
+        "meta": "User Story · #911 · Active",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   },
+   {
+    "scene": "body:wi:00000000-0000-4000-8000-000000000001:912",
+    "inView": [
+     "id:00000000-0000-4000-8000-000000000001:b42af255-b32a-40c2-822a-ef2fb12aed9c",
+     "wi:00000000-0000-4000-8000-000000000001:912"
+    ],
+    "highlights": [
+     [
+      "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:912:r3"
+     ]
+    ],
+    "graphs": [
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:912",
+      "atUtc": 1789491600000,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:912|id:00000000-0000-4000-8000-000000000001:b42af255-b32a-40c2-822a-ef2fb12aed9c|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Ren Halvorsen",
+        "meta": "Captain · Ren-CM",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:912|wi:00000000-0000-4000-8000-000000000001:912",
+        "kind": "planet",
+        "stage": "story.terraforming",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert digest email",
+        "meta": "User Story · #912 · Active",
+        "meta2": "Ren Halvorsen",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     },
+     {
+      "sceneKey": "body:wi:00000000-0000-4000-8000-000000000001:912",
+      "atUtc": 1789973999999,
+      "nodes": [
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:912|id:00000000-0000-4000-8000-000000000001:b42af255-b32a-40c2-822a-ef2fb12aed9c|ship",
+        "kind": "captain",
+        "stage": "captain",
+        "x": 513,
+        "y": 0,
+        "r": 56,
+        "label": "Ren Halvorsen",
+        "meta": "Captain · Ren-CM",
+        "flags": {}
+       },
+       {
+        "pk": "body:wi:00000000-0000-4000-8000-000000000001:912|wi:00000000-0000-4000-8000-000000000001:912",
+        "kind": "planet",
+        "stage": "story.developed",
+        "x": 0,
+        "y": 0,
+        "r": 400,
+        "label": "Alert digest email",
+        "meta": "User Story · #912 · Resolved",
+        "meta2": "Ren Halvorsen",
+        "flags": {}
+       }
+      ],
+      "edges": [],
+      "trays": {
+       "uncharted": [],
+       "unlinked": []
+      }
+     }
+    ]
+   }
+  ],
+  "follow": [
+   {
+    "captain": "id:00000000-0000-4000-8000-000000000001:b42af255-b32a-40c2-822a-ef2fb12aed9c",
+    "anchors": [],
+    "story": [
+     {
+      "eventKey": "wi_state_changed:wi:00000000-0000-4000-8000-000000000001:912:r3",
+      "atUtc": 1789840800000,
+      "stage": "wi:00000000-0000-4000-8000-000000000001:901",
+      "item": "wi:00000000-0000-4000-8000-000000000001:912",
+      "outside": false,
+      "text": "User Story #912 Active → Resolved"
+     }
+    ]
+   }
+  ]
+ }
+]
